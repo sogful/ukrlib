@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мовчун Леся Вікторівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мовчун Леся Вікторівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./movchun-lesia-viktorivna.webp" alt="Мовчун Леся Вікторівна" title="Мовчун Леся Вікторівна" data-full="./movchun-lesia-viktorivna.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася 26 серпня 1969 р. у м. Києві в родині педагога, грінченкознавця Антоніни Іванівни Мовчун і філолога, байкаря Віктора Максимовича Мовчуна.</p>
+          <p>Дитинство минало в Києві, а світ народного слова майбутня письменниця відкрила завдяки щорічним відвідинам мальовничого села Вербка на Вінниччині. Писати вірші почала ще в дошкільному віці. У 1987 р. закінчила Київську середню школу № 212 і вступила на філологічний факультет Київського державного педагогічного інституту ім. О. М. Горького, а в 1992 р. закінчила Київський державний педагогічний інститут ім. М. П. Драгоманова, отримавши диплом із відзнакою (за спеціальністю &quot;Учитель української мови та літератури&quot;).</p>
+          <p>Дебютувала в 1991 добіркою віршів &quot;Вклонись, людино, знов воскреслій правді&quot; в журналі &quot;Українська мова та література в школі&quot; (№ 5). Пише для дітей (прозу, поезію, драматургію), а також лірику. Творчість для дітей відзначається жанровим і тематичним розмаїттям: оповідання, казки, повісті, п&#x27;єси, вірші. Авторка звертається до форм скоромовок і безконечників, охоче використовує гру слів і звуків. У легкій, а подекуди вибагливій формі ці твори виховують мовне чуття читачів. Парадоксальні сюжети розвивають фантазію та змушують замислитися над одвічними проблемами добра і зла. Авторка численних публікацій у журналах для дітей &quot;Малятко&quot;, &quot;Барвінок&quot;, &quot;Соняшник&quot;, &quot;Перець&quot;, &quot;Пізнайко&quot;, &quot;Стежка&quot;, &quot;Однокласник&quot;, &quot;Крилаті&quot;, &quot;Джміль&quot;, &quot;Мамине сонечко&quot;, &quot;Пригоди&quot; та ін., в альманахах, антологіях і збірках &quot;Боян&quot; (1993), &quot;Самоцвіти&quot; (1996), &quot;Радосинь&quot; (2004, 2012, 2015), &quot;Сонячна Мальвія&quot; (2005, 2007), &quot;Смійся та грай — світ пізнавай&quot; (2000), &quot;Слово до слова — весела розмова&quot; (2002), &quot;Пори року&quot; (2003), &quot;Сонечкові діти&quot; (2003), &quot;А що в мішку?&quot; (2006), &quot;Скринька-веселинка&quot; (2007), &quot;З нами весело усім&quot; (2007), &quot;Для малят про звірят&quot; (2007), &quot;Хмарки грають у квача&quot; (2008), &quot;Добра наука&quot; (2012), &quot;Язик до Києва доведе, або Цікаві ролі театру в школі&quot; (2013) та ін. Твори можна знайти в підручниках та хрестоматіях для школи.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

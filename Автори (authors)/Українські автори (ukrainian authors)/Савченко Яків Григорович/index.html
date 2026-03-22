@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Савченко Яків Григорович — Біографія</title>
+  <style type="text/css">.wrap{margin:0 auto;max-width:980px}
+        p{text-indent:30px;margin:0px;padding:0px}
+        .page-title{text-align:center;display:block;clear:both;margin:0;padding:0 20px 20px}
+        .page-title h1{font-size:32px;line-height:32px;font-weight:bold;margin-bottom:20px}
+        .page-title h2{font-size:20px;line-height:20px;font-weight:bold}
+        .pt-normal h2{font-weight:normal}
+        h1{padding-bottom:0px;line-height:auto;text-align:center;font-family:Verdana,sans-serif;}
+        h2{text-align:center;font-family:Verdana,sans-serif;}
+        .prose{text-align:justify;font:16px/24px Georgia,'Times New Roman',Serif;color:#000;}
+        .prose blockquote{text-align:right;margin-bottom:20px}
+        .cita{padding-left:40px!important;font-style:italic!important;margin-top:20px!important;margin-bottom:20px!important}
+        .cita p{color:#737373!important;font-style:italic!important}
+        .side-layout{display:flex;gap:24px;align-items:flex-start;}
+        .side-column{flex:0 0 auto;width:140px;display:flex;flex-direction:column;gap:12px;}
+        .side-img{width:100%;height:auto;margin-top:0;}
+        .side-thumb{cursor:pointer;}
+        .prose-text{flex:1 1 auto;min-width:0;}
+        @media (max-width: 700px){
+            .side-layout{flex-direction:column;gap:12px;}
+            .side-column{width:220px;margin:0 auto;}
+        }
+        .imageoverlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;visibility:hidden;}
+        .imageoverlay::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.75);opacity:0;transition:opacity 200ms ease;}
+        .imageoverlay.open{visibility:visible;}
+        .imageoverlay.open::before{opacity:1;}
+        .imageoverlaypic{position:relative;max-width:80vw;max-height:80vh;width:auto;height:auto;object-fit:contain;cursor:pointer;opacity:0;transition:opacity 200ms ease;}
+        .imageoverlay.open .imageoverlaypic{opacity:1;}</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Савченко Яків Григорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./savchenko-iakiv-hryhorovych.webp" alt="Савченко Яків Григорович" title="Савченко Яків Григорович" data-full="./savchenko-iakiv-hryhorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 3.03.1890 р. в с. Луценки на Полтавщині. Навчався у Київському університеті, проте не закінчив його. Деякий час учителював на Сумщині. Працював у видавництві &quot;Струмок&quot; (Житомир), а 1920-х – у київських газетах &quot;Більшовик&quot; і &quot;Пролетарська правда&quot;, з 1929-го – редактором у ВУФКУ й на кінофабриці (1931–1933). На сценарному та режисерському факультетах Київського кіноінституту викладав теорію драми, сценарію і літератури.</p>
+          <p>Я. Савченко активно друкувався в газетах і журналах, окремими виданнями вийшли книжки &quot;Азіятський апокаліпсис&quot; (1926), &quot;Поети й белетристи&quot;, &quot;Проти реставрації греко-римського мистецтва&quot; (1927), &quot;Доба й письменник&quot;, &quot;Народження українського радянського кіно&quot; (1930), &quot;П&#x27;ятнадцять років театру імені І. Франка&quot; (1935).</p>
+          <p>Першого вірша надрукував у журналі &quot;Ілюстрована Україна&quot;. З 1917 р. публікує у періодиці багато статей та фейлетонів. Поезії друкує в журналах &quot;ЛНВ&quot;, &quot;Мистецтво&quot;, &quot;Глобус&quot;, &quot;Зоря&quot;, &quot;Життя й Революція&quot;, &quot;Гарт&quot;. Видав збірки поезій &quot;Поезії&quot; (1918) та &quot;Земля&quot; (1921), відтак публікував вірші лише в періодиці, активніше зайнявшись теорією літератури. У 1933 р. його звільнили з усіх посад &quot;за протягування націоналістичних поглядів&quot;, а серед ночі 17.09.1937 р. Я. Савченка заарештували. 1.11.1937 р. його засудили до розстрілу. Вирок виконали наступного дня.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>

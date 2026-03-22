@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мірошниченко Микола Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мірошниченко Микола Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./miroshnychenko-mykola-mykolayovych.webp" alt="Мірошниченко Микола Миколайович" title="Мірошниченко Микола Миколайович" data-full="./miroshnychenko-mykola-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 1 січня 1947 року в c. Третяківка Біловодського району Луганської області. Закінчив Луганський педагогічний інститут імені Тараса Шевченка (1968). Вчителював на Запоріжжі.</p>
+          <p>Працював заступником начальника прес-служби Міністерства з питань надзвичайних ситуацій та у справах захисту населення від наслідків Чорнобильської катастрофи.</p>
+          <p>Член Національної спілки письменників України. 1974 р. виїжджав на два роки до Баку вивчати азербайджанську мову. 1994 р. стажувався на курсах турецької мови у Стамбулі. Почав друкуватися з 1967 р. Перекладав з азербайджанської, турецької та кримськотатарської. Автор трьох поетичних збірок: &quot;Рік-осокір&quot; (1984), &quot;Око&quot; (1989), збірки перекладів та статей &quot;Брама Сходу&quot;, &quot;Узір зрізу&quot; (2000). Найпослідовніший український поет-конкретист. Свідомо прагнув перенести на український ґрунт рідкісні форми східної поезії (рубаї, туюг, газель, пантун, мухтамілат, мурабба). &quot;Голінний ентузіаст рака літерального&quot; (цикл &quot;В сузір&#x27;ї Рака&quot;), один із засновників групи паліндромістів &quot;ГЕРАКЛІТ&quot;. Учасник Міжнародної конференції &quot;EyeRhymes&quot; (Едмонтон, Альбертський університет, 1997), співзасновник Світової Асоціації візуального мовлення. Помер 7 липня 2009 р. в Києві після тяжкої хвороби.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

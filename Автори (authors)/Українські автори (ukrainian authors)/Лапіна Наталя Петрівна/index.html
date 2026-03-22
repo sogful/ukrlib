@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лапіна Наталя Петрівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лапіна Наталя Петрівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lapina-natalia-petrivna.webp" alt="Лапіна Наталя Петрівна" title="Лапіна Наталя Петрівна" data-full="./lapina-natalia-petrivna.webp" /></div>
+        <div class="prose-text">
+          <p>Наталія Петрівна Лапіна народилася 10.10.1953р. у м. Оха на Сахаліні. Батько був військовим медиком, службові обов&#x27;язки виконував на Далекому Сході, в Білорусії, на Півночі. Після виходу у відставку переїхав з родиною у Кременчук, понад 40 років працював лікарем швидкої реаніматологом, 2013-го родина переїхала у Черкаси. Наталія весь час була поряд з батьками, має дві вищі освіти: закінчила Черкаський, згодом – Харківський педагогічні інститути за фахом учитель російської мови та літератури, психолог. 1975-1977 учителювала на Тернопільщині, 1977-2010 працювала соціальним педагогом та психологом у Кременчуці, з 2013-го працює шкільним психологом у Черкасах.</p>
+          <p>Авторка великої кількості оповідань, критичних і методичних статей, віршованої збірки, пише пародії та фейлетони.</p>
+          <p>Має сестру, теж українську письменницю – Світлану Горбань, у співавторстві з якою видала кілька великих романів і повістей, відмічених різними літературними відзнаками. 2001-го року повість Наталії Петрівни &quot;Тисячолітній Кременчук&quot; перемогла у регіональному конкурсі. Член Національної спілки письменників з 2010 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

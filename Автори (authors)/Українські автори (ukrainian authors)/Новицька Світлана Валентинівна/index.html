@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Новицька Світлана Валентинівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Новицька Світлана Валентинівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./novytska-svitlana-valentynivna.webp" alt="Новицька Світлана Валентинівна" title="Новицька Світлана Валентинівна" data-full="./novytska-svitlana-valentynivna.webp" /></div>
+        <div class="prose-text">
+          <p>Світлана Новицька — драматург, режисер.</p>
+          <p>Народилася 7 листопада 1966 у місті Кам&#x27;янець-Подільський, Хмельницької області. Вищу освіту отримала у Рівненському інституті культури. За фахом театральний режисер. Тривалий час працювала у Чернівецькому муздрамтеатрі ім. О.Кобилянської, де були поставлені три її п&#x27;єси: &quot;Я утопилася в тобі...&quot;, казка &quot;Котилася торба&quot;, молодіжна експериментальна вистава &quot;Крейзі&quot;.</p>
+          <p>П&#x27;єси-казки &quot;Злидні&quot; та &quot;Подарунки чарівниці&quot; ставилися в Миколаївському українському театрі драми та музичної комедії, п&#x27;єсу-казку &quot;Сірий та Руда&quot; ставили в Чернівецькому театрі &quot;МаБуТе&quot; та Запорізькому облмуздрамтеатрі імені В.Магара, а в Тернопільському драматичному театрі ім.Т.Шевченка – драматичну фантасмагорію з життя й творів І.Франка &quot;Я бачив дивний сон&quot;. Загалом написала понад 20 драматичних творів й інсценізацій, видала дві збірки п&#x27;єс &quot;Відкривається завіса&quot; та &quot;Відгомін віків&quot;. Друкувалася в антологіях: жіночої драматургії &quot;Мотанка&quot;, молодої драматургії &quot;У пошуку театру&quot; та &quot;Сучасній українській драматургії&quot; №3. З 2008 року почала працювати на телебаченні. Є автором документально-ігрових фільмів: &quot;Життя під грифом &quot;таємно&quot;, &quot;Повернення Митрополита&quot;, &quot;Подорож у Середньовіччя&quot;, ігрового короткометражного фільму &quot;Принцеса і людожер&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Микитин Теодор Дмитрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Микитин Теодор Дмитрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Теодор Микитин (*29 вересня 1913, м. Радехів, тепер Львівської області — †7 січня 1995, м. Львів — український письменник і бібліограф.</p>
+          <p>Закінчив Львівський університет (1939). Учасник Другої світової війни. Учителював, займався науковою працею — завідував відділом бібліографії наукової бібліотеки Львівського університету.</p>
+          <p>Довгі роки його ім&#x27;я з&#x27;являлося лише на обкладинках наукових збірників та бібліографічних покажчиків. Вдалий дебют у 1939 книжкою &quot;Нові люди&quot; надихнув Теодора Микитина на вивчення історії рідного краю. Особливо зацікавлює автора історія Прикарпаття. Галицько-Волинському князівству присвячені його повісті &quot;Під мурами Львова&quot; (1958), &quot;Не пощербились мечі&quot; (1960), &quot;Полки йдуть на Галич&quot; (1965), &quot;Над Кодаком&quot; (1970), &quot;Данило Нечай&quot; (1983), &quot;На Чорному морі, на білому камені&quot; (1986). Яскрава сторінка історії — боротьба селянства Східної Галичини під проводом Івана Мухи стала основою його повісті &quot;Спалах у темряві&quot;. В ній письменник не оминув своєю увагою й минуле Покуття, зокрема, перше в Європі антифеодальне повстання 1490−1492 рр. українських і молдавських селян під проводом ватажка Мухи проти польської шляхти. Селянський виступ розпочався в Коломийському та Снятинському повітах. Охопив Північну Буковину, Галичину, Західне Поділля. Близько десяти тисяч повсталих здобули Снятин, Коломию, Галич і рушили на Львів. Польський уряд створив ополчення шляхти Руського воєводства. А король Казимир IV Ягеллончик найняв для походу проти бунтівників прусські війська. Влітку біля Рогатина основні сили повстанців були розбиті королівськими військами. Невеликий загін повсталих на чолі з Мухою відступив на Покуття в райони Коломиї та Снятина, а пізніше — до Північної Буковини. Навесні 1491 повстанський рух очолив А. Боруля. За однією із версій — під цим ім&#x27;ям виступав Муха. Cутички повсталих з польською шляхтою тривали на Покутті упродовж 1491−1492 рр. Поблизу Галича 1492 загін шляхти напав на повстанців і розсіяв їх. Муха був схоплений і ув&#x27;язнений у краківській тюрмі, де невдовзі помер від катувань. А у книзі &quot;Полковник Семен Височан&quot; (1968) Теодор Микитин змальовує визвольну війну українського народу 1648–1654 рр., яку на Прикарпатті очолив уродженець с. Вікторова Галицького району Семен Височан. Ряд його повістей, написаних на теми з історії Стародавнього світу, увійшли до збірки &quot;Крізь бурі&quot; (1976). Теодору Микитину належать також повісті &quot;Нові люди&quot; (1939), &quot;Над голубими плесами&quot; (1962), &quot;Писар Імхотеп&quot; (1989) й ін. Він уклав бібліографічні покажчики &quot;Антон Семенович Макаренко&quot; (1963), &quot;400 років вітчизняного книгодрукування&quot; (1964, обидва — разом із М. Бутриним) та ін.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

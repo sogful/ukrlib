@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Метлинський Амвросій Лук&#x27;янович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Метлинський Амвросій Лук&#x27;янович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./metlynskyy-amvrosiy-lukianovych.webp" alt="Метлинський Амвросій Лук&#x27;янович" title="Метлинський Амвросій Лук&#x27;янович" data-full="./metlynskyy-amvrosiy-lukianovych.webp" /><img class="side-img side-thumb" src="./metlynskyy-amvrosiy-lukianovych_1.webp" alt="Метлинський Амвросій Лук&#x27;янович" title="Метлинський Амвросій Лук&#x27;янович" data-full="./metlynskyy-amvrosiy-lukianovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Метлинський Амвросій Лук’янович (1814 – 17 (29).07.1870) – український поет, фольклорист, видавець.</p>
+          <p>Портрет А. Л. Метлинського</p>
+          <p>Народився в с. Сари (нині – Гадяцького району Полтавської обл.) у родині дрібного поміщика. Навчався у Гадяцькому повітовому училищі та гімназії, в 1835 р. закінчив Харківський університет, у якому залишився працювати. В 1843 – 1849 та в 1854 – 1858 рр. – професор Харківського університету, в 1849 – 1854 рр. – професор Київського університету, але як педагог і науковець він слави не здобув. У Харківському університеті познайомився з І. Срезневським і увійшов до його гуртка, почав писати поезії. В 1839 р. під псевдонімом Амвросій Могила була надрукована основна збірка його поезій – &quot;Думки і пісні та ще дещо&quot;. Метлинський підтримував творчі зв’язки з чеським поетом Ф. Челаковським, перекладав його вірші українською мовою. Челаковський переклав три поезії Метлинського (&quot;Гетьман&quot;, &quot;Дитина-сиротина&quot;, &quot;Козачая смерть&quot;) і надрукував їх у журналі &quot;Časopis českeho Museum&quot;, 1842 р., т. 3. В 1848 р. Метлинський опублікував 5 випусків &quot;Южного русского сборника&quot;, де опублікував свої твори та твори інших українських письменників. В 1852 р. він опублікував &quot;Байки й прибаютки&quot; Л. Боровиковського, а в 1854 р. – збірник &quot;Народные южнорусские песни&quot;. Його творчість була позитивно оцінена уже Миколою Костомаровим – його харківським товаришем.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

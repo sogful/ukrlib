@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Минко Василь Петрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Минко Василь Петрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mynko-vasyl-petrovych.webp" alt="Минко Василь Петрович" title="Минко Василь Петрович" data-full="./mynko-vasyl-petrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Василеві Минку доля прирекла бути вульгарним письменником. У 1920-х роках його вважали непристойним і сороміцьким, нинішні автори Вікіпедії мають на увазі щось інше, називаючи його &quot;автором вульгарних драматичних творів для масового глядача&quot;.</p>
+          <p>Минко, ровесник Донченка, народився 1902 року в селі Минківка Валківського повіту Харківської губернії у звичайній селянській родині. Після сільської школи навчався у Валківському ремісничому училищі. У 1919 році завідував відділом народної освіти у волосному ревкомі, згодом земельним відділом у волосному виконкомі. Брав участь у діяльності місцевої &quot;Просвіти&quot;, грав у театрі і ставив п&#x27;єси.</p>
+          <p>Улітку 1922 року в Україні почалася адміністративно-територіальна реформа, волості ліквідували, натомість утворили райони. Минко хотів учитися на артиста або агронома, комсомол і комнезам вибрали друге і відрядили його на робітфак Харківського сільськогосподарського інституту. Українську мову і літературу Минкові викладав Михайло Йогансен, від якого цікавий студент дізнався про плужанські понеділки — літературні вечірки Спілки селянських письменників &quot;Плуг&quot;, одинокої тоді літературної організації. У цей же час він відвідував акторську студію, якою керували Іван Юхименко і Дмитро Грудина, грав у недовговічному театрі імені Лесі Українки. Літературну діяльність Минко почав із п&#x27;єс та інсценізацій. І так само, як Олеся Донченка, 1924 року Василя Минка мобілізували у військо. Він потрапив у авіаційний полк у Ростові-на-Дону. Туди йому надіслали його другу книжечку — &quot;Лісові круки&quot;, етюд на 1 дію за Олесем Громовим. Першою була дитяча п’єска &quot;Купала&quot; того самого року, але ще &quot;доармійська&quot;. Незабаром він уже керував драмгуртком в авіазагоні і дописував у газету як військкор. Восени 1926 року Минко повернувся до Харкова, вступив до &quot;Плуга&quot;, працював експедитором у журналі &quot;Плужанин&quot;, потім секретарем організації. Видав іще дві дитячі п’єси й перейшов на прозу. Перша прозова книжка називалася &quot;Власть на місцях&quot; (1927), слідом вийшла збірка повістей і оповідань &quot;Беладонна&quot; (1929), його перша солідна книжка, яка принесла молодому авторові скандальну славу. Більше нічого такого видатного у його житті і творчості не було. У кінці 1920-х Минко їздив по комунах, як це тоді було заведено, потім пішов працювати на завод — &quot;пролетаризуватися&quot;. Писав нариси, повісті з робітничого життя. Роман &quot;Ярина Черкас&quot; (1936) про колективізацію вилучали з бібліотек за перекручення сталінської політики. По війні зосередився на драматургії, видав подорожні нариси про Індію, робив літературні записи за Героями Соціалістичної Праці. Усе своє життя Василь Минко докладно описав в автобіографічних повістях і спогадах &quot;Моя Минківка&quot; (1962), &quot;Червоний Парнас&quot; (1972), &quot;Їхав козак на війноньку&quot; (1979), &quot;З пером, як з багнетом&quot; (1981), &quot;Білий будинок над зеленою Сулою&quot; (1988). Помер у Києві 1989 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

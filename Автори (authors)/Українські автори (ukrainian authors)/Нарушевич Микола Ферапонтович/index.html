@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нарушевич Микола Ферапонтович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Нарушевич Микола Ферапонтович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./narushevych-mykola-ferapontovych.webp" alt="Нарушевич Микола Ферапонтович" title="Нарушевич Микола Ферапонтович" data-full="./narushevych-mykola-ferapontovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 26.05.1902 р. в с. Василівка на Хмельниччині. У 1919 р. був одним з засновників юнацької спілки, що діяла під орудою УСДРП, та партії соціалістів-самостійників. Закінчив у 1920 р. Вінницьку українську гімназію, яка сформувала його національні погляди.</p>
+          <p>Вчителював у селах. У 1924–1926 рр. служив у армії, з 1926-го працював інструктором образотворчих мистецтв у Вінницькій трудовій школі та завідувачем художнього відділу історично-побутового музею (1926–1933). У 1930 р. склав екстерном екзамени на літературно-лінгвістичному відділі Інституту профосвіти у Харкові. З 1932-го працює в інституті соцвиху у Вінниці.</p>
+          <p>Перші вірші опублікував у 1918 р. в кам&#x27;янецьких часописах &quot;Село&quot;, &quot;Україна&quot;, &quot;Шлях&quot; та вінницьких &quot;Республіканських Вістях&quot;. Пізніше ці антимосковські публікації йому згадають слідчі на допитах. У вінницькому літературному збірнику &quot;Струмінь&quot; були надруковані переклади Нарушевича з польської, а згодом він друкувався у газеті &quot;Червоний Край&quot; (Вінниця) та в журналах &quot;Нова Громада&quot;, &quot;Молодий Більшовик&quot;, &quot;Плужанин&quot;. Протягом 1925–1927 рр. М. Нарушевич опублікував книжку про Вінницю, три оповідання в журналах &quot;Культура і Побут&quot; та &quot;Молодий Більшовик&quot; і сім віршів. 19.07.1933 рр. його заарештували. На міській партконференції поета розкритикували за &quot;прояви українського шовінізму&quot; і назвали &quot;одним з ватажків&quot; контрреволюційної організації. 27. 10. 1933 р. його засудили на 10 років таборів. Про перебування Нарушевича на Соловках згадує С. Підгайний в книзі &quot;Українська інтелігенція на Соловках&quot;: &quot;Якийсь час Нарушевич перебував у Біломорсько-Балтійському таборі, куди хтось із його родичів привіз йому сина Льонка, бо дружина кудись зникла. Уперше, мабуть, Соловецька тюрма побачила не тільки батька-в&#x27;язня, а й сина – не в&#x27;язня на становищі ув&#x27;язненого. Льонок жив разом з татом в одній камері і був предметом уваги всієї соловецької громади. Найбільшими друзями Льонка були Микола Зеров і Олекса Слісаренко, які не тільки провадили з хлопцем всілякі розмови, а й брали участь у різних іграх, які вигадував Льонок… Так цей в&#x27;язень добув на острові до червня 1937 р., а потім його відправлено з острова, уже без батька, невідомо куди. Батько працював на сільськогосподарських роботах і дуже переживав розлуку з сином&quot;. &quot;Особой тройкой УНКВД ЛО 25.11.1937 г. приговорен по ст. 58-10-11 УК РСФСР к высшей мере наказания. Расстрелян в г. Ленинград 8.12.1937&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

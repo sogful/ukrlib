@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Манів Галина Миколаївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Манів Галина Миколаївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./maniv-halyna-mykolaivna.webp" alt="Манів Галина Миколаївна" title="Манів Галина Миколаївна" data-full="./maniv-halyna-mykolaivna.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася 13 березня 1965 р. у м. Кишиневі (Молдова).</p>
+          <p>Закінчила Київське медичне училище № 1.</p>
+          <p>Працювала операційною медсестрою в лікарнях м. Києва. Закінчила Київський національний університет ім. Т. Шевченка за спеціальністю &quot;Українська філологія та фольклористика&quot; (магістр, 2008). Працює літературним редактором. Мешкає у Києві. Авторка збірок &quot;Хрещаті пелюстки&quot;, &quot;Альбом вчорашнього Світання&quot;, &quot;До неба&quot;. Автор поетичних книжок: &quot;Хрещаті пелюстки&quot; (1999); &quot;Терновий танок&quot; (2000); &quot;Ранкова троянда&quot; (2002); &quot;Альбом вчорашнього світання&quot; (2005); &quot;До неба&quot; (2010); &quot;Квартирія: Казки&quot; (2015; усі — Київ); &quot;Пригоди Тараса у далекому космосі&quot; (2017, Фонтан казок); &quot;Киці-мандрівниці. Як усе почалося&quot; (книжка 1) (2019, Рідна мова); &quot;Киці-мандрівниці. Друг по листуванню&quot; (кн. 2) (2019, Рідна мова); &quot;Киці-мандрівниці. Страшно цікава казка&quot; (кн.3) (2019). Поезія письменниці присвячена християнській тематиці, роздумам над буттям людини у цьому світі. Галина Миколаївна також є упорядником збірників християнської поезії: &quot;На лузі Господньому&quot; (2007); &quot;Струни вічності&quot; (Львів, &quot;Свічадо&quot;, 2008); &quot;Молитва вигнанця&quot; (Київ, &quot;Братське&quot;, 2010) &quot;Ангели. Дерева. Люди&quot; (усі — Львів, 2013); Співупорядниця: серії &quot;Християнська читанка&quot;; зб. прози Н. Теплоухової &quot;Політ підбитого птаха&quot; (2007); збірки вибраного Олександра Шовтути &quot;Дзвони врятованого сонця&quot; (2010). Автор перекладів із російської мови збірок віршів для дітей Ірини Токмакової &quot;Де спить рибка&quot; (2010), Ірини Пивоварової &quot;Жив собі собака&quot;, Ренати Мухи &quot;Ужалений Вуж&quot;, Віктора Луніна &quot;З ким ти, зайку, дружиш?&quot; (усі — 2011), Сергія Козлова &quot;Збудував я гарний дім&quot; (2012; усі книжки вийшли у в-ві &quot;Махаон-Україна&quot;, Київ). Твори вміщені у багатьох літературних антологіях, альманахах та збірниках (&quot;Радосинь&quot;, 2004; &quot;Сонячна Мальвія&quot;, 2005, 2007; &quot;Книга про батька&quot;, 2013; &quot;Радосинь–23&quot;, 2015).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

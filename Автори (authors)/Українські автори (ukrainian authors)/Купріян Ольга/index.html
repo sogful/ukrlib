@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Купріян Ольга — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Купріян Ольга</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kupriian-olha_2.webp" alt="Купріян Ольга" title="Купріян Ольга" data-full="./kupriian-olha_2.webp" /><img class="side-img side-thumb" src="./kupriian-olha_3.webp" alt="Купріян Ольга" title="Купріян Ольга" data-full="./kupriian-olha_3.webp" /></div>
+        <div class="prose-text">
+          <p>Ольга Купріян народилася 23 травня 1988, с. Маковище Макарівського району Київської області в родині вчителів — українська письменниця, літературна критикиня, літературознавиця, співзасновниця щорічного &quot;Рейтингу критика: найкращі дитячі та підліткові книжки року&quot;, координатор проекту підтримки дитячого читання BaraBooka. Простір української дитячої книги.</p>
+          <p>З першого класу мріяла бути письменницею. Закінчила Національний університет &quot;Києво-Могилянська академія&quot;, факультет української філології.</p>
+          <p>Ще в університеті писала відгуки та рецензії на сучасні книжки, опановувала жанр інтерв&#x27;ю. Працювала випусковим редактором української газети, що спеціалізувалася на українському книговиданні та літературній критиці &quot;Друг читача&quot;, редакторкою українського книжкового вебпорталу &quot;ЛітАкцент&quot;, коректоркою та керівником прес-центру у видавництві &quot;Грані-Т&quot;. З 2013 року веде блог про дитячу й підліткову літературу &quot;Читацькі нотатки Христі Нечитайко&quot;. Авторка повісті для підлітків &quot;Солоні поцілунки&quot; (ВЦ &quot;Академія&quot;, 2016), що ввійшла в короткі списки &quot;ЛітАкценту року&quot; та отримала відзнаку &quot;Рейтингу критика&quot; за найкращий дебют. У 2018 році вийшли книжки &quot;Беркиць проводжає дідуся&quot; (серія &quot;Читальня&quot;, видавництво &quot;Ранок&quot;) і &quot;Суперклей для вази&quot; (серія &quot;Слухай серцем&quot;, &quot;Ранок&quot;). У 2019 році у спільному проекті літагенції &quot;BaraBooka&quot; і видавництва &quot;Ранок&quot; вийшла ще одна книжка на тему бобрів – &quot;Боброго ранку!&quot; з ілюстраціями Марини Шутурми, а також книжка-картинка &quot;Мамонт&quot; із ілюстраціями Грасі Олійко. Оповідання &quot;Майори&quot; ввійшло в електронну збірку &quot;Окуляри і кролик-гном&quot;, доступну для вільного завантаження на сайті видавництва &quot;Братське&quot;. На замовлення &quot;1+1 Media&quot; та видавництва &quot;Книголав&quot; написала &quot;Щоденник Лоли&quot; (2018), книжку-приквел до популярного серіалу &quot;#Школа&quot;. На презентацію книжки та зустріч із героями серіалу під час Форуму видавців у Львові прийшло близько 4 тисяч людей. Книжку відзначило журі премії &quot;ЛітАкцент року 2018&quot;. У співавторстві з журналісткою Яніною Соколовою написала книжку для дорослих &quot;Я, Ніна&quot; (2019), яка отримала відзнаку BookForum Best Book Award 2020 у категорії &quot;Сучасна українська проза&quot;. 2021 року у &quot;Видавництві Старого Лева&quot; вийшла книжка &quot;Мирослава та інші з нашого двору&quot;. У 2023 року вийшла українсько-польська книжка-картинка &quot;Муркиця загубилася. Zagubiona Mruczusia&quot;, що описує досвід вимушеної еміграції під час російсько-української війни. Польський переклад зробила Анета Камінська. Книжка вийшла завдяки стипендійній програмі &quot;Pogranicze&quot;. Любить купувати й дарувати книжки, особливо дитячі. Не здатна назвати улюбленого письменника, зате завше готова перерахувати з десяток книжок, які перевернули її світ.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

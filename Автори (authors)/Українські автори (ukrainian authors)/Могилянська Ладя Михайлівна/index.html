@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Могилянська Ладя Михайлівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Могилянська Ладя Михайлівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mohylianska-ladia-mykhaylivna.webp" alt="Могилянська Ладя Михайлівна" title="Могилянська Ладя Михайлівна" data-full="./mohylianska-ladia-mykhaylivna.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася 7.11.1899 р. у Чернігові в родині українського письменника та громадського діяча Михайла Могилянського. Закінчила у 1917 р. гімназію в Петербурзі, а на початку 1920-х Чернігівський ІНО.</p>
+          <p>Друкувалась з 1919 р. в журналах &quot;Просвещение&quot; (Чернігів), &quot;Зоря&quot;, &quot;Червоний Шлях&quot;, &quot;ЛНВ&quot;, &quot;Всесвіт&quot;, &quot;Життя й Революція&quot;, &quot;Нова Громада&quot;, в газеті &quot;Селянське Життя&quot; (Чернігів, 1924) та ін. 16.01.1929 р. поетеса була заарештована. Напередодні арешту працювала у редакції газети &quot;Червоний Стяг&quot; у Чернігові. 9.07.1929 р. її засудили до розстрілу, який замінили десятьма роками таборів. Термін відбувала на Соловках і Бел-Балтлагері на будівництві Біломорсько-Балтійського каналу. Працювала друкаркою, кілька віршів їй вдалося російською мовою надрукувати у журналі &quot;Соловецкие острова&quot;. У 1933 р. її достроково звільнили і вона продовжувала працювати вже у Дмитлагері як вільнонаймана у літературно-художньому журналі &quot;На штурм трассы&quot; та редактором табірної газети українською мовою &quot;За нову людину&quot;, де також друкувала вірші. У 1935 р. побачила світ перша книжка поезій Л. Могилянської із символічною назвою &quot;Два канала&quot;, до якої увійшли поезії російською та українською мовами. Зокрема й така:</p>
+          <p>Навіть сам Максим Горький, оглядаючи творчість каторжан, назвав вірші Могилянської &quot;отличными стихами&quot;. Поетеса написала у таборі також лібрето опери &quot;Казка про мертву царівну&quot; М. Черняка. 21.07.1936 р. Л. Могилянську прийняли кандидатом до Спілки письменників СРСР. Але, шукаючи якогось захисту у тих важких умовах, Могилянська близько зійшлася з начальником Дмитрівського лагеря НКВС Семеном Фіріним. За чутками, навіть вийшла за нього заміж. Це було фатальне рішення. 11.05.1937 року Л. Могилянську заарештували у справі С. Фіріна, а 5.06.1937 р. її засудили до розстрілу. Вирок виконали 6.06.1937 р. &quot;Место захоронения – Москва, Донское кладбище&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

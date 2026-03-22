@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мосендз Леонід Маркович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мосендз Леонід Маркович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mosendz-leonid-markovych.webp" alt="Мосендз Леонід Маркович" title="Мосендз Леонід Маркович" data-full="./mosendz-leonid-markovych.webp" /></div>
+        <div class="prose-text">
+          <p>Леонід Мосендз народився 2 жовтня 1897 року в м. Могилеві-Подільському в родині державного урядовця, з українського роду Мосендзи. 1915 р. закінчив у Вінниці учительську семінарію. У роки Першої світової війни перебував у російській армії, потім вступив до війська УНР.</p>
+          <p>Після поразки УНР емігрував. З польської Ченстохови у 1922 році переїхав до Чехословаччини, де 1923/24 p. закінчив гімназію і вступив на хіміко-технологічний факультет Української господарської академії в Подєбрадах. 1928 р. одержує тут диплом інженера-технолога й залишається в УГА асистентом.</p>
+          <p>У 1931 р. він захищає докторську дисертацію з проблем переробки нафти, працює в лабораторіях. У час пробудження Закарпаття Мосендз у 1937/38 p. викладає в Державній академії в Сваляві, а після окупації Закарпаття переїжджає до Братислави. У 1945 р. виїздить до Австрії. У м. Інсбруку Мосендз заприятелював з Ю. Кленом (О. Бургардтом), з яким разом 1947 р. видав (під спільним псевдонімом Порфирій Горотак) збірку пародійних віршів &quot;Дияволічні параболи&quot;. У 1946 р., тяжко хворий на сухоти, переїжджає до Швейцарії, де в м. Бльоне (Blonay) 1948 р. помирає 14 жовтня, похований там же. Його спадщина багата: збірка &quot;Зодіак&quot; (1941), три поеми (&quot;Вічний корабель&quot; (1940), &quot;Канітферштан&quot; (1945) і &quot;Волинський рік&quot; (1948)), три збірки новел і оповідань (&quot;Засів&quot;, &quot;Людина покірна&quot;, &quot;Відплата&quot;) і незавершений роман &quot;Останній пророк&quot; (посмертне видання 1960).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

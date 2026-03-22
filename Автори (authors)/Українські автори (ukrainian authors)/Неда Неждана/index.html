@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Неда Неждана — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Неда Неждана</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./neda-nezhdana_3.webp" alt="Неда Неждана" title="Неда Неждана" data-full="./neda-nezhdana_3.webp" /><img class="side-img side-thumb" src="./neda-nezhdana.webp" alt="Неда Неждана" title="Неда Неждана" data-full="./neda-nezhdana.webp" /><img class="side-img side-thumb" src="./neda-nezhdana_1.webp" alt="Неда Неждана" title="Неда Неждана" data-full="./neda-nezhdana_1.webp" /><img class="side-img side-thumb" src="./neda-nezhdana_2.webp" alt="Неда Неждана" title="Неда Неждана" data-full="./neda-nezhdana_2.webp" /></div>
+        <div class="prose-text">
+          <p>Надія Леонідівна Мірошниченко (Неда Неждана) народилася 8 червня 1971 року в Краматорську Донецької області. Закінчила Київську художню школу, Київський лінгвістичний університет (французька філологія, диплом із відзнакою) та Києво-Могилянську академію (культурологія). Навчалася і працювала у Центрі Сучасної експериментальної драматургії А. Дяченка.</p>
+          <p>Працювала журналісткою в агентстві УНІАН, заввіділом театру журналу &quot;Кіно-Театр&quot;, друкувалася в періодиці (&quot;Дзеркало тижня&quot;, &quot;Урядовий кур&#x27;єр&quot;, &quot;ПІК&quot;, &quot;Літературна Україна&quot;, &quot;Хрещатик&quot; тощо), завлітом Київського обласного театру ім. П. Саксаганського, сценаристкою радіосеріалу &quot;Життя відстанню в 10 хвилин&quot; (Освітній Центр Реформ), сценарною редакторкою серіалу &quot;Любов — це…&quot; (Західно-Європейський Інститут). Була одним із засновників театрального інтернетсайту &quot;Віртеп&quot;, зокрема упорядницею драматургічної бібліотеки.</p>
+          <p>Із 2001 року — наукова співробітниця Центру театрального мистецтва імені Леся Курбаса, кураторка драматургічних проєктів, захистила кандидатську дисертацію &quot;Структуротвірна роль міфу у сучасній українській драмі&quot; (теорія літератури). Брала участь в науково-практичних конференціях та семінарах. Має понад 20 наукових публікацій і понад 70 аналітичних в журналах, газетах і книгах України та за її межами (Польща, Франція, Німеччина, Велика Британія). Одна із співзасновників незалежного театру і Київської театр-студії МІСТ. Викладала теорію і практику драматургії на кафедрі теорії літератури, компаративістики і літературної творчості в КНУ імені Т.Шевченка, КДУ імені Б.Грінченка, НАКККІМ. Із 2013 — голова українського комітету мережі Євродрами Дому Європи і Сходу в Парижі (Франція). Твори перекладалися російською, польською, англійською, французькою, вірменською, грузинською, болгарською, македонською, естонською, сербською, португальською, німецькою, турецькою, курдською мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

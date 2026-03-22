@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Куровський Дмитро Мусійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Куровський Дмитро Мусійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kurovskyy-dmytro-musiyovych.webp" alt="Куровський Дмитро Мусійович" title="Куровський Дмитро Мусійович" data-full="./kurovskyy-dmytro-musiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився Дмитро Мусійович у с. Мала Загорівка Борзнянського району Чернігівської губернії у 1922 р.</p>
+          <p>З 1932 по 1939 р. навчався в плисецькій середній школі, за тим вступив на філологічний факультет Ніжинського педінституту. З другого курсу був мобілізований до армії. Служив авіатором — стрільцем на літаку; кінець війни зустрів у Варшаві. 1946 року Куровський повернувся до інституту, а по його закінченню продовжив навчання в аспірантурі при Київському Державному Університеті.</p>
+          <p>Вперше Дмитро Мусійович Куровський зацікавився поезією у 1936 році. Вже через рік були опубліковані перші вірші, які одразу привернули увагу у відповідних органах за недостатню лояльність до радянського режиму. Писав вірші Дмитро Куровський і під час війни. Про &quot;незаурядные качества растущего литератора&quot; зазначено в його службовій характеристиці. У 1950-60-і роки працював кореспондентом, інспектором облвно. Проте головною справою для нього було вчителювання (викладав українську мову та літературу) у Чернігівському та Миколаївському педінститутах, середніх школах Устилуга та Чернігова. Був одним із засновників Чернігівського осередку Національної спілки письменників України (членом спілки став 1971 року). У 1970-80-х роках став жертвою радянської каральної психіатрії. Помер Дмитро Мусійович на 66-му році життя. Похований у рідному селі. Видання творів: Поетична збірка &quot;У домі ріднім&quot; 1959 р. Поетична збірка &quot;Андрійко і чечітка&quot; Поетична збірка &quot;Миропілля&quot; 1966 р. Поетична збірка &quot;Польова сторожа&quot; Поетична збірка &quot;Хвала долі&quot; 1982 р. Також за життя Дмитра Куровського вийшли 12 книг дитячих віршів його авторства. Посмертно: Поетична збірка &quot;Приду таким, як є…&quot; 1996 р. Роман &quot;Недосвіт&quot; 2003 р. вид. Чернігівські обереги Поетична збірка &quot;Далекі музики&quot; 2012 р. Видання до 90-річчя від дня народження поета.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

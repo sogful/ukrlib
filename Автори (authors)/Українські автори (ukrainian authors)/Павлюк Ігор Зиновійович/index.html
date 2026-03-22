@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Павлюк Ігор Зиновійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Павлюк Ігор Зиновійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pavliuk-ihor-zynoviyovych.webp" alt="Павлюк Ігор Зиновійович" title="Павлюк Ігор Зиновійович" data-full="./pavliuk-ihor-zynoviyovych.webp" /><img class="side-img side-thumb" src="./pavliuk-ihor-zynoviyovych_1.webp" alt="Павлюк Ігор Зиновійович" title="Павлюк Ігор Зиновійович" data-full="./pavliuk-ihor-zynoviyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ігор Павлюк — відомий український письменник та науковець, член Асоціації європейських письменників. Ігор Зиновійович Павлюк побачив світ на Волині 1 січня 1967 року. Через десять днів після його народження померла мама Ігоря — Павлюк Надія Олексіївна (дівоче прізвище — Вовкотруб). Виховували хлопця дід і баба, прадід і прабаба по материнській родовій лінії — примусові переселенці з Холмщини у с. Ужова Рожищенського району. Родина по батькові жила у с. Малий Окорськ Локачинського району. Ігор закінчив із золотою медаллю Доросинівську середню школу і вступив до Санкт-Петербурзького військового училища, яке скандально залишив на другому курсі, коли почав писати вірші, за що був покараний засланням у Забайкальську тайгу. Там йому прийшлося будувати автомобільну дорогу разом із в&#x27;язнями. Після повернення на Батьківщину, у 1986 – 1987 роках, Ігор Павлюк працював кореспондентом Ківерцівської районної газети на Волині. У 1992 році він з відзнакою закінчив факультет журналістики Львівського державного університету імені Івана Франка, після чого працював у релігійній пресі та робив передачі на радіо. З 1987 року письменник мешкав у Львові, а з 2003-го року — у Києві. Ігор Зиновійович любить подорожувати Україною та світом. У 1999 та 2000 роках він був у творчому відрядженні у США — науковцем, &quot;ченцем&quot;, поетом-пілігримом. Він був також учасником міжнародних літературних фестивалів, зустрічей — у Грузії, Росії, Білорусії, Польщі, Туреччині, Ірландії...</p>
+          <p>Нині Ігор Зиновійович Павлюк — доктор наук із соціальних комунікацій — працює старшим науковим працівником відділу української літератури XX століття Інституту літератури ім. Тараса Шевченка НАН України у місті Києві. Він також — професор кафедри української преси Львівського національного університету імені Івана Франка, член редколегій літературно-мистецьких та наукових часописів, збірників: &quot;Терен&quot;, &quot;Золота пектораль&quot;, &quot;Дзвін&quot;, &quot;Українська літературна газета&quot;, &quot;Вісник Львівського університету&quot;.</p>
+          <p>Ігор Зиновійович Павлюк — Лауреат Народної Шевченківської премії (&quot;Залізний Мамай&quot;), літературних премій імені Василя Симоненка, імені Бориса Нечерди, міжнародної літературної премії імені Миколи Гоголя &quot;Тріумф&quot;, імені Маркіяна Шашкевича, імені Григорія Сковороди. Ігор Павлюк — автор багатьох книг. Він також перекладає з російської мови. Окремі його вірші стали піснями. За композиціями віршів Ігоря Павлюка створено театральні постановки. Його п’єсу &quot;Вертеп&quot; ставить Львівський драматичний театр імені Лесі Українки. Твори Ігоря Павлюка перекладені російською, білоруською, польською, англійською, латиською, болгарською, японською мовами. Ігор Павлюк представлений у книзі &quot;European writer Introduction&quot;. Книга &quot;Політ над Чорним морем&quot; Ігоря Павлюка посіла перше місце за підсумками відкритого голосування і була визнана книгою року у Великобританії (&quot;A Flight Over the Black Sea&quot;, переклав Стівен Комарницький). Вірші Ігоря Павлюка, зібрані в книзі, запрошують читача відправитися на прогулянку українським поліссям, описуючи зустрічні явища за допомогою витончених метафор.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

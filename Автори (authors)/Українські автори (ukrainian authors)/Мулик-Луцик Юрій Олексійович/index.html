@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мулик-Луцик Юрій Олексійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мулик-Луцик Юрій Олексійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mulyk-lutsyk-iuriy-oleksiyovych.webp" alt="Мулик-Луцик Юрій Олексійович" title="Мулик-Луцик Юрій Олексійович" data-full="./mulyk-lutsyk-iuriy-oleksiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Мулик-Луцик Юрій Олексійович (31. 12. 1913, с. Татаринці Кременецького повіту Волинської губернії, нині с. Лановецького району Тернопільської області – 12. 06. 1991, м. Він­ніпеґ, провінція Манітоба, Канада) – дослідник історії української Церкви, славіст, філософ. Дійсний член УВАН.</p>
+          <p>Студіював право й суспільні науки у Віленському університеті (нині Вільнюський університет, 1933–36), слов&#x27;янську філологію у Львівському (1936–37) та Варшавському (1937–39) університетах. В останньому 1939 здобув ступінь магістра за працю &quot;Західні впливи в українській церковній драмі&quot;, 1948 в УВУ в Мюнхені під керівництвом професора Ю. Шевельова – доктора з теми &quot;Психотранспозиція в українській синтаксі&quot;.</p>
+          <p>1948 виїхав до Канади. Тут викладав у Манітобському університеті (допомагав Я. Рудницькому в організації відділу славістики), в Колегії св. Андрея у Вінніпезі, був редактором часописів &quot;Вісник&quot;, &quot;Рідна нива&quot;, &quot;Новий літопис&quot; та &quot;Віра і культура&quot;. Один з організаторів товариства &quot;Волинь&quot;, Інституту дослідів Волині, науковий редактор їхніх видань. Як філософ, М.-Л. притримувався антропоцентризму. Важливою, на його думку, є антропотелеологія, що концентрується на меті буття людини. У спів­авторстві із С. Савчуком підготував монументальну працю &quot;Історія Української греко-православної церкви в Канаді&quot; в 6-ти томах (видруковано лише томи 1–4 – 1984–89). За його редакцією і доповненнями видано &quot;Етимологічний словник української мови&quot; І. Огієнка (т. 1–3, 1979, 1982, 1988). Автор низки наукових праць, зокрема &quot;Духов­ний портрет Ольги Кобилянської&quot; (1952), &quot;Старо-церковно-сло­в&#x27;ян­ська мова як мова релігійного культу&quot;, &quot;До методології назво­знавства&quot; (обидві – 1953), &quot;Психологічна й антропологічна характеристика волинян&quot; (1954), &quot;Читанка кирилівських текстів із словником&quot;, &quot;Граматика церков­но-слов&#x27;янської мови&quot;, &quot;Нарис історії Української Православної Церкви&quot; (ч. 1; усі – 1979). Усі зазначені праці опубліковані у Вінніпезі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Михед Олександр Павлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Михед Олександр Павлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mykhed-oleksandr-pavlovych.webp" alt="Михед Олександр Павлович" title="Михед Олександр Павлович" data-full="./mykhed-oleksandr-pavlovych.webp" /><img class="side-img side-thumb" src="./mykhed-oleksandr-pavlovych_1.webp" alt="Михед Олександр Павлович" title="Михед Олександр Павлович" data-full="./mykhed-oleksandr-pavlovych_1.webp" /><img class="side-img side-thumb" src="./mykhed-oleksandr-pavlovych_2.webp" alt="Михед Олександр Павлович" title="Михед Олександр Павлович" data-full="./mykhed-oleksandr-pavlovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Михед Олександр Павлович — український письменник, культуролог, куратор мистецьких проєктів.</p>
+          <p>Олександр Михед народився 21 квітня 1988 року в Києві. Закінчив Київський національний університет імені Тараса Шевченка. Кандидат філологічних наук.</p>
+          <p>Автор численних публікацій (понад 150) у провідних українських ЗМІ (від &quot;Дзеркала тижня&quot; й &quot;Кореспондента&quot; до &quot;Українського тижня&quot; і &quot;Сучасності&quot;) та виданнях Німеччини, Сербії, Польщі, Чехії. Живе та працює в Києві. Автор художніх книжок &quot;Амнезія&quot; (2013), &quot;Понтиїзм&quot; (2014), &quot;Астра&quot; (2015), арт-буку &quot;Мороки&quot; (разом із художницею Сонею Мельник, 2016), нон-фікшн дослідження &quot;Бачити, щоб бути побаченим: реаліті-шоу, реаліті-роман та революція онлайн&quot; (2016) та збірки оповідань &quot;Транзишн&quot; (2017). Арт-директор видавництва ArtHuss. В якості відповідального редактора підготував до друку близько 20 видань. Лектор освітніх проектів KMBS, LitOsvita, Botan, Світло, Культурного проекту. Веде авторський курс із креативного письма &quot;Коротше пиши&quot;, створений разом із бібліотекою Botan. Здійснив українською переклад автобіографії Марини Абрамович &quot;Пройти крізь стіни&quot; (2018). Учасник літературних резиденцій у Фінляндії, Латвії, Ісландії, США та Франції. Куратор літературної програми PinchukArtCentre (2010-2012), куратор літературної програми Гогольfest (2012-2013) і десятка виставкових проектів.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Околітенко Наталя Іванівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Околітенко Наталя Іванівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./okolitenko-natalia-ivanivna.webp" alt="Околітенко Наталя Іванівна" title="Околітенко Наталя Іванівна" data-full="./okolitenko-natalia-ivanivna.webp" /><img class="side-img side-thumb" src="./okolitenko-natalia-ivanivna_1.webp" alt="Околітенко Наталя Іванівна" title="Околітенко Наталя Іванівна" data-full="./okolitenko-natalia-ivanivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Наталя Околітенко народилася 6 вересня 1939 року в Києві.</p>
+          <p>провела дитинство в Острі. Рано осиротіла, батько помер невдовзі після її народження. Закінчила 1962 року біологічний факультет Київського державного університету (спеціальність &quot;Фізіологія рослин&quot;). Три роки викладала в школі хімію і біологію. Була фаховим редактором у видавництві &quot;Радянська школа&quot;, літературним редактором у газеті &quot;Радянська освіта&quot;, заввідділу науки й кореспонденткою в журналі &quot;Україна&quot;, заступником головного редактора альманаху &quot;Натураліст — все про довкілля&quot;. З 1999 року вона веде кілька рубрик і пише статті в журналі &quot;Жінка&quot;. Тривалий час Наталя Околітенко працювала у приватній компанії &quot;Науково-дослідний інститут інформаційно-хвильових технологій&quot;. 15 травня 2004 року стала членом ГО Українська академія наук, а у 2008 році — гранд-доктором філософії — за версією &quot;Всесвітнього університету розвитку науки, освіти та суспільства&quot; (Росія), недержавного освітнього закладу, що видається через &quot;Міжнародний університет фундаментальної освіти&quot;, неакредитований приватний заклад.</p>
+          <p>1977 року вступила у Спілку письменників України. 27 квітня 2013 року Наталі Околітенко присвоєно звання &quot;Заслужений журналіст України&quot;. Останні два роки життя, після смерті чоловіка — Данила Кулиняка, Наталя Околітенко важко хворіла. Померла 2 грудня 2017 року в Ірпені, похована 4 грудня на ірпінському кладовищі, поряд із чоловіком.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

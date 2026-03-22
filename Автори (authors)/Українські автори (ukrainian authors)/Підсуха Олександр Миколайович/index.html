@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Підсуха Олександр Миколайович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Підсуха Олександр Миколайович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pidsukha-oleksandr-mykolayovych.webp" alt="Підсуха Олександр Миколайович" title="Підсуха Олександр Миколайович" data-full="./pidsukha-oleksandr-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>ОЛЕКСАНДР ПІДСУХА</p>
+          <p>(нар. 1918)</p>
+          <p>Олександр Михайлович Підсуха увійшов в українську літературу одночасно з такими письменниками-воїнами, як О. Гончар, Г. Тютюнник, П. Воронько та ін. Він народився 16 жовтня 1918р. в с. Ніжиловичах на Київщині в родині сільського коваля. Закінчивши семирічку в сусідньому селі, пішов на робітфак Київського лінгвістичного інституту, а за два роки був уже студентом Харківського педагогічного інституту іноземних мов. Після закінчення навчання О. Підсуха працює викладачем Донецького індустріального інституту (1939 — 1941). З 1941 по 1945 pp.—поет на фронтах Великої Вітчизняної війни. У післявоєнні роки викладав англійську мову в Київському педагогічному інституті ім. М. Горького. О. Підсуха з 1953 по 1958 pp. працював відповідальним редактором журналу &quot;Дніпро&quot;, згодом — завідуючим редакцією серії &quot;Романи й повісті&quot; видавництва &quot;Дніпро&quot;. З 1973 по 1979 pp. — він голова Товариства культурних зв&#x27;язків з українцями за кордоном. Ще у студентські роки О. Підсуха пробує своє перо. Перша поетична збірка &quot;Солдати миру&quot; вийшла друком 1948р. Тут найповніше виписано образ воїна-визволителя. З&#x27;являються книги &quot;Життя за нас&quot; (1950), &quot;Слово про наших друзів&quot; (1951). У 50—60-ті pp. відкривається О. Підсуха читачам як прозаїк. Поряд із ліричними збірками &quot;Героїка&quot; (1951), &quot;Іду на клич&quot; (1965), &quot;Краплини&quot; (1966), &quot;Розповень&quot; (1969) з&#x27;являється перша книжка прози &quot;Віч-на-віч. Невигадані історії&quot; (1962). Найпомітніше досягнення поета того періоду — віршований роман &quot;Поліська трилогія&quot; (1962). З кінця 1962р. за рекомендацією Спілки письменників О. Підсуха відряджається як стипендіат ЮНЕСКО до Канади, Англії, Франції, США. Наслідком подорожі за океан став цикл поезій &quot;Канадський зошит&quot;, який ліг в основу збірки &quot;Материн заповіт&quot; (1964). Поема &quot;Материн заповіт&quot; (1962) ввійшла до однойменної збірки, що побачила світ в 1964р., стала одним з кращих творів в ліро-епічному жанрі. Вона заснована на автобіографічному матеріалі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

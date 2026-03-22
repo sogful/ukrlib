@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Обиденна Марія Олексіївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Обиденна Марія Олексіївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./obydenna-mariia-oleksiivna.webp" alt="Обиденна Марія Олексіївна" title="Обиденна Марія Олексіївна" data-full="./obydenna-mariia-oleksiivna.webp" /><img class="side-img side-thumb" src="./obydenna-mariia-oleksiivna_1.webp" alt="Обиденна Марія Олексіївна" title="Обиденна Марія Олексіївна" data-full="./obydenna-mariia-oleksiivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Обиденна Марія (1979 р.н.) — письменниця та перекладачка, народилась у стародавньому місті Чернігові розташованому на півночі України.</p>
+          <p>Своє перше оповідання, хоча й досить наївне, написала у дев&#x27;ятирічному віці. З цього все і почалося — з любові до письма та читання. Почала придумувати свої історії. Згодом, короткі оповідання були об&#x27;єднані у збірку &quot;У Лісі&quot;. Для того щоб допомогти дитині, відчути реальне досягнення, батьки зібрали її кращі твори та зшили їх разом у вигляді книги. Обкладинку зробити з картону та прикрасили ілюстраціями. Так з&#x27;явилась перша книга письменниці. З дитинства займалася музикою та грою на фортепіано. Цікавилась історією рідного краю.</p>
+          <p>Вступила до Чернігівського національного педагогічного університету ім. Т.Г. Шевченка на спеціальність історія, англійська мова та література. У Київському міжнародному університеті (КиМУ) отримала ступінь магістра зі спеціальності англійська філологія. Переїхала жити до міста Києва. Під час навчання в університеті та магістратурі писала короткі оповідання, які увійшли в збірку &quot;Чарівна скринька&quot;. Заснувала письменницькі студії &quot;Український есей&quot; для авторів-початківців. За час роботи Студії відвідали десятки авторів, було проведено ряд заходів, які значно активізували процес розвитку письменницьких навичок. У 2020 році, у видавництві &quot;Український письменник&quot; НСПУ вийшла книжка &quot;Жанр есе. Як писати есе на різні теми&quot;. Книга-посібник &quot;Жанр есе. Як писати есе на різні теми&quot; була представлена на численних міжнародних книжкових виставках, в тому числі і на книжковому фестивалі Книжковий Арсенал — 2020. Книга номінувалась в конкурсі &quot;Найкращий книжковий дизайн — 2020&quot; та отримала схвальні відгуки художників та ілюстраторів. Мета книжки — це систематизація та поглиблення знань з літературної майстерності. Запропонований матеріал охоплює різні види есе та етапи роботи над твором у жанрі есе. Книжку поділено на розділи. Кожний розділ містить теоретичний матеріал з основними поняттями та словник термінів у кінці книжки. Ідея написати фантастичний роман про мандрівки Всесвітом виникла дуже давно, але не була реалізована. Короткі оповідання згодом були об&#x27;єднані в роман в оповіданнях &quot;До сузір&#x27;я Піч&quot;. В романі читач поринає у світ нової галактичної ери, яка пануватиме через тисячі років. Автор описує, як людство крокує перед, досліджує нові світи та починає контролювати віддаленні колонії, побудовані людиною-розумною, але стародавні вірування все ще зберігаються у пам&#x27;яті людства. Роман розповідає про дивовижні пригоди людини-розумної, яка досягла значних технічних успіхів та про подорожі далекими світами. У захоплюючій та доступній для широкого читача формі автор порушує серйозні філософські, моральні та теологічні проблеми. Інші твори письменниці включають збірку коротких оповідань, &quot;Зірка бажань&quot;, яка об&#x27;єднала оповідання різних років та різної тематики. У збірці письменниця досліджує почуття героїв, описує історії життя сучасних людей, їх яскраві характери, глибокі емоційні переживання, зльоти та падіння. Збірка поезій &quot;Сучасні матерії&quot; — поетична збірка віршів про ілюзорність світу, що існує сам у собі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

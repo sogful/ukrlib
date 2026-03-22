@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Моісєєнко Ігор Олексійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Моісєєнко Ігор Олексійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./moisieienko-ihor-oleksiyovych.webp" alt="Моісєєнко Ігор Олексійович" title="Моісєєнко Ігор Олексійович" data-full="./moisieienko-ihor-oleksiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 10 липня 1962 року у місті Кривий Ріг Дніпропетровської області.</p>
+          <p>Після закінчення школи у 1980 році був призваний в армію. Потрапив в Афганістан, де знаходився до 1982 року. Брав участь у багатьох бойових операціях.</p>
+          <p>Після повернення з армії навчався у Дніпропетровському металургійному інституті. В 90-х роках очолював Спілку ветеранів Афганістану у місті Комсомольськ-на-Дніпрі Полтавської області. В 2000-х роках працював в Кременчузі заступником головного редактора газети &quot;Кремінь&quot;. З 2011 року Член Національної спілки письменників України. Є автором двох кіносценаріїв про війну в Афганістані. За роман &quot;Сектор обстрілу – &quot;Аїсти&quot; Ігор Моісєєнко був відзначений літературно-мистецькою премією ім. Богдана Хмельницького Міністерства оборони України. У 2015 році автор став лауреатом міжнародної літературної мистецької премії ім.. М.В.Гоголя &quot;Тріумф&quot;. Ігор Моісєєнко веде активну громадську діяльність, бореться з порушенням прав воїнів-афганців. Ймовірно, саме тому з письменником сталося два дивних інциденти. 12 травня 2017 року до дверей його квартири прив&#x27;язали пакунок, схожий на саморобний вибуховий пристрій (як потім виявилося, пристрій був &quot;обманкою&quot;). 26 травня того ж року історія мала продовження – на Моісєєнко напали, завдали тілесних ушкоджень, вивезли з Кременчука в Горішні Плавні і там покинули з пакетом на голові. Зараз Ігор Моісєєнко мешкає в Кременчузі, де продовжує свою літературну та громадську роботу.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

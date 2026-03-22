@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Маслюх Андрій Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Маслюх Андрій Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./masliukh-andriy-mykolayovych.webp" alt="Маслюх Андрій Миколайович" title="Маслюх Андрій Миколайович" data-full="./masliukh-andriy-mykolayovych.webp" /><img class="side-img side-thumb" src="./masliukh-andriy-mykolayovych_1.webp" alt="Маслюх Андрій Миколайович" title="Маслюх Андрій Миколайович" data-full="./masliukh-andriy-mykolayovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 1975 року у Львові. Батько за освітою — інженер-електронщик, мати — домогосподарка. Має молодшого на 13 років брата Тараса. Навчався на індивідуальній формі у звичайній львівській школі № 70. Англійською захопився у 80-х роках, коли родичі з Америки передплатили для нього англомовний журнал &quot;National Geographic&quot;.</p>
+          <p>Попри проблеми зі здоров&#x27;ям (наслідки ДЦП), у 1998 закінчив Львівський національний університет імені Івана Франка (англійська філологія, диплом з відзнакою). Вже в університеті багато перекладав українською з англійської, зокрема оповідання Конан Дойля про Шерлока Голмса. У 2001—2003 роках навчався в Центрі італійської мови і культури при ЛНУ ім. Івана Франка.</p>
+          <p>З кінця 1998 співпрацює як перекладач-фрилансер із українськими видавництвами (Свічадо, Видавництво Старого Лева, Скриня), Товариством Ісуса в Україні (&quot;Ігнатіянська серія&quot;). У 2008 стажувався в науково-дослідницькому центрі &quot;Еціо Алетті&quot; при Папському Східному інституті (Рим, Італія). З січня 2015 року працює перекладачем у Центрі міської історії Центрально-Східної Європи. Член журі конкурсу &quot;Найкраща книга Форуму видавців&quot; 2011 року і перекладацької премії &quot;Метафора&quot; (з 2013 року). Бере участь у проекті Дерев&#x27;яні храми України. Мешкає у Львові. Одружений, має доньку.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

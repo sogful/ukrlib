@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Михайличенко Гнат Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Михайличенко Гнат Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mykhaylychenko-hnat-vasylovych.webp" alt="Михайличенко Гнат Васильович" title="Михайличенко Гнат Васильович" data-full="./mykhaylychenko-hnat-vasylovych.webp" /><img class="side-img side-thumb" src="./mykhaylychenko-hnat-vasylovych_1.webp" alt="Михайличенко Гнат Васильович" title="Михайличенко Гнат Васильович" data-full="./mykhaylychenko-hnat-vasylovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Гнат Васильович Михайличенко (*27 вересня (9 жовтня) 1892, Миропілля (Краснопільський район) — †21 листопада 1919, Київ) — письменник і політичний діяч, член Центральної Ради. У 20—30-і рр. ХХ ст. вулиця Пилипа Орлика мала його ім&#x27;я.</p>
+          <p>Син селянина. Навчався у 1908—1912 рр. у Харківському рільничому училищі, звідки за зв&#x27;язки з есерами його перевели до Московського рільничого училища. Живучи в Москві, продовжив навчання в університеті Шанявського. Мобілізований 1914 р. до армії, втік з фронту, перебував на нелегальному становищі. 1916 р. за належність до харківської організації лівих есерів військовий суд засудив його до шести років каторги (яку замінили засланням) й довічного поселення в Сибіру. Покару відбував у с. Тулуп&#x27;єму Нижньоудинського повіту Іркутської губернії.</p>
+          <p>Після Лютневої революції 1917 р. повернувся в Україну. Був одним із лідерів Української комуністичної партії (боротьбистів). Від лютого по квітень 1919 р. входив до колегії Київської ГубЧК. Від березня 1919 р. — нарком освіти УСРР. Співредактор (разом із Михайлем Семенком) першого числа &quot;Мистецтва&quot;. У травні-липні 1919 р. воював на Західному фронті. З приходом до Києва у вересні 1919 р. Добровольчої армії перейшов на підпільну партійну роботу. Разом із Василем Чумаком розстріляний денікінською контррозвідкою за участь в організації повстання проти білогвардійців на Київщині. Писав вірші з 1911 р., прозу з 1915 р. Автор &quot;Блакитного роману&quot; (Харків, 1921), повісти &quot;Історія одного замаху. (Історична повість з життя українських революціонерів до революції)&quot; (Одеса, 1918), збірки &quot;Новелі&quot; (Харків, 1922), віршів. З передмовою і за редакцією Михайличенка вийшла посмертна збірка оповідань Андрія Заливчого &quot;З літ дитинства&quot; (Київ, 1919).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

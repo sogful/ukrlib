@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лівін Марк — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лівін Марк</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./livin-mark.webp" alt="Лівін Марк" title="Лівін Марк" data-full="./livin-mark.webp" /><img class="side-img side-thumb" src="./livin-mark_1.webp" alt="Лівін Марк" title="Лівін Марк" data-full="./livin-mark_1.webp" /><img class="side-img side-thumb" src="./livin-mark_2.webp" alt="Лівін Марк" title="Лівін Марк" data-full="./livin-mark_2.webp" /></div>
+        <div class="prose-text">
+          <p>Марк Лівін (при народженні — Валерій Катерушин) — сучасний український письменник, журналіст, спікер конференції TEDx. Колишній маркетинг-директор Громадського телебачення. Заступник головного редактора The Village Україна.</p>
+          <p>Народився 14 січня 1988 року в Івано-Франківську. Навчався у Надвірнянській ЗОШ № 2, Івано-Франківських ЗОШ № 15 та № 19. У 2009 році закінчив факультет філології та масових комунікацій у ВМУРоЛ &quot;Україна&quot; за спеціальністю &quot;Видавнича справа та редагування&quot;.</p>
+          <p>Неодружений, з 2012 року живе у Києві. Лавреат літературних конкурсів видавництва &quot;Смолоскип&quot; (2012) та &quot;Коронація слова&quot; (2018). У квітні 2019 Міжнародна рада з дитячої та юнацької книги включила книгу Марка Лівіна &quot;Рікі та дороги&quot; до списку видатних книжок для дітей з інвалідністю. Отримав нагороду &quot;Мікроінфлюенсер 2021 року&quot; від National Bloggers Awards. Окремі твори письменника перекладені польською, німецькою, англійською, угорською, румунською та азербайджанською мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

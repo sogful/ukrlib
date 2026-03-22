@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мамонтів Яків Андрійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мамонтів Яків Андрійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mamontiv-iakiv-andriyovych.webp" alt="Мамонтів Яків Андрійович" title="Мамонтів Яків Андрійович" data-full="./mamontiv-iakiv-andriyovych.webp" /><img class="side-img side-thumb" src="./mamontiv-iakiv-andriyovych_1.webp" alt="Мамонтів Яків Андрійович" title="Мамонтів Яків Андрійович" data-full="./mamontiv-iakiv-andriyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>МАМОНТОВ Яків Андрійович (псевдоніми: Я. Лірницький, Я. Пан)</p>
+          <p>Український драматург і театрознавець</p>
+          <p>Народився 4 листопада 1886р. в с. Стрілиця (нині с. Шапошникове Сумської області) в селянській родині. Навчався в Дергачівському сільськогосподарському училищі. Після училища певний час працював агрономом на Курщині. 1914 р. закінчив Московський комерційний інститут, захистив кандидатську дисертацію &quot;Проблема естетичного виховання&quot; на здобуття вченого ступеня кандидата наук. 1914—1917 рр. був на фронті. З 1921 р. викладав педагогіку, естетику і психологію в Харківському інституті народної освіти. Організував при інституті театральну студію, писав для неї п’єси, робив інсценівки. Перше оповідання Я. Мамонтова &quot;Під чорними хмарами&quot; вийшло друком у журналі &quot;Рідний край&quot;, редагованому Оленою Пчілкою. В 1907 р. було написано п’єсу &quot;Дівчина з арфою&quot;. Автор ЇЇ зазнав критики за символізм, за &quot;винниченківщину&quot;, проте продовжував писати в такому самому дусі (п’єси &quot;Над безоднею&quot;, 1919—1920; &quot;Коли народ визволяється&quot;, 1924). Сповнена символів драма &quot;Ave Maria&quot; (1924), в якій ідеться вже про атомну енергію та інші таємниці природи. Того ж року Я. Мамонтов видав збірку віршів &quot;Вінки за водою&quot;. Критики звинувачували автора п’єс &quot;Веселий Хам&quot; (1921), &quot;До третіх півнів&quot; (1925) та &quot;Республіка на колесах&quot; (1928) у надмірному психологізмі, наслідуванні Г. Ібсена. Хоча він і розробляв актуальні теми, йому закидали аполітизм, декаденство, відрив від життя. Схвально була зустрінута глядачами трагікомедія &quot;Рожеве павутиння&quot; (1928), спрямована проти міщанства. Після п’єс &quot;Княжна Вікторія&quot; (1929), &quot;Його власність&quot; (1930), &quot;Золотий обруч&quot; (1930, за повістю І. Франка &quot;Захар Беркут&quot;) творча активність Я. Мамонтова знижується. Ще в 1936 p., напередодні масових репресій проти української культури, з’являється п’єса &quot;Своя людина&quot;, а в 1939 р. — інсценізація повісті М. Коцюбинського &quot;Fata morgana&quot;. Я. Мамонтов залишив помітний слід у науці. Окремими виданнями вийшли книжки &quot;Проблемы эстетического воспитания&quot; (1914), &quot;Сучасні проблеми педагогічної творчості&quot; (1922), &quot;На театральних роздоріжжях&quot; (1925). Помер 31 січня 1940 р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Морозенко Марія Миколаївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Морозенко Марія Миколаївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./morozenko-mariia-mykolaivna.webp" alt="Морозенко Марія Миколаївна" title="Морозенко Марія Миколаївна" data-full="./morozenko-mariia-mykolaivna.webp" /><img class="side-img side-thumb" src="./morozenko-mariia-mykolaivna_1.webp" alt="Морозенко Марія Миколаївна" title="Морозенко Марія Миколаївна" data-full="./morozenko-mariia-mykolaivna_1.webp" /><img class="side-img side-thumb" src="./morozenko-mariia-mykolaivna_2.webp" alt="Морозенко Марія Миколаївна" title="Морозенко Марія Миколаївна" data-full="./morozenko-mariia-mykolaivna_2.webp" /><img class="side-img side-thumb" src="./morozenko-mariia-mykolaivna_3.webp" alt="Морозенко Марія Миколаївна" title="Морозенко Марія Миколаївна" data-full="./morozenko-mariia-mykolaivna_3.webp" /></div>
+        <div class="prose-text">
+          <p>Марія Морозенко Миколаївна (*15 березня 1969, с. Малин, Рівненська область) — українська поетеса, член Національної спілки письменників України.</p>
+          <p>Марія Морозенко народилася 15 березня 1969 року в селі Малин Млинівського району Рівненської області у багатодітній сім&#x27;ї. Вона була дев&#x27;ятою дитиною із дванадцяти дітей. Коли Марії виповнилося дев&#x27;ять років трагічно загинув батько. Дванадцять дітей піднімала на ноги самотужки мама, Неоніла Андріївна, &quot;Мати-героїня&quot;. Освіта: вища, закінчила філологічний факультет Черкаського наіонального університету ім. Б. Хмельницького (2005). Літературний редактор, керівник та ведуча культурологічної студії &quot;Духовність української родини&quot; при Національному музеї літератури. Марія Морозенко автор збірок &quot;Зоряні перевесла&quot; — 1999 рік; &quot;Елегія любові&quot; — 2006 рік; історичної поеми &quot;Княгиня Ольга&quot; — 2004 рік, а також драм &quot;Марія Магдалина&quot;, &quot;Вічність&quot;, &quot;Князь Святослав&quot;. Автор дитячих казок: &quot;Про країну ласунів&quot;, навчальних серій &quot;Хто це?&quot;, &quot;Що це?&quot;, віршованих казок &quot;У зеленому ярочку&quot;, &quot;Незвичайні пригоди Чока…&quot;, серії пізнавальних загадок, літературного переказу казки &quot;Дванадцять місяців&quot;.</p>
+          <p>Творчі відзнаки: віршована казка &quot;Про незвичайні пригоди хлопчика Чока…&quot; (видавництво &quot;Преса України&quot;) відзначена золотою нагородою 3-ої Всеукраїнської виставки-ярмарку &quot;Буквиця&quot;, лауреат конкурсу &quot;Рукомесло&quot; в номінації &quot;Твори для дітей&quot;, етюд &quot;Вони і лелеки&quot; увійшов у сотню кращих українських новел конкурсу &quot;Сила малого&quot;, рукопис повісті &quot;Великий характерник Іван Сірко&quot; здобув перемогу в конкурсі &quot;Українська сила&quot;; ювілейна медаль &quot;90-річчя карного розшуку України&quot;, грамоти численних пісенних фестивалів та міжнародних конкурсів. Українська дитяча письменниця, літературна редакторка та філологиня Марія Морозенко померла у 54 роки. це сталося 9 жовтня 2023 року. Пізніше про смерть письменниці написала й журналістка Ольга Мусафірова: &quot;Учора, в неділю, вона в останній раз привезла до військового госпіталю волонтерський недільний обід, як возила всі місяці цієї страшної війни. І хлопці, як завжди, дякували їй за материнську турботу і усміхалися, а вона їм казала — &quot;До зустрічі!&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лучук Володимир Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лучук Володимир Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./luchuk-volodymyr-ivanovych.webp" alt="Лучук Володимир Іванович" title="Лучук Володимир Іванович" data-full="./luchuk-volodymyr-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився поет у селі Матче на Волині (тепер Польща) 27 серпня 1934 року. Батьки поета мали досить багату бібліотеку. Ще в дитинстві виявилося зацікавлення Володимира Лучука літературною творчістю (першого вірша він написав у сім років).</p>
+          <p>У 1945 році родина була переселена в село Доросині Волинської області і зазнала всіх бід від розриву з прадавніми коренями. Зростав хлопчик серед працьовитого люду і сам був роботящим. Радів, коли його хвалили за щось добре зроблене чи вивчене, а то й за вигадане...</p>
+          <p>Після закінчення середньої школи здібний юнак, закоханий в українську поезію, подався здобувати вищу освіту до Львівського університету на слов&#x27;янський відділ філологічного факультету, там же закінчив й аспірантуру (1958). Вірші почав друкувати ще студентом. Володя був одержимий поезією, а всі інші побутові справи для нього не існували. Ті, хто знав Володимира Івановича, називають такі головні риси його характеру, як доброта, довір&#x27;я до людей, невтомність у праці та сміливість у пошуку вагомого, як добірне зерно, слова. Мабуть, не випадково свою першу збірку поезій він назвав так промовисто — &quot;Довір&#x27;я&quot;. Якийсь час Лучук завідував відділом рукописів Львівської наукової бібліотеки ім. В. Стефаника (1969—1975). Володимир Іванович зібрав чи не найбільшу і найповнішу бібліотеку поетичних збірок, виданих в Україні. Тісна творча дружба єднала його з літераторами Білорусії, Польщі, Чехії, Словаччини, Німеччини. Володимир Лучук відомий також як перекладач і дитячий поет. Дітей він дуже любив. Навіть під час творчих поїздок у Прагу на вулицях міста він мав про що поговорити з дітьми. І хоч розмови були короткі, зате контакт налагоджувався доволі швидко. Надійною підтримкою та помічницею у царині дитячої літератури була для Володимира його дружина Оксана Сенатович. їхнім подружнім гаслом стали такі слова: &quot;Якщо ти поет — напиши для дітей!&quot;. А написав В. Лучук чимало: &quot;Сіла хмара на коня&quot;, &quot;Хитрий лис малює ліс&quot;, &quot;Чарівний глобус&quot;, &quot;Уставати рано треба&quot;, &quot;Я малюю голуба&quot;, &quot;Жива вода&quot;, &quot;Дарунки для мами&quot; тощо. Батьки поета згадували, що ще в дитинстві циганка наворожила йому смерть у дорозі. Повний творчих задумів, Володимир Лучук раптово помер у поїзді, коли їхав зі Львова до Києва (24 вересня 1992 року). Похований він у Львові на Личаківському цвинтарі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

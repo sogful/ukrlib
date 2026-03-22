@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мотрич Катерина Вакулівна — Короткий опис творчості</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мотрич Катерина Вакулівна</h1>
+      <h2>Короткий опис творчості</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./motrych-kateryna-vakulivna.webp" alt="Мотрич Катерина Вакулівна" title="Мотрич Катерина Вакулівна" data-full="./motrych-kateryna-vakulivna.webp" /></div>
+        <div class="prose-text">
+          <p>Катерина Мотрич</p>
+          <p>Мотрич Катерина Вакулівна — українська письменниця.</p>
+          <p>Народилася 30 листопада 1947 року в с. Васильків, тепер Шполянського р-ну Черкаської області. Закінчила 1971 року Київський університет. Працювала у пресі. Автор книги оповідань &quot;Соняхи&quot; (1977), збірок оповідань і повістей &quot;Час найкоротшої тіні&quot; (1982), &quot;Перед храмом любові і болю&quot; (1989), роману &quot;Досвіток&quot; (1987). Сповнена ліризму проза К. Мотрич присвячена людям села, утвердженню нетлінних моральних цінностей В останні роки письменниця широко використовує форму молитви (&quot;Молитва до мови&quot;, &quot;Молитва до убієнних голодом&quot;, &quot;Молитва до України&quot;, всі — 1991р.).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

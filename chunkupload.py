@@ -23,12 +23,19 @@ from pathlib import Path
 
 
 def _run_git(repo: Path, args: list[str], *, check: bool = True) -> subprocess.CompletedProcess:
-    return subprocess.run(
+    p = subprocess.run(
         ["git", *args],
         cwd=repo,
-        check=check,
+        check=False,
         capture_output=True,
     )
+    if check and p.returncode != 0:
+        err = (p.stderr or b"").decode("utf-8", errors="replace").strip()
+        out = (p.stdout or b"").decode("utf-8", errors="replace").strip()
+        if err or out:
+            print(err or out, file=sys.stderr)
+        p.check_returncode()
+    return p
 
 
 def _has_head(repo: Path) -> bool:

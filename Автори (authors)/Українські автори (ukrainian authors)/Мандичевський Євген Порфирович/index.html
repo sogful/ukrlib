@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мандичевський Євген Порфирович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мандичевський Євген Порфирович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mandychevskyy-ievhen-porfyrovych.webp" alt="Мандичевський Євген Порфирович" title="Мандичевський Євген Порфирович" data-full="./mandychevskyy-ievhen-porfyrovych.webp" /></div>
+        <div class="prose-text">
+          <p>МАНДИЧЕВСЬКИЙ ЄВГЕН (псевд. — Фр. Улянович; 1873, с. Зарваниця Теребовлянського р-ну Тернопільської обл. — 1929, м. Кам&#x27;янка-Струмилівська, тепер Кам’Янка-Бузька Львівської обл.) — письменник і педагог.</p>
+          <p>Вищу філологічну освіту здобув в університетах Львова, Граца та Берліна. Працював учителем німецької мови й літератури в Перемишлі, Тернополі, Чернівцях. У 1904—1905 рр. — редактор педагогічного журналу &quot;Молодіж&quot; у Тернополі. Перший опублікований твір — новела &quot;Книга життя&quot; (1897). Друкувався в журналах &quot;Літературно-науковий вістник&quot;, &quot;Дзвінок&quot;, газетах &quot;Буковина&quot;, &quot;Діло&quot;, &quot;Руслан&quot;, &quot;Подільський голос&quot;, альманахах &quot;З-над хмар і долин&quot;, &quot;Багаття&quot;, &quot;Українська муза&quot;.</p>
+          <p>Є. Мандичевський — автор новелістичних збірок &quot;З живого і мертвого&quot; (Львів, 1901), &quot;Судьба&quot; (Тернопіль, 1906), &quot;В ярмі&quot; (Тернопіль, 1907), в яких порушив морально-психологічні та соціально-побутові проблеми галицького селянства, міської бідноти, учнів і молоді, особистості загалом. Висловив протест проти несприятливих для розвитку соціальних умов, австро-угорської мілітаристської політики і світової несправедливості, втіленої в образі фатальної &quot;судьби&quot;. Окремі прозові твори письменника позначені рисами богошукання. Є. Мандичевський розробляв також белетристичні етюди — акварелі, в яких достовірно відтворював психологічний стан людини в переломних соціальних та індивідуальних моментах буття. У цілому творчість письменника розвивалася в руслі імпресіонізму. Для новелістики характерні поглиблений психологізм, наскрізний ліризм, меланхолійна настроєність, фрагментарність і лаконізм викладу, використання виразних художніх деталей і невласне прямої мови. Літ.: Яцків М. &quot;З живого і мертвого&quot;. Новели Євгена Мандичевського // Діло. 1901. Ч. 16; Бисчак В. &quot;Судьба&quot;. Новели Євгена Мандичевського // Світ. 1906; Пчілка Олена. Євген Мандичевський. В ярмі // Рідний край. 1907. Ч. 8; Ципердюк І. Несповнена надія чи ще одне забуте ім&#x27;я в українській новелістиці (Євген Мандичевський — життя і творчість на зламі століть) // Літ. Львів. 1994. Ч. 12 — 13. І. Ципердюк</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

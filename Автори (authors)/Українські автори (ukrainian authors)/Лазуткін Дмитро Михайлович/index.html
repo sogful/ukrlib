@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лазуткін Дмитро Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лазуткін Дмитро Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lazutkin-dmytro-mykhaylovych.webp" alt="Лазуткін Дмитро Михайлович" title="Лазуткін Дмитро Михайлович" data-full="./lazutkin-dmytro-mykhaylovych.webp" /><img class="side-img side-thumb" src="./lazutkin-dmytro-mykhaylovych_1.webp" alt="Лазуткін Дмитро Михайлович" title="Лазуткін Дмитро Михайлович" data-full="./lazutkin-dmytro-mykhaylovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Дмитро Михайлович Лазуткін народився 18 листопада 1978 року в м. Київ. Український телеведучий, спортивний коментатор, поет.</p>
+          <p>Закінчив Національний технічний університет України, працював телеведучим, кореспондентом та спортивним коментатором на українських телеканалах (&quot;Інтер&quot; та &quot;Перший Національний&quot;), інженером-металургом, юристом, тренером з карате.</p>
+          <p>За вірші українською мовою був удостоєний премії ім. Б.-І.Антонича (2000), премії видавництва &quot;Смолоскип&quot; (2002), премії &quot;Благовіст&quot;. Лауреат конкурсу &quot;Гранослов&quot; (2002). Автор книг українських віршів: &quot;Дахи&quot; (&quot;Дахи&quot;; К., 2003), &quot;Солодощі для плазунів&quot; (&quot;Солоди для плазунів&quot;; К., 2005), &quot;Набиті травою священні корови&quot; (&quot;Набиті травою священні корови&quot;) ;К., 2006), &quot;Бензин&quot; (К., 2008), &quot;добрі пісні про поганих дівчат&quot; (&quot;добрі пісні про поганих дівчаток&quot;); К-Під, 2012. Чемпіон України з літературного слему. Вірші російською мовою публікувалися в альманасі &quot;Вавілон&quot;, журналах &quot;©оюз Письменників&quot;, &quot;Континент&quot;, &quot;Волга&quot;, &quot;Повітря&quot;, збірнику &quot;Легко бути щирим&quot; та ін. Перша книга російських поезій &quot;Паприка мрій&quot;, видана в 2006 року з передмовою Сергія Жадана, увійшла до шорт-листа Російської премії. Лауреат ІІІ ступеня міжнародної премії &quot;Співдружність дебютів&quot; у 2008 році. Коментував Олімпійські ігри в Пекіні (церемонії відкриття та закриття, бокс, дзюдо), Ванкувері (церемонії відкриття та закриття, керлінг, гірськолижний спорт), Лондоні (церемонія відкриття, бокс, дзюдо, таеквондо) на Першому Національному, вів програми &quot;У світі &quot;, &quot;Про регбі&quot;, &quot;Чоловічий клуб&quot;, &quot;Футбольна самба&quot; (разом з Фоззі). Коментує на телеканалі &quot;Інтер&quot; бої Володимира та Віталія Кличка, Василя Ломаченка, Флойда Мейвезера та ін. У 2012 році увійшов у шорт-лист премії &quot;Телетріумф&quot;. Переможець Кубка Європи з елітних боїв, Бронзовий призер Кубка світу з кікбоксингу, Чемпіон України з контактного карате та козацького бою. З 2022 року служить у ЗСУ.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

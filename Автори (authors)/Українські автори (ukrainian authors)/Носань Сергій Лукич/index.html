@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Носань Сергій Лукич — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Носань Сергій Лукич</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nosan-serhiy-lukych.webp" alt="Носань Сергій Лукич" title="Носань Сергій Лукич" data-full="./nosan-serhiy-lukych.webp" /></div>
+        <div class="prose-text">
+          <p>Носань Сергій Лукич народився 1 липня 1939 року на хуторі Дубинка Іркліївського району Полтавської області (з 1954 р. територія Черкащини). Він був ще зовсім малим, коли батько пішов на війну і не повернувся. Усі сімейні турботи лягли на плечі матері.</p>
+          <p>Перші чотири початкові класи закінчив у своїй Дубинці, восьмирічку — в сусідньому селі Панське, а вже десятирічку довершував у селі Мельники.</p>
+          <p>Після закінчення школи працював у будівельній бригаді. Наступними віхами життя були служба в армії, робота на переправі (на поромі). 1967 року закінчив Черкаський педагогічний інститут. Працював матросом, учителем, журналістом, викладачем інституту. Товаришував із Григором Тютюнником. Автор оповідань, повістей: &quot;Стежка в зеленому житі&quot; (1976), &quot;Час глибокої осені&quot; (1979), &quot;Високі, високі гори&quot; (1984), &quot;Вогонь, що спалює дотла&quot; (1989), &quot;Пір&#x27;їна з крила Жар-птиці&quot; (про народного майстра з Кам&#x27;янки Макара Муху), &quot;Осіннє золото&quot; (2004); романів: &quot;Метеори&quot; (1986), &quot;Голгофа любові&quot;, &quot;Пласти&quot;; нарисів &quot;Геній правда&quot;, &quot;Ой, Дніпро, Дніпро&quot;; поетичних драм &quot;Остання мить&quot; (про лицаря української поезії Василя Симоненка), &quot;Судна ніч&quot; (про Богдана Хмельницького), &quot;Богом даний я народу&quot;, &quot;Мазепа&quot;; п&#x27;єс про Т. Шевченка &quot;Та не однаково мені…&quot;, про Софію Потоцьку, чиїм ім&#x27;ям названо парк &quot;Софіївку&quot; в Умані — перлину паркової архітектури світового значення &quot;Моя любове, моя Мадонно&quot;, трагікомедій &quot;Монолог&quot; та &quot;Ювілей&quot; та ін. Лауреат обласної літературної премії &quot;Берег надії&quot; імені Василя Симоненка (1994) та літературно-мистецької премії імені Михайла Старицького (2001). Працював редактором Черкаської обласної державної телерадіокомпанії. Пішов з життя 24 лютого 2019 року у м. Черкаси.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

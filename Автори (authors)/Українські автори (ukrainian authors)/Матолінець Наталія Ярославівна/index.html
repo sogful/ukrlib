@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Матолінець Наталія Ярославівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Матолінець Наталія Ярославівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./matolinets-nataliia-iaroslavivna.webp" alt="Матолінець Наталія Ярославівна" title="Матолінець Наталія Ярославівна" data-full="./matolinets-nataliia-iaroslavivna.webp" /><img class="side-img side-thumb" src="./matolinets-nataliia-iaroslavivna_1.webp" alt="Матолінець Наталія Ярославівна" title="Матолінець Наталія Ярославівна" data-full="./matolinets-nataliia-iaroslavivna_1.webp" /><img class="side-img side-thumb" src="./matolinets-nataliia-iaroslavivna_2.webp" alt="Матолінець Наталія Ярославівна" title="Матолінець Наталія Ярославівна" data-full="./matolinets-nataliia-iaroslavivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Матолінець Наталія Ярославівна — письменниця, яка пише в жанрі фентезі, журналістка, членкиня Національної спілки письменників України. Народилася 20 грудня 1990 р. у Львові. Закінчила факультет журналістики Львівського національного університету імені Івана Франка. Відтоді працює за фахом в різних ЗМІ.</p>
+          <p>У шкільні роки дівчина відвідувала літературну студію, писала оповідання про львівських магів. Творами Наталії зачитувалися друзі та однокласники. Пізніше її твори друкувалися в періодиці, альманахах та антологіях (&quot;Питання людяності&quot;, &quot;Дзвін&quot;, &quot;Дніпро&quot;, &quot;Брама. Багряні ночі&quot; та &quot;ДЕREЗА&quot;).</p>
+          <p>Свою літературну діяльність Наталія Матолінець розпочала з поезії. Публікувалася в численних альманахах і журналах. Видала дві збірки: &quot;Краплини світла&quot; (2005), &quot;Акварелі і аромати&quot; (2013), в яких переважає любовна лірика. Дебютувала в жанрі фентезі у 2018 році з романом &quot;Варта у грі&quot;. Наталя Матолінець — лауреатка відзнак конкурсів &quot;Крилатий лев&quot; та &quot;Львівські перехрестя&quot;, диплому &quot;Запорізької толоки&quot; і &quot;Дебют року&quot; від &quot;Барабуки&quot;, лауреатка ІІ премії &quot;Коронації слова&quot;. Її підлітковий фентезійний роман &quot;Гессі&quot; опинився у довгому списку &quot;Книга року&quot; за версією ВВС-2018, а роман &quot;Академія Аматерасу&quot; увійшов у топ-5 &quot;Дитяча Книга Року BBC 2019&quot;. Найновіша книга авторки &quot;Керамічні серця&quot; (2020) теж відноситься до жанру фентезі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

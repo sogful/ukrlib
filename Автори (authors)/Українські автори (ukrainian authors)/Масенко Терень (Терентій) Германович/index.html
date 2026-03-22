@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Масенко Терень (Терентій) Германович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Масенко Терень (Терентій) Германович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./masenko-teren-terentiy-hermanovych.webp" alt="Масенко Терень (Терентій) Германович" title="Масенко Терень (Терентій) Германович" data-full="./masenko-teren-terentiy-hermanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 10 листопада 1903 року в селі Глодоси (тепер Новоукраїнського району Кіровоградської області) у незаможній селянській родині. Навчався на робітфаку Кам&#x27;янець-Подільського сільськогосподарського інституту, а пізніше в Харківському інституті народної освіти. 1930 року закінчив факультет журналістики Комуністичного університету імені Артема при ЦК КПУ.</p>
+          <p>Працював у редакціях газети &quot;Червоний кордон&quot;, журналів &quot;Молодняк&quot; і &quot;Перець&quot;, а у роки німецько-радянської війни на радіостанції імені Тараса Шевченка та в редакції газети &quot;Соціалістична Харківщина&quot;.</p>
+          <p>Дебютував Терень Масенко &quot;Маршем робітфаківців&quot; у 1924 році. Перша збірка поезій &quot;Степова мідь&quot; вийшла 1927 року. Працював письменник також як нарисовець та автор книжок для дітей. Чимало віршів Т. Масенка поклали на музику композитори Георгій та Платон Майбороди, Л. Ревуцький (&quot;Пісня про Дніпро&quot;, &quot;Дніпровські хвилі&quot;), А. Філіпенко, М. Дремлюга, К. Домінчен, І. Шамо, Я. Цегляр та інші. Значне місце у творчості поета належить епічному жанру (роман у віршах &quot;Степ&quot;). Останній, виданий за життя, прозовий твір — есеї та спогади про митців-побратимів Павла Тичину, Максима Рильського, Анатолія Петрицького, братів Майбородів, Джамбула та Янку Купалу, Андрія Малишка &quot;Роман пам&#x27;яті&quot;. Мешкав у Києві в будинку письменників Роліті. Помер 6 серпня 1970 року. Твори: &quot;Південне море&quot; (1929), &quot;Ключ пісень&quot; (1930), &quot;П&#x27;ятнадцята весна&quot; (1932), &quot;Наша Азія&quot; (1933), &quot;Книга лірики&quot; (1935), &quot;Нові поезії&quot; (1938), &quot;Вітчизна&quot; (1937), &quot;Степ&quot;, роман у віршах (кн. І, 1938; кн. ІІ, 1968), &quot;Срібна дорога&quot; (1946), &quot;Пісня миру&quot; (1952), &quot;Київські каштани&quot; (1954), &quot;Сорок весен&quot; (1957), &quot;Вишневі зорі України&quot; (1960), &quot;Твори&quot; в 2-х томах (1963), &quot;Багряні жоржини&quot; (1969). Після смерті письменника побачили світ: &quot;Вибране&quot; (1975), &quot;Поезії&quot; (1983).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

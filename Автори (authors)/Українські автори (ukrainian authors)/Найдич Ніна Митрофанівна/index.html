@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Найдич Ніна Митрофанівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Найдич Ніна Митрофанівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./naydych-nina-mytrofanivna.webp" alt="Найдич Ніна Митрофанівна" title="Найдич Ніна Митрофанівна" data-full="./naydych-nina-mytrofanivna.webp" /><img class="side-img side-thumb" src="./naydych-nina-mytrofanivna_1.webp" alt="Найдич Ніна Митрофанівна" title="Найдич Ніна Митрофанівна" data-full="./naydych-nina-mytrofanivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Найдіч Ніна Митрофанівна народилася 08. 08. 1936 року, с. Забужжя, Вінницької області.</p>
+          <p>Учителька, музикант і віднедавна авторка книжок для дітей. Багато років навчає дітей музиці у відомій Київській середній спеціалізованій музичній школі імені Миколи Лисенка. У мистецьких колах відома як талановитий і мудрий педагог. Авторка методичних розробок із навчання гри на фортепіано, свою систему проходження до нотного періоду виклала у збірнику &quot;Весела методика&quot;.</p>
+          <p>Досліджувала твори Й.С. Баха, Ф. Шопена, написала понад 15 наукових статей. Виховувала й навчала багатьох відомих музикантів і композиторів, серед яких і її син, знаний в Україні і закордоном академічний та джазовий піаніст Дмитро Найдич, композитори Юрій Шевченко і Сергій Зажитько та інші. У своїх казках Ніна Найдич наголошує, що в сучасному світі в гонитві за матеріальними благами має бути місце для людяності та доброти, Мистецтва і Музики. Живе та викладає в Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

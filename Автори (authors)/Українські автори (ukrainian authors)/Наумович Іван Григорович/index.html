@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Наумович Іван Григорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Наумович Іван Григорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./naumovych-ivan-hryhorovych.webp" alt="Наумович Іван Григорович" title="Наумович Іван Григорович" data-full="./naumovych-ivan-hryhorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 26 січня 1826 року в польськомовній руській родині вчителя початкової школи в селі Кізлів, тепер Буський район, Львівська область. Мати (з дому Дроздовська) походила з родини греко-католицького священника.</p>
+          <p>Початкову освіту і виховання здобув у Буську, де його батько, Григорій Наумович, працював учителем. За фінансової підтримки бузької графині Мір навчався у львівській гімназії, після закінчення якої у 1844 продовжив освіту на філософському, а згодом на богословському факультеті Львівського університету та у Львівській духовній семінарії.</p>
+          <p>Належав до таємної польської повстанської організації Towarzystwo Braci. Під впливом Весни народів 1848 року змінив політичні переконання на проросійські. Через колишню участь у польських таємних організаціях був відрахований із семінарії і продовжив навчання на правничому відділенні Львівського університету. у 1849 поновився на 3-й рік навчання у Львівську семінарію. У 1851 одружився з Теодорою Гавришкевич — дочкою греко-католицького священика, у тому ж році отримав висвячення із рук митрополита Михайла Левицького. Служив вікарієм у Городку, а з 1853 — парохом у Заставному (Ляшки-Королівські) та Перемишлянах. Засновник популярної газети (далі журнал) для народу &quot;Наука&quot; (1871—1902) та релігійного додатку до цієї газети &quot;Слово Боже&quot; (1879—1881). У 1871—1880 редагував двотижневик &quot;Русская Рада&quot;. Посол до Галицького сейму (1861—1866), австрійського парламенту (1873—1879, на виборах переміг о. Стефана Качалу), засновник Товариства імені Качковського. На великому політичному процесі 1882, відомому як процес Ольги Грабар, чи справа Гниличок, засуджений на 8 місяців ув&#x27;язнення за поширення православ&#x27;я. 1882 року виключений з Греко-католицької церкви. Після відбуття покарання в 1884 році вперше відвідав Росію. 6 жовтня 1885 року в церкві святого Георгія у Львові прийняв православ&#x27;я. Наступного 1886 року емігрував до Росії, був священником у Києві. Помер 16 серпня 1891 року в Новоросійську, під час організації поселень на Кавказі для емігрантів з Галичини. За заповітом, 30 вересня 1891 року був похований у Києві на Аскольдовій могилі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

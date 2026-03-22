@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Павлюк Антін Пилипович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Павлюк Антін Пилипович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pavliuk-antin-pylypovych.webp" alt="Павлюк Антін Пилипович" title="Павлюк Антін Пилипович" data-full="./pavliuk-antin-pylypovych.webp" /><img class="side-img side-thumb" src="./pavliuk-antin-pylypovych_1.webp" alt="Павлюк Антін Пилипович" title="Павлюк Антін Пилипович" data-full="./pavliuk-antin-pylypovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 1899 р. в Острозі на Волині. Закінчив гімназію. У 1922-му приїхав до Праги. Навчаючись на філософському факультеті Празького університету, заробляв на життя, граючи на саксофоні у нічному барі. Він хворів на сухоти і лікувався у санаторії під Прагою.</p>
+          <p>У 1925 р. А. Павлюк організував літературну групу &quot;Жовтневе коло&quot;, яке мало сентименти до СРСР, редагував альманах &quot;Стерні&quot;. На початку 1929-го, розчарувавшись у тому, що його не визнали критики, вирішує кинути писати. А в 1932 р. виїхав до СРСР, оселився у Харкові, але після 1934-го сліди Павлюка губляться. Як і решту реемігрантів, його репресували.</p>
+          <p>А. Павлюк дуже продуктивний автор, друкувався у багатьох журналах на еміграції: &quot;Промені&quot;, &quot;Митуса&quot;, &quot;Поступ&quot;, &quot;Веселка&quot;, &quot;Шлях&quot;, &quot;Універсальний журнал&quot; та в УРСР – &quot;Нова Громада&quot;, &quot;Глобус&quot;, &quot;Всесвіт&quot;, &quot;Знання&quot;, &quot;Червоний Шлях&quot;, &quot;Життя й Революція&quot;, &quot;Зоря&quot;, &quot;Студент Революції&quot;, &quot;Західня Україна&quot;, &quot;Плужанин&quot;, &quot;Молодняк&quot;. У 1919 р. видав в Острозі поетичні збірки &quot;Сумна радість&quot;, &quot;Будуччина&quot; і &quot;Вінок&quot;, а в Олександрії &quot;Акорди&quot; (під псевдонімами Т. Блукач і М. Недоля), а відтак уже в Празі – &quot;Життя&quot; (1925), &quot;Осінні вири&quot; (1926), &quot;Біль&quot; (1926), &quot;Пустеля любові&quot;, &quot;Лірика&quot; (1928), &quot;Полин&quot; (1930), &quot;Reliquaire&quot; (1931), &quot;Ватра&quot; (1931), збірку оповідань &quot;Незнайома&quot; (1922).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

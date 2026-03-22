@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лузіна Лада — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лузіна Лада</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./luzina-lada_1.webp" alt="Лузіна Лада" title="Лузіна Лада" data-full="./luzina-lada_1.webp" /><img class="side-img side-thumb" src="./luzina-lada.webp" alt="Лузіна Лада" title="Лузіна Лада" data-full="./luzina-lada.webp" /></div>
+        <div class="prose-text">
+          <p>Лада Лузіна (справжнє ім&#x27;я Владислава Миколаївна Кучерова) — українська письменниця, журналістка, театральний критик.</p>
+          <p>Народилася 21 жовтня 1972 у Києві.</p>
+          <p>Батьки розлучилися, коли Владиславі було 4 роки. Прізвище її матері — Лузіна — із часом стала псевдонімом Влади. Після восьмого класу мати відвела в училище — будівельне ПТУ № 18, по закінченню якого вона працювала на будівництві. Пізніше вступила на факультет театральної критики Київського театрального інституту, одночасно з чим її статті та вірші почали друкувати у різних виданнях. Працюючи в газеті &quot;Бульвар&quot; (пізніше &quot;Бульвар Гордона&quot;), стала відома як найскандальніша журналістка України. У 2002 році випустила свою першу книгу &quot;Моя Лолита&quot;. Пізніше опублікувала книгу &quot;Как я была скандальной журналисткой&quot;. Письменниця видала два набори листівок. В набір &quot;Волшебный мир ёлочных игрушек&quot; (2019) увійшли 8 листівок (+обкладинка та одна додаткова листівка) з фотографіями з колекції ялинкових прикрас Лузіної. В набір &quot;7 тайн украинской ведьмы&quot; (2021) увійшли 6 листівок (+обкладинка) більшість з яких стилізовані під сторінки Книги Києвиць з циклу &quot;Київські відьми&quot;. Був виданий &quot;Чарівний календар Лади Лузіної&quot; російською та українською мовами (2021-2024). В авторських календарях немає офіційних свят, а виділені ті дні, які вважалися чарівними в народних віруваннях і традиціях. Водить авторські екскурсії по Києву. Книги сповнені містичними елементами та історичними даними, вважаються одними з найкращих у фольклорному фентезі про Україну.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Луценко Дмитро Омелянович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Луценко Дмитро Омелянович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lutsenko-dmytro-omelianovych.webp" alt="Луценко Дмитро Омелянович" title="Луценко Дмитро Омелянович" data-full="./lutsenko-dmytro-omelianovych.webp" /><img class="side-img side-thumb" src="./lutsenko-dmytro-omelianovych_1.webp" alt="Луценко Дмитро Омелянович" title="Луценко Дмитро Омелянович" data-full="./lutsenko-dmytro-omelianovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Дмитроо Омелянович Луценко (15 жовтня 1921,с. Березова Рудка Пирятинського району на Полтавщині — 16 січня 1989, Київ) — Заслужений діяч мистецтв України, лауреат Національної премії імені Тараса Шевченка, Почесний громадянин міста Києва.</p>
+          <p>З раннього дитинства довкола Дмитрика лунала рідна пісня. Мав чудовий голос батько хлопця. При добрій нагоді у привітній оселі Луценків збиралися рідні, друзі, сусіди – й пісня була головною на таких гостинах.</p>
+          <p>Потім настав Голодомор. Помер батько. Дивом виживши, Дмитро вирушив на Донбас. Шахтарював, навчався у гірничо-промисловому технікумі. 1938р. Дмитро Луценко вступив до Київського гідромеліоративного інституту. За два роки мобілізований до армії, служив на кордоні з Афганістаном. Під час війни був автоматником розвідувальної роти. В одному з боїв у Східній Прусії був тяжко поранений і контужений, дістав інвалідність. Після шпиталю повернувся до навчання в інституті. У повоєнні роки працював у газетах &quot;Сільські вісті&quot;, &quot;Молодь України&quot;, в українській редакції Всесоюзного радіо. Перша збірка віршів Д.Луценка — &quot;Дарую людям пісню&quot; — вийшла друком 1962р. Книгу щиро вітав Володимир Сосюра. З нею прийняли до Спілки письменників. На одній із зустрічей молодих журналістів з читачами Дмитро Омелянович познайомився з Тамарою Іванівною, кореспонденткою однієї з газет. Лише за якихось п&#x27;ять днів пара взяла шлюб. Потім сталося горе: померла у неповні 17 років таткова улюблениця, донечка Лариса. Тоді Дмитра Омеляновича і спіткав перший інфаркт. Врятувала і підняла на ноги Пісня… На слова Д.Луценка писали пісні П.Майборода, Ю.Білаш, В.Верменич, І.Шамо та інші відомі композитори. У плідній співпраці народилося понад 300 пісень. Справжні шедеври — &quot;Осіннє золото&quot;, &quot;Мамина вишня&quot;, &quot;Україно, любов моя&quot; — та багато інших. Пісні на слова Дмитра Луценка виконували Д.Гнатюк і Діана Петриненко, А.Мокренко і Ніна Матвієнко, хорова капела &quot;Думка&quot; і народний хор ім.Г.Верьовки… У творчому доробку поета – понад десять поетичних збірок. Його твори перекладені багатьма мовами світу. 1976р. Д.Луценко став лауреатом Шевченківської премії – разом з І.Шамо, за пісню &quot;Києве мій&quot;. Помер Д.Луценко 16 січня 1989р. – від восьмого інфаркту… Починаючи з 1990-го, в рідній Луценковій Березовій Рудці, куди він часто приїздив, відбуваються пісенні свята &quot;Осіннє золото&quot;, під час яких виконуються пісні на його слова. 2001р. була заснована премія імені Дмитра Луценка, яку вручають найкращим співакам, композиторам, поетам. Ім&#x27;ям Дмитра Луценка названа одна з київських вулиць.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Онацький Никанор Харитонович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Онацький Никанор Харитонович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./onatskyy-nykanor-kharytonovych.webp" alt="Онацький Никанор Харитонович" title="Онацький Никанор Харитонович" data-full="./onatskyy-nykanor-kharytonovych.webp" /><img class="side-img side-thumb" src="./onatskyy-nykanor-kharytonovych_1.webp" alt="Онацький Никанор Харитонович" title="Онацький Никанор Харитонович" data-full="./onatskyy-nykanor-kharytonovych_1.webp" /><img class="side-img side-thumb" src="./onatskyy-nykanor-kharytonovych_2.webp" alt="Онацький Никанор Харитонович" title="Онацький Никанор Харитонович" data-full="./onatskyy-nykanor-kharytonovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 21.12.1874 р. на хуторі Хоменки біля Гадяча на Полтавщині. З дитинства виявив нахил до малювання. Закінчив народну, а потім Гадяцьку повітову школу. З 1899 р. навчався у Московському училищі технічного малювання, але через брак коштів не закінчив його. Повернувся в Україну і навчався у Одеському художньому училищі, а після закінчення у 1903-му вступив до Петербурзької академії мистецтв.</p>
+          <p>З 1906 р. Н. Онацький викладає у Лебединській гімназії. Водночас плідно малює, захоплюється етнографією, друкує розвідки в журналі &quot;Рідний Край&quot;. На Першій українській артистичній виставці у Києві в грудні 1911 – січні 1912 р. було представлено 15 його картин. З 1913 р. Н. Онацький викладає малювання в реальному училищі, веде курси географії, малювання і креслення в Сумському кадетському корпусі.</p>
+          <p>Н. Онацький почав публікувати поезії з 1906 р. в альманахах &quot;Терновий вінок&quot;, &quot;Український декламатор&quot;, &quot;Розвага&quot;, &quot;З неволі&quot;, &quot;Українська Муза&quot;, в журналі &quot;Рідний Край&quot;. Написав п&#x27;єси &quot;Через руїни&quot;, &quot;Танок смерті&quot;, інсценізацію поеми Т. Шевченка &quot;У тієї Катерини&quot;. У 1930 р. видав дитячу п&#x27;єсу &quot;Новий світ&quot;, &quot;Наша освіта&quot;. Після революції художник активно співпрацював з Українською партією соціалістів-революціонерів, але потім зосередився на науково-педагогічній і творчій роботі. У 1920-х р. викладає в учбових закладах Сумщини, у 1920 р. створює Сумський історико-художній музей, видає монографію &quot;Сім років існування Сумського музею&quot;. На 1.10.1925 р. в музеї вже було 10 279 експонатів, багато з яких розшукав сам художник, що також брав участь у археологічних розкопках. На основі своїх досліджень Н. Онацький опублікував кілька цікавих праць. Така діяльність привернула увагу ГПУ, для яких будь-яке зацікавлення історією ототожнювалося з українським буржуазним націоналізмом. Його починають цькувати, вимагаючи публічного каяття. В листопаді 1933 р. Н. Онацький переїхав до Полтави, де йому запропонували організувати й очолити відділ етнографії місцевого музею. Пропозиція була небезпечною, бо чекісти на етнографію дивилися, як на чистої води націоналізм: &quot;всі вишивки, всі керамічні вироби, різьба та інше в умілому розміщенні показуватимуть і підкреслюватимуть етнічну відокремленість України і для хоч трішки настроєної романтично голови даватимуть поживу національної відокремленості&quot;, – писалося в доповідній ГПУ. Весною 1934 р. Н. Онацького арештували, протримали за ґратами кілька місяців і випустили. З тюрми йому вдалося винести цілий зшиток віршів. 27.07.1935 р. його арештовують вдруге, за якийсь час відпускають, і знову йому вдається врятувати свої вірші. Третій арешт у вересні 1937-го завершився розстрілом 23.11.1937 р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

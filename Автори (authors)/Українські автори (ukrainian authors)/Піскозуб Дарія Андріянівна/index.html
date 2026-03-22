@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Піскозуб Дарія Андріянівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Піскозуб Дарія Андріянівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./piskozub-dariia-andriianivna.webp" alt="Піскозуб Дарія Андріянівна" title="Піскозуб Дарія Андріянівна" data-full="./piskozub-dariia-andriianivna.webp" /><img class="side-img side-thumb" src="./piskozub-dariia-andriianivna_1.webp" alt="Піскозуб Дарія Андріянівна" title="Піскозуб Дарія Андріянівна" data-full="./piskozub-dariia-andriianivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Дарія Піскозуб — сучасна українська письменниця, яка здебільшого працює у фантастичних жанрах: фентезі, космоопера, постапокаліпсис.</p>
+          <p>Дарія Піскозуб народилась 6 червня 1997 року у м. Львів. У 2020 році закінчила Національний університет &quot;Львівська політехніка&quot; за спеціальністю &quot;Комп&#x27;ютерні науки&quot;. З 2018 року працювала на позиції проєктної менеджерки в різноманітних ІТ-компаніях. Любить настільні ігри і танцювати бачату.</p>
+          <p>У 2019 році Дарія з твором &quot;Машина&quot; перемогла у конкурсі фентезійних романів &quot;Брама&quot;, а вже наступного року у видавництві Vivat вийшов цей дебютний роман авторки. &quot;Машина&quot; — перша книга однойменної тетралогії, яка розповідає про світ, де зникла цивілізація, натомість залишився штучний інтелект, божество Машина, яка керує останніми племенами на Землі. Але в один момент Машина починає змінюватись і людство задумується, чим вона є насправді. Другою книгою циклу є книга &quot;Гемма&quot;. Дарія Піскозуб є співзасновницею проєкту &quot;Фантастичні Talk(s)&quot;, що об&#x27;єднує п&#x27;ятьох українських письменниць-фантасток: Ірину Грабовську, Наталію Матолінець, Світлану Тараторіну, Наталію Довгопол та саму Дарію. У 2022 році авторки видали збірку оповідань &quot;Хроніки незвіданих земель&quot;, в яку увійшла космоопера Дарії &quot;Земля обітована&quot; про Україну 23 століття. За час участі у проєкті письменниця брала інтерв&#x27;ю у таких відомих авторів та авторок фентезі та наукової фантастики як Ребекка Кван, Джонатан Страуд, Джо Аберкромбі, В.Е. Шваб, Лі Бардуго, Голлі Блек, Джо Гілл та інших.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

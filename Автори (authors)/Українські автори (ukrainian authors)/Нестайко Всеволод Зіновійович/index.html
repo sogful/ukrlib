@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нестайко Всеволод Зіновійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Нестайко Всеволод Зіновійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nestayko-vsevolod-zinoviyovych.webp" alt="Нестайко Всеволод Зіновійович" title="Нестайко Всеволод Зіновійович" data-full="./nestayko-vsevolod-zinoviyovych.webp" /><img class="side-img side-thumb" src="./nestayko-vsevolod-zinoviyovych_1.webp" alt="Нестайко Всеволод Зіновійович" title="Нестайко Всеволод Зіновійович" data-full="./nestayko-vsevolod-zinoviyovych_1.webp" /><img class="side-img side-thumb" src="./nestayko-vsevolod-zinoviyovych_2.webp" alt="Нестайко Всеволод Зіновійович" title="Нестайко Всеволод Зіновійович" data-full="./nestayko-vsevolod-zinoviyovych_2.webp" /><img class="side-img side-thumb" src="./nestayko-vsevolod-zinoviyovych_3.webp" alt="Нестайко Всеволод Зіновійович" title="Нестайко Всеволод Зіновійович" data-full="./nestayko-vsevolod-zinoviyovych_3.webp" /><img class="side-img side-thumb" src="./nestayko-vsevolod-zinoviyovych_4.webp" alt="Нестайко Всеволод Зіновійович" title="Нестайко Всеволод Зіновійович" data-full="./nestayko-vsevolod-zinoviyovych_4.webp" /></div>
+        <div class="prose-text">
+          <p>Всеволод Нестайко</p>
+          <p>Нестайко Всеволод Зіновійович — український письменник.</p>
+          <p>Народився 30 січня 1930 року в м. Бердичів, тепер Житомирської області. Закінчив 1952 року Київський університет. Працював у редакціях журналів &quot;Дніпро&quot;, &quot;Барвінок&quot;, видавництвах &quot;Молодь&quot;, &quot;Веселка&quot;. Пише повісті, оповідання, казки для дітей. Автор збірок оповідань &quot;Шурка і Шурко&quot; (1956), &quot;Це було в Києві&quot; (1957), повістей &quot;В Країні Сонячних Зайчиків&quot; (1959), &quot;Пригоди Робінзона Кукурузо&quot; (1964), &quot;Таємниця трьох невідомих&quot; (1970), &quot;Тореадори з Васюківки&quot; (1973; однойменний телефільм 1968р. за цим твором одержав &quot;Гран-прі&quot; на Міжнародному кінофестивалі в Мюнхені і 1969р. — головну премію на Міжнародному кінофестивалі в Алегзандрії, Австралія), &quot;Одиниця з обманом&quot; (1976, однойменний фільм за цим твором одержав 1984р. премію на Всесоюзному кінофестивалі в Києві та 1985р. — на Міжнародному кінофестивалі в Габрово), &quot;Пригоди Грицька Половинки&quot; (1978), &quot;Пригоди журавлика&quot; (1979), &quot;Незвичайні пригоди у лісовій школі&quot; (1981; премія ім. Лесі Українки, 1982), &quot;Чудеса в Гарбузянах&quot; (1984), &quot;П&#x27;ятірка з хвостиком&quot; (1985), &quot;Скринька з секретом&quot; (1987), збірки казок &quot;Незнайомка з Країни Сонячних Зайчиків&quot; (1988), збірки детективів &quot;Таємничий голос за спиною&quot; (1990), п&#x27;єс &quot;Марсіанський жених&quot; (1968), &quot;Робінзон Кукурузо&quot; (1970), &quot;Вітька Магеллан&quot; (1975), &quot;Пересадка серця&quot; (1983), збірки п&#x27;єс &quot;Слідство триває&quot; (1989) та ін. Тематика творів В. Нестайка (більшість з них — пригодницько-гумористичні) — життя школярів, формування духовного світу дітей. Книжку &quot;Тореадори з Васюківки&quot; 1979 року рішенням Міжнародної Ради з дитячої та юнацької літератури занесено до &quot;Особливого Почесного списку Г. К. Андерсена&quot;. Твори В. Нестайка перекладено багатьма мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

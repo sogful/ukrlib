@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мордовець Данило Лукич — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мордовець Данило Лукич</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mordovets-danylo-lukych.webp" alt="Мордовець Данило Лукич" title="Мордовець Данило Лукич" data-full="./mordovets-danylo-lukych.webp" /></div>
+        <div class="prose-text">
+          <p>Данило Лукич Мордовець (7 (19) грудня 1830 р., слобода Данилівка (нині районний центр Волгоградської обл., Росія) – 10 (23) червня 1905 р., Кисловодськ, Росія) – український і російський історик та письменник. В російській літературі відомий під зросійщеним прізвищем Мордовцев.</p>
+          <p>Народився Данило в родині українців. Вчився спочатку вдома, в 1839 – 1844 роках – в окружному училищі в станиці Усть-Медведицькій, в 1844 – 1850 рр. – у Саратовській гімназії, в 1851 – 1854 р. – у Петербурзькому університеті. Ще під час навчання він познайомився з такими видатними (в майбутньому) російськими інтелігентами, як О. М. Пипін та М. Г. Чернишевський.</p>
+          <p>В 1854 р., закінчивши університет, Мордовець повернувся до Саратова і познайомився з Миколою Костомаровим, який відбував там заслання у справі Кирило-Мефодіївського товариства. Це знайомство мало дуже велике, можливо, навіть вирішальне значення для формування молодого письменника. Мордовцев неначе повторив через 20 років творчий шлях Костомарова: спочатку поезії українською мовою, потім історичні студії, потім художні твори на історичні теми. Так само, як і в пізніх творах Костомарова, в історичних романах Мордовця на українські теми вживається макаронічна мова (російський текст від автора + українська мова в репліках персонажів). Як історик Мордовець був, можливо, найвірнішим послідовником народницької концепції Костомарова. Предметом його досліджень весь час були народні маси, їх стан і їх рухи. Але якщо в Костомарові історик рішуче переважав белетриста за розміром і значимістю написаного, то у Мордовця це співвідношення було протилежним. Найбільше він уславився як автор численних історичних романів, в тематиці яких переважають історія України та Росії (хоча він не обмежувався ними, як і Костомаров, до речі). Більшу частину свого життя Мордовець прожив у Саратові, Петербурзі та Ростові-на-Дону, в Україні він бував лише наїздами. На питання – чи слід вважати його українським, чи російським письменником – найкраще можна відповісти двома цитатами з його роману &quot;Цар та гетьман&quot;: Вдруг он слышит, что кто-то тихо трогает его за плечо. В изумлении он приподымает голову и… не верит глазам своим: перед ним стоит русалка, не то богиня этого рая… и она вся в цветах, вся сияющая, как весна, как это дивное голубое небо… Так письменник малює стосунки хлопця й дівчини в Україні. А ось так – в Росії: Последний владелец Крохина с соседними пустошами, рыбными ловлями на Белоозере и иными угодьями, пожив на свою волю, уморив трех законных и семерых незаконных жен, которые потом поочередно являлись к нему во сне, иная с пробитым до мозга черепом, другая с вырванною вместе с мясом косою, третья с переломанными ребрами и тому подобное, засекши до смерти дюжины две людишек и холопишек… Мордовець небагато написав українською мовою, він не був значним істориком-дослідником, його історичним повістям часто бракує глибшої ідейної концепції. Разом з тим написані вони легко і вправно і продовжують виконувати непосильну задачу – познайомити читаючу Росію з поняттям &quot;Україна&quot;. М.Ж. 22 жовтня 2013 р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

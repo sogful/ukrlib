@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Микитчаки Галина і Тарас — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Микитчаки Галина і Тарас</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mykytchaky-halyna-i-taras.webp" alt="Микитчаки Галина і Тарас" title="Микитчаки Галина і Тарас" data-full="./mykytchaky-halyna-i-taras.webp" /></div>
+        <div class="prose-text">
+          <p>Микитчак Галина Степанівна (нар. 8 грудня 1984, м. Львів), Микитчак Тарас Ігорович (нар. 16 вересня 1979, с. Слобідка Стрийського району, Львівщина) — українські дитячі письменники-фантасти, вчені та сценаристи мультиплікаційних фільмів.</p>
+          <p>Галина народилася у місті Львові. Навчалася у середній школі № 100 м. Львова. Закінчила географічний факультет Львівського національного університету імені Івана Франка у 2006 р. Кандидат географічних наук. Працює у Львівській міській раді.</p>
+          <p>Тарас народився в селі Слобідка на Стрийщині. Навчався у середній школі № 2 м. Стрия. Закінчив біологічний факультет Львівського національного університету імені Івана Франка в 2001 р. Кандидат біологічних наук. Працює в Інституті екології Карпат НАН України. Подружжя виховують двох доньок — Діану і Євгенію. Співавтори циклу дитячих книжок про пригоди двох друзів, Дзвінки-Джмеленя й Дмитрика-Хитрика. Жанр — дитяче фентезі, що тісно переплітається з українською міфологією. Герої книжок — сучасні діти, їхні батьки й родичі, сусіди, які потрапляють у різноманітні міфологічні ситуації. Дзвінка й Дмитрик живуть у Львові й багато мандрують. У першій книзі вони вступають у боротьбу зі справжнісінькими злиднями та їхньою володаркою Мареною, у другій — намагаються врятувати Канікульне озеро від мера Триндикала й забудовників Захланських разом з водяником-сантехніком і русалкою з Полтви. Пригоди в третій книзі перенесуть читачів у загадковий куточок Карпат, де у верхів&#x27;ї Чорного Черемошу потрібно знайти загадкового Рожка і вберегти його від Марени, Вогняного Дідька та їх поплічників. У четверій книзі Дзвінка й Дмитрик відпочиватимуть в Алупці, політають на дивовижному дереві Ву й навіть познайомляться зі Святим Петром. Автори багатьох сценаріїв для мультфільмів львівської анімаційної компанії &quot;АРТ-Відео&quot;, з якою співпрацють уже десять років, романів й оповідань. У авторському доробку Тараса також роман-фентезі &quot;Долина Єдиної Дороги&quot; (диплом Всеукраїнського конкурсу романів, кіносценаріїв і п&#x27;єс Коронація слова 2007).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

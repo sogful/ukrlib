@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пільгук Іван Іванович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Пільгук Іван Іванович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pilhuk-ivan-ivanovych.webp" alt="Пільгук Іван Іванович" title="Пільгук Іван Іванович" data-full="./pilhuk-ivan-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Іван Пільгук</p>
+          <p>Іван Іванович Пільгук народився 20 грудня 1899 року в селі Решетилівці на Полтавщині в селянській родині. Освіту здобув у початковій та вищепочатковій школах, у 1917 році закінчив педагогічні курси в Полтаві. Брав активну участь у громадянській війні, в партизанському загоні боровся з німецькими окупантами та з денікінцями. Згодом — учителював, співробітничав у газетах, почав писати художні твори.</p>
+          <p>Набутком читацького загалу стали історико-біографічні твори Івана Пільгука &quot;Грозовий ранок&quot;, &quot;Повій, вітре!&quot;, &quot;Дуби шумлять&quot;, &quot;Григорій Сковорода&quot;, &quot;Пісню снує Черемош&quot;, &quot;Іван Карпенко-Карий&quot;, &quot;Марія Заньковецька&quot;. Після тривалої наукової роботи письменник повернувся до художніх жанрів, якими розпочав літературну діяльність ще на початку 30-х років, надрукувавши тоді окремими виданнями документальні нариси &quot;Суцільні лани&quot; (1931), &quot;Назустріч струмові Дніпрогесу&quot; (1932), &quot;Атагас&quot; (1932). За час від перших публікацій до видання історико-біографічних повістей Іван Пільгук виховав не одне покоління педагогів. Колишній сільський учитель став професором, доктором філологічних наук, опублікував понад триста наукових праць, серед яких відомі монографічні дослідження &quot;Т. Г. Шевченко — основоположник нової української літератури&quot; (1954, 1963), &quot;Степан Руданський&quot; (1956), &quot;Традиції Т. Г. Шевченка в українській літературі. Дожовтневий період&quot; (1963), &quot;Традиції Т. Г. Шевченка в українській радянській літературі&quot; (1965), створив багато підручників із української літератури для середніх і вищих шкіл. Якось у розмові Іван Іванович напівжартома зауважив: &quot;Якби мені судилося працювати мулярем, то я за все своє життя, навіть при допомозі найновітнішої техніки, не міг би покласти таку кількість цеглин у будови, скількома примірниками моїх підручників протягом сорока років користувалися учні середніх шкіл та студенти. Писались ті підручники або самостійно, або у співавторстві&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

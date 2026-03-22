@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мудрак Леся Вікторівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мудрак Леся Вікторівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mudrak-lesia-viktorivna.webp" alt="Мудрак Леся Вікторівна" title="Мудрак Леся Вікторівна" data-full="./mudrak-lesia-viktorivna.webp" /><img class="side-img side-thumb" src="./mudrak-lesia-viktorivna_1.webp" alt="Мудрак Леся Вікторівна" title="Мудрак Леся Вікторівна" data-full="./mudrak-lesia-viktorivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Олеся Вікторівна Мудрак-Ковалів, творчий псевдонім Леся Мудрак — українська письменниця, філологиня, перекладачка, критикиня, менеджерка, редакторка, громадська діячка. Кандидатка філологічних наук.</p>
+          <p>Народилася 29 квітня 1985 року, м. Легніца, Польща. Жила і навчалася у м. Дніпропетровську.</p>
+          <p>Закінчила відділення літературної творчості КНУ імені Тараса Шевченка (2007). Достроково захистила дисертацію на здобуття наукового ступеня кандидата філологічних наук на тему: &quot;Еротична лірика: жанрова специфіка та ідіостилі&quot; (2014). Працювала завідувачем міжнародного відділу в Міжнародній школі україністики Національної академії наук України, викладачем Гуманітарного ліцею КНУ ім. Т. Шевченка, автором та ведучою на інтернет-каналі &quot;Укрлайф TV&quot;, редактором у видавництвах, літературним менеджером, модератором численних літературно-мистецьких дійств. Секретар НСПУ по роботі з молодими авторами (2014—2016), член Правління НСПУ (з 29 листопада 2014 року). Нині — науковий співробітник Державної наукової установи &quot;Енциклопедичне видавництво&quot;. Із 2023 року куратор українсько-литовських мистецьких проєктів (зокрема проєкту &quot;Нескорені й ніжні&quot;, який присвячений поезії воїнів-митців). Автор збірок: &quot;Оголена самотність&quot; (ВЦ &quot;Просвіта&quot; Київ, 2006); &quot;Горизонтальна зебра&quot; (Київ, 2009, у співавторстві з Юрієм Ковалевим); &quot;ТекС-ТИ-ЛЬ &amp; Libido&quot; (рефлексії) (&quot;Самміт-книга&quot; Київ, 2015); &quot;Поміж жіночих звивин&quot; (проєкт журналу &quot;O&#x27;Ukraine&quot; Київ, 2019). Салам Сарван &quot;І потонути неможливо, неглибокий цей світ…&quot; (&quot;Самміт-книга&quot;, 2020); переклад книги українською — Леся Мудрак; Лейла Алієва &quot;Світ тане, як сон&quot; (&quot;Ярославів Вал&quot;, 2021); переклад книги українською — Леся Мудрак. Упорядниця антології молодої Української поезії &quot;Римова.30+&quot;; Київ, &quot;Політпринт&quot;, 2021 Співавтор &quot;Абетки переможців&quot;, Київ, &quot;Самміт-книга&quot;, 2023 Твори опубліковані у пресі, інеті, антологіях та альманахах. Вірші перекладені польською, німецькою, білоруською, болгарською, англійською, албанською, азербайджанською, македонською, французькою мовами. У січні 2020 у столичному театрі &quot;Сузір&#x27;я&quot; відбулася театралізована презентація поезо-вистави &quot;Поміж жіночих звивин&quot; (режисер — Сергій Архипчук).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

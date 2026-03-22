@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оровецький Павло Андрійович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Оровецький Павло Андрійович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./orovetskyy-pavlo-andriyovych.webp" alt="Оровецький Павло Андрійович" title="Оровецький Павло Андрійович" data-full="./orovetskyy-pavlo-andriyovych.webp" /></div>
+        <div class="prose-text">
+          <p>ОРОВЕЦЬКИЙ Павло Андрійович</p>
+          <p>(1905 — 1976)Народився 17 березня 1905 року в с. Єлизаветівка (тепер Царичанського району Дніпропетровської області).</p>
+          <p>Літературну діяльність почав у 1930 році як нарисовець. У боротьбі за вирощування високих врожаїв на колгоспних ланах значну роботу проводила Красноградська районна газета &quot;Соціалістична перебудова&quot;, редактором якої був талановитий журналіст Павло Андрійович Оровецький, працівник газети Іван Антонович Цюпа, Володимир Якович П&#x27;янов, Олексій Павлович Приходько. У 1935 році газета &quot;Соціалістична перебудова&quot; у Всесоюзному конкурсі за краще висвітлення робіт по догляду зернових культур та виконання хлібозаготівель державі високоякісним зерном вийшла переможцем і була премійована легковим автомобілем. В цьому велика заслуга Павла Оровецького, Івана Цюпи, місцевого журналіста Олексія Павловича Приходька. У 1937 році Павло Андрійович був репресований і працював робітником на цегельному заводі. Перед Великою Вітчизняною війною був реабілітований. П. А. Оровецький — автор повістей &quot;Серце солдата&quot;, &quot;Рубіновий промінь&quot;, &quot;Загибель Полоза&quot;, романів &quot;Друга зустріч&quot;, &quot;Глибока розвідка&quot;, &quot;Береги життя&quot;, збірок, нарисів. 20 лютого 1976 року Павло Андрійович Оровецький помер.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

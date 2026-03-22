@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Левкова Анастасія — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Левкова Анастасія</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./levkova-anastasiia.webp" alt="Левкова Анастасія" title="Левкова Анастасія" data-full="./levkova-anastasiia.webp" /><img class="side-img side-thumb" src="./levkova-anastasiia_1.webp" alt="Левкова Анастасія" title="Левкова Анастасія" data-full="./levkova-anastasiia_1.webp" /><img class="side-img side-thumb" src="./levkova-anastasiia_2.webp" alt="Левкова Анастасія" title="Левкова Анастасія" data-full="./levkova-anastasiia_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася в родині військових 1 серпня 1986 року в Карцаґу, Угорщина.</p>
+          <p>З 2007 по 2009 рік працювала арт-менеджеркою новоствореної київської книгарні &quot;Є&quot;, з 2010 по 2015 – львівської книгарні &quot;Є&quot;.</p>
+          <p>У листопаді 2013 року пройшла стажування в Парижі за програмою Courants du monde від Дому культур світу, у рамках якої протягом двох тижнів знайомилася з французькою книжковою галуззю. У грудні 2015 року очолила арт-напрям мережі книгарень &quot;Є&quot;. У жовтні 2017 року була призначена заступницею директорки з розвитку державної установи &quot;Український інститут книги&quot;. З 2010 по 2017 рік була редакторкою відділу &quot;Культревю&quot; в &quot;Українському журналі&quot; (&quot;УЖ&quot;, Прага). З вересня 2016 року до квітня 2017 року вела книжкову передачу на кримськотатарському радіо &quot;Хаят&quot; – &quot;Радіокнигарня з Анастасією Левковою&quot;. Розробляла положення конкурсу для письменників та перекладачів &quot;Кримський інжир / Qirim inciri&quot;, заснованого 2018 року Кримським домом. У 2018 році була програмною директоркою фестивалю &quot;Запорізька книжкова толока&quot;. У 2019 році – кураторка проєкту Українського ПЕН &quot;Мереживо. Літературні читання у містечках України&quot;. Наразі мешкає у Львові. Авторка книжок &quot;Старшокласниця. Першокурсниця&quot; (&quot;Видавництво Старого Лева&quot;, 2017), &quot;Ашик Омер&quot; (Портал, 2020), &quot;Спільна мова: як народжуються і живуть слова&quot; (Портал, 2020). Роман для підлітків у щоденниках &quot;Старшокласниця. Першокурсниця&quot; ввійшов у короткий список премій &quot;Книга року BBC – 2017&quot; та &quot;ЛітАкцент – 2017&quot;, здобув відзнаку &quot;Барабуки&quot; за номінацією &quot;Дебют року в прозі&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

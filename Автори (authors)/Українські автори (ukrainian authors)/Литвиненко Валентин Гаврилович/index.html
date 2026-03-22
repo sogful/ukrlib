@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Литвиненко Валентин Гаврилович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Литвиненко Валентин Гаврилович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lytvynenko-valentyn-havrylovych.webp" alt="Литвиненко Валентин Гаврилович" title="Литвиненко Валентин Гаврилович" data-full="./lytvynenko-valentyn-havrylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 28 серпня 1908 року в місті Кременчуці (нині Полтавська область, Україна) у сім&#x27;ї незаможнього торгівця. Дитинство провів у селі Дейманівці на Полтавщині.</p>
+          <p>У 1924 році разом із матір&#x27;ю переїхав до Криму, де почав працювати спочатку чорноробом, учнем маляра, згодом покрівельником. Працюючи на будівництві, у 1929—1930 роках одночасно навчався у художній студії Миколи Самокиша в Сімферополі. У 1932—1934 роках продовжив навчання на робітфаці при Харківському художньому інституті. У 1934—1935 роках навчався в студії Івана Селезньова в Києві. Після проходження строкої служби у Червоній армії працював у газеті &quot;Комсомолець України&quot;.</p>
+          <p>У передвоєнний час працював у &quot;Держнацмен-видаві&quot;, &quot;Дитвидаві&quot;, видавництві &quot;Мистецтво&quot;. З 1941 року працівник журналу &quot;Перець&quot;. У 1941 році, з початком німецько-радянської війни, був мобілізований до армії, та вже через кілька місяців його відкликали у розпорядження Політвидаву при ЦК КП України для виготовленя плакатів і листівок, малювання карикатур, ілюстрування книжок й брошур. Працював у галузях станкової та книжкової графіки, станкового живопису. Створював політичні плакати, агітвікна, листівки, са­тиричні малюнки, карикатури у дусі соцреалізму, реалістичні пейзажі, ілюстрації до байок, українських народних казок. Численною є шевченкіана художника. У 1954—1979 роках проживав у Києві. Помер у Києві 15 грудня 1979 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

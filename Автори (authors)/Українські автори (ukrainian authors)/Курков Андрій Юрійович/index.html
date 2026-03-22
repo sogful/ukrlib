@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Курков Андрій Юрійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Курков Андрій Юрійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kurkov-andriy-iuriyovych.webp" alt="Курков Андрій Юрійович" title="Курков Андрій Юрійович" data-full="./kurkov-andriy-iuriyovych.webp" /><img class="side-img side-thumb" src="./kurkov-andriy-iuriyovych_1.webp" alt="Курков Андрій Юрійович" title="Курков Андрій Юрійович" data-full="./kurkov-andriy-iuriyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Андрій Курков народився 23 квітня 1961 року у російському селі Будогощ Ленінградської області. З раннього дитинства живе у Києві.</p>
+          <p>Після школи працював завклубом, завідувачем бібліотеки в санаторії в Пущі-Водиці, діловодом тощо. Також закінчив курси перекладачів японської мови в Інституті інформації (на &quot;Либідській&quot;).</p>
+          <p>1983 — закінчив Київський державний педагогічний інститут іноземних мов. Працював випусковим редактором багатотиражки Київського політеху, редактором видавництва &quot;Дніпро&quot;. У віці 24-х років пішов служити на альтернативну службу: з 1985 до 1987 служив охоронцем в Одеській виправній колонії № 51. Перша публікація — гумореска у київському виданні &quot;Рабочая газета&quot; у 1979 році. Перший сценарій до фільму &quot;Поляна сказок&quot; (працював як &quot;літературний раб&quot;: у титрах сценаристом зазначено Кіра Буличова, який за нього отримав приз на Братиславському кінофестивалі). Працював сценаристом на кіностудії О. Довженка, викладав у Белл Коледжі (Кембридж, Англія). З 1988 член англійського ПЕН-клубу. Член Спілки кінематографістів України (з 1993) та Національної спілки письменників (з 1994). З 1998 — член Європейської кіноакадемії. З 1998 — постійний член журі премії Європейської кіноакадемії &quot;Фелікс&quot;. У 2011 входить до складу журі літературного конкурсу &quot;Юне слово&quot;. Одружений з ірландкою Елізабет Шарп (консультант у Британській раді в Україні), виховує трьох дітей. Дитячу книжку українською Курков вперше написав 2014 року; це була казка &quot;Маленьке левеня і львівська мишка&quot; для видавництва ВСЛ. Дорослу нехудожню книгу українською Курков вперше написав 2017 року; це була публіцистична біографічна книга у жанрі нон-фікшн &quot;Рух &quot;Емаус&quot;: Історія солідарності&quot; для видавництва Астролябія. Дорослу художню книгу українською Курков вперше написав 2020 року; це був пригодницький роман &quot;Ключі Марії&quot; (робоча назва &quot;Іній в очах її&quot;) для видавництва Фоліо (у співавторстві з Юрком Винничуком).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

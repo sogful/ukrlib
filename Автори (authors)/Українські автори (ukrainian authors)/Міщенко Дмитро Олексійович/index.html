@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Міщенко Дмитро Олексійович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Міщенко Дмитро Олексійович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mishchenko-dmytro-oleksiyovych_1.webp" alt="Міщенко Дмитро Олексійович" title="Міщенко Дмитро Олексійович" data-full="./mishchenko-dmytro-oleksiyovych_1.webp" /><img class="side-img side-thumb" src="./mishchenko-dmytro-oleksiyovych.webp" alt="Міщенко Дмитро Олексійович" title="Міщенко Дмитро Олексійович" data-full="./mishchenko-dmytro-oleksiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Дмитро Міщенко</p>
+          <p>Дмитро Олексійович Міщенко — український письменник, кандидат філологічних наук з 1955р.</p>
+          <p>Народився 18 листопада 1921р. в с. Степанівка Перша, тепер Приазовського р-ну Запорізької області. Учасник Великої Вітчизняної війни. Закінчив 1951р. Київський університет. Був на видавничий роботі, зокрема 1956—1961 — заступником головного редактора Держлітвидаву України, 1964—1973 — головним редактором видавництва &quot;Радянський письменник&quot; (з 1991 — &quot;Український письменник&quot;). Автор збірок повістей та оповідань &quot;Сини моря&quot; (1955), &quot;Батьківська лінія&quot; (1960), &quot;Доля поета&quot; (1961), &quot;Очі дівочі&quot; (1964), &quot;Ніна Сагайдак&quot; (1966), &quot;У морі затишку немає&quot; (1970), &quot;Віра, надія, любов&quot; (1971), &quot;Найвищий закон&quot; (1978), &quot;Друге заміжжя&quot; (1980), а також романів &quot;Чому не сходяться дороги&quot; (1963), &quot;Вітри приносять грозу&quot; (1968), &quot;Честь роду&quot; (1977), повісті &quot;Полювання на жар-птицю&quot; (1990, увійшла до однойменної збірки), історичних романів &quot;Сіверяни&quot; (1959), &quot;Синьоока Тивер&quot; (1983), &quot;Лихі літа ойкумени&quot; (1985), &quot;Розплата&quot; (1987). Міщенко пише про сучасність і героїчне минуле українського народу. Опублікував монографію &quot;Розвиток реалізму в творчості М. Коцюбинського&quot; (1957). Окремі твори Міщенка перекладено російською, болгарською, словацькою та англійською мовами. За збірки &quot;Полювання на жар-птицю&quot; (1990) та &quot;Особисто відповідальний&quot; (1991) удостоєний Державної премії України ім. Т. Г. Шевченка (1993).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

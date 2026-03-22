@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Малкович Іван Антонович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Малкович Іван Антонович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./malkovych-ivan-antonovych_1.webp" alt="Малкович Іван Антонович" title="Малкович Іван Антонович" data-full="./malkovych-ivan-antonovych_1.webp" /><img class="side-img side-thumb" src="./malkovych-ivan-antonovych.webp" alt="Малкович Іван Антонович" title="Малкович Іван Антонович" data-full="./malkovych-ivan-antonovych.webp" /><img class="side-img side-thumb" src="./malkovych-ivan-antonovych_2.webp" alt="Малкович Іван Антонович" title="Малкович Іван Антонович" data-full="./malkovych-ivan-antonovych_2.webp" /><img class="side-img side-thumb" src="./malkovych-ivan-antonovych_3.webp" alt="Малкович Іван Антонович" title="Малкович Іван Антонович" data-full="./malkovych-ivan-antonovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Іван Малкович — український поет і видавець.</p>
+          <p>Народився 10 травня 1961 року в Березові Нижньому на Івано-Франківщині. Закінчив скрипковий клас Івано-Франківського музучилища та філологічний факультет Київського державного університету ім. Т.Шевченка. Член Спілки письменників з 1986 р.</p>
+          <p>Автор семи &quot;дорослих&quot; поетичних книг: &quot;Білий камінь&quot; (1984), &quot;Ключ&quot; (1988), &quot;Вірші&quot; (1992), &quot;Із янголом на плечі&quot; (1997), &quot;Вірші на зиму&quot; (2006), &quot;Все поруч&quot; (2010, 2011 (2-ге, доповнене видання); &quot;Подорожник&quot;, 2013. Ще 19-річним юнаком на всеукраїнському літературному семінарі в Ірпені таємним голосуванням кількох сотень літераторів І.Малковича було обрано &quot;Найкращим молодим поетом&quot;. &quot;Увесь літературний Ірпінь кілька днів величав мене &quot;королевичем молодої поезії&quot;, тож моєму юнацькому щастю не було меж... Ми захлиналися своїми й чужими віршами, а я до півночі, до крові на пальцях, грав на гітарі і співав призабутих гуцульських і лемківських пісень...&quot; Публікацію його першої книги відстоювала легендарна українська поетеса Ліна Костенко. &quot;Вихід кожної його поетичної книги ставав подією літпроцесу... Неомодерні поезії І.Малковича стали зразками витриманого смаку поетики &quot;нової хвилі&quot;. (Енциклопедія актуальної літератури). Іван Малкович — редактор, упорядник, автор та перекладач кількох десятків книжок для дітей. &quot;Це людина, маніакально віддана ідеї &quot;особливо якісної української книги&quot;. (Книжковий огляд, № 1, 2002). Вірші Івана Малковича перекладено англійською, німецькою, італійською, російською, польською, бенгальською (Індія), литовською, норвезькою, грузинською, словацькою, словенською мовами. У видавництві &quot;А-БА-БА-ГА-ЛА-МА-ГА&quot; побачили світ чотири поетичні книжки Івана Малковича &quot;Із янголом на плечі&quot;, 1997 (у межах видавничого проекту &quot;Поетична аґенція &quot;Княжів&quot;), &quot;Вірші на зиму&quot;, 2006; &quot;Все поруч&quot;, 2010; 2011 (2-ге, доповнене видання); &quot;Подорожник&quot;, 2013;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

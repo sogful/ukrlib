@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мочульський Михайло Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мочульський Михайло Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mochulskyy-mykhaylo-mykhaylovych.webp" alt="Мочульський Михайло Михайлович" title="Мочульський Михайло Михайлович" data-full="./mochulskyy-mykhaylo-mykhaylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Михайло Михайлович Мочульський народився 13 листопада 1875 року в м. Миколаїв Львівської області. Український критик, літературознавець, перекладач.</p>
+          <p>Закінчив Львівський університет 1898 року, працював юристом.</p>
+          <p>Вивчав творчість Тараса Шевченка, Івана Манжури, Івана Франка, поетів &quot;української школи&quot; в польській літературі — Северин Гощинський, Йосиф Богдан Залеський, Антоній Мальчевський. Михайло Мочульський з дружиною Ольгою. 1930-ті рр. Перекладав твори Василя Стефаника польською мовою — збірка &quot;Кленові листки&quot;, 1904. Писав статті з української етнографії, художні твори. Дійсний член НТШ, в 1904—1913 роках — член управи товариства. 1918-го призначений до складу делегації УНР на мирних переговорах у Бересті. Виконував обов&#x27;язки перекладача і нотаря для потвердження достовірності підписів контрагентів. Працював нотаріусом у Городку, Тернополі, Гримайлові (1920 — грудень 1931). Листувався з Михайлом Грушевським. Помер 14 лютого 1940 року. Похований у меморіальному сквері Івано-Франківська.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

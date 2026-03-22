@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Міхаліцина Катерина Василівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Міхаліцина Катерина Василівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mikhalitsyna-kateryna-vasylivna.webp" alt="Міхаліцина Катерина Василівна" title="Міхаліцина Катерина Василівна" data-full="./mikhalitsyna-kateryna-vasylivna.webp" /><img class="side-img side-thumb" src="./mikhalitsyna-kateryna-vasylivna_2.webp" alt="Міхаліцина Катерина Василівна" title="Міхаліцина Катерина Василівна" data-full="./mikhalitsyna-kateryna-vasylivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Поетка, перекладачка, редакторка. Народилася 23 лютого 1982 року в селищі Млинові Рівненської області.</p>
+          <p>Отримала диплом бакалавра за спеціальністю &quot;Біологія&quot; Рівненського державного гуманітарного університету та диплом спеціаліста за спеціальністю &quot;Англійська мова та література&quot; заочної форми навчання Інституту післядипломної освіти при ЛНУ ім. Івана Франка.</p>
+          <p>Авторка дорослих поетичних книжок &quot;Повінь&quot; (2002), &quot;Пілігрим&quot; (2003) і &quot;Тінь у дзеркалі&quot; (2014), збірок поезії для малят &quot;Бабусина господа&quot; (2013) та &quot;Про драконів і щастя&quot; (2016), книжки-картонки &quot;Лугова лічилка&quot; (2015), а також дитячої прозової пізнавальної книжки &quot;Хто росте у парку&quot; (2016). Окремими книжками видано такі переклади Катерини Міхаліциної: Л. Е. Ґарн &quot;Белла-балерина&quot; (2013), Дж. Р. Р. Толкін &quot;Діти Гуріна&quot;, &quot;Сильмариліон&quot;, &quot;Сказання з Небезпечного Королівства&quot; та &quot;Легенда про Сіґурда й Ґудрун&quot; (у співпраці з Оленою О&#x27;Лір), &quot;Володар Перснів&quot; (2008-2013), А. Шклярський &quot;Томек у країні кенгуру&quot; (2011). Від 2002 р. Катерина Міхаліцина живе у Львові. Працювала перекладачкою у видавництві &quot;Астролябія&quot;. Нині – заступниця головного редактора у &quot;Видавництві Старого Лева&quot;. Джерело: https://www.barabooka.com.ua/mihalitsina-onishhuk-katerina/</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

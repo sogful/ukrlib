@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Луків Микола Володимирович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Луків Микола Володимирович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lukiv-mykola-volodymyrovych.webp" alt="Луків Микола Володимирович" title="Луків Микола Володимирович" data-full="./lukiv-mykola-volodymyrovych.webp" /><img class="side-img side-thumb" src="./lukiv-mykola-volodymyrovych_1.webp" alt="Луків Микола Володимирович" title="Луків Микола Володимирович" data-full="./lukiv-mykola-volodymyrovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Родом Микола Володимирович Луків із села Куманівців, що розкинулося на межі Вінниччини і Хмельниччини. Народився він 6 січня 1949 року, якраз у ніч перед Різдвом. Батько — фронтовик, який пройшов війну від першого до останнього дня, був контужений, звідав пекло фашистських концтаборів, а після війни відбудовував шахти Донбасу, мати, Антоніна Семенівна, була неписьменною, але Шевченків &quot;Кобзар&quot; знала напам&#x27;ять. Гарно вишивала, мала тонку, чутливу до краси душу, і, певне, поетичний хист у сина — від неї.</p>
+          <p>Після школи майбутній поет у 1968 році закінчив Немирівське педагогічне училище імені Марка Вовчка, а 1973 року — факультет журналістики Київського державного університету імені Т. Г. Шевченка і пішов працювати завідуючим відділом поезії письменницької газети &quot;Літературна Україна&quot;.</p>
+          <p>Творчість поета Миколи Луківа відзначено престижними міжнародними та всеукраїнськими преміями. Він — лауреат Міжнародної премії імені Григорія Сковороди, премій імені Миколи Островського, С. Гулака-Артемовського, Всеукраїнської премії ім. В. Вернадського. За плідну творчу працю нагороджений орденом &quot;За заслуги&quot; II ступеня, орденом Святого Володимира. За заслуги у відродженні духовності в Україні та утвердженні Помісної Православної Церкви удостоєний ордена Святого архістратига Михаїла. Він Заслужений діяч мистецтв України, академік Української екологічної академії наук, понад двадцять років очолює всеукраїнський літературно-художній та суспільно-політичний журнал &quot;Дніпро&quot;. Автор двох десятків поетичних збірок: &quot;Ріка&quot; (1973), &quot;Шлях&quot;, &quot;Політ&quot;, &quot;Весняні дощі&quot;, &quot;Отча земля&quot;, &quot;Кущ осінньої калини&quot;, &quot;Поезії&quot;, &quot;Право на пам&#x27;ять&quot;, &quot;Росте черешня в мами на городі&quot; та інших. Нині Микола Луків, лауреат багатьох найпрестижніших премій, знає, що ним подолано багато бар&#x27;єрів майстерності, — та поет-академік не задовольняється здобутками. Пише поезію високої проби сам, виховує літературну молодь як головний редактор популярного журналу &quot;Дніпро&quot;, невтомно працює як громадський діяч. Його серце повне зерна любові, і він щиро засіває ним поле життя.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

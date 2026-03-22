@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мінько Микола Григорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мінько Микола Григорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./minko-mykola-hryhorovych.webp" alt="Мінько Микола Григорович" title="Мінько Микола Григорович" data-full="./minko-mykola-hryhorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 9 березня 1902 р. в селі Минківка, тепер Валківського району Харківської області, в родині залізничного службовця. У 1918–1921 рр. навчався в Катеринославській українській гімназії.</p>
+          <p>17-річним юнаком у липні 1919-го Мінько вступив до повстанського загону Трифона Гладченка (1891–1920), який боровся проти Денікіна і підписувався &quot;заступником отамана козачих повстанських військ&quot;. Гладченка вдалося чекістам упіймати і розстріляти. А Мінько у 1920 р. став членом української молодіжної організації &quot;Юнацька спілка&quot;, яка була створена на противагу комсомолу.</p>
+          <p>З 1921 р. М. Мінько вчителював на Вінниччині, перебував в армії. Тоді ж і почав писати. Перша повість &quot;Манівцями&quot; з&#x27;явилася у часописі &quot;Червоний Шлях&quot; (1927, № 2). Через три роки її розгромила критика, розцінивши як &quot;наклеп на ГПУ&quot;. Протягом 1920—1930-х рр. М. Мінько написав кілька десятків оповідань. Та не щастило йому з більшими творами. Роман &quot;Виселок у пилу&quot; (1931) було вилучено як &quot;шкідливий&quot; і &quot;наклепницький&quot;. Письменник пробує написати щось на догоду владі, і таким чином з&#x27;являється слабенька повість для дітей &quot;Кокусники&quot; (1931), але і її громить критика. Він починає писати роман, присвячений колгоспному будівництву, але кидає, зрозумівши, що річ вийде бездарною. Увесь цей час М. Мінько працює в редколегії дніпропетровського журналу &quot;Зоря&quot;. У 1937 р. настає пік цькування письменників. Мінька звинувачують у наклепах на совєтську дійсність, називають &quot;замаскованим націоналістом&quot;: &quot;Зате контрреволюційних пасквілів на нашу дійсність, на меч пролетарської диктатури, на національну політику партії в &quot;літературних працях&quot; Мінька чимало. Такими &quot;працями&quot; він увійшов в літературу і набув в часи ткачуківщини і єфремовщини славу письменника, що подає надії, іншими словами, надійного зброєносця буржуазно-націоналістичної агентури фашизму&quot;, – писала обласна газета &quot;Зоря&quot; 9 вересня 1937 р., маючи на увазі Івана Ткачука, редактора журналу &quot;Зоря&quot;, і професора Петра Єфремова, який друкувався у часописі. Письменника арештували 25 жовтня 1937 р. Під час слідства його катували, вимагали зізнання в приналежності до української націоналістичної терористичної організації. &quot;Письменник Мінько мужньо тримався на допитах&quot;, – пише дослідник Микола Чабан. – Про це свідчить акт у його справі, складений оперуповноваженим НКВД Д. Платоновим 8 грудня 1937 р.: &quot;В процессе допроса обвиняемого Минько Николая Григорьевича последний держал себя вызывающе. Клеветнически заявил, что он раньше думал, что те, кто попадают в НКВД, являются действительно врагами, теперь он убедился, что НКВД арестовывает напрасно безвинных людей, так же, как и он арестован напрасно&quot;. Опір нічого не дав. 15 грудня М. Мінька розстріляли. Через місяць заарештували і його дружину, поетесу Олену Шпоту, яка півтора роки провела у в&#x27;язниці. У лютому 1943 р. вона трагічно загинула під час авіанальоту совєтської авіації.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Музичук Аркадій Степанович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Музичук Аркадій Степанович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./muzychuk-arkadiy-stepanovych_1.webp" alt="Музичук Аркадій Степанович" title="Музичук Аркадій Степанович" data-full="./muzychuk-arkadiy-stepanovych_1.webp" /><img class="side-img side-thumb" src="./muzychuk-arkadiy-stepanovych.webp" alt="Музичук Аркадій Степанович" title="Музичук Аркадій Степанович" data-full="./muzychuk-arkadiy-stepanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Музичук Аркадій Степанович народився 17 листопала 1942 року в с. Пасіка Грубешів. пов. Люблінського воєводства, Польща – поет, публіцист, кіносценарист.</p>
+          <p>Заслуженний журналіст України (2011). Літературна премія ім. С. Олійника, ім. Н. Забіли (обидві – 2014), ім. В. Чорновола (2015), ім. Остапа Вишні (2019). Після насильницької депортації 1944 сім&#x27;я Музичука спочатку опинилася на Дніпропетровщині, а 1946 – на Рівненщині (с. Глинськ Здолбунівського району), де він навчався у середній школі й розпочав 1959 журналістську діяльність у районній газеті &quot;Нове життя&quot;.</p>
+          <p>Закінчив Київський університет (1969). Працював коментатором Українського телебачення (&quot;Актуальна камера&quot;), був головним редактором студії &quot;Укртелефільм&quot; (1989–95), директором телестудії &quot;Вежа&quot; (1996–2006), головним редактором всеукраїнськиї газет і журналів. Автор низки поетичних збірок, публіцистичних творів, а також сценаріїв понад 40 гостросюжетних документальних фільмів, зокрема повнометражних: &quot;Постскриптум до першого декрету&quot;, &quot;Благовіст&quot;, &quot;Доля України вишита хрестами&quot;, &quot;Колективізація: хроніка насильства&quot;, &quot;Голодомор: хроніка терору&quot;, &quot;Чорнобиль: хроніка брехні&quot;, &quot;Криниця вдовиних сліз&quot;, &quot;Імена на граніті&quot;. Тематика віршів: біль із приводу голодомору, минулої вій­ни, Чорнобильської катастрофи, спогади про дитинство, туга по матері, замисленість над становищем української мови, відчуття швидкоплинності часу, роздуми про родинне щастя тощо. Поет загалом тяжіє до філософського осмислення людського буття. Пише книги для дітей: &quot;Батькова наука&quot; (1987), &quot;Загадки&quot; (2012), &quot;Сніданок для ведмедика&quot; (2014), &quot;Окраєць від зайця&quot; (2014), &quot;Куряча арифметика&quot; (2015), &quot;Де нічка ночувала&quot; (2015), &quot;Бородатий кіт&quot; (2015), &quot;Заєць з мікрофоном&quot; (2016), &quot;У лісочку на риночку&quot; (2017), &quot;Загадки&quot; (2017), &quot;Лелече новосілля&quot; (2017). Співупорядник та редактор збірки спогадів і документів &quot;У жорнах історії&quot; (2017).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

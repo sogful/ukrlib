@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мартинюк Йосип Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мартинюк Йосип Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./martyniuk-yosyp-vasylovych.webp" alt="Мартинюк Йосип Васильович" title="Мартинюк Йосип Васильович" data-full="./martyniuk-yosyp-vasylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Йосип Мартинюк – поет, історик, краєзнавець, самодіяльний художник, член Літературного об&#x27;єднання освітян Тернопілля, лауреат Всеукраїнського конкурсу &quot;Бурштинове намисто&quot; (2004).</p>
+          <p>Народився 6 листопада 1950 р. в с. Ценів на Тернопільщині. Після закінчення місцевої восьмирічки середню освіту здобув у Козівській середній школі №1.</p>
+          <p>Закінчив історичний факультет Івано-Франківського педінституту ім. В. Стефаника (нині – Прикарпатський університет). З 1973 р. – вчитель історії Конюхівської ЗОШ І-ІІІ ступенів. З проголошенням незалежності України 1991 р. Йосип Мартинюк з подвійною енергією вливається у вир громадського і політичного життя, вивчає і досліджує замовчувану історію сіл Ценева та Конюх, виступає з промовами на відновлених могилах УСС та вояків УПА, збирає раніше заборонені стрілецькі, повстанські, тюремні пісні, пише власні вірші, друкує статті &quot;Боже, нам єдність подай&quot;, &quot;Це наша історія&quot;, &quot;Братання на багнетах&quot;. Займається дослідженням січового стрілецтва і національно-визвольних змагань ОУН-УПА. Друкувався у збірниках &quot;Лисоня&quot; (1996), &quot;Як ішли стрільці з Бережан&quot; (1997), &quot;Повстанські пісні&quot; ч.ІІІ, в районній і обласній пресі, в альманасі &quot;Освітянська скриня&quot;. У 1999 р. за редакцією В. Подуфалого видав збірку пісень &quot;Земле моя, Україно&quot;, співавтор, упорядник і видавець збірки &quot;Мелодії рідної школи&quot; (2010). Лауреат Всеукраїнського конкурсу &quot;Червона калина&quot; (Тернопіль, 2014).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нікалео Ніка — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Нікалео Ніка</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nikaleo-nika.webp" alt="Нікалео Ніка" title="Нікалео Ніка" data-full="./nikaleo-nika.webp" /><img class="side-img side-thumb" src="./nikaleo-nika_1.webp" alt="Нікалео Ніка" title="Нікалео Ніка" data-full="./nikaleo-nika_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ніка Нікалео — під таким псевдонімом працює львівська письменниця, громадська діячка та журналістка Вероніка Олександрівна Хідченко.</p>
+          <p>Народилася 16 лютого 1973 року у місті Львові в інтелігентній мистецькій родині. Ще у школі захоплювалася музикою та літературою. Музичну освіту здобула у спеціальній музичній школі ім. С. Крушельницької. Закінчила факультет журналістики у Львівському національному університеті ім. І.Франка, згодом продовжила навчання у Комерційній академії на факультеті фінансів.</p>
+          <p>З 2009 року була автором і ведучою літературних сторінок &quot;Читай з Нікою Нікалео!&quot; та &quot;Вже ранок&quot; на 12 каналі Львівського обласного державного телебачення. В літературу Ніка Нікалео увійшла як дитяча письменниця – зокрема, 2007 року світ побачила перша книга для дітей &quot;Марк і Цезар у Зеленоводді&quot;, яка надзвичайно сподобалася маленьким читачам та їхнім батькам. Дипломант конкурсу &quot;Коронація слова-2010&quot; за роман &quot;Dolce Vita&quot;. Лауреатка &quot;Коронації слова-2013&quot; у номінації &quot;Вибір видавця&quot; за роман &quot;Любові полум&#x27;я&quot;. Дипломант Корнійчуківської премії за дитяче фентезі &quot;Небесний острів&quot;. У 2018 році авторка отримала відзнаку &quot;Люди Львова&quot; у номінації &quot;Золоте перо&quot; за укладання та авторство серії збірок про Львів: &quot;Львів Кава Любов&quot;, &quot;Львів Смаколики Різдво&quot;, &quot;Львів Пані Панянки&quot; та ін. Також Ніка Нікалео є ініціаторкою створення, генератором ідей та &quot;двигуном&quot; Львівського жіночого літературного клубу, що об&#x27;єднав багатьох письменниць із різних міст України та з-за кордону. З 2016 року є керівником Благодійного фонду &quot;Розвиток громади&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

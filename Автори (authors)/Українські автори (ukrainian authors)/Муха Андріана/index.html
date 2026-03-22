@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Муха Андріана — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Муха Андріана</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mukha-andriana.webp" alt="Муха Андріана" title="Муха Андріана" data-full="./mukha-andriana.webp" /></div>
+        <div class="prose-text">
+          <p>Є тільки один шанс, аби справити &quot;перше враження&quot;, одна мить аби привернути увагу, одна посмішка, аби закохати у себе, один дотик, аби збожеволіти від ніжного трепету і шаленої пристрасті … Отож, почнемо!</p>
+          <p>Моя подорож досить проста, вона починалась з маленького селища міського типу поблизу м. Мукачева, де люди зовсім не вміли вірити. У них були примітивні ідеї і принципи. Разом з &quot;польовою квіткою&quot; (так я називатиму свою сестричку [з двійні], музу, якій присвячена третина моєї творчості) ми ламали всі стереотипи. Із самого дитинства наше життя нагадувало бурхливе море, там усе постійно щось відбувалося, і, правду пишучи, про нас було чути всюди! Тут можна згадати спортивні досягнення з легкої атлетики, відвідування художньої школи, успіхи в навчанні, участь у громадському житті першої Пушкінської школи м. Мукачева, в якій я навчатимусь з 2010 року. 2017 став доволі переломним етапом: ми із сестрою переїжджаємо вчитись до сусідньої Словаччини, нам замало повітря у рідному Закарпатті. З 2017 до 2019 я навчатимусь в університеті Павла Йозефа Шафарика на факультеті європейського державного управління, що повністю змінює мої життєві принципи та ідеали.</p>
+          <p>Самостійне доросле життя за кордоном змушує виходити із &quot;зони комфорту. У 17 років за успіхи в університеті я отримую можливість побувати на засіданні Європарламенту у Страсбурзі, у 19 – проходжу стажування у волонтерській міжнародній організації, що бореться за захист людських прав і свобод (Amnesty international CZ) у Празі. Нині я працюю помічником директора у фірмі &quot;Ariadna Glass&quot; в м. Мукачеві. Моя творчість – то про кохання, дружбу, подорожі, натхнення, біль, шаленство, нерозуміння … одним словом: про ЖИТТЯ, у всіх його відтінках. Не про таке, як на обкладинці, а справжнє, інколи зовсім незрозуміле мені і тобі. Та хіба не в цьому ж його особливість? Проза і поезія загубленої пташки лише для тих &quot;особливих&quot;, що звикли високо літати… творчих та багатогранних, які живуть однією миттю, у яких немає часу на пусті балачки і беззмістовне існування, ті, що не бояться стрибати у безодню всіляких ідей і нестримних бажань, ті, що шукають своє покликання і не бояться змін.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

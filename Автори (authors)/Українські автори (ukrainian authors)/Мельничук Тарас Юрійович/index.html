@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мельничук Тарас Юрійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мельничук Тарас Юрійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./melnychuk-taras-iuriyovych.webp" alt="Мельничук Тарас Юрійович" title="Мельничук Тарас Юрійович" data-full="./melnychuk-taras-iuriyovych.webp" /><img class="side-img side-thumb" src="./melnychuk-taras-iuriyovych_1.webp" alt="Мельничук Тарас Юрійович" title="Мельничук Тарас Юрійович" data-full="./melnychuk-taras-iuriyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Тарас Юрійович Мельничук народився 20 серпня 1939 року в селі Уторопи Косівського району Івано-Франківської області.</p>
+          <p>Після закінчення десятирічки Тарас Мельничук працював коректором районної газети &quot;Радянська Гуцульщина&quot;, далі — в Комі АРСР лісорубом, валовідбійником на Донбасі, служив у лавах Радянської армії.</p>
+          <p>1958 вступив до Чернівецького державного університету. На третьому курсі покинув навчання і поїхав за комсомольською путівкою на будівництво Криворізького гірничо-збагачувального комбінату, далі впродовж двох років працював теслею на будовах Красноярського краю. 1964 Тарас Мельничук поновився в університеті, з якого через півтора року був відрахований за вільнодумство. Працював у редакціях районних газет Глибокої, Хотина, Косова, Верховини, Івано-Франківська. 1967 у видавництві &quot;Карпати&quot; вийшла його перша збірка віршів &quot;Несімо любов планеті&quot;. 1967 вступив на заочне відділення Московського літературного інституту. Здав рукопис збірки віршів &quot;Чага&quot; у видавництва &quot;Карпати&quot; та &quot;Радянський письменник&quot;, що стало причиною його арешту 24 січня 1972 року під час масових репресій проти української інтелігенції. Відбував покару в Пермських таборах, звідки вийшов на волю в березні 1975. Перебував під наглядом органів радянської держбезпеки. Квітень 1979 — через спровокований КДБ інцидент, за &quot;вчинення опору працівникові міліції&quot; (а насправді за антирадянську діяльність) Тарас Мельничук був арештований на 4 роки. Далі — кілька років адміністративного нагляду, поневіряння в пошуках роботи. 1982 у видавництві &quot;Смолоскип&quot; в Торонто без відома автора вийшла збірка його віршів &quot;Із-за ґрат&quot;. Після повернення із тюрми, Тарас Мельничук почав багато пити. Попри застереження друзів та їх намагання допомогти, врешті-решт він потрапив на курс лікування до спеціальної лікарні в Джурові. За припущенням, таким чином КДБ розраховувало звести нанівець авторитет поета та одночасно підірвати стан його здоров&#x27;я через ліки. 1985 після його втечі з Джурова, Мельничука було запроторено до психлікарні в Підмихайлівцях. Звільнений він був лише 27 квітня 1986, одразу після Чорнобильської аварії. Поету повідомили, що на нього тоді готувалося нове ув&#x27;язнення, але увагу радянських спецорганів було відвернуто техногенною катастрофою. 1990 — вийшли збірки &quot;Строфи із Голгофи&quot; (Велика Британія) та &quot;Князь роси&quot; (Київ, видавництво &quot;Молодь&quot;). У 1990 Тарас Мельничук вступив до Спілки письменників України. 1992 за книжку &quot;Князь роси&quot; удостоєний Державної премії України імені Т.Г. Шевченка. Останні роки прожив у Коломиї. 1994 у Коломийській друкарні ім. Шухевича побачила світ збірка поезій &quot;Чага&quot; (завдяки директорові друкарні Михайлові Андрусяку). Тарас Мельничук помер 29 березня 1995 року. Похований на місці колишнього рідного обійстя в Уторопах. Щороку 19 серпня, на День міста в Коломиї вручають міську літературну премію імені Тараса Мельничука.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

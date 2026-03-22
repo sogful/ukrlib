@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Матвійчук Анатолій Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Матвійчук Анатолій Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./matviychuk-anatoliy-mykolayovych.webp" alt="Матвійчук Анатолій Миколайович" title="Матвійчук Анатолій Миколайович" data-full="./matviychuk-anatoliy-mykolayovych.webp" /><img class="side-img side-thumb" src="./matviychuk-anatoliy-mykolayovych_1.webp" alt="Матвійчук Анатолій Миколайович" title="Матвійчук Анатолій Миколайович" data-full="./matviychuk-anatoliy-mykolayovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Матвійчук Анатолій Миколайович ) – естрадний співак, поет, композитор.</p>
+          <p>Народився 29 вересня 1958року в Києві.</p>
+          <p>Народний артист України (2000). Закінчив Київський університет (1986). Відтоді працював журналістом газети &quot;Молодь України&quot;, 1989–97 – редактор відділу естради журналу &quot;Музика&quot; у Києві. Водночас від 1988 виступає як співак і поет-пісняр. Його пісні – у репертуарі І. Білик, О. Білозір, В. Білоножка, А. Кудлай, В. Шпортька, Н. Яремчука. Ведучий та автор сценаріїв програм &quot;Музичний відеомлин&quot;, &quot;Музичний телеярмарок&quot; на каналі &quot;УТ-1&quot;, а також фестивалів &quot;Слов&#x27;ян­ський базарчик&quot;, &quot;Су­­зір&#x27;я-Артек&quot;, &quot;Галицький шлягер&quot;. Гастролі в США, Канаді, Австрії, Болгарії, Італії, Ізраїлі, Словаччині, Чехії. Записав низку компакт-дисків, зокрема &quot;Чорний кінь&quot; (1994), &quot;Два птахи&quot; (2001), &quot;Полустанок любові&quot;, &quot;Король Шапіто&quot; (обидва – 2002), &quot;Зачарована краса&quot; (2006), &quot;Ключі від раю&quot; (2007). У його поетичній творчості домінує філософська лірика. Автор збірок &quot;Вірші&quot; (1996), &quot;Ноїв Ковчег&quot; (1998), &quot;Предтеча&quot; (2003), &quot;Сповідь&quot; (2007), &quot;Зерна&quot; (2012), &quot;На варті&quot; (2015; усі – Київ).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

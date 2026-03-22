@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Москалець Кость Вілійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Москалець Кость Вілійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./moskalets-kost-viliyovych.webp" alt="Москалець Кость Вілійович" title="Москалець Кость Вілійович" data-full="./moskalets-kost-viliyovych.webp" /><img class="side-img side-thumb" src="./moskalets-kost-viliyovych_1.webp" alt="Москалець Кость Вілійович" title="Москалець Кость Вілійович" data-full="./moskalets-kost-viliyovych_1.webp" /><img class="side-img side-thumb" src="./moskalets-kost-viliyovych_2.webp" alt="Москалець Кость Вілійович" title="Москалець Кость Вілійович" data-full="./moskalets-kost-viliyovych_2.webp" /><img class="side-img side-thumb" src="./moskalets-kost-viliyovych_3.webp" alt="Москалець Кость Вілійович" title="Москалець Кость Вілійович" data-full="./moskalets-kost-viliyovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Костянтин Москалець (Кость Вілійович Москалець)</p>
+          <p>Поет, прозаїк, літературний критик, музикант.</p>
+          <p>Народився 23 лютого 1963 року у селі Матіївка біля Батурина на Чернігівщині. Заочно закінчив Літературний інститут ім. М. Горького в Москві (поезія, семінар Едуарда Балашова). Один із засновників бахмацької літературної групи ДАК. Служив у війську, працював на радіозаводі в Чернігові, був учасником Львівського театру-студії &quot;Не журись!&quot;, виступаючи як автор-виконавець власних пісень. Автор слів і музики відомої в Україні пісні &quot;Вона&quot; (&quot;Завтра прийде до кімнати...&quot;). Член Національної спілки письменників України (1992) та Асоціації українських письменників (1997). Від 1991 р. живе в селі Матіївці у власноруч збудованій Келії Чайної Троянди, займаючись виключно літературною працею. Костянтин Москалець – автор поетичних книг &quot;Думи&quot; (К.: Молодь, 1989) та &quot;Songe du vieil pelerin&quot; (&quot;Пісня старого пілігрима&quot;) (К., 1994), &quot;Нічні пастухи буття&quot; (Львів: Кальварія, 2001) та &quot;Символ троянди&quot; (Львів: Кальварія, 2001), книг прози &quot;Рання осінь&quot; (Львів: Класика, 2000), &quot;Досвід коронації&quot; (Львів: ЛА &quot;Піраміда&quot;, 2009), філософської і літературної есеїстики &quot;Людина на крижині&quot; (К.: Критика, 1999) і &quot;Гра триває&quot; (К.: Факт, 2006), а також книги щоденникових записів &quot;Келія чайної троянди&quot; (Львів: Кальварія, 2001). У 2000 році Віктор Морозов записав диск пісень Москальця &quot;Треба встати і вийти&quot;, а в 2008 — &quot;Армія Світла&quot;. Проза Костянтина Москальця перекладена англійською, німецькою та японською мовами; сербською і польською перекладені численні вірші та есе. Лауреат премій ім. О. Білецького (2000), ім. В. Стуса (2004), ім. В. Свідзінського (2004), ім. М. Коцюбинського (2005), ім. Г. Сковороди &quot;Сад божественних пісень&quot; (2006), &quot;Глодоський скарб&quot; (2010).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+
