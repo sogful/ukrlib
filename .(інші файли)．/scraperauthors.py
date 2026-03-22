@@ -13,13 +13,33 @@ from bs4 import BeautifulSoup
 from PIL import Image
 
 # /bio/ or /bio-zl/
-baseurl = "https://www.ukrlib.com.ua/bio/printit.php"
+basesite = "https://www.ukrlib.com.ua"
 scriptdir = Path(__file__).resolve().parent
 projroot = scriptdir.parent
 
 
+def sectionlinks(section: str) -> Dict[str, str]:
+    root = f"{basesite}/{section}/"
+    return {
+        "index": root + "index.php",
+        "author": root + "author.php",
+        "printit": root + "printit.php",
+    }
+
+
+def inferfromoutdir(out_path: str) -> str:
+    low = out_path.replace("\\", "/").lower()
+    if "foreign" in low or "зарубіжн" in out_path:
+        return "bio-zl"
+    if "ukrainian" in low or "українськ" in out_path:
+        return "bio"
+    return "bio"
+
+
 def defaultauthoroutdir() -> Path:
     candidates = [
+        projroot / "Автори (authors)" / "Зарубіжні автори (foreign authors)",
+        projroot / "Автори (authors)" / "Українські автори (ukrainian authors)",
         projroot / "ukrainianauthors",
         projroot / "Українські автори (ukrainian authors)",
     ]
@@ -278,8 +298,10 @@ def img2webp(imgbytes, dest, *, maxwidth, quality, method):
         im.save(dest, "WEBP", quality=quality, method=method)
     return True
 
-async def downloadfull2webp(session, url, dest, *, maxwidth=700, quality=45, method=6):
-    if os.path.exists(dest):
+async def downloadfull2webp(
+    session, url, dest, *, maxwidth=700, quality=45, method=6, force=False
+):
+    if not force and os.path.exists(dest):
         return os.path.basename(dest)
     imgbytes = await downloadbytes(session, url)
     if not imgbytes:
@@ -289,12 +311,12 @@ async def downloadfull2webp(session, url, dest, *, maxwidth=700, quality=45, met
 
 #*//////////////////////////////////////////////////////////////////////*#
 
-async def fetchhtml(session, tid, sema, maxtry=2):
+async def fetchhtml(session, printit_url: str, tid, sema, maxtry=2):
     p = {"tid": tid}
     for attempt in range(1, maxtry+1):
         async with sema:
             try:
-                async with session.get(baseurl, params=p) as resp:
+                async with session.get(printit_url, params=p) as resp:
                     if resp.status == 200:
                         b = await resp.read()
                         charset = resp.charset or "utf-8"
@@ -309,14 +331,6 @@ async def fetchhtml(session, tid, sema, maxtry=2):
                     return "exception", None
                 await asyncio.sleep(2 * attempt)
     return "exception", None
-
-def sectionlinks():
-    root = baseurl.rsplit("/", 1)[0] + "/"
-    return {
-        "index": root + "index.php",
-        "author": root + "author.php",
-        "printit": root + "printit.php",
-    }
 
 async def fetchtext(session, url, sema, params=None, maxtry=2):
     for attempt in range(1, maxtry + 1):
@@ -348,8 +362,8 @@ def parseprinttids(author_html: str) -> Optional[int]:
         return None
     return int(matches[0])
 
-async def discover_tids(session, sema, concurrency: int):
-    urls = sectionlinks()
+async def discover_tids(session, sema, concurrency: int, section: str):
+    urls = sectionlinks(section)
     indexurl = urls["index"]
     authorurl = urls["author"]
 
@@ -417,8 +431,8 @@ async def discover_tids(session, sema, concurrency: int):
     print(f"[discover] unique print tids: {len(tids)}")
     return tids
 
-async def processtid(session, sema, tid, outdir):
-    status, text = await fetchhtml(session, tid, sema)
+async def processtid(session, sema, tid, outdir, *, images_only=False, printit_url: str):
+    status, text = await fetchhtml(session, printit_url, tid, sema)
     if status != "success" or not text:
         return status, tid
     try:
@@ -432,6 +446,9 @@ async def processtid(session, sema, tid, outdir):
     years = str(p["years"])
     bio_text = str(p["bio_text"])
     author_dir = os.path.join(outdir, safefilename(real_name))
+    if images_only and not os.path.isdir(author_dir):
+        return "skipped", tid
+
     os.makedirs(author_dir, exist_ok=True)
     indexfile = os.path.join(author_dir, "index.html")
 
@@ -455,28 +472,34 @@ async def processtid(session, sema, tid, outdir):
             dest=os.path.join(author_dir, webp),
             maxwidth=700,
             quality=45,
-            method=6
+            method=6,
+            force=images_only,
         )
         if saved:
             images.append({"file": saved, "alt": alt})
 
-    htmlout = exporthtml(real_name, page_h2, author_short, years, bio_text, images)
-    with open(indexfile, "w", encoding="utf-8") as f:
-        f.write(htmlout)
+    if not images_only:
+        htmlout = exporthtml(real_name, page_h2, author_short, years, bio_text, images)
+        with open(indexfile, "w", encoding="utf-8") as f:
+            f.write(htmlout)
 
-    print(f"[ok] tid={tid} -> {indexfile}")
+    label = f"webp-only tid={tid} -> {author_dir}" if images_only else f"tid={tid} -> {indexfile}"
+    print(f"[ok] {label}")
     return "success", tid
 
 #*//////////////////////////////////////////////////////////////////////*#
 
 async def run(args):
     os.makedirs(args.out_base_dir, exist_ok=True)
+    section = args.section or inferfromoutdir(args.out_base_dir)
+    printit_url = sectionlinks(section)["printit"]
+    print(f"[run] ukrlib section=/{section}/ printit={printit_url}")
 
     conn = aiohttp.TCPConnector(limit=None)
     to = aiohttp.ClientTimeout(total=60)
     sema = asyncio.Semaphore(args.concurrency)
     async with aiohttp.ClientSession(connector=conn, timeout=to) as session:
-        foundtids = await discover_tids(session, sema, args.concurrency)
+        foundtids = await discover_tids(session, sema, args.concurrency, section)
         if not foundtids:
             print("[run] no tids discovered")
             return
@@ -494,31 +517,53 @@ async def run(args):
         if args.test:
             tid = random.choice(tids)
             print(f"[test] one random tid={tid}")
-            status, tid = await processtid(session, sema, tid, args.out_base_dir)
+            status, tid = await processtid(
+                session, sema, tid, args.out_base_dir,
+                images_only=args.images_only,
+                printit_url=printit_url,
+            )
             print(f"[test] status={status} tid={tid}")
             return
 
         i = 0
         done = 0
+        success_total = 0
+        skipped_total = 0
         while i < len(tids):
             batch = []
             for off in range(args.concurrency):
                 j = i + off
                 if j >= len(tids):
                     break
-                batch.append(processtid(session, sema, tids[j], args.out_base_dir))
+                batch.append(
+                    processtid(
+                        session, sema, tids[j], args.out_base_dir,
+                        images_only=args.images_only,
+                        printit_url=printit_url,
+                    )
+                )
             if not batch:
                 break
             results = await asyncio.gather(*batch)
             hit = any(s == "ratelimited" for s, _ in results)
             done += len(results)
+            success_total += sum(1 for s, _ in results if s == "success")
+            skipped_total += sum(1 for s, _ in results if s == "skipped")
             if done % max(25, args.concurrency) == 0 or done >= len(tids):
                 success = sum(1 for s, _ in results if s == "success")
-                print(f"[run] progress {done}/{len(tids)} (last batch success={success}/{len(results)})")
+                skipped = sum(1 for s, _ in results if s == "skipped")
+                extra = f" skipped={skipped}" if args.images_only else ""
+                print(
+                    f"[run] progress {done}/{len(tids)} (last batch success={success}/{len(results)}{extra})"
+                )
             if hit:
                 print("rate limited, waiting 60s")
                 await asyncio.sleep(60)
             i += args.concurrency
+
+        print(
+            f"[run] finished: success={success_total}, skipped={skipped_total}, total={len(tids)}"
+        )
 
 #*//////////////////////////////////////////////////////////////////////*#
 
@@ -534,6 +579,18 @@ def main():
     )
     parser.add_argument("--concurrency", type=int, default=8, help="max concurrent")
     parser.add_argument("--test", "-t", action="store_true", help="process one random discovered tid only")
+    parser.add_argument(
+        "--images-only",
+        action="store_true",
+        help="re-download and overwrite .webp side portraits only; do not write index.html",
+    )
+    parser.add_argument(
+        "--section",
+        choices=("bio", "bio-zl"),
+        default=None,
+        help="ukrlib bio area: bio=Ukrainian (/bio/), bio-zl=worldwide (/bio-zl/). "
+        "Default: inferred from --out (foreign→bio-zl, ukrainian→bio).",
+    )
     args = parser.parse_args()
     if not os.path.isabs(args.out_base_dir):
         args.out_base_dir = str((projroot / args.out_base_dir).resolve())

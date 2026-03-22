@@ -63,16 +63,66 @@ h2 {
     font-style: italic !important
 }
 
-#imageoverlay {
-    transition: opacity 0.25s ease;
-    opacity: 0;
-    pointer-events: none;
+/*//////////////////////////////////////////////////////////////////////*/
+
+.side-layout {
+    display: flex; gap: 24px;
+    align-items: flex-start;
 }
-#imageoverlay.open {
-    opacity: 1;
-    pointer-events: auto;
+
+.side-column {
+    flex: 0 0 auto;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
-#imageoverlay.fade {
-    opacity: 0;
-    pointer-events: none;
+
+.side-img {
+    width: 100%; height: auto;
+    margin-top: 0;
 }
+
+.side-thumb {cursor: pointer}
+
+.prose-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+@media (max-width: 700px) {
+    .side-layout {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .side-column {
+        width: 220px;
+        margin: 0 auto;
+    }
+}
+
+.imageoverlay {
+    position: fixed; display: flex;
+    inset: 0; z-index: 9999;
+    align-items: center; justify-content: center;
+    visibility: hidden;
+}
+
+.imageoverlay::before {
+    content: ''; position: absolute;
+    inset: 0; background: rgba(0, 0, 0, 0.75);
+    opacity: 0; transition: opacity 200ms ease;
+}
+
+.imageoverlay.open {visibility: visible}
+.imageoverlay.open::before {opacity: 1}
+
+.imageoverlaypic {
+    position: relative;
+    max-width: 80vw; max-height: 80vh;
+    width: auto; height: auto;
+    object-fit: contain; cursor: pointer;
+    opacity: 0; transition: opacity 200ms ease;
+}
+
+.imageoverlay.open .imageoverlaypic {opacity: 1}
