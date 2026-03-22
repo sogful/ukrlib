@@ -4,12 +4,15 @@ Batch-add, commit, and push the working tree in chunks (max size + max file coun
 Defaults: 100 MiB per commit, 5000 files per commit. Commit message prefix: "chunk upload".
 
 Usage (from repo root):
-  python chunk_upload.py
-  python chunk_upload.py --dry-run
-  python chunk_upload.py --no-push
-  python chunk_upload.py --max-mib 100 --max-files 5000
+  python chunkupload.py
+  python chunkupload.py --dry-run
+  python chunkupload.py --no-push
+  python chunkupload.py --max-mib 100 --max-files 5000
 
 Requires git user.name and user.email for commits. Remote should exist (e.g. origin).
+
+If push fails with credential errors (e.g. Git Credential Manager / MissingMethodException),
+use --no-push to commit chunks only, then push from GitHub Desktop or fix GCM (update Git for Windows).
 """
 
 from __future__ import annotations
@@ -156,6 +159,24 @@ def ensure_remote(repo: Path, remote: str) -> None:
                  f'  git remote add {remote} git@github.com:USER/ukrlib.git')
 
 
+def _print_push_troubleshooting() -> None:
+    print(
+        "\n"
+        "Push failed (often: Git Credential Manager crash, or no interactive TTY under Python).\n"
+        "\n"
+        "What to do:\n"
+        "  • Commit only, push from GitHub Desktop (you said it works there):\n"
+        "      py chunkupload.py --no-push\n"
+        "    Then in GitHub Desktop: push to origin.\n"
+        "  • Or update/repair Git for Windows (bundles Credential Manager):\n"
+        "      https://git-scm.com/download/win\n"
+        "  • Or open cmd.exe and run once (interactive TTY):\n"
+        "      git push -u origin main\n"
+        "\n",
+        file=sys.stderr,
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Chunked git add/commit/push for large repos.")
     parser.add_argument(
@@ -215,7 +236,11 @@ def main() -> None:
         _run_git(repo, ["commit", "-m", msg], check=True)
         if not args.no_push:
             print(f"Pushing to {args.remote} ({branch})…")
-            _run_git(repo, ["push", "-u", args.remote, branch], check=True)
+            try:
+                _run_git(repo, ["push", "-u", args.remote, branch], check=True)
+            except subprocess.CalledProcessError:
+                _print_push_troubleshooting()
+                sys.exit(1)
 
     print("Done.")
 
