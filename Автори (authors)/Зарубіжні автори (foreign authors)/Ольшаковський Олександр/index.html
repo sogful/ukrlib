@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ольшаковський Олександр — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ольшаковський Олександр</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./olshakovskyy-oleksandr.webp" alt="Ольшаковський Олександр" title="Ольшаковський Олександр" data-full="./olshakovskyy-oleksandr.webp" /></div>
+        <div class="prose-text">
+          <p>Александер Ольшаковський (29 липня 1902–17 січня 1977) – польський письменник фентезі, історичних романів та трилерів. Він також писав п&#x27;єси для різних театрів Польщі.</p>
+          <p>Закінчив філософський факультет Варшавського університету. У міжвоєнний період був редактором щомісячника &quot;Naokoło Świat&quot;. Захоплювався спіритизмом і товаришував зі Стефаном Осовецьким. У 1930-х роках був журналістом католицької преси. Під час Другої світової війни воював як вояк Армії Крайової та варшавський повстанець. Після війни жив у Кракові, продовжував літературну діяльність.</p>
+          <p>Він був автором таких творів, як: Діамантове намисто Любовна ескапада Гнів Божий (Остання людина) Гробниця Беніхассен Дворецький пана графа Туманність Андромеди Поза межами життя і смерті Перехитрити рибу Кохання бандита Танго Острів ілюзій.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

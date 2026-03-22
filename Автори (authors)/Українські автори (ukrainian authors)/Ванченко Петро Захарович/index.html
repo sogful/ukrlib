@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ванченко Петро Захарович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ванченко Петро Захарович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vanchenko-petro-zakharovych.webp" alt="Ванченко Петро Захарович" title="Ванченко Петро Захарович" data-full="./vanchenko-petro-zakharovych.webp" /><img class="side-img side-thumb" src="./vanchenko-petro-zakharovych_1.webp" alt="Ванченко Петро Захарович" title="Ванченко Петро Захарович" data-full="./vanchenko-petro-zakharovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Петро ВАНЧЕНКО</p>
+          <p>Ванченко (Івашенко) Петро Захарович народився 1898 року в с.Жуки на Полтавщині в сім&#x27;ї селянина-бідняка. Освіта середня. Належав до літературної організації.</p>
+          <p>Автор збірок оповідань та повістей &quot;Жива реклама&quot;, &quot;Мужність&quot; (1928), &quot;Обов&#x27;язок&quot;, &quot;Три пальці&quot; (1929), &quot;Клопіт цирульника Еміля Термана&quot;, &quot;Повість без назви&quot; (1930), &quot;Онопрій Кудь&quot; (1933). Арештований 6 грудня 1934 року Полтавським міським відділом НКВС УРСР Слідство велося Харківським обласним управлінням НКВС. Ванченкові інкримінувалося членство в &quot;терористичній організації, яка намічала вчинити ряд терористичних акцій над вождями партії та уряду&quot;. Під час допитів визнав свою вину, але в заяві на ім&#x27;я оперуповноваженого Харківського обласного управління НКВС Бордона написав, що &quot;не був здатний на практичне здійснення теракту.&quot; А на пізніших допита стверджував: &quot;Переконань терористичних у мене не було. Я не вірив у можливість здійснення акту&quot;. 4 січня 1935 року Бордон виніс постанову щодо твору П.Ванченка &quot;Оповідання про гніду кобилу&quot;. Цей твір опублікований ще 1929 року в журналі &quot;Червоний шлях&quot;, номер якого було долучено до справи як речовий доказ. Того ж дня Бордон допитав Ванченка у зв&#x27;язку з цим твором: у ньому вбачав &quot;злісний пасквіль на Радянську владу&quot;. Ось характерний фрагмент цього допиту &quot;— Ви визнаєте, що під виглядом &quot;гнідої кобили&quot; хотіли показати широкому читачеві Україну, яку &quot;експлуатують&quot;, з якої &quot;знущаються&quot; і яку врешті-решт замучили; кучер Самсон, в особі якого ви подайте представника пролетаріату, знущається з України до смерті? — Ні, не визнаю.&quot; За вироком закритого судового засідання виїзної сесії Військової колегії Верховного Суду СРСР, що відбулося 27-28 березня 1935 року в Києві, П.Ванченко за &quot;участь у контрреволюційній підпільній боротьбистській організації, що мала за мету повалення Радянської влади на Україні, відрив її від Радянського Союзу і створення незалежної української буржуазної держави&quot; разом із іншими обвинуваченими (зокрема, письменниками М.Кулішем, Г.Епіком, В.Підмогильним, Є.Плужником, А.Пановим, В.Поліщуком, Г.Майфетом, О.Ковінькою, В.Штангеєм, В.Вражливим) засуджений на 10 років позбавлення волі з конфіскацією належного йому майна. Направлений в Біломорсько-Балтійський табір НКВС СРСР Даних про його подальшу долю немає. Петро Ванченко реабілітований посмертно. Іван Ільєнко ЛУ 24 (4433) 13.06.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

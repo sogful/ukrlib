@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Жук Ігор Теодорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Жук Ігор Теодорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zhuk-ihor-teodorovych.webp" alt="Жук Ігор Теодорович" title="Жук Ігор Теодорович" data-full="./zhuk-ihor-teodorovych.webp" /><img class="side-img side-thumb" src="./zhuk-ihor-teodorovych_1.webp" alt="Жук Ігор Теодорович" title="Жук Ігор Теодорович" data-full="./zhuk-ihor-teodorovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ігор Теодорович Жук — український бард, поет-пісняр, театральний та кінодраматург, фізик — народився 7 грудня 1951 в с. Руда-Сілецька Кам&#x27;янко-Бузького району Львівської області.</p>
+          <p>У 1972 році закінчив фізичний факультет Львівського державного університету імені І. Франка за спеціальністю теоретична фізика, далі навчався в аспірантурі Інституту теоретичної фізики АН України. Ігор Теодорович — кандидат фізико-математичних наук (1990 рік), спеціаліст із комп&#x27;ютерної графіки, кіносценарист, старший науковий співробітник Інституту космічних досліджень НАНУ та НКАУ.</p>
+          <p>Ігор Жук — автор радіо-вистав, дитячої п&#x27;єси, сценаріїв понад 30 фільмів студії &quot;Київнаукфільм&quot;, трьох художньо-пізнавальних книг для дітей. До виходу на бардівську сцену Ігор Жук став відомий у колах київської інтелігенції як художник, організатор ряду виставок мистецького андеґраунду на базі Інституту теоретичної фізики. Мав декілька власних експозицій. Навчався у майстерні київських художників (Г. А. Зубченко, Г. Д. Пришедько). З 1972 року пише пісні на власні вірші. Має близько 400 пісень (українською, російською, польською мовами). Ігор Жук – лауреат та володар спеціального призу за кращу поезію Першого всесоюзного фестивалю авторської пісні (за поданням Булата Окуджави, 1986 рік, Саратов), лауреат Всеукраїнського фестивалю авторської пісні &quot;Оберіг&quot; (1991-1994 роки, Луцьк) та Всеукраїнського поетичного вернісажу &quot;Троянди й виноград&quot; (Фонд імені Максима Рильського, 2006 рік), володар премії імені В. Стуса (1997 рік). Найбільшими авторитетами в поезії і своїми &quot;заочними&quot; учителями вважає поетів &quot;Срібного віку&quot; – Ахматову, Цвєтаєву, Мандельштама, Гумільова, Пастернака, Волошина; з сучасників – Булата Окуджаву та Ліну Костенко. Виступав у багатьох містах України, а також в Бельгії, Польщі, Росії, США. Учасник Фестивалю української культури в Сопоті (1991 рік, Польща). Постійний учасник та член журі багатьох фестивалів авторської пісні. Автор пісень до історичних фільмів &quot;Отаманщина&quot; (1993 рік), &quot;Симон Петлюра&quot; (1993 рік), &quot;Знак Божої іскри&quot; (2001 рік), до анімаційного фільму &quot;Йшов трамвай №9&quot; (2002 рік, &quot;Срібний ведмідь&quot; на Берлінському міжнародному кінофестивалі в 2003 році). З виданого має поетичну збірку під назвою &quot;Вавилон&quot;, яку вийшла чотирма мовами – українською, російською, польською і німецькою. В основі збірки – біблійний цикл пісень. З 1972 року постійно мешкає в Києві. Працював науковим співробітником спочатку в Інституті теоретичної фізики національної Академії наук, потім в Українському центрі стандартизації та метрології.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

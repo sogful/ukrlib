@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дяченко Кость Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дяченко Кость Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./diachenko-kost-ivanovych.webp" alt="Дяченко Кость Іванович" title="Дяченко Кость Іванович" data-full="./diachenko-kost-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Дяченко Кость Іванович народився 20 січня 1928 р. в с. Драбівка Корсунь-Шевченківського району Черкаської області в сім&#x27;ї вчителя.</p>
+          <p>За спогадами вчительки-пенсіонерки Драбівської середньої школи Яценко Юлії Андріївни — сім&#x27;я Дяченків була приїжджа, свого будинку не мала, жили при школі. Батько Костянтина Івановича — Іван Семенович працював в Драбівській школі в 30-х роках. У сім&#x27;ї були старші дочки: старша — Марія, молодша — Тетяна.</p>
+          <p>У 1937 році сім&#x27;я Дяченків переїхала в Нетеребку, де майбутній письменник пішов у школу. Батько поета довго хворів ревматизмом і через декілька років помер, незабаром померла і мати. Старша сестра Марія закінчила Корсунське медичне училище, працювала в м. Корсунь-Шевченківський в РАЙВНО, в РК КПУ, потім переїхала в м. Черкаси. В 1944 році Костянтин Іванович — учасник Другої світової війни. В 1944 році він був бійцем і командиром винищувального загону по ліквідації залишків ворога після Корсунь-Шевченківського угрупування. По закінченні школи працював на залізниці черговим по станції, поїздовим диспетчером, начальником транспортного цеху цукрокомбінату. Навчався поет у Всесоюзному заочному інституті інженерів залізничного транспорту. Працював у рідній районній газеті та газеті &quot;Вечірній Київ&quot;. Член Спілки Письменників СРСР з 1976 р. Костянтин Дяченко автор книжок гумору та сатири: &quot;Хоч і верша — аби перша&quot; (1964), &quot;Історія з географією&quot; (1970), &quot;Комарасія&quot; (1972), &quot;Цвіт і цвіль&quot; (1973), &quot;Кругле диво&quot; (1974), &quot;Вето на холодець&quot; (1980), &quot;Невчасний візит&quot; (1982), роману &quot;Колія&quot; (1990), &quot;Веселе коло&quot; (для дітей).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

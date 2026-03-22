@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тріз Джефрі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Тріз Джефрі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./triz-dzhefri.webp" alt="Тріз Джефрі" title="Тріз Джефрі" data-full="./triz-dzhefri.webp" /><img class="side-img side-thumb" src="./triz-dzhefri_1.webp" alt="Тріз Джефрі" title="Тріз Джефрі" data-full="./triz-dzhefri_1.webp" /></div>
+        <div class="prose-text">
+          <p>Тріз народився 11 серпня 1909 року в Ноттінгемі у родині торговця вином. Свою літературну кар&#x27;єру він розпочав ще у дитячому віці, написавши п&#x27;єсу на три акти, яку поставили під час його навчання у Ноттінгемській середній школі.</p>
+          <p>Джефрі став стипендіатом в Оксфордському університеті, але вважав, що викладацька робота його не надихає, тому вирішив переїхати до Лондона. Там Тріз спробував себе як письменник, написавши свій перший дитячий роман &quot;Луки проти баронів&quot; (1934). Цим романом письменник повністю переписав історію Робін Гуда з точки зору простих людей, а не аристократів. Роман було перекладено багатьма мовами і він мав дуже добрі продажі. Його наступна робота &quot;Товариші по Хартії&quot; була не менш успішною, а однією з найвідоміших праць досі залишається &quot;Ключ до таємниці&quot;, написана ним в 1940 році.</p>
+          <p>Протягом одного року Тріз викладав історію та англійську мову в приватній школі Ессекса, продовжуючи писати у вільний час. Там він зустрів свою дружину Маріан Боєр, яка сама була вчителькою. У 1933 році вони одружилися, переїхали до Бата, де друзі запропонували їм житло. Згодом у них народилася донька Джоселін. Темою більшості праць письменника є незмінна віра в рівність і справедливість. Його романи пов&#x27;язані з історичними сюжетами та проблемами сучасності. Варіюються від Стародавньої Греції (&quot;Корона з Фіалок&quot;), Середньовіччя: (&quot;Червоні вежі Гранади&quot;); Єлизаветинської Англії: (&quot;Ключ до таємниці&quot;); Реставрації: Лондон (&quot;Вогонь на вітрі&quot;); французької революції: (&quot;Грім Вальмі&quot;); більшовицької революції (&quot;Білі ночі Петербурга&quot;) аж до Другої світової війни (&quot;Завтрашній день — чужий&quot;). Хоча його головним успіхом була історична фантастика, Тріз був різнобічним автором, який також писав біографії для дорослих і дітей, літературну критику, шкільні оповідання, романи для дорослих, детективи/пригодницькі історії та п&#x27;єси. Деякі з них, зокрема його чотири романи для дорослих та збірка дитячих детективів, сьогодні майже забуті. Їх можна зустріти лише у приватних колекціях. Проте вони мали значний успіх під час їх опублікування. Його значення як письменника-новатора представлено в трьох основних сферах. Однією із яких, була поява завдяки йому нової форми шкільної історії, починаючи з праці &quot;No Boats on Bannermere&quot; (1949). Автор також написав п&#x27;ять книг Беннердейла. Це зрозумілі та реалістичні історії про групу друзів та їхнє життя вдома та у школі. Вони також мають історичне значення, оскільки були першими сучасними шкільними історіями у яких важливий дім, а школа не є центром життя героїв. Герої дорослішають і розвиваються. Це був важливий крок у розвитку шкільної історії, перехід від школи-інтернату/закритого громадського середовища до підходу, який розглядав школу як один із аспектів життя. Іншою важливою подією було те, що історії Тріза були про звичайних дітей, які вели простий спосіб життя, на відміну від так званих порятунків на вершині скелі, матчів з крикету та інших характерних в той час шкільних історій. Джефрі Тріз продовжував писати до кінця свого життя. У 1997 році у нього було чотири книги, які чекали на публікацію. У свої вісімдесят років він цікавився сучасною політикою, обираючи різноманітні періоди політичної нестабільності, такі як наприклад Румунія за часів Чауческу, для задумів своїх наступних книг. Помер 27 січня 1998 року у місті Бат, де мешкав більшу частину свого життя.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

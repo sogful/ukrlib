@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нестлінгер Крістіне — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Нестлінгер Крістіне</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nestlinher-kristine_1.webp" alt="Нестлінгер Крістіне" title="Нестлінгер Крістіне" data-full="./nestlinher-kristine_1.webp" /><img class="side-img side-thumb" src="./nestlinher-kristine.webp" alt="Нестлінгер Крістіне" title="Нестлінгер Крістіне" data-full="./nestlinher-kristine.webp" /><img class="side-img side-thumb" src="./nestlinher-kristine_2.webp" alt="Нестлінгер Крістіне" title="Нестлінгер Крістіне" data-full="./nestlinher-kristine_2.webp" /><img class="side-img side-thumb" src="./nestlinher-kristine_3.webp" alt="Нестлінгер Крістіне" title="Нестлінгер Крістіне" data-full="./nestlinher-kristine_3.webp" /></div>
+        <div class="prose-text">
+          <p>Австрійську письменницю Крістіне Нестлінгер уважають однією з найпопулярніших авторок у сучасній Європі. Творча спадщина мисткині надзвичайно багата: проза, вірші, п&#x27;єси, сценарії радіо— й телеспектаклів тощо. Відкритість письменниці, тонке розуміння нею людської психології, оптимізм і вміння дивитися на все з гумором забезпечують успіх її книжок насамперед серед дітей і підлітків у всьому світі.</p>
+          <p>Крістіне Нестлінгер народилася 13 жовтня 1936 р. ум. Відні (Австрія). Її батько був годинниковим майстром, а мати — вихователькою в дитячому садку. Дівчинка навчалася в гімназії в гуманітарному класі, де на все життя полюбила літературу. Після закінчення гімназії Крістіне вирішила стати художницею й вступила до Академії мистецтв у Відні, займалася графікою та ілюструвала книжки для дорослих. Коли народилися її доньки, вона повністю присвятила себе їхньому вихованню. Саме для них вигадала Фредеріку — неслухняну дівчинку з малиновим волоссям, з якою постійно траплялися різні історії. Крістіне Нестлінгер спочатку створила серію малюнків, а пізніше записала історії, що розповідала дітям. Так виникла книжка &quot;Рудоволоса Фредеріка&quot;, яка була опублікована 1970 р. й одразу сподобалася читачам. За неї авторка отримала високу винагороду Європи — Літературну премію Фрідріха Бедекера.</p>
+          <p>Молода авторка наполегливо працювала. І невдовзі одна за одною з&#x27;являються її нові книжки: &quot;Діти з дитячого підземелля&quot;, &quot;Троє поштових грабіжників&quot; (1971), &quot;Геть огіркового короля&quot;, &quot;Чоловік для мами&quot; (1972), &quot;Чорний пан і великий собака&quot;, &quot;Лети, колорадський жук!&quot;, &quot;Маленький пан береться за справу&quot; (1973), Конрад, або Дитина з бляшанки&quot; (1975). Кожна з них викликала широкий резонанс у читацькому колі: одні вважали їх занадто бунтарськими, не педагогічними, навіть шкідливими для дітей, а інші — чесними, відкритими, актуальними. Однак усі погоджувалися, що письменниця висвітлює реальні1 проблеми дітей і дорослих, що виникають у сучасному житті, і шукає вирішення складних питань. На прикладах історій персонажів (як позитивних, так і негативних) К. Нестлінгер розкриває теми дитячої самотності (&quot;Дитина за обміном&quot;), пошуку власного &quot;Я&quot; (VМаргаритко, моя квітко&quot;), підліткової кризи (VІльзе Янда, 14&quot;), шукаючи витоки проблем дітей і підлітків насамперед у сімейних стосунках. За роки творчості К. Нестлінгер отримала понад 30 літературних премій, як австрійських, так і міжнародних. Найвизначнішими серед них є Міжнародна премія імені Г. К. Андерсена (1984), Премія пам&#x27;яті Астрід Ліндгрен (2003).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Щигельський Марцін — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Щигельський Марцін</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./shchyhelskyy-martsin.webp" alt="Щигельський Марцін" title="Щигельський Марцін" data-full="./shchyhelskyy-martsin.webp" /><img class="side-img side-thumb" src="./shchyhelskyy-martsin_1.webp" alt="Щигельський Марцін" title="Щигельський Марцін" data-full="./shchyhelskyy-martsin_1.webp" /></div>
+        <div class="prose-text">
+          <p>Марцін Щигельський, польський письменник, журналіст і графічний дизайнер, народився 28 травня 1972 року у Варшаві, Польща. Син актора Цезарія Щигельського та Івони Рач-Щигольської, одної з учасниць вокального жіночого гурту Filipinki. Має двох рідних братів — старшого Томаша та молодшого Войциха.</p>
+          <p>Креативний директор порталу Ahoj.pl (2000—2002), видавництва &quot;Gruner+Jahr Polska&quot; (проектував графічний дизайн для журналу &quot;Gali&quot;) та Видавничого інституту &quot;Маяк&quot;. Свої твори публікував на сторінках таких журналів як: &quot;Ньюсвік&quot; та &quot;Нова фантастика&quot;.</p>
+          <p>Як журналіст публікувався в тижневику &quot;Навпростець&quot; та на сторінках журналу &quot;Плейбой&quot; (тексти про архітектуру та дизайн інтер&#x27;єру). У 2007—2008 роках обіймав посаду головного редактора місячника &quot;Моє помешкання&quot; Також став співведучим програми &quot;Кімнатна революція&quot; на телеканалі &quot;TVN&quot;. 2012 року став членом Товариства польських письменників. 13 квітня 2016 року нагороджений бронзовою медаллю &quot;За заслуги в культурі Gloria Artis&quot;. Твори (для дітей і підлітків) : 2009 — Omega — &quot;Омега&quot; (фантастично-пригодницький роман); 2010 — &quot;За синіми дверима&quot; (фантастично-пригодницький роман); 2011 — Czarny Młyn — &quot;Чорний млин&quot; (фантастично-пригодницький роман); 2013 — Czarownica piętro niżej — &quot;Чарівниця поверхом нижче&quot; (фантастично-пригодницький роман) 2013 — &quot; Ковчег часу або Велика втеча Рафала із колись крізь тоді в тепер і назад&quot; (історико-пригодницький роман); 2014 — Tuczarnia motyli — &quot;Ферма метеликів&quot; (фантастично-пригодницький роман, продовження роману &quot;Чарівниця поверхом нижче&quot;); 2016 — &quot;Театр невидимих дітей&quot; (роман); 2016 — Klątwa dziewiątych urodzin — &quot;Прокляття дев&#x27;ятого дня народження&quot; (фантастично-пригодницький роман, продовження романів &quot;Чарівниця поверхом нижче&quot; та &quot;Ферма метеликів&quot;); 2017 — Serce Neftydy — &quot;Серце Нефтиди&quot; (космічна опера) 2018 — Bez piątej klepki — &quot;Без п&#x27;ятої клепки&quot; (фантастично-пригодницький роман, четвертий том &quot;Чарівниці поверхом нижче&quot;); 2018 — Weronika i zombie — &quot;Вероніка і зомбі&quot; (роман).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

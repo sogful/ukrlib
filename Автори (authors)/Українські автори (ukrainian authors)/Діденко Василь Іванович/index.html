@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Діденко Василь Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Діденко Василь Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./didenko-vasyl-ivanovych.webp" alt="Діденко Василь Іванович" title="Діденко Василь Іванович" data-full="./didenko-vasyl-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Василь Іванович Діденко народився 3 лютого 1937 року в Гуляйполі у родині Івана та Марії Діденків. Батько поета працював механізатором.</p>
+          <p>Коли Василеві виповнилося 10 років, батьки переїхали у село Гаврилівку на Херсонщині.</p>
+          <p>З липня 1950 до березня 1958 його біографія була пов&#x27;язана з Вінниччиною (Погребищанський район). Писати вірші почав рано. 25 січня 1953 року в газеті &quot;Вінницька правда&quot; був надрукований його найперший вірш &quot;Я — п&#x27;ятнадцятирічний капітан&quot;. Тоді юнак працював у батька помічником комбайнера. У 1954 році після закінчення Ширмівської середньої школи вступив до Київського університету імені Тараса Шевченка і закінчив 1959 року. Відтоді — на редакційній та літературній роботі. Як поет формувався в університетській літстудії ім. Василя Чумака. У травні 1963 року став членом Спілки письменників України. Перші його вірші надруковані 1957 року. Більшість з них покладено на музику. Василь Діденко створив 13 поетичних збірок, дві з яких є збірками віршів для дітей: &quot;Рання ластівка&quot; (1988); &quot;Дивокрай&quot; (1987); &quot;Дзвінка фонетика&quot; (1984); &quot;Червоний вітер&quot; (1982); &quot;Вродливий день&quot; (1979); &quot;Мережки сонця&quot; (1976); &quot;Берізка&quot; (1975) (Збірка віршів для дітей); &quot;Дзвонять конвалії&quot; (збірка, 1972); &quot;Дивосвіти любові&quot; (1969); &quot;Заповітна земля&quot; (1965); &quot;Степовичка&quot; (1965) (Збірка віршів для дітей); &quot;Під зорями ясними&quot; (1961); &quot;Зацвітай, калино&quot; (1957); &quot;Серцем, сповненим любов&#x27;ю&quot; (1998). Фактично — представник &quot;тихої лірики&quot;. Помер 13 квітня 1990 року та похований на київському північному кладовищі, розташоване у селі Рожни Броварського району. Вже після поховання в Києві став відомий його лист-заповіт &quot;Поховайте мене в Гуляйполі&quot; від 30 березня 1990 року. 25 червня 1997 року, завдяки клопотанню рідних та численних поціновувачів його таланту, поета перепоховали у Гуляйполі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

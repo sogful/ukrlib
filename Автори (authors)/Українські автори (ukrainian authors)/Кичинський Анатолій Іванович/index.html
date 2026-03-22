@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кичинський Анатолій Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кичинський Анатолій Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kychynskyy-anatoliy-ivanovych.webp" alt="Кичинський Анатолій Іванович" title="Кичинський Анатолій Іванович" data-full="./kychynskyy-anatoliy-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Шевченківська премія 2006 року за книги поезій &quot;Пролітаючи над листопадом&quot; та &quot;Танець вогню&quot; була присуджена добре відомому нашому сучаснику — Кичинському Анатолію Івановичу (1950), українському поетові, почесному громадянину Херсона.</p>
+          <p>Народився Анатолій Іванович 4 квітня 1950 року в селі Преображенка Чаплинського району в родині колгоспників.</p>
+          <p>Поетичне обдарування виявилося дуже рано: навчаючись ще в 5-ому класі, він пробує писати перші вірші. А вже з 17 років починається його творчий шлях. Любов до слова привела Анатолія Івановича на філологічний факультет Херсонського педагогічного інституту. У студентські роки з’являються його поетичні твори на сторінках обласних, а потім і всеукраїнських часописів &quot;Вітчизна&quot;, &quot;Київ&quot;, &quot;Дніпро&quot;, &quot;Україна&quot;, &quot;Жовтень&quot;, &quot;Ранок&quot;, в альманахах &quot;Вітрила&quot;, &quot;Сузір’я&quot;, Поезія&quot;, &quot;Степ&quot; та в багатьох колективних збірках. Перша книжка Анатолія Кичинського побачила світ у 1976 році. Це поетична збірка &quot;Вулиця закоханих дерев&quot;, на яку звернула увагу літературна критика і за яку її автор був удостоєний обласної премії. Після виходу цієї збірочки стало зрозуміло: на літературному небосхилі Херсонщини з’явилася нова зірка. Роком пізніше Анатолій Іванович був прийнятий до Спілки письменників України. Маючи природне обдарування, він виточував свою поетичну майстерність, навчаючись в 1981 році на Вищих літературних курсах при Літінституті ім. О.М.Горького. Збірка &quot;Землі зелена кров&quot;, що вийшла у 1982 році була удостоєна літературної премії ім. П.Усенка. На сьогодні у доробку поета більше 15 поетичних книг, виданих в Україні (Київ, Сімферополь, Херсон), а також у Російській Федерації (у перекладі російською мовою), в яких широко представлені інтимна і пейзажна лірика, художньо осмислюються місце людини у часі і просторі, духовні цінності життя. Анатолій Кичинський натхненно працює і як перекладач, наближаючи до українського читача здобутки світового письменства. Йому належать переклади грузинських, угорських, єврейських, білоруських та російських авторів. Зокрема, української версії писаної латиною знаменитої поеми епохи Відродження &quot;Пісня про зубра&quot; білоруса М.Гусовського. Поет є автором текстів багатьох популярних пісень. Вірші &quot;На відстані сльози&quot;, &quot;Пливе над світом біла наша хата&quot;, &quot;Підковане щастя&quot;, &quot;Сама здогадайся&quot;, &quot;Золота моя жінко…&quot;, &quot;Накинь на плечі плащ&quot;, &quot;Свічка&quot; та інші покладені на музику такими відомими українськими композиторами, як П.Дворський (Київ), О.Грицишин (Кривий Ріг), Ю.Поліщук (Рівне), А.Шейченко (Херсон), М.Бурмака (Київ) та інш. У 2013 році побачила світ нова збірка поезій &quot;Небажаний свідок&quot; Анатолія Кичинського, що вийшла у чернівецькому видавництві &quot;Букрек&quot; в серії &quot;Третє тисячоліття: українська поезія&quot;. Відкриваючи для себе Кичинського як поета, читачі мають знати, що він є ще й професійним художником. Ним створено низку високохудожніх живописних полотен, одним з яких проілюстровано збірку &quot;Небажаний свідок&quot;, це фрагмент картини &quot;Спрага&quot;, яку видавці органічно винесли на обкладинку видання.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коллінз Сюзанна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коллінз Сюзанна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kollinz-siuzanna.webp" alt="Коллінз Сюзанна" title="Коллінз Сюзанна" data-full="./kollinz-siuzanna.webp" /><img class="side-img side-thumb" src="./kollinz-siuzanna_1.webp" alt="Коллінз Сюзанна" title="Коллінз Сюзанна" data-full="./kollinz-siuzanna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Сюзанна Колінз — сучасна американська письменниця та сценаристка, романи в жанрі антиутопії та дитяча фантастика якої продається багатомільйонними накладами у всьому світі.</p>
+          <p>Сюзанна народилася 10 серпня 1962 року в містечку Санді-Гук, штат Коннектикут, США, в родині офіцера повітряних сил. Освіту здобула в Школі мистецтв у Бірмінгемі, в Індіанському університеті в Блумінгтоні та в Нью-Йоркській школі мистецтв за спеціальністю &quot;Драматургія&quot;.</p>
+          <p>З 1991 року Сюзанна працювала на телебаченні, зокрема над створенням дитячих передач та проєктів для &quot;Nickelodeon&quot;, згодом писала книжки для дітей та підлітків. Її дебютний роман &quot;Gregor the Overlander&quot;, який став першою частиною літературної серії &quot;The Underland Chronicles&quot;, був виданий у 2003 році, ідея про книгу з&#x27;явилась у письменниці після згадки про &quot;Алісу в Країні див&quot;, подумавши про те, що сьогодні імовірніше провалитися у каналізаційний люк, аніж у дивосвіт. В межах серії вийшло ще декілька книжок: &quot;Gregor and the Prophecy of Bane&quot; (2004); &quot;Gregor and the Curse of the Warmbloods (2005)&quot;; &quot;Gregor and the Marks of Secret&quot; (2006); &quot;Gregor and the Code of Claw&quot; (2007). Справжню популярність та визнання читачів авторка здобула після публікації роману &quot;Голодні ігри&quot; у 2008 році, книга стала першою частиною однойменної трилогії, у яку згодом увійшли ще декілька частин: &quot;У вогні. Друга частина трилогії &quot;Голодні ігри&quot;&quot; (2008); &quot;Переспівниця. Третя частина трилогії &quot;Голодні ігри&quot;&quot; (2010); За десять років авторка видасть книгу &quot;Балада про співочих пташок і змій. Приквел трилогії &quot;Голодні ігри&quot;&quot; (2020). Роман &quot;Голодні ігри&quot; шістдесят тижнів очолював рейтинг бестселерів &quot;The New York Times&quot;, журнал &quot;Time&quot; включив Сюзанну Колінз до списку ста найвпливовіших людей 2010 року. Книги Сюзанни Колінз були екранізовані компанією &quot;Lionsgate&quot; й на рівні з книгами стали культовими творами у світі кінематографа.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лисяк Вальдемар — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лисяк Вальдемар</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lysiak-valdemar.webp" alt="Лисяк Вальдемар" title="Лисяк Вальдемар" data-full="./lysiak-valdemar.webp" /></div>
+        <div class="prose-text">
+          <p>Народився він у 1944 році.</p>
+          <p>Вже першою ж книгою – &quot;Колиска&quot; (1974) – залучив до себе увагу.</p>
+          <p>В його творчості можна визначити ряд напрямків, які Лисяк постійно розвиває. По-перше, це книги з історії (і історичні, і художні), переважно, пов&#x27;язані з Наполеоном. &quot;Колиска&quot;, &quot;Шуанська балада&quot; (1976), &quot;Ампірний пасьянс&quot; (1977), &quot;Імперський покер&quot; (1978) – за цю книгу Лисяк впав у немилість у польської влади, йому було заборонено друкуватися, тому деякі книжки виходили під &quot;прозорим&quot; псевдонімом: Вальдемар Болдхед; &quot;&quot;Шахіст&quot; (1980) – саме з цієї книги почалася моя &quot;пригода&quot; з Вальдемаром Лисяком; &quot;Мовчазні пси&quot; (1990), &quot;Талейран&quot; (2007), &quot;Остання когорта&quot; (2005) та інші. По-друге, книги, присвячені архітектурі – за освітою Автор архітектор – та історії мистецтва: &quot;Френк Ллойд Райт&quot; (1982), &quot;Наполеон фортифікатор&quot; (1999), гігантська праця, присвячена європейському живопису &quot;Живопис білої людини&quot; у 8 томах та інші. Окрему групу представляють книги – збірки есе з подорожей по різних країнах: &quot;Зачаровані острови&quot; (1974), &quot;Французька стежка&quot; (1976), &quot;Асфальтовий салун&quot; (1980). Читачі дуже цінують збірки його есе, роздумів та фантастичних оповідань &quot;MW&quot; (1984), &quot;Безлюдні острови&quot; (1987), &quot;Острови зниклих скарбів&quot; (2001). Деякі книги Лисяка вважалися у Польщі &quot;книгою року&quot; (за популярністю, за продажами): &quot;Корабель&quot; (1994), &quot;Келих&quot; (2002). Пише Вальдемар Лисяк і фантастику, і пригодницько-розважальну літературу – наприклад, &quot;шахрайсько-пригодницька трилогія&quot;: &quot;Добрий&quot; (1990) – &quot;Конквіста&quot; (1989) – &quot;Найкращий&quot; (1992), яка розрослася вже до восьми книжок. Політичному плані Лисяк правий консерватор, практикуючий католик, русофоб і, на жаль, українофоб.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

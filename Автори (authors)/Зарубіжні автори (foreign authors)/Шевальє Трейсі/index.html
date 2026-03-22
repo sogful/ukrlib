@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шевальє Трейсі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Шевальє Трейсі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./shevalie-treysi.webp" alt="Шевальє Трейсі" title="Шевальє Трейсі" data-full="./shevalie-treysi.webp" /><img class="side-img side-thumb" src="./shevalie-treysi_1.webp" alt="Шевальє Трейсі" title="Шевальє Трейсі" data-full="./shevalie-treysi_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася 19 жовтня 1962 року у Вашингтоні, округ Колумбія. Наймолодша в родині з трьох дітей. Її батько, Дуглас Шевальє, понад 30 років працював фотографом у газеті &quot;Вашингтон пост&quot;. У 1970 році, коли Трейсі було вісім років, померла мати.</p>
+          <p>У 1984 році отримала ступінь бакалавра мистецтв в коледжі Оберлін в штаті Огайо. Згодом переїхала до Англії, де протягом декількох років працювала у видавничій справі — помічником редактора культурологічної енциклопедії видавництва &quot;Макміллан&quot;, згодом перейшла редактором у видавництво &quot;St. James Press&quot;. У 1993 році працювала над магістерською роботою в Університеті Східної Англії у Норвічі. Її викладачами були письменники Малкольм Бредбері та Роуз Тримейн.</p>
+          <p>Її перший роман &quot;Діва у блакитному&quot; (The Virgin Blue) вийшов у світ у 1997 році. Однак справжнє визнання прийшло після публікації у 1999 році другого роману — &quot;Дівчина з перловою сережкою&quot;, в основі якого історія створення одного з найвідоміших полотен голландського художника Яна Вермеєра. Книжка перекладена понад 38-ма мовами. Станом на 2013 живе в Лондоні з чоловіком і сином.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

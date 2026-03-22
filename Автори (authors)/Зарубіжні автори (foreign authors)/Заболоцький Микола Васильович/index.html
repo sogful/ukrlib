@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Заболоцький Микола Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Заболоцький Микола Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zabolotskyy-mykola-vasylovych.webp" alt="Заболоцький Микола Васильович" title="Заболоцький Микола Васильович" data-full="./zabolotskyy-mykola-vasylovych.webp" /><img class="side-img side-thumb" src="./zabolotskyy-mykola-vasylovych_1.webp" alt="Заболоцький Микола Васильович" title="Заболоцький Микола Васильович" data-full="./zabolotskyy-mykola-vasylovych_1.webp" /><img class="side-img side-thumb" src="./zabolotskyy-mykola-vasylovych_2.webp" alt="Заболоцький Микола Васильович" title="Заболоцький Микола Васильович" data-full="./zabolotskyy-mykola-vasylovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народився автор 24 квітня в 1903 році. У поета була проста сім&#x27;я: батько працював агрономом, а мати — педагогом. Своє дитинство Микола провів в селі, що значно відбилося на його творчості. Вперше любов до поезії Заболоцький відчув в ранньому віці, перші вірші були написані в шість років.</p>
+          <p>У Уржумському училище юнак цікавився всім, чим тільки можна: історія, мистецтво, хімія і багато іншого. Далі поет надходить в Москву на історико-філологічний і медичний факультет. Трохи пізніше Заболоцький переїжджає в Петроград і там продовжує навчання.</p>
+          <p>Як тільки поет закінчив навчання, він вирішив йти в армію. Микола поєднував службу з журналістикою діяльністю в місцевій стінгазеті. Саме армія дала той поштовх, який потрібен Заболоцький. Він знайшов себе і свій стиль. Після армії робота поета була відмінною. Він працював у відділі дитячої книги Державного видавництва під керівництвом С. Маршака. Особливе місце в його творчості займали діти. Перша збірка віршів вийшла в 1929 році і мав назву &quot;Стовпці&quot;. Саме цей збірник отримав величезний резонанс в суспільстві. Багато його не зрозуміли і не прийняли. Адже у віршах, які представлені в &quot;Шпальтах&quot;, чітко видно знущання і сарказм над міщанством. Люди, які були близькі до творчості і літературі, простежили пародії на стилі таких авторів, як Бальмонт, Пастернак, Достоєвський. Наступна збірка публікується в 1937 році і носить назву &quot;Друга книга&quot;. Заболоцького звинуватили в змові і пропаганді. В кінці 1930-их років поета заарештували. Його хотіли засудити до розстрілу, повісити організацію змов, однак, зробити цього не вдалося. Заболоцького катували, але він не підписав безпідставне обвинувачення. Все те, що відбувалося з Миколою в цей час, було розкрито в поемі &quot;Історія мого ув&#x27;язнення&quot;. Сорокові роки стали вирішальними в біографії Заболоцького. Він змінив напрямок у творчості. Відмовився від творів, які сповнені сарказму та іронії. Почав писати більш класичні вірші, які доступні всім. В кінці 1950-их років Микола повернувся в Москву. Він відвоював статус човна Спілки письменників. Свій третій збірник віршів &quot;Вірші&quot; був опублікований в 1948 році. Після Заблоцький майже не писав віршів. У 1955 році у поета стався серцевий напад. Його стан погіршився. Імовірно причиною серцевого нападу могло стати те, що дружина Заболоцького зраджувала йому. Чоловік просто не бачив або відмовлявся бачити те, що творила його улюблена. Особисте життя Заболоцький не афішував, тому про цей факт мало відомо. З новими силами поет взявся за роботу після розвінчання культу Сталіна і відлиги. Цей етап в історії країни знайшов відображення у віршах &quot;Десь у полі поблизу Магадана&quot;, &quot;Казбек&quot;. У 1957 році був опублікований останній збірник віршів &quot;Остання любов&quot;. 14 жовтня 1958 році Заболоцький помер від інфаркту.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

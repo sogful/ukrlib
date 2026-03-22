@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коваленко Георгій Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коваленко Георгій Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kovalenko-heorhiy-ivanovych.webp" alt="Коваленко Георгій Іванович" title="Коваленко Георгій Іванович" data-full="./kovalenko-heorhiy-ivanovych.webp" /><img class="side-img side-thumb" src="./kovalenko-heorhiy-ivanovych_1.webp" alt="Коваленко Георгій Іванович" title="Коваленко Георгій Іванович" data-full="./kovalenko-heorhiy-ivanovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 1 квітня 1968 року в Конотопі, Сумська область, Україна.</p>
+          <p>У 1985 році закінчив Конотопську середню школу № 1.</p>
+          <p>У 1986-1988 роках служив у прикордонних військах СРСР. У 1991 році отримав українське громадянство. У 1996 році з відзнакою закінчив філософський факультет Київського державного університету імені Тараса Шевченка. У 1993-1996 роках навчався у Курській духовній семінарії. У 1995 році був висвячений на диякона і пресвітера. З 1997 року є фундатором і шеф-редактором інтернет-порталу &quot;Православіє в Україні&quot;. З 1999 року по 2001 рік був кліриком Херсонської єпархії УПЦ. З 2001 року по 2008 рік був кліриком Київської єпархії УПЦ. В 2008 році був призначений прес-секретарем Предстоятеля УПЦ. З 2008 року по 2016 рік був головою Синодального інформаційно-просвітницького відділу УПЦ. З 2014 року по 2016 рік був головою Синодального просвітницького відділу УПЦ. З 2016 року є ректором Відкритого Православного Університету Святої Софії-Премудрості. У 2016 році був нагороджений ювілейною медаллю &quot;25 років незалежності України&quot;. У 2017 році виступив у ролі ведучого телевізійної програми &quot;Таємний код віри&quot; на телеканалі &quot;1+1&quot;. Основні досягнення: Створення і розвиток інтернет-порталу &quot;Православіє в Україні&quot;, який є одним із найпопулярніших православних ресурсів в Україні. Створення і розвиток телевізійних програм &quot;Православний світ&quot; (2003-2006), &quot;Світ Православія&quot; (2006-2013) і &quot;Православний вісник&quot; (2013-дотепер). Створення і розвиток телеканалу &quot;Глас&quot; (2004-2005). Створення і розвиток Відкритого Православного Університету Святої Софії-Премудрості. Георгій Коваленко є відомим українським православним священнослужителем, блогером і громадським діячем. Він є засновником інтернет-порталу &quot;Православіє в Україні&quot;, одного з найпопулярніших православних ресурсів в Україні. Коваленко також є автором телевізійних програм &quot;Православний світ&quot;, &quot;Світ Православія&quot; і &quot;Православний вісник&quot;. У 2016 році він був призначений ректором Відкритого Православного Університету Святої Софії-Премудрості.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

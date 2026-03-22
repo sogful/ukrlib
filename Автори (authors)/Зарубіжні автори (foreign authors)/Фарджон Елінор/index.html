@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фарджон Елінор — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Фарджон Елінор</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./fardzhon-elinor.webp" alt="Фарджон Елінор" title="Фарджон Елінор" data-full="./fardzhon-elinor.webp" /><img class="side-img side-thumb" src="./fardzhon-elinor_1.webp" alt="Фарджон Елінор" title="Фарджон Елінор" data-full="./fardzhon-elinor_1.webp" /></div>
+        <div class="prose-text">
+          <p>Елеанор Фарджон (англ. Eleanor Farjeon; 1881-1965) — англійська дитяча письменниця. Елеанор писала вірші, оповідання та повісті, притчі та міраклі, пісенні тексти до оперних спектаклів для дітей, але головним у її творчості були казки. Також на її рахунку ряд сатиричних оповідань для дорослих.</p>
+          <p>Елеанор Фарджон народилася в Англії 13 лютого 1881 року. Її батьками були англійський письменник Бенджамен Фарджон та Маргарет Джейн (Джефферсон) Фарджон, дочка американського актора Джозефа Джефферсона. Крім Елінор, у сім&#x27;ї було ще троє хлопчиків. У 1912 році в журналі &quot;Панч&quot; вона почала публікувати свої вірші про Лондон, які в 1916 році були видані першою окремою книжкою письменниці &quot;Дитячі пісеньки старого Лондона&quot;, яка згодом неодноразово перевидавалася.</p>
+          <p>Широку популярність у СРСР здобула завдяки перекладам її казок &quot;Сьома принцеса&quot; та &quot;Хочу місяць&quot; (переклади Ольги Варшавер, Ніни Демурової та ін.). 1955 року Елінор Фарджон була нагороджена за твори для дітей медаллю Карнегі. У 1956 році за рішенням Міжнародної ради з дитячої та юнацької літератури (IBBY) ЮНЕСКО Е. Фарджон стала першим лауреатом премії імені Ганса Християна Андерсена. Цю нагороду неофіційно називають дитячою &quot;Нобелівською премією&quot;. Елеанор померла на батьківщині, 5 червня 1965 року, на 85-му році життя.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

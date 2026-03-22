@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лермонтов Михайло Юрійович — Біографія стисло</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лермонтов Михайло Юрійович</h1>
+      <h2>Біографія стисло</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lermontov-mykhaylo-iuriyovych.webp" alt="Лермонтов Михайло Юрійович" title="Лермонтов Михайло Юрійович" data-full="./lermontov-mykhaylo-iuriyovych.webp" /><img class="side-img side-thumb" src="./lermontov-mykhaylo-iuriyovych_1.webp" alt="Лермонтов Михайло Юрійович" title="Лермонтов Михайло Юрійович" data-full="./lermontov-mykhaylo-iuriyovych_1.webp" /><img class="side-img side-thumb" src="./lermontov-mykhaylo-iuriyovych_2.webp" alt="Лермонтов Михайло Юрійович" title="Лермонтов Михайло Юрійович" data-full="./lermontov-mykhaylo-iuriyovych_2.webp" /><img class="side-img side-thumb" src="./lermontov-mykhaylo-iuriyovych_3.webp" alt="Лермонтов Михайло Юрійович" title="Лермонтов Михайло Юрійович" data-full="./lermontov-mykhaylo-iuriyovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Лермонтов Михайло</p>
+          <p>(1814-1841)</p>
+          <p>Російський поет, у творчості якого відбились тенденції романтичного і реалістичного напряму. У віршах (&quot;І нудно і сумно&quot;, &quot;На дорогу йду я в самотині&quot;), поемах (&quot;Мцирі&quot;, 1840; &quot;Маскарад&quot;, 1835), романі &quot;Герой нашого часу&quot; (1840) відчутна зосередженість автора на внутрішньому світі ліричного героя, у центрі — проблема особистості. &quot;Герой нашого часу&quot; — морально-психологічний роман про долю молодих людей після розгрому декабризму. Печорін — тип байронічного героя — постійно в пошуках ідеалу, в протиріччі з &quot;сірою буденністю&quot;, з якої прагне вирватись, але не може. Літературні критики визначають вплив на Лермонтова Шатобріана, Мюссе, Фур&#x27;є, Скотта, Карамзіна, Пушкіна.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

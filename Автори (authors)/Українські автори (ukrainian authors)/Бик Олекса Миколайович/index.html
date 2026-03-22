@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бик Олекса Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бик Олекса Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./byk-oleksa-mykolayovych_1.webp" alt="Бик Олекса Миколайович" title="Бик Олекса Миколайович" data-full="./byk-oleksa-mykolayovych_1.webp" /><img class="side-img side-thumb" src="./byk-oleksa-mykolayovych.webp" alt="Бик Олекса Миколайович" title="Бик Олекса Миколайович" data-full="./byk-oleksa-mykolayovych.webp" /><img class="side-img side-thumb" src="./byk-oleksa-mykolayovych_2.webp" alt="Бик Олекса Миколайович" title="Бик Олекса Миколайович" data-full="./byk-oleksa-mykolayovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Олексій Миколайович Бик — український громадсько-політичний та культурний діяч, ветеран російсько-української війни, бард, поет. Автор пісні &quot;Добровольці Божої чоти&quot;, що стала неофіційним гімном українського добровольчого руху завдяки однойменному документальному фільму Леоніда Кантера та Івана Яснія про захисників Донецького аеропорту.</p>
+          <p>Народився 4 грудня 1980 року, смт Сосниця, Чернігівської обл. Писати вірші розпочав ще у старших класах школи. Школу закінчив з золотою медаллю, до її закінчення вже був переможцем ряду філологічних та поетичних олімпіад та конкурсів. Після закінчення школи переїхав до Києва та вступив на філологічний факультет Педагогічного університету ім.Драгоманова.</p>
+          <p>До революційних подій 2013/2014 років працював журналістом &quot;Главкому&quot; . Навесні 2014 року проводив репортажі з уже окупованого Криму. На революційному майдані долучається до Правого Сектору, згодом певний час був партійним речником. В липні 2014 року добровольцем пішов на фронт, де перебував до зими 2014/2015 років. Воював у складі Доброво́льчого Українського Корпусу &quot;Правий сектор&quot;, виконував обов&#x27;язки стрільця, стрільця-водія, командира медичної групи. Деякий час перебував у Донецькому аеропорту, але &quot;кіборгом&quot; себе не вважає . З зими 2014/2015 років брав участь у формуванні 13-го батальйону ДУК ПС, який готувався на випадок оборони столиці. Один з ініціаторів проекту &quot;Пісні війни&quot;. У 2017 році став лауреатом &quot;премії ім.Я.Гальчевського&quot;. У грудні 2017 року став фігурантом скандалу у зв&#x27;язку з побиттям проросійського журналіста Руслана Коцаби, який закликав ухилятися від мобілізації. Член політичної партії Національний Корпус, восени 2020 року був кандидатом у депутати Вишневої міської ради від Національного Корпусу. У 2020 році був співзасновником та членом журі літературного конкурсу ім.А.Лупиноса. З лютого 2022 року військовослужбовець ЗСУ командир інженерно-саперної роти, штурмової бригади. В 2023 році був учасником боїв за Бахмут.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

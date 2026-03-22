@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вайсглас Іммануель — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вайсглас Іммануель</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vayshlas-immanuel_1.webp" alt="Вайсглас Іммануель" title="Вайсглас Іммануель" data-full="./vayshlas-immanuel_1.webp" /><img class="side-img side-thumb" src="./vayshlas-immanuel.webp" alt="Вайсглас Іммануель" title="Вайсглас Іммануель" data-full="./vayshlas-immanuel.webp" /></div>
+        <div class="prose-text">
+          <p>Іммануель Вайсглас народився 14 березня 1929 року в Чернівцях. Вайсглас — виходець із заможної чиновницької родини єврейського походження, шкільний товариш Пауля Целана. Уже школярем І.Вайсґлас вважався улюбленцем муз: він прекрасно грав на фортепіано, писав вірші, багато перекладав.</p>
+          <p>Ще в гімназії молодий поет опублікував в бухарестському часописі &quot;Viaţa romanească&quot; ( &quot;Румунське життя&quot;) німецькі переклади кількох віршів видатного румунського поета 20 століття Тудора Арґезі. У 1940 р Видав за підтримки Арґезі свій переклад знаменитої поеми національного румунського поета Міхая Емінеску &quot;Luceafărul&quot; ( &quot;Вечірня зоря&quot;) у вигляді окремої брошури.</p>
+          <p>У 1942 його разом з батьками депортували в один з &quot;трудових&quot; таборів Трансністрії (нині територія Вінницької області). Вайсґласам вдалося вижити, хоча вони терпіли там нелюдські приниження і знущання. Цей трагічний досвід поет згодом втілив у віршах збірки &quot;Kariera am Bug&quot; ( &quot;Каменоломня над Бугом&quot;, Бухарест, 1947). Після звільнення Червоною армією в 1944 р Вайсґлас повертається до Чернівців, однак в наступному році емігрує в Бухарест. Там він працює музикантом в театрі, коректором у видавництві &quot;Europolis&quot;, згодом редактором в газеті &quot;Romănia Liberă&quot; ( &quot;Вільна Румунія&quot;). Його друга поетична книга &quot;Останній рубіж&quot; (Der Nobiskrug, 1972), з&#x27;явилася тільки після перерви в чверть століття і була відзначена літературною премією румунської Спілки письменників. Основний і наскрізною темою творчості Вайсґласа стала трагедія Голокосту, яку він особисто пережив в Трансністрії. У Бухаресті Вайсґлас зробив німецькі переклади творів Александри &quot;Князь-деспот&quot;, Василе Войкулеску &quot;Останні вигадані сонети Шекспіра в перекладі В.Войкулеску&quot;, а також ряду віршів Міхая Емінеску. Ще більш продуктивної і багатогранною була його перекладацька діяльність з німецького на румунський. Воістину титанічним здійсненням став його переклад обох частин &quot;Фауста&quot; Й.В.Ґете (1957 і 1959, премія румунської Академії наук), який він опублікував під псевдонімом Іон Йордан. До творчим досягненням Вайсґласа слід віднести також переклади роману Ліона Фойхтванґера &quot;Erfolg&quot; ( &quot;Успіх&quot;, 1964), оповідних творів Грильпарцер &quot;Der arme Spielmann&quot; ( &quot;Бідний шпільман&quot;, 1966) і Штифтер &quot;Granit&quot; ( &quot;граніт&quot;, 1964) . Над перекладами Штіфтера письменник наполегливо працював багато років, упорядкував і видав збірку його оповідань &quot;Das alte Siegel und andere Prosa&quot; ( &quot;Стара друк і інша проза&quot;, 1970), підготував до друку переклад роману &quot;Der Nachsommer&quot; ( &quot;Бабине літо&quot;) . В останні роки свого життя Вайсглас тяжко хворів. Поет помер 28 травня 1979 року в Бухаресті від пухлини головного мозку. Свій прах він велів розвіяти над Чорним морем. У 1994 в Аахенськом видавництві &quot;Rimbaud&quot; вийшла поетична книга &quot;Aschenzeit: Gesammelte Gedichte&quot; ( &quot;Час попелу: Збірка віршів&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

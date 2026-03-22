@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бойко Грицько Пилипович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бойко Грицько Пилипович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./boyko-hrytsko-pylypovych_3.webp" alt="Бойко Грицько Пилипович" title="Бойко Грицько Пилипович" data-full="./boyko-hrytsko-pylypovych_3.webp" /><img class="side-img side-thumb" src="./boyko-hrytsko-pylypovych.webp" alt="Бойко Грицько Пилипович" title="Бойко Грицько Пилипович" data-full="./boyko-hrytsko-pylypovych.webp" /><img class="side-img side-thumb" src="./boyko-hrytsko-pylypovych_1.webp" alt="Бойко Грицько Пилипович" title="Бойко Грицько Пилипович" data-full="./boyko-hrytsko-pylypovych_1.webp" /><img class="side-img side-thumb" src="./boyko-hrytsko-pylypovych_2.webp" alt="Бойко Грицько Пилипович" title="Бойко Грицько Пилипович" data-full="./boyko-hrytsko-pylypovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Грицько Бойко ввійшов у літературу для дітей на початку 50-х років XX ст. і дуже швидко полюбився маленьким читачам. Лише в Україні за життя поета вийшло понад п&#x27;ятдесят книжок. Смішинки про малят і звірят, шкільні й спортивні веселинки, скоромовки-спотиканки, загадки адресовані тим, хто цінує гостре, влучне слово, любить і розуміє гумор, уміє покепкувати не тільки з когось, а й із себе самого.</p>
+          <p>Григорій Пилипович Бойко народився на Донеччині. Декілька поколінь Бойків, як згадує його син Вадим, уміли говорити віршами. Дід по материнській лінії, Олексій Корнієцький, залишив по собі кілька десятків пісень, які ще й досі співають у селах Донеччини. А батько поета, Пилип Бойко, теж писав вірші. Щоби видати їх, односельці зібрали гроші і відрядили секретаря місцевої комсомольської організації аж до Москви. І вийшла збірка &quot;Чайка&quot; українською мовою, але тодішня влада виплатила авторові гонорар... бібліотекою, 2000 невеликого формату книжок, які читало все рідне село Оленівка. Пилипа Бойка відправили на науку до Харкова, де він провчився лише рік, але встиг здружитися з однокурсником Володимиром Сосюрою...</p>
+          <p>Після закінчення семирічки Григорій Бойко навчався в Оленівській рудниковій школі. Відстань до школи була чимала, тому доводилося хлопцеві щодня вставати о четвертій годині, кілька кілометрів іти пішки до станції, а вже звідти їхати робочим поїздом до школи. Почалася війна. Ще юнаком зі шкільної парти пішов Григорій на фронт, а повернувся звідти тяжко пораненим. Після війни майбутній письменник навчався на літературному факультеті Донецького педінституту. Початком своєї літературної діяльності Григорій Пилипович вважав 1950 рік: саме тоді вийшла його перша збірка віршів &quot;Моя Донеччина&quot;. Але друкуватися він почав ще школярем. З мізерних гонорарів купував для сім&#x27;ї бодай якісь крупи і цим дуже пишався. Ще студентом видав першу книжку, і його одразу ж прийняли до Спілки письменників. Потім було ще кілька ліричних збірок. А згодом поет став писати виключно для дітей. У дитячій літературі не знайдеться, напевне, жанру, в якому б не працював Грицько Бойко: поеми, вірші, скоромовки, лічилки, загадки, п&#x27;єси-казки, тобто все, що подобається таким чарівним жителям країни Дитинства. Письменник видав близько ста книжок для дітей. Ще за життя наклад його книжок сягав двадцяти мільйонів. Особливо полюбилися малечі &quot;Билиці дяді Гриця&quot;, &quot;Про дідуся Тараса&quot;, &quot;Смішинки&quot;, &quot;Хлопчик Ох&quot;, &quot;Ніс у сметані&quot;, &quot;Шпаргалка-виручалка&quot; та інші. А ще на слова поета створено понад чотириста пісень, здебільшого для дітей. Збірник пісень на слова Г. Бойка &quot;Соловейко&quot; побачив світ у 1974 році.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

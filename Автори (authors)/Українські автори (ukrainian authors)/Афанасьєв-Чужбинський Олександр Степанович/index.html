@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Афанасьєв-Чужбинський Олександр Степанович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Афанасьєв-Чужбинський Олександр Степанович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./afanasiev-chuzhbynskyy-oleksandr-stepanovych.webp" alt="Афанасьєв-Чужбинський Олександр Степанович" title="Афанасьєв-Чужбинський Олександр Степанович" data-full="./afanasiev-chuzhbynskyy-oleksandr-stepanovych.webp" /><img class="side-img side-thumb" src="./afanasiev-chuzhbynskyy-oleksandr-stepanovych_1.webp" alt="Афанасьєв-Чужбинський Олександр Степанович" title="Афанасьєв-Чужбинський Олександр Степанович" data-full="./afanasiev-chuzhbynskyy-oleksandr-stepanovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Афанасьєв-Чужбинський, Олександр Степанович (справжнє прізвище — Афанасьєв; інші псевдоніми — Невідомий, Лубенец, Пустинник та ін.; 11.03.1816, с. Ісківці, тепер Лубенського району Полтавської області, Україна — 18.09.1875, м. Санкт-Петербург, тепер Російська Федерація) — письменник, історик, мовознавець, етнограф. Писав українською та російською мовами.</p>
+          <p>Народився в сім&#x27;ї дрібного поміщика. З 1829 навчався в Ніжинській гімназії вищих наук князя Безбородька (тепер Ніжинський державний університет імені Миколи Гоголя), яку закінчив 1835 зі званням студента та правом на чин 14-го класу. 1836 вступив юнкером у Білгородський уланський полк. 1843 вийшов у відставку в чині поручика.</p>
+          <p>Після завершення служби повернувся в Україну. 1843 познайомився з Т. Шевченком, 1845–1846 супроводжував поета в подорожі Лівобережною Україною. З 1847 служив у канцелярії воронезького губернатора, був редактором неофіційної частини газети &quot;Воронезькі губернські відомості&quot; (&quot;Воронежские губернские ведомости&quot;). 1856–1859 брав участь в етнографічній експедиції приморських областей Росії, яку організувало морське міністерство. Після повернення жив у м. Санкт-Петербурзі. 1864 заснував газету &quot;Петербурзький листок&quot; (&quot;Петербургский листок&quot;), 1873 працював відповідальним редактором сатиричного журналу &quot;Іскра&quot; (&quot;Искра&quot;). В останні роки життя був інспектором шкіл грамотності, завідував музеєм Петропавлівської фортеці у Санкт-Петербурзі. Надрукував вірші українською мовою в альманахах &quot;Ластівка&quot; (1841) і &quot;Молодик&quot; (1843). Опублікував 1855 у м. Санкт-Петербурзі анонімну збірку віршів &quot;Що було на серці&quot;, потім публікував свої твори в журналі &quot;Основа&quot;. Афанасьєв-Чужбинський — один із представників української романтичної (див. Романтизм) поезії 1840–1860-х. Найвідомішими є його романсові, інтимні поезії, перейняті щирим почуттям (&quot;Шевченкові&quot;, &quot;Прощання&quot;, &quot;Безталання&quot;, &quot;Є. П. Гребінці&quot; та ін.). Вірш &quot;Скажи мені правду, мій любий козаче&quot; став народною піснею.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

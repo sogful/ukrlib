@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нільсен Ерік Нільс — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Нільсен Ерік Нільс</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Нільс Ерік Нільсен народився 13 лютого 1924, Сігерслев, Сторе Гедінге, Зеландія, Данія в сім&#x27;ї теслі Оґе Крістіана Нільсена і Карен Нільсен.</p>
+          <p>Нільсен писав романи. На відміну від своєї дружини — письменниці Даґмар Нільсен, він не звертався до тематики щоденного життя людей і стосунків між ними й писав не про сучасність. Спільна риса його творів — фантастичне зображення різноманітних варіантів майбутнього.</p>
+          <p>Нільс Ерік Нільсен дебютував у 1950 році книжкою &quot;Червоний туман&quot;, а 1965 року одержав стипендію від Державного мистецького Фонду. Упродовж 1950-х років частину його ранніх оповідань опубліковано в недільному додатку газети &quot;Дагенс нюгедер&quot; (&quot;Dagens Nyheder&quot;). Ілюстрував їх Теє Андерсен, відомий науково-фантастичними коміксами &quot;Пригоди Віллі&quot; (&quot;Willy på eventyr&quot;). До самого кінця життя Нільсен майже щороку видавав книжку й мав широку читацьку аудиторію. Помер 9 листопада 1993 року. Він був один із нечисельних данських письменників-фантастів, а також найвідомішим та найплодовитішим серед них. Нільсенові твори забарвлені сатиричним ставленням до подій і їх розвитку. Оповідач, що все знає, подає панорамну картину суспільства й поступово відкриває перед читачами щораз нові подробиці. З самого початку він віддалений у часі від катастроф, та коли ті настають, сам стає їх свідком і вже тоді не знає майбутнього. Письменник розвиває тему поведінки людини в несприятливих умовах. Один із провідних мотивів його творчості — це суперечність між особою і суспільством, між привілейованими людьми й позбавленими привілеїв, між природою і цивілізацією. Часто головні дійові особи — це антигерої, яким доводиться долати свою малодушність і гуртом із незнаними істотами рятувати світ. Часто це жінки з надприродними властивостями. Незрідка серед персонажів трапляються люди з вибуховим темпераментом і хрестоматійні недоумки. У багатьох романів Нільсена подібні складові елементи та структура. Здебільшого йдеться про чоловіка, який під час колапсу цивілізації або іншого лиха пускається в подорож, протягом якої перероджується завдяки різним випадкам і пережиттям. Як правило, його супроводжує другопланова героїня, допомагає головному героєві дійти до мети та пильнує, щоб він не збився на варварство й не зійшов з правильної дороги до мети. Ця мета іноді незрозуміла, а іноді головний персонаж вважає її недосяжним ідеалом. Майже завжди в романах Нільсена кульмінація настає у фінальній драмі, в якій помирає одна або й більше другорядних постатей. Наприклад, у романі &quot;Зійшли два сонця&quot; гине пес, що супроводжує головного героя. У &quot;Переможцях&quot; відбувається вирішальна битва, і в ній гине жінка, в яку закохався герой. У &quot;Мечі чаклуна&quot; майор Томмельтот убитий рукою головного героя. Герой &quot;Спадку Каїна&quot; втрачає своїх бойових товаришів один за одним. Прикінцева драма рідко умиротворює головного персонажа. Навпаки, він пускається в іншу подорож — цього разу в невідомому напрямку, на чому й закінчується роман. Зрештою, варто зазначити, що Нільсен робить велику честь живим другорядним персонажам, яких згодом змушує вмирати. Ця смерть завжди невмотивована, зате вона справляє добру службу — спонукує головного героя до думок і висновків під час його пізнавальної подорожі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

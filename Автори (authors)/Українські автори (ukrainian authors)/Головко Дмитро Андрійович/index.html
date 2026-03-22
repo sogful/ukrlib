@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Головко Дмитро Андрійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Головко Дмитро Андрійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./holovko-dmytro-andriyovych.webp" alt="Головко Дмитро Андрійович" title="Головко Дмитро Андрійович" data-full="./holovko-dmytro-andriyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Дмитро Андрійович Головко народився 17 грудня 1933 в селі Піски Бобровицького району Чернігівської області — український поет і прозаїк.</p>
+          <p>Закінчив факультет журналістики Київського державного університету ім. Т. Г. Шевченка (1958).</p>
+          <p>Працював в газетах &quot;Київський комсомолець&quot;, &quot;Київська правда&quot;, &quot;Молодь України&quot;, двотижневику &quot;Театрально-концертний Київ&quot; (головним редактором), видавництвах &quot;Молодь&quot;, &quot;Радянський письменник&quot;, &quot;Український письменник&quot;. Він є автором книжок поезії: &quot;Плем&#x27;я робітниче&quot;, &quot;Зелена вісь&quot;, &quot;Снага&quot;, &quot;Просіка до обрію&quot; (1986, &quot;Радянський письменник&quot;), &quot;Два корені веселки&quot;, &quot;Непочата вода&quot;, &quot;Присмак брунки березневої&quot;, &quot;Млиновеє коло&quot;; повісті &quot;Вогонь папороті&quot;, книги афор та оповідань &quot;Журбина криниця&quot; (2003, Український письменник); книги афор та образків &quot;Хто і як завдає марноти?&quot; (Київ, 2010); книг для дітей &quot;Як окрайчик біг за хлопчиком&quot;, &quot;Про Петрика, Кодика та його сестричок-перфострічок&quot;, &quot;Телеграма&quot;, &quot;Поштарська сумка&quot;, &quot;Мандри Червоної Кульки&quot;, &quot;Рахівничка&quot;, &quot;Помста за Кенді&quot; (2012). Дмитро Головко був співорганізатором і є постійним членом журі літературно-мистецького районного конкурсу імені Павла Тичини &quot;Добридень тобі, Україно моя!&quot;, що проводиться в Бобровицькому районі Чернігівської області. Є членом Національної спілки письменників України (з 1974), членом приймальної комісії Київської міської організації НСПУ. Лауреат премії імені Павла Тичини.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

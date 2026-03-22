@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Єршов Петро Павлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Єршов Петро Павлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./iershov-petro-pavlovych.webp" alt="Єршов Петро Павлович" title="Єршов Петро Павлович" data-full="./iershov-petro-pavlovych.webp" /><img class="side-img side-thumb" src="./iershov-petro-pavlovych_1.webp" alt="Єршов Петро Павлович" title="Єршов Петро Павлович" data-full="./iershov-petro-pavlovych_1.webp" /><img class="side-img side-thumb" src="./iershov-petro-pavlovych_2.webp" alt="Єршов Петро Павлович" title="Єршов Петро Павлович" data-full="./iershov-petro-pavlovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>(6.03.1815 — 30.08.1869)</p>
+          <p>Народився в селі Безруково Ішимського повіту Тобольської губернії в сім&#x27;ї чиновника. Раніше дитинство він провів в м Березові, а в 12 років батько відправив його разом зі старшим братом до Тобольська гімназію.</p>
+          <p>Роки навчання Єршова в гімназії збіглися з часом пробудження в Росії інтересу до Сибіру і сибірської темі. У пресі з&#x27;являються твори поетів і письменників, виходять альманахи і збірники. Ці настрої впливають на юного Єршова. У Тобольську він збирає сибірські казки і стає їх справжнім неперевершеним знавцем. У 1831 р Петро Павлович закінчує гімназію. Батько переїжджає з синами в Петербург, щоб дати їм можливість вчитися в університеті. Єршов надходить на філософсько-юридичне відділення Петербурзького університету. У студентські роки він співпрацює в рукописному журналі А. Майкова &quot;Пролісок&quot;, друкує свої вірші в &quot;Бібліотеці для читання&quot;. У 1832 р Єршов, познайомившись з казками А.С. Пушкіна, починає роботу над власним твором — віршованій казкою &quot;Коник-Горбоконик&quot;. Першу частину цієї казки він представив у вигляді своєї курсової роботи професору словесності П.А. Плетньова, який високо оцінив працю свого студента. У 1834 р казка була опублікована в &quot;Бібліотеці для читання&quot;. Окремою книжкою казка була видана в 1835 році, коли П.П. Куйовдить закінчив навчання в університеті. Казку схвалив Пушкін, вона швидко набула широкої популярності і любов читачів. Успіх &quot;Конька-Горбунка&quot; полягав в істинної народності цієї казки, в основу її лягли сюжети казок про Іванка-дурня і Сівка-Бурке. Казка за життя автора витримала 7 видань. Починаючи з 4-го (1856 р) вона друкується з відновленням віршів, викинутих раніше цензурою, і авторськими доповненнями і доробками. Єршов говорив, що його казка є твір народне, взяте ним майже слово в слово у сибірських оповідачів. Він писав: &quot;На&quot; Коника-горбунок &quot;на власні очі збувається російське прислів&#x27;я: не родися ні розумний, ні пригожий, а родись щасливий. Вся моя заслуга туту, що мені вдалося потрапити на народну жилу &quot;. Яскраві образи наповнюють казку, роблячи її живою і цікавою для багатьох і багатьох поколінь дітей і дорослих: розумний, чесний і спритний Іванушка; іронічно зображені цар-батюшка і духовенство. У текст казки органічно вплітаються фольклорні мотиви і розмовна народна мова. У 1835 р перед поетом постає питання про повернення до Сибіру: вмирає його батько і старший брат. Він повертається до матері, яка потребує піклування. У 1936 р він стає учителем, потім інспектором, а в 1857 р — директором Тобольської гімназії. Він продовжує писати окремі оповідання, п&#x27;єси і вірші. Але всі вони не витримують ніякого порівняння з його першим юнацьким твором, який став справжнім шедевром російської літератури, в історію якої він так і увійшов автором одного єдиного твору.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

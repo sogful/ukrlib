@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Височанський Олександр Григорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Височанський Олександр Григорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vysochanskyy-oleksandr-hryhorovych.webp" alt="Височанський Олександр Григорович" title="Височанський Олександр Григорович" data-full="./vysochanskyy-oleksandr-hryhorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 9 грудня 1957 р. у с. Антонівка Томашпільського району Вінницької області. Після закінчення у 1977 р. сільської школи працював до 1984 р. друкарем Томашпільської районної друкарні. Опісля спеціального навчання у Києві був інженером протипожежних робіт, головою районного добровільного протипожежного товариства (1986—2000). Згодом — кореспондент районного радіо (2003—2007), потім — на творчій роботі. Обирався депутатом Томашпільської районної ради.</p>
+          <p>Працює в жанрі ліричної поезії, сатири й гумору, пише вірші для дітей. Друкується від 1978 р. у журналах &quot;Перець&quot;, &quot;Вус&quot;, &quot;Дзвін&quot;, &quot;Барвінок&quot;, &quot;Пізнайко&quot;, &quot;Мурзилка&quot;, &quot;Малятко&quot;, &quot;Хлібороб України&quot;. Твори видавалися у близько двадцяти колективних збірках та періодиці.</p>
+          <p>Автор збірок лірики: &quot;Не любить затінку душа&quot; (1993); &quot;Солов&#x27;ї на калині&quot; (1995); &quot;Подих світанку&quot; (2001); &quot;Рятуй мене, Боже!&quot;; &quot;Вінок сонетів Божої любові&quot; (2008); &quot;Летюча криниця&quot; (2010); &quot;Поцілунок троянди&quot; (2011). Збірки гумору і сатири: &quot;Йду з Томашполя й сміюся&quot; (1991); &quot;Триндирички&quot; (2001); &quot;Опозиційний комар&quot; (2008); &quot;Дідів заповіт&quot; (2011). Книжки віршів для дітей: &quot;Муравлик Землю загубив&quot; (1993); &quot;Впіймав струмочок місяця&quot;(1996); &quot;Місяць коників пасе&quot; (2000); &quot;Академіквус Мурло і Мурчик-Позіхай&quot; (2003); &quot;Книжечка нова про старі дива&quot; (2016).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

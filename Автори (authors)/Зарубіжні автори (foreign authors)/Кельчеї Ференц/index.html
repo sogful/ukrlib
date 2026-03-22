@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кельчеї Ференц — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кельчеї Ференц</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kelchei-ferents.webp" alt="Кельчеї Ференц" title="Кельчеї Ференц" data-full="./kelchei-ferents.webp" /></div>
+        <div class="prose-text">
+          <p>Ференц Кельчеї ( 8 серпня 1790, Седеметр — 24 серпня 1838, Чеке) — угорський поет, публіцист, критик, політичний діяч, автор угорського національного гімну.</p>
+          <p>Писав патріотичні вірші (&quot;До свободи&quot; (1825), &quot;Пісня Зріні&quot; (1830)), присвячені боротьбі проти феодалізму, кріпацтва, за незалежність від Австрії. В 1826 р. заснував журнал &quot;Élet és irodalom&quot; (&quot;Життя і література&quot;), для якого написав багато статей з філософії, історії мистецтва і літературної критики. Історичний інтерес становить щоденник Кетеї, який він вів у 1832–1836 рр..</p>
+          <p>Був членом угорського парламента, де заявив себе найбільшим оратором ліберальної партії. Промови в сеймі та дидактичний твір &quot;Параїнезіс&quot; (1838) мали значний вплив на Лайоша Кошута та революційно-демократичну молодь, очолювану Шандором Петефі. Поету встановлено мініскульптуру в Ужгороді. На стіні Ужгородського угорського дому, що на вул. Мукачівській, 54, встановлено меморіальну дошку Ференцу Келчеї. Він неодноразово відвідував Ужгород та написав вірш про Хуст.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

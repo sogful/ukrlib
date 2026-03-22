@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Чоран Еміль — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Чоран Еміль</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./choran-emil.webp" alt="Чоран Еміль" title="Чоран Еміль" data-full="./choran-emil.webp" /><img class="side-img side-thumb" src="./choran-emil_1.webp" alt="Чоран Еміль" title="Чоран Еміль" data-full="./choran-emil_1.webp" /></div>
+        <div class="prose-text">
+          <p>Еміль Мішель Чора́н (фр. Emil Michel Cioran (французька вимова — Сьора́н); 8 квітня 1911, Решінарі, Австро-Угорщина, нині Румунія — 20 червня 1995, Париж) — румунський і французький філософ і письменник. Відомий своїми есе та афоризмами песимістичного спрямування.</p>
+          <p>Народився в трансильванському селі Решінарі, що належало тоді Австро-Угорщини. Син православного священика, навчався в німецькій школі. Закінчив факультет філології та філософії Бухарестського університету, де затоваришував з Мірчею Еліаде й Еженом Йонеско, світогляд їхнього гуртка склався під сильним впливом німецького культур-песимізму й філософії життя (Шопенгауер, Ніцше, Людвіг Клагес).</p>
+          <p>З 1932 року Чоран починає публікуватися в румунській пресі, виступає з різкою критикою румунського провінціалізму, гаслами відродження нації, надіями на харизматичного вождя, симпатією до італійського фашизму й німецького нацизму. У 1933—1934 роках зі стипендією Фонду Гумбольдта навчається в Берлінському університеті Фрідріха-Вільгельма і Мюнхенському університеті імені Людвіга Максиміліана, в 1935 році повертається до Румунії, викладає в провінційному ліцеї. Перші книги песимістичної філософської есеїстики написані румунською мовою. У 1937 році зі стипендією Інституту Франції з Бухаресту Чоран їде до Парижа, де оселяється в маленькій мансардній квартирі в Латинському кварталі, в якій мешкатиме до кінця життя. У Парижі відвідує семінари з філософії в Сорбонні, згодом подорожує Францією, Іспанією, Великою Британією — пішки та на велосипеді. Роки гітлерівської окупації проводить в Парижі. Після війни вирішує залишитися у Франції й перейти на французьку мову, повністю пориває з колишніми націоналістичними ідеями. Головні твори: На вершинах відчаю (1934, румунською мовою) Сльози й святі (1937, румунською мовою) Трактат про деконструкцію (1949, французькою мовою, премія Ривароля, німецькою переклав Пауль Целан) Силогізми гіркоти (1952) Спокуса існування (1956) Історія й утопія (1960) Злий Деміург (1969) Нарис реакційної думки. Про Жозефа де Местра (1977) Вправи зі славослів&#x27;я (1986) Зізнання й прокляття (1987) Самотність і доля (опубл. 2004) Вправи з заперечення (опубл. 2005)</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

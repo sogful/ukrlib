@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Єсенський Янко — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Єсенський Янко</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./iesienskyy-ianko.webp" alt="Єсєнський Янко" title="Єсєнський Янко" data-full="./iesienskyy-ianko.webp" /><img class="side-img side-thumb" src="./iesienskyy-ianko_1.webp" alt="Єсєнський Янко" title="Єсєнський Янко" data-full="./iesienskyy-ianko_1.webp" /><img class="side-img side-thumb" src="./iesienskyy-ianko_2.webp" alt="Єсєнський Янко" title="Єсєнський Янко" data-full="./iesienskyy-ianko_2.webp" /></div>
+        <div class="prose-text">
+          <p>Походив поет із старовинного роду, уславленого колись на всю Європу Яном Єсеніусом — ректором Празького університету, відомим лікарем, філософом і громадським діячем кінця XVI — першої чверті XVII століття. Народився у місті Мартін 30 грудня 1874 року. Син Яна Єсенського-Ґашпаре, відомого адвоката та громадського активіста, співорганізатора Матиці словацької. Освіту здобув у рідному місті, потім в середній школі в містах Банська-Бистриця та Рімавска Собота.</p>
+          <p>У 1893 році закінчив гімназію в м.Кежмарок. Янко Єсенський обрав кар&#x27;єру правника. З 1893 до 1896 року навчався в юридичній академії у Пряшеві. Після чого захистив докторську дисертацію, в результаті чого став у 1900 році доктором права. У 1897 році він одночасно дебютував в періодичній пресі як поет та прозаїк.</p>
+          <p>Працював правником у Лученці, Битчі, Ліптовському Мікулаші, Мартіні і Нове Мєсто-над-Вагом. У 1905 році здає іспит на адвоката і відкриває власну практику. У 1913 році одружився. Під час Першої світової війни було мобілізовано до армії у 1914 році. Втім Єсенський у 1915 році добровільно здався в полон російським військам. Перебував у таборах для військовополонених, розташованих в Україні та Забайкаллі, де користувався деякими пільгами як слов&#x27;янин. Через йому рік дозволено мешкати у Воронежі, а потім — Петроград, де працює в редакції тижневика &quot;Словацькі голоси&quot;. Тут Янко Єсенський поглибив своє знання російської літератури, в подальшому ставши популяризатором її у Словаччині. На початку 1919 року кружним шляхом через Владивосток і Японію повертається додому. Працював на державній службі. У 1922 році стає жупаном м. Римавська Собота, а потім м. Нітра. У 1929 році переїхав до Братислави, де він став радником уряду, пізніше віце-президент провінційного бюро Чехословаччини. У 1930–1939 роках був віце-президент Асоціації словацьких письменників, виступав проти фашизму у Словаччині в 1930—1940-х роках. У 1939 році пішов з державної служби. У 1945 році першому зі словацьких письменників присуджено звання народного художника Чехословаччини. Помер 27 грудня 1945 року в Братиславі, Угорщина. ТВОРИ Проза: — Новели (Novely, 1921) — Шлях до свободи (Cestou k slobode, 1933) — Малостранська історії (Malomestsk? rozpr?vky, 1913) — Старі часи (Zo star?ch ?asov, 1935) — Демократи I, II (Demokrati I., II., 1934, 1938) — Листи пані Ольга (Listy sle?ne O?ge, 1970) Поезія: — З полону (Zo zajatia, 1918), — Вірші (Ver?e, 1905) — З віршів Янко Есенський (Z ver?ov Janka Jesensk?ho, 1918 ) — Після бурі (Po b?rkach, 1923) — Вірші Янко Есенський II (Ver?e Janka Jesensk?ho II, 1923) — Наш герой (N?? hrdina, 1944), — Відбитки (Reflexie, 1945) — На злобу дня (Na zlobu d?a, 1945) — Осінні квіти (Jesenn? kvet, 1948, посмертна публікація) — У ночі (Proti noci, 1945)</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

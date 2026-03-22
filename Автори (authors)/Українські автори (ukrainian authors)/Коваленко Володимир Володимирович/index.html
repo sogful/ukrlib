@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коваленко Володимир Володимирович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коваленко Володимир Володимирович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kovalenko-volodymyr-volodymyrovych.webp" alt="Коваленко Володимир Володимирович" title="Коваленко Володимир Володимирович" data-full="./kovalenko-volodymyr-volodymyrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Коваленко Володимир Володимирович, народився 14 червня 1979 року в місті Суми, Україна. Закінчив Сумський Державний Університет (СумДУ) в 2003 році за фахом інженер хімічного обладнання та заводів будматеріалів. З 1996 року працює на сумському підприємстві ПАТ &quot;Сумське НВО ім. М.В. Фрунзе&quot;. Трудову діяльність розпочав із учнів розмітників. З 2012 року керує конструкторським бюро.</p>
+          <p>Окрім того, Коваленко Володимир — письменник. Писати почав із 2008 року. За цей час створив кілька романів, декілька п&#x27;єс і низку оповідань, що ставали переможцями різноманітних конкурсів. Одне з них, яке має назву &quot;Пес&quot;, включили в 2013 році до антології сучасної української літератури. Збірка має назву &quot;Похід через засніжений перевал&quot; Українське соціальне питання ХХІ століття (2000-2012), упорядник Володимир Даниленко, м. Київ. В 2015 році постановку першої п&#x27;єси &quot;Дзеркало&quot; здійснив Запорізький експериментальний театр &quot;VIE&quot;, режисер Володимир Савінов.</p>
+          <p>Багато разів брав участь у різноманітних заходах та конкурсах, серед яких і &quot;Топ-модель 2004&quot;, &quot;Містер-міс Фрунзенець&quot; у 2008 році. Створював і неодноразово демонстрував реконструкції боїв на мечах. Влаштовував рок-концерти у місті, організовував літературні читання й вечори пам&#x27;яті (за власним сценарієм).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

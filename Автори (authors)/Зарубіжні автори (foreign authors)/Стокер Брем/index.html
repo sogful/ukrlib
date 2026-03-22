@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Стокер Брем — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Стокер Брем</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./stoker-brem.webp" alt="Стокер Брем" title="Стокер Брем" data-full="./stoker-brem.webp" /><img class="side-img side-thumb" src="./stoker-brem_1.webp" alt="Стокер Брем" title="Стокер Брем" data-full="./stoker-brem_1.webp" /></div>
+        <div class="prose-text">
+          <p>Абрахам &quot;Брем&quot; Стокер народився 8 листопада 1847 року в Дубліні. У дитинстві через хворобу він до семи років не міг вставати і ходити. Ця обставина залишила слід у творчості письменника — граф Дракула, персонаж його головного роману, багато часу проводить у сні. Проте, подолавши хворобу, Стокер під час навчання в університеті Дубліна був хорошим футболістом і легкоатлетом.</p>
+          <p>Після закінчення з відзнакою математичного факультету Триніті-коледжу Стокер довгий час працював на державній службі, одночасно виступаючи на сторінках дублінської газети &quot;The Evening Mail&quot; як журналіст і театральний критик. У цей час у нього зав&#x27;язалися дружні стосунки з англійським актором Генрі Ірвінгом. У 1878 році Ірвінг запропонував Стокеру стати директором-розпорядником театру &quot;Ліцеум&quot; (Lyceum Theatre), і Стокер переїхав до Лондона. Протягом 27 років Стокер був менеджером Ірвінга до самої смерті в 1905 році. Стокер важко переживав смерть друга — з ним стався удар, і цілу добу він не приходив до тями.</p>
+          <p>Дружба з Ірвінгом допомогла Стокеру увійти у вищий світ Лондона і познайомитися з Артуром Конан Дойлем та Джеймсом Вістлером. Стокер був одружений з Флоренс Белком, в яку був закоханий Оскар Уайльд. Стокер є автором безлічі творів, але славу йому приніс тільки роман &quot;Дракула&quot;, опублікований в 1897 році і написаний під впливом творчості Джозефа Шерідана Ле Фаню (1814—1873) і його готичної вампірської новели &quot;Кармілла&quot; (1872). Над романом Стокер працював вісім років, вивчаючи європейський фольклор і легенди про вампірів. Син Брема Стокера та його дружини Флоренс Белкхем, Ірвінг Ноель Торнлі Стокер, народився 31 грудня 1879 р., а помер 16 вересня 1961 р., Острів Вайт, Велика Британія. Брем Стокер помер у Лондоні 20 квітня 1912 року через прогресуючий параліч. Романи і новели: 1874 — Кришталева чаша 1875 — Проїзд Прімроуз / The Primrose Path 1879 — Обов&#x27;язки дрібних клерків в Ірландії 1890 — Перевал змії / The Snake&#x27;s Pass 1891 — Сім золотих ґудзиків/ Seven Golden Buttons (написано у 1891 році, багато матеріалів повторно використано в &quot;Міс Бетті&quot;, опубліковано посмертно у 2015 році) 1895 — Води Моу / The Watter&#x27;s Mou 1897 — Дракула / Dracula 1898 — Міс Бетті / Miss Betty 1902 — Таємниця моря / The Mystery of the Sea 1903 — Скарб семи зірок / The Jewel of Seven Stars 1905 — Брама життя / The Man (випущений також як The Gates of Life) 1906 — Приватні спогади про Генрі Ірвінга / Personal Reminiscences of Henry Irving 1908 — Леді Етлін / Lady Athlyne 1909 — Дама в савані / The Lady of the Shroud 1910 — Знамениті ошуканці / Famous Impostors 1911 — Лігво білого хробака / The Lair of the White Worm 1998 — Великі історії про привидів (складено Пітером Глассманом, ілюстровано Баррі Мозером) / Great Ghost Stories (Compiled by Peter Glassman, Illustrated by Barry Moser)</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

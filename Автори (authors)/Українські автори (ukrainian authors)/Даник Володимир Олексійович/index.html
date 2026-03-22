@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Даник Володимир Олексійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Даник Володимир Олексійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./danyk-volodymyr-oleksiyovych.webp" alt="Даник Володимир Олексійович" title="Даник Володимир Олексійович" data-full="./danyk-volodymyr-oleksiyovych.webp" /><img class="side-img side-thumb" src="./danyk-volodymyr-oleksiyovych_1.webp" alt="Даник Володимир Олексійович" title="Даник Володимир Олексійович" data-full="./danyk-volodymyr-oleksiyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Поет-лірик і поет-гуморист, прозаїк-фантаст, автор і виконавець власних пісень Володимир Олексійович Даник народився 5 березня 1957 року в смт Лисянка Черкаської області. З 1961 року проживає у Черкасах. Закінчив середню школу № 10 міста Черкаси з золотою медаллю, потім Рязанський радіотехнічний інститут. Працював за фахом у НДІ &quot;Акорд&quot; м. Черкаси. З 1993 року пов&#x27;язав свою наукову та викладацьку діяльність з Черкаським державним технологічним університетом (раніше – Черкаський інженерно-технологічний інститут). Автор слів гімну ЧДТУ, що не раз виконувався під час різноманітних заходів, що проводились у вузі.</p>
+          <p>1984 року став лауреатом конкурсу &quot;Автора! Автора!&quot;, який проводився журналом &quot;Перець&quot; та міністерством культури України.</p>
+          <p>1987 року став лауреатом поетичного конкурсу, що проводився журналом &quot;Українська культура&quot;. 1992 року став лауреатом першого Всеукраїнського фестивалю-конкурсу гумору, що проходив у Києві. Лауреат ряду обласних конкурсів на кращу пісню. 1994 року став лауреатом Міжнародного літературного конкурсу &quot;Гранослов&quot;. Твори друкувалися в обласній та всеукраїнській пресі, у журналах &quot;Вітчизна&quot;, &quot;Київ&quot;, &quot;Україна&quot;, &quot;Наука та суспільство&quot;, альманахах &quot;Холодний яр&quot;, &quot;Спадщина&quot;, у випусках &quot;Антології сучасної новелістики та лірики&quot; (за 2003, 2004, 2005 та 2007 роки). Протягом 1991-2001 рр. були видані ліричні збірки В. Даника: &quot;Шевченків край у пісні і в серці&quot;, &quot;Хай розкаже гітара&quot;, &quot;В звуках я хочу с природой слиться&quot;, &quot;Черкащина – це серце України&quot;, &quot;Квітни, моя Україно&quot;, &quot;Там, де сивий Дніпро котить хвилі свої&quot;, &quot;В мого міста козацьке ім&#x27;я&quot;, &quot;Іду вклонитися Тарасу&quot;, а також п&#x27;ять гуморо-сатиричних. Крім того, вийшла у світ прозова збірка &quot;Дорога до Марса&quot; (1995 р.). 1996 року прийнято в члени Національної спілки письменників України. 1998 року вийшла у світ книга пісень композиторів Черкащини на слова Володимира Даника &quot;Ми з Шевченкового краю&quot;. У 2006 році побачила світ шістнадцята книга Володимира Даника &quot;У Черкасах – сміються!&quot;, де представлений гумор у якнайширшому розмаїтті жанрів – прозові усмішки та фантастичні оповідання, віршовані гуморески і бувальщини, байки, іронічні сонети, жартівливі пісні, пародії, дружні присвяти, епіграми, афоризми і т.д. У 2007 році вийшов у світ двотомник &quot;Письменники Черкащини&quot;, де досить таки об&#x27;ємно представлені вірші, усмішки, пісні, проза Володимира Даника.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

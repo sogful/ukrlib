@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Краєвський Марек — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Краєвський Марек</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kraievskyy-marek.webp" alt="Краєвський Марек" title="Краєвський Марек" data-full="./kraievskyy-marek.webp" /></div>
+        <div class="prose-text">
+          <p>Марек Краєвський (пол. Marek Krajewski) — польський письменник, філолог-класик.</p>
+          <p>Народився 4 вересня 1966 року в Вроцлаві, Польща.</p>
+          <p>Родина Марека Краєвського походить з Львівщини. Мати його народилась у Стрільчиськах (тепер — Стрілецьке) біля Мостиськ. У 1981-1985 роках навчався в Ліцеї № 9 ім. Юліуша Словацького у Вроцлаві. У 1985-1991 студіював класичну філологію у Вроцлавському університеті. У 1999 році захистив докторську дисертацію. Працював викладачем у Вроцлавському університеті. У 2007 році Марек Краєвський кардинально змінив своє життя. Він лишив викладацьку і наукову діяльністю, щоб стати професійним письменником. Книжки Краєвського перекладено на 18 мов. Бібліографія: Смерть у Бреслау (Śmierć w Breslau), 1999, укр. пер. 2009 Кінець світу в Бреслау (Koniec świata w Breslau), 2003, укр. пер. 2007 Привиди в місті Бреслау (Widma w mieście Breslau), 2005, укр. пер. 2010 Фортеця Бреслау (Festung Breslau), 2006 Чума в Бреслау (Dżuma w Breslau), 2007 Проспект самогубців (Aleja samobójców), 2008 — у співавторстві з Маріушем Чубаєм Цвинтарні троянди (Róże cmentarne), 2009 — у співавторстві з Маріушем Чубаєм Голова Мінотавра (Głowa Minotaura), 2009, укр. пер. 2009 Еринії (Erynie), 2010, укр. пер. 2010 Числа Харона (Liczby Charona), 2011, укр. пер. 2011 В безодні темряви (W otchłani mroku), 2013</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

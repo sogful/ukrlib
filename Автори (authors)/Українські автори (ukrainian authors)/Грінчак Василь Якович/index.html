@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Грінчак Василь Якович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Грінчак Василь Якович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrinchak-vasyl-iakovych.webp" alt="Грінчак Василь Якович" title="Грінчак Василь Якович" data-full="./hrinchak-vasyl-iakovych.webp" /></div>
+        <div class="prose-text">
+          <p>Василь Якович Грінчак народився 26 квітня 1928 року в селі Китайгороді Тростянецького району на Вінниччині в селянській родині. Після закінчення Тростянецької середньої школи Василь Грінчак вступив до Одеського університету на український відділ філологічного факультету, який закінчив у 1953 році. Працював у видавництвах &quot;Молодь&quot;, &quot;Веселка&quot;.</p>
+          <p>Писати вірші В. Грінчак почав у студентські роки і друкувався у багатьох газетах та журналах. Перша поетична збірка &quot;Мені не байдуже&quot; вийшла друком у 1956 році. А пізніше – його вірші та оповідання для дітей: &quot;Лебедятко&quot; (1969); &quot;Боцман Птаха&quot; (1974); &quot;Ясенець&quot; (1976); &quot;Цвіт від кореня&quot; (1981); &quot;Настині береги&quot; (1984) та інші. Перекладав твори російських (&quot;Шукачі пригод&quot; К. Андрєєва, 1970) та білоруських письменників. У перекладі Грінчака вийшла збірка &quot;Пісні Естонії&quot; (1972).</p>
+          <p>Всі твори В. Грінчака пройняті теплотою і ліризмом, любов&#x27;ю до Батьківщини – багатої і щедрої землі, освітленої промінням сонця і пшеничного колоска. Помер 22 січня 1987 року. Похований у Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

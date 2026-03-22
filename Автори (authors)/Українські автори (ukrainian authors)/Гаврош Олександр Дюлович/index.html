@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гаврош Олександр Дюлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гаврош Олександр Дюлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./havrosh-oleksandr-diulovych.webp" alt="Гаврош Олександр Дюлович" title="Гаврош Олександр Дюлович" data-full="./havrosh-oleksandr-diulovych.webp" /><img class="side-img side-thumb" src="./havrosh-oleksandr-diulovych_1.webp" alt="Гаврош Олександр Дюлович" title="Гаврош Олександр Дюлович" data-full="./havrosh-oleksandr-diulovych_1.webp" /><img class="side-img side-thumb" src="./havrosh-oleksandr-diulovych_2.webp" alt="Гаврош Олександр Дюлович" title="Гаврош Олександр Дюлович" data-full="./havrosh-oleksandr-diulovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 26 березня 1971 року в Ужгороді. Закінчив факультет журналістики Львівського Національного університету імені Франка. Працює в закарпатських та всеукраїнських ЗМІ.</p>
+          <p>Має понад тисячу публікацій у пресі.</p>
+          <p>Член Асоціації українських письменників. Переможець &quot;Коронації слова&quot; 2007 року (ІІ місце) та лауреат 2008 року за п’єси &quot;Ромео і Жасмин&quot; і &quot;В Парижі красне літо…&quot;. Автор поетичних збірок &quot;Фалічні знаки&quot; (&quot;Дніпро&quot;, 2004), &quot;Тіло лучниці&quot; (&quot;Піраміда&quot;, 2006); публіцистичних книжок &quot;Моя р-р-революція&quot; (&quot;Карпатська вежа&quot;, 2005), &quot;Закарпатське століття: ХХ інтерв’ю&quot;, (Мистецька лінія&quot;, 2006); дитячих повістей &quot;Неймовірні пригоди Івана Сили, найдужчої людини світу&quot; (&quot;Видавництво Старого Лева&quot;, 2007), &quot;Пригоди тричі славного розбійника Пинті&quot; (&quot;Видавництво Старого Лева&quot;, 2008). Упорядник гумористичних альманахів &quot;Карпатський словоблуд&quot; та &quot;Карпатський блудослов&quot;. Упорядник публіцистичних дайджестів: &quot;Украдена перемога: хроніка найбрутальніших виборів&quot;, &quot;Мукачівська епопея&quot;, &quot;Закарпаття: 15 справ УСБУ&quot;, &quot;Михайло Заяць —— наша людина в кіно&quot;. Також твори друкувалися в часописах &quot;Сучасність&quot;, &quot;Київська Русь&quot;, &quot;Ї&quot;, антології &quot;Біла книга кохання&quot;, альманах &quot;Джинсове покоління&quot;, &quot;Корзо&quot;. Окремі твори перекладені білоруською, словацькою, польською мовами. Засновник і співголова журналістського клубу &quot;НеТаємна вечеря&quot;. Автор багатьох творчих проектів. Захоплення – література, історія, культура.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дорожній Іван Дмитрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дорожній Іван Дмитрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dorozhniy-ivan-dmytrovych.webp" alt="Дорожній Іван Дмитрович" title="Дорожній Іван Дмитрович" data-full="./dorozhniy-ivan-dmytrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Справжнє прізвище Іван Дмитрович Міненко. Народився 07.01.1897 р. в слободі Бойківка на Харківщині.</p>
+          <p>Служив на Далекому Сході та Алтаї (1917–1922), навчався в Академії комуністичної просвіти у Москві.</p>
+          <p>У 1924–1925 рр., працюючи директором українського педагогічного технікуму на Кубані в станиці Полтавській, організував філію українських письменників &quot;Гарт&quot;. Згодом, переїхавши до Москви, вступив до всеросійської організації українських письменників &quot;СіM&quot; (&quot;Сіло і Місто&quot;) і стає заступником голови московської письменницької організації (українська секція). У 1925–1926 рр. був інспектором Наркомосу у м. Кзил-Орда (Казахстан). У 1926—29 рр. викладав у школі, в Педагогічному технікумі ім. Г. Сковороди у Харкові, у 1929–1931 рр. – редактор літературної сторінки в газеті &quot;Диктатура труда&quot;. У 1931–1933 рр. навчався в Інституті червоної професури, викладав літературу в Інституті профосвіти у Харкові. У 1933–1934 рр. – на журналістській та партійні роботі у Харківській та Вінницькій областях. З 1935 р. завідував кафедрою літератури і мови Педінституту у Вінниці. Видав п&#x27;єсу &quot;Лебедина пісня&quot;, збірки віршів &quot;Прорість&quot; (1926), оповідань &quot;Весняні зорі&quot; (1928), а у співавторстві з Михайлом Туган-Барановським [12] – збірку віршів &quot;Молодик&quot; (1927). Поезії дивовижно нагадують поетику В. Свідзінського. Заарештували І. Дорожнього 15.08.1935 р. В автобіографії для чекістів він писав: &quot;Отец мой крестьянин-бедняк, был выслан в 1904 г. в Сибирь, мать домашняя хозяйка. До 1926 г. я жил в Сибири. Являюсь членом Коммунистической партии с 1917 г., за что и исключили ли меня из партии, я до настоящего времени не знаю, в других партиях не состоял. В 1918 был красным партизаном на Алтае. В 1920–1921 гг. был в Красной Армии в первом революционном полку, три месяца занимал должность комиссара полка, а затем опять был в партизанах до октября 1921… Женат, имею ребенка 10 лет, не судился, под стражей нахожусь с 15.08.1935&quot;. 22.10.1935 р. І. Дорожнього засудили до розстрілу, який замінили 10 роками ув&#x27;язнення. Покарання відбував на Соловках. 3.11.1937 р. його розстріляли у Сандармоху.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

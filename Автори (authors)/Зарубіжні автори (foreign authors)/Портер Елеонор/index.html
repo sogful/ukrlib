@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Портер Елеонор — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Портер Елеонор</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./porter-eleonor.webp" alt="Портер Елеонор" title="Портер Елеонор" data-full="./porter-eleonor.webp" /></div>
+        <div class="prose-text">
+          <p>Американська письменниця Елеанор Портер стала відомою завдяки тому, що навчила людей різних країн і національностей &quot;грати в радість&quot;, уселила віру у свої сили. Створений авторкою образ дівчинки Полліанни, яка, незважаючи на життєві випробування, радіє кожному дню й намагається допомогти всім, з ким зустрічається, став одним із найулюбленіших для дітей усього світу.</p>
+          <p>Елеанор Портер народилася 19 грудня 1868 р. в містечку Літлтоні штату Нью-Гемпшир у родині англійських переселенців до Америки. їй пророкували славу великої співачки, але життя склалося інакше. Вийшовши 1892 р. заміж (її чоловік був підприємцем), вона часто переїжджала разом із ним у справах фірми, допоки подружжя не оселилося в Нью-Йорку. Елеанор створила чудову сім&#x27;ю, вона дуже любила свого чоловіка, була хорошою господинею. .</p>
+          <p>Кілька своїх перших оповідань Е. Портер надіслала до відомого в Америці християнського журналу &quot;Christian Herald&quot; (&quot;Християнський вісник&quot;), їх одразу надрукували. їй було тоді 33 роки. Поступово вона стала відомою письменницею, яка вбачала своє покликання в тому, щоб допомагати людям ставати кращими. Найвідоміший твір авторки — &quot;Пояяілкна&quot; — вийшов друком 1913 р. й одразу здобув визнання в Америці. Його популярність пояснюється передусім тим, що в той час, коли весь світ переживав глибоку кризу, американці понад усе прагнули стабільності й опори. Цей твір дав відчуття оптимізму, духовну опору нації, поколінню, яке мужньо боролося з труднощами й не втрачало надії на майбутнє. До Е. Портер надходили листи від читачів із проханням розповісти про подальші пригоди головної героїні твору. Тому письменниця вирішила продовжити історію життя дівчинки. 1915 р. вийшла друком нова книжка — &quot;Юність Полліанни&quot;, у якій розповідається про тс, якою стала героїня, коли виросла. В одному зі своїх листів Е. Портер писала: &quot;Кожен несе в собі добре світло, тільки треба вміти відкрити свою душу й подарувати це світло людям...&quot; Це дивне світло, яке освітило життя маленького містечка, мала героїня роману — Полліанна. Це світло протягом життя ми відкриваємо в собі. Тож давайте познайомимося з цією чудовою дівчинкою й спробуємо разом із нею навчитися дарувати радість іншим! Як уважають американські дослідники літератури, в образі Полліанни вдало втілено основні риси американців: незалежність, оптимізм і впевненість у своїх силах. Побачивши дерево в саду тітки Поллі, дівчинка прагне забратися на його верхівку й сама себе підбадьорює: &quot;Я вірю, що зможу це зробити&quot; (аигл. &quot;І believe I can do it&quot;). Якщо Полліанна стикається з труднощами, вона не уникає їх, а намагається вирішити складні проблеми. У книжці утверджуються такі американські цінності, як щастя в родинному колі, допомога ближньому, пошук духовної опори в житті, віра в Бога і в можливість змінити довколишній світ на краще. Цікаво знати У США та інших країнах створено клуби Полліанни, на її честь американці святкують День радості (англ. Official Pollyan-тіа Glad Г)пу), поставили пам&#x27;ятник літературній героїні Е. Портер. біля якого щороку збираються ті, хто має в душі оптимізм і хоче змінити життя на краще. Полліанна стала не менш відомою серед різних поколінь, аніж Том Сойєр і Гекльберрі Фінн.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

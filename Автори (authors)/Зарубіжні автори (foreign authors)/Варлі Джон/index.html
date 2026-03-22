@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Варлі Джон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Варлі Джон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./varli-dzhon.webp" alt="Варлі Джон" title="Варлі Джон" data-full="./varli-dzhon.webp" /><img class="side-img side-thumb" src="./varli-dzhon_1.webp" alt="Варлі Джон" title="Варлі Джон" data-full="./varli-dzhon_1.webp" /></div>
+        <div class="prose-text">
+          <p>Джoн Херберт Варлі pодился 9 серпня 1947 року в Остіні, штат Техас. Коли йому було десять років, його батьки переїхали в Порт-Артур. Але середню школу &quot;High School Nederland&quot; Варлі закінчив в маленькому містечку під дивною назвою Нідерланди. Справа в тому, що міста Порт-Артур і Нідерланди — це сусіди, і утворюють єдину конгломерацію під назвою &quot;Southeast Texas Regional Airport&quot;, куди входить ще і місто Бомонт.</p>
+          <p>Після продовжив навчання в Мічиганському державному університеті на факультеті фізики, потім перейшов на факультет англійської мови. Але незадовго до свого 20-річчя Варлі раптово кидає навчання і їде в Сан-Франциско, де приєднується до руху хіпі. Після цього Варлі вів життя, повну &quot;пригод і бродяжництва&quot;, жив в Портленді, в Юджині (штат Орегон), в Нью-Йорку, знову в Сан-Франциско, і в Лос-Анжелесі. Перепробував безліч робіт, і часто далеко не самих презентабельних: був чорноробом, розвозив піцу, і навіть жебракував. Поки, нарешті, не вирішив заробляти на життя писанням книг. А поштовхом до такого рішення послужила знаменита стаття Хайнлайна, де описувалися п&#x27;ять відомих правил як стати письменником-фантастом.</p>
+          <p>Дебютував в фантастиці розповіддю &quot;Пікнік неподалік&quot; (1974, &quot;Fantasy &amp; Science Fiction&quot;) і незабаром зарекомендував себе як один з найцікавіших письменників 70-х — 80-х років. За свіжості ідей, складності змісту, витонченості композиції Джону Варлі практично не було рівних. Oчень швидко Варлі стали приємно називати — &quot;Новим Хайнлайном&quot;. І це не випадково, адже його цикл — &quot;Eight Worlds&quot;, критики часто порівнюють зі знаменитою хайнлайновской &quot;Історією майбутнього&quot;. Розповіді Варлі вийшли в чотирьох збірниках — і кожен з них отримав премію &quot;Локус&quot;. Взагалі ж мала форма принесла Джону Варлі п&#x27;ять премій: дві — &quot;Х&#x27;юго&quot; і три &quot;Хьюго&quot;, а також п&#x27;ять премій журналу &quot;Локус&quot;. А дві його повісті &quot;Нав&#x27;язливість зору&quot; (1978) і &quot;Натисніть ВВЕДЕННЯ&quot; (1984) справили свого часу справжній фурор і зібрали всі можливі премії, і до сих пір вважаються одними з найкращих і знаменитих творів в американській фантастиці. Ще одну премію &quot;Локус&quot; отримав роман &quot;Титан&quot; в 1980 г. Дія першого роману Варлі — &quot;The Ophiuchi Hotline&quot; (1977) — простягається з 500 років вперед і є одним з центральних в його історії майбутнього &quot;Eight Worlds&quot;. Це масштабне полотно отримало високу оцінку соратників по цеху. Трилогія &quot;Гея&quot; (1979-1984) розповідає про проблеми, що виникли після початку дослідження одного з супутників Сатурна, в результаті чого дослідники потрапляють в інший світ зі своїми, що не схожими на земні, законами. Роман &quot;Millennium&quot; (1983), за яким у 1989 р був знятий відомий фільм, присвячений подорожі в часі екіпажу і пасажирів гине літака. Його твори перекладені на 16 мов. Джон Вaрлі одружений, у нього троє дітей, а ще він дуже любить своїх домашніх тварин, в числі яких собака, три кішки і морські коники. Були ще опосум і Восьминіжка, але останній, на жаль, помер. Як говорить сам Варлі, йому подобається писати, читати і, коли він собі це може дозволити, — подорожувати. Зараз Варлі живе в Каліфорнії разом зі своєю дружиною Лі Емметт, яка одночасно є і його редактором.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мо Янь — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мо Янь</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mo-ian.webp" alt="Мо Янь" title="Мо Янь" data-full="./mo-ian.webp" /><img class="side-img side-thumb" src="./mo-ian_1.webp" alt="Мо Янь" title="Мо Янь" data-full="./mo-ian_1.webp" /><img class="side-img side-thumb" src="./mo-ian_2.webp" alt="Мо Янь" title="Мо Янь" data-full="./mo-ian_2.webp" /></div>
+        <div class="prose-text">
+          <p>Сучасний китайський письменник, автор романів та коротких оповідань. У 2012-му Мо Янь отримав Нобелівську премію з літератури.</p>
+          <p>Народився Гуань Моє (Guan Moye) в 1955 році (17 лютого) в містечку Гаомі китайської провінції Шаньдун (Gaomi County in Shandong). Його літературний псевдонім Мо Янь – можна буквально перекласти з китайської мови як ‘не говори&#x27;, ‘мовчи&#x27;. У роки Культурної революції Гуань залишив школу, а в 1976 році він пішов служити в армію Китаю, де був командиром відділення, а також політруком і працівником служби безпеки.</p>
+          <p>На початку 1980-х, ще будучи в армії, Мо Янь вже публікував свої твори. З 1984-го він потрапив на відділення літератури у Військову академію (Department of Literature in the army&#x27;s Cultural Academy), а в 1991 році отримав докторський ступінь в Пекінському Університеті (Beijing Normal University). Першим опублікованим твором Яня стало в 1981 році ‘Falling Rain on a Spring Night&#x27;. До речі,багато книги Мо Яня переклав на англійську Ховард Голдблэтт (Howard Goldblatt), професор кафедри східно-азіатських мов і літератури з Університету Нотр-Дама (University of Notre Dame). А ось на російську мову книги Мо Яня ще не переведені у всякому разі, на момент вручення письменнику Нобелівської премії російські читачі, на жаль, не мають можливості познайомитися з його творчістю. Втім, видавництво &quot;Амфора&#x27; обіцяло видати книги Мо Яня ще до кінця 2012 року. Це упущення з перекладом виглядає ще більш прикрим на тлі того, що Мо Яня вже перевели на десятки мов, серед яких – норвезька, німецька, французька та інші. Відомо, що пише Мо Янь в реалистском стилі, і книги його підкуповують як раз своєю реалістичністю. Письменника хвилюють найрізноманітніші теми – від нехитрихселянських історій до проблеми народжуваності в країні. В цілому Мо Янь став автором близько десятка романів. Мо Янь – один з найбільш відомих і заслужених письменників сучасного Китаю, його твори відзначені безліччю премій, включаючи Премію Ньюмена по китайській літературі (Newman Prize for Chinese Literature) в 2009-му і премію ‘Mao Dun Literature Prize&#x27; 2010-м. У 2012-му Мо Янь став лауреатом Нобелівської премії по літературі (Nobel Prize in Literature). Відомо, що на батьківщині Мо Янь – дуже відома постать; його іноді критикують за вільність літературної мови, так і за дуже неприкриті реалії, які він виявляє у своїх книгах. Як би не було, Мо Янь міцно стоїть на своїх ідеалах, які він доволі відкрито висловлює. Так, на відкритті Франкфуртської Книжкової Ярмарки(Frankfurt Book Fair) в 2009 році він заявив, що саме література може розчистити бар&#x27;єри між країнами і народами. Так, Мо Янь вважає, що китайцям варто було б побільше читати іноземних авторів. А взагалі, ім&#x27;я Мо Яня знає кожен хоч трохи грамотний китаєць. Нобелівська премія в 2012-му стала величезною честю для всієї країни, тим більше що Мо Янь став першим жителем материкового Китаю, в той час як іншими лауреатами зазвичай виявлялися китайці, що проживають в інших країнах. Отже, коли любителі літератури всього світу відправилися в книжкові магазини, щоб купити останню книгу нового нобелівського лауреата, російським читачам доведеться трохи почекати, поки видавництва в поспіху перекладуть і видадуть книги, які, відверто кажучи, слід було б перекласти і видати ще вчора.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

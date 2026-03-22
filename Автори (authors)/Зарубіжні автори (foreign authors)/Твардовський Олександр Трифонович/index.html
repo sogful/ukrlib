@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Твардовський Олександр Трифонович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Твардовський Олександр Трифонович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tvardovskyy-oleksandr-tryfonovych_1.webp" alt="Твардовський Олександр Трифонович" title="Твардовський Олександр Трифонович" data-full="./tvardovskyy-oleksandr-tryfonovych_1.webp" /><img class="side-img side-thumb" src="./tvardovskyy-oleksandr-tryfonovych.webp" alt="Твардовський Олександр Трифонович" title="Твардовський Олександр Трифонович" data-full="./tvardovskyy-oleksandr-tryfonovych.webp" /><img class="side-img side-thumb" src="./tvardovskyy-oleksandr-tryfonovych_2.webp" alt="Твардовський Олександр Трифонович" title="Твардовський Олександр Трифонович" data-full="./tvardovskyy-oleksandr-tryfonovych_2.webp" /><img class="side-img side-thumb" src="./tvardovskyy-oleksandr-tryfonovych_3.webp" alt="Твардовський Олександр Трифонович" title="Твардовський Олександр Трифонович" data-full="./tvardovskyy-oleksandr-tryfonovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>(1910 – 1971)</p>
+          <p>Батьківщиною А. Т. Твардовського вважають хутір Загір&#x27;я Смоленської губернії. Кажучи коротко Твардовський був сином коваля, який у свою чергу був надзвичайно освіченою і досить грамотним. Ще в дитинстві маленький Сашко був знайомий з такими видатними діячами літератури як Гоголь, Пушкін, Лермонтов – всі ці книги були в бібліотеці батька.</p>
+          <p>Однак незабаром, Трифона Твардовського розкуркулили і вислали на північ. Вже в 14 років Твардовський почав слати свої записи в багато смоленські журнали. Советско —російський поет Ісаковський, в той час будучи редактором журналу &quot;Робочий шлях&quot;, надав підтримку юному даруванню і допоміг Олександру Твардовскому опублікувати свої нотатки. Після закінчення школи для письменника настав важкий період. Виявилося, що не так-то просто влаштуватися на роботу і знайти собі заробіток без гідної освіти. Твардовський довго блукав по редакціях зі своїми статтями, але практично скрізь йому відмовляли в публікації. Те ж повторилося і в Москві. Твардовський, коротка біографія по поверненню в Смоленськ. У 1930 році А. Т. Твардовський повертається в рідні пенати і надходить на педагогічну спеціальність в інститут, однак, навчання він не закінчив, кинув навчання в цьому інституті з 3 курсу і диплом але все ж доотримав його в Москві. 1931 рік – публікація самої ранньої поеми Твардовського &quot;Шлях до соціалізму&quot;. Однак знаменитим Твардовський стає лише після того, як побачила світ його поема &quot;Країна Муравия&quot;, в якій головний герой Моргунок шукає країну вічного щастя. За це незвичайне твір А. Твардовського нагородили Державною премією. Після виходу поеми видається кілька збірок Твардовського – &quot;Дорога&quot;, &quot;Сільська хроніка&quot;, &quot;Загір&#x27;я&quot;. У 1941 році Твардовський починає масштабну роботу над найбільшою поема &quot;Василь Тьоркін&quot;, яка досі не втратила своєї популярності. Публікувалася поема по главам. Перші глави публікувалися в журналі &quot;Червоноармійська зірка&quot; (1942). Останній варіант поеми, яку закінчив писати в 1945 році, і Василь Тьоркін по-справжньому став народним героєм. Книга стала популярною у відомих літературних колах, Твардовський був нагороджений Державною премією. Крім &quot;Василя Тьоркіна&quot;, писалася також поема &quot;Будинок у дороги&quot;, закінчена в кінці війни. Паралельно зі стихотворческой діяльністю, А. Твардовський писав прозу – &quot;Батьківщина і чужина&quot;, книга про війну. Про Твардовском коротко може сказати журнал &quot;Новий світ&quot;, редактором якого він був. 18 грудня 1971 року А. Твардовського не стало, він помер в результаті важкої хвороби.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

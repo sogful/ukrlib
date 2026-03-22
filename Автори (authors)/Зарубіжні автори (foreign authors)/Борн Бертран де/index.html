@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Борн Бертран де — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Борн Бертран де</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./born-bertran-de.webp" alt="Борн Бертран де" title="Борн Бертран де" data-full="./born-bertran-de.webp" /><img class="side-img side-thumb" src="./born-bertran-de_1.webp" alt="Борн Бертран де" title="Борн Бертран де" data-full="./born-bertran-de_1.webp" /></div>
+        <div class="prose-text">
+          <p>БОРН, Бертран де (Born, Bertrán de — 1 ПОПІ 5) — французький трубадур.</p>
+          <p>Один із видатних прованських трубадурів, Б. був рицарем і разом зі своїм братом володів укріпленим замком Альтафорт (зараз містечко Отефор). Данте хвалить його як талановитого поета, співця війни (&quot;Про народне красно-мовство&quot;), згадує про його щедрість (&quot;Бенкет&#x27;), але прирікає Б. на дуже важку кару за гріхи серед &quot;злопорадників&quot; у восьмому колі пекла: видатний трубадур тримає свою відрубану голову в руці, &quot;як ліхтар&quot;. За що ж судилася йому така кара?</p>
+          <p>За легендою, Б. відіграв вирішальну роль у політичних подіях свого часу і був чи не єдиним винуватцем кривавих чварів, що спалахнули у французьких володіннях англійської королівської родини Плантагенетів. Реальні події, однак, складалися інакше. Син Генріха II План-тагенета — Річард І Левове Серце отримав від батька великі володіння у Франції, а його старший брат Генріх (т. зв. &quot;Молодий король&quot;) через заздрощі виступив проти нього зі зброєю. Б. був серед тих південнофранцузьких рицарів, які стали на бік &quot;Молодого короля&quot;. Як талановитий поет, він надзвичайно яскраво відобразив ідеологію дрібного рицарства, завжди готового взятися до зброї і змушеного, через нестатки, жити війною. Але він, звичайно, не був єдиним носієм цієї ідеології. Його творчість цікава саме тому, що у талановитій формі виражає погляди і почуття тієї частини феодалів, до якої він належав. Після надзвичайно бурхливого життя Б. подався у монастир, де й помер. Легендарна біографія приписує йому пристрасть до війни: &quot;якщо траплявся мир і укладалось перемир&#x27;я, Бертран дуже бував незадоволеним і намагався своїми сирвентами розладнати мир&quot;. Оспівував війну, подвиги феодалів. В одній із сирвент писав: Люблю я бачить, як погнав Юрбу озброєний загін, Як мчать отари серед трав, А військо лиие навздогін... 1 видно над рікою, Як замок між гірських горбів Обложений з усіх боків, 1 темною габою Шеренги мерехтять бійців, Що виглядають між ровів. (Пер. М.Терешенка) Сучасники звинувачували його в розпалюванні міжусобних воєн у сімействі Плантагене-тів, де він підтримував Джефрі, герцога Бретонського, у боротьбі проти його батька англійського короля Генріха II.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

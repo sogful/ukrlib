@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Браудер Білл — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Браудер Білл</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./brauder-bill.webp" alt="Браудер Білл" title="Браудер Білл" data-full="./brauder-bill.webp" /><img class="side-img side-thumb" src="./brauder-bill_1.webp" alt="Браудер Білл" title="Браудер Білл" data-full="./brauder-bill_1.webp" /></div>
+        <div class="prose-text">
+          <p>Вільям Фелікс Браудер або Білл Браудер (англ. William Felix &quot;Bill&quot; Browder) — міжнародний фінансист і інвестор. Співзасновник і генеральний директор інвестиційного фонду Hermitage Capital Management , який у період з 1995 по 2006 роки був одним з найбільших (за деякими оцінками найбільшим) фондів зарубіжних інвестицій, що діяли на російському фондовому ринку.</p>
+          <p>Народився в 1964 році. Онук Ерла Браудера, який очолював Компартію США в 1932-1945, син математика Фелікса Браудера, племінник Вільяма Браудера (1989-1991 президент АМО ).</p>
+          <p>Виріс в Чикаго, вивчав економіку в Чиказькому університеті. У 1989 отримав ступінь MBA Stanford Business School. З 1989 по 1996 жив у Лондоні. Отримав британське громадянство. Одружений. Працював у відділі Східної Європи Boston Consulting Group в Лондоні і завідував сектором приватних інвестицій у Росії Salomon Brothers. У 2005 році йому був заборонений в&#x27;їзд до Росії. Причини цього досі не оприлюднені. У 2006 році Браудер припинив діяльність фонду в Росії. З 2010 року Білл очолює кампанію з розслідування крадіжки податку на прибуток, сплаченого фондом в російський бюджет за підсумками 2006 року, і пошуку вбивць юриста фонду Сергія Магнітського, що виявив дану крадіжку. У липні 2013 року вироком російського суду заочно засуджений до 9 років колонії загального режиму. Щороку з 2007 по, як мінімум, 2015 на Давоському економічному форумі приходить на виступ найбільшого російського держчиновника, який приїхав на форум, і ставить запитання про вбивство Магнітського.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

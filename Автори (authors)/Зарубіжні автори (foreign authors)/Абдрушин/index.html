@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Абдрушин — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Абдрушин</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./abdrushyn.webp" alt="Абдрушин" title="Абдрушин" data-full="./abdrushyn.webp" /><img class="side-img side-thumb" src="./abdrushyn_1.webp" alt="Абдрушин" title="Абдрушин" data-full="./abdrushyn_1.webp" /></div>
+        <div class="prose-text">
+          <p>Абд-ру-шин (або Абдрушин) — псевдонім Оскара Ернста Бернхардта — автор твору &quot;У Світлі Істини — Послання Ґраля&quot;.</p>
+          <p>Народився 18 квітня 1875 року у Бішофсверді (біля Дрездена). Ім&#x27;я Абд-ру-шин, під яким він писав своє Послання Ґраля, за змістом означає &quot;Слуга Світла&quot;.</p>
+          <p>У 1928 р. Оскар Ернст Бернхардт переселився в Австрію, де жив доти, доки націонал-соціалісти не експропріювали його володіння та не заборонили твір &quot;У Світлі Істини&quot;. Його діяльності перешкоджали, і 6 грудня 1941 року Абд-ру-шин помер у Кіпсдорфі (саксонські Рудні гори), де змушений був провести свої останні роки життя під наглядом гестапо. Дитинство, проведене Оскаром Ернстом Бернхардтом у Бішофсверді, було щасливим. Після шкільних років почалася комерційна освіта та навчання, яке він закінчив у Дрездені. Як самостійний підприємець, а пізніше співвласник великої фірми з експорту та імпорту, Оскар Ернст Бернхардт багато подорожував. Його переживання та враження незабаром спонукали його відмовитися від професії комерсанта на користь письменницької діяльності, і врешті-решт він працював уже лише як письменник. Поряд з дорожніми нотатками, новелами та романами значного успіху він досяг насамперед як автор сценічних творів. Після тривалого перебування у Нью-Йорку (1912-1913) він здійснив подорож з навчальною метою до Лондона. І там, після того як спалахнула Перша світова війна, сорокарічний Оскар Ернст Бернхардт з 1915 по 1919 роки знаходився в ув&#x27;язненні у британському таборі для інтернованих на острові Мен. Чотирирічне ув&#x27;язнення дало йому можливість співпережити внутрішні біди людей, які вже не знаходили виходу з хаосу розвалювання старого світового порядку. У нього пробудилося бажання допомогти в цьому знанням про вирішальні, всеосяжні взаємозв&#x27;язки. Таким чином, з 1923 р. Оскар Ернст Бернхардт почав публікувати доповіді за вже згаданими серйозними питаннями життя під ім&#x27;ям Абд-ру-шин. При цьому це ім&#x27;я виражає не тільки те, що він усвідомив як своє завдання та чим він жив – бути Слугою Світла, але й замикає дугу від його першого, підготовчого життя за часи Мойсея до подавця Послання Граля. Вчення про повторювані втілення є центральною складовою твору &quot;У Світлі Істини&quot;. 1928 року Абд-ру-шин оселився на Фомперберзі у Тіролі, поблизу Інсбрука, та завершив там своє Послання Граля. Коли у 1938-ому Австрія стала &quot;німецькою&quot;, нацистський режим заборонив подальше розповсюдження його твору. Абд-ру-шин був заарештований, а його володіння на Фомперберзі експропрійоване. Після шести місяців тяжкого перебування під арештом в Інсбруці йому довелося покинути окуповану Австрію. Врешті-решт він знайшов притулок у Кіпсдорфі, в саксонських Рудних горах. При цьому йому було заборонено відкрито займатися своєю діяльністю та приймати відвідувачів. Гестапо постійно стежило за Абд-ру-шином та контролювало його. Роки заслання він використав для переробки Послання Граля в ту &quot;Останню авторську редакцію&quot;, яку він визначив як видання, передбачене для розповсюдження. Але заслання та ізоляція мали свої наслідки: Абд-ру-шин помер 6 грудня 1941 року в Кіпсдорфі у віці всього лише 66 років.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

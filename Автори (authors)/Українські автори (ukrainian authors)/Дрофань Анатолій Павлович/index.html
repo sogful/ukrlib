@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дрофань Анатолій Павлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дрофань Анатолій Павлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./drofan-anatoliy-pavlovych.webp" alt="Дрофань Анатолій Павлович" title="Дрофань Анатолій Павлович" data-full="./drofan-anatoliy-pavlovych.webp" /><img class="side-img side-thumb" src="./drofan-anatoliy-pavlovych_1.webp" alt="Дрофань Анатолій Павлович" title="Дрофань Анатолій Павлович" data-full="./drofan-anatoliy-pavlovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Анатолій Павлович народився 17 листопала 1919 року в місті Ічня на Чернігівщині в сім&#x27;ї залізничника. Батько письменника був завзятим мисливцем. Багато років він головував у місцевому товаристві мисливців та рибалок. Маленькому Толі нерідко випадала нагода побувати з батьком на полюванні, посидіти біля вечірнього вогнища, заночувати під копицею пахучого сіна.</p>
+          <p>В Ічні хлопець закінчив семирічку, відвідував музичний і фотогурток. Та найбільше любив уроки літератури, і насамперед читання творів свого земляка Степана Васильченка.</p>
+          <p>Перше оповідання А. Дрофаня &quot;Перепел&quot; з&#x27;явилося у 1945 році, а через одинадцять років вийшла збірка оповідань &quot;Журка з Сонцеграда&quot;. Особливо плідними для письменника були останні три десятиліття. За цей час він видав півтора десятка своїх книжок. Завоювали симпатії читачів романи &quot;Таїна голубого палацу&quot;, &quot;Буремна тиша&quot;; повісті &quot;У кожному камені — іскра&quot;, &quot;Біла криниця&quot;, &quot;Загадка старої дзвіниці&quot;; документальна повість &quot;Коли ми красиві&quot;; збірки оповідань &quot;Троянди&quot;, &quot;Альбіон&quot;, &quot;Земля для квітів&quot;, &quot;Сонцелюби&quot;; збірка сатиричних оповідань &quot;Іменини&quot;; книги для дітей &quot;Про Барона, Мавру і Мале Вушко&quot;, &quot;Коли я виросту&quot;, &quot;Янехо&quot; та інші твори. &quot;Коли я виросту&quot; – одна з найвідоміших збірок письменника. У книжці йдеться про талановитих, працьовитих людей. Звичайно, декому професія колодязника, або, скажімо, пічника може здатися несучасною і не дуже цікавою. Але це тільки на перший погляд. Познайомившись ближче з дідом Архімедом, славетним колодязником, або з пічником, героєм оповідання &quot;Образа&quot;, ви переконаєтесь, що нудних і нецікавих професій немає: будь-яке діло цікаве, коли воно потрібне людям, коли його роблять з любов&#x27;ю, майстерно.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

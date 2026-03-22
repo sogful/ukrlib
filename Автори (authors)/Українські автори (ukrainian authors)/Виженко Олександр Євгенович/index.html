@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Виженко Олександр Євгенович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Виженко Олександр Євгенович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vyzhenko-oleksandr-ievhenovych.webp" alt="Виженко Олександр Євгенович" title="Виженко Олександр Євгенович" data-full="./vyzhenko-oleksandr-ievhenovych.webp" /><img class="side-img side-thumb" src="./vyzhenko-oleksandr-ievhenovych_1.webp" alt="Виженко Олександр Євгенович" title="Виженко Олександр Євгенович" data-full="./vyzhenko-oleksandr-ievhenovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Олександр Євгенович Виженко народився 10 вересня 1958р. на Полтавщині та здобув вищу освіту за спеціальністю актор. Близько 30 років працював у Запорізькому театрі юного глядача. 1992 року став переможцем міжнародного конкурсу молодих письменників &quot;ГРАНОСЛОВ&quot;.</p>
+          <p>О.Виженко є автором таких відомих книг, як &quot;Історія запорозьких козаків для веселих дітлахів&quot;, &quot;Легенди та казки Хортиці&quot;, &quot;Козацькі забави&quot;, &quot;Хлопчик Укропчик&quot;.</p>
+          <p>Під псевдонімом Санько Сіто письменник читав свої казки в авторській передачі &quot;Казки запорозькі від Санька Сита&quot; на каналі &quot;Суспільне Запоріжжя&quot;. 1992 року було видано першу частину книги &quot;Історія запорізьких козаків для маленьких дітлахів&quot;. Скільки дітей виросло на цих книжках! І багато хто купив уже своїм дітям новинку від автора. У 2018 році письменник видав дитячу книгу &quot;Хлопчик Укропчик&quot;, тут переплелися захоплюючі пригоди, правда життя та любов до України. Загалом Майстер написав близько 135 казок. До речі, у youtube можна знайти їх у виконанні автора під псевдонімом Санько Сіто. Крім дитячих казок у творчому доробку Виженка є й серйозні фольклорні дослідження, написані в унікальному авторському стилі. Так у творі &quot;УКРАЇНА КОХАННЯ&quot; автор показав Любов такою, якою вона є. Майстер слова розкриває тему сексуальності українців, тут немає місця сорому, невинності та непорочності, тут усе по-справжньому, але водночас кожне слово пронизане любов&#x27;ю. Унікальне переплетення фольклорних мотивів та гарного поетичного слова з гарячою темою роблять книгу яскравою та незабутньою. Ще одним яскравим явищем у літературі стали &quot;Сонет пана Шекспіра&quot;. Переклади шекспірівських сонетів у виконанні Виженка чудові. Літературна спадщина запорізького автора включає унікальний авторський переклад більш ніж 200 пісень &quot;Бітлз&quot;, частину цих перекладів виконує черкаський гурт &quot;Спів братів&quot;. Цікавим є і переклад пісень шведського гурту &quot;АББА&quot;. За плечима цієї світлої людини не лише величезна кількість якісних літературних перекладів, дитячих казок та авторських творів для дорослих, а й понад 50 ролей у найкращому запорізькому театрі. Протягом багатьох років (1985-2012рр) Олександр Виженко був актором Запорізького Академічного Театру Молоді, на той час ТЮГу. Саме тут у театрі запорожці прощалися зі своїм талановитим земляком 26 грудня 2018 р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

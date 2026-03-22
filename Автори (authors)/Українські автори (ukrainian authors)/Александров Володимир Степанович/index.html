@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Александров Володимир Степанович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Александров Володимир Степанович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./aleksandrov-volodymyr-stepanovych.webp" alt="Александров Володимир Степанович" title="Александров Володимир Степанович" data-full="./aleksandrov-volodymyr-stepanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Син сільського священика Степана Александрова, автора бурлескної поеми &quot;Вовкулака&quot;. Народився 2 липня 1825 року в селі Бугаївка Ізюмського повіту на Слобожанщині. Закінчив медичний факультет Харківського університету, працював військовим лікарем.</p>
+          <p>Навчався в Куп&#x27;янському духовному училищі, Харківському колегіумі (семінарії) та Харківському університеті, по закінченні якого в 1853 працював військовим лікарем у піхотному полку. У 1860 році повернувся в Україну лікарем уланського полку в Чугуєві, був старшим ординатором місцевого шпиталю. 1867 обійняв посаду харківського міського лікаря. Від 1879 року — знову в армії, служив старшим лікарем резервного батальйону в Харкові, старшим лікарем Керченського лазарету, дивізійним лікарем у Полтаві та Харкові, де свою оселю по вулиці Великій Сумській зробив своєрідним українським культурним центром. Пішов у відставку 1888.</p>
+          <p>Збирав етнографічний матеріал, опрацьовував фольклорні мелодії. Вперше виступив з поезіями 1861 року (журнал &quot;Основа&quot;), вірші &quot;Думка&quot; та &quot;Плач дочки по матері&quot;. Надрукував низку книжок у Харкові та Полтаві, виступав також у львівських часописах &quot;Зоря&quot;, &quot;Світ&quot;. Створював п&#x27;єси, оперети: &quot;За Немань іду&quot; (1872; доповнена та доопрацьована М. Старицьким) і &quot;Не ходи, Грицю, на вечорниці&quot; (1873), казки: &quot;Коза-Дереза&quot;, &quot;Ивашечко&quot;, &quot;Чижикове весілля&quot;, &quot;Пісня про Гарбуза&quot;. На схилі літ уклав історичну збірку &quot;Гетьманщина&quot; (колекція портретів гетьманів України від Б. Хмельницького до К. Розумовського з біографіями), підготував лібрето опери П. Щуровського &quot;Богдан Хмельницький&quot;. 1886—1892 роки — випустив два альманахи &quot;Складка&quot;. Помер 10 січня 1894 у Харкові.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

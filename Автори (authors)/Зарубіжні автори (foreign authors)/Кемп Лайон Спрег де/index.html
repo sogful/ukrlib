@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кемп Лайон Спрег де — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кемп Лайон Спрег де</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kemp-layon-spreh-de.webp" alt="Кемп Лайон Спрег де" title="Кемп Лайон Спрег де" data-full="./kemp-layon-spreh-de.webp" /><img class="side-img side-thumb" src="./kemp-layon-spreh-de_1.webp" alt="Кемп Лайон Спрег де" title="Кемп Лайон Спрег де" data-full="./kemp-layon-spreh-de_1.webp" /></div>
+        <div class="prose-text">
+          <p>Лайон Спрег де Камп (Lyon Sprague de Camp) народився 27 листопада 1907 року в місті Нью-Йорку. Після школи продовжив навчання в California Institute of Technology і Stevens Institute of Technology. Під час Великої Депресії змінив безліч занять і став експертом по патентах, а під час Другої світової війни, як і багато інших, сумлінно служив.</p>
+          <p>Де Камп почав письменницьку кар&#x27;єру в тридцятих роках, пишучи розповіді для бульварних журналів. Його буквально заворожували герої жанру &quot;swords &amp; sorcery&quot; і особливо — Конан-варвар Роберта Говарда. Завершивши безліч недописаних самим Говардом історій про Конана, де Камп продовжив славну сагу про варвара не менше вражаючим числом своїх творів, а також працював у співавторстві з іншим відомим письменником-фентезійщіком Ліном Картером (Lin Carter).</p>
+          <p>Безсумнівним успіхом став творчий союз де Кампа з письменником Флетчером Преттом, бібліотекарем, журналістом, військовим істориком. Їх перша велика спільна робота — роман &quot;Дипломований чарівник&quot; ( &quot;The Incomplete Enchanter&quot;) був виданий в 1941 році. У книзі, складеної з трьох раніше публікувалися в журналах повістей, розповідалося про кумедні пригоди Гарольда Ши, мандрівного з одного міфічного світу в інший. Роман став класикою жанру і продовжує з успіхом перевидаватися в наші дні. Згодом де Камп і Претт періодично поверталися до полюбився герою. Іншою знаменитою роботою письменників став цикл оповідань &quot;The Gavagan&#x27;s Bar&quot;, в Росії практично невідомий. Сам де Камп, однак, складав не дуже охоче. Набагато більше його займали зовсім інші речі: він дуже багато подорожував, вивчав іноземні мови і говорив на кількох з них, захоплювався історією і написав книгу про великих містах минулого і древньої архітектури, писав і про життя Говарда Лавкрафта ( &quot;Lovecraft: A Biography&quot;) , і про життя Роберта Говарда ( &quot;Dark Valley Destiny: The Life of Robert E. Howard&quot;, у співавторстві з Катериною Крук (Catherine A. Crook) і Джейн Гріффін (Jane Griffin)), причому за дослідження останньої був удостоєний в 1984 році World Fantasy Special Award. Дружина Лайона Спрег де Кампа — Кетрін Аделаїда Крук (Catherine Adelaide Crook), на щастя, переконала його приділяти творчості більше часу, і багато в чому завдяки їй читачі зобов&#x27;язані появою пізніших творів письменника. Вона стала співавтором де Кампа, написавши разом з ним такі романи, як &quot;Кістки Зазори&quot; ( &quot;The Bones of Zora&quot;), &quot;Мечі Зінджабана&quot; ( &quot;The Swords Of Zinjaban&quot;) і кілька інших ... Де Камп не здобув безлічі нагород за свої твори, але заслужив шану і повагу безлічі любителів фантастики: премії Gandalf Award Grand Master of Fantasy в 1976 році і Nebula Award Grand Master в 1978 — наочне тому підтвердження. Крім того, де Камп ще двічі нагороджувався за Свої не-фантастичні дослідження: International Fantasy Award за книгу &quot;Lands Beyond&quot;, написану в 1953 році в співавторстві з Віллі Лєєм (Willy Ley), і Hugo Award в 1997 за автобіографічну роботу &quot;Time &amp; Chance: An Autobiography &quot;. Лайон Спрег де Камп на сім місяців пережив свою улюблену дружину, померши 6 листопада 2000 в місті Плано (Plano), штат Техас. Тіло його було піддано кремації, а прах похований на Арлінгтонському національному кладовищі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

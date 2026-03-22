@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Яворов Пейо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Яворов Пейо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./iavorov-peyo_2.webp" alt="Яворов Пейо" title="Яворов Пейо" data-full="./iavorov-peyo_2.webp" /><img class="side-img side-thumb" src="./iavorov-peyo.webp" alt="Яворов Пейо" title="Яворов Пейо" data-full="./iavorov-peyo.webp" /><img class="side-img side-thumb" src="./iavorov-peyo_1.webp" alt="Яворов Пейо" title="Яворов Пейо" data-full="./iavorov-peyo_1.webp" /><img class="side-img side-thumb" src="./iavorov-peyo_3.webp" alt="Яворов Пейо" title="Яворов Пейо" data-full="./iavorov-peyo_3.webp" /></div>
+        <div class="prose-text">
+          <p>Пейо Яворов (болг. Пейо Яворов, 1 січня 1877 — 16 жовтня 1914) — болгарський поет-символіст та революціонер.</p>
+          <p>Походив з родини дрібного торговця. Народився у м.Чипран 1877 року. З 1891 до 1893 року навчався у гімназії Пловдива. У 1892—1898 роках був близький до соціалістичного руху. З 1897 до 1900 року працював телеграфістом у Чипрані, Старій Загорі, Слівені, Стралджі, Анхіало, Софії. У 1897 році вступає у контакт з Внутрішньою македоно-адріанопольською революційною організацією.</p>
+          <p>З 1901 до 1902 року редагував газету &quot;Справа&quot;. Після придушення селянських повстань 1901 року і Ільінденського повстання 1903 року, в підготовці якого він брав участь, Яворов зневірився в громадських ідеалах. У 1902 році обирається делегатом 10-го Македонського конгресу. У 1903—1904 роках брав участь у русі приєднання Македонії до Болгарії. У 1904 році стає членом редколегії журналу &quot;Думка&quot;. Протягом 1905 року перебував у Франції (Нансі, Парижі), Швейцарії (Женеві), Австро-Угорщині (Відні). 1912 року брав участь як волонтер у Першій Балканській війні. Він був нагороджений Хрестом &quot;За хоробрість&quot;. Після закінчення війни став мером міста Неврокоп, а згодом оженився на доньці Петко Каравелова. Загибель у 1913 році дружини призвела до депресії. Зрештою у 1914 році Яворов прийняв отруту, а потім застрелився. Популярність принесли вірші &quot;На ниві&quot;, &quot;Град&quot;. У його поезії з початку 1900-х років звучать мотиви песимізму, самотності. У дусі символізму створено збірку &quot;Безсоння&quot; (1907). Проте його творчість багато в чому зберігала гуманістичне спрямування. Твори позначені високою трагедійною лірикою, скорботою за нездійсненими ідеалами, важким почуттям безвиході, душевним болем людини — &quot;Ніч&quot;, &quot;В годину синьої імли&quot;, &quot;Знемога душі&quot;. Він також автор художньої біографії керівника національно-визвольного руху в Македонії Г. Делчева. До того ж написав спогади про свою участь у цьому русі — &quot;Гайдуцькі мрії&quot;, (1908). Широтою соціальної проблематики вирізняються його п&#x27;єси &quot;Біля підніжжя Вітоши&quot; (1911) і &quot;Як завмирає відлуння після грому&quot; (1912).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

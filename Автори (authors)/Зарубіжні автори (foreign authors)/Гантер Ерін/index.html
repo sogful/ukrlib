@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гантер Ерін — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гантер Ерін</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hanter-erin.webp" alt="Гантер Ерін" title="Гантер Ерін" data-full="./hanter-erin.webp" /></div>
+        <div class="prose-text">
+          <p>Ерін Гантер — це колективний псевдонім, який використовують автори Вікторія Холмс, Кейт Кері, Керіт Болдрі, Джилліан Філіп, Інбалі Ізерлес, Туї Т. Сазерленд, Кейсі Відхамм та Роузі Бест у написанні декількох серій фентезійних романів для юнацької аудиторії. Твори авторів зосереджені на тваринах і їх пригодах. У їх доробку такі серії книжок як &quot;Коти-вояки&quot;, що складається з шести циклів по 6-7 книг в кожному, а також ряд додаткових творів. Кожен з авторів відіграє різну роль: Холмс створює сюжетні лінії кожної книги, Кері, Болдрі та Сазерленд почергово пишуть книги. Крім того, інша людина, Ден Джоллі, не відноситься до Ерін Гантер, але пише мангу (комікси).</p>
+          <p>Історія Ерін Гантер починається з написання серії книжок &quot;Коти-вояки&quot;, що стала бестселером. У 2003 році Гарпер Коллінз попросила Вікторію Холмс написати фентезійну серію книжок про диких котів. Вікторія, не будучи читачем фентезі, була все ж не надто захоплена, не зважаючи на свою любов до котів. Кейт Кері прийшла згодом, коли вже перша сюжетна лінія була написана і Холмс почала займатися питаннями публікації та редагування. Під час написання третьої книжки &quot;Коти-вояки: Ліс таємниць&quot; Керіт Болдрі приєдналася до Ерін Гантер. Опісля, коли Сазерленд написала перший путівник по світу Котів-вояків, вона стала четвертою в Ерін Гантер.</p>
+          <p>Назву &quot;Ерін Гантер&quot; було обрано з кількох причин. По-перше, якби автори використовували всі власні імена, книги розміщували б у різних місцях бібліотеки, що ускладнює їх пошук. По-друге, вони намагалися вибрати прізвище, яке б розмістило книги дуже близько до серії Redwall Брайана Жак, яка була на той час книжковою серією з найближчим сюжетом до &quot;Котів-вояків&quot;. Один з авторів запропонував &quot;Гантер&quot; (Мисливець), а інші погодились, що цей псевдонім &quot;ідеальний&quot;, оскільки він ще й викликає образ кота. Вікторія Холмс запропонувала &quot;Ерін&quot;, тому що це одне з улюблених імен Вікторії Холмс, а також його було сприйнято за сильне кельтське ім&#x27;я та &quot;не особливо дівоче&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

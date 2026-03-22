@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Багмут Іван Адріанович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Багмут Іван Адріанович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bahmut-ivan-adrianovych_1.webp" alt="Багмут Іван Адріанович" title="Багмут Іван Адріанович" data-full="./bahmut-ivan-adrianovych_1.webp" /><img class="side-img side-thumb" src="./bahmut-ivan-adrianovych.webp" alt="Багмут Іван Адріанович" title="Багмут Іван Адріанович" data-full="./bahmut-ivan-adrianovych.webp" /><img class="side-img side-thumb" src="./bahmut-ivan-adrianovych_2.webp" alt="Багмут Іван Адріанович" title="Багмут Іван Адріанович" data-full="./bahmut-ivan-adrianovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>7 червня 1903 року — у с. Бабайківка Царичанського району Катеринославщини народився Іван Адріанович Багмут, український письменник.</p>
+          <p>Іван Багмут — один з багатьох українських письменників, що залишили помітний слід в літературі. Хоча час його літературної діяльності був не таким вже й довгим.</p>
+          <p>Багмут Іван Адріанович народився 7 червня 1903 року в селі Бабайківка Новомосковського повіту Катеринославської губернії (тепер Царичансього району) в багатодітній родині вчителя. Вчився в місцевій церковно-парафіяльній школі, в Новомосковській чоловічій гімназії, продовжував освіту в учительській семінарії, яку закінчив у 1921 році. Деякий час він вчителював у рідному селі, а згодом переїхав до Харкова. Тут І. Багмут працював інспектором Народного комісаріату освіти УРСР, потім став редактором відділу юнацької літератури у Державному видавництві України, літредактором художнього відділу Всеукраїнської радіоуправи, референтом в РАТАУ. В Харкові він деякий час продовжував навчання в сільськогосподарському інституті, але згодом залишив його і поринув у літературне життя, брав участь у письменницьких дискусіях, почав писати сам. У харківських журналах з’являються його перші статті та рецензії. Наприкінці 20-х років Іван Багмут багато подорожував. Наслідком подорожей стали публікації в харківських газетах та журналах, а скоро з&#x27;явились і книги: &quot;Подорож до Небесних гір&quot; (1930), &quot;Преріями та джунглями Біробіджана&quot; (1931), &quot;Вибухи на півночі&quot; (1932), &quot;Карелія&quot; (1933), &quot;Верхівки засніжених тундр&quot; (1935). Іван Багмут був членом літературних організацій &quot;Молодняк&quot; та &quot;Політфронт&quot;, але його літературна діяльність перервалася влітку 1935 року. За міфічну контрреволюційну діяльність письменника засудили на шість років позбавлення волі та заслали до виправно-трудових таборів в Комі АРСР, де він працював геологом у пошуковій партії, яка обслуговувала будівництво Печорської залізниці. Звільнився письменник напередодні війни, деякий час працював там же вільнонайманим, а з початком воєнних дій пішов добровільцем на фронт. Він був розвідником на Воронезькому фронті, в лютому 1943 року письменник був тяжко поранений, втратив ногу, довго лікувався, а в лютому 1944 повернувся до Харкова. Ціною величезних зусиль І. Багмут включився в активне життя, знову став подорожувати, вирушив на Кубу, потім в Японію, Індію, по Середземному морю. Іван Багмут продовжив літературну діяльністю, видав збірки оповідань &quot;Гарячі джерела&quot; (1947), &quot;Оповідання&quot; (1951), &quot;Шматок пирога&quot; (1957), &quot;Злидні&quot; (1958), &quot;Знак на стіні&quot; (1961), ряд повістей, п&#x27;єси. У березні 1957 року Президія Харківського обласного суду розглянула судово-слідчу справу письменника і реабілітувала його за відсутністю складу злочину. В останні роки життя Іван Адріанович був членом правління обласної письменницької організації. За літературну творчість у 1973 був удостоєний премії імені Лесі Українки. 20 серпня 1975 року він помер.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

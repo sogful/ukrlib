@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Робінсон Едвін Арлінгтон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Робінсон Едвін Арлінгтон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./robinson-edvin-arlinhton.webp" alt="Робінсон Едвін Арлінгтон" title="Робінсон Едвін Арлінгтон" data-full="./robinson-edvin-arlinhton.webp" /></div>
+        <div class="prose-text">
+          <p>Едвін Арлінгтон Робінсон — американський поет, письменник і драматург. Триразовий лауреат Пулітцерівської премії.</p>
+          <p>Народився 22 грудня 1869 року в Гед Тайд, округ Лінкольн, штат Мен, США.</p>
+          <p>Молодший серед трьох братів, у юності він був закоханий у Едну Шепард, яка, проте, вийшла у 1890 році заміж за середульшого брата, Германа. Це було великим ударом для гордості юного поета, який, однак, у той час був замолодий, щоб серйозно конкурувати за руку Едни. Старший брат, Дін, який був лікарем, пристрастився до наркотиків і помер нестарим. Герман, зайнявшись господарством, також мав особистісні проблеми, пив і робив помилки, що врешті привело до розриву з жінкою і дітьми. У 1909 Герман помер від туберкульозу, після чого Една з дітьми повернулась до родинного маєтку Робінсонів у Ґардінері, штат Мейн. У віці 21 року Едвін вступив до Гарварду. Після смерті батька, не закінчивши навчання, повернувся додому в Ґардінер і намагався вести господарство на фермі. Він двічі пропонував Едні одружитися з ним, але після остаточної відмови переїхав у Нью-Йорк. Там він вів життя бідного поета, подружився з такими ж як і він письменниками, художниками і майбутніми інтелектуалами. Дебют Робінсона відбувся в 1896 році, коли він на власні кошти видав першу збірку &quot;Потік і Попередня ніч&quot; (The Torrent and The Night Before, 1896) і &quot;Діти темряви&quot; (The Children of the Night, 1897). У віршах цих збірок вперше згадується &quot;столиця&quot; поетичного світу Робінсона — вигадане містечко Тільбюрі-таун, де мешкають і герої його наступних збірок: &quot;Містечко вниз по річці&quot; (The Town down the River, 1910), &quot;Людина на тлі неба&quot; (The Man Against the Sky, 1916), &quot;Три таверни&quot; (The Three Taverns, 1920). Вів відлюдькуватий спосіб життя, так ніколи й не одружившись. Протягом останніх двадцяти років життя жив в Мак-Дауелл у штаті Нью-Гемпшир. Помер від раку 6 квітня 1935 року в лікарні Cornell Hospital у Нью-Йорку.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

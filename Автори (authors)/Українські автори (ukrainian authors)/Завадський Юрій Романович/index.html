@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Завадський Юрій Романович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Завадський Юрій Романович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zavadskyy-iuriy-romanovych.webp" alt="Завадський Юрій Романович" title="Завадський Юрій Романович" data-full="./zavadskyy-iuriy-romanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Юрій Завадський народився 18 березня 1981 року в Тернополі в сім&#x27;ї інженерів. У 1988 році почав навчатися в Тернопільській загальноосвітній школі І—III ступенів № 18, яку закінчив у 1998-му. На той час директором був А. В. Крижанівський. 1998 року Юрій Завадський вступив на філологічний факультет Тернопільського національного педагогічного університету імені Володимира Гнатюка (ТНПУ). 2003 року закінчив цей виш, здобувши диплом за спеціальністю &quot;Вчитель української мови та літератури, зарубіжної літератури, польської мови&quot;. Цього ж року вступив в аспірантуру (спеціальність — &quot;Теорія літератури&quot;) при кафедрі теорії літератури та порівняльного літературознавства філологічного факультету Тернопільського педагогічного університету, яку закінчив у 2006 році. Тема дисертаційного дослідження — &quot;Типологія та поетика мережевої літератури і сучасне західне літературознавство&quot;. 12 жовтня 2006 року в Тернополі Юрій Завадський захистив кандидатську дисертацію на тематику гіпертексту, сучасного конкретизму, естетики мультимедіа й диґітального мистецтва, а згодом видав монографію &quot;Віртуальна література&quot;. У 2007—2010 роках працював асистентом кафедри інформатики ТНПУ, а у 2010 — 2011 роках — асистентом кафедри журналістики ТНПУ. З 2011-го Юрій Завадський працював менеджером видавничої діяльності ТОВ &quot;Компанія-&quot;Крок&quot;&quot; (видавництва &quot;Крок&quot;). З 2014 року очолює підприємство.</p>
+          <p>Юрій Завадський почав писати вірші в середині дев&#x27;яностих. Галузь його наукових і творчих зацікавлень — сучасна зорова поезія, комп&#x27;ютерні технології в мистецтві, мережева література, вільний вірш і фонетична поезія (англ. sound poetry, нім. Lautgedicht). У поєднанні з психоделічними музичними настроями гурту &quot;ZSUF&quot; &quot;фонетика&quot; Юрія Завадського була представлена на фестивалях в Україні й Польщі (зокрема, фестиваль &quot;L2&quot; у Любліні 2009 року). Митці разом записали альбом &quot;юрійзавадський ZSUF&quot;. Також Юрій Завадський є автором гіпертекстової поеми &quot;Цигарки&quot;, що вийшла на компакт-диску у 2006 році й вільно доступна на сайті поета.</p>
+          <p>2010 року разом із українським поетом із Барселони Андрієм Антоновським Юрій Завадський випустив поетичну збірку &quot;Ротврот&quot;. До книги, що вийшла всього в 6 примірниках, передмову створив каталонський письменник Карлес Ак Мор. Транслітерацію та переклад каталонською мовою здійснила Каталіна Джирона. Книгу здизайнував Василь Гудима та спільно зі своїм братом Михайлом Гудимою створив у залізі; книгу видали в співпраці з тернопільським видавництвом &quot;Крок&quot;. Кожний том важить двадцять кілограмів. Обкладинка зроблена з грубого листового металу. Сам текст друкований на грубому акварельному папері. Листки не перегортаються — вони нанизані на металевні стрижні. Щоб прочитати наступну сторінку, треба зняти з цих стрижнів попередню. На кожному листі є короткий вірш, написаний у стилі фонетичної поезії, з одного боку — українською мовою, а з другого — каталонською. У травні того ж року книгу презентували на міжнародному ковальському фестивалі у Івано-Франківську та фестивалі &quot;Barcelona Poesia&quot; 2010 року в Барселоні. Окремі його твори перекладено також англійською, німецькою, португальською, каталонською та кримськотатарською мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

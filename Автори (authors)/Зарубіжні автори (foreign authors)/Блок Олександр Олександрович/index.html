@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Блок Олександр Олександрович — Біографія стисло</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Блок Олександр Олександрович</h1>
+      <h2>Біографія стисло</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./blok-oleksandr-oleksandrovych_1.webp" alt="Блок Олександр Олександрович" title="Блок Олександр Олександрович" data-full="./blok-oleksandr-oleksandrovych_1.webp" /><img class="side-img side-thumb" src="./blok-oleksandr-oleksandrovych.webp" alt="Блок Олександр Олександрович" title="Блок Олександр Олександрович" data-full="./blok-oleksandr-oleksandrovych.webp" /><img class="side-img side-thumb" src="./blok-oleksandr-oleksandrovych_2.webp" alt="Блок Олександр Олександрович" title="Блок Олександр Олександрович" data-full="./blok-oleksandr-oleksandrovych_2.webp" /><img class="side-img side-thumb" src="./blok-oleksandr-oleksandrovych_3.webp" alt="Блок Олександр Олександрович" title="Блок Олександр Олександрович" data-full="./blok-oleksandr-oleksandrovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Блок Олександр</p>
+          <p>(1880-1921)</p>
+          <p>Яскравий представник російського символізму, поет, публіцист, драматург. Творчість поета умовно поділяють на три періоди, які сам поет представив у трьох книгах віршів. &quot;Вірші про Прекрасну Даму&quot; — визначальний цикл &quot;Книги першої&quot; (1898— 1904). Книга сповнена таємничої містики, прагнення кохання; шість років поет оспівує Прекрасну Даму, яку називає Вічно Юною, Вічною Жоною. Сюжети віршів (їх усього в книзі 686) символічні, філософічні. Друга книга символізує злам поглядів поета (1904—1908 рр.), розвивається урбаністична (міська) тема, поет сповнений апокаліптичних настроїв (&quot;Місто&quot;, &quot;Снігова маска&quot;, &quot;Вільні думки&quot;). Вірші 1907—1916 рр. — третя книга — це відтворення життя в усіх його проявах: кохання, революція, роздуми про батьківщину (&quot;Страшний світ&quot;, &quot;Кармен&quot;, &quot;Батьківщина&quot;). Поема &quot;Дванадцять&quot; (1918) стала завершальним твором Блока. Автор продовжує одну з головних своїх тем — тему Росії, яка постає в апокаліптичному вигляді. Гине старий світ, але народження нового є драматичним. У поемі звучить мотив самознищення. Блок вважав цей твір кращим з усього ним написаного.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

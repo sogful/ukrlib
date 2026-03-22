@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мандзоні Алессандро Франческо Томазо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мандзоні Алессандро Франческо Томазо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mandzoni-alessandro-franchesko-tomazo.webp" alt="Мандзоні Алессандро Франческо Томазо" title="Мандзоні Алессандро Франческо Томазо" data-full="./mandzoni-alessandro-franchesko-tomazo.webp" /><img class="side-img side-thumb" src="./mandzoni-alessandro-franchesko-tomazo_1.webp" alt="Мандзоні Алессандро Франческо Томазо" title="Мандзоні Алессандро Франческо Томазо" data-full="./mandzoni-alessandro-franchesko-tomazo_1.webp" /></div>
+        <div class="prose-text">
+          <p>Родился 7 березня 1785 року в Мілане. Правоверний католик, він підтримував ліберальних переконань. Его раннє стихотворення, в особливостях релігіозних гімнів, входить у всі італійські антології, критичні роботи, особливо на лінгвістичні та релігіозні теми, залишаються в культурних обставинах, однаково більше всього вони відомі як автор історичного романа Обрученные (I Promessi Sposi). Менші удари його трагедії у стихах Графа Карманьола (Il Conte di Carmagnola, 1820) та Адельгіз (Адельчі, 1822).</p>
+          <p>К концу життя Мандзоні стояв національним символом, хотя жив єдиним в Мілані і своїм приміщенням був непомітний від нього. Застенчивий і нервний за характером, він не грав важливу ролі в італійському Рисорджименто, однако сочувствовав його целям. В конце життя був окружений почетом; після смерті 22 травня 1873 р. правительство збудувало його державні похорони. Дж. Верді посвятили Мандзони свого Реквіем.</p>
+          <p>Верховний роман &quot;Обручені&quot; вийшов в 1827 році, але остаточна редакція з багаточисленними змінами та виправленнями з&#x27;явилася в 1840—1842 роках. Формально роман Мандзоні продовжує романтичну традицію історичних романів, але по суті тут дуже мало від Вальтера Скотта, підходячи до Мандзонів до обраного часів зреалізований реалістичний, чим романтичний. У романах десяти особистих: дворянин, священники, інвізитори, трактирщики, погані ремесленники, — і навіть найзначніші з них чудово обрисовані як-нібудь виразною деталлю, в цілому роман дав широку панораму життя Італії 17 ст.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коцарев Олег Олександрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коцарев Олег Олександрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kotsarev-oleh-oleksandrovych.webp" alt="Коцарев Олег Олександрович" title="Коцарев Олег Олександрович" data-full="./kotsarev-oleh-oleksandrovych.webp" /><img class="side-img side-thumb" src="./kotsarev-oleh-oleksandrovych_1.webp" alt="Коцарев Олег Олександрович" title="Коцарев Олег Олександрович" data-full="./kotsarev-oleh-oleksandrovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 1981 року в Харкові. Закінчив відділення журналістики Університету імені Василя Каразіна.</p>
+          <p>Поезія та проза друкувались у літературних часописах і антологіях України, Польщі, Чехії, Білорусі, Німеччини, Швеції, Бразилії, Ізраїлю, Азербайджану, Сербії, Словаччини, Литви, США.</p>
+          <p>Критика та есеїстика публікувались у виданнях: &quot;День&quot;, &quot;Критика&quot;, &quot;ЛітАкцент&quot;, УНІАН, &quot;Березіль&quot;, &quot;Український Тиждень&quot;, &quot;ZaUA&quot;, &quot;Тексти&quot;, &quot;Історична правда&quot; та ін. Учасник літературних акцій: &quot;Magnus Ducatus&quot; (Мінськ), &quot;Жак Дерріда. Кінцевої не буде&quot; (Варшава), &quot;NON/fiction&quot; (Москва), &quot;Трактор. Фестиваль оптимізму&quot; (Київ), &quot;Київські лаври&quot; (Київ), &quot;Вітер зі Сходу&quot; (Івано-Франківськ), &quot;Азіятський ренесанс&quot; (Донецьк), &quot;Літературний ґерць&quot; (Дніпропетровськ), &quot;П&#x27;ята весна&quot; (Запоріжжя), &quot;ZEX&quot; (Харків), &quot;1-ий міжнародний літературний фестиваль&quot; (Львів), &quot;ГоКо-КоЛа. Міцна чоловіча поезія&quot; (Київ), &quot;Стокгольмський поетичний фестиваль&quot; та багатьох інших. Співупорядник (разом із Юлією Стахівською) антології &quot;Українська авангардна поезія (1910-1930-ті роки)&quot;. Співупорядник (разом з Іриною Забіякою) книжки українських перекладів чеського поета Івана Верніша &quot;Прогулянка довкола пивоварні&quot;. Вірші перекладені англійською, бенгальською, білоруською, івритом, італійською, литовською, німецькою, польською, португальською, румунською, сербською, словацькою, французькою, чеською, шведською мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

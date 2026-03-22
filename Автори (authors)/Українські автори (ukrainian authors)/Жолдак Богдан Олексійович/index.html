@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Жолдак Богдан Олексійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Жолдак Богдан Олексійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zholdak-bohdan-oleksiyovych.webp" alt="Жолдак Богдан Олексійович" title="Жолдак Богдан Олексійович" data-full="./zholdak-bohdan-oleksiyovych.webp" /><img class="side-img side-thumb" src="./zholdak-bohdan-oleksiyovych_1.webp" alt="Жолдак Богдан Олексійович" title="Жолдак Богдан Олексійович" data-full="./zholdak-bohdan-oleksiyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Богдан Жолдак народився 13 лютого 1948 року в Києві. Його батько Олесь Жолдак був відомим українським пародистом, а мати – ліричною поетесою. У домі Жолдаків завжди було багато творчих гостей. Часто-густо лунали жарти, дотепи, віршовані кпини і, відповідно, регіт.</p>
+          <p>Богдан Жолдак був ведучим декількох телевізійних програм на УТ-1 і каналі &quot;1+1&quot; і щотижневої радіопередачі на Першому каналі Національного радіо. Працював на кіностудії &quot;Рось&quot;, викладав сценарну майстерність на кінофакультеті Київського державного інституту театрального мистецтва ім. Карпенка-Карого.</p>
+          <p>Публікувався в літературних журналах та антологіях. Є автором книг &quot;Гаряча Арктика&quot;, &quot;Гальманах&quot;, &quot;Капці&quot;, &quot;Топінамбур, сину&quot; тощо. Автор сценаріїв фільмів &quot;Відьма&quot;, &quot;Козаки йдуть!&quot;, &quot;Іван і кобила&quot;, &quot;Дорога на Січ&quot; та інших. За літературну і театральну діяльність отримав декілька нагород, зокрема премії ім. Богдана Хмельницького, ім. Леоніда Череватенка і премію &quot;Воїн світла&quot;. Помер 31 жовтня 2018 року після прочитаної для студентів лекції.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

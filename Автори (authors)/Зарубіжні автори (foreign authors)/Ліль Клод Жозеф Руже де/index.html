@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ліль Клод Жозеф Руже де — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ліль Клод Жозеф Руже де</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lil-klod-zhozef-ruzhe-de.webp" alt="Ліль Клод Жозеф Руже де" title="Ліль Клод Жозеф Руже де" data-full="./lil-klod-zhozef-ruzhe-de.webp" /></div>
+        <div class="prose-text">
+          <p>Клод Жозеф Руже де Ліль</p>
+          <p>французький поет і композитор, в 1792 р написав слова і музику для революційного гімну &quot;Марсельєза&quot;.</p>
+          <p>Був військовим інженером, дослужився до звання капітана. Пісня, обезсмертила його ім&#x27;я, Марсельєза, була написана в Страсбурзі, де в квітня 1792 року була розквартирована його частина. Перша частина пісні називалася &quot;Бойова пісня Рейнської армії&quot;, а назва &quot;Марсельєза&quot; отримав пізніше завдяки політику Шарлю Жану Марі Барбару, уродженцю Марселя. Був помірним республіканцем. Після приходу до влади якобінців подав у відставку, а потім він був звинувачений в контрреволюційній діяльності і кинутий у в&#x27;язницю. Тільки падіння Робесп&#x27;єра врятувало його. Був звільнений після термідоріанського перевороту. Написав кілька інших пісень на манер Марсельєзи, які опублікував в 1825 р в збірнику &quot;Французькі пісні&quot;, де також було близько 50 пісень різних авторів, музику до яких написав Руже де Ліль. Його &quot;Есе в віршах і прозі&quot; (1797) містять Марсельєзу. Розповіді &quot;Adelaide et Monville&quot; про сентиментальному дитину; а також кілька інших віршів. Переклав на французький байки І. А. Крилова. Входив в рух сен-симонистов, написав для них &quot;Гімн індустріалів&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вовк Віра — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вовк Віра</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vovk-vira.webp" alt="Вовк Віра" title="Вовк Віра" data-full="./vovk-vira.webp" /><img class="side-img side-thumb" src="./vovk-vira_1.webp" alt="Вовк Віра" title="Вовк Віра" data-full="./vovk-vira_1.webp" /><img class="side-img side-thumb" src="./vovk-vira_2.webp" alt="Вовк Віра" title="Вовк Віра" data-full="./vovk-vira_2.webp" /></div>
+        <div class="prose-text">
+          <p>Віра Вовк (порт. Vira Vovk; за паспортом Wira Selanski) народилася 2 січня 1926 року в Бориславі (українські землі довоєнної Польщі, нині Львівська область) у родині лікаря й археолога. Зростала на Гуцульщині в містечку Кути. Навчалася в гімназії у Львові, потім у середній дівочій школі ім. Клари Шуманн у Дрездені.</p>
+          <p>В еміграції з 1945 року, спочатку в Німеччині, а згодом у Бразилії. Студіювала германістику, славістику, музикологію у Тюбінгенському університеті. З 1949 року разом з матір&#x27;ю переїхала до Ріо-де-Жанейро, де закінчила університет, стажувалася також у Колумбійському (Нью-Йорк) і Мюнхенському університеті, де вивчала і порівняльне літературознавство. Здобула докторський ступінь із філософії.</p>
+          <p>Після отримання освіти, стала професоркою німецької літератури в Державному університеті Ріо-де-Жанейро. З 1957 року — завідувачка кафедрою германістики цього університету. Активно пропагувала українську культуру та мову. Виступала з літературними доповідями, лекціями й авторськими вечорами у Нью-Йорку, Вашингтоні, Філадельфії, Клівленді, Чикаго, Детройті, Торонто, Монреалі, Оттаві, Ванкувері, Лондоні, Парижі, Римі, Мадриді, Мюнхені, Буенос-Айресі, Києві, Львові. Віра Вовк померла 16 липня 2022 року в Ріо-де-Жанейро. Поезія: Збірки &quot;Юність&quot; (1954), &quot;Зоря провідна&quot; (1955), &quot;Єлегії&quot; (1956), &quot;Чорні акації&quot; (1961), &quot;Любовні листи княжни Вероніки&quot; (1967), &quot;Каппа Хреста&quot; (1968), &quot;Меандри&quot; (1979), &quot;Мандат&quot; (1980), &quot;Жіночі маски&quot; (1993), &quot;Писані кахлі&quot; (1999), &quot;Віоля під вечір&quot; (2000) і &quot;Поезія&quot; (2000), драматична поема &quot;Триптих&quot;, п&#x27;єса &quot;Іконостас України&quot;. Проза: &quot;Ранні оповідання&quot; (1943—1954), &quot;Легенди&quot; (1958). &quot;Казки&quot; (1956), &quot;Духи й дервіші&quot; (1956). &quot;Оповідання для дітей&quot; (1960—1962). &quot;Вітражі&quot; (1961), &quot;Святий гай&quot; (1983), &quot;Карнавал&quot; (1986), &quot;Старі панянки&quot; (1995), &quot;Калейдоскоп&quot; (1979—2001). П&#x27;єси: &quot;Скарб царя Гороха&quot; (1962), &quot;Смішний святий&quot; (1968), &quot;Триптих&quot; (1982), &quot;Іконостас України&quot; (1988, 1991), &quot;Вінок троїстий&quot; (1988), &quot;Казка про вершника&quot; (1992), &quot;Зимове дійство&quot; (1994), &quot;Весняне дійство&quot; (1995), &quot;Настася Чагрова&quot; (2001), &quot;Козак Нетяга&quot; (2001) й &quot;Крилата скрипка&quot; (2001).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

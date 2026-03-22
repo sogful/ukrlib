@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Зиновіїв Климентій — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Зиновіїв Климентій</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Біографію Климентія Зіновієва можна реконструювати на основі збірки його віршів. Фактичних відомостей про нього збереглося мало. Мотиви злиденного дитинства, сирітства, голодування в дяківській школі, а потім у бурсі дають підставу припускати їхній автобіографічний характер. Походив Зіновіїв із незаможної сім&#x27;ї, рано осиротів. Можливо, навчався в дяка при церковній парафії, де і жив, а потім — у Києво-Могилянській колегії, мешкав у бурсі. Молодим постригся в ченці, був монастирським писарем. Згодом, за припущеннями, був священником, а овдовівши, пішов у монастир.</p>
+          <p>Мандрував українськими землями, збираючи пожертвування для монастиря. Подорожі до монастирів інших країн могли бути пов&#x27;язані з різними обставинами церковного життя: храмовими святами, прославленням або вшануванням чудотворних ікон, заснуванням монастирів тощо. Зіновіїв жив на Закарпатті, Волині, Київщині, у Слобідській Україні, Запорозькій Січі, бував у Польщі, Білорусі, Литві, Росії. Знав церковнослов&#x27;янську, латинську, польську, російську мови, орієнтувався в білоруській та литовській мовах.</p>
+          <p>Зіновіїв був дуже спостережливим, допитливим, багато думав і читав, любив не тільки церковні співи (сам співав ірмолоя), а й народні думи та пісні, кохався в малярстві. Мав схильність до віршування. Знаючи закони силабічної версифікації, свої спостереження і роздуми втілював у поетичній формі. Багато хворів, зазнав гонінь, але, мандруючи, дожив до похилого віку. Помер на Чернігівщині в сані ієромонаха після 1712 р. Цінність творів Зіновієва в їхній художній якості, зумовленій жвавістю образного мислення поета й органічним засвоєнням скарбів народної мови. Він продовжив демократичні традиції української літератури, які започаткував Іван Вишенський і згодом продовжили Григорій Сковорода й Тарас Шевченко. Герої його творів — представники всіх верств і прошарків населення України. Це селяни, козаки, ремісники, духівництво (чорне й біле), торговці, музиканти, малярі, шафарі (управителі, економи), судді, підсудки тощо. З гіркотою констатує поет, що людей бідних незрівнянно більше, ніж заможних, бачить, що довкола точиться жорстока боротьба за існування. Майже через 150 років після смерті Зіновієва в одному з чернігівських монастирів український письменник-етнограф Олександр Шишацький-Ілліч натрапив на збірку його творів. Рукопис не мав ні початку, ні кінця, налічував 321 списану сторінку (з можливих 400) і поділявся на три частини: збірку віршів, що її поет готував до друку; збірку народних прислів&#x27;їв та приказок, розміщених за алфавітом; вірші, дописані Зіновієвим пізніше.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Істин Микола Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Істин Микола Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./istyn-mykola-mykolayovych_1.webp" alt="Істин Микола Миколайович" title="Істин Микола Миколайович" data-full="./istyn-mykola-mykolayovych_1.webp" /><img class="side-img side-thumb" src="./istyn-mykola-mykolayovych.webp" alt="Істин Микола Миколайович" title="Істин Микола Миколайович" data-full="./istyn-mykola-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>Микола Істин (Дідошак), 1972 р.н. – поет, прозаїк, есеїст. Привніс у літературу некстмодернізм, поетичноцентричність, вербальний космос, поетичні прогресії кохання.</p>
+          <p>Автор численних публікацій в інтернет-виданнях, в колективних збірниках, і в літературній періодиці. Зокрема друкувався в газетах: &quot;Літературна Україна&quot;, &quot;Українська літературна газета&quot;, &quot;Дебют – газета&quot;, в журналах &quot;Дзвін&quot;, &quot;Дніпро&quot;, &quot;Німчич&quot;, &quot;Літературний Чернігів&quot;.</p>
+          <p>Ініціатор створення і організатор заходів літоб&#x27;єднання &quot;Планета Наступного Слова&quot; (м. Івано-Франківськ, 2011— 2013 рр. ).. В 2016 році став лауреатом і дипломантом кількох літературних конкурсів : Всеукраїнського літературного конкурсу імені Леся Мартовича, Всеукраїнського літературного конкурсу &quot;Відродження Дніпра&quot;, обласного Івано-Франківського конкурсу &quot;Перший рукопис&quot;, нагороджений спеціальною відзнакою Всеукраїнського конкурсу прози &quot;Крилатий лев&quot;, за підсумками якого ввійшов в десятку кращих молодих українських прозаїків. В 2017 році став лауреатом міжнародного конкурсу імені де Рішельє, в номінації поезія. В 2018 році у видавництві &quot;Час Змін Інформ&quot; вийшлакнига віршів автора під назвою &quot;НекстмодернізмпостМАЙДАНівського паралельноАТОвського періоду&quot;. В 2019 році у видавництві &quot;Терен&quot; видав збірку віршів &quot;Всесвіти душевтілених слів&quot;. Вибрані твори перекладені французькою, німецькою, та англійською мовою. Найбільше публікацій перекладів у французьких літературних журналах таких як &quot;Comme en poésie&quot;, &quot;Poétistme&quot; (&quot;L&#x27;isthmographe&quot;), &quot;La page blanche&quot;, &quot;Fragile&quot;, &quot;PRO/P(R)OSE&quot;, &quot;Soleil Hirsute&quot;, &quot;L&#x27;Épître&quot;, &quot;Franсopolis&quot;, &quot;Le Passe-Muraille&quot;, &quot;Poetiquetac&quot;, та інших…</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

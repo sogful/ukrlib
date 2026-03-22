@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Анненський Інокентій Федорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Анненський Інокентій Федорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./annenskyy-inokentiy-fedorovych.webp" alt="Анненський Інокентій Федорович" title="Анненський Інокентій Федорович" data-full="./annenskyy-inokentiy-fedorovych.webp" /><img class="side-img side-thumb" src="./annenskyy-inokentiy-fedorovych_1.webp" alt="Анненський Інокентій Федорович" title="Анненський Інокентій Федорович" data-full="./annenskyy-inokentiy-fedorovych_1.webp" /><img class="side-img side-thumb" src="./annenskyy-inokentiy-fedorovych_2.webp" alt="Анненський Інокентій Федорович" title="Анненський Інокентій Федорович" data-full="./annenskyy-inokentiy-fedorovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Інокентій Федорович Анненський — видатний літератор Росії, один з найяскравіших представників Срібного століття — періоду російської літератури рубежу XIX-XX століть.</p>
+          <p>Він народився 20 серпня (1 вересня) 1855 року в місті Омську, в сім&#x27;ї високопоставленого державного чиновника. Перші роки життя поета пройшли в Омську, проте в 1860 році, в результаті успішного просування глави сім&#x27;ї по службовій драбині, Анненские переїхали в Петербург.</p>
+          <p>Отримавши прекрасну домашню освіту, Інокентій Анненський вступив на історико-філологічний факультет Петербурзького університету, який закінчив у 1879 році. Цей факультет визначив майбутню долю поета — він до кінця життя служив по відомству Міністерства народної освіти. Вірші Анненський почав писати, як і більшість поетів, ще в дитинстві, але перші друковані праці з&#x27;явилися на початку 80-х роках. Він публікував рецензії на філологічні роботи, статті, есе. У 90-х роках XIX століття у журналі &quot;Русская школа&quot; з&#x27;явилися його &quot;Педагогічні листи&quot;, що стали широко відомими. Там же він друкував наукові статті про Гоголя, Гончарова, Майкове. В &quot;Журналі міністерства народної освіти&quot; можна було знайти переклади Анненського окремих трагедій Евріпіда (всього він перевів 19 трагедій цього давньогрецького автора). Анненський також написав чотири трагедії на теми грецької міфології. Перший віршований збірник Анненського — &quot;Тихі пісні&quot; — вийшов досить пізно, в 1904 році, під псевдонімом &quot;Нік. Т-про&quot;. Блискуче освічений, він поєднав у своїй поезії класичні російські традиції Пушкіна, Тютчева, Баратинським з європейською культурою. Друга збірка — &quot;Кипарисовий скринька&quot; — вийшов вже після смерті поета, в 1910 році. У 1923 році син поета Ст. Кривич видав третю збірку — &quot;Посмертні вірші&quot;. Анненський довго працював директором Миколаївської чоловічої гімназії в Царському Селі, тому не дивно, що вірші його нагадують про осінньої строгості царскосельских алей. Анненський був прекрасним педагогом, надали благотворний вплив на цілу плеяду російських поетів — Анну Ахматову, Миколи Гумільова, Владислава Ходасевича і Олександра Блока. Багато з найбільших талантів Срібного століття були особисто знайомі з Анненським, оскільки навчалися в його гімназії. Серед них був і Гумільов, який зробив перші кроки в поезії саме під керівництвом Анненського. Інокентій Федорович Анненський помер у Петербурзі від інфаркту 30 листопада (13 грудня) 1909 (1910) році, похований в Царському Селі. Ахматова у своєму короткому і божественному прощальному слові сказала про нього від імені всіх, їм вихованих: &quot;…А той, кого учителем вважаю, Як тінь пройшов і тіні не залишив, Вся отрута ввібрав всю цю одурь випив, І слави чекав, і слави не дочекався, Хто був предвестьем, предзнаменованьем, Всіх пошкодував, у всіх вдихнув утому — І задихнувся…&quot;</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

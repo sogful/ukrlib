@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Колін Володимир — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Колін Володимир</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kolin-volodymyr.webp" alt="Колін Володимир" title="Колін Володимир" data-full="./kolin-volodymyr.webp" /></div>
+        <div class="prose-text">
+          <p>Володимир Колін, при народженні Жан Колін (рум. Jean Colin; 1 травня 1921, Бухарест — 6 грудня 1991, Бухарест) — румунський письменник-фантаст та перекладач. Один із найважливіших авторів фентезі та наукової фантастики в румунській літературі, чиї основні твори відомі на кількох континентах, він також був відомим поетом, есеїстом, журналістом і автором коміксів.</p>
+          <p>Після того, як наприкінці 1940-х він і його тодішня дружина Ніна Кассіан увійшли до лівого літературного гуртка &quot;Orizont&quot;, Колін почав свою творчу діяльність як комуністичний і соцреалістичний письменник. У перші роки румунського комуністичного режиму його призначили на посаду в апараті цензури та пропаганди. Його роман 1951 року &quot;Сонце сходить у дельті&quot; (рум. Soarele răsare în Deltă) був раннім представником місцевої соцреалістичної творчості, але Колін отримав за нього багато критики з боку тогочасного культурного істеблішменту за те, що в ньому було виявлено ідеологічні помилки.</p>
+          <p>Поступово, після середини 1950-х років, Колін зосередився на своїй літературній творчості, та відмовився від комуністичної ідеології. Він є автором відомих творів, зокрема міфопоетичної збірки &quot;Легенди з Вамленду&quot; (рум. Legendele țării lui Vam) та збірок казок. Як фантаст він дебютував у журналі &quot;Colecția de Povestiri Științifico-Fantastice&quot;. Його творчість у жанрі наукової фантастики, вершиною якої став роман &quot;Вавилон&quot; (рум. Babel) у 1978 році, принесла Коліну три премії Єврокону. Його посмертно відзначено за внесок у жанр, а нагорода, названа на його честь, регулярно вручається відомим румунським авторам наукової фантастики. З 1970 року і до самої смерті він був одним із редакторів літературного журналу Спілки письменників &quot;Viața Românească&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вале Пер — Біографія стисло</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вале Пер</h1>
+      <h2>Біографія стисло</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vale-per.webp" alt="Вале Пер" title="Вале Пер" data-full="./vale-per.webp" /><img class="side-img side-thumb" src="./vale-per_1.webp" alt="Вале Пер" title="Вале Пер" data-full="./vale-per_1.webp" /><img class="side-img side-thumb" src="./vale-per_2.webp" alt="Вале Пер" title="Вале Пер" data-full="./vale-per_2.webp" /></div>
+        <div class="prose-text">
+          <p>Шведський письменник, майстер детективного жанру, Пер Вале народився в Швеції, прихід Тёлё (швед. Tölö) недалеко від Гетеборга.</p>
+          <p>Після закінчення Лундського університету з 1946 року працював в різних шведських газетах і журналах репортером зі спортивної та кримінальної хроніці.</p>
+          <p>У 1950-х роках брав участь у багатьох громадських рухах, в основному ліворадикального толку, в тому числі і за кордоном — зокрема, в Іспанії, що закінчилося його висилкою з цієї країни в 1957 році як персони нон грата. Після повернення до Швеції Вале працював сценаристом на радіо і телебаченні; був також редактором декількох журналів. Як письменник дебютував в 1959 році романом &quot;Коза божа&quot; (Himmelsgeten). Після шлюбу з письменницею травня Шёвалль (1962) працював у співавторстві з нею. Уже в кінці 60-х років їх спільна творчість отримало широку популярність як в Швеції, так і за кордоном. Крім того, Вале написав кілька романів &quot;соло&quot;; найвідоміший з цих романів — &quot;Тридцять третій поверх&quot;. Помер в 1975 році в Мальме, у віці неповних 49 років від панкреатиту (згідно з іншими даними, від раку підшлункової залози).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

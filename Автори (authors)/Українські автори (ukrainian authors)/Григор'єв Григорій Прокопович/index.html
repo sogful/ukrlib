@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Григор&#x27;єв Григорій Прокопович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Григор&#x27;єв Григорій Прокопович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hryhoriev-hryhoriy-prokopovych.webp" alt="Григор&#x27;єв Григорій Прокопович" title="Григор&#x27;єв Григорій Прокопович" data-full="./hryhoriev-hryhoriy-prokopovych.webp" /></div>
+        <div class="prose-text">
+          <p>Григорій ГРИГОР&#x27;ЄВ</p>
+          <p>Григор&#x27;єв Григорій Прокопович народився 21 серпня 1898 року в Києві у багатодітній робітничій сім&#x27;ї. У п&#x27;ятнадцятирічному віці через матеріальну скруту найнявся переписувачем у казенну палату, а затим влаштувався рахівником в управління Південно-Західної залізниці.</p>
+          <p>Аби прогодувати велику сім&#x27;ю, батько майбутнього письменника підробляв гардеробником в оперному театрі, в якому мати працювала прибиральницею. Це сприяло тому, що Григор&#x27;єв у ранньому дитинстві перейнявся особливою шанобою до сценічного дійства. І коли став на самостійний шлях життя, після роботи відвідував Музично-драматичні курси імені Лисенка, якими керувала дочка Михайла Старицького Марія. Саме завдяки її клопотанням його прийняли статистом-хористом у театр Миколи Садовського. Згодом був артистом у театрі української драми під керівництвом Панаса Саксаганського, водночас працюючи за сумісництвом касиром у Держбанку. Голодного 1921 року перейшов на роботу в профспілку цукровиків — керував самодіяльністю на цукроварнях Смілянського повіту. На цей час припадає початок його літературної діяльності. Після закінчення Київського кіноінституту (1934) регулярно друкував статті і рецензії з питань літератури, музики, театру, образотворчого мистецтва в журналах &quot;Радянське мистецтво&quot;, &quot;Театр&quot;, &quot;Радянське кіно&quot;, &quot;Искусство&quot;, &quot;Советский театр&quot;. З 1934 року працював асистентом режисера на Київській кіностудії художніх фільмів, але 1937 року зненацька був звільнений &quot;за скороченням штатів&quot;. З великими труднощами влаштувався на педагогічну роботу. Проте ненадовго. 14 грудня 1937 року був заарештований і невдовзі без пред&#x27;явлення звинувачення, без суду відправлений в Колимські концтабори. &quot;Щасливий випадок зіткнув мене через рік із моїм київським слідчим, — згадував через багато літ Григорій Прокопович. — І він, тепер в&#x27;язень, змушений був визнати, що мене репресовано за брехливими наклепами. Про це дав свідчення на письмі. Начальник табору надіслав це свідчення до Москви, і наприкінці 1941 року надійшла відповідь: мою справу переглянуть лише після війни... У вересні 1946 року мене звільнили. Офіційно був реабілітований у березні 1958 року&quot;. Опинившись на волі. тривалий час учителював по селах Київщини. 1959 року нарешті пощастило перебратися на постійне мешкання до рідного міста Лише вийшовши на пенсію, Григор&#x27;єв зміг цілковито віддатися творчій роботі. В останні роки життя він написав публіцистично-документальні книжки &quot;У старому Києві&quot; (1961), &quot;Україна танцює&quot; (1964), &quot;Що було, те бачив&quot; (1966), &quot;Цікаві бувальщини&quot; (1966), &quot;Чарка меду&quot; (1969). Помер 29 серпня 1971 року. Олекса Мусієнко ЛУ 29 (4438) 19.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

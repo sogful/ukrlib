@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Годованець Микита Павлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Годованець Микита Павлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hodovanets-mykyta-pavlovych_1.webp" alt="Годованець Микита Павлович" title="Годованець Микита Павлович" data-full="./hodovanets-mykyta-pavlovych_1.webp" /><img class="side-img side-thumb" src="./hodovanets-mykyta-pavlovych.webp" alt="Годованець Микита Павлович" title="Годованець Микита Павлович" data-full="./hodovanets-mykyta-pavlovych.webp" /></div>
+        <div class="prose-text">
+          <p>Микита ГОДОВАНЕЦЬ</p>
+          <p>Годованець Микита Павлович народився 26 вересня 1893 року в с.Вікнина Тернівської волості Кам&#x27;янець-Подільської губернії (нині — Гайворонський район Кіровоградської області) в селянській сім&#x27;ї. Після закінчення Степашанської вчительської школи навчався на дворічних курсах з підготовки до університету, вчителював у церковно-парафіяльних школах сіл Орлівка та Бубнівка на Поділлі. В 1914-1918 роках перебував не військовій службі. Повернувшись до рідних місць, деякий час вчителював по селах, а затим став працювати в редакціях газет &quot;Червоний край&quot; (Вінниця) та &quot;Радянська Волинь&quot; (Житомир).</p>
+          <p>Перші вірші Годованця з&#x27;явилися друком 1913 року на сторінках київського тижневика &quot;Маяк&quot;. Низка поезій побачила світ у газеті &quot;Свободное слово&quot; (Ревель) у 1917 році. В його перекладі політвідділ 41-ої стрілецької дивізії Червоної Армії в 1920 році видав збірочку Дем&#x27;яна Бєдного &quot;Байки і пісні&quot;. Перша книжка оригінальних байок &quot;Незаможник Клим&quot; вийшла друком у 1927 році. Загадом на межі 20-х-30-х років він видав близько десятка невеличких обсягом книжечок, що несли переважно мотиви агітаційні, пов&#x27;язані з тогочасними завданнями утвердження нового в господарюванні, побуті, культурі. 31 січня 1937 року Микиту Годованця було заарештовано і за постановою особливої наради при НКВС від 13 червня того ж року вислано на Середню Колиму, де він пробув до 1947 року. Аж через десять літ, 11 вересня 1957 року, дістав офіційну реабілітацію — довідкою військового трибуналу Київського військового округу засвідчувалося, що постанову особливої наради від 13.VІІ.1937 року &quot;скасовано і справу припинено&quot;. Оселившись у Кам&#x27;янці-Подільському, Микита Годованець віддається активній літературній роботі. Пише оригінальні байки, здійснює переклади і переспіви, вивчає досвід української класичної, російської, і загалом європейської байки, подає практичну допомогу молодим байкарям, проводячи з ними в Кам&#x27;янці-Подільському творчі семінари. Помітним внеском досвідченого митця в розвиток української байки стали його книги &quot;Байки&quot; (1957), &quot;Заяча математика&quot; (1961), &quot;Конвалія і Лопухи&quot; (1966), &quot;Талановита Тріска&quot; (1967). Тривалий час Годованець трудився над художнім освоєнням байки античних часів, епохи Відродження, творчої спадщини видатних західноєвропейських майстрів цього жанру. Його праця увінчалася виданням книг &quot;Ріка мудрості. Байки за Езопом&quot; (1964), &quot;Веселий педант&quot; (1965), &quot;Байки зарубіжних байкарів у переспівах та перекладах Микити Годованця&quot; (1973). Помер 27 серпня 1974 року. Іван Зуб ЛУ 28 (4437) 11.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

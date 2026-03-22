@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дзюбенко-Мейс Наталія Язорівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дзюбенко-Мейс Наталія Язорівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dziubenko-meys-nataliia-iazorivna.webp" alt="Дзюбенко-Мейс Наталія Язорівна" title="Дзюбенко-Мейс Наталія Язорівна" data-full="./dziubenko-meys-nataliia-iazorivna.webp" /><img class="side-img side-thumb" src="./dziubenko-meys-nataliia-iazorivna_1.webp" alt="Дзюбенко-Мейс Наталія Язорівна" title="Дзюбенко-Мейс Наталія Язорівна" data-full="./dziubenko-meys-nataliia-iazorivna_1.webp" /><img class="side-img side-thumb" src="./dziubenko-meys-nataliia-iazorivna_2.webp" alt="Дзюбенко-Мейс Наталія Язорівна" title="Дзюбенко-Мейс Наталія Язорівна" data-full="./dziubenko-meys-nataliia-iazorivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Дзюбенко-Мейс Наталя Язорівна народилась у червні 1952-го року в с. Київець, Львівської області. Закінчила факультет журналістики Львівського університету, Працювала журналістом в газетах &quot;Молода Галичина&quot;, &quot;Голос України&quot;, &quot;День&quot; редактором у видавництвах &quot;Каменяр&quot; та &quot;Український письменник&quot;.</p>
+          <p>Збірки віршів &quot;Притча про зорю&quot; та &quot;Перепливти ріку&quot;, &quot;День холодного сонця&quot; зайняли почесне місце серед шанувальників її поетичної творчості. Останню збірку поезій &quot;Та, що біжить по стерні&quot; Наталя присвятила світлій пам’яті свого чоловіка – Джеймса Мейса – відомого наукового діяча і професора Києво-Могилянської академії.</p>
+          <p>Відомий роман письменниці &quot;Андрій Первозванний&quot; став справжнім відкриттям для української літератури. Дзюбенко-Мейс Наталя – член Національної Спілки Письменників України, заслужений працівник культури України, лауреат Державної премії імені Олеся Гончара та премії Дмитра Нитченка Наталя – автор численних аналітичних статей і досліджень з питань голодомору 1932-33-х років та забутих сторінок історії України опублікованих у різних періодичних виданнях та збірниках, упорядник книг &quot;День і вічність Джеймса Мейса&quot; та &quot;Ваші мертві вибрали мене&quot; – в якій зібрані матеріали історичних досліджень її чоловіка.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

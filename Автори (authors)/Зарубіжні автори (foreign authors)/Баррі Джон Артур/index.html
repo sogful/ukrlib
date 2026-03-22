@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Баррі Джон Артур — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Баррі Джон Артур</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Джон Артур Баррі (1850 – 23 вересня 1911) був журналістом і письменником.</p>
+          <p>Баррі народився в Торкі, графство Девоншир, Англія, в 1850 році. Його батьки померли, коли він був маленьким, і він пішов у море в 13 років після того, як переконав свого опікуна, і 12 років був на торговій службі.</p>
+          <p>Вийшовши з посвідченням першого помічника, Баррі приїхав до Австралії в 1870-х роках і, пропрацювавши в Квінсленді на золотодобувних копальнях, провів кілька років погонщиком, прикордонним вершником і начальником станції. Він повернувся до корабельного життя приблизно в 1877 році вздовж східного узбережжя Австралії приблизно на два роки. Потім він повернувся на землю як наглядач і начальник станції. Він почав писати для преси та писав статті для The Australasian, The Sydney Mail, The Queenslander, Town and Country Journal, Pall Mall Gazette та інших. У 1893 році він провів відпустку в Англії та опублікував збірку своїх оповідань Стіва Брауна &quot;Bunyip and other Stories&quot;. Він познайомився з Редьярдом Кіплінгом, який написав вступний вірш до тому. Баррі повернувся до Австралії приблизно через шість місяців у Англії та приєднався до співробітників газети Sydney Evening News, була опублікована ще одна збірка його оповідань, In the Great Deep: Tales of the Sea (1896). Далі були два романи &quot;Удача рідного&quot; (1898) і &quot;Син моря&quot; (1899). Далі з&#x27;явилися три збірки оповідань &quot;Проти припливів долі&quot; (1899), &quot;Червоний лев і блакитна зірка&quot; (1902) і &quot;Морська пряжа&quot; (1910). Посмертно в 1914 році було опубліковано морську історію &quot;Корабелі з Південного моря&quot;. Баррі помер у Сіднеї 23 вересня 1911 року від хронічного міокардиту.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

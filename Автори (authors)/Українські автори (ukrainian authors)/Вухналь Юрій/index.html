@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вухналь Юрій — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вухналь Юрій</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vukhnal-iuriy.webp" alt="Вухналь Юрій" title="Вухналь Юрій" data-full="./vukhnal-iuriy.webp" /></div>
+        <div class="prose-text">
+          <p>Юрій ВУХНАЛЬ</p>
+          <p>Ковтун Іван Дмитрович (літ. псевдонім Юрій Вухналь) народився 5 жовтня 1906 року в с. Чорнобаївка Ізюмського повіту на Харківщині в селянській сім&#x27;ї-Закінчив Куп&#x27;янську гімназію. 1922 року вступив на педагогічні курси імені Г. С. Сковороди (м. Харків), після яких навчався в Харківському інституті народної освіти. Ще студентом співробітничав у газеті &quot;Селянська правда&quot;, де й надрукував перші свої твори. Потім працював у редакціям газети &quot;Комсомолець України&quot;, журналу &quot;Червоний перець&quot;. Належав до літературних організацій &quot;Плуг&quot;, &quot;Молодняк&quot;, ВУСПП. Став одним із найпопулярніших українських сатириків. Не випадково у журналістських колах його називали &quot;комсомольським Остапом Вишнею&quot;.</p>
+          <p>Автор збірок нарисів, фейлетонів, гуморесок &quot;Червоні паростки&quot; (1925), &quot;Товариш і товаришок&quot; (1926), &quot;По злобі&quot; (1927), &quot;Початкуючий&quot; (1928), &quot;Помилка професора Кіма&quot;. &quot;Гумореска&quot;, &quot;Життя і діяльність Федора Гуски&quot;, &quot;Крилатий рейс&quot;, &quot;Одруження Гаврила Ратиці&quot;, &quot;Щирий українець&quot; (1929), &quot;Люди моря&quot; (1931), романів та повістей &quot;Яструби&quot; (1928), &quot;Азіатський аероліт&quot;, &quot;Юнг-бунд&quot; (1931). Уповноважені Харківського обласного управління НКВС 2 листопада 1936 року провели трус на квартирі й заарештували письменника. Йому було пред&#x27;явлено звинувачення: &quot;участь в українській націоналістичній терористичній організації, яка готувала терористичні акти проти керівників ВКП(б) і Радянського уряду&quot;. На численних допитах і на суді ні в чому себе винним не визнав. Зачитані проти нього свідчення категорично заперечив як фальшиві. Військова Колегія Верховного Суду СРСР 14 липня 1937 року засудила Ковтуна-Вухналя І. Д. до найвищої міри покарання — розстрілу з конфіскацією належного йому майна. Вирок виконано 15 липня 1937 року. При додатковому розслідуванні справи в 1958 році Максим Рильський, який добре знав Юрія Вухналя, дав такий відгук про нього: &quot;Це був здібний гуморист і автор цікавих книжок для юнацтва та дітей. Я ніколи не сумнівався, що І. Д. Ковтун чесний і відданий радянський громадянин&quot;. А Микола Бажан написав так: &quot;Він безумовно був радянською людиною, якій були чужими антирадянські чи націоналістичні настрої та висловлювання. У своїх пародіях, епіграмах, жартах він засобами сатири й гумору боровся зі всім, що відживає...&quot; Військова колегія Верховного Суду СРСР 4 листопада 1958 року вирок щодо Ковтуна-Вухналя І. Д. скасувала і справу припинила через відсутність складу злочину. Юрій Вухналь реабілітований посмертно. Олександр Мукомела ЛУ №26 (4435)27.06.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

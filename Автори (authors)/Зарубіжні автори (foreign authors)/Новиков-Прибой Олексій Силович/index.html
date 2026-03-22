@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Новиков-Прибой Олексій Силович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Новиков-Прибой Олексій Силович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./novykov-pryboy-oleksiy-sylovych.webp" alt="Новиков-Прибой Олексій Силович" title="Новиков-Прибой Олексій Силович" data-full="./novykov-pryboy-oleksiy-sylovych.webp" /><img class="side-img side-thumb" src="./novykov-pryboy-oleksiy-sylovych_1.webp" alt="Новиков-Прибой Олексій Силович" title="Новиков-Прибой Олексій Силович" data-full="./novykov-pryboy-oleksiy-sylovych_1.webp" /><img class="side-img side-thumb" src="./novykov-pryboy-oleksiy-sylovych_2.webp" alt="Новиков-Прибой Олексій Силович" title="Новиков-Прибой Олексій Силович" data-full="./novykov-pryboy-oleksiy-sylovych_2.webp" /><img class="side-img side-thumb" src="./novykov-pryboy-oleksiy-sylovych_3.webp" alt="Новиков-Прибой Олексій Силович" title="Новиков-Прибой Олексій Силович" data-full="./novykov-pryboy-oleksiy-sylovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Новиков-Прибой (справжнє прізвище — Новиков) Олексій Силич (1877 — 1944), прозаїк.</p>
+          <p>Народився 12 березня (24 н.с.) в селі Матвіївській Тамбовської губернії в —крестьянской сім&#x27;ї. Батько був з миколаївських солдатів, що пробули на військовій службі 25 років. Навчався в церковно-приходської</p>
+          <p>школі, з закінченням якої в одинадцять років закінчилося його освіту, так як на його продовження не було коштів. У 22 роки був покликаний в армію, служив на Балтійському флоті матросом (1899 — 1906), полюбив море. Почав займатися самоосвітою. Протягом двох років відвідував Кронштадтську школу, познайомився з &quot;крамольною&quot; літературою, за що потрапив до в&#x27;язниці. Після звільнення був відправлений на війну з Японією, брав участь в Цусімському битві. Потрапив в полон і протягом восьми місяців мав можливість читати книги, про які раніше тільки чув. У 1906 повернувся в рідне село, написав брошури про Цусімському бою ( &quot;За чужі гріхи&quot;, &quot;Божевільні і безплідні жертви&quot;, під псевдонімом А.Затертий — колишній матрос). Ці брошури були заборонені урядом. Побоюючись переслідувань, біг до Англії. В 1907 — 13 поневірявся за кордоном як політичний емігрант: жив у Франції, Іспанії, Італії та в Північній Африці. Плавав матросом торгового флоту. У 1912 — 13 жив у Горького на Капрі (раніше послав Горькому кілька своїх оповідань, які той схвалив). Пізніше Новіков скаже: &quot;Горький поставив мене на ноги. Після навчання у нього я твердо і самостійно увійшов в літературу&quot;. Перша збірка оповідань Новикова-Прибоя &quot;Морські розповіді&quot; в 1914 був вилучений в наборі; вийшов тільки після революції. Після революції твори письменника регулярно з&#x27;являлися у пресі: повісті &quot;Море кличе (1919),&quot; Підводники &quot;(1923),&quot; Єралашний рейс &quot;(1925),&quot; Жінка в море &quot;(1926) та ін. Найзначніше твір Новикова-Прибоя — історична епопея &quot;Цусіма&quot; (1932 — 35). Протягом років Великої Вітчизняної війни виступав зі статтями та нарисами про моряків, працював над великим романом &quot;Капітан 1-го рангу&quot; (не був закінчений). А.Новиков-Прибой помер у Москві 29 квітня 1944.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

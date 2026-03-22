@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бернетт Френсіс Годгсон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бернетт Френсіс Годгсон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bernett-frensys-hodhson_1.webp" alt="Бернетт Френсис Годгсон" title="Бернетт Френсис Годгсон" data-full="./bernett-frensys-hodhson_1.webp" /><img class="side-img side-thumb" src="./bernett-frensys-hodhson.webp" alt="Бернетт Френсис Годгсон" title="Бернетт Френсис Годгсон" data-full="./bernett-frensys-hodhson.webp" /><img class="side-img side-thumb" src="./bernett-frensys-hodhson_2.webp" alt="Бернетт Френсис Годгсон" title="Бернетт Френсис Годгсон" data-full="./bernett-frensys-hodhson_2.webp" /></div>
+        <div class="prose-text">
+          <p>Френсіс Еліза Годґсон Бернет (англ. Frances Eliza Hodgson Burnett, 24 листопада 1849, Чітем Гілл, Манчестер, Англія — 29 жовтня 1924, Нью-Йорк, США) — англо-американська письменниця та драматург. Класик англійської дитячої літератури.</p>
+          <p>Френсіс Еліза Годґсон народилася 24 листопада 1849 року у Манчестері, Англія. Вона була третьою дитиною у сім&#x27;ї Елізи Бунд та Едвіна Годґсона, власника мануфактурної крамниці. Френсіс не виповнилося і чотирьох років, коли батько помер. Це завдало удару по добробуту сім&#x27;ї. До цього додалася економічна криза, яка на той час опанувала Манчестер. Мати якийсь час іще намагалася провадити крамницю сама, проте згодом прийняла запрошення свого брата, який мешкав у містечку Ноксвіл (штат Теннессі, США) і 1865 року разом з дітьми виїхала до Америки.</p>
+          <p>З дитинства Френсіс володіла здатністю розповідати різноманітні історії. Згодом вона стала їх записувати. Від 1868 року оповідання Френсіс Годґсон стали з&#x27;являтися друком у жіночих журналах. Молода письменниця відразу здобула читацькі симпатії. По смерті матері Френсіс фактично перебрала на себе утримання сім&#x27;ї: її гонорари стали основним джерелом існування для п&#x27;ятьох її братів і сестер. У вересні 1873 року Френсіс виходить заміж за Свена Бернета. У них народилося двоє синів – Лайонел і Вівіан. Синів із матір&#x27;ю поєднувало цілковите розуміння. Тому страшним ударом для Френсіс стала несподівана смерть старшого, Лайонела. Хлопець згорів від гострої форми туберкульозу, коли йому було п&#x27;ятнадцять років. У 1886 році з&#x27;явилася друком її роман для дітей &quot;Маленький лорд Фонтлерой&quot;. Книга принесла нову популярність письменниці. Далі на підставі повісті було написано п&#x27;єсу, яку й поставили у театрі. Вистава тішилася величезним успіхом. Це й поклало початок новому напрямку творчости Френсіс Бернет. З середини 1890-тих Френсіс Еліза жила здебільшого в Англії, у 1905 році вона отримала американське громадянство та 1909 року переїхала до Сполучених Штатів назавжди. Френсіс Еліза Годґсон Бернет померла 29 жовтня 1924 року у Нью-Йорку. Письменниця була похована на кладовищі Рослін поруч з могилою її сина Вівіана. Коло могили стоїть пам&#x27;ятник її сину Лайонелу у натуральну величину. &quot;Луїзіана&quot; (1880) &quot;Маленький лорд Фонтлерой&quot; (1886) &quot;Сара Кру або що відбулося з міс Мінчін&quot; (1888), згодом переписаний як &quot;Маленька принцеса&quot; (1904) &quot;У зачиненій кімнаті&quot; (1904) &quot;Земля блакитної квітки&quot; (1904) &quot;Таємний Сад&quot; (1911) &quot;Загублений принц&quot; (1915)</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пекарська Малгожата-Кароліна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Пекарська Малгожата-Кароліна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pekarska-malhozhata-karolina.webp" alt="Пекарська Малгожата-Кароліна" title="Пекарська Малгожата-Кароліна" data-full="./pekarska-malhozhata-karolina.webp" /></div>
+        <div class="prose-text">
+          <p>Малгожата-Кароліна Пекарська (нар. 1967, Варшава) — польська письменниця, журналістка телебачення і преси i історик мистецтва.</p>
+          <p>Як письменниця дебютувала в 1986 році в щомісячному суспільно-літературному журналі &quot;Okolice&quot; чотирма оповіданнями. З 1996 року робить репортажі для TVP. Репортер програми &quot;Телевізійний кур&#x27;єр Варшавський&quot; на каналі TVP Warszawa. У 2006–2009 роках — редактор програми &quot;Кур&#x27;єр Мазовецький&quot;. Автор телепрограм &quot;Дзвін&quot;, &quot;Грамофон&quot;, &quot;Wiarus&quot;, &quot;Варшавський детектив по слідах таємниць міста&quot;.</p>
+          <p>У 1994–2006 роках співпрацювала з двотижневиком &quot;Cogito&quot;. Опубліковані нею у 1998–2005 роках колонки в журналі &quot;Wzrockowisko&quot; згодом були видані книгою. До 2006 року працювала з двотижневиком &quot;Victor gimnazjalista&quot;, на сторінках якого друкувалися уривки з її романів &quot;Клас пані Чайки&quot;, Tropiciele i Dzika. У 2008 році вона повернулася до &quot;Cogito&quot; фейлетонами &quot;Мистецтво написання&quot;, а у &quot;Victor gimnazjalista&quot; &quot;Музичними подорожами&quot; — короткими фейлетонами про зірок популярної музики. У 2008–2011 вела рубрику &quot;Zapytaj Gośkę&quot; у &quot;13-tka&quot;. Авторка книг для дітей і молоді, дія яких відбувається у частині Варшави Saska Kępa, де вона живе і звідки походить її родина. Опублікувала документальну книжку &quot;Дев&#x27;ятнадцятилітній моряк&quot; — колекцію листів з морського училища в місті Тчев, написаних її двоюрідним дідом Збігнєвом Пєкарським. Член польського відділення IBBY і Товариства польських письменників. З 2011 року входить до правління Варшавської філії Товариства, у 2014 році обрана його президентом на 2014–2017 роки. 2012 року відвідала львівський Форум видавців. Романи &quot;Клас пані Чайки&quot; та &quot;Лотерея&quot; видано українською мовою в перекладі Божени Антоняк. Дочка журналіста Мацея Пєкарського. Дружина актора Захарія Мушинського. Від першого шлюбу має сина Матіаса. У 2018 підтримала звернення Європейської кіноакадемії на захист ув&#x27;язненого у Росії українського режисера Олега Сенцова.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

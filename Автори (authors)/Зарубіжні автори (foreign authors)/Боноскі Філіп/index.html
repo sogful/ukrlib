@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Боноскі Філіп — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Боноскі Філіп</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bonoski-filip.webp" alt="Боноскі Філіп" title="Боноскі Філіп" data-full="./bonoski-filip.webp" /></div>
+        <div class="prose-text">
+          <p>Новеліст, журналіст і активіст з питань праці Філіп Боноскі, Нью-Йорк, помер у суботу (2 березня 2013 р.) В Центрі здоров&#x27;я Коббл Хілл у Брукліні. Він був 96 років.</p>
+          <p>Він народився в 1916 році у сім&#x27;ї литовських іммігрантів у Дакесне, Пенсільванія, в центрі вугільної та металургійної промисловості. Як і його батько та брати, він працював на металургійному заводі Duquesne, але не міг знайти роботу в депресії. Боноскі &quot;проїхав по рейках&quot; і врешті-решт вирушив у притулок для бездомних у Вашингтоні, де знаходився притулок під перехідним бюро, де його соціальний працівник Енн Террі Уайт, одружився з офіцером казначейства Гаррі Декстером Уайтом. Через допомогу від білогвардійців, непарних робочих місць та щомісячного платежу в розмірі 20 доларів від Національної молодіжної адміністрації він зміг завершити два роки навчання у Вільсонському училище. Він був найнятий проектом розробника адміністрації робіт (WPA) для керівництва Вашингтону Д.К. Він приєднався до Комуністичної партії США 1938 року.</p>
+          <p>Боноскі одночасно служив президентом штату Вашингтон, департамент Альянсу робітників, який надав уряду відповідальність за потреби безробітних у пошуку робочих місць, житла, харчування та охорони здоров&#x27;я. Він очолив делегацію на зустрічі з Елеонорою Рузвельтом в 1940 році, широко повідомляється в місцевій пресі. Відомий активіст у місті, він виступав на демонстраціях і свідчив перед Конгресом. Під час Другої світової війни Боноський став повноправним організатором Комуністичної партії. Наприкінці 40-х років Боноскіприбув до Нью-Йорка, переконавшись у тому, що він міг внести свій найважливіший внесок завдяки письмовій формі. Він виготовив свої перші книги в 1953 році: роман &quot;Біла долина&quot; (перевидана Університетом штату Іллінойс, 1997 р.) Та братом Біллом Маккі, про керівника авто робітників. Він провів письмові семінари в Школі комуністичної партії Джефферсона та в Гарлемі. Він допоміг літературному журналу Masses &amp; Mainstream у 1950-х роках. Другий його роман &quot;Чарівна папороть&quot; з&#x27;явився в 1960 році, а потім — &quot;Дракон Пінк на Старому Білі&quot;, присвячений китайській культурі. Його давня дружба з художницею Алісою Нейл детально описана у фільмі Фієба Хобана &quot;Аліса Ніл&quot;: &quot;Мистецтво не сидіти&quot; і &quot;Едді Неєл&quot;, що є визнаним документальним фільмом художника. Як журналіст, Боноскі опитав в&#x27;єтнамського лідера Хо Ши Міна в середині 1960-х років. Він був культурним редактором &quot;Щоденного світу&quot; Комуністичної партії. Пізніше Бонський інтерв&#x27;ю з афганськими лідерами напередодні розпалювання Талібану і був одним із перших західних кореспондентів, які відвідали Камбоджу після вислання червоних кхмерів. Опубліковано кілька томах його закордонного репортажу. Міжнародні видавці випустили свої оповідання в &quot;Пташині в її волоссі&quot; в 1987 році. Бонанський належав до ради журналу &quot;Політичні питання&quot; протягом багатьох років. Його дружина Віра Боноскі та син Даніеля Боноського померли від нього. Його пережила його дочка Нора Боноскі та її чоловік Даніель Розенберг; три онуків Селіна Розенберг, Габріель Розенберг та Олексій Боноскі; і правнук Себастьян Боноскі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

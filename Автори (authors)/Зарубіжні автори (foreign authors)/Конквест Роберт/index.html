@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Конквест Роберт — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Конквест Роберт</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./konkvest-robert_1.webp" alt="Конквест Роберт" title="Конквест Роберт" data-full="./konkvest-robert_1.webp" /><img class="side-img side-thumb" src="./konkvest-robert_2.webp" alt="Конквест Роберт" title="Конквест Роберт" data-full="./konkvest-robert_2.webp" /><img class="side-img side-thumb" src="./konkvest-robert_3.webp" alt="Конквест Роберт" title="Конквест Роберт" data-full="./konkvest-robert_3.webp" /></div>
+        <div class="prose-text">
+          <p>День народження: 15.07.1917 року</p>
+          <p>За пропозицією IRD Конквест написав книгу про Радянському Союзі (&quot;Великий терор: сталінські чистки 30-х років&quot;); третя частина всього тиражу книги була куплена Прагером, регулярно издававшим і розповсюджували книги за завданням ЦРУ.</p>
+          <p>Народився 15 липня 1917 року в родині американського бізнесмена і матері англійки. Навчався в школі Вінчестер, в університеті Гренобля і коледжі святої Магдалини в Оксфордському університеті. Під час річної перерви у навчанні здійснив поїздку в Болгарію. Після повернення в Оксфорд в 1937 році вступив у комуністичну партію. У 1939 закінчив навчання в Оксфорді з невисоким середнім балом. З початком другої світової війни вступив на службу в британську розвідку, що дозволяло уникнути відправки на фронт. У 1940 році одружився з Джоан Уоткінс. У 1942 пройшов чотиримісячне навчання болгарської мови в Школі слов&#x27;янських досліджень. В 1944 був направлений в Болгарію офіцером зв&#x27;язку з прорадянськими болгарськими силами. У Болгарії зустрів Тетяну Михайлову, яка згодом стала його другою дружиною. Із закінченням війни був переведений на дипломатичну службу. Работад прес-аташе в англійському посольстві в Софії, де спостерігав встановлення влади комуністів. У 1948 повернувся в Лондон разом з Тетяною Михайлової. Одружився з нею після розлучення з першою дружиною. До 1956 року Роберт Конквест працював в службі, офіційно іменується Департамент Дослідження Інформації (IRD) міністерства закордонних справ. (У Британських посольствах глава відділу IRD відповідав за видачу &quot;виправленої інформації журналістам та громадським діячам.). Двома головними об&#x27;єктами його досліджень були Третій світ і Радянський Союз. Працював у британській делегації в ООН. У 1960 році вийшла його перша книга, присвячена депортації народів в СРСР. У 1962 розлучився з другою дружиною, заявивши, що у неї виявилися симптоми шизофренії. У 1962-1963 Конквест працював літературним редактором в The Spectator. У 1964 році одружився на американці Керолін Макфарлан. За пропозицією IRD Конквест написав книгу про Радянському Союзі (&quot;Великий терор: сталінські чистки 30-х років&quot;); третя частина всього тиражу книги була куплена Прагером, регулярно издававшим і розповсюджували книги за завданням ЦРУ. Надалі суміщав роботу в університетах з написанням книг на замовлення урядів США і Великобританії. Всі вони були просякнуті духом холодної війни&quot;. У 1984 році Президент США Рональд Рейган доручив Конквесту написати матеріал для його президентської кампанії, щоб &quot;підготувати американський народ до радянського вторгнення&quot;. Текст отримав назву: &quot;Що робити, коли прийдуть росіяни? Керівництво по виживанню&quot;. Заслуговує уваги такий вислів звідти: &quot;Неправда, що всі люди суть люди. Росіяни не люди. Це чужі істоти&quot;. В наші дні роботи Конквеста активно використовуються урядом України для надання авторитетності своїм твердженням про &quot;штучність голоду 1933 року&quot;. Конквест є також автором багатьох статей, фантастичних оповідань і трьох збірок віршів. В даний час — науковий співробітник Гуверівського інституту при Стенфордському університеті (США) За &quot;заслуги перед батьківщиною&quot; нагороджений Орденом Британської Імперії.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

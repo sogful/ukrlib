@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Корній Дара — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Корній Дара</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./korniy-dara_1.webp" alt="Корній Дара" title="Корній Дара" data-full="./korniy-dara_1.webp" /><img class="side-img side-thumb" src="./korniy-dara.webp" alt="Корній Дара" title="Корній Дара" data-full="./korniy-dara.webp" /><img class="side-img side-thumb" src="./korniy-dara_2.webp" alt="Корній Дара" title="Корній Дара" data-full="./korniy-dara_2.webp" /></div>
+        <div class="prose-text">
+          <p>Дара Корній (справжнє ім&#x27;я — Мирослава Іванівна Замойська) — українська письменниця, яка працює в жанрі фентезі. Народилася 20 вересня 1970 року у селі Секунь Старовижівського району Волинської області. Середню школу закінчила у селі Княжі Сокальського району Львівської області. Вищу освіту здобула на журналістсько-редакторському відділенні Українського поліграфічного інституту у Львові (нині Українська академія друкарства).</p>
+          <p>Перший роман письменниці у жанрі фентезі — &quot;Гоніхмарник&quot; — було опубліковано у видавництві &quot;Клуб Сімейного Дозвілля&quot; у 2010 році. Книга принесла автору третю премію літературного конкурсу &quot;Коронація слова&quot; 2010 року в номінації &quot;роман&quot;, була нагороджена нагородою &quot;Дебют року&quot; від видання &quot;Друг читача&quot; та стала лауреатом премії асамблеї фантастики &quot;ПОРТАЛ-2011&quot; — &quot;Відкриття собі&quot; імені Володимира Савченко. Після публікації першого роману Дара Корней здобула неофіційне звання &quot;української Стефані Майєр&quot;.</p>
+          <p>&quot;Моя дочка зачитувалась вампірськими сагами Майєр і щоразу з натхненням переказувала мені їхні сюжети, — зізнається Дара Корній. — Мене злило те, що українські підлітки захоплюються чужою міфологією, не здогадуючись навіть, наскільки потужним є пласт рідної української міфології. &quot;Гоніхмарником&quot; прагнула довести, що рідна міфологія нічим не гірша, а навіть краща за іноземну&quot;. Другий твір письменниці – роман &quot;Тому, що ти є&quot; – став &quot;Вибором видавця&quot; у конкурсі &quot;Коронація слова – 2011&quot;. Роман &quot;Зворотній бік світла&quot; — &quot;Вибір видавців&quot; 2012 року. Перу письменниці також належать книги &quot;Зірка для тебе&quot; (2013), &quot;Зворотній бік темряви&quot; (2013), &quot;Зозулята зими&quot; (у співавторстві з Талою Владміровою) (2014), &quot;Щоденник мавки&quot; (2014), &quot;Крила кольору хмар&quot; &quot;(у співавторстві з Талою Владміровою) (2015), &quot;Петрусь-хімородник&quot; (2015), &quot;Зворотній бік сутіні&quot; (2016), &quot;Зворотній бік світів&quot; (2016). Дара Корній живе у Львові. Виховує старшу доньку Ірину та молодшого сина Максима, яких вважає найважливішим та головним досягненням у житті. Працює у Львівській національній академії мистецтв. Захоплюється дохристиянською міфологією, праукраїнськими віруваннями, етнографією, казками, народною музикою, книгами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

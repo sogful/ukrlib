@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Костюк Григорій Олександрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Костюк Григорій Олександрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kostiuk-hryhoriy-oleksandrovych.webp" alt="Костюк Григорій Олександрович" title="Костюк Григорій Олександрович" data-full="./kostiuk-hryhoriy-oleksandrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Григорій Костюк народився 25 жовтня 1902 року в селі Боришківці, нині Кам&#x27;янець-Подільський район, Хмельницька область. Середню освіту здобув у Кам&#x27;янці-Подільському. У 1929 році закінчив Київський інститут народної освіти, потім аспірантуру інституту імені Тараса Шевченка НАН України в Харкові, захистив кандидатську дисертацію.</p>
+          <p>Викладав історію української літератури в Харківському педагогічному інституті професійної освіти, від початку 1934 року — у Луганському інституті народної освіти.</p>
+          <p>У листопаді 1934 року його звільнено &quot;за націоналістичні прояви в лекціях&quot; та &quot;перекручування програми&quot;. 25 листопада 1935 року заарештовано у Києві. Постановою Особливої наради при НКВС від 3 липня 1936 року заслано на 5 років у концтабір у Воркуті. Григорій Костюк був звільнений 25 листопада 1940 року, та згідно з приписом НКВС оселився у Слов&#x27;янську. Влітку 1941 року одружився з Раїсою Бутко. Від грудня 1940 року до липня 1944 року жив і працював (здебільшого не за фахом) у Слов&#x27;янську, Києві, Львові. У липні 1944 року емігрував на Захід. В еміграції був одним із засновників та деякий час лідером Української революційно-демократичної партії, після її розколу належав до лівого крила (групи &quot;Вперед&quot;). До 1951 року — у таборах для &quot;переміщених осіб&quot; в Німеччині. У лютому 1952 року виїхав до США, де працював у Дослідному центрі Колумбійського університету та інших установах. Григорій Костюк був ініціатором створення ОУП &quot;Слово&quot; та першим його головою (1954—1975). У 1959–1964 роках очолював Мистецьку комісію Комітету з побудови пам&#x27;ятника Тарасові Шевченку у Вашингтоні. Григорій Костюк був реабілітований 22 червня 1989 року. 23 жовтня 1992 року в Боришківцях відбувся вечір, присвячений 90-річчю Костюка. На вечорі виступив його син — Теодор Костюк — доктор фізико-астрономічних наук. 4 червня 2008 року видавництво &quot;Смолоскип&quot; провело в Києві презентацію двотомника спогадів Григорія Костюка &quot;Зустрічі і прощання&quot;, вперше перевиданого в Україні. Григорій Костюк помер 2002 року в місті Сільвер-Спрінґ, штат Мериленд. Поховано на українському православному цвинтарі святого Андрія у Бавнд-Бруку, штат Нью-Джерсі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

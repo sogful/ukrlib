@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Косматенко Анатолій Денисович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Косматенко Анатолій Денисович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kosmatenko-anatoliy-denysovych.webp" alt="Косматенко Анатолій Денисович" title="Косматенко Анатолій Денисович" data-full="./kosmatenko-anatoliy-denysovych.webp" /></div>
+        <div class="prose-text">
+          <p>Анатолій Денисович Косматенко народився 3 жовтня 1921 р. в с. Времівці на Донеччині.</p>
+          <p>Після середньої школи з 1939 —го по 1947 рік, включаючи період Великої Вітчизняної війни, був на військовій службі. 1953 р. закінчив Київський університет. Працював у &quot;Літературній Україні&quot;, видавництві &quot;Радянський письменник&quot;, журналі &quot;Дніпро&quot;. Друкувався з 1947 р. Найбільших успіхів досяг поет у жанрі байки; першу книжку А. Косматенка (&quot;Байки&quot; — 1953 р.) помітив Остап Вишня і відгукнувся на неї теплою, специфічно &quot;вишнівською&quot; рецензією &quot;Молодий байкар&quot;. На прицілі в байкаря — хапуги, злодійкуваті ділки, ледарі, окозамилювачі, різні пройдисвіти тощо. Свій сатиричний суд поет чинить за моральним кодексом народу —трудівника.</p>
+          <p>Помер 6 квітня 1975 р. Вийшли збірки: &quot;Нові байки&quot;, &quot;Кручені паничі&quot; (1956), &quot;Слово&quot; (1959), &quot;Яка ж мораль?&quot;, &quot;Сміх і гнів&quot; (1965), &quot;Запорожець і Чорт&quot; (1969), &quot;Скіфська сережка&quot; (1972), &quot;Їжак, Троянда й Соловей&quot; (1974), &quot;Жагуче кохання&quot; (1977), &quot;Сатира. Гумор. Лірика&quot; (1981).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

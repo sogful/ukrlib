@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Горбань Світлана Петрівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Горбань Світлана Петрівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./horban-svitlana-petrivna.webp" alt="Горбань Світлана Петрівна" title="Горбань Світлана Петрівна" data-full="./horban-svitlana-petrivna.webp" /></div>
+        <div class="prose-text">
+          <p>Горбань Світлана Петрівна —— українська письменниця-прозаїк, членкиня Черкаської обласної організації НСПУ з 2010 р. Великі за обсягом твори пише в співавторстві зі своєю сестрою Наталею Лапіною.</p>
+          <p>Світлана з дитинства мала потяг до літератури. Вона народилася на Сахаліні в родині військовослужбовця. Її предки були родом з України, за сталінських часів їх було виселено на Далекий Схід.</p>
+          <p>Майбутня письменниця закінчила Черкаський державний університет за спеціальністю вчитель російської мови та літератури. Світлана Горбань мешкає в Черкасах, працювала вчителькою зарубіжної літератури в середній школі. Світлана Горбань великі за обсягом твори пише разом з своєю сестою Наталею Лапіною, це переважно романи про кохання, детективи та фентезі. Разом вони є авторами повісті &quot;Апокриф&quot;, романів &quot;Якщо подолаєш прокляття&quot; (&quot;Роковая ошибка магов&quot;, &quot;Якщо полюбиш прокляття&quot;), &quot;Невинна грішниця&quot; (&quot;Ловці чарівного вітру&quot;), &quot;Увертюра&quot;, &quot;Надія: сплутані пазли&quot;, &quot;Зодчий із пекла&quot;, &quot;Роман з містом&quot;. Також твори письменниці друкувалися у часописах &quot;Жінка&quot;, &quot;Дніпровські хвилі&quot;, &quot;Холодний яр&quot;, &quot;Славутич&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

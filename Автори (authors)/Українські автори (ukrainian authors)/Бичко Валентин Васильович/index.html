@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бичко Валентин Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бичко Валентин Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bychko-valentyn-vasylovych.webp" alt="Бичко Валентин Васильович" title="Бичко Валентин Васильович" data-full="./bychko-valentyn-vasylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 17 червня 1912 року в Харкові. У 1932 році закінчив Харківський інститут народної освіти, працював педагогом, в харківській молодіжній пресі, редактором республіканської газети ЦК ЛКСМУ &quot;Зірка&quot; (з квітня 1944 по січень 1947 року), головним редактором видавництва &quot;Молодь&quot; (з січня 1947 і 1953—1956), редактором журналу &quot;Піонерія&quot; (1957—1959).</p>
+          <p>Перші твори опублікував ще 1925. Автор п&#x27;єси &quot;Регламент — дві години&quot; (1932).</p>
+          <p>Регулярні збірки почав видавати після Другої світової війни. Намагався відповідати ліричному, народно-пісенному тренду. У 1970 році за книги &quot;До нас прийшов Ленін&quot;, &quot;Він в серцях у нас&quot;, &quot;Син Жовтня&quot; і &quot;Над озером зорі&quot; удостоєний Республіканської комсомольської премії ім. М. Островського. Також автор літературознавчого нарису &quot;Наталя Забіла&quot; (1963). Писав тексти пісень, лібретто опер (у співавторстві) &quot;Загибель ескадри&quot; (1967), &quot;Мамаї&quot; В. Губаренка (1970), &quot;Перекоп&quot; Ю. Мейтуса, М. Тіца і В. Рибальченко (1939). Мешкав у Києві. Помер на 83-му році життя 31 жовтня 1994 року. Похований разом з дружиною на Байковому кладовищі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

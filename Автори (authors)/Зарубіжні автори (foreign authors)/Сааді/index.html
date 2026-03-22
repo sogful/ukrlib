@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сааді — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Сааді</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./saadi.webp" alt="Сааді" title="Сааді" data-full="./saadi.webp" /><img class="side-img side-thumb" src="./saadi_1.webp" alt="Сааді" title="Сааді" data-full="./saadi_1.webp" /></div>
+        <div class="prose-text">
+          <p>Місце народження: Шираз, Іран</p>
+          <p>Дата смерті: 09.12.1292 року</p>
+          <p>Рік смерті: 1292 Перський поет-класик, автор творів в жанрі мудрих міркувань, стали взірцем цього популярного спрямування в перської класичної літератури. Навчався в Багдаді в медресе &quot;Нізамійе&quot;. Протягом 30 років (1226-1255) подорожував по мусульманським країнам – від Індії до Марокко. Деякий час був бранцем хрестоносців в Тріполі. Після повернення в Шираз в 1256 Сааді став вести усамітнене життя, присвятивши себе літературній творчості. Протягом 2-х років він створив прославили його у віках твори Бустан (1257) і Гулістан (1258). Бустан (Плодовий сад) – поема з 9 глав, кожна з яких містить оповідання, притчі і філософські міркування, що ілюструють сентенції автора з приводу того, яким повинен бути ідеальний правитель. Сааді закликає правителів бути гуманними до своїх підданих иследить, щоб кращі якості проявляли і люди з його оточення – чиновники, слуги і воєначальники, інакше його щедрість і доброта принесуть тільки шкоду. Ці роздуми проілюстровані прикладами у вигляді розповідей і притч. Гулістан (Трояндовий сад) складається з 8 глав аспектів життєвої мудрості. Ці глави – про життя царів, про звичаї дервішів, про переваги вдоволення малим, про переваги мовчання, про кохання, про молодість, про вплив виховання, про правила спілкування. Глави містять розповіді, написані прозою і саджем (римованою прозою), і закінчуються віршованими вставками. Розповіді та пригоди взяті з життя Сааді, його подорожей инаблюдений. Ця весела і повчальна книга служить і шкільним підручником і книгою розважального читання, в ній багато дотепних парадоксів, зауважень та гумору. Її завдання – пробудити у людей прагнення до мудрості і здорового глузду як основі життя в суспільстві. Крім цих творів, перу Сааді належить велика кількість ліричних віршів перською та арабською, а також трактати в прозі Панднаме (Книга настанов), авторство яких деякими дослідниками ставиться під сумнів. Шейх Сааді помер у Ширазі в 1292. Власний досвід мандрівництва і роздумів про сущому надавали творам цього перської мислителя ту міру просвітленості, яка робила їх одночасно мудрими, прозорими і витонченими за формою. Булистан і Гулістан були надзвичайно популярні на Сході, являючи собою зразок того, якою може бути естетика жанру мудрих міркувань як особливого літературного напряму, згодом вельми популярного в літературі перської, тюркської та індійської. Європейці познайомилися з творчістю Сааді в 17 ст., захоплювався його поезією Гете. Загальнолюдський гуманний характер творчості Сааді, бажання пізнати &quot;міру речей&quot; і прищепити здоровий глузд і співчуття до ближніх у вигляді загального стандарту взаємовідносин між людьми робить його твори є популярними і сьогодні.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

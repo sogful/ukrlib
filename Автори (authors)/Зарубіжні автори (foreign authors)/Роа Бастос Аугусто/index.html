@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Роа Бастос Аугусто — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Роа Бастос Аугусто</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./roa-bastos-auhusto.webp" alt="Роа Бастос Аугусто" title="Роа Бастос Аугусто" data-full="./roa-bastos-auhusto.webp" /><img class="side-img side-thumb" src="./roa-bastos-auhusto_1.webp" alt="Роа Бастос Аугусто" title="Роа Бастос Аугусто" data-full="./roa-bastos-auhusto_1.webp" /><img class="side-img side-thumb" src="./roa-bastos-auhusto_2.webp" alt="Роа Бастос Аугусто" title="Роа Бастос Аугусто" data-full="./roa-bastos-auhusto_2.webp" /></div>
+        <div class="prose-text">
+          <p>Аугусто Роа Бастос (13 червня 1917, Асунсьйон, Парагвай — 26 квітня 2005, Асунсьйон) — парагвайський поет і прозаїк.</p>
+          <p>Батько — індіанець гуарані, мати — родом з Португалії. У 1932 році втік з товаришами зі школи, пішов добровольцем на чакську війну, служив на фронті санітаром. У 1945 жив і працював журналістом у Великій Британії, Франції, Німеччині. У 1947 разом з парагвайським поетом Ерібом Кампосом Сервера в умовах розпочатої громадянської війни та політичних репресій переїжджає у Буенос-Айрес. У 1976—1989 — живе у Франції, після падіння диктатури Стресснера повернувся на батьківщину.</p>
+          <p>У 1982 був позбавлений парагвайського громадянства, з 1983 — громадянин Іспанії. Помер в 2005 у віці 87 років. Похований у родинному пантеоні на кладовищі Реколета в Асунсьйоні. Літературна діяльність почалася в 40-х роках (поетичні збірки, роман &quot;Фульхенсіо Міранда&quot;, 1942, та ін.). Популярність Роа Бастосу принесла збірка оповідань &quot;Грім у листі&quot; (1953) і роман &quot;Син людський&quot; (1959). У соціально-викривальному романі &quot;Син людський&quot;, використовуючи елементи народної міфології й символіки, письменник відтворює трагічні картини життя парагвайського народу. Народному життю присвячені й оповідання збірки &quot;Пішки по воді&quot; (1966), &quot;Спалені дерева&quot; (1969), &quot;Морієнсіа&quot; (1969), &quot;Мертвий&quot; та інші твори&quot; (1972). У 1974 році виходить монументальний роман &quot;Я, Верховний&quot;, що викликав широкі відгуки. Використовуючи історичні документи, письменник створює в цьому романі образ засновника Парагваю, диктатора Франсіа, викриває історичні корені деспотичної влади. Після відновлення в Аргентині в 1976 режиму військової диктатури книга була заборонена, а сам письменник емігрував до Франції.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

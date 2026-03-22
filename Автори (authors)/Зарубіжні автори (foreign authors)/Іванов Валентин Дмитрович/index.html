@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Іванов Валентин Дмитрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Іванов Валентин Дмитрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ivanov-valentyn-dmytrovych.webp" alt="Іванов Валентин Дмитрович" title="Іванов Валентин Дмитрович" data-full="./ivanov-valentyn-dmytrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Валентин Дмитрович Іванов (18 липня 1902, Самарканд, Самаркандська область, Російська імперія — 7 квітня 1975, Москва, РРФСР, СРСР) — російський радянський письменник. Автор історичних романів &quot;Русь споконвічна&quot;, &quot;Повісті давніх років&quot; і &quot;Русь Велика&quot;, член Спілки письменників СРСР.</p>
+          <p>Народився в сім&#x27;ї вчителя, закінчив гімназію і залізничний технікум. У 17 років вступив добровольцем до Червоної армії, брав участь в Громадянській війні, через рік був демобілізований як неповнолітній. Працював інспектором-ревізором і плановиком.</p>
+          <p>В літературу прийшов порівняно пізно: почав друкуватися в 1947 році як нарисовець; в 1951 році випустив науково-фантастичний роман &quot;Енергія підвладна нам&quot;, сюжетом якого служить спроба застосування &quot;променів смерті&quot; проти СРСР американськими імперіалістами і уцілілими фашистами. У 1955 році опублікував в альманасі &quot;Світ Пригод&quot; історичний роман &quot;Повісті давніх років&quot;, присвячений боротьбі Великого Новгорода з варягами в IX столітті і освоєння новгородцями Російської Півночі. У романі, при роботі над яким автор користувався консультаціями відомого археолога докт. іст. наук Б. А. Рибакова, істотно перебільшувались масштаби військової експансії норманів на Русь, а поява перших поселень слов&#x27;ян в Заволочье і на Білому морі відносилося до значно більш раннього часу, ніж це визнається академічною наукою (перша пол. XII століття). Виданий в 1956 році детективний роман &quot;Жовтий метал&quot;, присвячений нелегальному видобутку, скупці і перепродажу золота, викликав скандал в партійному керівництві і був вилучений з продажу, по офіційним формулюванням &quot;за хуліганські випади на адресу грузин і інших радянських народів&quot;; можливо також, через занадто докладних описів функціонування радянської &quot;тіньової економіки&quot;. На думку дослідника Н. Мітрохіна, ця книга фактично була звинуваченням Радянської влади в порушенні економічних свобод, припинення природного для людини інтересу до підприємництва і розвалі села; з іншого ж боку, відрізнялася &quot;махровим етнонаціоналізмом&quot;, представляючи собою &quot;перше в СРСР за кілька десятиліть літературний твір російською мовою, перейнятий ксенофобією щодо цілого ряду етнічних груп і ще три десятки років не мало в цій справі публічно заявляли про себе послідовників&quot; . Популярність Валентину Іванову принесли історичні романи &quot;Русь споконвічна&quot; (до якого двічі зверталися кінематографісти — в 1973 році знявши по одній з сюжетних ліній роману на студії &quot;Союзмультфільм&quot; мультфільм &quot;Дитинство Ратибора&quot; і в 1985 році — однойменний повнометражний художній фільм) і &quot;Русь велика &quot;(1967), дія яких відбувається відповідно в VI і XI століттях. Згодом обидва романи разом з &quot;Повістями древніх років&quot; (1955) об&#x27;єднані були автором в трилогію. У 1968-1972 роках Іванов — учасник &quot;Російського клубу&quot; — неформальної організації російських націоналістів, що збиралися в Московському відділенні Всеросійського товариства охорони пам&#x27;яток історії та культури (ВООПІіК). На думку Н. Мітрохіна, Іванову протегувала націоналістично налаштована група (т. Зв. &quot;Русская партия&quot;, &quot;група Шелепіна&quot;) в керівництві КПРС.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

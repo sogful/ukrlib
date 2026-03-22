@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Біггл-молодший Ллойд — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Біггл-молодший Ллойд</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bihhl-molodshyy-lloyd_2.webp" alt="Біггл-молодший Ллойд" title="Біггл-молодший Ллойд" data-full="./bihhl-molodshyy-lloyd_2.webp" /><img class="side-img side-thumb" src="./bihhl-molodshyy-lloyd.webp" alt="Біггл-молодший Ллойд" title="Біггл-молодший Ллойд" data-full="./bihhl-molodshyy-lloyd.webp" /><img class="side-img side-thumb" src="./bihhl-molodshyy-lloyd_1.webp" alt="Біггл-молодший Ллойд" title="Біггл-молодший Ллойд" data-full="./bihhl-molodshyy-lloyd_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ллойд БІГГЛ-молодший</p>
+          <p>Американський письменник і музикознавець, автор романів &quot;Тиха, вкрадлива дріб барабана&quot;, &quot;Пам&#x27;ятник&quot;, &quot;Злі Есперо&quot;, &quot;Лють з часів&quot;, &quot;Світло, якого не було&quot;, серіалу про детектива Яні Дарзеке, засновник і президент &quot;Товариства усній історії фантастики &quot;.</p>
+          <p>Головною справою життя Ллойда Біггла-молодшого стала музика і тільки потім — наукова фантастика, в тематиці якої музика займає також чимале місце. Біггл народився в 1923 році в містечку Ватерлоо в США. Другу Світову війну провів на фронті, служив сержантом зв&#x27;язку і був двічі поранений. Його друга рана, шрапнеллю в ногу, отримана на Ельбі в кінці війни, зробила його інвалідом. Після війни Біггл продовжив освіту. Він закінчив університет Уейна, захистив дисертацію по музикознавства і викладав цю ж дисципліну в Університеті Мічигану і в Східно-Мічиганському Університеті в п&#x27;ятдесятих. Писати наукову фантастику почав з 1955 року, а з 1963 року, після виходу його роману &quot;Всі кольори пітьми&quot;, став професійним письменником і залишався таким до самої смерті. І наукова фантастика, і детективи Біггла отримали світове визнання. Він став відомий як автор, який приніс естетику в жанр, відомий своїми технологічними описами. У його романах і розповідях часто використовуються музичні і артистичні теми. Поет-пісняр Джим Вебб і письменник Орсон Скотт Кард зізнавалися, що в юності на них справив величезний вплив розповідь Біггла &quot;Музикодел&quot;. Ллойд Біггл-молодший В області детективної літератури він написав два романи про Шерлока Холмса від імені його помічника з Бейкер-стріт, Едварда Портера Джонса, і ряд оповідань, об&#x27;єднаних головною героїнею — леді Сарою Варнлей. Одного разу він сказав: &quot;Я можу писати швидше, ніж журнали можуть мене видавати&quot;. І дійсно, журнали продовжували видавати розповіді Біггла ще два роки після його смерті. У 1965 році Біггл став першим секретарем-скарбником Асоціації американських письменників-фантастів, а потім багато років був її головою. У 70-х він заснував Асоціацію усної історії наукової фантастики (SFOHA), яка створила архів з сотень стрічок і касет виступів письменників-фантастів і обговорень їх ремесла. Багато з особливо цінних записів перераховані в його статті &quot;Згадував Айзек Азімов&quot;, опублікованій в 2002 році в журналі &quot;Аналог&quot;. Він помер в 2002 році, після двадцятирічного битви з лейкемією і раком.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

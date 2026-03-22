@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Твардовський Ян — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Твардовський Ян</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tvardovskyy-ian.webp" alt="Твардовський Ян" title="Твардовський Ян" data-full="./tvardovskyy-ian.webp" /><img class="side-img side-thumb" src="./tvardovskyy-ian_1.webp" alt="Твардовський Ян" title="Твардовський Ян" data-full="./tvardovskyy-ian_1.webp" /><img class="side-img side-thumb" src="./tvardovskyy-ian_2.webp" alt="Твардовський Ян" title="Твардовський Ян" data-full="./tvardovskyy-ian_2.webp" /><img class="side-img side-thumb" src="./tvardovskyy-ian_3.webp" alt="Твардовський Ян" title="Твардовський Ян" data-full="./tvardovskyy-ian_3.webp" /></div>
+        <div class="prose-text">
+          <p>Ян Твардовський (1915–2006) – один із найкращих і найдивовижніших польських поетів минулого століття, автор декількох десятків збірок поезій, оповідань та фейлетонів.</p>
+          <p>Ян Твардовський займався не лише літературою. Він ще (чи радше, передовсім) священик, що присвятив своє життя людям.</p>
+          <p>Майже півстоліття Ян Твардовський жив у затишному будиночку при монастирі сестер-візиток у самому центрі Варшави, щодня служив літургію у костьолі. І приймав численних відвідувачів, що з&#x27;їжджалися до нього з усієї Польщі, та й не лише з Польщі, а також з інших країн – порозмовляти, попросити поради, взяти автограф, записати інтерв&#x27;ю чи просто потиснути руку цьому невисокому чоловікові у чорній рясі. В отця Яна до останніх років життя вистачало часу на всіх. На друзів і на тих, кого йому довелося бачити раз у житті. Численні читачі любили поезію Яна Твардовського за оптимізм, за гумор, за лагідний погляд на світ, у якому поет умів бачити добре й красиве, за любов до всього живого. Йому дякували ті, кого він знову навчив сміятися й радіти, подолати зневіру, перестати боятися самотності. Значна частина творчості о. Яна Твардовського присвячена дітям. Це не лише вірші, а й різні смішні оповідання, бувальщини, притчі. Дітям о. Твардовський присвячував багато часу. У молодості він викладав у школі для дітей з фізичними та розумовими вадами. Завжди повторював, що дуже багато від них навчився. До речі, саме діти присудили у 1996 році о. Яну Твардовському Орден Усміху. Це єдина нагорода у світі, яку присуджують діти. Під час церемонії вручення нагороджуваний повинен випити склянку цитринового соку, не кривлячись. І спорожнивши її, усміхнутись. А це, до речі, дуже непроста справа. Однак отець Ян зумів упоратися із цим завданням. Ян Твардовський дуже любив природу. З приязню ставився до рослин, тварин і птахів. Був до них дуже уважний. А бути уважним – це знати назву, пам&#x27;ятати колір, запах, знати, коли зацвітає рослина, якої форми у неї листя, пелюстки й насіння. Можливо, коли Ви прочитаєте ці вірші, Вам також захочеться намалювати до них малюнок, чи більше дізнатися про рослини, які там згадуються. Або самим написати вірш про Вашу улюблену рослину. І напевно, ще не раз Вам захочеться перечитати вірші о. Яна Твардовського, щоб любити й знати світ, що довкола, краще.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

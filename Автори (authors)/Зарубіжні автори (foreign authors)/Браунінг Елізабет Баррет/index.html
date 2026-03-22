@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Браунінг Елізабет Баррет — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Браунінг Елізабет Баррет</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./brauninh-elizabet-barret.webp" alt="Браунінг Елізабет Баррет" title="Браунінг Елізабет Баррет" data-full="./brauninh-elizabet-barret.webp" /><img class="side-img side-thumb" src="./brauninh-elizabet-barret_1.webp" alt="Браунінг Елізабет Баррет" title="Браунінг Елізабет Баррет" data-full="./brauninh-elizabet-barret_1.webp" /><img class="side-img side-thumb" src="./brauninh-elizabet-barret_2.webp" alt="Браунінг Елізабет Баррет" title="Браунінг Елізабет Баррет" data-full="./brauninh-elizabet-barret_2.webp" /><img class="side-img side-thumb" src="./brauninh-elizabet-barret_3.webp" alt="Браунінг Елізабет Баррет" title="Браунінг Елізабет Баррет" data-full="./brauninh-elizabet-barret_3.webp" /></div>
+        <div class="prose-text">
+          <p>Її найвідоміша книга, це &quot;Сонети з португальської&quot; (1850), була заснована на її власної історії кохання.</p>
+          <p>Тонко відчуває і рано розвинувся дитина, вона провела більшу частину своєї молодості в стані полуинвалидности. Вона читала філософію, історію, літературу і писала вірші. У 1838 році сімейство Барретт переїхало на вулицю Сант Уимпол, в Лондон. Шість років потому Елізабет видала книгу &quot;Поеми&quot;, яка швидко принесла їй популярність. Книга стала улюбленою за це Робертом Браунінгом, і він почав листуватися з Елізабет. Вони полюбили один одного, але з-за тиранічного характеру батька він зустрічалися таємно.</p>
+          <p>Вони одружилися в 1846 році і поїхали в Італію, де провели більшість їх шлюбного життя і де народився їх син. Пані Браунінг зацікавилася причиною італійського звільнення від Австрії. &quot;Каса Гвіді&quot;, ихдом у Флоренції, досі збережений як меморіал. Щаслива в шлюбі Елізабет продовжувала в Італії сові роботу. Її найвідоміша книга, це &quot;Сонети з португальської&quot; (1850), була заснована на її власної історії кохання. &quot;Вікна палацу Гвіді&quot; (1851) написані про італійському звільнення, а &quot;Аврора&quot; (1857), роман написаний у віршах. Протягом всього її життя Елізабет Браунінг вважалася більш сильним поетом, ніж її чоловік. Сьогодні ж її життям і особистістю цікавляться набагато більше, ніж її творчістю. Незважаючи на те, що її часто критикували за педантизм і сентиментальність, в таких творах, як &quot;Плач Дітей&quot; та &quot;Сонети з португальської&quot; вона показує високу індивідуальність і ліричний характер.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

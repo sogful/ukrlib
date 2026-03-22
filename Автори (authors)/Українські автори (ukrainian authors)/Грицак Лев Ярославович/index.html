@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Грицак Лев Ярославович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Грицак Лев Ярославович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrytsak-lev-iaroslavovych_3.webp" alt="Грицак Лев Ярославович" title="Грицак Лев Ярославович" data-full="./hrytsak-lev-iaroslavovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Лев Ярославович Грицак народився 25 січня 1952 року в місті Чорткові Тернопільської області в сім’ї лікарів.</p>
+          <p>Після закінчення у 1969 році Чортківської СШ № 1 вступив до Тернопільського державного медичного інституту, який закінчив у 1975 році (спеціальність &quot;лікувальна справа&quot;).</p>
+          <p>З 1975 по 1986 рр. працював на різних посадах Волинського обласного об’єднання міжколгоспних оздоровниць, зокрема головним лікарем санаторію &quot;Лісова пісня&quot;. У 1986 році переїжджає до Трускавця на посаду головного лікаря санаторію &quot;Карпати&quot;. З 1998 року – депутат Львівської обласної ради. 2002-го року громада м. Трускавця обирає його на посаду міського голови. Очільником міста працює дві каденції (з 2002-го по 2010-й рр.). За цей час місто Трускавець неодноразово здобувало перші місця в рейтингу серед міст обласного значення в галузях медицини та освіти. Двічі нагороджене Почесними грамотами Львівської обласної державної адміністрації як переможець конкурсів у номінації &quot;Місто найкращого благоустрою&quot;, в 2004 році визнане першим у конкурсі &quot;Краща самоврядна громада&quot;. У 2010 році Лев Грицак повертається в готельно-курортний комплекс &quot;Карпати&quot;, де працює донині на посаді генерального директора. Заслужений лікар України. Лауреат Державної премії України з будівництва та архітектури за будівництво санаторію &quot;Карпати&quot; (1994 р.). Нагороджений орденами: &quot;За мужність&quot;, Христа Спасителя &quot;За віру і вірність&quot;, Архистратига Михаїла &quot;За ревну працю для добра Церкви і України&quot;, &quot;Козацькі мечі&quot;, Володимира Великого; відзнакою &quot;Зірка патріота України&quot;; медалями: &quot;За трудову доблесть&quot;, &quot;60 років Української Головної Визвольної Ради&quot; та однією з найвищих нагород Республіки Польща – &quot;Золотий Хрест Заслуги&quot;. Лауреат Всеукраїнського рейтингу &quot;Особистість – 2006&quot; у номінації &quot;Державні та громадські діячі&quot;, Міжнародного конкурсу &quot;Гран-Прі&quot;. Відзначений Почесною відзнакою Папи Римського та Почесною нагородою Асоціації ділових кіл України. Життєве кредо: &quot;Твори добро і воно повернеться до тебе сторицею&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

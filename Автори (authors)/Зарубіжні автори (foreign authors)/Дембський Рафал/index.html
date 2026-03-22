@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дембський Рафал — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дембський Рафал</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dembskyy-rafal.webp" alt="Дембський Рафал" title="Дембський Рафал" data-full="./dembskyy-rafal.webp" /></div>
+        <div class="prose-text">
+          <p>Народився в Олесниці в 1969 році.</p>
+          <p>За освітою та професією психолог. Заперечує, що його професія впливає на його роботу, оскільки він є психологом лише в робочий час.</p>
+          <p>Автор фентезійних, науково-фантастичних, історичних, військових, трилерних та кримінальних романів. З червня 2009 року по травень 2012 року був головним редактором щомісячника &quot;Наукова фантастика, фентезі та жахи&quot;. Також співпрацює з жіночими журналами. Він дебютував у журналі &quot;Nowa Fantastyka&quot; № 5/1998 з оповіданням &quot;Siódmy listy&quot; (&quot;Сьомий листок&quot;). Його роботи з&#x27;являлися у збірках &quot;Fenix&quot;, &quot;Magia i Mieczu&quot; (&quot;Магія та меч&quot;) та &quot;Science Fiction, Fantasy i Horror&quot;. Його першим романом був &quot;Łzy Nemezis&quot; (Сльози Немезиди), опублікований у 2005 році. На сьогоднішній день він опублікував 20 романів і дві збірки оповідань, серед яких: Łzy Nemezis (Сльози Немезиди), Fabryka Słów (Фабрика слів), 2009 Czarny Pargamin (Чорний пергамент), Fabryka Słów (Фабрика слів), 2006 Karzy Boga załości (Коли Бог засинає), Fabryka Słów (Фабрика слів), 2007 Sce Serce Matkiowej (Серце тещі), Fabryka Słów (Фабрика слів), 2008 Вовки та орли, Червоний кінь (Фабрика слів), 2008 Słońce w krwi (Сонце в крові), Червоний кінь (Фабрика слів), 2008 Зірки вмирають у тиші, Word Factory, 2010 Вовкозаки: Закон вовка, Word Factory, 2010 Вовкозаки: Кров крові, Word Factory, 2012 Вовкозаки: Місячний кинджал, Word Factory, 2015 У 2007 році він отримав премію &quot;Наутілус&quot; за &quot;Чорний пергамент&quot;, а через рік за &quot;Сузір&#x27;я ката&quot;. Його великою пристрастю є історія, зокрема Середньовіччя – результат його дитячого захоплення телесеріалом &quot;Інаво&quot;. У своїй роботі він надає великого значення історичним дослідженням та обґрунтуванню фентезійних історій на реаліях епохи. Він також спирається на свою філософську освіту у побудові своїх світів – він вважає, що бритва Оккама є основоположною в цьому процесі. Він ненавмисно, хоча й вперто, пливе проти течії як автор – його книги відхиляються від популярних тенденцій і нелегко вписуються в стереотипи. Він вважає, що якщо йому подобається писати, то читач також має шанс отримати задоволення від читання.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

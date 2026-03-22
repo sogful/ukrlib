@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Андрухович Софія Юріївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Андрухович Софія Юріївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./andrukhovych-sofiia-iuriivna.webp" alt="Андрухович Софія Юріївна" title="Андрухович Софія Юріївна" data-full="./andrukhovych-sofiia-iuriivna.webp" /><img class="side-img side-thumb" src="./andrukhovych-sofiia-iuriivna_1.webp" alt="Андрухович Софія Юріївна" title="Андрухович Софія Юріївна" data-full="./andrukhovych-sofiia-iuriivna_1.webp" /><img class="side-img side-thumb" src="./andrukhovych-sofiia-iuriivna_2.webp" alt="Андрухович Софія Юріївна" title="Андрухович Софія Юріївна" data-full="./andrukhovych-sofiia-iuriivna_2.webp" /><img class="side-img side-thumb" src="./andrukhovych-sofiia-iuriivna_3.webp" alt="Андрухович Софія Юріївна" title="Андрухович Софія Юріївна" data-full="./andrukhovych-sofiia-iuriivna_3.webp" /><img class="side-img side-thumb" src="./andrukhovych-sofiia-iuriivna_4.webp" alt="Андрухович Софія Юріївна" title="Андрухович Софія Юріївна" data-full="./andrukhovych-sofiia-iuriivna_4.webp" /></div>
+        <div class="prose-text">
+          <p>(17 листопада 1982, Івано-Франківськ) — українська письменниця, перекладачка й публіцистка.</p>
+          <p>Біографічні відомості</p>
+          <p>Донька письменника Юрія Андруховича. Дружина письменника Андрія Бондаря. Співредакторка часопису &quot;Четвер&quot;. Має низку публікацій у періодиці. Стипендіатка програми Вілли Деціуша у Кракові (2004). Мешкає в Києві. 10 березня 2008 року народила доньку Варвару. Творчість Авторка прозових книжок &quot;Літо Мілени&quot; (2002), &quot;Старі люди&quot; (2003), &quot;Жінки їхніх чоловіків&quot; (2005), &quot;Сьомга&quot; (2007) та численних публікацій у пресі. У 2014 році випустила роман &quot;Фелікс Австрія&quot;, що того ж року отримав відзнаку &quot;Книга року BBC&quot;. У 2015 році стала лауреаткою премії імені Джозефа Конрада. У 2016 році Софія Андрухович спільно з Мар&#x27;яною Прохасько написали дитячу книку-картинку &quot;Сузір&#x27;я Курки&quot;. Того ж року книжка увійшла до престижного каталогу в галузі міжнародної дитячої та юнацької літератури &quot;Білі круки&quot; (&quot;WhiteRavens 2017&quot;). Переклади Ґретковська Мануела. &quot;Європейка&quot;. Переклад із польської. Дж. К. Роулінґ. &quot;Гаррі Поттер і келих вогню&quot;. Переклад із англійської разом з Віктором Морозовим.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

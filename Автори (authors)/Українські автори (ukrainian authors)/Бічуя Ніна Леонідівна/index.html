@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бічуя Ніна Леонідівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бічуя Ніна Леонідівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bichuia-nina-leonidivna_2.webp" alt="Бічуя Ніна Леонідівна" title="Бічуя Ніна Леонідівна" data-full="./bichuia-nina-leonidivna_2.webp" /><img class="side-img side-thumb" src="./bichuia-nina-leonidivna.webp" alt="Бічуя Ніна Леонідівна" title="Бічуя Ніна Леонідівна" data-full="./bichuia-nina-leonidivna.webp" /></div>
+        <div class="prose-text">
+          <p>Ніна Леонідівна Бічуя – прозаїк, перекладач, журналіст,член Національної спілки письменників України.</p>
+          <p>Народилася 24 серпня 1937 р. у м. Києві. Закінчила факультет журналістики Львівського університету ім. Івана Франка.</p>
+          <p>Була на журналістській роботі (редактор газети &quot;Просвіта&quot;). Працювала завідувачем літературної частини Львівського театру юного глядача (тепер – Перший український театр для дітей та юнацтва). Авторка книг &quot;Дрогобицький звіздар&quot; (1970 р.), &quot;Повісті&quot; (1978 р.), &quot;Квітень у човні&quot; (1981 р.), &quot;Родовід&quot; (1984 р.), &quot;Бенефіс&quot; (1990 р.), &quot;Десять слів поета&quot; (1987 р.), роману &quot;Репетиція&quot; (1985 р.) та книжок для дітей – &quot;Канікули у Світлогорську&quot; (1967 р.), &quot;Шпага Славка Беркути&quot; (1968 р.), &quot;Звичайний шкільний тиждень&quot; (1973 р.), &quot;Яблуня і зернятко&quot; (1984 р.) та ін. Лауреат премії ім. Б. Лепкого (2005, за книгу вибраного). Кавалер Ордену Усмішки (2007, літературна нагорода, яку присуджують діти). Від 1999 р. викладач кафедри театрознавства та акторської майстерності факультету культури і мистецтв ЛНУ імені Івана Франка (дисципліни: &quot;Історія театральної критики&quot;, &quot;Редагування&quot;, факультативи &quot;Сучасний український театр: постаті і проблеми&quot;, &quot;Сценарне мистецтво&quot;). Провідний редактор театрального журналу &quot;Просценіум&quot;. Прозові тексти письменниці виходили в перекладі болгарською, польською, німецькою, російською та іншими мовами. Як перекладач Ніна Бічуя працювала із текстами Станіслава Лема, Єжи Гротовського, Миколи Гоголя, Ольги Токарчук. І коли робота над польським викладом думок Гротовського, інтерв’юйованого насправді італійською, просувалася неймовірно важко, то в роботі з Гоголем і Токарчук у письменниці голова паморочилася від легкості перекладу. Нині ім’я Ніни Бічуї менш відоме, ніж багатьох інших письменників її покоління, — але це зовсім не через якість текстів, а радше тому, що вже понад 20 років львівська авторка зосереджується не на художньому письмі для дорослих, а на перекладах.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

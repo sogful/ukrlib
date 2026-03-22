@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сапфо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Сапфо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./sapfo.webp" alt="Сапфо" title="Сапфо" data-full="./sapfo.webp" /><img class="side-img side-thumb" src="./sapfo_1.webp" alt="Сапфо" title="Сапфо" data-full="./sapfo_1.webp" /></div>
+        <div class="prose-text">
+          <p>Сапфо (VII—VI ст. до н. е.) — давньогрецька поетеса.</p>
+          <p>Сапфо писала вірші про кохання для жіночого виконання. Сапфо була сучасницею Алкея, себе ж вона називає в одному з віршів інакше — Псапфа. Місця її народження і смерті точно невідомі. За одними відомостями, місцем її народження є місто Мітилена, за іншими — Ерес на острові Лесбос. В одній із давніх хронік говориться, що Сапфо певний час жила на Сицилії. Після повернення з &quot;політичного вигнання&quot; вона заснувала школу, в якій навчала дівчат різних наук, співів, музики. Свою школу вона називала &quot;домом, присвяченим музам&quot;. Про Сапфо захоплено відгукується Алкей, з повагою до неї ставиться Платон, мешканці Мітилени викарбували її зображення на своїх монетах. Про смерть Сапфо існує легенда: поетеса закохалась у красеня Фаона, якій не відповів їй ввзаємністю, і нещасна в розпачі кинулася в море з високої скелі. Фрагменти окремих віршів Сапфо свідчать про інше — поетеса дожила до глибокої старості. Ліричний спадок Сапфо — любовна лірика, гімни, епіталами (весільні пісні). З віршів постає життєрадісна лірична героїня, яка прагне жити в щасті і радощах. Вона забороняє собі думати про сум, плач, смерть — на її переконання, музи не приходять у місця, де панує смуток. Поетеса тонко відчуває природу: у її віршах чути дихання вітру, шелест листя, змальована меланхолія ночі, краса місяця, вона спілкується з ластівками, з вечоровими сутінками, особливо Сапфо любить квіти троянди. Усі її епітети і порівняння пов&#x27;язані з цією чарівною квіткою.</p>
+          <p>Сапфо розкриває й внутрішній свії людини. Вона віднайшла три способи говорити про нього: передавати душевний стан через тілесні відчуття: через опис божества Ероса, що насилає кохання, через передавання почуттів від імені іншої особи (через богиню Афродіту, яка знає й розуміє стан закоханої жінки). Особливої слави Сапфо зажила завдяки епіталамам (гумористичні вірші, сповнені претензій до жениха, який забирав від дівчат їхню подругу, і уславлення чеснот нареченої). Такі пісні призначалися для виконання як в хорі, так і соло. Мовою пісень Сапфо є еолійський діалект з домішками місцевого — лесбоського.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

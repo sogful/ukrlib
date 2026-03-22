@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ганзенко Олексій Федорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ганзенко Олексій Федорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hanzenko-oleksiy-fedorovych_1.webp" alt="Ганзенко Олексій Федорович" title="Ганзенко Олексій Федорович" data-full="./hanzenko-oleksiy-fedorovych_1.webp" /><img class="side-img side-thumb" src="./hanzenko-oleksiy-fedorovych.webp" alt="Ганзенко Олексій Федорович" title="Ганзенко Олексій Федорович" data-full="./hanzenko-oleksiy-fedorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 26 грудня 1958 року в с. Владиславка Миронівського р-ну, що на Київщині. Навчався в миронівських школах №3 та №1. По закінченні – служив в армії, працював за робітничим фахом.</p>
+          <p>Вірші писав зі шкільних років. Публікувався в місцевій газеті &quot;Миронівський край.&quot; Приблизно з початком ХХІ ст. почав писати прозу. Перемагав у літ конкурсах, найпрестижніший з яких – &quot;Коронація слова&quot; (2013 – номінація &quot;кіносценарії&quot; та 2021 – номінація &quot;романи&quot; (твір &quot;Raptus melancholicus&quot;).). Видавався самвидавом, публікувався в журналах &quot;Жінка&quot;, &quot;Дніпро&quot;, &quot;Склянка часу&quot;. У 2011-у у видавництві &quot;Смарагд&quot; вийшла збірка оповідань &quot;Захід зеленого сонця&quot;. У 2019-му видавництво &quot;Перун&quot; випустило в світ роман &quot;Блюз на холодній землі&quot;, видавництво &quot;Терен&quot; — роман &quot;Курява&quot;.</p>
+          <p>У 2021-му у видавництві &quot;Фенікс&quot; вийшов роман &quot;Пливе човен&quot;. Видавництво &quot;Ліра-К&quot; видало романи:</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кагарлицький Микола Федосійович — Короткий життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кагарлицький Микола Федосійович</h1>
+      <h2>Короткий життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kaharlytskyy-mykola-fedosiyovych.webp" alt="Кагарлицький Микола Федосійович" title="Кагарлицький Микола Федосійович" data-full="./kaharlytskyy-mykola-fedosiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>КАГАРЛИЦЬКИЙ Микола Федосійович народився 6 січня 1937 р. в с. Черняхів Кагарлицького району Київської обл. У 1961 р. закінчив філологічний факультет Київського державного університету ім. Т.Г.Шевченка. Учителював, працював завлітом Київського державного академічного театру опери та балету ім.Т.Г.Шевченка, був кореспондентом газети &quot;Літературна Україна&quot;. З 1988 р. — на творчій роботі. Опублікував понад 300 поертретів, есеїв, нарисів, розвідок про діячів літератури, мистецтва, цикл досліджень &quot;Генієм Шевченка опромінені&quot;.</p>
+          <p>Автор книжок &quot;Оксана Петрусенко. Народна артистка УРСР&quot;, &quot;Оксана Петрусенко. Біографічна повість&quot;, &quot;Наодинці з совісю&quot;, &quot;Витязь ідеї &quot;Бандура&quot;, &quot;Катерина Білокур. Я буду художником!&quot;, &quot;Катерина Білокур очима сучасників&quot;. Перекладні видання: &quot;Коли мовчать слова&quot; (пер. з болгарської), &quot;Анна Зегерс. Легенди про Артеміду&quot; (пер. з німецької).</p>
+          <p>Заслужений діяч мистецтв України, лауреат премії ім.П.Чубинського.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ларрі Ян Леопольдович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ларрі Ян Леопольдович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./larri-ian-leopoldovych.webp" alt="Ларрі Ян Леопольдович" title="Ларрі Ян Леопольдович" data-full="./larri-ian-leopoldovych.webp" /><img class="side-img side-thumb" src="./larri-ian-leopoldovych_1.webp" alt="Ларрі Ян Леопольдович" title="Ларрі Ян Леопольдович" data-full="./larri-ian-leopoldovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 15 лютого 1900 року у Ризі або, згідно з власною автобіографією, поблизу Москви. Батько й мати рано померли, тому хлопець жебракував і жив безпритульним. Працював у корчмі, учнем годинникаря. Знайшов притулок у родині вчителя Доброхотова, який підготував його до здачі гімназичного курсу екстерном. Утім, під час Першої світової війни Доброхотова мобілізували до армії, і Ян знову став волоцюгою.</p>
+          <p>У 1917 році Ларрі дістався Петрограда, де намагався поступити до університету, проте невдало. Через друзів батька у 1918 році записався до Червоної армії. Втім, невдовзі захворів на тиф, відстав від свого батальйону та знову залишився безпритульним.</p>
+          <p>У 1923 році переїхав до Харкова, поступив до біологічного факультету Харківського інституту народної освіти, а також влаштувався на роботу до газети &quot;Молодой ленинец&quot;. В цей період написав та 1926 року видав свої перші дві книжки: &quot;Сумні та веселі історії про маленьких людей&quot; та &quot;Украдена країна&quot; (українською) у видавництві &quot;Книгоспілка&quot;. У 1931 закінчив біологічний факультет Ленінградського державного університету. У 1928—1931 роках видав низку книжок: &quot;Вікно у майбутнє&quot; (1929), &quot;П&#x27;ять років&quot; (1929, разом з Абрамом Лівшицом), &quot;Як це було&quot; (1930), &quot;Записки конноармійця&quot; (1931), &quot;Країна щасливих&quot; (1931). Радянська критика зустріла останній твір негативно: використовувалися такі епітети як &quot;халтура&quot;, &quot;наклеп на нашу політику, на лінію партії&quot;, &quot;агітка класового ворога&quot; тощо. Книжку заборонили та вилучили з обігу. Тоді Ларрі вирішив припинити літературну діяльність. Він поступив до аспірантури Інституту рибного господарства під керівництвом професора Лева Берга. До Берга звернувся письменник Самуїл Маршак з пропозицією написати науково-фантастичну книжку для дітей на біологічну тему. Берг переадресував запит своєму співробітнику Ларрі. Письменник швидко створив рукопис повісті &quot;Незвичайні пригоди Карика і Валі&quot;, але редактори вимагали докорінної переробки, критикуючи задум та окремі розділи. Лише пряме втручання Маршака та його редакторська допомога дозволили книжці вийти у 1937 році. У грудні 1940 року Ларрі написав анонімного листа Сталіну, до якого приклав першу главу свого роману-антиутопії &quot;Небесний гість&quot;. У романі зображувався режим СРСР через 117 років після встановлення влади більшовиків очима марсіанина. Ларрі критикував сучасний йому стан справ: беззаконня, репресії, бідність, обмеження мистецтва. У листі він писав: &quot;Ви ніколи не дізнаєтесь мого імені.&quot; Проте він устиг відіслати всього 7 глав роману — вже у квітні 1941 року НКВС викрило письменника, а 11 квітня він був заарештований. 5 липня суддівська колегія Ленінградського міського суду винесла вирок у 10 років таборів та 5 років спецпоселення. У 1956 році реабілітований, повернувся до Ленінграда. Написав ще декілька дитячих книжок: &quot;Записки школярки&quot; (1961), &quot;Дивна подорож Кука й Куккі&quot; (1961), &quot;Хоробрий Тіллі&quot; (1970). Помер 18 березня 1977, Ленінград, СРСР.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

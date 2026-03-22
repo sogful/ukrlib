@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Емар Густав — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Емар Густав</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./emar-hustav.webp" alt="Емар Густав" title="Емар Густав" data-full="./emar-hustav.webp" /><img class="side-img side-thumb" src="./emar-hustav_1.webp" alt="Емар Густав" title="Емар Густав" data-full="./emar-hustav_1.webp" /><img class="side-img side-thumb" src="./emar-hustav_2.webp" alt="Емар Густав" title="Емар Густав" data-full="./emar-hustav_2.webp" /></div>
+        <div class="prose-text">
+          <p>Густав Емар (фр. Gustave Aimard; справжнє ім&#x27;я – Олівер Глуа, фр. Olivier Gloux; 13 вересня 1818, Париж — 20 червня 1883, там само) — французький письменник, справжнє ім&#x27;я Олівер Глуа, автор численних пригодницьких романів</p>
+          <p>Олівер Глуа народився у вересні 1818 року в Парижі. Став юнаком, Олівер залишив Францію. Він поступив юнгою на корабель торгового флоту, що прямував до Америки, і десять років провів в плаваннях і сухопутних подорожах різними країнами.</p>
+          <p>Довгі роки він подорожував по Північній і Південній Америці, жив декілька років серед індійців, вивчаючи побут різних племен. Повернувшись у віці тридцяти років до Франції, він взяв участь у революції 1848 року. Після встановлення режиму Наполеона III Емар знову вирушає до Америки, де здійснює декілька небезпечних експедицій в малодосліджених районах. У 1858—1870 роках вийшло в світ більше тридцяти романів Емара, що мали галасливий успіх у публіки, що читала. Героями безлічі романів Емара були індійці – то благородні і великодушні, то жорстокі й хитрі, але завжди мужні і горді воїни. Мексика і Аргентина, Нова Англія, Арканзас і Техас, Канада і Вогняна земля – географія його творів охоплює увесь материк. У основі багатьох романів лежать справжні історичні події, діють історичні особи, з якими стикається і будує свої взаємини романтичний герой. На справді, численні американські романи Емара в сукупності являють енциклопедією Америки, сповнену яскравих і екзотичних подробиць життя Нового Світу. Колоніальна екзотика, романтика пошуків, відкриттів і завоювань – мабуть, це достатньо, щоб привернути до творів Емара інтерес і юних і дорослих шанувальників пригодницької літератури.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

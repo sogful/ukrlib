@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Горішна Наталія Володимирівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Горішна Наталія Володимирівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./horishna-nataliia-volodymyrivna.webp" alt="Горішна Наталія Володимирівна" title="Горішна Наталія Володимирівна" data-full="./horishna-nataliia-volodymyrivna.webp" /><img class="side-img side-thumb" src="./horishna-nataliia-volodymyrivna_1.webp" alt="Горішна Наталія Володимирівна" title="Горішна Наталія Володимирівна" data-full="./horishna-nataliia-volodymyrivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Поет, перекладач, член Національної спілки письменників України.</p>
+          <p>Народилася 18 грудня 1959 року на Житомирщині. Дитинство пройшло в старовинному селищі Смотрич на Поділлі.</p>
+          <p>1983 року Н.В. Горішна з червоним дипломом закінчила інженерно-оптичний факультет Чернівецького державного університету. Працювала інженером, викладачем, програмістом. Вірші пише з дитинства. Перша публікація була – п&#x27;ятикласницею в районній газеті &quot;Ленінським шляхом&quot;. Школяркою двічі друкувалася в республіканському журналі &quot;Піонерія&quot;. Живе в Черкасах з 1982 року. Наьалія Горішна працює у жанрах поезії, поетичного перекладу, літературних пародій. Перша збірка &quot;Бджола на асфальті&quot; побачила світ 2006 року. Потім були збірки &quot;Розп&#x27;яття осені&quot; (2007), &quot;Совість. Переклади з Володимира Нарбута&quot;, &quot;Право на весну&quot;, &quot;Сутність. Поезії у стилі хоку&quot; (2008), &quot;Гусінь янголів. Переклади&quot;, &quot;Горішина. Автопереклади&quot; (2009), &quot;Різдвяне Немовля. Переклади&quot;, &quot;Поет у спідниці. Літературні пародії&quot; (2010), &quot;Під сонцем серця&quot; (2011), книга для дітей &quot;Дочекалися! Ура!!!&quot; (2012), &quot;Тарас Шевченко. Тризна. В перекладі Наталії Горішної&quot; (2015), &quot;Люблю&quot; та &quot;Звинувачена в почуттях. Обрана інтимна лірика&quot; (2017). Наталія Володимирівна як керівник дитячого літературно-творчого гуртка &quot;Пегасик&quot;, що діє при Черкаській обласній бібліотеці для дітей, підготувала п&#x27;ять книжечок з творами своїх вихованців. Книжечки мають назву &quot;&quot;Пегасик&quot; і пегасівці&quot; (2011, 2012, 2013, 2014 (два випуски)). Письменниця постійно співпрацює з журналами для дітей та юнацтва: &quot;Веселі картинки (українською мовою)&quot; – як перекладач; &quot;Веселі уроки&quot; – веде рубрику &quot;Сторінки ерудитів&quot;; &quot;Весела перерва&quot; – як перекладач та автор шкільних &quot;запам&#x27;яталок&quot;. Наталія Володимирівна Горішна є лауреатом Всеукраїнських літературних премій імені Василя Симоненка (2012 р. за книгу поезій &quot;Під сонцем серця&quot;) та Олександра Олеся (2017 р. за книгу поезій &quot;Люблю&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

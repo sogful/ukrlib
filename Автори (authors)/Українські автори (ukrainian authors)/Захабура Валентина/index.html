@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Захабура Валентина — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Захабура Валентина</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zakhabura-valentyna.webp" alt="Захабура Валентина" title="Захабура Валентина" data-full="./zakhabura-valentyna.webp" /><img class="side-img side-thumb" src="./zakhabura-valentyna_1.webp" alt="Захабура Валентина" title="Захабура Валентина" data-full="./zakhabura-valentyna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Валентина Захабура (справжнє ім&#x27;я Валентина Захарченко-Бурцева). Народилася 16 липня 1978 в м.Київ. Українська письменниця (поетеса, прозаїк), авторка і виконавиця пісень, бібліотекар, педагог, організатор літературних студій для дітей та юнацтва.</p>
+          <p>Закінчила філософський факультет КНУ ім. Тараса Шевченка, працює бібліотекарем у книгозбірні для дітей. Учасниця літоб&#x27;єднання &quot;Перехрестя&quot;, виступає з віршами й піснями на фестивалях і концертах, твори друкуються в українських та міжнародних часописах (&quot;Дніпро&quot;, &quot;Київська Русь&quot;, &quot;Zeitglas&quot;, тощо). Має добірку віршів у міжнародному збірнику &quot;Ukr.Ru. etc.&quot;, &quot;Перша тисяча кроків&quot;, &quot;Викрадення Європи&quot;, &quot;Голоси Севами&quot; та власну збірку поезій &quot;ЯТОМОРЕ&quot;, збірку пісень &quot;Запрошення на каву&quot;, твори ввійшли до &quot;Антології сучасної української поезії&quot; болгарською мовою (за редакцією Анни Багряної).</p>
+          <p>Організовує та проводить літературні студії для дітей і юнацтва. У видавництві &quot;Теза&quot; вийшли друком повісті для дітей та батьків &quot;Ой, Лише, або з чим їдять вундеркіндів?&quot;, &quot;Ой, Лише, або як потрапити в халепу?&quot;, &quot;Ой, Лише, або як приборкати батьків?&quot;. Брала участь у літературних проектах для дітей та підлітків &quot;Це зробила вона&quot;, &quot;Чат для дівчат&quot;, &quot;Окуляри та кролик-гном&quot;. Валентина Захабура має чудовий голос, прекрасно грає на гітарі, є постійною учасницею фестивалів авторської пісні і поезії &quot;Відкриті Небеса&quot;, &quot;Рутенія&quot;, &quot;Sevama fest&quot;, фестивалів Трипільське коло&quot;, проектів &quot;Міцна Поезія&quot;, авторського клубу поезії &quot;Гітара по колу&quot; тощо. Твори Валентини Захабури є у фондах публічних бібліотек Києва. Книги:</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

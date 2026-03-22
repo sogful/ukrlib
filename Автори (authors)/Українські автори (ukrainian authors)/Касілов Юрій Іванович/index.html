@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Касілов Юрій Іванович — Кототкий опис творчості</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Касілов Юрій Іванович</h1>
+      <h2>Кототкий опис творчості</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kasilov-iuriy-ivanovych.webp" alt="Касілов Юрій Іванович" title="Касілов Юрій Іванович" data-full="./kasilov-iuriy-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>КАСІЛОВ Юрій ІвановичНародився 1939 року в місті Білогорську Амурської області. В Біробіджані закінчив педучилище, а пізніше — істфак Полтавського педінституту.</p>
+          <p>З 1963 року живе у Краснограді. Працював у середній школі №4, у профтехучилищі, а нині в педагогічному коледжі. Юрій Іванович — високоерудована людина, досвідчений педагог. Великий вплив на формування його світогляду мала поезія Єсеніна, Грані-на та інших поетів.</p>
+          <p>Писати вірші почав з юнацьких років. На сьогодні його доробок нараховує більше сотні віршів, друкувався в районній і обласній газетах. Заповітна мрія — видати збірку віршів. У своїх віршах Юрій Іванович оспівує красу рідного краю, закликає творити добро. Стыдимся доброты й прячем, Как рубль в заветный кошелек. А мне хотелось бы нначе, Чтоб не копили ее впрок. В нас слишком много практицизма: Ты — мне, я, может быть,— тебе. Глаза— весы полны цинизма, Не прогадать бы в торге мне. А доброта — она без веса, Скорей на пригоршни возьми. Она как луч средь жути леса, Она как в ссоре &quot;извини &quot;, Она — спаситель в нашем мире, Как в шторм сигнальные огни. Давайте ж вновь вернем ей силу И будем ДОБРЫМИ ЛЮДЬМИ. Юрій Іванович тонко відчуває мелодію природи, вбирає від неї натхнення до творчості: Мне одиночество — отрада Среди моих полей, лесов, Ведь столь желанная награда Мне— звуки птичьих голосов. Хитросплетенье лесных тропок, Рассказ ручья й шепот ив Подскажут мне на книжку строчек. Я не скучаю в зтом мире— Наш край й светел, її красив, Мне просто некогда скучать: Гляди, и сосны, и рябины Хотят мне что-то рассказать. Юрій Іванович у розквіті творчих сил.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бурбело Олександра Сергіївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бурбело Олександра Сергіївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./burbelo-oleksandra-serhiivna.webp" alt="Бурбело Олександра Сергіївна" title="Бурбело Олександра Сергіївна" data-full="./burbelo-oleksandra-serhiivna.webp" /><img class="side-img side-thumb" src="./burbelo-oleksandra-serhiivna_1.webp" alt="Бурбело Олександра Сергіївна" title="Бурбело Олександра Сергіївна" data-full="./burbelo-oleksandra-serhiivna_1.webp" /><img class="side-img side-thumb" src="./burbelo-oleksandra-serhiivna_2.webp" alt="Бурбело Олександра Сергіївна" title="Бурбело Олександра Сергіївна" data-full="./burbelo-oleksandra-serhiivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Бурбело Олександра Сергіївна (1.01.1998 – 05.09.2013) – юна письменниця. Народилась у Вінниці в родині викладачів-науковців. Була вихованкою місцевої школи № 26.</p>
+          <p>Авторка кількох книг поезії і прози українською та російською мовами:</p>
+          <p>— Первоцвіт: казки, легенди, вірші та загадки; — Белые паруса: сказки, фантастические рассказы, стихотворения; — Первоцвіт: казки, легенди, вірші, смішинки та загадки. Вид. друге, змінене і доповнене; — Зимова Україна: поезії; — Я лиш струна на арфі України; — Золота росинка: поезія, казки. За життя вийшло друком чотири книги автора, решта – посмертні видання. Підготовлені до друку книги поезії та прози &quot;Перемога над синіми водами&quot; та &quot;Гармонія&quot;. Незавершеними лишилися роман в стилі фентезі &quot;Тутанхамон&quot; та детектив. Численні публікації в українській та російський періодиці. Лауреат і дипломант понад півсотні літературних конкурсів та фестивалів, знаковими серед яких є перемоги та здобутки у конкурсах &quot;Україна через 20 років&quot; журналу &quot;Крилаті&quot; (Київ, 2010), &quot;Малахітовий носоріг&quot; (Вінниця, 2010), журналів &quot;Хімія для допитливих&quot; та &quot;Географія для допитливих&quot; (Харків, 2011), &quot;Я козацького роду&quot; (Київ, 2011), інтернет-конкурсах ім. Н. С. Гумильова (Санкт-Петербург, 2012), &quot;Волшебное перышко&quot; (Єкатеринбург, 2011, 2012), &quot;Край п’яти січей&quot; (Нікополь, 2012), &quot;Зелене гроно&quot; (Вінниця, 2013) та ін. Творчість високо оцінена відомими українськими письменниками – В. З. Нестайком, В. М. Вітковським, А. М. Подолинним. Автором кількох передмов до книг стала Т. М. Артем’єва. 2 липня 2015 р. була прийнята в Національну Спілку письменників України (посмертно). Квіток № 02965 був виписаний 27 серпня і вручений батькам поетки 5 жовтня у Вінниці під час відкриття IV Міжнародного літературно-мистецького свята &quot;Русалка Дністрова&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гармаш-Литвин Антоніна Іванівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гармаш-Литвин Антоніна Іванівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./harmash-lytvyn-antonina-ivanivna.webp" alt="Гармаш-Литвин Антоніна Іванівна" title="Гармаш-Литвин Антоніна Іванівна" data-full="./harmash-lytvyn-antonina-ivanivna.webp" /></div>
+        <div class="prose-text">
+          <p>Антоніна Іванівна Литви́н (дошлюбне Гармаш, 20 квітня 1940, Кременчук — 23 січня 2022) — українська письменниця, поетеса, громадська діячка.</p>
+          <p>Народилася 20 квітня 1940 року в місті Кременчуці Полтавської області, в родині річковиків Івана та Клавдії Гармашів. Виросла в селі Старому Іркліївського району, Полтавської області, зараз затопленому водами Кременчуцького водосховища. 1957 року закінчила Васютинську середню школу, працювала друкаркою, радисткою в Черкасах. Писала вірші і прозу, займалась творчою роботою, 1962 року, за рекомендацією Спілки письменників України, вступила до Київського державного університету ім. Т. Г. Шевченка на філологічний факультет. Здобула фах філолог, викладач української мови і літератури.</p>
+          <p>За радянської влади разом з чоловіком, бандуристом Василем Литвином, потрапила до списку неблагонадійних. Звільнена з видавництва &quot;Молодь&quot;, родину разом з дітьми виселено з Києва в село Гребені Київської області. 1989 року з чоловіком стали одними із засновників Стрітівської кобзарської школи. Антоніна Гармаш-Литвин була автором програми виховання майбутніх батьків-матерів, за якою в багатьох школах вже проводиться навчання. Нею розроблена також програма естетичного виховання дітей. Заповітна мрія Гармаш — створити малу Академію народного українського мистецтва. Займалася творчою і громадською діяльністю, була заступницею голови товариства &quot;Просвіта&quot; ім. Т. Г. Шевченка Кагарлицького району.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фріс де Тойн — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Фріс де Тойн</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./fris-de-toyn.webp" alt="Фріс де Тойн" title="Фріс де Тойн" data-full="./fris-de-toyn.webp" /></div>
+        <div class="prose-text">
+          <p>Тойніс Уйлке (Тойн) де Фріс (26 квітня 1907 — 21 січня 2005) — нідерландський письменник і поет.</p>
+          <p>Де Фріс народився у фризькому містечку Феанвальден. Його батьки переїхали до Апелдорна в 1920 році. У 1936 році він приєднався до Комуністичної партії Нідерландів, а через рік переїхав до Амстердама, щоб продовжити кар&#x27;єру журналіста. Він став редактором комуністичної газети De Tribune і De Vrije Katheder. Під час окупації Нідерландів нацистськими військами він був заарештований і ув&#x27;язнений у Камп Амерсфорт. Після війни він став членом міської ради Амстердама. У 1971 році вийшов з партії, не відмовившись від марксизму, який продовжував відстоювати до кінця життя.</p>
+          <p>Де Фріс писав вірші та багато романів голландською та фризькою мовами. Серед його найбільш відомих романів — Het meisje met het rode haar (Дівчина з рудим волоссям) і трилогія Februari (Лютий), обидва романи про голландський спротив у Другій світовій війні; перший також дуже успішний як фільм (Бен Вербонг, 1981). З його кількох біографій його книга про Спінозу отримала міжнародну популярність і була перекладена. Інші біографічні теми включали, зокрема, Карл Маркс, Р.Дж. Шіммельпеннінк, Гайдн, Босх, Рембрандт, Ван Гог. Він також написав вичерпну та наукову історію християнських єретичних рухів, Ketters (Єретики).с Він помер в Амстердамі у віці 97 років після кількох нападів пневмонії.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

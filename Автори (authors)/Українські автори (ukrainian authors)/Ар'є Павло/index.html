@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ар&#x27;є Павло — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ар&#x27;є Павло</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./arie-pavlo.webp" alt="Ар&#x27;є Павло" title="Ар&#x27;є Павло" data-full="./arie-pavlo.webp" /><img class="side-img side-thumb" src="./arie-pavlo_1.webp" alt="Ар&#x27;є Павло" title="Ар&#x27;є Павло" data-full="./arie-pavlo_1.webp" /><img class="side-img side-thumb" src="./arie-pavlo_2.webp" alt="Ар&#x27;є Павло" title="Ар&#x27;є Павло" data-full="./arie-pavlo_2.webp" /></div>
+        <div class="prose-text">
+          <p>Павло Ар&#x27;є — псевдонім українсько-німецького драматурга (справжнє ім&#x27;я — Алєксєєв Павло Валентинович). Прославився завдяки написанню п&#x27;єси &quot;На початку і наприкінці часів&quot; (2013) та появи низки успішних вистав на основі неї, які стали культовими серед українських глядачів. П&#x27;єси Ар&#x27;є перекладені зокрема словенською, чеською, німецькою, англійською, польською, французькою мовами.</p>
+          <p>Народився 16 жовтня 1977 року у Львові. 1998 року закінчив Українську академію друкарства у Львові. Згодом навчався в Київському університеті у 2000—2004 роках за спеціальністю &quot;соціологія&quot;. Після в інтерв&#x27;ю згадував, що у минулому отримав диплом за спеціальністю &quot;економіст&quot;, але згодом зрозумів що &quot;з бізнес-людьми він працювати не хоче&quot; та вирішив спробувати себе у драматургії.</p>
+          <p>2004 року переїхав жити та навчатися до Кельна, де закінчив університет. Жити до Львова Ар&#x27;є повернувся у 2016 році та став художнім керівником Львівського драматичного театру ім. Лесі Українки. Посаду залишив у 2017 році.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

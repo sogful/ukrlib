@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Александрович Митрофан Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Александрович Митрофан Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Народився 1 січня 1837 року в с. Калиті на Чернігівщині. Походив зі старої козацької родини.</p>
+          <p>До 14-ти років ріс і виховувався у сім&#x27;ї. Від 1851 року у Санкт-Петербурзі: навчався в інженерному училищі (1851—1855), потім у Михайлівській інженерній академії (1855—1857), яку закінчив у званні підпоручика.</p>
+          <p>Залишивши у травні 1860 року військову службу оселився у Калиті. Якийсь час працював у повітовій межовій комісії. Був мировим посередником у Мінській губернії, головою Остерського земства. Перші його публікації з&#x27;явилися I860 року у &quot;Черниговских губернских ведомостях&quot;. У часописі &quot;Основа&quot; (1861—1862) публікував невеликі статті етнографічно-історичного змісту українською мовою. А за І. Франком — &quot;оповідання &quot;Антін Михайлович Танський&quot;, &quot;Три пани&quot;, &quot;Проскурка&quot;, &quot;П&#x27;яниця&quot;, &quot;Пожежа&quot; та інші під псевдонімом Митро Олелькович&quot;. В той самий час друкував свої твори в &quot;Черниговском листке&quot; (1861—1863), який видавав Л. Глібов. Студіював українську історію, написав монографію &quot;Гетьманство Дорошенка&quot;, що вийшла друком у часописі &quot;Вестник Западной России&quot; у Вільні (1867). Автор роботи &quot;Андрусівський договір&quot;. 1881 року, мешкаючи у Києві, під час нервового нападу вискочив з вікна готелю і помер на місці. I860 року у &quot;Черниговских губернских ведомостях&quot; з&#x27;явилися його перші публікації: нарис &quot;Із Канева до Чигирина й назад&quot;, обробки казкових сюжетів &quot;Семилітка&quot;, &quot;Про городянку та бублики&quot;, записані у Каневі перекази про гайдамаків, а пісня &quot;їхав Харько з Жаботина&quot; — на Херсонщині. Автор повістей і оповідань (&quot;Антін Михайлович Танський&quot;, &quot;Три пани&quot;, &quot;П&#x27;яниця&quot;, &quot;Пожежа&quot;, &quot;Проскурка&quot;), надрукованих в &quot;Основі&quot;, історичних праць про Чернігівщину, про гетьмана П. Дорошенка та ін. Розпочав публікацію великого дослідження з історії України під назвою &quot;Остерскій уѣздъ. Историческое описаніе&quot;. Випуск I, що вийшов друком у Києві 1881року, 212 стор. (російською мовою), і охопив події у Східній Україні до 1669 року. Після його смерті залишилося багато цінних рукописів.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

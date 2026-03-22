@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сігер Піт — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Сігер Піт</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./siher-pit.webp" alt="Сігер Піт" title="Сігер Піт" data-full="./siher-pit.webp" /><img class="side-img side-thumb" src="./siher-pit_1.webp" alt="Сігер Піт" title="Сігер Піт" data-full="./siher-pit_1.webp" /></div>
+        <div class="prose-text">
+          <p>Піт Сіґер — американський естрадний співак, громадський активіст. Сіґер вважається ключовою фігурою у відродженні народної музики в США в середині XX століття і в появі музики протесту.</p>
+          <p>Народився 3 травня 1919 року в Нью-Йорку.</p>
+          <p>В кінці 1940-х і початку 1950-х років Піт Сіґер успішно виступав у складі групи &quot;The Weavers&quot;, багато пісень яких набули великої популярності, зокрема, пісня &quot;Goodnight, Irene&quot; в 1950 очолювала чарти 13 тижнів. Зліт популярності Піта Сіґера в мейнстрімі був припинений політикою маккартизму, котра набирала вагу. Справа в тому, що до 1949 року Сіґер належав до Комуністичної партії США. Потім він став виступати проти сталінізму, але як і раніше дотримувався лівих переконань. У 1955 році Піта Сіґера викликали в Комісію з розслідування антиамериканської діяльності, але він відмовлявся відповідати на питання, що стосуються його політичних поглядів. У результаті в 1956 році його звинуватили в неповазі до Конгресу США. У 1961 році його визнали винним і засудили до року тюрми. Ув&#x27;язнення тривало всього 4 години, а потім Сіґер був звільнений під заставу. У 1962 апеляційний суд переглянув справу і не скасував вирок. З кінця 1950-х і особливо в 1960-х Піт Сіґер знову почав з&#x27;являтися на сцені, виконуючи пісні на соціальну, в тому числі антивоєнну, тематику. З цього часу він виконує такі відомі пісні, як &quot;Where Have All the Flowers Gone?&quot;, &quot;If I Had a Hammer (The Hammer Song)&quot;, &quot;Turn, Turn, Turn!&quot; та народну &quot;We Shall Overcome&quot;, яка стала справжнім гімном руху за громадянські права чорношкірих у США. У 1961 році вперше виступив у Радянському Союзі, концерт відбувся в залі імені Чайковського і Москві. У 1965 році виступає в актовій залі Московського університету. В інтерв&#x27;ю 1995 Сіґер відзначав, що продовжує називати себе комуністом. У 2000-ті роки Сіґер виступав проти участі США у війні в Іраку. Помер 27 січня 2014 в Нью-Йорку.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

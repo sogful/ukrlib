@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Джонс Діана Вінн — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Джонс Діана Вінн</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dzhons-diana-vinn_3.webp" alt="Джонс Діана Вінн" title="Джонс Діана Вінн" data-full="./dzhons-diana-vinn_3.webp" /><img class="side-img side-thumb" src="./dzhons-diana-vinn.webp" alt="Джонс Діана Вінн" title="Джонс Діана Вінн" data-full="./dzhons-diana-vinn.webp" /><img class="side-img side-thumb" src="./dzhons-diana-vinn_1.webp" alt="Джонс Діана Вінн" title="Джонс Діана Вінн" data-full="./dzhons-diana-vinn_1.webp" /><img class="side-img side-thumb" src="./dzhons-diana-vinn_2.webp" alt="Джонс Діана Вінн" title="Джонс Діана Вінн" data-full="./dzhons-diana-vinn_2.webp" /></div>
+        <div class="prose-text">
+          <p>19 серпня 1934 — 26 березень 2011</p>
+          <p>Діана Вінн Джонс (англ. Diana Wynne Jones) — британська письменниця фентезі для дітей і дорослих. Народилася в Лондоні, 19 серпня 1934 року.</p>
+          <p>Коли почалася друга світова війна, Діані було п&#x27;ять років. Батьки поїхали зі столиці в Уельс, потім в Йорк і, нарешті, в 1943 році осіли в графстві Ессекс, де Майорі і Річард почали працювати в освітньому центрі. У 1953 році вступила в Оксфорд, коледж Св. Анни, де відвідувала лекції К. С. Льюїса і Джона Р. Р. Толкіна. Діана Вінн Джонс живе разом зі своїм чоловіком Джоном Барроу, професором Брістольського універститету і трьома синами в Кліфтон, Брістоль. Діана є автором понад сорока книг, перекладених на 17 мов. Володіє вражаючим списком нагород і номінацій, серед яких найпрестижніші Carnegie Medal Commended і Mythopoepic Fantasy Award. Особливою популярністю користуються цикл &quot;Світи Крестомансі&quot; і роман &quot;Бродячий замок Хоула&quot;, екранізований в 2004 році відомим японським режисером аніме Хаяо Міядзакі. Англійська версія мультфільму вийшла в 2005 році. Критика до сих пір порівнює настільки гучного &quot;Гаррі Поттера&quot; саме з знаменитим серіалом &quot;Світи Крестомансі&quot;, який з&#x27;явився на добрих два десятки років раніше книг Джоан К. Роулінг. Твори Джонс також часто порівнюють з книгами Робін Маккінлі і Нейла Геймана. Вона дружить з Гейманом і вони обидва є шанувальниками творів один одного. Письменниця присвятила роман Гексвуд (Hexwood) Гейманом, почерпнув ідею сюжету в одній із розмов з ним. Роман &quot;Зачарована життя&quot; — перший із серії про Крестомансі виграв в 1977 Guardian Award як краща книга для дітей. У 1999 році вона виграла ще дві важливі нагороди, які мають вплив в світі фентезі-літератури: нагороду за кращий твір для дітей Mythopoeic Awards в США і Karl Edward Wagner Award в Великобританії. За мотивами її книги &quot;Ходячий замок&quot; в 2004 році японський аніматор Хаяо Міядзакі створив мультфільм, номінований на &quot;Оскар&quot; як кращий анімаційний проект року. А за романом Archer&#x27;s Goon в 1992 році був знятий телесеріал.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

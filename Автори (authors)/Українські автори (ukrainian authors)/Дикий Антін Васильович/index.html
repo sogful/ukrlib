@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дикий Антін Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дикий Антін Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dykyy-antin-vasylovych.webp" alt="Дикий Антін Васильович" title="Дикий Антін Васильович" data-full="./dykyy-antin-vasylovych.webp" /><img class="side-img side-thumb" src="./dykyy-antin-vasylovych_1.webp" alt="Дикий Антін Васильович" title="Дикий Антін Васильович" data-full="./dykyy-antin-vasylovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 1.08.1900 р. у с. Велика Андрусівка на Полтавщині. Брав участь у війні з військами УНР по боці большевиків. Навчався в Комуністичному університеті у Харкові. Друкувався з 1924 р. Був членом &quot;Плуга&quot; та Всеукраїнської спілки пролетарських письменників.</p>
+          <p>Автор збірки поезій &quot;Огонь цвіте&quot; (1927) та збірки &quot;Оповідання&quot; (1932), п&#x27;єси &quot;Сухий закон&quot; (1932) у співавторстві з О. Полторацьким. Поезії друкував в &quot;Універсальному Журналі&quot;.</p>
+          <p>Працював директором Харківського історичного музею і був жвавим завсідником усіх літературних вечірок. Про нього О. Гай-Головко писав: &quot;Антін Дикий – поет без поезій, як говорили про нього, але з величезною поетичною славою, яку він сам створив собі своїми поетичними плянами й обіцянками&quot;. Те саме про нього згадував і Ю. Смолич, відмовляючи у будь-якому літературному таланті. Однак Дикий все ж таки щось писав. 12.10.1937 р. його, незважаючи на те, що усі мали за сексота, арештували традиційно за участь в антирадянській націоналістичній, терористичній організації. Наступного дня провели обшук і вилучили мисливську рушницю. 6.11.1937 р. на ознаменування двадцятиріччя Великого Жовтня Дикий пише заяву про те, що в націоналістичну організацію він завербований у 1935 р. Касьяненком, який начебто і доручив йому створити терористичну організацію з метою вбивства секретаря ЦК КП(б)У Косіора. А ще Дикий залучив до цієї групи льотчиків-капітанів Макарова й Ананьєва. На допиті 14.11.1937 р. Дикий заявив: &quot;Я лично знаю следующих участников антисоветской националистической организации: Коряк Владимир Дмитриевич, профессор литературы. Касьяненко неоднократно говорил, что Коряк &quot;работает по-настоящему&quot;, имея в виду его подрывную работу в Союзе писателей. Полторацкий Алексей Иванович, бывший дворянин, сын помещика-миллионера. Полторацкий – писатель, был членом редколлегии буржуазно-националистического журнала &quot;Новая Генерация&quot;; Галушко – писатель; Семенко Михаил – писатель, организатор журнала &quot;Новая Генерация&quot;, по сути, украинский национал-фашистский писатель. Я, Касьяненко и Коряк организовывали банкеты, шумиху, отвлекая писателей и Союз в целом от своих прямых обязанностей&quot;. Тут Дикий дещо перегнув, бо Полторацький був штатним співробітником НКВС і, звичайно, вижив, усіх інших розстріляли. На судовому засіданні 30.12.1937 р. Дикий визнав себе винним, його засудили до найвищої кари і наступного дня розстріляли. Дикого описав також Іван Багряний у &quot;Саді Гетсиманському&quot;, де в&#x27;язні в камері розважаються, вигадуючи різні проекти, що б вони зробили, якби опинились на волі. А. Дикий сказав: &quot;А я б, якби мене випустили… я б! Всю дорогу, аж од самої Холодної Гори… горошину… по тротуару… носом котив би!.. Через увесь Харків!&quot;. Проект Дикого переміг і в&#x27;язні замовкають…</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

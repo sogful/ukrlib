@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бредлі Алан — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бредлі Алан</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bredli-alan.webp" alt="Бредлі Алан" title="Бредлі Алан" data-full="./bredli-alan.webp" /><img class="side-img side-thumb" src="./bredli-alan_1.webp" alt="Бредлі Алан" title="Бредлі Алан" data-full="./bredli-alan_1.webp" /></div>
+        <div class="prose-text">
+          <p>Алан Бредлі народився 1938 року в Торонто, ріс у містечку Кобург у неповній родині — батько полишив сім&#x27;ю ще коли Алан був маленьким. У родині крім Алана були ще дві старші сестри.</p>
+          <p>Здобув освіту в галузі електроніки.</p>
+          <p>Працював на телерадіостанції в Онтаріо, університеті Раєрсон в Торонто. На посаді телевізійного директора в медіацентрі Саскачеванського університету пропрацював до 1994 року. Мешкав у місті Саскатун, де приєднався до літературних гуртків і почав спілкуватися з письменниками. Написав кілька оповідань, які були зачитані на Сі-Бі-Сі, а також опубліковані в місцевих літературних журналах. У 1994 році Алан зі своєю дружиною Ширлі переїхав до Келоуна. У співавторстві з Вільямом Серджантом написав книгу &quot;Міс Холмс з Бейкер-Стріт&quot;, згодом — мемуари &quot;Біблія взуттєвої коробки&quot;. У 2006 році Бредлі опублікував перший роман з серії &quot;Флавія де Люс&quot; &quot;Солодкість на скоринці пирога&quot;. У 2007 році отримав премію &quot;Кинджал дебютанта&quot; (Dagger Award). У 2009 — премію Агати Крісті в номінації &quot;найкращий першій роман&quot; (2009) та ін. У 2010 за цей роман отримав премію Діліс. Книги були видані більш ніж у 30 країнах світу, в тому числі й в Україні Компанія &quot;Neal Street Productions&quot; уклала договір на екранізацію його творів.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

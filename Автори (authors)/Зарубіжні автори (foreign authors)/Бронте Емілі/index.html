@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бронте Емілі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бронте Емілі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bronte-emili.webp" alt="Бронте Емілі" title="Бронте Емілі" data-full="./bronte-emili.webp" /><img class="side-img side-thumb" src="./bronte-emili_1.webp" alt="Бронте Емілі" title="Бронте Емілі" data-full="./bronte-emili_1.webp" /><img class="side-img side-thumb" src="./bronte-emili_2.webp" alt="Бронте Емілі" title="Бронте Емілі" data-full="./bronte-emili_2.webp" /><img class="side-img side-thumb" src="./bronte-emili_3.webp" alt="Бронте Емілі" title="Бронте Емілі" data-full="./bronte-emili_3.webp" /></div>
+        <div class="prose-text">
+          <p>Емілі Бронте (1818-1848) — англійська поетеса, автор роману &quot;Грозовий перевал&quot; (Wuthering Heights).</p>
+          <p>Емілі була п&#x27;ятою дитиною з шести дітей родини Бронте. Коли вона втратила матір в 1821 році, і двох своїх старших сестер, вона разом з Енн, Шарлоттою та братом Бренуеллом стали згуртованою і унікальною командою. Вони не відвідували школу, у них не було друзів, вони жили в глухому селі. Ігровим майданчиком їм служили торфовища, які виднілися з відкритих вікон будинку, та їх власна фантазія.</p>
+          <p>Емілі практично не мала можливості отримати освіту, на відміну від своїх сестер. Вона провела півроку в школі Clergy Daughters в селі Кован-Брідж, коли їй було 6 років; три місяці в Roe Head School, в містечку Дьюсбери, у віці 17 років; і ще дев&#x27;ять місяців в пансіонаті Еже в Брюсселі у віці 24-25 років. Прогалини в освіті вона заповнювала, навчаючись вдома з тіткою Бренуелл і сестрою Шарлоттою. Вчителі малювання і музики іноді відвідували їх парафіяльний будиночок (Емілі була талановитою піаністкою), проте велику частину навчання їй довелося отримати у свого батька. Містер Бронте заохочував різнобічне читання своїх дочок, і дискутував з ними як з дорослими, на теми політики і літературної критики. Єдиною оплачуваною роботою, яку прийняла Емілі, було вчителювання у школі Law Hill недалеко від Халіфакс в 1838 році, яке продовжилося півроку. Емілі Бронте була щаслива лише вдома — їй подобалося поратися по господарству, і вона насолоджувалася товариством старшої із слуг, Табіти Ейкроуд. Також як сестри і брат Бренуелл, Емілі стала письменницею з того моменту, як навчилася читати. Разом з Енн вони писали вірші та історії про вигаданий світ Гондал. Тільки деякі вірші з розповідей про Гондал збереглися, але відомо, що їх спільна творчість продовжувало жити до початку 1840 р. Емілі менше всіх бажала, щоб збірник віршів Братів Белл був опублікований, і навіть після публікації &quot;Грозового перевалу&quot;, вона відмовилася скласти компанію своїм сестрам в мандрівці до Лондона з метою відкрити світу правду про те, що за псевдонімом Белл ховаються три освічені жінки. На відміну від інших дітей Бронте, Емілі була висока і міцна статурою. Вона була найбільш жвавим членом родини, проте, незважаючи на її прозорливість, у неї не було друзів. Ніякої особистої переписки від неї не збереглося, і навіть ті відомості, які тепер з&#x27;являються про Емілі, завжди занадто суперечливі. Вона обожнювала домашніх тварин, хоча володіла шаленим темпераментом, і тримала їх у суворості. Вона уникала всіх окрім родичів, і її риси характеру яскраво представлені в персонажах її творів. Її поезія глибоко релігійна, незважаючи на те, що вона відмовилася отримувати релігійну освіту. У вересні 1848 Емілі застудилася на похоронах брата і через два місяці померла від швидкоплинних сухот.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

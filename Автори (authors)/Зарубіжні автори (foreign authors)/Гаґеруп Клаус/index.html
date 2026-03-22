@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гаґеруп Клаус — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гаґеруп Клаус</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./haherup-klaus.webp" alt="Гагеруп Клаус" title="Гагеруп Клаус" data-full="./haherup-klaus.webp" /><img class="side-img side-thumb" src="./haherup-klaus_1.webp" alt="Гагеруп Клаус" title="Гагеруп Клаус" data-full="./haherup-klaus_1.webp" /><img class="side-img side-thumb" src="./haherup-klaus_2.webp" alt="Гагеруп Клаус" title="Гагеруп Клаус" data-full="./haherup-klaus_2.webp" /></div>
+        <div class="prose-text">
+          <p>Гаґеруп Клаус (норв. Klaus Hagerup; нар. 5 березня 1946, Осло, Норвегія) — норвезький письменник, актор, режисер. В Україні відомий як автор серії дитячих книжок про Маркуса (з норвезької переклала Галина Кирпа).</p>
+          <p>Народився Клаус Гаґеруп 5 березня 1946 у Осло. Його батько — Андерс Гаґеруп (1904-1979) був вченим а мати видатна норвезька письменниця Інґер Гаґеруп (1905-1985). Старший брат — Гельґе Гаґеруп (21 квітня 1933 — 12 серпень 2008) був норвезьким драматургом, поетом та прозаїком. У дитинстві мріяв стати олімпійським чемпіоном із метання списів.</p>
+          <p>У молоді роки брав активну участь у лівому русі. Був одни з лідерів Соціалістичної народної партії Норвегії. Після закінчення школи один рік навчався у театральній школі в Девоні, Англія. Потім чотири роки навчався у Національній театральній академії. Після закінчення академії працював, з 1968 по 1969 рік, актором у театрі в Бергені на Національній сцені. З 1969 по 1971 рік працював у Норвезькому національному театрі. Потім, у 1971-1973 роках, працював у театрі Галоґаланд. Дебют на літературній ниві відбувся у 1969 році зі збіркою віршів &quot;Як я думаю про тебе&quot; (норв. Slik tenker jeg på dere). У 1988 році Клаус Гаґеруп написав біографічну книгу &quot;Все так близько до мене&quot; (норв. Alt ер să nær Мег) про свою відому матір Інґер Гаґеруп. Клаус Гаґеруп одружився 28 вересня 1973 року з Брітт Ірен &quot;Біббі&quot; Борресен, дочкою дочки дизайнера Карла Рунара Борресена. У нього є дві доньки, також письменниці, Ганна та Гільда. Книги українською: Клаус Гаґеруп. &quot;Маркус і Діана&quot; (2006; з норв. переклала Галина Кирпа); Клаус Гаґеруп. &quot;Маркус і дівчата&quot; (2006; з норв. переклала Галина Кирпа); Клаус Гаґеруп, Ганна Гаґеруп. &quot;У страху великі очі&quot; (2009; з норв. переклала Галина Кирпа); Клаус Гаґеруп. &quot;Маркус і велика футбольна любов&quot; (2011; з норв. переклала Галина Кирпа); Клаус Гаґеруп. &quot;Золота вежа&quot; (2011; з норв. переклала Галина Кирпа); Клаус Гаґеруп. &quot;Маркус і велика футбольна любов&quot; (2012; з норв. переклала Галина Кирпа).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

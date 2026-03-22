@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Станев Еміліан — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Станев Еміліан</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./stanev-emilian.webp" alt="Станев Еміліан" title="Станев Еміліан" data-full="./stanev-emilian.webp" /></div>
+        <div class="prose-text">
+          <p>Станев, Еміліан (псевдонім Ніколи Стоянова Станева), (Велико-Тирново, 28.02.1907 – Софія, 15.03.1979).</p>
+          <p>Розпочав освіту в рідному місті, з 1922 року навчався в Єлені, закінчив середню школу у Враці як приватний учень (1928), недовго вивчав живопис в Академії мистецтв у Софії, вивчав фінанси та кредит у Вільному університеті в Софії. До 1944 року працював в адміністрації столичного муніципалітету, у 1945 році був керівником мисливського господарства в селі Буковець, з 1950 року очолював відділ &quot;Художня література&quot; в газеті &quot;Літературний фронт&quot;. У 1971–1981 роках був народним представником у VI та VII Національних зборах, з 1974 року був академіком, за свою діяльність отримав численні нагороди та державні відзнаки (зокрема, премію Димитрова, 1964).</p>
+          <p>Дебютував оповіданням &quot;Назустріч Великодню&quot; (опубліковано в бібліотеці &quot;Книга книг&quot;, 1931). Співпрацював з журналами &quot;Златорог&quot;, &quot;Мистецтво і критика&quot;, &quot;Болгарська думка&quot;, &quot;Кооперативний захист&quot;, &quot;Мисливець&quot;, &quot;Заповіти&quot; тощо та з газетами &quot;Літературний голос&quot;, &quot;Жіноча газета&quot;, &quot;Літературні новини&quot;, &quot;Веселка&quot; тощо; після 1944 року — з основними періодичними виданнями. Еміліан Станев — один із класиків болгарської прози, новатор у жанрах філософсько-історичного роману, анімалістичної прози та соціальної прози. Його твори позначені глибоким внутрішнім драматизмом та інтерпретують існування як низку конфліктних ситуацій, ставлячи людину в кожну мить перед моральним вибором. Дотримуючись діалогічних принципів у прозі, він зосереджується на зіткненні добра і зла. Також шукає відповіді на питання, що є добро, а що зло. Для Станєва немає простих та однозначних рішень, немає лінійної послідовності причин і наслідків, немає авторитетів, які не можна було б оскаржити та поставити під сумнів. Для нього сенс творчості полягає в досягненні багатошарової картини існування, що розглядається з різних точок зору, що відрізняються, перш за все, моральною мірою, з якою сприймаються людські стосунки. Станев належить до найкращих анімалістів болгарської прози – його ранні анімалістичні оповідання проблематизують місце людини в навколишньому світі та її зв&#x27;язок з природою. Паралельно з анімалістичними оповіданнями він розпочав свою письменницьку кар&#x27;єру з оповідань про маленьку людину, розчавлену життєвими обставинами, яке робить її життя безглуздим. Творчість: Писав з 1931 року. Рання проза: Видав збірки оповідань &quot;Манячі вогні&quot; (1938), &quot;Мрійник&quot; (1939), &quot;Будні та свята&quot; (1945), а також повість &quot;Викрадач персиків&quot; (1948), у яких зображував провінційне життя. Анімалістична проза: Здобув популярність як автор анімалістичних оповідань у збірках &quot;Одинаки&quot; (1940), &quot;Остання боротьба&quot; (1942), &quot;Январське гніздо&quot; (1953). Романи: Автор епічного роману &quot;Іван Кондарев&quot; (1958–1964) про боротьбу болгарського народу під час антифашистського повстання 1923 року. Також написав історичні романи &quot;Легенда про Сибіна князе Преславського&quot; (1967) та &quot;Антихрист&quot; (1970).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

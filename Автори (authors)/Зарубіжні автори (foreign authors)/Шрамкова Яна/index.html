@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шрамкова Яна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Шрамкова Яна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Письменниця Яна Шрамкова (Jana Šrámková), одна з найоригінальніших постатей сучасної словацької літератури для дітей та молоді, народилася в Братиславі 12 травня 1942 року.</p>
+          <p>Яна Шрамкова навчалася в Школі художньої промисловості (сьогодні Школа прикладного мистецтва Йозефа Відри) у Братиславі. З 1958 по 1961 рр. працювала дизайнером реклами в Братиславському домі книги. З 1961 року він працює як фрілансер. У 60-х роках ХХ століття вона створила сучасну версію дитячої літератури, а її твори перекладені багатьма мовами.</p>
+          <p>Вона пише як для дітей, так і для дорослих. У своїх творах, написаних від імені дітей, вона застосовує поетику, в якій реальність зникає з фантазії. У роботі для дорослих вона зосереджується на взаємовідносинах між людьми. Як студентка старшої школи, вона опублікувала свої вірші в журналі &quot;Молоді Творчість&quot;. У журналі &quot;Slovenské Pohľady&quot; в 1961 році вона опублікувала прозовий роман — роман для підлітків. Яна дебютувала в Книзі коротких оповідань для дітей від Золотих воріт у 1965 році. Авторські казки були опубліковані в Люпенко і принцесі Маковенці. Мотиви деяких коротких оповідань, опубліковані в книзі &quot;Любов у трьох боках&quot;, перероблені у новинку &quot;білих стрічок&quot; у вашому волоссі. За цю книжку вона отримала нагороду Младе в 1973 році. У 1977 році вона написала роман, в якому авторка звернула увагу на деякі поколінські та соціальні проблеми 70-х років ХХ століття, одягнені під одним ім&#x27;ям. Її інша проза робота має назву &quot;Острі&quot;. Історії в ній стосуються любові та кохання — як партнера, так і батьківської, і її прагнення. Вони висловлюють почуття самотності, сум і проблем спілкування в неповномій, емоційно несбалансованій сім&#x27;я. З літературою для молоді книга пов&#x27;язана лише з його тематичною орієнтацією на молодих героїв. Письменниця Яна Шрамкова отримала премію Trojruža 2005 року за всю літературну працю.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

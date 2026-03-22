@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кириленко Іван Улянович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кириленко Іван Улянович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kyrylenko-ivan-ulianovych.webp" alt="Кириленко Іван Улянович" title="Кириленко Іван Улянович" data-full="./kyrylenko-ivan-ulianovych.webp" /></div>
+        <div class="prose-text">
+          <p>Іван Улянович Кириленко — український письменник (переважно прозаїк).</p>
+          <p>Народився 2 грудня 1903 року у с. В&#x27;язівок, Павлоградський повіт.Закінчив Павлоградську православну семінарію РПЦ (1921), при цьому брав активну участь у подіях &quot;війни проти всіх&quot; на Лівобережній Україні. Вступивши до ВКП(б) 1927, навчався у Харківських комуністичних навчальних закладах. Тоді ж починається його контраверсійна літературна кар&#x27;єра, яка супроводжувалася його вправами у вульгарній літературній критиці &quot;у дусі часу&quot; — часу совєцької цензури та партійного наклепництва.</p>
+          <p>Член літературної організації &quot;Плуг&quot;. Редактор журналу &quot;Червоний шлях&quot; та відповідальний секретар Спілки письменників України. Автор переважно плакатно-ідеологічних творів &quot;виробничого жанру&quot;. Особистий секретар голови Всеукраїнського центрального виконавчого комітету Григорія Петровського. Жертва сталінського терору. Помер 23 вересня 1938 року, тюрма НКВС СРСР. Належав до Спілки селянських письменників &quot;Плуг&quot;, Спілки пролетарських письменників &quot;Гарт&quot;, Всеукраїнської спілки пролетарських письменників. Друкувався з 1923, але першу книжку видав 1926 — це збірка оповідань &quot;Відступ&quot;. Потім були збірки &quot;Стихія&quot;, &quot;Одна баба&quot;, &quot;Над ямою&quot;. Єдина збірка поезій — &quot;Такти&quot; (1927). Став відомим завдяки повістям &quot;Курси&quot; (1927), &quot;Кучеряві дні&quot; (1928, рос. переклад 1931), &quot;Натиск&quot; (1930, рос. переклад 1937). Будучи особистим секретарем високопоставленого комуніста Петровського, брав участь у приховуванні акції геноциду проти українського народу, проведеного за наказами Й. Сталіна у 1932—33 роки. Саме в цей час випускає нову повість &quot;Аванпости&quot; (1933) та роман &quot;Перешихтовка&quot; (1932). Останній твір, виданий за його життя, роман &quot;Весна&quot; (1936). Кириленко до певної міри одіозна літературна постать навіть у контексті 1920—30-их років. Тодішня критика змушена була визнавати явну плакатність творів Кириленка, схематичність подання характерів членів урядових організацій — комсомолу та ВКП(б). Загалом, Кириленко спеціалізувався на створенні образів фанатичних працівників-&quot;передовиків&quot;, оспівуванні рабської праці на комуністичних каторгах, пропагував безумовну покору терористичним урядовим групам. За свідченням сучасників, користувався недоброю славою серед своїх же однопартійців-письменників — за певними даними, мав розлади психіки. Наближеність до улюбленця Сталіна Григорія Петровського не захистила Кириленка від звинувачень у контрреволюції та шпигунстві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

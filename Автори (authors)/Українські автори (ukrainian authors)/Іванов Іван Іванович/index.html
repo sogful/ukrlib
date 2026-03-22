@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Іванов Іван Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Іванов Іван Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Іванов Іван Іванович народився 8 березня 1911 р. у Петербурзі. Навчався у Києві в ФЗУ, працював токарем на паровозовагоноремонтному заводі. В 1930— 1932 роках — студент Українського інституту лінгвістичної освіти. Серед його викладачів був Максим Рильський, який знав Іванова ще з трудової школи, де учителював наприкінці 20-х років. Саме там Максим Тадейович звернув увагу на обдарованого юнака, підтримував його літературні спроби, а коли Іванов став працювати в 4-й Роменській школі на Сумщині, листувався з ним.</p>
+          <p>Арештований був Іванов 2 грудня 1936 р. як &quot;учасник контрреволюційної троцькістської організації&quot;. Як видно із слідчої справи, ще 1927 р., будучи учнем ФЗУ, Іванов ознайомився з платформою троцькістської опозиції. Цього він на слідстві не заперечував, бо йому й на думку не спадало, що це може стати підставою для обвинувачення в контрреволюції. В обвинувальному висновку, складеному оперуповноваженим Чистовим і затвердженим заступником начальника УНВС по Чернігівській області Самовським, Іванову, окрім цього, інкримінувалося й те, що він &quot;внедрял в умы детей буржуазную науку&quot;. Це на уроках російської літератури!</p>
+          <p>Особливою нарадою при НКВС СРСР 9 березня 1937 р. Іванова І. І. засуджено на три роки виправно-трудових таборів. Покарання відбував на Колимі. Після звільнення з-під варти працював бухгалтером, а потім учителем російської мови і літератури в Хабаровському краї та Якутії. В червні 1945 р. подавав апеляцію, підтриману Управлінням НКВС по Крайній Півночі, про зняття судимості, але у цьому прокурором відділу у спецсправах Прокуратури СРСР йому було відмовлено. В 1949 р. повернувся на Україну, закінчив Київський педінститут, але до вчителювання правовірні сталіністи з облвно його не допустили. Два роки працював бухгалтером у ковальському цеху паровозовагоноремонтного заводу в Києві, а потім до виходу на пенсію в 1971 р.— бібліотекарем Боярської середньої школи № 1 на Київщині. Із заяви І. Іванова до Комісії Президії Верховної Ради СРСР по розгляду справ засуджених та з протоколів його допиту у зв&#x27;язку з реабілітацією видно, що справу щодо нього було сфабриковано (&quot;допити проводилися часто, були тривалі і настільки виснажливі, що я підписував протоколи, не читаючи їх, а по завершенні слідства мені не дали можливості ознайомитися з матеріалами моєї справи&quot;). Ухвалою президії Сумського обласного суду від 2 липня 1958 р. постанову Особливої наради при НКВС СРСР від 9 березня 1937 р. щодо Іванова 1.1. скасовано і його реабілітовано. У часи брежнєвщини, коли відверто реставрувався сталінізм, І. Іванов, будучи вже тяжко хворим, написав повість &quot;Колима&quot; (опублікована в журналі &quot;Вітчизна&quot; в № 8—9 за 1988 р. та вийшла окремим виданням у &quot;Радянському письменнику&quot;). За свідченням читачів, це один із кращих творів на тему ГУЛАГу. Але своєї многотрудної книжки авторові не судилося побачити — він помер 14 квітня 1989 р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

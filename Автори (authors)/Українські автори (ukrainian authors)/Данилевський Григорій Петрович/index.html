@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Данилевський Григорій Петрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Данилевський Григорій Петрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./danylevskyy-hryhoriy-petrovych_3.webp" alt="Данилевський Григорій Петрович" title="Данилевський Григорій Петрович" data-full="./danylevskyy-hryhoriy-petrovych_3.webp" /><img class="side-img side-thumb" src="./danylevskyy-hryhoriy-petrovych_2.webp" alt="Данилевський Григорій Петрович" title="Данилевський Григорій Петрович" data-full="./danylevskyy-hryhoriy-petrovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>(26.04.1829 року — 18.12.1890 року)</p>
+          <p>Данилевський Григорій Петрович — прозаїк, публіцист. Найбільш відомі його історичні романи: &quot;Мирович&quot;, &quot;Княжна Тараканова&quot;, &quot;Спалена Москва&quot;.</p>
+          <p>Данилевський Григорій Петрович народився 26 квітня 1829 року в селі Данилівка Харківської губернії в родині багатого українського поміщика. Рано втративши батька, виховувався матір&#x27;ю, Катериною Купчиновой, утвореною жінкою, талановитою музиканткою. У віці дванадцяти років був прийнятий у Московський дворянський інститут, гуманітарний напрямок якого сприяло розвитку літературних здібностей майбутнього письменника. У 1846 закінчив інститут і надійшов у Петербурзький університет на камеральне відділення юридичного факультету, вивчав економічні і природничі науки, не оставляя літературних занять. У 1850 закінчує університет і протягом семи років перебуває на службі в Міністерстві народної освіти. З обов&#x27;язку служби багато їздив по різних губерніях, одночасно вивчаючи історію та етнографію Росії. Враження від поїздок знайдуть своє відображення в його творчості. Данилевський активно відвідує літературні салони Москви і Петербурга, знайомиться з різними письменниками та видавцями. Особливе значення для Данилевського мало його знайомство з Гоголем, якого він обожнював. Звертається до української національної культури, досліджує жизньи творчість поета і філософа XVIII століття Р. Сковороди, пише на ці теми статті. Нарешті залишає службу в Петербурзі і їде на батьківщину. У 1857 одружується на Пд. Замятін, дочки місцевого поміщика. Працюючи виборним від дворян (в період підготовки реформи) в Комітеті з поліпшення побуту селян, отримує багатий матеріал про життя кріпаків та їх взаєминах з поміщиками. З&#x27;являється його оповідання &quot;Сорокопановка&quot;(1859), нарис &quot;Пенсильванцы і каролінци&quot; (1860). В 1862 і 1863 році в журналі &quot;Час&quot; були опубліковані романи Данилевського &quot;Швидкі в Новоросії&quot; і &quot;Воля&quot; (&quot;Швидкі повернулися&quot;), які принесли йому широку літературну популярність. У 1869 Данилевський повертається в Петербург, стає членом Ради у справах друку і редактором офіційної газети &quot;Урядовий вісник&quot;. Дослужився до чину таємного радника. З кінця 1870-х цілком переходить до тем російської історії. 1888 — 89 пише роман &quot;Чорний рік&quot; (&quot;Пугачовщина&quot;). Найбільш відомі його історичні романи: &quot;Мирович&quot; (1879), &quot;Княжна Тараканова&quot; (1883), &quot;Спалена Москва&quot; (1886). Помер Данилевський 6 грудня (18 н. с.) 1890 р. в Петербурзі. Похований в селі Пришиб Харківської губернії.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дубинський Ілля Володимирович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дубинський Ілля Володимирович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dubynskyy-illia-volodymyrovych.webp" alt="Дубинський Ілля Володимирович" title="Дубинський Ілля Володимирович" data-full="./dubynskyy-illia-volodymyrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Ілля ДУБИНСЬКИЙ</p>
+          <p>Дубинський Ілля Володимирович народився 29 березня 1898 року в селі Бутенки на Полтавщині в сім&#x27;ї службовця. В 1917 році закінчив Кобеляцьке комерційне училище. Наступного року був прийнятий в місцеву підпільну більшовицьку організацію і добровольцем вступив до партизанського загону під командуванням Упиря.</p>
+          <p>З травня 1919 року воював проти Денікіна, Врангеля, Петлюри, отаманів Махна, Тютюнника, Палія, командував кавалерійським полком, а затим кавдивізією Червоного козацтва. Був тяжко поранений. З 1924 по 1927 рік навчався у Військовій академії імені Фрунзе (Москва), після чого служив начальником штабу кав-дивізії (Проскурів), військовим інспектором Наркомосу України (Харків), спецкомісаром Раднаркому УРСР (Київ), командиром важкої танкової бригади (Київ), заступником начальника Вищого бронетанкового училища (Казань). Літературна діяльність Дубинського почалася в 1923 році, коли він став співробітничати в газеті &quot;Красная звезда&quot; і журналах &quot;Армия и революция&quot;, &quot;Война и революция&quot;. У 20-30-х роках з&#x27;являються друком його книжки, присвячені ратним подвигам Червоної Армії: &quot;Рейды конницы&quot; (1927), &quot;Национальные войска&quot; (1928), &quot;О войне будущего&quot; і &quot;Перелом&quot; (1930), &quot;Залізні бійці&quot; і &quot;Контрудар&quot; (1931), &quot;Відвага&quot; (1932), &quot;Корпус Червоного козацтва&quot; (1932), &quot;Золота Липа&quot; (1933), &quot;Броня Советов&quot; (1936). У липні 1937 року був репресований у Казані у так званій &quot;справі військових&quot; і заочно засуджений Верховним судом СРСР на п&#x27;ять років таборів суворого режиму. Після відбуття покарання зісланий на безстрокове поселення в Сибір, де працював трактористом і комбайнером у Танеєвській МТС Красноярського краю. Після смерті Сталіна справу Дубинського було переглянуто Верховним судом СРСР, і в липні 1956 року він був повністю відновлений у громадянських правах і військовому званні полковника. Після звільнення жив і працював у Києві. Помер 7 жовтня 1989 року. Олекса Мусієнко ЛУ 25.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

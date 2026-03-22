@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Софокл — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Софокл</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./sofokl.webp" alt="Софокл" title="Софокл" data-full="./sofokl.webp" /></div>
+        <div class="prose-text">
+          <p>Софокл був не тільки драматургом, він обіймав державні посади: скарбника державної каси і потім стратега, брав участь разом з Періклом у поході проти Самоса, отложившегося від Афін.</p>
+          <p>Софокл народився близько 496 р. до н. е. в Колоні поблизу Афін, прославленому їм в трагедії &quot;Едіп в Колоні&quot;. Софокл помер у 406 р.</p>
+          <p>Ще в 480 р., 16-річним юнаком, він брав участь у хорі ефебів, який виступав на честь перемоги при Саламіні. Це дало підставу зіставляти біографію трьох великих трагиков. Есхіл був учасником Саламінської битви, Софокл його прославляв, а Евріпід в цей час народився. Про суспільне становище батька, висловлюються суперечливі думки, але, мабуть, це була людина середнього достатку, який дав сину добру освіту. Софокл відрізнявся музичними здібностями; згодом він сам складав музику на метричні частини своїх трагедій. Софокл був не тільки драматургом, він обіймав державні посади: скарбника державної каси і потім стратега, брав участь разом з Періклом у поході проти Самоса, отложившегося від Афін. Про Софокла у державній життя збереглося свідчення його сучасника, поета Іона з Хіос. В 411 р. Софокл брав участь у перегляді афінської конституції після антидемократичного перевороту. Софокл був другом Перікла. Вважають, що падіння цього відомого політичного діяча знайшло відображення в трагедії &quot;Едіп-цар&quot;, яка була поставлена приблизно в 429 р., після чуми, що охопила Афіни. У трагедіях Софокл ставить нагальні для його часу питання: ставлення до релігії &quot;Електра&quot;), божественні, неписані закони і закони писані (&quot;Антігона&quot;), вільна воля людини і воля богів (&quot;Едіп-цар&quot;, &quot;Трахінянкі&quot;), інтереси особистості, держави (&quot;Філоктет&quot;), проблема честі і благородства (&quot;Аякс&quot;). За свідченням древніх, Софокл написав понад 120 трагедій, але до нас дійшло лише сім: &quot;Аякс&quot;, &quot;Трахінянкі&quot;, &quot;Антігона&quot;, &quot;Едіп-цар&quot;, &quot;Електра&quot;, &quot;Філоктет&quot;, &quot;Едіп в Колоні&quot; та великі уривки з сатировской драми &quot;Слідопити&quot;, сюжетом якої послужив гомерівський гімн Гермесу. Не можна точно відновити дати постановки цих трагедій. Щодо &quot;Антігони&quot; можна сказати, що вона поставлена в 442 р., &quot;№Едіп-цар&quot; — в 429-425 рр. приблизно, &quot;Філоктет&quot; — 409 і &quot;Едіп в Колоні&quot; — вже посмертно в 401 р. Першу перемогу в трагічних змаганнях Софокл одержав над Есхілом в 468 р. своєю трилогією, у складі якої була трагедія &quot;Тріптолем&quot;. Плутарх наводить розповідь про присудження перемоги Софоклу. В цьому брав участь афінський полководець Кімон і 10 стратегів. У подальших змаганнях Софокл 20 разів був на першому місці і жодного разу не був третім за рахунком.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

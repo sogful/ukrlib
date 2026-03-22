@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Грегуль Наталія — Автобіографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Грегуль Наталія</h1>
+      <h2>Автобіографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrehul-nataliia.webp" alt="Грегуль Наталія" title="Грегуль Наталія" data-full="./hrehul-nataliia.webp" /></div>
+        <div class="prose-text">
+          <p>Я — киянка, в Києві народилась, живу і працюю. Освіту здобула теж у рідному місті, закінчила Київський Педагогічний Інститут та викладала англійську мову. З часом я змінила діяльність, працювала в туристичній галузі а потім працювала у виставковій сфері. Я люблю подорожувати світом і відвідала багато різних країн.</p>
+          <p>Поезія — це моє творче захоплення. Я пишу вірші українською, раніше й російською мовою, а нещодавно написала вірш англійською мовою. &quot;Колискова пісня&quot; на мої слова покладена на музику композитором Анатолієм Суським. Студійний запис у виконанні талановитої учениці музичної школи можна прослухати на youtube каналі. Пісню &quot;Київ&quot; на слова мого вірша &quot;Зоряні війни&quot; записав сучасний поп-гурт &quot;Енджі Крейда&quot;. Мій вірш про війну &quot;Бумеранг&quot; був обраний для поетичного проекту Павла Шилька &quot; Буремні вірші&quot;. Його озвучив диктор Денис Жупник і він прозвучав на радіо в День Радіо 2022 року.</p>
+          <p>У 2021 році я написала віршовану казку для дітей під назвою &quot;Злата і фазан&quot;. На своїй сторінці у фейсбуці я озвучила один розділ з цієї казки. У листопаді 2023 році у Київському видавництві &quot;Друкарський двір Олега Федорова&quot; вийшов з друку пілотний наклад казкової поеми &quot;Злата і фазан&quot;. Книгу можна придбати у видавця Олега Федорова. Вірші про війну написані під впливом пережитого. Весь цей час я залишалась в Києві, нікуди не виїжджала, і записувала поетичні рядки, які диктувало мені моє єство. Війна це не тільки смертельна руйнівна сила, а й потужна буремна сила, яка загострює всі почуття, збуджує всі життєві сили і пробуджує жагу до життя.&quot;</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

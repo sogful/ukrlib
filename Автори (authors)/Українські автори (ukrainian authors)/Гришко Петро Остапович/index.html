@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гришко Петро Остапович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гришко Петро Остапович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hryshko-petro-ostapovych.webp" alt="Гришко Петро Остапович" title="Гришко Петро Остапович" data-full="./hryshko-petro-ostapovych.webp" /></div>
+        <div class="prose-text">
+          <p>Петро Остапович Гришко народився 2 січня 1925, село Соснівка, нині Конотопського району Сумської області в сім&#x27;ї хліборобів. До війни закінчив семирічку в селі Заводи, куди переселилась сім&#x27;я, та перший курс фельдшерської школи в Конотопі.</p>
+          <p>Під час Другої світової війни відправлений на каторжні роботи до Німеччини. У 1943–1948 роках служив у Радянській армії. Брав участь у боях за визволення Білорусі, визволяв Варшаву та Берлін.</p>
+          <p>Після демобілізації працював у колгоспі. 1950 року Петра Гришка запросили на вчительську роботу в село Заводи. Заочно закінчив Лебединське педагогічне училище, а потім Ніжинський педагогічний інститут, де здобув фах учителя української мови та літератури. Роботі в школі віддав понад 30 років, з яких понад 17 працював директором восьмирічки в Заводах, а потім 6 років — на посаді завуча середньої школи в рідній Соснівці, після чого вийшов на пенсію. Неодноразово був депутатом сільської ради. Гуморески почав писати в 1960-х роках. Друкувався в &quot;Перці&quot;, &quot;Україні&quot;, &quot;Прапорі&quot;, &quot;Літературній Україні&quot;, &quot;Радянській Україні&quot;, &quot;Сільських вістях&quot;, &quot;Літературній газеті&quot;, у колективних збірниках &quot;Ясні усмішки&quot;, &quot;Вусаті діти&quot;, &quot;Веселий ярмарок&quot;, літературному альманасі &quot;Слобожанщина&quot;, &quot;Заспів&quot; і багатьох інших виданнях. Окремі байки Петра Гришка в перекладі опубліковано в Болгарії. Окремими виданнями вийшли збірки &quot;Квач і Скрипка&quot; (1980), &quot;Рябко в заступниках&quot; (1992), &quot;Гаманець під слідством&quot; (1994), &quot;Жаліслива муха&quot; (2001). 1990 року поет став лауреатом премії журналу &quot;Перець&quot;. Дата смерті 30 грудня 2003, с. Заводи Конотопського району.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

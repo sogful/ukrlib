@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Керет Етгар — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Керет Етгар</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./keret-ethar_2.webp" alt="Керет Етгар" title="Керет Етгар" data-full="./keret-ethar_2.webp" /><img class="side-img side-thumb" src="./keret-ethar.webp" alt="Керет Етгар" title="Керет Етгар" data-full="./keret-ethar.webp" /><img class="side-img side-thumb" src="./keret-ethar_1.webp" alt="Керет Етгар" title="Керет Етгар" data-full="./keret-ethar_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 20 серпня 1967року в Рамат-Гані, Ізраїль у родині Ефраїма та Орени Керет (котрі вижили під час Голокосту). Живе в Тель-Авіві. Одружений на актрисі Ширі Гефен, батько однієї дитини. Викладає в Тель-Авівському університеті та Університеті Бен-Гуріона.</p>
+          <p>Почав літературну роботу у 1991 році зі статей для газет та сценаріїв театральних постановок. Зараз його основний жанр — короткі абсурдистські розповіді. Перша збірка (&quot;Труби&quot;) вийшов в 1992 році, другий — &quot;Моя туга за Кісінджером&quot; (був включений в список 50 найбільш значущих ізраїльських книг всіх часів) — в 1994-му. У 1998 році з&#x27;явилася книга &quot;Табір Кнеллера&quot;, де автор вперше пробує себе в новій літературній формі — новелі. У 2000 році було видано збірник &quot;Дні, як сьогодні&quot;, в якому відбивається життя далеких від політики людей сучасного Ізраїлю, особливо — молоді. На початку 2001 року виходить збірник &quot;Друга можливість&quot;, слідом, в 2002 році — &quot;Аз&#x27;есьм&quot; (&quot;Ось він я&quot;). У 2009 році, після довгої перерви, був виданий збірник &quot;Коли померли автобуси&quot;, що згодом переклала прозаїк, поет й есеїст Лінор Горалік. Всі книги ставали бестселерами. Керету також траплялося працювати і з коміксами. У 1996 році була видана книга коміксів &quot;Ми прийшли не насолоджуватися&quot;.</p>
+          <p>У 1993 році Етгар Керет отримав перший приз на театральному фестивалі в Акко за мюзикл &quot;Операція Ентеббе&quot;. Він написав сценарії для декількох сезонів сатиричної телепередачі &quot;Камерний квінтет&quot; і безлічі короткометражних фільмів. Один з них, &quot;Королева Черв&#x27;яків&quot; (Skin Deep, 1996 рік) отримав приз Ізраїльської кіноакадемії і завоював перше місце на Мюнхенському фестивалі шкіл кіно. Згідно з розповіддю Керета знята чорна романтична комедія &quot;Самогубці: Історія кохання&quot; (2006) завоювала 9 нагород на різних кінофестивалях. У 2007 році Керет спільно з дружиною поставив фільм &quot;Медузи&quot;, який отримав &quot;Золоту Камеру&quot; на Каннському кінофестивалі. В 2009 році вийшов ізраїльсько-австралійський повнометражний мультфільм &quot;9,99 $&quot; за сценарієм Керета.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Джекобс Вільям Ваймарк — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Джекобс Вільям Ваймарк</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dzhekobs-viliam-vaymark.webp" alt="Джекобс Вільям Ваймарк" title="Джекобс Вільям Ваймарк" data-full="./dzhekobs-viliam-vaymark.webp" /></div>
+        <div class="prose-text">
+          <p>Вільям Ваймарк Джейкобс народився 8 вересня 1863 року в сім&#x27;ї керуючого девонської верфі; його дитячі роки були тісно пов&#x27;язані з портовим життям. Він навчався — спочатку в приватній школі, потім у коледжі Біркбек (який є частиною Лондонського університету, а тоді називався Birkbeck Literary and Scientific Institution).</p>
+          <p>1879 року Джейкобс вступив на роботу клерком в банк, а в 1885 році опублікував своє перше оповідання. Улюбленою темою Джейкобса була морська: саме їй присвячені збірки оповідань &quot;Many Cargoes&quot; (1896) та &quot;The Sea Urchins&quot; (1898), майже всі оповідання якого були надруковані в журналі &quot;Idler&quot;, яким керував Джером Клапка Джером), а також роман &quot;Skipper&#x27;s Wooing&quot; (1897). Типовий герой Джейкобса — доглядач маяка, який розповідає про неймовірні пригоди своїх знайомих матросів.</p>
+          <p>Джейкобс майстерно і зі смаком відтворював у своїх творах діалекти Іст-енду, чим заслужив на повагу, зокрема, Пелема Вудгауза (який написав про його вплив у автобіографічній книзі &quot;Bring on the Girls&quot; 1954 року). Починаючи з 1898 року, майже всі оповідання Джекобса друкувалися в &quot;Стренді&quot;. Одружившись у 1900 році, Джейкобс переїхав до Ессексу, де вже через кілька років мав два будинки, &quot;Аутлук&quot; (Outlook, у Парк-Хіллі) і Фелтем-хаус (Feltham House, в Голдінгс-Гіллі). Меморіальна табличка відзначає також лондонську резиденцію Джейкобса, 15 Gloucester Gate, Ріджентс-парк (де пізніше розташувався Інститут архітектури принца Уельського). Загалом у Джейкобів було двоє синів і три дочки. До початку Першої світової війни Джейкобс майже перестав писати оповідання: до кінця свого життя він переважно займався адаптаціями своїх творів для театральної сцени. У 1928 році брав участь у створенні фільмів за своїми творами. Перший знятий фільм мав назву &quot;Браво&quot;. Було прослухано п&#x27;ятдесят актрис, і Джекоба, як кажуть, вразила Педді Нейсміт, яку вибрали на головну роль. Джейкобс помер 1 вересня 1943 року на Горнсі Лейн, Іслінгтон, Лондон, у віці 79 років.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

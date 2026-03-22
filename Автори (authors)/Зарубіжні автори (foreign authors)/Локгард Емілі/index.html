@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Локгард Емілі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Локгард Емілі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lokhard-emili.webp" alt="Локгард Емілі" title="Локгард Емілі" data-full="./lokhard-emili.webp" /><img class="side-img side-thumb" src="./lokhard-emili_1.webp" alt="Локгард Емілі" title="Локгард Емілі" data-full="./lokhard-emili_1.webp" /><img class="side-img side-thumb" src="./lokhard-emili_2.webp" alt="Локгард Емілі" title="Локгард Емілі" data-full="./lokhard-emili_2.webp" /></div>
+        <div class="prose-text">
+          <p>Емілі Дженкінз більш відома за псевдонімом Е. Локгарт — американська письменниця, яка пише книги для дитячої, підліткової та дорослої аудиторії народилася 13 вересня 1967 року в Нью-Йорку, США.</p>
+          <p>Джекінз провела своє дитинство в Кембриджі та Сіетлі. Будучи ученицею приватної середньої школи Лейксайд Скул, відвідувала літню театральну школу в Північно-Західному університеті та Дитяче театральне товариство. Навчалася в Коледжі Вассара та закінчила Колумбійський університет. Має докторський ступінь з англійської літератури. Живе в Нью-Йорку.</p>
+          <p>Під псевдонімом Е. Локгарт пише для своєї підліткової аудиторії; &quot;Локгарт&quot; — прізвище бабусі по материній лінії. 2005 року під цим псевдонімом вперше вийшла книга під назвою &quot;Список бойфрендів&quot; (разом із сиквелами книги — &quot;Енциклопедія хлопців&quot; (2006), &quot;Як знайти скарб серед хлопців&quot; (2007) та &quot;Бойфренди наживо&quot; (2010) — утворює тетралогію &quot;Руді Олівер&quot;, яка є головною героїнею романів). Підлітковий роман &quot;Ганебна історія Френкі Ландау-Бенкс&quot; став фіналістом Національної книжкової премії молодіжної літератури та Премії ім. Майкла Л. Принца. А роман &quot;Ми були брехунами&quot; вважається одним із найкращих книг 2014 року для молоді за версією The New York Times, Publishers Weekly та The Wall Street Journal. Під іменем Емілі Дженкінз співпрацює з ілюстраторами та видає дитячі книжки-картинки. Під справжнім іменем також пише й твори для дорослої аудиторії.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

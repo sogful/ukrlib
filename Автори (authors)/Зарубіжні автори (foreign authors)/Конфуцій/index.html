@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Конфуцій — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Конфуцій</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./konfutsiy.webp" alt="Конфуцій" title="Конфуцій" data-full="./konfutsiy.webp" /><img class="side-img side-thumb" src="./konfutsiy_1.webp" alt="Конфуцій" title="Конфуцій" data-full="./konfutsiy_1.webp" /><img class="side-img side-thumb" src="./konfutsiy_2.webp" alt="Реконструкція тіла Конфуція в музеї Rockbound" title="Реконструкція тіла Конфуція в музеї Rockbound" data-full="./konfutsiy_2.webp" /></div>
+        <div class="prose-text">
+          <p>Місце народження: близько 551 до н. е., Цюйфу, Китай</p>
+          <p>Китайський мислитель і філософ</p>
+          <p>Його вчення справило глибокий вплив на цивілізацію Китаю та Східної Азії, ставши основою філософської системи, відомої як конфуціанство. Справжнє ім&#x27;я — Кун, але в літературі часто іменується Кун-цзи, Кун Фу-Цзи (&quot;вчитель Кун&quot;) або просто Цзи — &quot;Вчитель&quot;. І це не випадково: вже у віці трохи більше 20 років він прославився як перший професійний педагог Піднебесної. Однак найбільш ймовірно, що його діяльність відрізнялася набагато більш скромними розмірами, ніж її описують конфуціанці наступних століть. До перемоги легізму школа Конфуція була лише одним з багатьох напрямків в інтелектуальному житті Воюючих Царств, у період, відомий під назвою Сто шкіл. І лише після падіння Цінь відроджене конфуціанство досягло статусу державної ідеології, який зберігся до початку XX ст., лише тимчасово поступаючись місцем буддизму і даосизму. Це, природно, призвело до звеличення постаті Конфуція і навіть її включенню в релігійний пантеон. Судячи по володінню аристократичними мистецтвами, Конфуцій був нащадком знатного роду. В молодості він служив дрібним чиновником у царстві Лу. Це був час занепаду імперії Чжоу, коли влада імператора стала номінальною, руйнувалося патріархальне суспільство і на місце родової знаті прийшли правителі окремих царств, оточені невідомими чиновниками. Крах стародавніх засад сімейно-кланового побуту, міжусобні розбрати, продажність і пожадливість чиновників, біди і страждання простого народу — все це викликало різку критику ревнителів старовини. Усвідомивши неможливість вплинути на політику держави, Конфуцій подав у відставку і відправився в супроводі учнів в подорож по Китаю, під час якого він намагався донести свої ідеї правителям різних областей. У віці близько 60 років Конфуцій повернувся додому і провів останні роки життя, навчаючи нових учнів, а також систематизуючи літературна спадщина минулого Ши-цзин (Книга Пісень), І-цзин (Книга Змін) та ін. Учні Конфуція за матеріалами висловлювань і бесід вчителя склали книгу &quot;Лунь Юй&quot; (&quot;Бесіди і судження&quot;), яка стала особливо шанованою книгою конфуціанства. З класичних книг твором Конфуція безсумнівно можна вважати тільки Чуньцю (&quot;Весна і Осінь&quot;, літопис князівства Лу з 722 по 481 р. до н. е..); потім дуже ймовірно, що він редагував Ши-цзин (&quot;Книга віршів&quot;). Хоча число учнів Конфуція визначається китайськими вченими до 3000, і в тому числі близько 70 найближчих, але насправді ми можемо нарахувати відомих по іменах всього лише 26 безперечних його учнів; найулюбленішим із них був Ян-юань. Вчення Хоча конфуціанство часто називають релігією, в ньому немає інституту церкви, і воно приділяє мало значення теологічних проблем. Ідеалом конфуціанства є створення гармонійного суспільства за стародавнім зразком, в якому кожна особистість має свою функцію. Гармонійне суспільство побудоване на ідеї відданість (чжун, 忠) — лояльності стосовно між начальником і підлеглим, спрямована на збереження гармонії і самого цього суспільства. Конфуцій сформулював золоте правило етики: &quot;Не роби людині того, що не бажаєш собі&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

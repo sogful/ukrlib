@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Головацький Яків Федорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Головацький Яків Федорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./holovatskyy-iakiv-fedorovych.webp" alt="Головацький Яків Федорович" title="Головацький Яків Федорович" data-full="./holovatskyy-iakiv-fedorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Яків Федорович Головацький народився 20 жовтня 1814 р. в с. Чепелях, Золочівського округу в Галичині в багатодітній родині священика. Навчався спочатку у так званій нормальній школі, а в 1825 — 1839 рр. у гімназії та університеті у Львові. Національно-визвольні ідеї М. Шашкевича, &quot;Енеїда&quot; І. Котляревського та збірки народних пісень М. Максимовича запалили Головацького до активної громадської та фольклористичної роботи. Збираючи пісні, описуючи мову і побут народу, він обійшов пішки Галичину, Закарпаття, бував на Буковині і в Угорщині.</p>
+          <p>Починаючи з 30-х років, Я. Головацький листувався з М. Погодіним, О. Бодянським, Я. Колларом, К. Запом, П. Шафариком та іншими славістами і діячами слов&#x27;янського відродження. За участь у виданні &quot;Русалки Дністрової&quot; і зв&#x27;язки з культурними діячами слов&#x27;янського світу перебував під наглядом поліції і посаду священика зміг дістати лише 1842 року. Спочатку жив у с. Микитинцях на Станіславщині (нині Івано-Франківськ), а з 1846 р. у с. Хмелевій тодішнього Чортківського округу. В цей час Головацький видав &quot;Галицькі приповідки, зібрані Ількевичем&quot; (1841), важливу працю &quot;Становище русинів у Галичині&quot; (німецькою мовою, 1846), два збірники &quot;Вінок русинам на обжинки&quot; (разом з братом Іваном; ч. І — 1846; ч. II — 1847).</p>
+          <p>В останні роки життя Головацький стояв осторонь української літератури, не поділяв передових поглядів щодо її розвитку. Літературною працею займався Головацький в 30 — 40-х роках, пізніше виступав як учений. Велика наукова спадщина Головацького досі не зібрана і не вивчена. Помер Я. Головацький 13 травня 1888 р. у м. Вільно. Крім власного прізвища, свої твори підписував псевдонімами і криптонімами: Балагур Яцько; Галичанин; Г-кій; Головацький Ярослав; Я.; Я. Г.; Я. Ф.; Я. Ф. І.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

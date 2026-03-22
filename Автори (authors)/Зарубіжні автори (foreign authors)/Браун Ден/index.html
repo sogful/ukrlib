@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Браун Ден — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Браун Ден</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./braun-den_1.webp" alt="Браун Ден" title="Браун Ден" data-full="./braun-den_1.webp" /><img class="side-img side-thumb" src="./braun-den.webp" alt="Браун Ден" title="Браун Ден" data-full="./braun-den.webp" /></div>
+        <div class="prose-text">
+          <p>Ден Браун народився 22 червня 1964 року в Нью-Гемпширі. Він ріс в інтелігентній сім&#x27;ї. Батьки майбутнього письменника докладали максимум зусиль, щоб його життя разом з сестрою і братом було веселим і радісним. Наприклад, щоб отримати свої різдвяні подарунки діти мали розгадати цілу низку ребусів, і це завжди було так цікаво.</p>
+          <p>У 1986 році Ден Браун отримав диплом бакалавра Севільського університету за фахом лінгвіст. Після закінчення вузу він почав будувати кар&#x27;єру музиканта, сам писав слова та музику для пісень і навіть випустив кілька компакт-дисків. Однак, так як з гастрольною діяльністю у нього не склалося, з музикою було покінчено.</p>
+          <p>У 1998 році письменник, якого завжди цікавили філософія, історія релігії, криптографія та таємні організації, опублікував свій перший роман-трилер — &quot;Цифрова фортеця&quot; (&quot;Digital Fortress&quot;), який швидко став бестселером серед користувачів Інтернету. Роман розповідає про тонкій межі між громадянської свободою і національної безпекою. Подальші його твори також створювалися на &quot;стику жанрів&quot;: у 2000 році світ побачив інтелектуальний конспірологічний детектив &quot;Ангели і демони&quot; (&quot;Angels and Demons&quot;). У 2001 році вийшов трилер &quot;Точка обману&quot; (&quot;Deception Point&quot;), що піднімає проблему моральності в політиці та національній безпеці. У 2003 році пригоди професора Роберта Ленгдона з &quot;Ангелів і демонів&quot; були продовжені романом &quot;Код да Вінчі&quot; — в перший же день після публікації він був проданий у кількості 6 тисяч екземплярів, а загальний світовий тираж бестселерів Дена Брауна, перекладених на 40 мов, наближається до 81 мільйону примірників. За перший тиждень продажів роман &quot;Код да Вінчі&quot; посів перше місце в списку Нью-Йоркських бестселерів і розмістився на вершині бестселерів Журналу Уолл-Стріт. Пізніше став хітом номер № 1 у всіх великих рейтингах бестселерів в країні. У травні 2006 у світ вийшла екранізація роману &quot;Код да Вінчі&quot;. У вересні 2009 року опубліковано роман &quot;Втрачений символ&quot; (&quot;The Lost Symbol&quot;), який відкриває завісу таємниці масонського минулого Америки і стає третім романом про Роберта Ленгдона. У травні 2013 року вийшла четверта частина цієї серії — &quot;Інферно&quot;. Письменник також займається журналістикою, регулярно публікується в журналах &quot;Newsweek&quot;, &quot;TIME&quot;, &quot;Forbes&quot;, &quot;People&quot;, &quot;GQ&quot;, &quot;The New Yorker&quot;, виступає в різних популярних радіо-і телепрограмах.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

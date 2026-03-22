@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нюквист Герд — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Нюквист Герд</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./niukvyst-herd.webp" alt="Нюквист Герд" title="Нюквист Герд" data-full="./niukvyst-herd.webp" /><img class="side-img side-thumb" src="./niukvyst-herd_1.webp" alt="Нюквист Герд" title="Нюквист Герд" data-full="./niukvyst-herd_1.webp" /><img class="side-img side-thumb" src="./niukvyst-herd_2.webp" alt="Нюквист Герд" title="Нюквист Герд" data-full="./niukvyst-herd_2.webp" /><img class="side-img side-thumb" src="./niukvyst-herd_3.webp" alt="Нюквист Герд" title="Нюквист Герд" data-full="./niukvyst-herd_3.webp" /></div>
+        <div class="prose-text">
+          <p>Gerd Nyquist</p>
+          <p>Народилася: 15 марта 1913 р Крістіанія, Норвегія</p>
+          <p>Померла: 23 листопада 1984 р Осло, Норвегія Герд Нюквіст (норв. Gerd Nyquist; 1913-1984) — норвезька письменниця, відома, перш за все, своїми детективними романами. Писала також недетектівние твори, в тому числі п&#x27;єси, оповідання для дітей. Була редактором кількох детективних антологій. Перший детектив, написаний Нюквіст, — &quot;Покійний просив квітів не приносити&quot; (1960). Деякі з романів Нюквіст написані в дусі романів Агати Крісті. Нюквіст була першим (з 1972 по 1976) головою письменницької клубу &quot;Ривертон&quot;, названого на честь відомого норвезького письменника-детективіста Стейна Ривертон; в 1978 Герд отримала почесний приз клубу &quot;Ривертон&quot;. Найбільш відомий роман Нюквіст — &quot;Трава нічого не ховає&quot; (1966), перший з романів Герд, переведених на російську мову. Твір відрізняється високою культурою листи і інтелектуальним рівнем. У романі чимало літературних ремінісценцій (змінена рядок з вірша Карла Сендберга на надгробку; декламація злочинницею монологу шекспірівської Джульєтти — важливу роль в детективі грають перші, дуже рідкісні видання творів Шекспіра; і ін.). Незважаючи на те, що дія відбувається в типовій для багатьох детективних романів &quot;готичної&quot; обстановці, манера оповіді незвичайна, як незвично і зображення основних персонажів. Роман має також нетиповою кінцівкою — вбивці не тільки вдається уникнути правосуддя через відсутність доказів, але і домогтися наміченої мети.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Свінген Арне — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Свінген Арне</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./svinhen-arne.webp" alt="Свінген Арне" title="Свінген Арне" data-full="./svinhen-arne.webp" /><img class="side-img side-thumb" src="./svinhen-arne_1.webp" alt="Свінген Арне" title="Свінген Арне" data-full="./svinhen-arne_1.webp" /></div>
+        <div class="prose-text">
+          <p>Арне Свінген народився 10 липня 1967 року в Осло.</p>
+          <p>Був журналістом у Nye Takter та Arbeiderbladet, працював у НТВ і був редактором музичного журналу BEAT. Пише книги у різних жанрах, але найкраще відомий своїми книгами для дітей та молоді.</p>
+          <p>Письменник Арне Свінген подвійно дебютував у 1999 році романом &quot;Людина дії&quot; для дорослих читачів і дитячою книжкою &quot;Флеккен&quot;. Він написав найбільше дитячих книжок, таких як дев&#x27;ять книжок із серії про антигероя Губерта, серіал жахів &quot;Темний світ Свінга&quot;, гумористичний серіал &quot;Божевільний світ Свінга&quot;, серіал про напруженість &quot;Агент Елвін Гріфф&quot; і фантастичний серіал &quot;Бендік і монстр&quot;. Серед його найвідоміших дитячих романів — &quot;Снитч&quot;, &quot;Усі мої друзі — вампіри&quot;, &quot;Тихий крик&quot;, &quot;Балада про зламаний ніс&quot; і дві книги про Revolvergutten. Разом з авторами Йоном Ево, Інгунном Аамодтом і Томом Егеландом він написав серію жахів Marg &amp; Bein. Він написав низку молодіжних книжок, у тому числі &quot;Midt i svevet&quot;, &quot;Primitive Marsupial&quot;, &quot;All I owe you to a beating&quot; і &quot;Man dier litt er durg&quot;, а також написав два молодіжні романи разом з Хелен Урі. Він також написав кілька романів для дорослих, наприклад &quot;Pøbelkomiteen&quot; про дорослішання в Гроруді та рок-роман &quot;Людина, яка пройшла крізь звуковий бар&#x27;єр&quot;. Влітку 2016 року &quot;Балада про зламаний ніс&quot; вийшла в американському видавництві Simon &amp; Schuster і отримала премію Bachelder Honor Book Award. За кількома його книгами знято фільми. &quot;Найкрутіші хлопці&quot; були перетворені в повнометражний фільм, книги про Губерта були перетворені в 26 мультфільмів, а &quot;Бендік і чудовисько&quot; перетворені в анімаційний короткометражний фільм, який отримав низку міжнародних нагород. Свінген є автором подкасту &quot;Світ дитячої книги Свінгена&quot;, де він взяв інтерв&#x27;ю у понад 100 інших норвезьких авторів та ілюстраторів дитячих і юнацьких книг. У 2019 році він організував літературний фестиваль Gutta.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

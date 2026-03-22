@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>О&#x27;Флаерті Лаєм — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>О&#x27;Флаерті Лаєм</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./oflaerti-laiem.webp" alt="О&#x27;Флаерті Лаєм" title="О&#x27;Флаерті Лаєм" data-full="./oflaerti-laiem.webp" /><img class="side-img side-thumb" src="./oflaerti-laiem_1.webp" alt="О&#x27;Флаерті Лаєм" title="О&#x27;Флаерті Лаєм" data-full="./oflaerti-laiem_1.webp" /></div>
+        <div class="prose-text">
+          <p>О&#x27;Флаерті Лаєм народився 28 серпня 1896 року в бідній селянській родині. У 1908 році вступив одночасно до трьох коледжів. Серед предметів його цікавила теологія, і він збирався стати кліриком. Однак у 1914 р. він вступив до Дублінського університету, але незабаром записався до Ірландського гвардійського піхотного полку. У 1917 році О&#x27;Флаерті вирушає солдатом на Першу світову війну, де його важко поранять і в 1918 році звільняють у запас. Після війни багато подорожує країнами Середземного моря, США, Канадою, Південною Америкою та Близьким Сходом. Працював матросом на торгових судах, шахтарем, офіціантом, бродячим робітником.</p>
+          <p>У Бостоні він зустрівся зі своїм братом, який брав активну участь у соціалістичному русі, що пробудило в О&#x27;Флаерті ще більший інтерес до комунізму. А вже в 1920 році, повернувшись на батьківщину, він вступає до Соціалістичної партії Ірландії (в 1921 Комуністична партія Ірландії, що прийняла назву) і бере участь у вуличних зіткненнях разом з лівим крилом ІРА.</p>
+          <p>Після проголошення 12 січня 1922 року Ірландської Вільної держави він відходить від політики і присвячує себе літературі, багато подорожує Європою, але найбільше любить Францію. Після участі в революційній діяльності в Ірландії О&#x27;Флаерті в 1922 році оселився в Англії; він повернувся до Дубліна в середині 1920-х років. Серед його книжок — &quot;Жінка твого сусіда&quot; (1923), його успішний перший роман; &quot;Чорна душа&quot; (1924) — історія змученого колишнього солдата, який шукає спокою на віддаленому західному острові; &quot;Інформер&quot; (1925; екранізація оскароносного фільму Джона Форда, 1935) про розгубленого революціонера, який зраджує свого друга під час ірландських &quot;негараздів&quot;; &quot;Скерретт&quot; (1932), схвалена критиками історія конфлікту між парафіяльним священиком і вчителем; Голод (1937), відтворення впливу голоду в Ірландії 1840-х років на окремих осіб невеликої громади; Оповідання (1937; перероб. вид. 1956); &quot;Повстання&quot; (1950), роман про Великоднє повстання 1916; The Pedlar&#x27;s ​​Revenge and Other Stories (1976); а також кілька інших романів і збірок оповідань. Його автобіографія &quot;Позор диявола&quot; була опублікована в 1934 році.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

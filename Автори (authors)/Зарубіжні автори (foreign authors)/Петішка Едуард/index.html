@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Петішка Едуард — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Петішка Едуард</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./petishka-eduard_1.webp" alt="Петішка Едуард" title="Петішка Едуард" data-full="./petishka-eduard_1.webp" /><img class="side-img side-thumb" src="./petishka-eduard.webp" alt="Петішка Едуард" title="Петішка Едуард" data-full="./petishka-eduard.webp" /></div>
+        <div class="prose-text">
+          <p>Чеський поет, прозаїк, новеліст, прозаїк, автор книжок для дітей та юнацтва, драматург, теоретик дитячої літератури та перекладач, батько письменника Мартіна Петішки (пише під псевдонімом Едуард Мартін) – автор понад дев&#x27;яноста найменувань. які звертаються до п&#x27;ятого покоління читачів. Його книги перекладені кількома десятками мов, а також користуються успіхом за кордоном. Загальні продажі його робіт перевищили вісімнадцять мільйонів штук.</p>
+          <p>Едуард Петішка народився 14 травня 1924 року в Празі. За збігом обставин його батько знав двох великих чеських письменників – зі школи з Ярославом Гашеком, з роботи з Францом Кафкою. Едуард Петішка ходив до гімназії в Брандис-над-Лабем. Виходячи зі свого музичного таланту, який він поділив з матір&#x27;ю, він повинен був продовжити навчання в консерваторії, куди його навіть прийняли, але Друга світова війна стала на заваді цьому плану. Під час окупації він працював і лише після 1945 року вступив до Карлового університету, щоб вивчати германістику та порівняльне літературознавство. У 1949 році він отримав докторський диплом і його подальша кар&#x27;єра рухалася в бік перекладацької та власної літературної діяльності. На військовій службі він провів лише перші роки 1950-х років.</p>
+          <p>З 1947 року він був активним в Umelecká beseda, одружився 1948 року. Хоча він зустрів близьких друзів із числа письменників у будинку в Брандізе-над-Лабем, де він оселився, він не був публічно залученим і зосередився на своїй літературній праці на відносно вільна зона дитячої літератури. Лише в шістдесятих він знову публікує дорослу прозу. Помер 6 червня 1987 року в Маріанських Лазнях. Сімейну письменницьку традицію зберіг його син Мартін, який друкувався під іменем Едуард Мартін.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Балясна Рива Наумівна — Біографія стисло</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Балясна Рива Наумівна</h1>
+      <h2>Біографія стисло</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./baliasna-ryva-naumivna_2.webp" alt="Балясна Рива Наумівна" title="Балясна Рива Наумівна" data-full="./baliasna-ryva-naumivna_2.webp" /><img class="side-img side-thumb" src="./baliasna-ryva-naumivna.webp" alt="Балясна Рива Наумівна" title="Балясна Рива Наумівна" data-full="./baliasna-ryva-naumivna.webp" /><img class="side-img side-thumb" src="./baliasna-ryva-naumivna_1.webp" alt="Балясна Рива Наумівна" title="Балясна Рива Наумівна" data-full="./baliasna-ryva-naumivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Балясна Рива Наумівна</p>
+          <p>(8.03.1910-1980)</p>
+          <p>Рива Наумівна Балясна народилася 8 березня 1910 року в містечку Радомишлі Житомирської області в родині бідняка. Рано залишилась без батьків, виховувалась у дитячому будинку. З 15 років почала працювати спочатку у школі ФЗН, а згодом на першій взуттєвій фабриці Києва. Пізніше вона закінчила відділ профосвіти Київського інституту народної освіти і аспірантуру, де здобула спеціальність учителя єврейської мови та літератури. У1934 році вийшла перша книжка віршів &quot;Переклик&quot;. З того часу вірші та проза неодноразово почали виходити єврейською мовою, а також в перекладах українською та російською мовами. Під час Вітчизняної війни перебувала в евакуації, активно виступала в періодичній пресі та на радіо. Нагороджена медаллю &quot;За доблесну працю у Великій Вітчизняній війні 1941-1945 рр.&quot;. Доля Риви Наумівни увібрала в себе трагедію цілого народу: вона одна з кращих представників творчої інтелігенції, була репресована в 1952 році, а в 1956 році справу її припинено за відсутністю складу злочину. На тлі страшної життєвої трагедії її поезії напрочуд ніжні, сповнені жіночності й любові. Чи не тому серед перекладачів цих творів – ціла плеяда майстрів письменства: Максим Рильський, Володимир Сосюра, Іван Драч, Дмитро Павличко, Наум Тихий, Юнна Мориц та ін. Окремими виданнями вийшли збірки віршів та поем &quot;Світлі доріжки&quot; (1940), &quot;Дівчинка з Іванкова&quot; (1947), &quot;Юнь моя&quot; (1961), &quot;Четверть віку&quot; (1973) та інші. Померла Рива Наумівна Балясна 1980 році у Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

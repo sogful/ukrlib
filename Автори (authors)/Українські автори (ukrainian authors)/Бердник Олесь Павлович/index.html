@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бердник Олесь Павлович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бердник Олесь Павлович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./berdnyk-oles-pavlovych.webp" alt="Бердник Олесь Павлович" title="Бердник Олесь Павлович" data-full="./berdnyk-oles-pavlovych.webp" /><img class="side-img side-thumb" src="./berdnyk-oles-pavlovych_1.webp" alt="В селі Кийлів з донькою Мирославою, поч. 1960-х" title="В селі Кийлів з донькою Мирославою, поч. 1960-х" data-full="./berdnyk-oles-pavlovych_1.webp" /><img class="side-img side-thumb" src="./berdnyk-oles-pavlovych_2.webp" alt="Бердник Олесь Павлович" title="Бердник Олесь Павлович" data-full="./berdnyk-oles-pavlovych_2.webp" /><img class="side-img side-thumb" src="./berdnyk-oles-pavlovych_3.webp" alt="Бердник Олесь Павлович, 1940 р" title="Бердник Олесь Павлович, 1940 р" data-full="./berdnyk-oles-pavlovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>БЕРДНИК Олександр (Олесь) народився 27 листопада 1926 р. в с.Вавилово Херсонської (зараз — Миколаївська) обл. в родині коваля. 1943-45 рр. — участь в бойових діях. 1947-49 рр. — навчання у театральній студії при театрі ім. Івана Франка (м. Київ). 1949 —55 рр. — ув&#x27;язнення по статті № 58 КК СРСР (&quot;Антиреволюційна агітація та пропаганда&quot;). 1957 р. — виходить перша книга &quot;Поза часом і простором&quot;. Прийнятий до СПУ. 1958-1971 рр. — літературна діяльність. За цей час вийшло 23 твори — науково-фантастичні романи та повісті. Основні: &quot;Стріла часу&quot;, &quot;Діти Безмежжя&quot;, &quot;Хто ти?&quot;, &quot;Подвиг Вайвасвати&quot;, &quot;Чаша Амріти&quot;, &quot;Зоряний Корсар&quot; (на даний час роман перекладено 26 мовами світу).</p>
+          <p>1973 р. — виключений зі СПУ. Переслідування з боку КГБ. 1971-1985 рр. — виходять книги за кордоном, зокрема &quot;Зоряний Корсар&quot;, &quot;Прометей&quot;, &quot;Свята Україна&quot;, &quot;Апостол безсмертя&quot; (англійською мовою), &quot;Кажу вам — Священні знаки&quot;. 1979 р., 6 березня — заарештований та засуджений до 5 років ув&#x27;язнення за ст. 62 — 2 КК УРСР &quot;Участь та діяльність в УГГ&quot;. 1984 р. — справа переглядається. Помилування. 1985 р. — виходить роман &quot;Вогнесміх&quot;. У цьому ж році прийнятий до СПУ. 1986-1996 рр. — літературна діяльність. За цей час вийшло 11 творів, зокрема &quot;Лабіринт Мінотавра&quot;, &quot;Пітьма вогнища не розпалює&quot;, &quot;Камертон Дажбога&quot; (продовження &quot;Зоряного Корсара&quot;), &quot;Тайна Христа&quot;, &quot;Песнь Надземная&quot; (в-во &quot;София&quot;,Київ).</p>
+          <p>18 березня 2003 року Олесь Бердник пішов з життя. Похований у с. Гребені Київської області, на території своєї дачі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

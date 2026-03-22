@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Абу-ль-Фарадж — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Абу-ль-Фарадж</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./abu-l-faradzh.webp" alt="Абу-ль-Фарадж" title="Абу-ль-Фарадж" data-full="./abu-l-faradzh.webp" /></div>
+        <div class="prose-text">
+          <p>Абу-ль-Фарадж бен-ель-Гарун — сирійський церковний діяч, письменник, учений. Його справжнє ім&#x27;я — Григорій Бар-Ебрей, він уродженець Малатьи (тер. Сучасної Туреччини). Настільки дивне для непосвяченого людини змішання імен, що мають різну національну приналежність, пояснюється особливостями біографії цього видатного середньовічного діяча. &quot;Бар-Ебрей&quot; перекладається як &quot;син єврея&quot; — це прізвисько, відбивало його походження. Батько став християнином яковитский обряду, а його син під час таїнства хрещення отримав ім&#x27;я Григорій. Однак популярність пізніше він придбав під своїм літературним ім&#x27;ям, тобто саме як Абу-ль-Фарадж, оскільки створював праці, головним чином, на арабському і сирійському мовами.</p>
+          <p>Абу-ль-Фарадж зовсім юним зайняв пост єпископа Гули: йому було всього 19 років. У 1264 відбулося його призначення на пост мафріана християн-яковітов Месопотамії, на якому він перебував до кінця життя. Його церковне служіння не було легким, оскільки за часом збіглося з настанням монголів на територію Передньої Азії. Загарбники представляли серйозну загрозу для самого існування християнства, і Бар-Ебрею довелося докласти чимало зусиль для того, щоб положення його єдиновірців залишилося непорушним. У ньому виявився талант посередника — розумного, гнучкого, але в той же час принципового, твердого характером. Ці якості змусили монголів перейнятися до нього повагою, не кажучи вже про авторитет, який він завоював серед співвітчизників.</p>
+          <p>Однак не тільки завдяки ревному пастирського служіння Абу-ль-Фарадж отримав популярність. Будучи особистістю неймовірно багатогранної, він залишив після себе велику наукову і літературну спадщину, яке поставило його в один ряд з самими прославленими і творчо плідними письменниками і вченими Сирії. Історія, філософія, теософія, історія, риторика, астрономія, медицина, граматика — у всіх цих науках Абу-ль-Фарадж бен-ель Гарун залишив помітний слід. Широта і глибина знань була по достоїнству оцінена його сучасниками, які дали йому прізвисько &quot;Краса століття&quot;. Помер Григорій Бар-Ебрей в Мараге (тер. Сучасного Ірану) 1286 році. Величезну популярність здобула його &quot;Книга цікавих історій&quot;, написана в жанрі сатири і викриває людські вади. Вона являє собою збірник повчальних афоризмів, мудрих і дотепних висловів, смішних і повчальних історій, взятих як з невичерпних анналів близькосхідного фольклору, так і з письмових джерел на різних мовах. Однак про що б не писав цей автор, в кожному його творінні можна помітити відсутність поверховості, бажання встановити причини і глибинну взаємозв&#x27;язок явищ і подій.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

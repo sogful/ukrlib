@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Говард Майкл — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Говард Майкл</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hovard-maykl.webp" alt="Говард Майкл" title="Говард Майкл" data-full="./hovard-maykl.webp" /></div>
+        <div class="prose-text">
+          <p>Сер Майкл Еліот Ховард, О.М., Ч., CBE, MC (народився 29 листопада 1922 р.) — відставний британський військовий історик, колишній професор історичної історії війни в Чихеле та професор сучасної історії в Оксфордському університеті Роберт Ловетт, професор Військова і військова історія Єльського університету. Говард отримав освіту в Веллінгтонському коледжі та Християнській церкві в Оксфорді (з посередництвом у Другій світовій війні).</p>
+          <p>Центр його історії війни в королі Сера Майкла Говарда був запущений у 2014 році на його честь.</p>
+          <p>Він найвідоміший за розширення військової історії за межами традиційних кампаній та бойових рахунків, щоб включити більш широкі дискусії про соціологічне значення війни. У своєму звіті про франко-німецьку війну 1870-71 рр. Говард подивився, як прусська та французька армії відобразили соціальну структуру двох народів. Він також був провідним перекладачем творів Карла фон Клаузевіца наприкінці ХХ століття. Говард допоміг знайти Департамент військових досліджень та Центр лідделла Харта для військових архівів в Королівському коледжі Лондона. В даний час він є почесним президентом Міжнародного інституту стратегічних досліджень, який він також допоміг створити, і членом Британської академії. Серг Майкл був заколотним в 1986 році і був призначений на орден сподвижників честі в 2002 році та орденом &quot;За заслуги&quot; в 2005 році. Після Оксфорда Говард розпочав свою педагогічну роботу в Королівському коледжі Лондона, де він створив відділ військових досліджень. З його позиції у короля він був одним з британців, найбільш впливових у розробці стратегічних досліджень як дисципліну, яка об&#x27;єднала уряд, військову та наукову сферу, щоб обміркувати оборонну та національну безпеку більш широко та глибше, ніж це було зроблено раніше. Він був одним із засновників Міжнародного інституту стратегічних досліджень. З його сім&#x27;ї, освіти та служби в гвардіях він мав великі зв&#x27;язки на вищих рівнях британського суспільства, і він з великою увагою працював над їх інтелектуальними цілями. Він мав тісні зв&#x27;язки в Лейбористській партії, але також використовував його як радник Маргарет Тетчер. Під час Другої світової війни, Говард був введений в дію в охороні Coldstream і боровся в Італійській кампанії. Він був двічі поранений і виграв військовий хрест у Салерно.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

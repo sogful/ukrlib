@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бедьє Жозеф — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бедьє Жозеф</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bedie-zhozef.webp" alt="Бедьє Жозеф" title="Бедьє Жозеф" data-full="./bedie-zhozef.webp" /><img class="side-img side-thumb" src="./bedie-zhozef_1.webp" alt="Бедьє Жозеф" title="Бедьє Жозеф" data-full="./bedie-zhozef_1.webp" /></div>
+        <div class="prose-text">
+          <p>Жозеф Бедьє — французький філолог-медієвіст (розділ історичної науки, який вивчає події, побут, культуру та мистецтво, що характерні для середньовіччя.)</p>
+          <p>Народився 28 січня 1864 в Парижі.</p>
+          <p>Жозеф Бедьє за походженням — бретонець. Дитинство провів на о. Реюньйон. В 1883 році вступив до Еколь Нормаль. Відвідував також лекції в Еколь Пратік і Коллеж де Франс, де познайомився з Гастоном Парісом, який став його науковим керівником. В 1889 —1891 рр. викладав в університеті Фрібура, з 1891 року — на філологічному факультеті університету в місті Кан. У роки Першої світової війни працював в Міністерстві оборони. Переклав сучасною французькою і підготував критичні видання &quot;Фабліо&quot; (1893), &quot;Трістана та Ізольди&quot; (1900), &quot; Пісні про Роланда &quot;(1921). Наукову полеміку викликала його книга &quot;Епічні оповіді. Про походження французьких жест &quot;(1908—1913), з її критикою виступив Рамон Менендес Підаль. &quot;Роман про Трістана та Ізольду&quot; в переказі Бедьє переклав українською Максим Рильський. Помер 29 серпня 1938, Гран-Серр, Рона-Альпи.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Геддон Марк — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Геддон Марк</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./heddon-mark.webp" alt="Геддон Марк" title="Геддон Марк" data-full="./heddon-mark.webp" /><img class="side-img side-thumb" src="./heddon-mark_1.webp" alt="Геддон Марк" title="Геддон Марк" data-full="./heddon-mark_1.webp" /><img class="side-img side-thumb" src="./heddon-mark_2.webp" alt="Геддон Марк" title="Геддон Марк" data-full="./heddon-mark_2.webp" /></div>
+        <div class="prose-text">
+          <p>Марк Геддон (народився 28 жовтня 1962 року) — англійський письменник, художник, сценарист, володар Уітбредовской премії за книгу &quot;Загадковий нічний інцидент із собакою&quot;. Народився в місті Нортгемптон, навчався в Оксфордському університеті, де в 1981 році отримав ступінь бакалавра мистецтв з англійської мови та літератури. У 1984 році захистив магістерську дисертацію в Единбурзькому університеті.</p>
+          <p>За своє життя Геддон змінив декілька професій: деякий час працював в театральній касі, розвозив пошту. Після захисту магістерської дисертації почав займатися ілюструванням різноманітних видань, зокрема дитячих книжок. Незабаром Геддон сам починає письменницьку діяльність. У 1987 році вийшла його перша дитяча книжка Gilbert&#x27;s Gobstopper. Сьогодні автор написав десятки дитячих творів, серед яких Toni and the Tomato Soup (1988), Titch Johnson, Almost World Champion (1993), Agent Z and the Killer Bananas (2001) та інші.</p>
+          <p>В молодості Марку Геддону довелося працювати з людьми, хворими на аутизм, і людьми з обмеженими можливостями. Цей досвід підштовхнув його до написання у 2003 році першої книги для дорослих &quot;Загадковий нічний інцидент із собакою&quot;, в якій розповідь ведеться від імені хлопчика-аутиста. Цікавий факт: ця книга була задумана автором як роман для дорослих, проте у видавництві вона була прийнята за зразок дитячої літератури. Книга &quot;Загадковий нічний інцидент із собакою&quot; у 2004 році у Великобританії стала переможцем в номінації &quot;Найкращий роман&quot; і &quot;Книга року&quot;, була відзначена спеціальним призом премії Commonwealth Writers&#x27; Prize в номінації &quot;Найкраща перша книга&quot;. Завдяки цьому твору Марк Геддон у 2004 році увійшов до десятки найкращих підліткових авторів — переможців премії Alex Awards.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

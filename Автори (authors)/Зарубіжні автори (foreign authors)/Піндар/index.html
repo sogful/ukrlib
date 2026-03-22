@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Піндар — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Піндар</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pindar.webp" alt="Піндар" title="Піндар" data-full="./pindar.webp" /></div>
+        <div class="prose-text">
+          <p>Піндар (520 — 450 років до нашої ери) — ліричний поет, уродженець Кіноскефал (передмістя Фів у Беотії). Поет називав себе фівянином, а Фіви — своєю батьківщиною, матір&#x27;ю. Кіноскефали лежали біля священної гори Гелікона у джерела Дірки. Гора вважалася місцем проживання Муз, що користувалися водою з джерела, від якого Піндар отримав ім&#x27;я діркейського лебедя. Батько Піндара (Даїфант), належав до знатного роду Егеїдів, глава якого був супутником засновника Фів, Кадма, а члени супроводжували Гераклідів до Пелопоннесу. Із Спарти Егеїди вивели колонію на острів Феру, звідки колоністи на чолі з Баттом вийшли до Лівії і заснували Кірену. Сам поет розповідає про це у Лівійській оді. Род Егїїдів був люб&#x27;язний Богам, особливо Аполлону, вождеві Муз, і Аммонському Зевсу.</p>
+          <p>Народження поета збіглось зі святом Аполлона у Дельфах — з піфійськими іграми. Лірична хорова поезія греків, що знайшла у Піндарі досконалого представника, була невіддільна від співу, музики і танців; всім цим мистецтвам Піндар вчився у рідному будинку, де гра на флейті була спадковою, частково у беотійських поетес Міртіс і Корінни, а головним чином у Афінах — у Аполлодора, Агафокла, Ласа.</p>
+          <p>У Афінах він мав змогу познайомитись з поезією Сімоніда кейського та Есхіла. Знатне походження, близькість до культів Богів, родинні оповіді та сама природа рідних місць повинні були повідомити поетичному даруванню Піндара напрям переважно релігійний і урочистий, співчутливий тогочасним владикам міст і могутнім аристократам, вільний від місцевої або партійної винятковості. Ні в уривках, ні в переможних піснях, що цілком збереглися, неможливо відшукати навіть натяків на симпатію поета до будь-якої форми правління або до будь-якої із грецьких держав. Як співець, Піндар жадає слави у всіх еллінів. Понад усе ненависні йому лайка і розбрат (&quot;навіть дурням легко розхитати державу, але важко відновити її без допомоги Богів&quot;). Він прославляє мирні подвиги, цивільні і особисті доброчесності, вихваляє світ і згоду. У гарячому заклику до світу його сучасник Полібій бачить спорідненість поета із фівськими аристократами, із зрадниками Еллади під час навали Ксеркса. Але цілі епінікії, уривки віршів, свідки засвідчують, що Піндар розділяв загальну радість еллінів з нагоди перемоги над персами і відкрито визнавав за афінянами і егінетами вищу заслугу у справі охорони Еллади від посягань варварів. У цілісному вигляді до теперішнього часу дійшов лише останній цикл віршів, по мірі важливості загальноеллінських свят розташованих у чотирьох книгах: Олімпійські оди (чотирнадцять), Піфійські оди (дванадцять), Немейські оди (одинадцять), Істмійські оди (сім). Як епінікії (переможні пісні), так і всі інші вірші Піндара, належать до хорової лірики.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

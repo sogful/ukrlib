@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Аларкон Педро Антоніо де — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Аларкон Педро Антоніо де</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./alarkon-pedro-antonio-de.webp" alt="Аларкон Педро Антоніо де" title="Аларкон Педро Антоніо де" data-full="./alarkon-pedro-antonio-de.webp" /><img class="side-img side-thumb" src="./alarkon-pedro-antonio-de_1.webp" alt="Аларкон Педро Антоніо де" title="Аларкон Педро Антоніо де" data-full="./alarkon-pedro-antonio-de_1.webp" /></div>
+        <div class="prose-text">
+          <p>Педро Антоніо де Аларкон і Аріса — іспанський письменник, поет, драматург і журналіст. Громадський діяч, депутат Кортесов. Майже всі його твори носять суб&#x27;єктивний характер і є в деякому роді автобіографії. Чудовий лірик, романтик і фейлетоніст: в його творах відбиваються душевна теплота, природність і народний дух. Особливо вдалі його гумористичні та легкі сатиричні вірші, а також прозові речі.</p>
+          <p>Народився 10 березня 1833 г., Гвадикс, Іспанія в сім&#x27;ї благородних батьків, які під час війни за незалежність втратили все стан. Призначався до вступу в духовне звання і виховувався в семінарії свого рідного міста. Слухав також протягом короткого часу лекції юриспруденції та філософії в Гранадському університеті, але природна схильність зробила його літератором і поетом. У 1853 р він розлучився з батьками, щоб жити в Кадісі журнальної роботою.</p>
+          <p>Коли в 1854 р спалахнула революція, де Аларкон відправився в Мадрид, де скоро став відомим і зайняв визначне становище як ватажка антібурбонской демократичної Colonia granadina. У 1859 р брав участь в африканському поході під начальством О&#x27;Доннелл. У 1863 р подорожував по Італії і Франції. У 1864 р був депутатом від Гвадікса в кортесах, в 1868 р брав участь в революції і в битві при Алколее. Аларкон спочатку друкував в різних журналах і газетах лише статті політичного і літературного змісту, ряд з яких звернув на себе загальну увагу. У 1859 році вийшла перша збірка його повістей і оповідань &quot;Cantos, articulos y novelas&quot;, який зміцнив за ним славу одного з перших романістів Іспанії. Великий успіх мала його книга &quot;Diario de un testigo de la guerra de Africa&quot; (1860), за якою послідували описи подорожей &quot;De Madrid à Nàpoles&quot; (1861), &quot;La Alpujarra&quot; (1874), &quot;Viajes por España&quot; (1883 ). Згодом Аларкон написав кілька великих романів, які на батьківщині користуються великим успіхом. Як романіст він поєднує в собі кращі риси старих іспанців — багата уява, тонку спостережливість і гумор — з розвиненим розумом і смаком сучасного європейця. Кращим його твором вважається &quot;El sombrero de très picos&quot; (1874) — блискуча картинка провінційного побуту, написана з чисто іспанським штибом. — &quot;El Escàndalo&quot; (1875) — релігійно-філософський роман, зробився предметом пристрасних нападок, 10 видань за 12 років; — &quot;La pródiga&quot;, &quot;El capitan Veneno&quot; (1881) — &quot;El niño de la bola&quot; (1880), вважається кращим з них. Ліричні твори зібрані в книзі &quot;Poesias serias y humoristicas&quot; (1870), Збірники його критичних етюдів і дотепних фейлетонів з&#x27;явилися під заголовками &quot;Amores y amorios&quot; (1875); &quot;Cosas que fueron&quot; (1871); &quot;Novelas cortas&quot; (1884); &quot;Juicios literanos y artisticos&quot; (1883). Для сцени Аларкон Хіба ж не писав з тих пір, як його перша драма, &quot;El hijo prodigo&quot; (1857), завдяки підступам його літературних ворогів провалилася з великим шумом. У 1884 видав свою літературну заповіт &quot;Historia de mis libros&quot; і з тих пір більше не брався за перо. Помер 19 липня 1891 г., Вальдеморо, Іспанія</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

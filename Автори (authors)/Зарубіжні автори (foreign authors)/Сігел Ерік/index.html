@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сігел Ерік — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Сігел Ерік</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./sihel-erik.webp" alt="Сігел Ерік" title="Сігел Ерік" data-full="./sihel-erik.webp" /><img class="side-img side-thumb" src="./sihel-erik_1.webp" alt="Сігел Ерік" title="Сігел Ерік" data-full="./sihel-erik_1.webp" /></div>
+        <div class="prose-text">
+          <p>День народження: 16.06.1937 року</p>
+          <p>Місце народження: Бруклін, Нью-Йорк, США</p>
+          <p>Дата смерті: 17.01.2010 року Американський письменник і сценарист. Ерік Сігал був професором античної літератури в Гарварді, Єлі і Прінстоні, поєднуючи викладання з написанням кіносценаріїв. Сігал, зокрема, був автором сценарію для фільму &quot;Жовтий підводний човен&quot; (&quot;Yellow Submarine&quot;, 1968 рік) групи The Beatles. В кінці 1960-х років Сігал написав повість про кохання студента Гарварду і студентки Редкліффа, вмираючої у фіналі від раку. Повість Сігала не викликала інтересу видавців, і літературний агент автора запропонував йому написати на її основі сценарій, який придбала кіностудія Paramount Pictures. Фільм &quot;Історія кохання&quot; за сценарієм Сігала вийшов на екрани в 1970 році. Картина, головні ролі в якій зіграли Райан о&#x27;ніл (Ryan O Neal) і Елі Макгроу (Ali MacGraw), була номінована на сім премій &quot;Оскар&quot;, у тому числі і за кращий сценарій, проте отримала лише одну нагороду — за музику. &quot;Історія кохання&quot; з моменту її виходу на екрани регулярно включається в списки найбільш романтичних фільмів. Після того, як були розпочаті зйомки фільму, кіностудія Paramount Pictures запропонувала Сігалу переробити сценарій назад у повість. Книга &quot;Історія кохання&quot;, що надійшла в продаж до прем&#x27;єри фільму, стала бестселером в США і була переведена на 33 мови. В 1977 році було видано продовження &quot;Історії кохання&quot; — &quot;Історія Олівера&quot; (oliver&#x27;s Story), яка також була екранізована.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

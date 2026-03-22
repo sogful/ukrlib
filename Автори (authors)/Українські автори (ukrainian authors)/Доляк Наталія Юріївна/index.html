@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Доляк Наталія Юріївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Доляк Наталія Юріївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./doliak-nataliia-iuriivna.webp" alt="Доляк Наталія Юріївна" title="Доляк Наталія Юріївна" data-full="./doliak-nataliia-iuriivna.webp" /><img class="side-img side-thumb" src="./doliak-nataliia-iuriivna_1.webp" alt="Доляк Наталія Юріївна" title="Доляк Наталія Юріївна" data-full="./doliak-nataliia-iuriivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Сучасна українська письменниця й журналістка, драматург та акторка Доляк Наталія Юріївна народилась у Вінниці 4.11.1967р. Навчалася на акторському факультеті Харківського інституту мистецтв, після чого працювала деякий час у театрі ляльок Вінниці, останні роки – тележурналістка обласного телебачення.</p>
+          <p>Написала декілька романів у різних жанрах, автор п&#x27;єс та кіносценаріїв з гостросоціальних та історичних тем. У неспокійні 1990-1992рр. була у Швеції та Фінляндіії. Звідси – її твори про долі й поневіряння пострадянських біженців у Європі та не менш цікаві й гостросюжетні романи і п&#x27;єси, написані за політичними подіями сьогодення. Ціла низка робіт присвячена заробітчанству та емігрантству, ще й досі ця болюча тема її не відпускає.</p>
+          <p>Наталія полюбляє експериментувати, випробувати себе у чомусь новому. Нещодавно дебютувала у якості сценариста й режисера короткометражки, пише детективи, гумористичні оповідання, сімейну сагу та жіночі романи. Причому шукачі романтичного кохання навряд чи будуть задоволені – адже цього в її творах замало. Натомість сучасна дійсність висвітлена дуже талановито й природньо. Лауреатка конкурсів &quot;Коронація слова&quot; різних років за &quot;Гастарбайтерські сезони&quot; (п&#x27;єса), &quot;Біженка&quot; (кіносценарій), романи &quot;Гастарбайтерки&quot;, &quot;Реф&#x27;юджі&quot;, &quot;Чорна дошка&quot;. А роман &quot;Загублений між війнами&quot; приніс їй літературні премії імені В.Симоненка та М.Коцюбинського.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

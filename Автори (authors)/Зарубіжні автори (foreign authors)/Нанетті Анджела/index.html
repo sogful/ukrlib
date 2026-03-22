@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нанетті Анджела — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Нанетті Анджела</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nanetti-andzhela.webp" alt="Нанетті Анджела" title="Нанетті Анджела" data-full="./nanetti-andzhela.webp" /><img class="side-img side-thumb" src="./nanetti-andzhela_1.webp" alt="Нанетті Анджела" title="Нанетті Анджела" data-full="./nanetti-andzhela_1.webp" /><img class="side-img side-thumb" src="./nanetti-andzhela_2.webp" alt="Нанетті Анджела" title="Нанетті Анджела" data-full="./nanetti-andzhela_2.webp" /><img class="side-img side-thumb" src="./nanetti-andzhela_3.webp" alt="Нанетті Анджела" title="Нанетті Анджела" data-full="./nanetti-andzhela_3.webp" /><img class="side-img side-thumb" src="./nanetti-andzhela_4.webp" alt="Нанетті Анджела" title="Нанетті Анджела" data-full="./nanetti-andzhela_4.webp" /></div>
+        <div class="prose-text">
+          <p>Анджела Нанетті (італ. Angela Nanetti; нар. 8 листопада 1942, Будріо, Італія) — італійська письменниця, автор книжок для дітей та підлітків, перекладених більше ніж на 20 мов. Почесний член Національної спілки письменників і художників Італії.</p>
+          <p>Анджела Нанетті народилася в Будріо, провінції Болоньї. Закінчила місцеву школу та коледж в Болоньї, навчалася в Болонському університеті за спеціальністю &quot;Середньовічна історія&quot;. Переїхала в м. Пескара, де викладала італійську мову в молодшій та середній школі. У 80-х роках співпрацювала з Інститутом Італійської енциклопедії, працювала над мультимедійним проектом для італійських дітей, що проживають за кордоном. Редагувала антологію для підлітків &quot;Послання в пляшці&quot; (Messaggi in bottiglia).</p>
+          <p>У 1984 році Анджела Нанетті написала свою першу дитячу книгу &quot;Спогади Адальберто&quot; (Le memorie di Adalberto), яка одразу принесла їй популярність. З того часу письменниця постійно співпрацювала з італійським видавництвом &quot;Einaudi Ragazzi&quot;. У 1995 році залишила викладання і повністю присвятила себе творчості. Повість &quot;Мій дідусь був черешнею&quot; (1998) — родинна історія, розказана від імені маленького хлопчика Тоніно — перекладена 23-ма мовами і відзначена літературними преміями Німеччини, Франції та Словаччини. Книжка увійшла до світового каталогу дитячих книжок &quot;Білі круки&quot; (The White Ravens). У 2003 році була видана повість &quot;Чоловік, який вирощував комети&quot;. У 2003 році книжка увійшла до каталогу &quot;Білі круки&quot;. Нагороди 1994 — увійшла до Почесного листа IBBY (Міжнародна рада з дитячої та юнацької книги); 1998 — переможець Літературної премії &quot;Fondazione Cassa di Risparmio di Cento&quot; за &quot;Мій дідусь був черешнею&quot;; 2003 — номінація &quot;Найкращий автор&quot; Національної премії Андерсена; 2004 — номінація на Премію імені Г. К. Андерсена; 2005 — Премія міста Будріо (Італія) у День проголошення Республіки; 2006 — увійшла до Міжнародної ради з дитячої та юнацької книги; 2010 — переможець Літературної премії &quot;Fondazione Cassa di Risparmio di Cento&quot; за &quot;La compagnia della pioggia&quot;; 2012, 2013, 2014 — кандидат на Премію імені Астрід Ліндгрен. Українські переклади Мій дідусь був черешнею Чоловік, який вирощував комети</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Модіано Патрік — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Модіано Патрік</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./modiano-patrik.webp" alt="Модіано Патрік" title="Модіано Патрік" data-full="./modiano-patrik.webp" /><img class="side-img side-thumb" src="./modiano-patrik_1.webp" alt="Модіано Патрік" title="Модіано Патрік" data-full="./modiano-patrik_1.webp" /><img class="side-img side-thumb" src="./modiano-patrik_2.webp" alt="Модіано Патрік" title="Модіано Патрік" data-full="./modiano-patrik_2.webp" /><img class="side-img side-thumb" src="./modiano-patrik_3.webp" alt="Модіано Патрік" title="Модіано Патрік" data-full="./modiano-patrik_3.webp" /><img class="side-img side-thumb" src="./modiano-patrik_4.webp" alt="Модіано Патрік" title="Модіано Патрік" data-full="./modiano-patrik_4.webp" /><img class="side-img side-thumb" src="./modiano-patrik_5.webp" alt="Модіано Патрік" title="Модіано Патрік" data-full="./modiano-patrik_5.webp" /></div>
+        <div class="prose-text">
+          <p>Народження 30.07.1945 року</p>
+          <p>Після навчання у ліцеї Генріха IV в Парижі П. Модіано повністю присвячує себе літературній творчості. Йому було 18 років, коли він написав першу книгу. Першим її читачем став Реймон Кено, він і запропонував її видавництва Галлімар.</p>
+          <p>Патрік Модіано – французький письменник, лауреат багатьох літературних премій, класик сучасної французької літератури, визнаний майстер поетичної прози. &quot;Я народився 30 липня 1945 року в Булонь-Бианкуре, за адресою: Алея Маргарити, будинок 11. Батьки мої познайомилися під час окупації: мій батько — єврей, мати — фламандка…&quot; — так починається &quot;Родовід&quot; (&quot;Un Pedigree&quot;), автобіографічна розповідь, в якому з документальною точністю описується історія родини письменника і егособственная. Історія, яка стане лейтмотивом його творів. Після навчання у ліцеї Генріха IV в Парижі П. Модіано повністю присвячує себе літературній творчості. Йому було 18 років, коли він написав першу книгу. Першим її читачем став Реймон Кено, він і запропонував її видавництва Галлімар. Роман &quot;Площа Зірки&quot; (&quot;La Place de l ‘ Етуаль&quot;), відзначений преміями Фенеона і Роже Нимье, присвячений єврейській темі і антисемітизму. У більш пізніх творах точність опису реалій контрастує з умовністю подій, багато розповідається про самотність, в них присутня неясне відчуття безвиході героїв, що намагаються знайти сліди минулого. Стиль цих творів відзначений суворою стриманістю. П. Модіано лауреат таких престижних літературних премій, як Гран Прі Французької академії Гонкурівська премія, премія книгопродавців і премій Князя Монако і Поля Морана за творчість у цілому.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

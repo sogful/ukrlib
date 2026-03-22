@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Костенко Ліна Василівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Костенко Ліна Василівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kostenko-lina-vasylivna_4.webp" alt="Костенко Ліна Василівна" title="Костенко Ліна Василівна" data-full="./kostenko-lina-vasylivna_4.webp" /><img class="side-img side-thumb" src="./kostenko-lina-vasylivna.webp" alt="Костенко Ліна Василівна" title="Костенко Ліна Василівна" data-full="./kostenko-lina-vasylivna.webp" /><img class="side-img side-thumb" src="./kostenko-lina-vasylivna_1.webp" alt="Костенко Ліна Василівна" title="Костенко Ліна Василівна" data-full="./kostenko-lina-vasylivna_1.webp" /><img class="side-img side-thumb" src="./kostenko-lina-vasylivna_2.webp" alt="Костенко Ліна Василівна" title="Костенко Ліна Василівна" data-full="./kostenko-lina-vasylivna_2.webp" /><img class="side-img side-thumb" src="./kostenko-lina-vasylivna_3.webp" alt="Костенко Ліна Василівна" title="Костенко Ліна Василівна" data-full="./kostenko-lina-vasylivna_3.webp" /><img class="side-img side-thumb" src="./kostenko-lina-vasylivna_5.webp" alt="Костенко Ліна Василівна" title="Костенко Ліна Василівна" data-full="./kostenko-lina-vasylivna_5.webp" /></div>
+        <div class="prose-text">
+          <p>ЛІНА КОСТЕНКО</p>
+          <p>(Нар. 1930 p.)</p>
+          <p>Ліна Василівна Костенко народилася 19 березня 1930р. в містечку Ржищеві на Київщині в родині вчителів. У 1936p. родина перебралася до Києва, де майбутня поетеса закінчила середню школу. Ці скупі дані біографічної довідки стануть хвилюючими поетичними мотивами, коли авторка згодом розповість у віршах про біженські дороги воєнних років і про &quot;балетну школу&quot; замінюваного поля, по якому доводилося ходити, і про перший — написаний в окопі — вірш. Після закінчення середньої школи молода поетеса навчається в Київському педінституті, а згодом — у Московському літературному інституті ім. О. М. Горького, який закінчила 1956р. Ліна Костенко була однією з перших і найпримітніших у плеяді молодих українських поетів, що виступили на рубежі 50—60-х років. Збірки її віршів &quot;Проміння землі&quot; (1957) та &quot;Вітрила&quot; (1958) викликали інтерес читача й критики, а книга &quot;Мандрівки серця&quot;, що вийшла в 1961р., не тільки закріпила успіх, а й засвідчила справжню творчу зрілість поетеси, поставила її ім&#x27;я серед визначних майстрів української поезії. Книги Л. Костенко &quot;Над берегами вічної ріки&quot; (1977), &quot;Маруся Чурай&quot; (1979), &quot;Неповторність&quot; (1980) стали небуденними явищами сучасної української поезії, явищами, які помітно впливають на весь її дальший розвиток. Творчий розвиток Ліни Костенко — поетеси гострої думки і палкого темпераменту — не був позбавлений ускладнюючих моментів. Обмеження свободи творчої думки, різні &quot;опали&quot; в часи застою призвели до того, що досить тривалий час вірші Л. Костенко практично не потрапляли до друку. Та саме в ті роки поетеса, незважаючи ні на що, посилено працювала, крім ліричних жанрів, над своїм найвидатнішим досьогодні твором — романом у віршах &quot;Маруся Чурай&quot;, за який вона в 1987p. була удостоєна Державної премії УРСР імені Т. Г. Шевченка. Перу поетеси належать також збірка поезій &quot;Сад нетанучих скульптур&quot; (1987) та збірка віршів для дітей &quot;Бузиновий цар&quot; (1987). Живе та працює Ліна Костенко в Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

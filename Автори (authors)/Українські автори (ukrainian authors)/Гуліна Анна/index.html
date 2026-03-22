@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гуліна Анна — Автобіографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гуліна Анна</h1>
+      <h2>Автобіографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hulina-anna.webp" alt="Гуліна Анна" title="Гуліна Анна" data-full="./hulina-anna.webp" /><img class="side-img side-thumb" src="./hulina-anna_1.webp" alt="Гуліна Анна" title="Гуліна Анна" data-full="./hulina-anna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Анна Гуліна, народилася 24.10.1988 року в невеличкому місті Жовті Води в сім&#x27;ї шахтаря та бібліотекарки. Виросла серед книжкових полиць дитячої бібліотеки і десятками поглинала казки, повісті, романи, фентезі історії. Користуючись &quot;службовим положенням&quot; завжди була в курсі новинок підліткової літератури і завжди була першою в черзі на свіжевиданий том &quot;Гаррі Поттера&quot;.</p>
+          <p>У школі захоплювалася літературою, тож і в університет пішла вчитися на філолога. Під час навчання в Київсьому Політехнічному Інституті на перекладача разом з подругою написала першу книжку. Натхненням слугувала палка любов до творчості білоруської письменниці Ольги Громико, відомої своєю серією про крутезну рудоволосу відьму Вольху (доречі, рекомендую!). Згодом наше творіння було сховане подалі від очей людських, з надією, що цей опус ніхто окрім авторів не побачить.</p>
+          <p>Але ген письменництва все ж з часом дав про себе знати. Завдання з казкотерапії, покликане допомогти у письмовій формі знайти шляхи вирішення важливої для мене проблеми, стало жити власним життям і розрослося до солідної розповіді, в якій кожен може знайти щось своє. За натхнення дякую коханого чоловіка і дітей, які дали можливість спокійно писати майже автобіографічну казку :)</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

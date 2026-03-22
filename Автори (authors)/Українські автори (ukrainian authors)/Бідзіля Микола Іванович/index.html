@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бідзіля Микола Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бідзіля Микола Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bidzilia-mykola-ivanovych.webp" alt="Бідзіля Микола Іванович" title="Бідзіля Микола Іванович" data-full="./bidzilia-mykola-ivanovych.webp" /><img class="side-img side-thumb" src="./bidzilia-mykola-ivanovych_1.webp" alt="Бідзіля Микола Іванович" title="Бідзіля Микола Іванович" data-full="./bidzilia-mykola-ivanovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Микола Іванович Бідзіля народився 9 грудня 1930, у с. Сасово, Виноградівського району, Закарпатської області. Український державний, політичний, громадський та науковий діяч, вчений у галузі космічної біології, фізіолоґії рослин, біофізики і радіобіолоґії рослин, засекречені дослідження якого пройшли апробацію у космосі, кандидат біологічних наук.</p>
+          <p>Є автором понад 150 праць у галузі біофізики, радіобіології та космічної біології та був нагороджений орденом &quot;За заслуги&quot; III ст. та ювілейною медаллю &quot;20 років незалежності України&quot;. Він був один з організаторів і лідерів Народного руху України, активний діяч на громадській і політичній арені, на рахунку якого знакові для держави рішення. 13 липня 1991 р. на честь першої річниці проголошення суверенітету першим серед 14 районів м. Києва підняв державний прапор України перед Московською районною радою. А 19 серпня того ж року видав розпорядження про незаконність проголошення в УРСР ГКЧП та оголосив єдиною конституційною владою на території Московського району м. Києва районну раду та Київську міську раду народних депутатів.</p>
+          <p>Микола Іванович 17 років присвятив педагогічній діяльності. Викладав курс радіобіології й біофізики в Національному аграрному університеті в м. Києві. Із кінця 1950-х рр. разом із колегами-закарпатцями стихійно гуртував навколо себе земляків — студентів, аспірантів, учених, лікарів, митців, футболістів — щоб допомагали й підтримували одне одного, пам&#x27;ятали своєрідні й унікальні традиції, серед яких зросли на Закарпатті. Із цих починань постало закарпатське земляцтво в столиці, котре у 2000 р. офіційно зареєстрували серед громадських об&#x27;єднань як товариство &quot;Закарпатці в м. Києві&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

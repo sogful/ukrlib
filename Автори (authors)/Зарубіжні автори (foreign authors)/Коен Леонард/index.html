@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коен Леонард — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коен Леонард</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./koen-leonard.webp" alt="Коен Леонард" title="Коен Леонард" data-full="./koen-leonard.webp" /><img class="side-img side-thumb" src="./koen-leonard_1.webp" alt="Коен Леонард" title="Коен Леонард" data-full="./koen-leonard_1.webp" /><img class="side-img side-thumb" src="./koen-leonard_2.webp" alt="Коен Леонард" title="Коен Леонард" data-full="./koen-leonard_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 21 вересня 1934 року в Монреалі, Канада. В єврейській родині вихідців з Литви та Польщі. Освіту отримав в університеті Макгілла. В 1956 видав свою першу поетичну збірку — Let Us Compare Mythologies. Кар&#x27;єру музиканта розпочав у 1967 році, коли познайомився з продюсером Джоном Гаммондом, завдяки якому видав перший альбом — Songs of Leonard Cohen.</p>
+          <p>Спів Коена під акомпанемент акустичної гітари і невеликого гурту з лагідною манерою виконання трохи одноманітний, але дуже теплий бас, красиві поетичні тексти, наповнені релігійними й міжкультурними алюзіями та вкрапленнями гумору (в основному чорного), здобули популярність в інтелектуально вишуканих, орієнтованих на східну культуру наукових і літературних колах тогочасної Америки. Наступні альбоми закріплювали позицію митця. Поворотним альбомом Коена був Death of a Ladies&#x27; Man, що вийшов у 1977 році за участю аранжувальника Філа Спектора. У результаті застосування прийому стіни звуку музика з альбому стала більш інструментальною або, як часто стверджують критики, більш бароковою. Окрім жорсткої гри ритм-секції, електричної гітари і клавішних, аранжування також включає секцію струнних інструментів. Хоча цей альбом є дуже суперечливим, він назавжди підвищив роль інших, окрім лідер-гітари, інструментів, у роботах Коена.</p>
+          <p>Альбом Recent Songs (1979 р.) знаменує повернення до попередньої стилістики, але багатство інструментарію було збережено. У наступному альбомі, Various Positions, з&#x27;явилися синтезатори, а в альбомі — I&#x27;m Your Man — новітні синтезатори уже домінують. Три пісні з альбому The Future були використані у фільмі &quot;Природжені вбивці&quot;. Загалом період 1979—1994 років позначився кількома хітами, такими як The Guests, The Traitor, Hallelujah, Dance Me to the End of Love, I&#x27;m Your Man, Everybody Knows, Closing Time, The Future, або Democracy. У 1994—1999 рр. він жив в дзен-центрі на горі Болд недалеко від Лос-Анджелеса. Він вставав о 2.30, готував їжу для свого господаря, а потім медитував. Протягом п&#x27;яти років, за власним зізнанням, він став іншою людиною. Після кількарічної перерви, Коен повернувся до творчої активності, видавши 2001 року альбом Ten New Songs. Найвідомішими хітами цього альбому стали In My Secret Life, Alexandra Leaving та Boogie Street. Пісні і поезія Коена справили великий вплив на багатьох поетів-піснярів і музикантів. Леонард Коен займає почесне місце у &quot;Канадському музичному залі слави&quot;, з 19 квітня 1991 року є Офіцером ордена Канади, з 10 жовтня 2002 року — Компаньйоном ордена Канади, що є вищою нагородою для громадянина Канади, а з 2008 його ім&#x27;я було вписано до Зали слави рок-н-ролу . На його пісні існує безліч кавер-версій. Коен є лауреатом двох премій Ґреммі — у 2007 як учасник (вокаліст) в альбомі Гербі Генкока River: The Joni Letters, а 2010 — в номінації &quot;за найкращі досягнення протягом життя&quot;. Помер 7 листопада 2016, Лос-Анджелес, Каліфорнія.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

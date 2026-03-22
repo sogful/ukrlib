@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Блажкевич Іванна Омелянівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Блажкевич Іванна Омелянівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./blazhkevych-ivanna-omelianivna.webp" alt="Блажкевич Іванна Омелянівна" title="Блажкевич Іванна Омелянівна" data-full="./blazhkevych-ivanna-omelianivna.webp" /><img class="side-img side-thumb" src="./blazhkevych-ivanna-omelianivna_1.webp" alt="Блажкевич Іванна Омелянівна" title="Блажкевич Іванна Омелянівна" data-full="./blazhkevych-ivanna-omelianivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Іванна Блажкевич народилася 9 жовтня 1886 р. в с. Денисів, нині – Козівського району, в сім&#x27;ї вчителя. Майже не зазнала материнської ласки, бо вже на четвертому році життя втратила матір.</p>
+          <p>Училася спочатку в Денисівській початковій школі, потім у Тернопільській, так званій відділковій, школі. Потім екстерном здала екзамени у Львівській семінарії на вчительський диплом. Відтоді працювала народною вчителькою, вихователькою дитячих садків на Станіславщині (нині – Івано-Франківська область) і Тернопільщині.</p>
+          <p>Багато сил віддаючи боротьбі з неписьменністю в селах, вона не мирилася зі знущаннями панів із простого люду й гостро виступала проти неправди. Її вірші, оповідання, публіцистичні статті друкували прогресивні галицькі газети та журнали. Творча діяльність та громадська робота І. Блажкевич отримали глибоку підтримку О. Кобилянської, У. Кравченко, Т. Бордуляка, з якими письменниця була в дружніх стосунках. У 20-х роках XX століття І. Блажкевич почала писати для дітей. У видавництві &quot;Світ дитини&quot; вийшли одна за одною її книги п&#x27;єс, оповідань, віршів: &quot;Св. Миколай в 1920 р.&quot; (1920), &quot;Тарас у дяка&quot; (1923), &quot;Діло в честь Тараса&quot;, &quot;Вертеп&quot; (обидві – 1924), &quot;Мила книжечка&quot; (1928), &quot;Пушистий король&quot; (1929), &quot;В мамин день&quot; (1931), &quot;Івась-характерник&quot; (1936), &quot;Оповідання&quot; (1937) та ін. Після 1939 р. І. Блажкевич брала активну участь в організації Денисівської семирічної школи, дитячого садка, вчителювала, боролася за культурні перетворення на селі. Вона друкувалася в періодичній пресі, у літературних збірниках. Вийшли книжки І. Блажкевич &quot;Подоляночка&quot; (1958), &quot;Прилетів лелека&quot; (1971), &quot;Чи є в світі щось світліше&quot; (1977), &quot;Прилетіла ластівка&quot; (1986), &quot;У дитячому садочку&quot; (1993) та ін. Автор популярних статей з питань літератури, етнографії та ін. До останніх днів життя вона працювала на літературній ниві: писала мемуари про свої зустрічі з відомими письменниками минулого, нові вірші для дітей. Померла І. Блажкевич 2 березня 1976 р. в рідному селі Денисові. 1993 р. в Тернополі встановлено літературно-мистецьку премію ім. Іванни Блажкевич за кращі твори для дітей.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

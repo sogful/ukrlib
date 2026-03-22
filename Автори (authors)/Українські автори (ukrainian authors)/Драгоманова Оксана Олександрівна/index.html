@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Драгоманова Оксана Олександрівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Драгоманова Оксана Олександрівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./drahomanova-oksana-oleksandrivna.webp" alt="Драгоманова Оксана Олександрівна" title="Драгоманова Оксана Олександрівна" data-full="./drahomanova-oksana-oleksandrivna.webp" /></div>
+        <div class="prose-text">
+          <p>Оксана Олександрівна Драгоманова — українська письменниця, перекладачка, правниця, громадська діячка.</p>
+          <p>Кузина видатної української письменниці Лесі Українки, племінниця Олени Пчілки та Михайла Драгоманова.</p>
+          <p>Народилася 22 грудня 1894 року в Петербурзі у родині лікаря-психіатра Олександра Драгоманова (рідний брат М. П. Драгоманова й Олени Пчілки) та Олександри Кузьміної. З 1895 року жила з батьками у Творках (зараз це околиця міста Прушкув Мазовецького воєводства, 15 км від Варшави, Польща), де тато працював лікарем психіятричного шпиталю. Батьки походили з дворянського роду з Полтавщини, тому дитинство Оксани минало частково й у Гадячі. Після закінчення зі срібною медаллю класичної гімназії у Варшаві, продовжила освіту на юридичному відділі Бестужевських курсів у Петербурзі. Закінчила курси 1912 року, ставши однією з перших жінок-правників у царській Росії. У 1918–1920 рр. Оксана та її чоловік Іван Храпко були службовцями дипломатичної місії Української Держави й УНР у Петрограді, юридичного відділу Міністерства закордонних справ у Києві, дипломатичного корпусу у Відні (після липня 1919 р.). О. Драгоманову-Храпко також включили до складу дипломатичної місії Директорії на Версальську мирну конференцію. Продовжувала студії у Віденському університеті та Сорбонні (Париж) на юридичному факультеті. Працювала в юридичному відділі Міністерства закордонних справ УНР у Відні, Берліні, Парижі (1918–1921). Після поразки визвольних змагань жила в Парижі, Берліні. Засновниця й активістка українського жіночого руху, членкиня управи української секції Міжнародної Жіночої Ліги Миру і Свободи, учасниця міжнародних конгресів цієї організації в Гаазі, Відні, Вашинґтоні. 1924 року емігрувала з Франції до США, прибула до Нью-Йорка 21 квітня. З 1928 року мешкала в Ріо-де-Жанейро (Бразилія) та Буенос-Айресі (Аргентина), працювала у Північноамериканському банку &quot;Бостон&quot; урядовцем польсько-російського відділу. 1931 року очолила перше жіноче українське товариство в Аргентині, була членом Братства Святої Покрови Української автокефальної православної церкви, а також членом правління та головою літературного відділу Спілки українських науковців, літераторів і митців. Брала участь у складанні українсько-іспанського словника &quot;Перші кроки українця в Аргентині&quot;. 1958 року вийшла на пенсію. У грудні 1959 року через недугу серця разом із чоловіком тяжко хвора Оксана Драгоманова-Храпко поїхала лікуватися до США. Померла 3 квітня 1961 року в Лос-Анджелесі (США), похована в штаті Каліфорнія. Перші оповідання опублікувала у збірці &quot;Наша воля&quot; (Відень, 1920). Друкувалася у аргентинській та закордонній українській періодиці, зокрема у літературно-мистецькому журналі &quot;Пороги&quot; (Буенос-Айрес). Видала повість про життя українських поселенців у Аргентині &quot;По той бік світу&quot; (Буенос-Айрес, 1951). Переклала окремі твори Ґі де Мопассана, Шарля де Костера, Жуля Верна та інших західноєвропейських (французьких, іспанських, англійських) письменників.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

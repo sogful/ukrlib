@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ґрубер Йона Ісаакович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ґрубер Йона Ісаакович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./gruber-yona-isaakovych.webp" alt="Ґрубер Йона Ісаакович" title="Ґрубер Йона Ісаакович" data-full="./gruber-yona-isaakovych.webp" /></div>
+        <div class="prose-text">
+          <p>Йона І́саакович Гру́бер (нім. Jona Gruber; 7 березня 1908, Бояни, нині Новоселицький район Чернівецька область — 14 січня 1980, Київ) — єврейський поет і перекладач. Писав німецькою мовою.</p>
+          <p>Народився в сім&#x27;ї приватного вчителя. Навчався у Чернівцях, Австрії, Польщі. 1938 року закінчив Краківський університет.</p>
+          <p>Від 1940 року був на педагогічній роботі. Почав друкуватися у 1930-х роках. Першу збірку віршів &quot;Геть з міста&quot; і повість &quot;Візник&quot; видав 1938 року у Варшаві. У наступні роки вийшли: збірка поезій &quot;Сонце на порозі&quot; (Чернівці, 1940) і повість &quot;Початок&quot; (1943). 1968 року у перекладі українською мовою опубліковано збірку поезій &quot;Розплющеними очима&quot;. Для творчості Грубера характерне поєднання фольклорних і літературних традицій з новаторством, ліризму з філософським осмисленням світу. Перекладав німецькою мовою твори Тараса Шевченка, Лесі Українки (поема &quot;У катакомбах&quot;, 1970; збірка вибраної лірики &quot;Надія&quot;, 1971), Івана Франка, Михайла Коцюбинського, Павла Тичини, Миколи Бажана, Володимира Сосюри, Максима Рильського, Андрія Малишка, Леоніда Первомайського, Ярослава Галана (збірка памфлетів &quot;Нюрнберг, 1945&quot;, 1975), Дмитра Павличка, Бориса Олійника, Івана Драча, Віталія Коротича, а також збірки українських приказок, українських народних казок. Українською мовою окремі твори Грубера переклали Андрій Малишко, Дмитро Павличко, Іван Драч, Борис Олійник, Віталій Коротич, Феофан Скляр, Вілль Гримич, Абрам Кацнельсон та інші. Вірші Грубера увійшли до антології &quot;Загублена арфа&quot; (перше видання — 2002, друге видання — 2008), яка репрезентує німецькомовну поезію Буковини міжвоєнного періоду (1918—1940/1944), а також повоєнну поетичну творчість її представників у діаспорі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

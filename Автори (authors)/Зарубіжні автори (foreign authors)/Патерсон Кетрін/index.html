@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Патерсон Кетрін — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Патерсон Кетрін</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./paterson-ketrin.webp" alt="Патерсон Кетрін" title="Патерсон Кетрін" data-full="./paterson-ketrin.webp" /><img class="side-img side-thumb" src="./paterson-ketrin_1.webp" alt="Патерсон Кетрін" title="Патерсон Кетрін" data-full="./paterson-ketrin_1.webp" /><img class="side-img side-thumb" src="./paterson-ketrin_2.webp" alt="Патерсон Кетрін" title="Патерсон Кетрін" data-full="./paterson-ketrin_2.webp" /></div>
+        <div class="prose-text">
+          <p>Кетрін Патерсон (англ. Katherine Paterson, уроджена Вомелдорф; нар. 31 жовтня 1932, Кіньянь (сучасний Хуай&#x27;ань), Китай) — американська письменниця, авторка дитячих та фентезійних творів, лауреатка цілого ряду премій, зокрема, меморіальної премії Астрід Ліндгрен (2006) та премії Г. К. Андерсена (1998).</p>
+          <p>Народилася 1932 року в Кіньяні (китайська провінція Цзянсу) в родині місіонера Американської пресвітеріанської церкви. Батько працював директором школи для хлопчиків і сприяв укріпленню церковних громад серед місцевого населення. З початком китайсько-японської війни у 1937 році родина змушена шукати притулку в США, а пізніше в Шанхаї. Батько залишається в Китаї. На час, коли Кетрін виповнилося 18 років, родина змінила місце проживання 15 разів.</p>
+          <p>Закінчила середню школу в штаті Вірджинія (США) і вступила до Королівського коледжу в Бристолі. Одночасно викладала в шостих класах сільської школи в Вірджинії. Продовжила освіту в Пресвітеріанській школі християнської освіти в Річмонді, де займалася підготовкою жінок до викладацької і місіонерської роботи. Працювала місіонеркою на острові Сікоку (Японія), вивчила японську мову. В США повертається через чотири роки. В 1962 році отримує ступінь магістра релігійної освіти в нью-йоркській Об&#x27;єднаній богословській семінарії. Одружується з пастором Джоном Патерсоном із Буфало. Має двох власних і двох прийомних дітей дітей — Джона, Давида, Елізабет По Лін (Гонконг) та Мері Кетрін Нахесапечеа (родом із племені апачі-кіован). Живе в Бері (Вермонт).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

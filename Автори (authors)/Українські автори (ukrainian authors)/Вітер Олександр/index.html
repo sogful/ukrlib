@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вітер Олександр — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вітер Олександр</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./viter-oleksandr.webp" alt="Вітер Олександр" title="Вітер Олександр" data-full="./viter-oleksandr.webp" /><img class="side-img side-thumb" src="./viter-oleksandr_1.webp" alt="Вітер Олександр" title="Вітер Олександр" data-full="./viter-oleksandr_1.webp" /></div>
+        <div class="prose-text">
+          <p>Олександр Мірошниченко (псевдонім Олександр Вітер) — актор, режисер, драматург.</p>
+          <p>Народився 26 лютого 1972 року у Києві. Закінчив естрадно-циркове училище (актор розмовного жанру) і КНУТКІТ імені І.Карпенка-Карого (режисер).</p>
+          <p>Працював у Центрі сучасної експериментальної драматургії А.Дяченка, театрі &quot;Бенефіс&quot;, Національному театрі імені І. Франка, театральній майстерні &quot;Сузір&#x27;я&quot;, Київському Камерному театрі, Національний Центр театрального мистецтва імені Леся Курбаса, Муніципальному театрі &quot;Київ&quot;, а також здійснював постановки у Луганську, Одесі, Москві (Росія), Штіпі (Македонія). Є співавтором сценарію і режисером фільму &quot;Сентиментальне полювання за тінню&quot; (студія &quot;Grok&quot;, Київ, премія за кращу жіночу роль на кінофестивалі в Мінську). Також — один із сценаристів 10-серійного серіалу &quot;Заручники землі і неба&quot; (Україна-Ірак). Виконував ролі у кіно і телефільмах, театральних і радіопостановках. Був сценаристом і постановником концертів, вуличних дійств. Працював головним режисером радіоканалу &quot;Культура&quot;. Засновник всеукраїнського конкурсу радіоп&#x27;єс. Один із засновників театру &quot;МІСТ&quot;. Здійснив понад 30 вистав. Викладав у Києво-Могилянському колегіумі, НАКККІМ, театральній школі &quot;МІСТ&quot;, здійснював майстер-класи з режисури, драматургії, акторської майстерності, риторики. Автор віршів, сценаріїв, інсценізацій, п&#x27;єс. Твори публікувалися в журналі &quot;Дніпро&quot;, альманасі &quot;Сучасна українська драматургія&quot;, антологіях &quot;Потойбіч паузи&quot;, &quot;13 сучасних українських п&#x27;єс&quot;, журналах &quot;Сучасна драма&quot; (Вірменія) і &quot;Діалог&quot; (Польща), альманасі &quot;Меркуріан&quot; (США), антології новітньої української драми в Македонії. Його п&#x27;єси перекладалися російською, польською, сербською, македонською, вірменською, англійською, французькою мовами. Сценічні читання п&#x27;єс здійснювалися в Любліні (Польща), Парижі (Франція), Чикаго (США), Белграді (Сербія). Його постановки за творами здійснювалися в Україні (Київ, Львів, Харків, Дніпропетровськ та інші), а також у РФ, Грузії, Словаччині, Польщі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

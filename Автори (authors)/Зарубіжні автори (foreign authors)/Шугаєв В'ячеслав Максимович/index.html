@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шугаєв В&#x27;ячеслав Максимович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Шугаєв В&#x27;ячеслав Максимович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./shuhaiev-viacheslav-maksymovych.webp" alt="Шугаєв В&#x27;ячеслав Максимович" title="Шугаєв В&#x27;ячеслав Максимович" data-full="./shuhaiev-viacheslav-maksymovych.webp" /></div>
+        <div class="prose-text">
+          <p>Шугаєв В&#x27;ячеслав Максимович (10 лютого 1938 року, Мензелинск — 3 березня 1997) — російський радянський письменник, журналіст, сценарист. Член Спілки письменників СРСР.</p>
+          <p>Народився 10 лютого 1938 року в Мензелінскій Татарської АРСР. У 1961 році закінчив факультет журналістики Уральського університету. Працював в газетах &quot;Уральський робітник&quot; (Свердловськ), &quot;Східно-Сибірська правда&quot; (Іркутськ).</p>
+          <p>З 1961 року проживав в Іркутську. У 1965 році звернув увагу на свою творчість після участі у Всесоюзному літературному семінарі в Читі, увійшов в так звану Іркутську стінку, поряд з беруть участь в даному семінарі літераторами-земляками: Олександром Вампілова, Валентином Распутіним, Леонідом Красовським, Геннадієм Машкін, Юрієм Самсонова, Дмитром Сергєєвим і Ростиславом Філіпповим. Член Спілки письменників СРСР (з 1966). Член КПРС (з 1972). У 1978 році переїхав до Москви, працював завідувачем відділу прози в редакції журналу &quot;Молода гвардія&quot;, викладав в Літературному інституті. У 1990-ті роки був головним редактором літературного альманаху Чеховського товариства &quot;Дядя Ваня&quot;. Помер 3 березня 1997 року. Похований в Москві на Ваганьковському кладовищі. Перші публікації були в газеті &quot;За важке машинобудування&quot; в 1955 році. Друкувався на сторінках журналів &quot;Молода гвардія&quot;, &quot;Сибірські вогні&quot;, &quot;Юність&quot;, альманахів &quot;Ангара&quot; і &quot;Сибір&quot;. Перша книга &quot;Прокатник Іван Ніконов&quot; вийшла в Свердловську в 1959 році. У 1963 році в співавторстві з Юрієм Скопом вийшла повість &quot;Ми прийдемо до міста вранці&quot;. У 1964 році в співавторстві з Олександром Вампілова і Юрієм Скопом вийшла збірка нарисів &quot;Принци йдуть з казок&quot;. Твори перекладалися на англійську, іспанську, литовський, польський, словацький, французький, чеський, естонський мови.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

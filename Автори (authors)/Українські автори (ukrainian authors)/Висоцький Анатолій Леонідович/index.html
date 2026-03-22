@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Висоцький Анатолій Леонідович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Висоцький Анатолій Леонідович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vysotskyy-anatoliy-leonidovych.webp" alt="Висоцький Анатолій Леонідович" title="Висоцький Анатолій Леонідович" data-full="./vysotskyy-anatoliy-leonidovych.webp" /></div>
+        <div class="prose-text">
+          <p>Анатолій Висоцький народився у 1937 році в селі Новодмитрівка Великоолександрівського району на Херсонщині (на той час – село в Одеській області). Після сільської школи-семирічки закінчив Херсонське педагогічне училище.</p>
+          <p>Потім була служба на Північному флоті, Анатолій Леонідович брав участь у тривалих походах в Атлантиці.</p>
+          <p>Повернувшись додому, Анатолій Висоцький закінчив філологічний факультет Херсонського педагогічного інституту, за фахом – вчитель російської мови та літератури. Працював у школах Луганщини та у Херсоні, в Херсонському обласному відділі освіти, заввідділом облдержадміністрації. Друкуватися Анатолій Висоцький почав у обласній пресі. Перша поетична збірка &quot;Дарую Вам&quot; вийшла 1999 року. Загалом Анатолій Леонідович видав понад десять книг, серед яких кілька збірок ліричних поезій: &quot;Отчий край&quot; (2002), &quot;Родові ознаки&quot; (2003), &quot;Ви в серці моїм&quot; (2018); автобіографічна повість &quot;Уходим завтра в море&quot;, спогади &quot;20 лет в &quot;Белом доме&quot; (2013), оповідання для дітей &quot;Интересные рассказы о животных&quot; (2012), гумористичні збірки: &quot;Двісті усмішок&quot; (2013), &quot;Татко сердиться на мамку&quot; (2015), &quot;П&#x27;ятсот усмішок&quot; (2017), &quot;Чи літають крокодили?&quot; (2019); генеалогічне дослідження &quot;Історія мого роду&quot; (2011).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

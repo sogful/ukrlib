@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гулак Карпо Микитович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гулак Карпо Микитович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hulak-karpo-mykytovych.webp" alt="Гулак Карпо Микитович" title="Гулак Карпо Микитович" data-full="./hulak-karpo-mykytovych.webp" /></div>
+        <div class="prose-text">
+          <p>1920-2011</p>
+          <p>Гулак Карпо Микитович – письменник, народився 12 жовтня 1920 року в с. В’язівок Павлоградського району, в сім’ї селянина. Закінчив Новомосковську медшколу, Слов’янський вчительський та Запорізький педінститут. 50 років працював вчителем, директором дитячого будинку та середньої школи у Дніпропетровській області.</p>
+          <p>Решту життя провів у Ялті. К. М. Гулак за фахом педагог. 50 років працював учителем, директором дитбудинку, директором середньої школи на Дніпропетровщині. Інвалід війни. Брав участь у визволенні Криму від німецько-фашистських загарбників. Зараз живе в Ялті. А родом він з Павлоградського району, з села В&#x27;язівок, тому і герої багатьох творів — його земляки. &quot;Дай, Боже, щоб такі сумні часи ніколи не звідали наші майбутні покоління людей&quot;, — зауважує К. Гулак у передньому слові до своєї збірки. Не можна без хвилювання і болю читати його документальні оповідання &quot;Дикі груші&quot; — про долю хлопчика, якого кидає мати на станції з надією, що він потрапить до дитбудинку і буде жити; &quot;Шрам&quot; — про людські безпомічність і милосердя; &quot;Баба Химка&quot; (&quot;В її гіркій долі — пише автор, — віддзеркалилася доля всієї України&quot;); полемічну статтю &quot;Це не забувається&quot;... Визнання: Відмінник народної освіти України. Автор поетичної збірки &quot;Ялтинські вечори&quot;, &quot;Дикі груші&quot;, &quot;Відлуння лихоліть&quot;, &quot;Кров і сльози&quot;, &quot;Дикуни&quot;, &quot;Голод&quot;, &quot;Тече річка невеличка&quot; Майже у всіх своїх творах Карпо Микитович розповідає про своє рідне село В’язівок, про його історичне минуле.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

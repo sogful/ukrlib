@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Желязни Роджер — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Желязни Роджер</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zheliazny-rodzher.webp" alt="Желязни Роджер" title="Желязни Роджер" data-full="./zheliazny-rodzher.webp" /><img class="side-img side-thumb" src="./zheliazny-rodzher_1.webp" alt="Желязни Роджер" title="Желязни Роджер" data-full="./zheliazny-rodzher_1.webp" /><img class="side-img side-thumb" src="./zheliazny-rodzher_2.webp" alt="Желязни Роджер" title="Желязни Роджер" data-full="./zheliazny-rodzher_2.webp" /></div>
+        <div class="prose-text">
+          <p>Роджер Джозеф Желязни народився 13 травня 1937 року в Клівленді, у родині поляка Йозефа Желязни та ірландки Жозефіни Флори Світ-Желязни (Żelazny з польської буквально перекладається як &quot;залізний&quot;).</p>
+          <p>У 1955 він закінчив середню школу й вступив на відділення психології Клівлендського Західного університету (Western Reserve University). Пізніше змінив спеціальність і перейшов на відділення англійської словесності. У 1959 році здав бакалаврські іспити й продовжив навчання в Колумбійському університеті (штат Нью-Йорк). У 1962 році Желязни повернувся в Клівленд і захистив дисертацію про англійську драму часів королеви Єлизавети.</p>
+          <p>У роки навчання Желязни займався дзюдо і східними єдиноборствами, писав і видавав вірші, писав, але не видавав фантастичні оповідання, учився грати в шахи, вивчав хінді і японську мову, захопився медитацією і містикою. Згодом все це можна було знайти в його книгах. Наприкінці 1960 року Желязни вступив у ряди Національної гвардії, шість місяців служив у Техасі. З 1963 по 1966 рік був резервістом армії США. Деякий час входив до складу бойового розрахунку ракет Ніка, а останні роки служби провів у підрозділі психологічної війни, відкіля і був з пошаною звільнений в запас. У 1964 році одружився з Шарон Стіберл (після того як обоє потрапили в серйозну автомобільну катастрофу) і розлучився в 1966 році. Після Національної гвардії Желязни працював у системі соціального страхування. У 1965 році його перевели на службу в Балтімор, штат Меріленд. Паралельно, з 1967 по 1968 рік, він був секретарем-скарбником Асоціації письменників-фантастів. У Балтіморі письменнк знайомиться з Джуді Келлахан, а 20 серпня 1966 року вони одружилися. У 1969 році Желязни покинув свою основну роботу і зайнявся написанням книг. У 1971 році у Роджера народився син Девін. А в 1975 році письменник з родиною переїхав у Санта-Фе — столицю штату Нью-Мексико. У 1976 році народився другий син — Джонатан Трент. А в 1979 році — дочка Шенон. Відомо, що Роджер Желязни перед смертю розлучився з дружиною і деякий час жив з Джейн Ліндскольд, з якою написав кілька романів. Роджер Желязни помер 14 червня 1995 року в лікарні Сент-Вісент від ниркової недостатності, причиною якої був рак. Творча діяльність: Вже в десять років Роджер писав казки. У 1962 році журнал &quot;Amazing Stories&quot; опублікував перше оповідання Желязни — &quot;Гра пристрастей&quot;. За перші сім років своєї письменницької діяльності фантаст отримав дві премії Х&#x27;юго і дві — Небюла. Деякі свої книги видавав під псевдонімом Геррісон Денмарк. Усього було видано понад 150 оповідань і 50 книг Роджера Желязни. На думку багатьох критиків, найкращі книги Желязни — &quot;Ніч у самотньому жовтні&quot;, &quot;Бог Світла&quot; та серія &quot;Хроніки Амбера&quot;. Роджер Желязни — лідер руху нової хвилі в науковій фантастиці, де фантасти перенесли увагу від роботів і космічних кораблів до людини і її внутрішнього світу. Всього Желязни одержав 6 премій Х&#x27;юго, 3 премії Небюла та інші нагороди.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

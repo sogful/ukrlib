@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Венцлова Томас — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Венцлова Томас</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ventslova-tomas.webp" alt="Венцлова Томас" title="Венцлова Томас" data-full="./ventslova-tomas.webp" /><img class="side-img side-thumb" src="./ventslova-tomas_1.webp" alt="Венцлова Томас" title="Венцлова Томас" data-full="./ventslova-tomas_1.webp" /><img class="side-img side-thumb" src="./ventslova-tomas_2.webp" alt="Венцлова Томас" title="Венцлова Томас" data-full="./ventslova-tomas_2.webp" /><img class="side-img side-thumb" src="./ventslova-tomas_3.webp" alt="Венцлова Томас" title="Венцлова Томас" data-full="./ventslova-tomas_3.webp" /></div>
+        <div class="prose-text">
+          <p>Литовський поет, перекладач, літературознавець, есеїст, дисидент і правозахисник.</p>
+          <p>Син литовського поета Антанаса Венцлови. Під час Великої Вітчизняної війни, коли батько займав високі радянські посади, перебував в евакуації, жив у родичів у Вільнюсі та Каунасі. З 1946 року жив у Вільнюсі.</p>
+          <p>Закінчив Вільнюський університет (спеціальність литовська мова і література; 1960). Один із засновників Литовської Гельсінської групи (заснована 1 грудня 1976 року). У 1977 році висланий з Радянського Союзу. В еміграції підтримував близькі стосунки з Йосипом Бродським і Чеславом Мілошем. Професор слов&#x27;янських мов і літератур в Єльському університеті (США). Літературна діяльність Дебютував у пресі науково-популярною книгою &quot;Ракети, планети і ми&quot; (&quot;Raketos, planetos ir mes&quot;, 1962). Перша книга поезій &quot;Знак мови&quot; (&quot;Kalbos ženklas&quot;, 1972). Перекладав на литовську мову вірші Анни Ахматової, Бориса Пастернака, Йосипа Бродського, Осипа Мандельштама, Хлєбнікова, Т. З. Еліота, Шарля Бодлера, Оскара Мілоша, Лорки, Рільке, Одена, Паунда, Превера, Кароля Войтили, Збігнева Херберта, Чеслава Мілоша, Віслави Шимборської та інших поетів. Видав кілька книг віршів, збірок публіцистики, літературно-критичних та історико-літературних праць, збірку своїх перекладів, також путівник по Вільнюсу (переведений на ряд європейських мов), книгу &quot;Імена Вільнюса&quot; (&quot;Vilniaus vardai&quot;; сам автор характеризує її як свого роду особисту енциклопедію вильнюсцев від Міндовга і Гедиміна до Мілоша; включає 564 персоналії). У 2009 році вийшов англійський варіант цієї книги (&quot;Vilnius. A Guide to Its Names and People&quot;). Вірші Томаса Венцлови перекладалися на англійську, угорська, німецька, польська, португальська, російська, словенська, чеська, шведська та інші мови. Нагороди та звання За творчі заслуги нагороджений хрестом Командора ордена Великого князя литовського Гядімінаса (1995), хрестом офіцера Ордена Хреста Витиса (1999), Національною премією у галузі культури і мистецтва (2000), статуеткою Святого Христофора (нагорода міста Вільнюса; 2002), Ятвяжской премією Поетичної осені в Друскінінкай (2005). Доктор honoris causa Університету Марії Кюрі-Склодовської в Любліні (1991), Ягеллонського університету в Кракові (2000), Університету Миколая Коперника в Торуні (2005), Університету Витовта Великого в Каунасі (2010; рішення про присвоєння почесного звання &quot; за заслуги перед наукою, культурою та університетом було прийнято на засіданні Сенату університету 24 лютого, церемонія вручення регалій відбулася 1 червня 2010 року). 8 січня 2007 у Вільнюсі йому була вручена медаль в пам&#x27;ять Угорської революції 1956 року за важливий інтелектуальний внесок у сучасне розуміння справжнього значення угорського антирадянського повстання.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

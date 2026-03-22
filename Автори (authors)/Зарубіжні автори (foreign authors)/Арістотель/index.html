@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Арістотель — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Арістотель</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./aristotel.webp" alt="Арістотель" title="Арістотель" data-full="./aristotel.webp" /><img class="side-img side-thumb" src="./aristotel_1.webp" alt="Арістотель" title="Арістотель" data-full="./aristotel_1.webp" /><img class="side-img side-thumb" src="./aristotel_2.webp" alt="Арістотель" title="Арістотель" data-full="./aristotel_2.webp" /></div>
+        <div class="prose-text">
+          <p>Батько — придворний лікар македонського царя; дитячі роки Аристотель імовірно провів у царській резиденції в Пеллі. У 15-річному віці лишився сиротою, під опікою Проксена з Атарнеї. 367 до н. е. відправлений опікуном до м. Афін для продовження навчання. Вступив до Академії Платона, якій присвятив 20 років (367—347 до н. е.) — як слухач, викладач і член філософської співдружності. Був одружений на племінниці Гермія, тирана Атарнеї; мав двох дітей (син Нікомах загинув на війні в молодому віці). Після смерті Платона (347 до н.е.) полишив м. Афіни, кілька років провів у мандрах; жив у Малій Азії (в полісах Троада, Ассос) і на острові Лесбос (Мітілена).</p>
+          <p>343—340 до н. е. на запрошення царя Філіппа ІІ був наставником Александра Македонського.</p>
+          <p>335 до н. е. повернувся до м. Афін, де заснував філософську школу — Лікей (Ліцей, назва походить від розташування школи у священному гаю, неподалік від храму Аполлона Лікейського). Учнів школи і послідовників Аристотеля назвали &quot;перипатетики&quot; (буквально &quot;ходити довкола, походжати&quot; — за традиціями Лікею, філософії навчалися під час неквапних прогулянок). Після смерті Александра та перемоги антимакедонської партії був вимушений залишити м. Афіни (323 до н.е.), рятуючись від звинувачень у неповазі до традиційних богів. Залишаючи поліс, передав свої праці учню Теофрасту з Мітілени. Останні роки прожив у маєтку матері в Халкіді; помер на острові Евбея. Дійшли згадки, що тіло філософа було повернене на батьківщину. Понад століття архіви Аристотеля перебували у підземному сховищі (згодом копії передано до Александрійського музею). У 1 ст. до н. е. вивезені Луцієм Корнелієм Суллою до м. Рима, де упорядковані Андроніком Родоським. Лікей Аристотеля проіснував до 3 ст. н. е. У 2016 грецькі археологи (Костас Сісманідіс) повідомили про віднайдення неподалік м. Стагіри великої гробниці з вівтарем, імовірного поховання Аристотеля.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

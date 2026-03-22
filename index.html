@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Нова вкладка</title>
+  <style>
+
+        * {box-sizing: border-box}
+        html, body {height: 100%}
+        body {
+            margin: 0;
+            font-family: Tahoma, Geneva, Kalimati, sans-serif;
+            color: #1a1a1a; background: #fafafa;
+            display: grid; place-items: center; overflow: hidden;
+        }
+
+        /*//////////////////////////////////////////////////////////////////////*/
+
+        .heroshell {
+            width: 720px;
+            max-width: 90vw;
+        }
+        .hero {
+            width: 100%;
+            padding: 18px;
+        }
+        .logowrap {
+            display: grid; place-items: center;
+            margin-bottom: 16px; min-height: 80px;
+        }
+        .logowrap img {
+            max-width: 100%;
+            max-height: 170px;
+            object-fit: contain;
+        }
+
+        /*//////////////////////////////////////////////////////////////////////*/
+        
+        .searchform, .searchrow {position: relative}
+        .searchinput {
+            width: 100%; height: 44px; padding: 0 44px 0 12px;
+            border: 1px solid #6f6f6f;
+            border-radius: 8px; font-size: 16px; outline: none;
+            color: #1a1a1a; background: white;
+        }
+        .searchinput:focus {border-color: #ae0706}
+        .searchbutton {
+            width: 34px; height: 90%;
+            border: 0; background: transparent;
+            cursor: pointer; display: grid; place-items: center;
+            padding: 0; position: absolute;
+            right: 6px; top: 50%; transform: translateY(-50%);
+        }
+        .searchbutton svg {width: 30px; height: 30px; fill: #6f6f6f}
+        .searchinput:focus + .searchbutton svg,
+        .searchbutton:focus-visible svg {fill: #ae0706}
+
+        /*//////////////////////////////////////////////////////////////////////*/
+
+        .suggestionswrap {
+            position: absolute;
+            left: 0; right: 0; top: calc(100% + 6px);
+            z-index: 20;  display: none;
+            max-height: 320px; overflow-y: auto;
+            border: 1px solid #cccccc;
+            background: white; border-radius: 8px;
+        }
+        .suggestionswrap.visible {display: block}
+        .suggestions {
+            list-style: none; margin: 0; padding: 0;
+        }
+        .suggestion {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 8px; padding: 8px 10px;
+            align-items: center; cursor: pointer;
+            border-top: 1px solid #f0f0f0;
+        }
+        .suggestion:first-child {border-top: 0}
+        /* first suggestion seems to be always active, so don't apply this to :active lol */
+        .suggestion:hover {background: #fff7f7} 
+
+        /*//////////////////////////////////////////////////////////////////////*/
+
+        .iconstack {
+            width: 24px; height: 24px;
+            position: relative;
+        }
+        .iconmain {
+            width: 100%; height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+        }
+        .iconoverlay {
+            width: 12px; height: 12px;
+            position: absolute;
+            left: 50%; top: 33%;
+            pointer-events: none;
+        }
+        .suggestiontitle {
+            font-size: 14px; line-height: 1.3;
+            word-break: break-word;
+        }
+
+        .loadmore {
+            display: block;
+            width: 100%; margin: 0; padding: 10px 12px;
+            border: 0; border-top: 1px solid #f0f0f0;
+            background: #fafafa;
+            font: inherit; font-size: 14px;
+            color: #ae0706; cursor: pointer;
+        }
+        .loadmore:hover {background: #fff2f2}
+        .loadmore[hidden] {display: none}
+
+  </style>
+</head>
+<body>
+  <div class="heroshell">
+    <div class="hero">
+      <div class="logowrap">
+        <img src="/.(інші файли)．/vectors/logo2.svg" alt="УкрЛіб">
+      </div>
+      <form class="searchform" autocomplete="off">
+        <div class="searchrow">
+          <input class="searchinput" type="search" placeholder="">
+          <button class="searchbutton" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <title>Пошук</title>
+              <path d="M784-120 532-372q-30 26-69 39t-83 13q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-13 83t-39 69l252 252zM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400"/>
+            </svg>
+          </button>
+        </div>
+        <div class="suggestionswrap">
+          <ul class="suggestions" role="listbox"></ul>
+          <button type="button" class="loadmore" hidden>Завантажити ще</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+
+    // svgs adjustable here, using an src would cause a bit of undesirable lag
+    const icons = {
+      literaturemain: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ae0706" viewBox="0 -960 960 960"><path d="M300-80q-58 0-99-41t-41-99v-520q0-58 41-99t99-41h500v600q-25 0-42 18t-18 42 18 43 42 17v80zm-60-267q14-7 29-10t31-3h20v-440h-20q-25 0-42 18t-18 42zm160-13h320v-440H400zm-160 13v-453zm60 187h373q-6-14-9-28t-4-32q0-16 3-31t10-29H300q-26 0-43 18t-17 42q0 26 17 43t43 17"/></svg>',
+      authorsmain: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ae0706" viewBox="0 -960 960 960"><path d="M367-527q-47-47-47-113t47-113 113-47 113 47 47 113-47 113-113 47-113-47M160-160v-112q0-34 18-62t46-44q62-31 126-46t130-16 130 16 126 46q29 15 47 44t17 62v112zm80-80h480v-32q0-11-5-20t-15-14q-54-27-109-40t-111-14-111 14-109 40q-9 5-14 14t-6 20zm297-343q23-24 23-57t-23-56-57-24-56 24-24 56 24 57 56 23 57-23m-57 343"/></svg>',
+      audiobooksmain: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ae0706" viewBox="0 -960 960 960"><path d="M447-207q-47-47-47-113t47-113 113-47q23 0 43 6t37 16v-342h240v120H720v360q0 66-47 113t-113 47-113-47M80-320q0-99 38-186t103-153 153-103 186-38v80q-82 0-155 32t-127 86-86 127-32 155zm160 0q0-66 26-124t69-102 101-69 124-25v80q-100 0-170 70t-70 170z"/></svg>',
+      ukrainian: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#005bbb" d="M32 5H4a4 4 0 0 0-4 4v9h36V9a4 4 0 0 0-4-4"/><path fill="#ffd500" d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4v-9h36z"/></svg>',
+      folk: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><circle cx="10" cy="17" r="1" fill="#67757f"/><circle cx="1" cy="26" r="1" fill="#67757f"/><circle cx="19" cy="26" r="1" fill="#67757f"/><circle cx="10" cy="35" r="1" fill="#67757f"/><circle cx="3.5" cy="19.8" r="1" fill="#67757f"/><circle cx="16.2" cy="32.5" r="1" fill="#67757f"/><path fill="#292f33" d="M32.3 5.3 17 22.7 13.3 19 30.7 3.7z"/><circle cx="10" cy="26" r="9" fill="#f18f26" transform="rotate(-52 10 26)"/><circle cx="10" cy="26" r="7" fill="#f5f8fa" transform="rotate(-52 10 26)"/><path fill="#ccd6dd" d="M4.6 30 28.8 5.7l.5.5L5.2 30.5zm.9.8L29.7 6.7l.5.5L6 31.3z"/><path fill="#292f33" d="m2 32 2-3s1 0 2 1 1 2 1 2l-3 2z"/><path fill="#67757f" d="m9.1 30.9-.7-.3-3-3a1 1 0 1 1 1.4-1.4l3 3a1 1 0 0 1-.7 1.7"/><path fill="#f18f26" d="M34.7 2.7q.6.7 0 1.6l-3.2 3.2q-.7.6-1.6 0L28.5 6q-.6-.9 0-1.6l3.2-3.2q.9-.6 1.6 0z"/><circle cx="33" cy="8" r="1" fill="#642116"/><circle cx="35" cy="6" r="1" fill="#642116"/><circle cx="28" cy="3" r="1" fill="#642116"/><circle cx="30" cy="1" r="1" fill="#642116"/></svg>',
+      foreign: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#88c9f9"/><path fill="#5c913b" d="m30 24-1-2q-1-2-3-2h-4l-2 1-1-1 1-1-2-1h-1l-1-2 2-1 1 1h1v-2l2-3h4V9h2l-1-2-2-1-2-2v2l-3 1-1-2 3-2-3-1h-4l-4 2-1-1-1-1-5 5h1q2-1 2 1v2q-1 2 1 3l2 1 2 2 2 2 2 1 3 2 1 1-1 3 1 2 2 1-1 4-1 3h1l3-3 3-3 2-2zq1-1-1-1"/></svg>',
+      modern: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#ffac33" d="m34 17-9-3-3-11a1 1 0 0 0-2 0l-3 11-9 3a1 1 0 0 0 0 2l9 3 3 11a1 1 0 0 0 2 0l3-11 9-3a1 1 0 0 0 0-2"/><path fill="#ffcc4d" d="m14 28-2-1-1-3a1 1 0 0 0-2 0l-1 3-2 1a1 1 0 0 0 0 2l2 1 1 3a1 1 0 0 0 2 0l1-3 2-1a1 1 0 0 0 0-2M10 6 8 5 7 3a1 1 0 0 0-2 0L4 5 2 6a1 1 0 0 0 0 2l2 1 1 2a1 1 0 0 0 2 0l1-2 2-1a1 1 0 0 0 0-2"/></svg>',
+      shortaudio: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#bdddf4" d="M36 15q0-7-7-8-2-6-9-7-8 1-9 9l1 3H0s5 4 15 4v2h-1L0 17q-1 1 15 4v2L0 22q5 4 9 5 1 5 6 5h1a9 9 0 1 0 16-10q3-2 4-7"/></svg>'
+    };
+
+    // "title"= text when hovering over the vectors
+    const icontitles = {
+      "literaturemain|": "Література",
+      "literaturemain|ukrainian": "Українська література",
+      "literaturemain|folk": "Народна література",
+      "literaturemain|foreign": "Зарубіжна література",
+      "literaturemain|modern": "Сучасна література",
+      "authorsmain|": "Біографія автора",
+      "authorsmain|ukrainian": "Біографія українського автора",
+      "authorsmain|foreign": "Біографія зарубіжного автора",
+      "audiobooksmain|": "Аудіокнига",
+      "audiobooksmain|shortaudio": "Коротке аудіо"
+    };
+
+    const randomplaceholder = [
+      "Тіні забутих предків — Михайло Коцюбинський…",
+      "Енеїда — Іван Котляревський…",
+      "Мина Мазайло — Микола Куліш…",
+      "Я (Романтика) — Микола Хвильовий…",
+      "Маруся Чурай — Ліна Костенко…"
+    ];
+
+    function icontitlefor(mainkey, overlaykey) {
+      const k = mainkey + "|" + (overlaykey || "");
+      return icontitles[k] || icontitles[mainkey + "|"] || "";
+    }
+
+    function escattr(s) {
+      return String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+    }
+
+    const queryel = document.querySelector(".searchinput");
+    queryel.placeholder = randomplaceholder[Math.floor(Math.random() * randomplaceholder.length)];
+    
+    const formel = document.querySelector(".searchform");
+    const suggestwrap = document.querySelector(".suggestionswrap");
+    const listel = document.querySelector(".suggestions");
+    const loadmoreel = document.querySelector(".loadmore");
+    const maxitems = 100; 
+    const bigstuff = "/files.txt";
+
+    let entries = []; let currentmatches = [];
+    let visiblelimit = maxitems;
+    let rendered = []; let active = -1;
+
+    /*//////////////////////////////////////////////////////////////////////*/
+
+    function normalizetext(path) {
+      const clean = path.replace(/\\/g, "/");
+      const low = clean.toLowerCase();
+      const withoutindex = (low.startsWith("автори (authors)/") && low.endsWith("/index.html"))
+        ? clean.slice(0, -"/index.html".length)
+        : clean;
+      const noext = withoutindex.replace(/\.[a-z0-9]+$/i, "");
+      const lastslash = noext.lastIndexOf("/");
+      const dirpart = lastslash >= 0 ? noext.slice(0, lastslash) : "";
+      const base = lastslash >= 0 ? noext.slice(lastslash + 1) : noext;
+      const dirnorm = dirpart ? normalizesearchkey(dirpart, false) : "";
+      const basenorm = normalizesearchkey(base, true);
+      return [dirnorm, basenorm].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
+    }
+
+    function classify(path) {
+      const p = path.toLowerCase();
+      if (p.startsWith("література (literature)/")) {
+        let overlaykey = "";
+        if (p.includes("україн") || p.includes("ukrain")) overlaykey = "ukrainian";
+        else if (p.includes("народ") || p.includes("folk") || p.includes("фолькл")) overlaykey = "folk";
+        else if (p.includes("заруб") || p.includes("інозем") || p.includes("foreign")) overlaykey = "foreign";
+        else if (p.includes("сучас") || p.includes("modern")) overlaykey = "modern";
+        return {
+          mainkey: "literaturemain", overlaykey,
+          main: icons.literaturemain,
+          overlay: overlaykey ? icons[overlaykey] : ""
+        };
+      }
+      if (p.startsWith("автори (authors)/")) {
+        let overlaykey = "";
+        if (p.includes("україн") || p.includes("ukrain")) overlaykey = "ukrainian";
+        else if (p.includes("заруб") || p.includes("інозем") || p.includes("foreign")) overlaykey = "foreign";
+        return {
+          mainkey: "authorsmain", overlaykey,
+          main: icons.authorsmain,
+          overlay: overlaykey ? icons[overlaykey] : ""
+        };
+      }
+      if (p.startsWith("аудіокниги (audiobooks)/")) {
+        const overlaykey = (p.includes("короткі аудіо файли") || p.includes("short audio")) ? "shortaudio" : "";
+        return {
+          mainkey: "audiobooksmain", overlaykey,
+          main: icons.audiobooksmain,
+          overlay: overlaykey ? icons.shortaudio : ""
+        };
+      }
+      return {mainkey: "literaturemain", overlaykey: "", main: icons.literaturemain, overlay: ""};
+    }
+
+    /*//////////////////////////////////////////////////////////////////////*/
+
+    // reverse of what the python scripts do to display proper symbols in the search bar
+    const unicodechardisplay = {
+      "＜": "<", "＞": ">", "：": ":", "＂": '"',
+      "／": "/", "＼": "\\", "｜": "|", "？": "?", "＊": "*",
+      "⧸": "/", "⁄": "/", "∕": "/"
+    };
+    function normalizeunicodechars(s) {
+      let out = "";
+      for (let i = 0; i < s.length; i++) {
+        const c = s[i];
+        out += unicodechardisplay[c] || c;
+      }
+      return out;
+    }
+
+    function normalizesearchkey(s, preserveSlash) {
+      if (!s) return "";
+      let t = normalizeunicodechars(s);
+      t = t.replace(/\\/g, "/");
+      t = t.replace(/[_\-]+/g, " ");
+      if (!preserveSlash) t = t.replace(/\//g, " ");
+      t = t.replace(/[()]/g, " ");
+      t = t.replace(/[\u2013\u2014\u2012\u2010\u2212\u2011]/g, " ");
+      t = t.replace(/['\u2019\u2018\u02BC`´]/g, "'");
+      t = t.toLowerCase().replace(/\s+/g, " ").trim();
+      return t;
+    }
+    function displaypathsymbols(s) {
+      return normalizeunicodechars(s);
+    }
+
+    function displaytitle(path) {
+      const clean = path.replace(/\\/g, "/");
+      const parts = clean.split("/");
+      const rawfile = parts[parts.length - 1] || clean;
+      const filelower = rawfile.toLowerCase();
+      if (clean.toLowerCase().startsWith("автори (authors)/") && filelower === "index.html" && parts.length > 1) {
+        return displaypathsymbols(parts[parts.length - 2]);
+      }
+      const base = rawfile.replace(/\.[a-z0-9]+$/i, "");
+      return displaypathsymbols(base);
+    }
+
+    /*//////////////////////////////////////////////////////////////////////*/
+
+    const punctre = /[^\p{L}\p{N}\s'\u2019\u2018\u02BC`´]/gu;
+    function striptokens(terms) {
+      return terms.map((t) => t.replace(punctre, "").replace(/\s+/g, " ").trim()).filter(Boolean);
+    }
+
+    function looseterm(rawterms) {
+      const stripped = striptokens(rawterms).map((t) => normalizesearchkey(t, true)).filter(Boolean);
+      if (!stripped.length) return null;
+      const direct = parseterms(rawterms.join(" "));
+      if (stripped.length === direct.length && stripped.every((t, i) => t === direct[i])) return null;
+      return stripped;
+    }
+    function fuzzyterm(hay, term) {
+      if (!term || term.length === 0) return false;
+      if (term.length < 6) return hay.includes(term);
+      if (hay.includes(term)) return true;
+      for (let i = 0; i < term.length; i++) {
+        const del = term.slice(0, i) + term.slice(i + 1);
+        if (del.length >= 3 && hay.includes(del)) return true;
+      }
+      for (let i = 0; i < term.length - 1; i++) {
+        const sw = term.slice(0, i) + term[i + 1] + term[i] + term.slice(i + 2);
+        if (hay.includes(sw)) return true;
+      }
+      return false;
+    }
+
+    function itemmatchesterm(item, terms, fuzzyLong) {
+      if (!terms.length) return false;
+      for (const term of terms) {
+        if (!term) return false;
+        const fz = fuzzyLong && term.length >= 6;
+        if (fz) {
+          if (!fuzzyterm(item.search, term)) return false;
+        } else if (!item.search.includes(term)) return false;
+      }
+      return true;
+    }
+    function collectmatches(terms, fuzzyLong) {
+      const out = [];
+      for (const item of entries) {
+        if (itemmatchesterm(item, terms, fuzzyLong)) out.push(item);
+      }
+      return out;
+    }
+
+    function parseterms(raw) {
+      const q = raw.trim().toLowerCase();
+      if (!q) return [];
+      const parts = q.split(/\s+/).filter(Boolean);
+      const out = [];
+      for (const p of parts) {
+        const n = normalizesearchkey(p, true);
+        if (n) out.push(...n.split(/\s+/).filter(Boolean));
+      }
+      return out.filter((t) => t.length > 0 && !/^'+$/.test(t));
+    }
+
+    function searchall(raw) {
+      const q = raw.trim().toLowerCase();
+      if (!q) return [];
+      const rawterms = q.split(/\s+/).filter(Boolean);
+      const terms = parseterms(raw);
+      if (!terms.length) return [];
+      let list = collectmatches(terms, false);
+      if (!list.length) {
+        const loose = looseterm(rawterms);
+        if (loose) list = collectmatches(loose, false);
+      }
+      if (!list.length && terms.some((t) => t.length >= 6)) {
+        list = collectmatches(terms, true);
+      }
+      if (!list.length) {
+        const loose = looseterm(rawterms);
+        if (loose && loose.some((t) => t.length >= 6)) list = collectmatches(loose, true);
+      }
+      return list;
+    }
+
+    /*//////////////////////////////////////////////////////////////////////*/
+
+    function render(items, opts) {
+      rendered = items;
+      if (!opts || !opts.preserveActive) {
+        active = items.length ? 0 : -1;
+      } else {
+        if (items.length) {
+          if (active < 0) active = 0;
+          else if (active >= items.length) active = items.length - 1;
+        } else active = -1;
+      }
+      listel.innerHTML = items.map((item, idx) => {
+        const icon = classify(item.path);
+        const tip = icontitlefor(icon.mainkey, icon.overlaykey);
+        const tipattr = tip ? ' title="' + escattr(tip) + '"' : "";
+        return '<li class="suggestion' + (idx === active ? ' active' : '') + '" data-idx="' + idx + '" role="option">' +
+          '<div class="iconstack"' + tipattr + '><span class="iconmain">' + icon.main + '</span>' +
+          (icon.overlay ? '<span class="iconoverlay">' + icon.overlay + '</span>' : '') +
+          '</div>' +
+          '<div><div class="suggestiontitle">' + item.title + '</div></div></li>';
+      }).join("");
+      const show = items.length > 0;
+      suggestwrap.classList.toggle("visible", show);
+      updatesuggestionheight();
+    }
+
+    function syncloadmore() {
+      const hasmoar = currentmatches.length > visiblelimit;
+      loadmoreel.hidden = !hasmoar;
+      if (hasmoar) {
+        const shown = Math.min(visiblelimit, currentmatches.length);
+        const total = currentmatches.length;
+        loadmoreel.textContent = "Завантажити ще (" + shown + " з " + total + ")";
+      }
+    }
+
+    function rendervisible(preserveActive) {
+      const slice = currentmatches.slice(0, visiblelimit);
+      render(slice, { preserveActive: !!preserveActive });
+      syncloadmore();
+    }
+
+    function tabfix(url) {
+      const w = window.open(url, "_blank");
+      if (!w) {location.assign(url)}
+      else {w.opener = null}
+    }
+
+    function navigate(idx) {
+      const item = rendered[idx];
+      if (!item) return;
+      const p = item.path.toLowerCase();
+      if (p.endsWith(".opus")) {
+        const base = item.path.replace(/\\/g, "/").split("/").pop() || "";
+        const name = base.replace(/\.opus$/i, "");
+        tabfix("/listen.html?audio=" + encodeURIComponent(name)); return;
+      }
+      tabfix(encodeURI("/" + item.path));
+    }
+
+    /*//////////////////////////////////////////////////////////////////////*/
+
+    function updatefrominput() {
+      currentmatches = searchall(queryel.value);
+      visiblelimit = maxitems;
+      rendervisible(false);
+    }
+    function updatesuggestionheight() {
+      if (!suggestwrap.classList.contains("visible")) {
+        suggestwrap.style.maxHeight = "";
+        return;
+      }
+      const rect = suggestwrap.getBoundingClientRect();
+      const maxheight = Math.max(120, Math.floor(window.innerHeight - rect.top - 40));
+      suggestwrap.style.maxHeight = maxheight + "px";
+    }
+
+    async function loadindex() {
+      const res = await fetch(bigstuff, {cache: "force-cache"});
+      const text = await res.text();
+      entries = text.split(/\r?\n/).filter(Boolean).map((path) => ({
+        path, title: displaytitle(path),
+        search: normalizetext(path)
+      }));
+    }
+    
+    /*//////////////////////////////////////////////////////////////////////*/
+
+    formel.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (rendered.length) navigate(active >= 0 ? active : 0);
+    });
+
+    queryel.addEventListener("input", updatefrominput);
+    queryel.addEventListener("keydown", (e) => {
+      if (!rendered.length) return;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        active = (active + 1) % rendered.length;
+        rendervisible(true);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        active = (active - 1 + rendered.length) % rendered.length;
+        rendervisible(true);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        navigate(active >= 0 ? active : 0);
+      }
+    });
+
+    listel.addEventListener("mousedown", (e) => {
+      const row = e.target.closest(".suggestion");
+      if (!row) return;
+      navigate(Number(row.dataset.idx));
+    });
+    loadmoreel.addEventListener("click", () => {
+      visiblelimit += maxitems;
+      rendervisible(true);
+    });
+
+    window.addEventListener("resize", updatesuggestionheight, {passive: true});
+    loadindex().catch(() => {});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Забашта Любов Василівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Забашта Любов Василівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zabashta-liubov-vasylivna.webp" alt="Забашта Любов Василівна" title="Забашта Любов Василівна" data-full="./zabashta-liubov-vasylivna.webp" /><img class="side-img side-thumb" src="./zabashta-liubov-vasylivna_1.webp" alt="Забашта Любов Василівна" title="Забашта Любов Василівна" data-full="./zabashta-liubov-vasylivna_1.webp" /><img class="side-img side-thumb" src="./zabashta-liubov-vasylivna_2.webp" alt="Забашта Любов Василівна" title="Забашта Любов Василівна" data-full="./zabashta-liubov-vasylivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>1918, 3 лютого – у місті Прилуки на Чернігівщині народилася Любов Забашта – українська поетеса, драматург, прозаїк, дружина поета Андрія Малишка.</p>
+          <p>У шкільні роки почала писати вірші. Після закінчення школи навчалася в Одеському водному інституті, який закінчила в 1940 році. Під час війни працювала інженером-конструктором на Рибнінській судноверфі. На війні загинув її чоловік, із котрим прожила майже рік. Залишившись удовою з сином на руках, прийшла працювати на київський завод &quot;Ленінська кузня&quot;. Закінчила заочно мовно-літературний факультет педінституту імені Горького (нині Національний педагогічний університет імені Михайла Драгоманова). Далі працювала завідувачкою відділу поезії журналу &quot;Дніпро&quot;.</p>
+          <p>У грудні 1956 року вийшла заміж за Андрія Малишка. Подружжя замешкало в Києві в будинку письменників &quot;Політ&quot;, на фасаді якого 12 березня 2003 року поетесі встановили пам&#x27;ятну дошку. Перша збірка її віршів для дітей &quot;Паляниця-білолиця&quot; була опублікована 1963-го. Пізніше з&#x27;явилися її поетичні збірки, книжки з прозою, п&#x27;єси та драматичні поеми. У доробку Забашти є й роман &quot;Там, за рікою, — молодість&quot; (1970), художньо-документальна повість &quot;Будинок мого дитинства&quot; (1983), дитяча лірика. Тарасові Шевченку авторка присвятила драматичну поему &quot;Тернова доля&quot;, поезії &quot;Землі Бояне славний&quot;, &quot;Міцні, як Шевченкове слово&quot;, &quot;Шевченко й Олдрідж&quot; (1961). Збірки віршів для малят &quot;Коли я виросту&quot;, &quot;По гриби&quot;, &quot;Пісня зеленого лісу&quot;, повість &quot;Будинок мого дитинства&quot; й інші. В народі співають пісні на її слова &quot;Ой вербиченько&quot;, &quot;Червона ружа&quot;, &quot;Криниця мого дитинства&quot;, &quot;Засихає в степу материнка&quot; й інші. Померла Любов Забашта 21 липня 1990 року, похована в Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

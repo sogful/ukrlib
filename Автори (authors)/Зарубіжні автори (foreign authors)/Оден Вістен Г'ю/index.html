@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оден Вістен Г&#x27;ю — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Оден Вістен Г&#x27;ю</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./oden-visten-hiu.webp" alt="Оден Вістен Г&#x27;ю" title="Оден Вістен Г&#x27;ю" data-full="./oden-visten-hiu.webp" /><img class="side-img side-thumb" src="./oden-visten-hiu_1.webp" alt="Оден Вістен Г&#x27;ю" title="Оден Вістен Г&#x27;ю" data-full="./oden-visten-hiu_1.webp" /></div>
+        <div class="prose-text">
+          <p>Вістен-Г&#x27;ю Оден — англо-американський поет, який народився у Великій Британії, а після Другої світової війни став громадянином США. Одена називають одним з найвидатніших поетів XX століття.</p>
+          <p>Вістен Г&#x27;ю Оден народився в Йорку, Норт-Йоркширі, 21 лютого 1907 року. Його батьком був видатний лікар, письменник і перекладач Джордж Оден. Батьки виховували хлопчика в англіканській вірі. Оден був третьою дитиною в сім&#x27;ї.</p>
+          <p>З восьми років він навчався в школі Грешама, в Норфолку. У 1918 році він познайомився з Крістофером Ішервудом, з яким товаришував все життя і разом з яким створив безліч творів. У 1922 році Оден публікує перший вірш в шкільній газеті під вигаданим ім&#x27;ям. А через два роки в періодичній пресі з&#x27;явився вірш Одена, правда, з помилкою в прізвищі автора. У 1925 Вістен Оден вступив до Оксфорда. Через п&#x27;ять років, завдяки Стівену Спендерові, Одену вдається видати збірку своїх віршів &quot;Вірші&quot; (1930). Протягом життя багато подорожував, жив у різних країнах. Першою була Німеччина, де він побував після закінчення університету. Пізніше відвідав Шотландію, Іспанію, Італію, Австрію, Ісландію, Китай та інші країни. Яскравою сторінкою його життя є участь у громадянській війні в Іспанії у складі санітарного батальйону армії республіканців (під впливом цих подій написав поему &quot;Іспанія&quot;). Письменник активно виступає проти фашизму. Переповнений прагненням особисто прилучитися до знакових подій століття, Вістен Г&#x27;ю Оден вирушає на війну до Китаю (результатом особистих спостережень стає книга нарисів &quot;Подорож на війну&quot;). Пізніше поет позбудеться від юнацького пафосного сприйняття історії, переконається в тому, що нічим пишатися в історії, адже &quot;творять її убивці, що живуть у нас самих&quot;. Вістен Г&#x27;ю Оден працював викладачем, часто виступав з читанням власних творів. У 1939 р. поет переїхав до Сполучених Штатів Америки, де 1946 р. отримав американське громадянство. Одена часто звинувачували в антипатріотизмі, адже він покинув Англію на початку Другої світової війни. У 1947 р Вістен Оден удостоївся Пулітцерівської премії, в 1954 р. отримав Боллінгеновскую премію. Він написав вірші на музику Бенджаміна Брет до фільму &quot;Вугільне обличчя&quot;. Одна з найпопулярніших робіт Одена – &quot;Похоронний блюз&quot;, вірші використані у фільмі &quot;Чотири весілля і похорони&quot; (1994). Він погоджувався з тим, що причиною його еміграції був страх, пов&#x27;язаний з війною, але ніколи не розривав зв&#x27;язків з батьківщиною: читав лекції в Оксфорді (1956—1961), а перед смертю повернувся в Англію (1972). Помер Оден від серцевого нападу уві сні (29 вересня 1973 р.), коли перебував в Австрії, куди його запросили виступити з циклом публічних лекцій.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

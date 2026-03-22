@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Абашидзе Іраклій Віссаріонович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Абашидзе Іраклій Віссаріонович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./abashydze-irakliy-vissarionovych.webp" alt="Абашидзе Іраклій Віссаріонович" title="Абашидзе Іраклій Віссаріонович" data-full="./abashydze-irakliy-vissarionovych.webp" /></div>
+        <div class="prose-text">
+          <p>Абашидзе Іраклій Віссаріонович</p>
+          <p>(23 листопада 1909 — 14 січня 1992)</p>
+          <p>Почав друкуватися в 1928 році. У 1931 році закінчив філологічний факультет Тбіліського університету і через три роки вже брав участь у Першому з&#x27;їзді Союзу письменників СРСР. Був засуджений на невеликий термін за надмірно похвальне вірш на честь Лаврентія Берія. Під час Великої Вітчизняної війни пішов на фронт. Пізніше був головним редактором журналу &quot;Мнатобі&quot;. З 1953 по 1967 роки був головою Спілки письменників Грузії. У 1960 році став також віце-президентом Грузинської Академії наук. У тому ж році організував експедицію в грузинський монастир Святого Хреста в Єрусалимі, під час якої було виявлено фреску Шоти Руставелі. У 1960 році йому було присвоєно звання академіка АН Грузії. Був головним редактором грузинської радянської енциклопедії (томи 1-12, 1975-87). У 1979 році йому було присвоєно звання Герой Соціалістичної Праці. З 1971 по 1990 роки був головою Верховної Ради Грузинської РСР. Хоча поезія Абашидзе була досить лояльною до радянського ладу, він підтримав Звіада Гамсахурдія на шляху до незалежності Грузії. Помер Абашидзе 14 січня 1992 в Тбілісі і був удостоєний державних похоронів. ТВОРЧІСТЬ Автор поетичних циклів &quot;Палестина, Палестина&quot; (1963, Державна премія Грузії, 1966), &quot;Слідами Руставелі &quot;(премія імені Дж. Неру, 1972); збірки ліричних віршів&quot; Наближення &quot;(1966). Перекладав на грузинську мову вірші російських поетів. На російську вірші Абашидзе переводили Пастернак Б. Л., Тарковський А. А., Ахмадуліна Б. А., Межиров А. П. ТВОРИ Шукаю заповітний слід. Москва, Дитяча література, 1979. Переклад Є. Євтушенко, Н. Гребньова, М. Максимова, А. Межірова, М. Тихонова, Б. Ахмадуліної, П. Шубіна Вибране: Поезії. М., 1979.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

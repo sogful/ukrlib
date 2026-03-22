@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гомін Лесь — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гомін Лесь</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./homin-les.webp" alt="Гомін Лесь" title="Гомін Лесь" data-full="./homin-les.webp" /><img class="side-img side-thumb" src="./homin-les_1.webp" alt="Гомін Лесь" title="Гомін Лесь" data-full="./homin-les_1.webp" /></div>
+        <div class="prose-text">
+          <p>Лесь ГОМІН</p>
+          <p>Королевич Олександр Дмитрович (літературний псевдонім — Лесь Гомін) народився 30 березня 1900 року в Черкасах у сім&#x27;ї візника.</p>
+          <p>Про свої молоді роки письменник згадував: &quot;Із 1918 до 1924 року вчився в Києві. Під час громадянської війни (лютий, 1920 рік) я добровільно вступив до Червоної Армії, працював на відповідальних постах по мобілізації людей і транспорту, по боротьбі з бандитизмом і дезертирством. Як закінчилась громадянська війна, я потрапив до Київського всеобучу інструктором і тоді, працюючи, закінчував освіту (Київський ІНО). Демобілізований у червні 1924 року. Відтоді починається моя громадсько-літературна робота&quot;. Щоправда, писати Гомін почав іще 1919 року. Кілька його віршів, нарисів та оповідань були надруковані в періодиці. Систематичну професійну роботу він почав в окружній газеті &quot;Радянська думка&quot; (Черкаси), де тривалий час працював разом із Семеном Скляренком. Лесь Гомін — автор збірки оповідань &quot;Контрольні цифри&quot; (1931), п&#x27;єси &quot;Маски&quot; (1933). 1934 року Держлітвидавом України було підготовлено до видання його роман &quot;Голгофа&quot;, який частково друкувався в літературно-художньому журналі &quot;Металеві дні&quot;. Проте окремою книгою роман побачив світ тільки 1959 року, коли письменника вже не було серед живих. Поки що не відомо, коли заарештовано Леся Гомона: судово-слідчу справу донині не віднайдено. Єдине, що збереглося в архіві Спілки письменників, — копія довідки, виданої 4 грудня 1958 року громадянці Королевич Ф.О. про те, що &quot;постановою президії Верховного суду УРСР від 2.XII.1958р. вирок Одеського обласного суду від 10.ХІ.1935р., ухвала Верховного суду УРСР від 27.1.1936р. і постанова президії Верховного суду УРСР від 1.VIІ.1936р. щодо Королевича Олександра Дмитровича, українського письменника, скасовані, а справу припинено за недоведеністю складу злочину&quot;. Помер Лесь Гомін 16 січня 1958 року в Черкасах. Микола Сорока ЛУ 28 (4437) 11.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

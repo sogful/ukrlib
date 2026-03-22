@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дмитрук Анастасія Миколаївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дмитрук Анастасія Миколаївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dmytruk-anastasiia-mykolaivna.webp" alt="Дмитрук Анастасія Миколаївна" title="Дмитрук Анастасія Миколаївна" data-full="./dmytruk-anastasiia-mykolaivna.webp" /><img class="side-img side-thumb" src="./dmytruk-anastasiia-mykolaivna_1.webp" alt="Дмитрук Анастасія Миколаївна" title="Дмитрук Анастасія Миколаївна" data-full="./dmytruk-anastasiia-mykolaivna_1.webp" /><img class="side-img side-thumb" src="./dmytruk-anastasiia-mykolaivna_2.webp" alt="Дмитрук Анастасія Миколаївна" title="Дмитрук Анастасія Миколаївна" data-full="./dmytruk-anastasiia-mykolaivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Анастасія народилася 31 січня 1991 року в м. Ніжин Чернігівської області. З 10 років мешкає в Києві, де навчалася в гімназії, а потім — у Фізико-технічному інституті &quot;Київської політехніки&quot;.</p>
+          <p>Закінчила НТУУ &quot;КПІ&quot; взимку 2014 року, здобувши кваліфікацію спеціаліста з інформаційної безпеки. До 2014 працювала на одній з фірм із захисту інформації на комп&#x27;ютерних системах.</p>
+          <p>Вірші пише з 12-ти років. Здобула популярність під час Євромайдану завдяки своїм патріотичним віршам. Анастасія Дмитрук — авторка вірша рос. &quot;Никогда мы не будем братьями&quot;, написаного у зв&#x27;язку з російською анексією Криму. За словами Анастасії: Литовські музиканти спільно з хором &quot;Клайпедського музичного театру&quot; записали відеокліп, який уже за два тижні після публікації на &quot;Youtube&quot; отримав понад мільйон переглядів. Вірші: 2014 року у видавництві рідного &quot;Київського політехнічного інституту&quot; вийшла з друку збірка віршів Анастасії Дмитрук &quot;Верните нам наше небо&quot;. Того ж року книга була перевидана тиражем у 10 000 екземплярів за підтримки Ігоря Захаренка. В жовтні 2015 на малій сцені Палацу &quot;Україна&quot; відбулася прем&#x27;єра поетичної вистави А.Дмитрук: &quot;Розв&#x27;яжи за спиною крила&quot;, за участі акторів Театру на Подолі. Режисер вистави Віталій Малахов. У грудні 2017 вийшла друком друга книга Анастасії Дмитрук &quot;Це моя і твоя війна&quot;. У 2022 році ініціаторка та головна координаторка світової кампанії #terroRussia та #IndependanceInMyheart, які відбулися в більше як у 60-ти містах по всьому світу.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

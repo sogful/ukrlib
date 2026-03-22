@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Буряківець Юрій Дмитрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Буряківець Юрій Дмитрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./buriakivets-iuriy-dmytrovych.webp" alt="Буряківець Юрій Дмитрович" title="Буряківець Юрій Дмитрович" data-full="./buriakivets-iuriy-dmytrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Юрій Буряківець народився 26-го квітня 1922 року в родині службовців Дмитра і Марії Буряківців в місті Чорнобиль. Незабаром, в 1929 році, родина переїхала до Києва, де малий Юрко відвідує київські школи. Там же в липні 1941 року закінчив середню школу.</p>
+          <p>Перші вірші почав писати в 14 років. Був членом гуртка молодих поетів та прозаїків. Пізніше мрія бути письменником поволі здійснювалася і вже в 1943 році Юрій Буряківець стає членом Спілки українських письменників у Львові, 1947 року — членом Спілки українських письменників і журналістів у Авґзбурзі, Німеччина, а в червні 1969 року — членом Об&#x27;єднання Українських Письменників &quot;Слово&quot; в Нью-Йорку. За німецької окупації України Буряківець працює матросом та шкіпером у Дніпровській торговельній флотилії. Коли наближався фронт, в числі багатьох він опинився на сільськогосподарській праці в Баварії, Німеччина. Після закінчення війни в 1945 році студіював в Українському Вільному Університеті в Мюнхені.</p>
+          <p>Письменник кілька десятиліть жив і працював у Нью-Йорку. Він закінчив у США університет з присвоєнням звання магістра філолоґії, писав українською, володів, крім того, англійською, французькою, німецькою, іспанською, російською, білоруською, польською, викладав у школах Америки німецьку та іспанську мови. У вересні 1994 року, Юрія Дмитровича Буряківця прийняли до Спілки письменників України. За кордоном, у Німеччині, Англії, США, Канаді, Австралії — дано високу оцінку його творам. Відомий письменник Василь Барка, розглядаючи поетичну збірку Юрія Буряківця &quot;Виноградник&quot; (Нью-Йорк, 1961 рік), пише: &quot;Визначний талант цього лірика безперечний, виявляється він у найвластивішому виспіві серця. Особливо багатий прибуток в ліричній поезії, властиво, українські поети-еміґранти надолужили, хоч не повною мірою, страхітливу втрату нашого відродження: Варфоломіївський час (1932—37) в історії красного письменства. До винагороджуючих здобутків нашої поезії супроти всіх утрат належить і ця багата змістом, щира почуттями, обсипана живими іскрами справжнього ліричного таланту, збірка &quot;Виноградник&quot; Юрія Буряківця&quot;. Помер поет 7 січня 1996 року і похований на українському кладовищі у Брунсвіку в Нью Джерзі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

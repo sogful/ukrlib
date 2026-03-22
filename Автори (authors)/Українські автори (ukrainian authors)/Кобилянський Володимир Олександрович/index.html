@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кобилянський Володимир Олександрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кобилянський Володимир Олександрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kobylianskyy-volodymyr-oleksandrovych.webp" alt="Кобилянський Володимир Олександрович" title="Кобилянський Володимир Олександрович" data-full="./kobylianskyy-volodymyr-oleksandrovych.webp" /><img class="side-img side-thumb" src="./kobylianskyy-volodymyr-oleksandrovych_1.webp" alt="Кобилянський Володимир Олександрович" title="Кобилянський Володимир Олександрович" data-full="./kobylianskyy-volodymyr-oleksandrovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Володимир Олександрович Кобилянський (27 вересня 1895, Ясси, Румунія — 10 вересня 1919, Київ) — український поет, перекладач. Літературні псевдоніми – В. Бульваров, Остап Сумрак, Ульріх Штутнер.</p>
+          <p>Біографія</p>
+          <p>Навчався в німецькій початковій школі, далі — в Чернівецькій учительській семінарії. Склав іспит на помічника народного вчителя. Учителював у селі Киселеві на Буковині. Від 1913 року жив у Києві. 1919 року працював у Головній книжковій палаті в Києві (нині Книжкова палата України). Співпрацював з Павлом Тичиною та Дмитром Загулом у Всеукраїнському державному видавництві України. Помер від тифу під час окупації Києва військами Денікіна. Поховано на Байковому кладовищі. Могилу відроджено 1989 року. На могилі на двох підставках встановлено квадратну стелу з габро, на якій вигравірувано портрет Кобилянського і напис: &quot;Український письменник Володимир Олександрович Кобилянський 27.VIII.1895 — 10.IX.1919&quot;. Творчість Опублікував збірки &quot;Між лататтям&quot; (1913), &quot;Мій дар&quot; (посмертно, 1920). Переклав понад 100 творів Генріха Гейне та Йоганна-Фрідріха Шіллера.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

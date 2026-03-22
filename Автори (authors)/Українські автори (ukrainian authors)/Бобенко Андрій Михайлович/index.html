@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бобенко Андрій Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бобенко Андрій Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bobenko-andriy-mykhaylovych.webp" alt="Бобенко Андрій Михайлович" title="Бобенко Андрій Михайлович" data-full="./bobenko-andriy-mykhaylovych.webp" /></div>
+        <div class="prose-text">
+          <p>БОБЕНКО (БІБИК) Андрій Михайлович (1854-1920) Народився 12 серпня 1854 року в с. Добренька Костянтиноградського повіту Полтавської губернії в сім&#x27;ї селянина-бідняка. Шести років Андрій залишився без матері. В хату прийшла зла мачуха. У вірші &quot;Було&quot; поет згадує тяжке дитинство:</p>
+          <p>З десяти років Андрій пішов заробляти на хліб. Батько віддав його за 20 крб. на 4 роки працювати наймитом у крамаря. В згаданому вже вірші поет писав:</p>
+          <p>В 17 років Аядрій потрапив на пароплав у Херсоні, звідси до Одеси. Працював кочегаром на океанських пароплавах, і там, далеко від рідних берегів, став писати вірші українською мовою. Капітан пароплава Л. І. Гаврилов помітив обдарованого юнака і познайомив його з діячами культури Одеси. Вони допомогли Андрію Михайловичу влаштуватися на роботу в залізничне депо, одержати освіту. Склавши іспит на звання вчителя, Бобенко працював педагогом. Друкуватися почав у 1883 році в альманасі М. Старицького &quot;Рада&quot;. Згодом його твори з&#x27;явилися в журналі &quot;Зоря&quot; й петербурзькому соціал-демократичному виданні &quot;Вільна Україна&quot;. Як поет, формувався під впливом Т. Г. Шевченка Бобенко — один з перших поетів-робітників. Відомі його твори: &quot;Бурлака&quot;, &quot;Марні сльози&quot;, &quot;Лірник&quot;, &quot;Багата кутя&quot;. В листопаді 1919 року, незадовго до смерті, Андрій Михайлович написав заповіт, у якому є такі рядки: У 1920 році Андрій Михайлович помер.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

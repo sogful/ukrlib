@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Жадан Сергій Вікторович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Жадан Сергій Вікторович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zhadan-serhiy-viktorovych.webp" alt="Жадан Сергій Вікторович" title="Жадан Сергій Вікторович" data-full="./zhadan-serhiy-viktorovych.webp" /><img class="side-img side-thumb" src="./zhadan-serhiy-viktorovych_1.webp" alt="Жадан Сергій Вікторович" title="Жадан Сергій Вікторович" data-full="./zhadan-serhiy-viktorovych_1.webp" /><img class="side-img side-thumb" src="./zhadan-serhiy-viktorovych_2.webp" alt="Жадан Сергій Вікторович" title="Жадан Сергій Вікторович" data-full="./zhadan-serhiy-viktorovych_2.webp" /><img class="side-img side-thumb" src="./zhadan-serhiy-viktorovych_3.webp" alt="Жадан Сергій Вікторович" title="Жадан Сергій Вікторович" data-full="./zhadan-serhiy-viktorovych_3.webp" /><img class="side-img side-thumb" src="./zhadan-serhiy-viktorovych_4.webp" alt="Жадан Сергій Вікторович" title="Жадан Сергій Вікторович" data-full="./zhadan-serhiy-viktorovych_4.webp" /></div>
+        <div class="prose-text">
+          <p>Сергій Жадан — український поет, прозаїк, есеїст, перекладач. Народився 23 серпня 1974 р. в місті Старобільськ Луганської області. У 1996 році закінчив Харківський національний педагогічний університет імені Сковороди. У 1996-1999 роках навчався в аспірантурі університету; кандидат філологічних наук. З 2000 року — викладач кафедри української та світової літератури ХНПУ. У 2004 році закінчив викладацьку діяльність.</p>
+          <p>Перекладає поезію з німецької (в тому числі Пауля Целана), англійської (в тому числі Чарльза Буковскі), білоруської (в тому числі Андрія Хадановича), російської (в тому числі Кирила Медведєва, Данилу Давидова) мов. Власні тексти перекладалися німецькою, англійською, польською, сербською, хорватською, литовською, білоруською, російською та вірменською мовами.</p>
+          <p>У березні 2008 року роман Жадана &quot;Anarchy in the UKR&quot; в російському перекладі увійшов в &quot;довгий список&quot; російської літературної премії &quot;Національний бестселер&quot; (номінатора виступив російський письменник Дмитро Горчев). Ця ж книга в 2008 році увійшла в шорт-лист і отримала почесну грамоту конкурсу &quot;Книга року&quot; на Московській міжнародній книжковій виставці-ярмарку. У травні 2010 року журнал &quot;GQ&quot; вдруге висунув Жадана на звання &quot;Людина року&quot; в номінації &quot;Письменники&quot; за книгу &quot;Червоний Елвіс&quot; (перше висунення відбулося у 2008 році за &quot;Anarchy in the UKR&quot;). Критики називають Сергія Жадана одним з найкращих літераторів з країн колишнього СРСР, відзначають його вміння бути своїм як для простої, так і для освіченої аудиторії. Особливу похвалу і підтримку отримав його роман &quot;Ворошиловград&quot;, який було названо маніфестом цілого покоління. У 2016 році Сергій Жадан був нагороджений престижною літературною премією Президента України &quot;Українська книжка року&quot; за збірку &quot;Месопотамія&quot;. Письменник щиро подякував главі держави за надану честь і повідомив, що грошову винагороду передасть на потреби дітям: &quot;… Ми з видавцями хочемо ще раз подякувати Вам за цю премію і передати її на потреби дитячих закладів Луганської області. Ми з друзями-волонтерами вже певний час допомагаємо дитячим садочкам та інтернатам на Луганщині, тож радо передамо і ці кошти дітям&quot;. Письменник живе і працює в Харкові. Регулярно виступає зі своїми творами в різних містах України та Західної Європи — зокрема в супроводі українських музикантів (найчастыше, групи &quot;Собаки в космосі&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

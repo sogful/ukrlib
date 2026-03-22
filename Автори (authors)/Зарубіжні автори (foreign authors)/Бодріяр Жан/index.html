@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бодріяр Жан — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бодріяр Жан</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bodriiar-zhan_3.webp" alt="Бодріяр Жан" title="Бодріяр Жан" data-full="./bodriiar-zhan_3.webp" /><img class="side-img side-thumb" src="./bodriiar-zhan_1.webp" alt="Бодріяр Жан" title="Бодріяр Жан" data-full="./bodriiar-zhan_1.webp" /><img class="side-img side-thumb" src="./bodriiar-zhan_2.webp" alt="Бодріяр Жан" title="Бодріяр Жан" data-full="./bodriiar-zhan_2.webp" /><img class="side-img side-thumb" src="./bodriiar-zhan.webp" alt="Бодріяр Жан" title="Бодріяр Жан" data-full="./bodriiar-zhan.webp" /></div>
+        <div class="prose-text">
+          <p>Бодрійяр — вважається одним з найвідоміших представників філософії постмодернізму — народився 20 червня 1929 року у французькому місті Реймс. Отримавши ступінь доктора філософії, він протягом кількох десятків років викладав у Нантеррском університеті в Парижі.</p>
+          <p>У 1968 році Бодрійяр публікує роботу &quot;Система речей&quot; (&quot;Le system des objets&quot;), що представляє собою розгорнуту критику &quot;суспільства споживання&quot;, яка стала основою проблематики його подальшої творчості.</p>
+          <p>Основними темами досліджень філософа були питання співвідношення реальності і її символічного відображення, він першим ввів у широкий обіг поняття &quot;симулякр&quot; і &quot;гіперреальність&quot;. Оригінальний філософський дискурс Бодрійяра представляв з себе гиперкритицизм — тотальну сверхкритическую критику. Популярність серед широкої публіки, вказує AFP, Бодріяр набув після публікації есе про антиіракської кампанії 1991 року, названого &quot;Війни в Затоці не було&quot;. Грунтуючись на своїй теорії &quot;гіперреальності симулякрів&quot;, Бодріяр робив висновок, що ця кампанія стала першою в світовій історії &quot;віртуальної війною&quot;, події якої були сконструйовані ЗМІ. Цю тему Бодрійяр розвинув, говорячи про теракти у США 11 вересня 2001 року, які він вважав початком &quot;четвертої світової війни, в якій глобалізм протистоїть самому собі&quot; (есе &quot;Дух тероризму&quot;). Всього Бодрійяр написав близько 50 книг, як правило, перебували на межі філософії і літератури. У число найбільш відомих його праць належать: &quot;До критики політичної економії знака&quot; (1972), &quot;Дзеркало виробництва&quot; (1975), &quot;Символічний обмін і смерть&quot; (1976), &quot;У тіні мовчазної більшості&quot; (1978), &quot;Про розбещення&quot; (1979), &quot;Симулякри і симуляції&quot; (1981), &quot;Фатальні стратегії&quot; (1983), &quot;Америка&quot; (1986), &quot;Екстаз комунікації&quot; (1987).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

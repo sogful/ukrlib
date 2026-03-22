@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сінклер Льюїс — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Сінклер Льюїс</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./sinkler-liuis.webp" alt="Сінклер Льюїс" title="Сінклер Льюїс" data-full="./sinkler-liuis.webp" /><img class="side-img side-thumb" src="./sinkler-liuis_1.webp" alt="Сінклер Льюїс" title="Сінклер Льюїс" data-full="./sinkler-liuis_1.webp" /></div>
+        <div class="prose-text">
+          <p>Сінклер Льюїс (7 лютого 1885, Сок-Сентр, штат Міннесота — 10 січня 1951, Рим) — відомий американський письменник, перший американський письменник-лауреат Нобелівської премії з літератури (1930).</p>
+          <p>Льюїс вступив доЄльського університету в 1903 роціі незабаром зайнявся літературним життям в університетському містечку, писав для літературної рецензії та університетської газети, а також працював репортером, сумісником Associated Press та місцевою газетою.Він закінчив навчання лише в 1908 р., Перервавшись на проживання в спільнійдомашній колонії Геліконав Нью-ДжерсіАптона Сінклераі відправившись у Панаму.</p>
+          <p>Протягом декількох років після Єльського університету він переходив від узбережжя до узбережжя і від роботи до роботи, працюючи репортером і редактором, працюючи над короткими історіями.До 1914 року він постійно бачив свою коротку художню літературу в таких популярних журналах, як Saturday Evening Post,і почав працювати над романами. У період з 1914 по 1919 рік він опублікував п&#x27;ять романів: &quot;Наш містер Врен&quot;, &quot;Слід яструба&quot;, &quot;Робота&quot;, &quot;Невинні&quot;та &quot;Вільне повітря&quot;.&quot;Усі вони загинули, поки фарба не висохла&quot;, – сказав він пізніше. Шостим романом &quot;Головна вулиця&quot;(1920) (Мейн-стріт ) Льюїс нарешті досяг комерційного та критичного успіху.Відтворивши Саук-центр своєї молодості, його сатира на вузькоособливість замкнутого життя містечка стала популярною серед читачів, лише за перший рік вона продала 180 000 примірників. Льюїс продовжив &quot;Мейн-стріт&quot; такими романами, як &quot;Баббіт&quot; (1922), &quot;Стрілець&quot; (1925), &quot;Мантрап&quot; (1926), &quot;Елмер Гентрі&quot; (1927), &quot;Людина, яка знала Кулідж&quot; (1928) і &quot;Додсворт&quot; (1929). У 1930 році він став першим американцем, удостоєним Нобелівської премії з літератури&quot;за енергійне та графічне мистецтво опису та здатність створювати з дотепністю та гумором нові типи персонажів&quot;. Льюїс двічі одружився, спочатку зредактором Vogue Грейс Хеггер (з 1914-1925), а потім з журналісткою Дороті Томпсон (з 1928 по 1942).В результаті кожного шлюбу народилися сини Уеллс (1917 р. Н.) та Майкл (1930 р. Н.).Уеллс Льюїс був убитий в бою в жовтні 1944 року, в розпал Другої світової війни. Як автор, Льюїс був надзвичайно плідним, він написав 23 романи між 1914 і смертю 1951 року. Він також є автором понад 70 новел, декількох п&#x27;єс і принаймні одного сценарію. Двадцять його романів були адаптовані до кінофільмів. Здоров&#x27;я Льюїса було підірвано алкоголізмом. Він помер від серцевого нападу 10 січня 1951 р. у Римі. Урна з прахом Сінклера Льюїса похована на цвинтарі Ґрінвуд, м. Сок-Сентр (Міннесота), штат Міннесота.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

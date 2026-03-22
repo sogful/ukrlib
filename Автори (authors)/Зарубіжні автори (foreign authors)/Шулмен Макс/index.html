@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шулмен Макс — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Шулмен Макс</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Макс Шулмен, американський письменник-гуморист (1919-1988 рр. ) народився у Сент-Полі, штат Міннесота. Під час навчання у місцевому університеті був колумністом студентської Minnesota Daily, а також публікувався в університетському гумористичному журналі Ski-U-Мах.</p>
+          <p>Добре відомий як сценарист багатьох фільмів та серіалів. (До речі, існує фільм, знятий по роману Rally Round the Flag, Boys! у 1958 році з Полом Н&#x27;юменом у головній ролі.)</p>
+          <p>Веселий, насичений добрим гумором роман отримав свою назву з пісні часів Громадянської війни в США, яка була написана у 1862 році американським композитором Джорджем Фредеріком Рутом. Пісня &quot;Бойовий поклик свободи&quot; (Battle Cry of Freedom), також відома як Rally Round the Flag, високо піднімала бойовий дух солдатів і була дуже популярна серед союзників. В цій книзі, назву якої дотепно перекладено як &quot;Хлопці, наших б&#x27;ють!&quot;, автор розповідає про будні типового американського містечка Патнем-Лендінга… Після свого первинного успіху з Добі Гіллісом на початку 1950-х років Шульман створив гумористичну колонку &quot;На кампусі&quot; для понад 350 колективних газет в один момент. Він пілотував черговий серіал для CBS для сезону 1961 року &quot;Daddy-O&quot;. Пізніше роман &quot;Хто-небудь отримав матч?&quot; наситив як телебачення, так і тютюнову промисловість (що було іронічно, оскільки його колонку &quot;На кампусі&quot; спонсорувала сигаретна компанія). Останнім його головним проектом був &quot;House Calls&quot;, який розпочався як фільм 1978 року за мотивами однієї з його історій, в ньому знялися Уолтер Маттау та Гленда Джексон. Шульман був головним сценарістом. Шульман був одним із співпрацівників у науково-популярній телевізійній програмі Light&#x27;s Diamond Jubilee 1954 року, приуроченій до 75-річчя винаходу лампочки. Його дочка, Марта Роуз Шульман, є автором кулінарної книги. Макс Шульман помер 28 серпня 1988 року від раку кісток у віці 69 років у Лос-Анджелесі, Каліфорнія.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

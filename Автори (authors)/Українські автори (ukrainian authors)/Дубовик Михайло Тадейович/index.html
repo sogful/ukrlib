@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дубовик Михайло Тадейович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дубовик Михайло Тадейович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dubovyk-mykhaylo-tadeyovych.webp" alt="Дубовик Михайло Тадейович" title="Дубовик Михайло Тадейович" data-full="./dubovyk-mykhaylo-tadeyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Михайло ДУБОВИК</p>
+          <p>Дубовик Михайло Тадейович народився 31 грудня 1900 року в селі Межиріч Лебединськзго повіту на Сумщині в сім&#x27;ї гончаря.</p>
+          <p>1927 року закінчив Дніпропетровський інститут народної освіти. Працював учителем, потім журналістом у газетах &quot;Зірка&quot;, &quot;Майбутня зміна&quot; (Дніпропетровськ), &quot;Кіно&quot;, &quot;Селянська газета&quot;, &quot;Літературна газета&quot; (Київ), літконсультантом Кабінету молодого автора при редакції газети &quot;Пролетарська правда&quot;. Перші вірші опублікував у дніпропетровських газетах та журналі &quot;Зоря&quot;. Видрукував поетичні збірки &quot;Вежі&quot;, &quot;Змагання&quot; (1930), &quot;Тепловій&quot; (1940), &quot;Багряний листопад&quot; (1941). Належав до літературної організації &quot;Плуг&quot;. Як пояснює М. Дубовик у власноручно написаній біографії, його все життя морально пригнічував той факт, що 1919 року, ще учнем Маріупольської вчительської гімназії, він потрапив разом зі своїми однокурсниками під примусову денікінську мобілізацію, хоча невдовзі дезертирував з армії білих і перейшов на бік Червоної Армії. У зв&#x27;язку з тим вимушеним і дуже короткочасним перебуванням у білих він 1924 року був виключений з інституту, але згодом відновлений. Вважаючи себе заплямованим, М. Дубовик часом впадав у песимізм, що позначилося й на окремих його поезіях. Арештований у Києві 25 червня 1941 року. В обвинувальному висновку, затвердженому наркомом внутрішніх справ УРСР Мсшиком, зазначено, що М.Дубовик &quot;упродовж 1939-41 років був учасником контрреволюційної організації &quot;САД-СУЛА&quot;, за завданням якої складав і надсилав анонімні документи різко контрреволюційного фашистсько-терористичного характеру на адреси письменників України, всіляко зводячи наклепи на радянську літературу&quot;. Окрім цього, йому інкримінувалося, що в 1917 році він &quot;був активним учасником націоналістичної організації &quot;Просвіта&quot;, за завданням якої займався розповсюдженням контрреволюційної націоналістичної літератури&quot;. На основний пункт звинувачення М. Дубовик дав категоричну відповідь: &quot;Ніколи я не писав ніяких антирадянських листів і нікому не посилав. Ніколи ні до яких контрреволюційних партій і організацій не належав&quot;. Єдиним доказом вини Миколи Дубовика був акт Київського інституту науково-судової експертизи від 23 червня 1941 року. Саме він і вирішив долю письменника. У судово-слідчій справі зберігається довідка про те, що за постановою наркома внутрішніх справ УРСР і прокурора УРСР М. Дубовик розстріляний 7 липня 1941 року. Після смерті Сталіна на клопотання правління Спілки письменників України справу М. Дубовика було переглянуто, постановою судової колегії в кримінальних справах Верховного суду СРСР від 28 вересня 1955 року він реабілітований посмертно. Повторна графічна експертиза, виконана в науково-дослідній криміналістичній лабораторії Всесоюзного інституту юридичних наук (акт від 27 травня 1954 року), не підтвердила авторства М. Дубовика як виконавця документів, що розповсюджувалися анонімно в Києві напередодні війни. Іван Ільєнко ЛУ 25.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

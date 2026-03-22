@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коцюба Гордій Максимович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коцюба Гордій Максимович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kotsiuba-hordiy-maksymovych.webp" alt="Коцюба Гордій Максимович" title="Коцюба Гордій Максимович" data-full="./kotsiuba-hordiy-maksymovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 16.01.1892 р. на хуторі Костів на Харківщині в селянській родині. Навчався у Валківській трирічній народній школі. Потім кілька років працював писарем у різних канцеляріях, самотужки здобуваючи освіту. Екстерном здав екзамени за повний курс гімназії, поступив на юридичний факультет Петербурзького університету і паралельно студіював історико-філологічні науки.</p>
+          <p>У жовтні 1917 р. вступив до партії українських есерів (УПСР), в якій активно працював до травня 1918-го, після чого перейшов до партії боротьбистів. У жовтні 1921 р. разом із Шумським Коцюба поїхав у Варшаву, працював кілька місяців у пресбюро радянського посольства.</p>
+          <p>Був одним із фундаторів і редакторів журналу &quot;Шляхи Мистецтва&quot;, працював у газетах &quot;Вісті ВУЦВК&quot;, &quot;Комуніст&quot;, &quot;Селянська Правда&quot;, журналах &quot;Всесвіт&quot;, &quot;Червоний Шлях&quot; та ін. Першими його друкованими творами з 1919-го були етюди та поезії в прозі. Видав близько трьох десятків книжок. Серед них збірки оповідань &quot;На межі&quot; (1924), &quot;Біля гудків&quot; (1925), &quot;Свято на буднях&quot; (1927), &quot;Змова масок&quot;, &quot;Чекання&quot; (1929), &quot;Бронзові люди&quot;, &quot;Дніпрові саги&quot;, &quot;На терезах&quot;, &quot;Облога шахт&quot; (1931), &quot;Дорога змагань&quot; (1932); романи &quot;Нові береги&quot; (1932), &quot;Родючість&quot; (1934), &quot;Перед грозою&quot; (1938). Гордій Коцюба належав до літературних організацій &quot;Гарт&quot;, ВАПЛІТЕ. Заарештували його 21.03.1938 р. На допитах письменник під фізичним впливом визнав свою вину. 17.12.1938 р. його засудили у Харкові до розстрілу. Присуд виконали 22.03.1939 р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

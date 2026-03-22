@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кобаясі Ісса — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кобаясі Ісса</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kobaiasi-issa.webp" alt="Кобаясі Ісса" title="Кобаясі Ісса" data-full="./kobaiasi-issa.webp" /></div>
+        <div class="prose-text">
+          <p>Кобаясі Ісса народився в 1763, с. Касівабара, пров. Сінано — 1827) — японський поет.</p>
+          <p>Ісса народився 1763 р. у гірській провінції Сінано в родині заможного селянина Кобаясі Яґохея. Його мати померла в молодому віці, а мачуха зробила все можливе, щоби майбутній поет уже в чотирнадцять років назавжди залишив сім&#x27;ю та поїхав шукати долі в Едо (Токіо). Перебравши там безліч професій, Ісса знайшов своє покликання в поезії.</p>
+          <p>Подорожуючи по країні, він заробляв на прожиток складанням хайку та викладанням поезії. Коли йому виповнилося 39 років, Ісса повернувся у рідне село, де застав тяжкохворого батька, котрого доглядав, поки той не помер у нього на руках. Зворушливе ставлення сина до свого батька, філософські роздуми поета про людське життя та навколишній світ відобразились у ліричному щоденнику Ісса &quot;Останні дні батька&quot; (&quot;Тіті-но сю-ен-ніккі&quot;), який він написав у 1801 р. Після численних судових розглядів і суперечок з мачухою та її дітьми поет отримав нарешті свою частку батьківського спадку і зміг уперше одружитися, коли йому було вже 50 років. Молода дружина народила йому чотирьох синів і доньку, але всі вони померли ще в дитячому віці. Незабаром померла й дружина поета Кіку, котру він палко кохав і за котрою сумував до самої смерті, хоч і був ще двічі одружений і навіть мав дітей. Окрім ліричного щоденника &quot;Останні дні батька&quot; (1801), творчий спадок Ісса складають літературні есе, дорожні нотатки, книга прози та віршів &quot;Моя весна&quot;(&quot;Ора-гахару&quot;, 1819), а також майже двадцять тисяч хайку. Поезія Ісса приваблює читачів своєю простотою, відвертістю і навіть якоюсь дитячою щирістю, за якими криються глибокі філософські погляди поета на життя, людську долю, місце та покликання людей у світі:Гусей осінніх настрій у душі. Що ж, прощавайте!Прощавайте, друзі!(Тут і далі пер. І. Бондаренка)Героями його віршів були не лише люди, а й різноманітні тварини, птахи, комахи:Мою хатинку,Равлику, пильнуй Укупі з соловейком голосистим.І цим його поезія певною мірою зближується з жанром байки, але без жодного моралізування, притаманного цьому жанрові. Можливо, саме тому Ісса, як ніхто інший із японських поетів, зміг так поетично, так образно та переконливо віддзеркалити у своїй поезії один із головних філософських постулатів дзен-буддизму — безумовну й органічну єдність усього живого та сущого на землі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

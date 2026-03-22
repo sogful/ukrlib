@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Глібов Леонід Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Глібов Леонід Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hlibov-leonid-ivanovych_2.webp" alt="Глібов Леонід Іванович" title="Глібов Леонід Іванович" data-full="./hlibov-leonid-ivanovych_2.webp" /><img class="side-img side-thumb" src="./hlibov-leonid-ivanovych.webp" alt="Глібов Леонід Іванович" title="Глібов Леонід Іванович" data-full="./hlibov-leonid-ivanovych.webp" /><img class="side-img side-thumb" src="./hlibov-leonid-ivanovych_1.webp" alt="Глібов Леонід Іванович" title="Глібов Леонід Іванович" data-full="./hlibov-leonid-ivanovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>ЛЕОНІД ГЛІБОВ</p>
+          <p>(1827 — 1893)</p>
+          <p>…Леонід Іванович Глібов народився 5 березня 1827р. у селі Веселий Поділ Хорольського повіту на Полтавщині в родині управителя маєтків магнатів Родзянків. Початкову освіту він здобув дома за допомогою матері, а 1840р. вступив до Полтавської гімназії, де почав писати вірші і де виходить його перша збірка російською мовою &quot;Стихотворения Леонида Глебова&quot; (1847). До жанру байки Глібов звертається під час навчання у Ніжинському ліцеї вищих наук, тоді ж деякі з них друкує у газеті &quot;Черниговские губернские ведомости&quot;. Після закінчення ліцею (1855) Глібов працює вчителем історії та географії в Чорному Острові на Поділлі, а з 1858р. — у Чернігівській чоловічій гімназії, гаряче захищає прогресивні педагогічні методи. Навколо сім&#x27;ї Глібова групується чернігівська інтелігенція. 1861р. письменник стає видавцем і редактором новоствореної газети &quot;Черниговский листок&quot;. На сторінках цього тижневика часто з&#x27;являлися соціально гострі, спрямовані проти місцевих урядовців, поміщиків-деспотів, проти зловживань судових органів, матеріали. За зв&#x27;язки з членом підпільної організації &quot;Земля і воля&quot; І. Андрущенком у 1863р. Глібова було позбавлено права вчителювати, встановлено над ним поліцейський нагляд. Два роки поет живе у Ніжині, а 1865р. повертається у Чернігів і деякий час працює дрібним чиновником у канцелярії губернатора. З 1867р. він стає управителем земської друкарні, продовжує активну творчу працю, готує збірки своїх байок, видає книги-&quot;метелики&quot;, друкує фейлетони, театральні огляди, публіцистичні статті, поезії російською мовою, твори для дітей. Помер Л. Глібов 10 листопада 1893р. в Чернігові, де його й поховано. Широке визнання в українській літературі Глібов здобув як байкар. Усього він написав понад сотню творів цього жанру. Перша збірка &quot;Байки Леоніда Глібова&quot;, що містила 36 творів, вийшла у Києві 1863р., але майже весь тираж її був знищений у зв&#x27;язку з валуєвським циркуляром. У 1872р. вдалося видати другу, доповнену в порівнянні з першою, книгу байок, а 1882р.—третю, що була передруком попередньої. Спроби надрукувати інші збірки Глібову не вдалися — перешкоджали цензурні заборони. Видання всього творчого доробку письменника-класика стало можливим за часів Радянської влади. Історія української літератури другої половини ХІХ століття, Київ, 1979.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Заєць Василь Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Заєць Василь Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zaiets-vasyl-vasylovych.webp" alt="Заєць Василь Васильович" title="Заєць Василь Васильович" data-full="./zaiets-vasyl-vasylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився в с. Шпичинці Вчорайшенського (нині Ружинського) району Житомирської області.</p>
+          <p>Перед Другою світовою війною родина переселилася на хутір Загайпіль Турбівського району Вінницької області (нині у межах Турбівської селищної ради). Тут, а потім у селищі Турбові минули його дитячі літа.</p>
+          <p>Закінчив Турбівську десятирічку, а потім Львівський лісотехнічний інститут (1962). Три роки працював у лісопроектній експедиції в м. Ірпінь, після чого став журналістом. Працюючи в районній газеті, закінчив факультет журналістики Київського державного університету імені Т. Г. Шевченка (1973). Перед 1991 роком випускав газету &quot;Київський час&quot; Київської обласної організації Української республіканської партії. Потім працював у газеті &quot;Хрещатик&quot;, редактором відділу газети &quot;Культура і життя&quot;. Помер 2015 року. Василь Заєць — автор збірок віршів для дітей &quot;Боброве новосілля&quot; (1970), &quot;Льон посіяла зозуля&quot; (1973), &quot;Голубий дзвоник&quot; (1976), &quot;А ти, жабко, не сиди&quot; (1986), &quot;Шипшинові ліхтарі&quot; (1988), &quot;Семибарвний килимок&quot; (1993), &quot;Пелюстинки пахнуть медом&quot; (2006), &quot;Вальс кленової крилатки&quot; (2006), &quot;Сонячні ковалі&quot; (2006), &quot;Скрипка на сінокосі&quot; (2008), &quot;Посланець від сонечка&quot; (2008). З-під пера В. Зайця вийшла низка ліричних та публіцистичних книг: &quot;Громова криниця&quot; (2004), &quot;Пісня помаранчевого містечка&quot; (2004), &quot;Стрічка помаранчева, оранжевий цвіт&quot; (2005), &quot;Повстанські вишні&quot; (2005), &quot;Катруся&quot; (2006), &quot;Розмова з донею&quot; (2007), &quot;Хліб від брата&quot;, &quot;Дорогі хлібини сорок першого&quot; (обидві — 2009), &quot;З поля вітер повіває&quot; (2010). Основні мотиви поезії члена Національної спілки письменників України (від 2005 року) Василя Зайця — доброта, щирість, ніжність, любов до життя, людини, рідної Батьківщини.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

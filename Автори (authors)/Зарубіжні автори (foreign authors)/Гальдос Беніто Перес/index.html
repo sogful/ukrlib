@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гальдос Беніто Перес — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гальдос Беніто Перес</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./haldos-benito-peres.webp" alt="Гальдос Беніто Перес" title="Гальдос Беніто Перес" data-full="./haldos-benito-peres.webp" /><img class="side-img side-thumb" src="./haldos-benito-peres_1.webp" alt="Гальдос Беніто Перес" title="Гальдос Беніто Перес" data-full="./haldos-benito-peres_1.webp" /><img class="side-img side-thumb" src="./haldos-benito-peres_2.webp" alt="Гальдос Беніто Перес" title="Гальдос Беніто Перес" data-full="./haldos-benito-peres_2.webp" /></div>
+        <div class="prose-text">
+          <p>День народження: 10.05.1843 року у Лас-Пальмас-Де-Гран-Канарія, Іспанія</p>
+          <p>Дата смерті: 04.01.1920 року у Медрід, США</p>
+          <p>Гальдос Беніто Перес — один з найбільших представників іспанського роману XIX ст., Ідеолог ліберальної іспанської буржуазії, яка бореться з конституційним монархізмом за республіканський лад; юрист за освітою і фахом; брав діяльну участь в політичному житті країни, — депутат республіканської партії. Літературну славу Гальдос завоював своєю історико-романтичної епопеєю (в 46 тт.) &quot;Національні епізоди&quot; (Episodios Nacionales). Епопея охоплює період від вторгнення Наполеона до проголошення першої республіки середини XIX в. Серед романів (їх понад 20), що складають це монументальний твір, найбільш художніми є: &quot;La Corte de Carlos IV&quot; (Двір Карла IV, рос. Перекл., СПБ., 1895) і &quot;Trafalgar&quot; (Трафальгар). Вони написані під безсумнівним впливом, з одного боку, Бальзака ( &quot;Людська комедія&quot;), з іншого — А. Дюма і Еркмана-Шатріана і являють собою високі зразки політичного роману. Гальдос протиставляв в цих романах героїзм і патріотичну самовідданість &quot;народних&quot; героїв безпорадності іспанської буржуазії. Він ставив собі певне завдання — виховати та зміцнити у свідомості читача і, зокрема, молодого покоління, принципи буржуазно-ліберальної політичної моралі. Гальдос попередник таких ідеологів республіканського лібералізму, як Бласко Ібаньєс. Гальдос відомий також і як автор ряду романів, спрямованих проти католицької церкви. Останні були характерні для епохи занепаду колись економічно і політично могутньою Іспанії. З романів цієї серії найбільш популярні і не втратили свого значення в умовах іспанської дійсності &quot;Doña Perfecta&quot; (1876, рос. Перекл., СПБ., 1882 і 1910) і &quot;Gloria&quot; (1877), що викривають жорстокість і реакційну сутність католицизму. Романи Гальдоса — &quot;Lo prohibido&quot; (1885), &quot;Tormento&quot; (2-е изд., 1884), &quot;Fortunata у Jacinta&quot; (1888), &quot;La desheredada&quot; (1890) і &quot;Misericordia&quot; (1897) — зображують в натуралістичних тонах побут &quot;дна&quot; іспанських міст і розкривають соціальну механіку сучасного капіталістичного суспільства.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

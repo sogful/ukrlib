@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Порджес Артур — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Порджес Артур</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pordzhes-artur_1.webp" alt="Порджес Артур" title="Порджес Артур" data-full="./pordzhes-artur_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 20 серпня 1915 року в місті Чикаго, Іллінойс, США. Здобув ступінь магістра в галузі математики в технічному інституті в штаті Іллінойс. Працював інструктором під час Другої світової війни, а після війни викладав математику.</p>
+          <p>Перша публікація в 1950 році, коли в журналі &quot;Man&#x27;s World&quot; вийшла розповідь &quot;Щур&quot;. Та ж розповідь виходить наступного року на сторінках журналу The Magazine of Fantasy and Science Fiction. Протягом своєї письменницької кар&#x27;єри Артур Порджес пише переважно оповідання та інші короткі твори у жанрі наукової фантастики. У 1960-і роки Артур Порджес оголосив про відмову від активної діяльності та залишив викладання. Проте його розповіді продовжують виходити, хоч і з великими проміжками часу. Крім того, в цей період він віддаляється від фантастики і приділяє найбільшу увагу детективному жанру, насамперед сюжетам з використанням &quot;неможливих злочинів&quot;, таких як проблема замкненої кімнати. Розгадки в детективних оповіданнях Порджеса зазвичай засновані на використанні якихось природничих знань, а детективами виступають вчені, такі, як патологоанатом Хоффман або професор-винахідник Грей.</p>
+          <p>Незважаючи на велику кількість опублікованих оповідань, які Порджес написав протягом усього свого життя, перша авторська збірка була опублікована лише у 2002 році. Цікавий факт: у 1972 році в СРСР на кіностудії &quot;Центрнаукфільм&quot; режисером Семеном Райтбуртом було знято короткометражний фільм &quot;Математик і чорт&quot; за розповіддю Артура Порджеса &quot;Саймон Флегг і диявол&quot;. Помер 12 травня 2006 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

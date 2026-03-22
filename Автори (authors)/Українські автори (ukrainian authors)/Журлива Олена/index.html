@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Журлива Олена — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Журлива Олена</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zhurlyva-olena.webp" alt="Журлива Олена" title="Журлива Олена" data-full="./zhurlyva-olena.webp" /></div>
+        <div class="prose-text">
+          <p>Олена ЖУРЛИВА</p>
+          <p>Котова Олена Костівна (літературний псевдонім — Олена Журлива) народилася 24 червня 1898 року в м. Сміла на Черкащині в багатодітній сім&#x27;ї сільського вчителя. Закінчивши початкову школу, екстерном склала іспити в Уманській гімназії і вступила на філологічний факультет (за конкурсом атестатів) Вищих жіночих курсів у Києві, який закінчила 1922 року, одержавши диплом кандидата філологічних наук. Опісля вчителювала у школах Києва, Харкова, Дніпропетровська, Москви, Кіровограда.</p>
+          <p>1914 року майбутня поетеса була заарештована царською поліцією за участь у демонстрації в день відзначення пам&#x27;яті Т. Г. Шевченка. Природа щедро обдарувала Олену Журливу: в молодості вона чудово співала й гастролювала по Україні з концертами як відома поетеса-співачка. А в театральний сезон 1929-1930 рр. її було запрошено до столичної Харківської опери. Та все ж основним її покликанням була поезія. Віршувати почала рано; перший вірш &quot;Чогось нема, чого — не знаю&quot; побачив світ у &quot;Рідному краї&quot;, коли юній поетесі минуло лише 11 років, а перша збірка поезій &quot;Металом горно&quot; вийшла у 1926 році. Вона друкує свої поезії в різних антологіях, підручниках, журналах &quot;Глобус&quot;, &quot;Червоні квіти&quot;, &quot;Червоний шлях&quot;, &quot;Більшовик&quot;, &quot;Кадри&quot; тощо. На тексти поетеси композитори П. Козицький і В. Косенко створюють пісні. 1930 року побачила світ Друга книжка віршів — &quot;Багряний світ&quot;. У ній поетеса зірко вдивляється в нове життя республіки і свою радість втілює у пристрасні рядки: &quot;В буянні сил, як сік із грона, пливе життя уздовж доріг...&quot; Та невдовзі їй довелося гірко розчаруватися. Приголомшливі сфальшовані судові процеси над вигаданими &quot;ворогами народу&quot; із СВУ, самогубство Хвильового і Скрипника, масові арешти творчої інтелігенції вселяють у серце поетеси тривожні передчуття і не спонукають до творчості. Ті гіркі передчуття виявилися небезпідставними: Олену Журливу було арештовано 1938 року в Москві. Кілька місяців тривало слідство, і лише 26 квітня 1939 року особлива нарада НКВС СРСР засудила поетесу до позбавлення волі у виправно-трудових таборах Алтаю на три роки. 27 лютого 1957 року в зв&#x27;язку з реабілітацією президія правління СПУ поновила Олену Журливу в лавах Спілки письменників з 1934 року і сприяла виданню збірки її вибраних поезій. Згодом вийшли ще кілька книжок її віршів: &quot;Земля в цвіту&quot;, &quot;Червоне листя&quot;, &quot;Хто знає, як рік минає&quot;, &quot;Голуби&quot;. &quot;Ой літечко, літо&quot;, &quot;У нашої Наталі&quot;, &quot;На зеленому городі&quot;. Більшість із них укладені з давно написаних поезій. Із концтаборів поетеса повернулася з украй підірваним здоров&#x27;ям і останнє десятиліття була прикута до ліжка тяжкою недугою Померла Олена Журлива 10 червня 1971 року в Кіровограді. Леонід Вояко ЛУ 32(4441) 8.08.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

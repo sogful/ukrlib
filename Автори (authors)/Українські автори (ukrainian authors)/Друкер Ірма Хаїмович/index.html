@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Друкер Ірма Хаїмович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Друкер Ірма Хаїмович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./druker-irma-khaimovych.webp" alt="Друкер Ірма Хаїмович" title="Друкер Ірма Хаїмович" data-full="./druker-irma-khaimovych.webp" /></div>
+        <div class="prose-text">
+          <p>Ірма ДРУКЕР</p>
+          <p>Друкер Ірма Хаїмович народився 15 грудня 1906 року в місті Чорнобилі на Київщині в сім&#x27;ї вчителя. Навчався в єврейській релігійній школі, та коли йому минуло 12 років, полишив домівку й подався шукати кращої долі. Прибився до Києва, поневірявся по нічліжках, жив випадковими підробітками. Не бачачи ніякого просвітку, перебрався до родичів в Одесу. Там учителював, підробляв у редакції єврейської газети.</p>
+          <p>Наприкінці двадцятих років вступив до робітфаку, після закінчення якого був зарахований студентом педінституту. Учителював, викладаючи мову і літературу в школі, одночасно писав і друкував критичні та літературознавчі статті. Згодам Друкер працював в Одеському музеї Менделе (основоположник сучасної єврейської літератури мовою ідиш), видав низку критичних праць про творчість класиків єврейської літератури та сучасних письменників. Одночасно писав роман &quot;Музиканти&quot;. Окремими книжками опубліковані &quot;Критичні етюди&quot; та &quot;Шолом-Алейхем&quot; (1939). Під час війни І. Друкер був на фронті. Майже одночасно з арештом Н. Лур&#x27;є, X. Вайнермана, А. Губермана органи МДБ в Одесі заарештували й Друкера. На підставі сфальшованих звинувачень особлива нарада МДБ СРСР винесла йому вирок: 15 років ув&#x27;язнення в таборі суворого режиму. Незаслужену покару він відбував у спецтаборі № 15. У квітні 1955 року судово-слідчу справу І. Друкера було переглянуто, він був звільнений з-під варти й цілковито реабілітований. Помер 21 липня 1982 року. Григорій Полянкер ЛУ 25.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

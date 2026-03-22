@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дюмануар Філіпп Франсуа — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дюмануар Філіпп Франсуа</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./diumanuar-filipp-fransua.webp" alt="Дюмануар Філіпп Франсуа" title="Дюмануар Філіпп Франсуа" data-full="./diumanuar-filipp-fransua.webp" /></div>
+        <div class="prose-text">
+          <p>Народився у відомій родині. 1816 року переїхав до Франції. Плодитий письменник, Дюмануар став відомий як автор водевілей. У 1836-1839 роках був директором Театру &quot;Вар&#x27;єте&quot;.</p>
+          <p>1837 року разом із Жаном-Франсуа Байяром написав комедію у трьох актах зі співом &quot;Шевальє д&#x27;Еон&quot;.</p>
+          <p>Спільно з Жаном Байяром та Адольфом Д&#x27;Еннері створив комедію-водевіль &quot;Мадам і мосьє Піншон&quot; (Madam et monsieur Pinchon). Спільно з Адольфом Д&#x27;Еннері написав водевіль у 1 дії &quot;Дитячий бал&quot; (Le bal d&#x27;enfants). З ним же в 1844 році, на прохання Фредеріка Леметра, написав п&#x27;єсу &quot;Дон Сезар де Базан&quot; (Don César de Bazan; інша назва &quot;Іспанський дворянин&quot;, — переробка драми Віктора Гюго &quot;Рюї Блаз&quot;). Багато джерел вона відзначається як найкращий твір автора, що увійшов до світової класики. Автор лібрето кількох опер та балетів, таких як &quot;Гризельдіс&quot; Адольфа Адана (1848).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

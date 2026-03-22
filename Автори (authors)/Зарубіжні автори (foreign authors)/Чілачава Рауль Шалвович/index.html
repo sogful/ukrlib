@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Чілачава Рауль Шалвович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Чілачава Рауль Шалвович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./chilachava-raul-shalvovych.webp" alt="Чілачава Рауль Шалвович" title="Чілачава Рауль Шалвович" data-full="./chilachava-raul-shalvovych.webp" /><img class="side-img side-thumb" src="./chilachava-raul-shalvovych_1.webp" alt="Чілачава Рауль Шалвович" title="Чілачава Рауль Шалвович" data-full="./chilachava-raul-shalvovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Рауль Шалвович Чілачава — український дипломат, поет, перекладач і літературознавець грузинського походження. Заслужений діяч мистецтв України (1998). Доктор філологічних наук, професор.</p>
+          <p>Народився 15 травня 1948 року в с. Чітацкарі, Зугдідівський район, Грузинська РСР.</p>
+          <p>Закінчив Тбіліський державний університет (1970), факультет журналістики. Доктор філологічних наук, професор. З 1970 по 1971 — редактор Київської центральної редакції &quot;Української Радянської Енциклопедії&quot; З 1972 по 1974 — позаштатний кореспондент київської газети &quot;Комсомольськое знамя&quot; З 1974 по 1975 — викладач підготовчих курсів Київського державного університету ім. Шевченка. З 1975 по 1992 — творча робота, член Спілки письменників України. З 1992 по 1993 — Заступник Голови Комітету Національностей та з питань Міграцій при Кабінеті Міністрів України. З 1993 по 1994 — Заступник Міністра України з питань Національностей та міграції. З 1994 по 1996 — Заступник Міністра України з питань Національностей, Міграції та релігійних справ. З 1996 по 1998 — творча робота, член Спілки письменників України. З 1998 — професор Київського державного університету Культури та Мистецтв. З 1998 по 2000 — заступник голови Державного Комітету Національностей та питань міграції З 2000 по 2001 — професор КНУ. З 2001 по 2002 — Перший заступник Голови Державного Комітету Національностей та з питань міграції З 2002 по 2004 — заступник Голови Державного Комітету Національностей та з питань міграції З 09.12.2005 по 04.06.2010 — Надзвичайний та Повноважний Посол України в Латвії. Автор понад 60 книжок поезій, а також перекладів (з української на грузинську і навпаки), публіцистики, двох монографій. Пише грузинською та українською мовами. Автор нарисів &quot;Серця в міцнім союзі&quot; (1974), &quot;Орлине міжгір&#x27;я&quot; (1978), &quot;Під сонцем Іверії&quot; (1987). Переклади прози та поезій грузинською Григорія Сковороди, Тараса Шевченка, Павла Тичини, Володимира Сосюри, Миколи Бажана, Бориса Олійника, Василь Сухомлинського, Петра Осадчука та ін. Упорядкував Антологію української поезії &quot;Серпень (55 українських поетів)&quot; (2001). Переклав українською твори Давида Гурамішвілі, Акакія Церетелі, Іллі Чавчавадзе, Г. Табідзе, Іраклія Абашідзе, Г. Абашідзе, Нодара Думбадзе, Т. Чіладзе, Г. Чічінадзе, Г. Хухашвілі, Е. Маградзе, Р. Мішвеладзе, Костянтина Гамсахурдіа. Вибрані твори: &quot;Початок&quot; (1973), &quot;Бути&quot;, &quot;Чому зебра смугаста&quot; (1976), &quot;Після заходу&quot; (1979), &quot;Пародії&quot; (1981), &quot;Час побачення&quot; (1982), &quot;Земля насущна&quot; (1983), &quot;Рівнодення&quot; (1984), &quot;Вітер над стиглими нивами&quot;, &quot;Знак Зодіака&quot;, &quot;За тбіліським часом&quot;, &quot;Стіна плачу&quot;; монографія &quot;Микола Бажан&quot;</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

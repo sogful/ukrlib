@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Карамзін Микола Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Карамзін Микола Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./karamzin-mykola-mykhaylovych.webp" alt="Карамзін Микола Михайлович" title="Карамзін Микола Михайлович" data-full="./karamzin-mykola-mykhaylovych.webp" /><img class="side-img side-thumb" src="./karamzin-mykola-mykhaylovych_1.webp" alt="Карамзін Микола Михайлович" title="Карамзін Микола Михайлович" data-full="./karamzin-mykola-mykhaylovych_1.webp" /><img class="side-img side-thumb" src="./karamzin-mykola-mykhaylovych_2.webp" alt="Карамзін Микола Михайлович" title="Карамзін Микола Михайлович" data-full="./karamzin-mykola-mykhaylovych_2.webp" /><img class="side-img side-thumb" src="./karamzin-mykola-mykhaylovych_3.webp" alt="Карамзін Микола Михайлович" title="Карамзін Микола Михайлович" data-full="./karamzin-mykola-mykhaylovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>(12.12.1766 — 03.06.1826)</p>
+          <p>Коли наприкінці 1980-х &quot;Історію держави Російського&quot; випустили по підписці, ажіотаж був неймовірний. Створила його напівграмотна публіка, чомусь вважала Карамзіна за &quot;раннього Пікуля&quot;. Забавно було дивитися на витягнуті обличчя тих, хто мав намір після обіду повалятися на дивані з томом &quot;Історії…&quot;.</p>
+          <p>Багато і охоче плакали герої самої відомої повісті Миколи Михайловича Карамзіна. А укладачі радянської шкільної програми, включивши &quot;Бідну Лізу&quot; в курс 7-го класу, надовго приклеїли Карамзіним ярлик сльозливого сентименталиста. &quot;Ліза ридала; Ераст плакав&quot;. Коли наприкінці 1980-х &quot;Історію держави Російського&quot; випустили по підписці, ажіотаж був неймовірний. Створила його напівграмотна публіка, чомусь вважала Карамзіна за &quot;раннього Пікуля&quot;. Забавно було дивитися на витягнуті обличчя тих, хто мав намір после обіду повалятися на дивані з томом &quot;Історії…&quot;. Доля відміряла Карамзіним 60 років. Він народився у розгульне, чванливою, барственной катерининської Росії, а покинув цей світ у перший рік миколаївського царювання, рік закінчення пушкінській посилання, останній рік останньої великої епохи російської історії. Натан Ейдельман не даремно назвав Карамзіна &quot;останнім літописцем&quot;. Далі літописці не були потрібні – потрібні були стенографи і спічрайтери. Карамзін – перший російський автор, який почав писати з турботою про читача. Корявий, спотикається, запинающийся &quot;трехштилевой&quot; літературна мова XVIII століття під пером Карамзіна прояснив і розгладився, став схожий на лист білої папери поруч зі зморщеним жовтим пергаментом. Письменник поїхав в Європу. Не за царським наказом і посадовій посилу – по своїй волі. І не за тим, щоб, повернувшись, изругать вражі землі і оспівати хвалу рідним осинам і лопухам. &quot;Листи російського мандрівника&quot; свідчать: Карамзін їхав розуміти. Повернувся він першим російським європейцем. Донині це словосполучення – &quot;російський європеєць&quot; – трудноусвояемо. Коли юний Пушкін палко закохався в Катерину Андріївну Карамзіним, Микола Михайлович тільки поплескав поета по плечу і мовчки посміхнувся. Збентежив Пушкіна, а це мало кому вдавалося. І він же влітку 1820-го в розмові з імператором, який зібрався вислати Пушкіна з Петербурга за &quot;обурливі вірші&quot; (&quot;обурливі&quot; тоді означало &quot;підбурливі&quot;), сказав три слова: – Може, на південь? – До Інзову? Добре, – погодився імператор. А справа пахло Сибіром.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

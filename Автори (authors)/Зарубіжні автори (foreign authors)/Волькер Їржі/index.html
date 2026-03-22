@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Волькер Їржі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Волькер Їржі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./volker-irzhi_1.webp" alt="Волькер Їржі" title="Волькер Їржі" data-full="./volker-irzhi_1.webp" /><img class="side-img side-thumb" src="./volker-irzhi.webp" alt="Волькер Їржі" title="Волькер Їржі" data-full="./volker-irzhi.webp" /></div>
+        <div class="prose-text">
+          <p>ІРЖІ ВОЛЬКЕР (JIŘÍ WOLKER. 1900-1924) — письменник, який належить до плеяди чеських майстрів слова, які створювали чеську революційну літературу.</p>
+          <p>Починаючи з 1920 р. він виступає як поет пролетаріату, з великою силою виражає його страждання і надії, волю до боротьби, і віру в перемогу. Волькер навчався на юридичному факультеті Празького університету; не закінчивши його, помер від туберкульозу. У юнацьких віршах Волькера (1916-1920) переважали патріотичні, пейзажні та інтимні мотиви. В період Першої світової війни, в умовах розрухи і робочих хвилювань, його увагу привернули соціальні контрасти життя. У 1921 р. він стає членом Комуністичної партії Чехословаччини. Перший збірник віршів &quot;Гість на поріг&quot; (1921) відобразив мрію поета про новому світі загальної любові і гармонії, хоча виражена вона була в абстрактно-символическойформе. Подією в літературному житті Чехословаччини став збірник віршів &quot;Час народження&quot;. Волькер — тонкий лірик і майстер соціальної балади, стала у нього емоційною розповіддю про трагічні долі робітників. Основу віршів Волькера зазвичай становить один розгорнутий образ, розгалужена метафора. Велику роль у формуванні соціалістичної естетики в Чехословаччині зіграли статті Волькера: &quot;Пролетарське мистецтво&quot;, &quot;Захисники творчої свободи&quot;, &quot;Маніфести&quot;, &quot;Про майбуття літератури&quot;. Волькеру належать драматичні етюди</p>
+          <p>(&quot;Найбільша жертва&quot; та ін), казки соціально-етичного змісту (&quot;Казка про мільйонера, який вкрав сонце&quot;, &quot;Казка про Іонізуючого-циркаче&quot; та ін).Складність багатьох віршів Волькера, що мають переносне значення, полягає в тому, що в них як би паралельно розвиваються два образу, причому кожен відносно самостійно; це часом порушує безпосередні відповідності прямого і переносного сенсу. Яскравим прикладом може служити вірш &quot;Ранкова пісня&quot;. Несміливе ранок в обличчя нам дихає мрією вільних лісів, лугів і далеких гір. Всі чудовою вірою вщухло в нашій душі, і кривава біль, і важкий протест. Радісні, спокійні, бредемо босі у холодить траві, через лісову галявину. Зелень сріблять сльози ранньої роси. Знати, плакали ми — але тепер хочемо жити. Там у кривавих туманах далина відчуває сонце Ви думаєте — воно не дістане сюди? О, тільки вірте — не вірте усією душею, своєю вірою ми і сонце закличемо. Година народження (Těžká hodina. 1922) — збірник, у якому об&#x27;єднані найбільш зрілі твори поета. У багатьох віршах Волькер використовує форму балади, поширену в чеській класичної поезії, але його героєм стає робітник. Вірші розповідають про трагічну долю робітника (&quot;Балада про очах кочегара&quot;, &quot;На рентгені&quot;), кличуть його до боротьби (&quot;Балада про сон&quot;). Творам Волькера властива реалістична конкретність, ясність і в той же час трагічна напруженість і поетична сила бачення.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

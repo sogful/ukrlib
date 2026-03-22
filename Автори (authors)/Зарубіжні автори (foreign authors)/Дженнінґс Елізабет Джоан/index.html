@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дженнінґс Елізабет Джоан — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дженнінґс Елізабет Джоан</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dzhennings-elizabet-dzhoan.webp" alt="Дженнінґс Елізабет Джоан" title="Дженнінґс Елізабет Джоан" data-full="./dzhennings-elizabet-dzhoan.webp" /></div>
+        <div class="prose-text">
+          <p>Елізабет Джоан Дженнінґс (18 липня 1926 — 26 жовтня 2001) — британська поетеса, літературна критикиня та одна з помітних постатей англійської поезії другої половини ХХ століття. Її творчість відзначається інтимною лірикою, філософськими роздумами та релігійними мотивами, а також ясною формою й стриманою емоційністю.</p>
+          <p>Вона народилася у місті Бостон, графство Лінкольншир, у родині лікаря. Коли їй було шість років, сім&#x27;я переїхала до Оксфорда, з яким було пов&#x27;язане майже все її подальше життя. Дженнінґс навчалася в Оксфордському університеті, після чого працювала бібліотекаркою, редакторкою та літературною оглядачкою. З початку 1960-х років вона повністю присвятила себе письменницькій діяльності.</p>
+          <p>Писати й публікуватися Дженнінґс почала у 1950-х роках. На її ранню поезію вплинули англійська романтична традиція та релігійна лірика попередніх століть. Визнання прийшло після виходу другої збірки, яка принесла їй літературну премію та можливість подорожувати Європою. Перебування в Римі стало важливим етапом у формуванні її світогляду і посилило релігійний вимір її творчості. Поетеса належала до кола британських авторів, відомих як &quot;The Movement&quot;, однак не брала активної участі в літературних суперечках. Її поезія вирізнялася точністю форми, логічністю та прагненням осмислити людські переживання через раціональне й водночас глибоко особисте бачення. Основними темами її творів стали любов, віра, внутрішні сумніви, мистецтво та пошук гармонії. У 1960-х роках Дженнінґс пережила складний період депресії, що позначилося на її творчості, однак згодом вона повернулася до активної літературної роботи. За життя вона опублікувала понад двадцять поетичних збірок, а також писала критичні статті та займалася перекладами. Її внесок у літературу був відзначений престижними нагородами, зокрема літературною премією WH Smith і орденом Британської імперії. Елізабет Дженнінґс ніколи не була одружена. Вона померла в Оксфордширі у 2001 році. Її творчість і сьогодні цінують за щирість, ясність поетичної мови та глибокі роздуми про внутрішній світ людини.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

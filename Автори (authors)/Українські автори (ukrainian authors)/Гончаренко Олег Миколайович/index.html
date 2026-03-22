@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гончаренко Олег Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гончаренко Олег Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./honcharenko-oleh-mykolayovych.webp" alt="Гончаренко Олег Миколайович" title="Гончаренко Олег Миколайович" data-full="./honcharenko-oleh-mykolayovych.webp" /><img class="side-img side-thumb" src="./honcharenko-oleh-mykolayovych_1.webp" alt="Гончаренко Олег Миколайович" title="Гончаренко Олег Миколайович" data-full="./honcharenko-oleh-mykolayovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Олег Миколайович Гончаренко — український поет, прозаїк, публіцист, перекладач, краєзнавець, громадський діяч.</p>
+          <p>Народився 5 серпня 1959, Темиртау, Карагандинської області, Казахстан.</p>
+          <p>Член Національної спілки письменників України (1993). Член Національної спілки журналістів України (2014). Член Національної спілки краєзнавців України (2018).Член Міжнародної літературно-мистецької Академії України (2015). Член Міжнародної румунської академії міжкультурних взаємозв&#x27;язків Пауля Полідора (2016). Член Асоціації українських письменників (2017). Член Міжнародного клубу Абая, Алмати, Казахстан (2018). Нагороджений медаллю мелітопольської міської Ради &quot;За внесок у розвиток міста Мелітополя&quot; 2015). Нагороджений медаллю мелітопольської міської Ради &quot;Волонтер України. За покликом душі&quot; (2017). Нагороджений медаллю Національної спілки письменників України &quot;Почесна відзнака&quot; (2019). Нагороджений медаллю Івана Мазепи (2016) та медаллю Олександра Довженка (2017) Міжнародною Академією літератури і мистецтв України. Автор збірок поезій &quot;Крони дитинства&quot;, &quot;Петрогліфи&quot;, &quot;Тяжіння сонця&quot;, &quot;Мрія і любов&quot;, &quot;Світ очей моїх&quot;, &quot;Шесть часов вечера после весны&quot;, &quot;Фантастичне купуасу&quot;, &quot;Дорога крізь хату&quot;, &quot;Храм голосів&quot;, &quot;Собор откровень&quot;, &quot;Серцебуття&quot;, &quot;Напроти пам&#x27;яті&quot;, &quot;Крилогія Вічної Гордії&quot;, &quot;Конражур натхнення&quot;, &quot;Мелітопольська паралель&quot;,, &quot;Український порідник&quot;, &quot;Столиця черешнева столиця&quot;, &quot;Катрени оголошених картин&quot; (навіяне живописом І. Марчука), &quot;Медовий блюз&quot;, &quot;За Емінеску… до себе&quot;, &quot;Молитва за любов&quot;, &quot;Астрофізми вічної гончарні&quot;, &quot;Буремні буриме свободи&quot;, &quot;Отражение — Відображення&quot; (у співавторстві з Галиною Феліксон), &quot;Віща тінь табуна&quot;, &quot;В чеканні нової трави&quot;, &quot;Нова братина&quot;, &quot;Криму тамований скрик&quot;, &quot;Теорія всього&quot;, &quot;Серце у вогні&quot;, &quot;Осінні дзвони — Autumn bells&quot;. романів &quot;Зірка Вітанія&quot; та &quot;Я прошу вас — живіть!&quot;, збірки публіцистики &quot;Наголоси і наголоси&quot;, науково-популярної краєзнавчої книги &quot;Вертались запорожці з-за Дунаю&quot;, &quot;Точки над І&quot; (у співавторстві з Оленою Ришковою).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

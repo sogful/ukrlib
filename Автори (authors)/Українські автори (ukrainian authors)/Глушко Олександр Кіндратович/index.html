@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Глушко Олександр Кіндратович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Глушко Олександр Кіндратович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hlushko-oleksandr-kindratovych.webp" alt="Глушко Олександр Кіндратович" title="Глушко Олександр Кіндратович" data-full="./hlushko-oleksandr-kindratovych.webp" /><img class="side-img side-thumb" src="./hlushko-oleksandr-kindratovych_1.webp" alt="Глушко Олександр Кіндратович" title="Глушко Олександр Кіндратович" data-full="./hlushko-oleksandr-kindratovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>прозаїк, критик</p>
+          <p>(Народився 1938 р.)</p>
+          <p>Глушко Олександр Кіндратович народився 14 вересня 1938 року в селі Покровка Очаківського району. Закінчив факультет журналістики Київського університету (1964) та Академію суспільних наук при ЦК КПРС (1975). Працював у Миколаївській обласній газеті &quot;Южная правда&quot;, п&#x27;ять років редактором обласної молодіжної газети &quot;Ленінське плем&#x27;я&quot;. З 1986 року – секретар правління Спілки письменників України, редактор журналу &quot;Вітчизна&quot;. Перша збірка оповідань &quot;Маслиновий гай&quot; (1981) відкрила для українських читачів нових героїв – рибалок, виноградарів, моряків, що живуть на загублених у морі островах, продутих вітрами Північного Причорномор&#x27;я. У 1989 році оповідання склали основу збірки &quot;Фонтан з музыкой&quot;, виданої &quot;Молодой гвардией&quot; у Москві. Найбільш значною роботою О. Глушка став роман &quot;Кінбурн&quot; (1988) – багатопланове історичне полотно про події, що відбувалися на півдні України в останній чверті 18 ст. Автор літературно – критичних праць &quot;На бистрині часу. Ідейно–тематичні шукання радянської новелістики 70-х років&quot; (1980), &quot;З позицій соціального оптимізму. Образ позитивного героя в сучасній радянській прозі&quot; (1983). Кандидат філологічних наук, доцент Київського університету ім. Тараса Шевченка, доцент інституту журналістики, заслужений журналіст України, лауреат премії ім. Андрія Головка ( за роман &quot;Стрибок тарпана&quot;). Член Національної Спілки письменників України(1982). Основні твори Кинбурн: Роман. – М.: Сов писатель, 1991. – 313 с.: ил. Кінбурн: Іст. роман. – М.: Сов. писатель, 1991. – 313 с. Маслиновий гай: Оповідання. – К.: Рад. письменник, 1981. – 165 с. Чорноморський заповідник. – Одеса: Маяк, 1972. – 32 с.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

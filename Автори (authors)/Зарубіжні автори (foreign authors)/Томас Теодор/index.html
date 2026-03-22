@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Томас Теодор — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Томас Теодор</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tomas-teodor.webp" alt="Томас Теодор" title="Томас Теодор" data-full="./tomas-teodor.webp" /><img class="side-img side-thumb" src="./tomas-teodor_1.webp" alt="Томас Теодор" title="Томас Теодор" data-full="./tomas-teodor_1.webp" /></div>
+        <div class="prose-text">
+          <p>Теодор Локерт Томас (народився 13 квітня 1920 р. — 24 вересня 2005 р.) був американським інженером-хіміком і адвокатом, який написав понад 50 наукових фантастичних коротких оповідань, виданих між початку 50-х до кінця 1970-х років. Він також співпрацював з двома романами з Кейт Вільгельм, а також випускав оповідання під псевдонімами Леонарда Локхарда та Когсвелла Томаса та був номінований на нагороду &quot;Туманність&quot; та премію &quot;Уго&quot;.</p>
+          <p>(1920-2005) американський автор та адвокат, багатолюдний у журналах під його власним ім&#x27;ям, який він іноді вимовляв як Тед Томас, і як Леонард Локхард, псевдонім, який він використовував для своєї серії Patent Attorney (вісім розповідей 1952-1964 в Astounding / Analog), деякі з яких були з Charles L Harness, включаючи &quot;Професійний підхід&quot; (вересень 1962 аналог, електронна книга 2007 року). Він почав публікувати роботи жанрового інтересу з двома одночасними оповіданнями &quot;The Revisitor&quot; для космічної наукової фантастики у вересні 1952 року та &quot;Неминуча професія&quot; для вражаючих у вересні 1952 року, як і Леонард Локард з Charles L Harness, і часто виходив у журнали аж до 1981 року казки, компетентно розроблені для своїх ринків, найефективнішими, можливо, є такі, як &quot;The Weather Man&quot; (червень 1962 Analog), встановлені на майбутню Землю, де домінують Управління погодного контролю (див. Weather Control). З Кейт Вільгельм він написав дві романи &quot;Клон&quot; (грудень 1959 &quot;Фантастичний&quot;, як тільки сам Томас; значна кількість показників 1965 року) та &quot;Рік хмари&quot; (1970 рік), обидва з неприродними катастрофами. Епанонімна загроза в першому романі являє собою рідкісне використання в СФ того, що є клоном у строгому біологічному сенсі; міжзоряна хмара, в яку земля занурюється, у другій перетворює воду на желатин.</p>
+          <p>Суперечливий есе Томаса про Жюля Верна &quot;Водяні чудеса капітана Немо&quot; (Галактика, грудень 1961 року), стверджує, що 20 000 ліг під морем (1870) сповнена елементарними науковими помилками. Ці твердження засновані, на жаль, не на оригінальному тексті Верна, а на перекладі Льюїса Мерсьє в 1873 році; проголошені помилки були пов&#x27;язані з Мерсье, а не з самим автором. Лише в останні роки репутація Верна почала відновлюватися з англійської мови в цій школі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

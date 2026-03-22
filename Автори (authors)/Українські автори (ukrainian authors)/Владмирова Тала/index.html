@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Владмирова Тала — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Владмирова Тала</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vladmyrova-tala.webp" alt="Владмирова Тала" title="Владмирова Тала" data-full="./vladmyrova-tala.webp" /><img class="side-img side-thumb" src="./vladmyrova-tala_1.webp" alt="Владмирова Тала" title="Владмирова Тала" data-full="./vladmyrova-tala_1.webp" /></div>
+        <div class="prose-text">
+          <p>Справжнє ім&#x27;я Таміла Тарасенко</p>
+          <p>Народилася в Гуляйполі, дитячі роки провела в Чернігові, зараз мешкаю в Запоріжжі. Закінчила фізико-математичну школу, вищу освіту здобула за філологічним профілем.</p>
+          <p>У співавторстві з львівською письменницею Дарою Корній видала два романи: &quot;Зозулята зими&quot; і &quot;Крила кольору хмар&quot;. Оповідання увійшли до збірок &quot;Львів. Спогади. Кохання&quot;, &quot;Львів. Шоколад. Кам&#x27;яниці&quot;, &quot;Їде маршрутка&quot;, &quot;Кишеньковий мандруарій&quot;. (Псевдонім Тала Владмирова). Оповідання і повісті публікувалися в часописах й альманахах &quot;Нова проза&quot;, &quot;Дніпро&quot;, &quot;Київська Русь&quot;, &quot;Дзеркало&quot;, &quot;Четвер&quot;, &quot;УФО (Український фантастичний оглядач&quot;), &quot;Хортиця&quot;, &quot;Ірпінські зорі&quot; тощо. Мої дитячі казки й оповідання для дітей неодноразово виходили друком в журналах &quot;Вечірня казка&quot; і &quot;Хортиця&quot;. У 2020 році перемогла в конкурсі &quot;Дитяча КороНація&quot; в номінації &quot;Дорослі для дітей&quot; (дошкільнята) збірка оповідань &quot;Пригоди Ольки та Горки&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

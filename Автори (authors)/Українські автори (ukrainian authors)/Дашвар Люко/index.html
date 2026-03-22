@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дашвар Люко — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дашвар Люко</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dashvar-liuko.webp" alt="Дашвар Люко" title="Дашвар Люко" data-full="./dashvar-liuko.webp" /><img class="side-img side-thumb" src="./dashvar-liuko_1.webp" alt="Дашвар Люко" title="Дашвар Люко" data-full="./dashvar-liuko_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ірина Іванівна Чернова, відома як Лю́ко Дашва́р — українська письменниця, редакторка, сценаристка та журналістка. На додачу до письменницької діяльності, до 2006 року займалася журналістикою, а після 2006 року — почала займатися написанням сценаріїв для телебачення.</p>
+          <p>Лавреатка літературної премії Коронація слова: у 2007 році роман &quot;Село не люди&quot; здобув ІІ премію та премію &quot;Дебюту року&quot; від книжкового порталу &quot;Друг Читача&quot;, у 2008 році за &quot;Молоко з кров&#x27;ю&quot; стала дипломанткою конкурсу, а 2009 року її роман &quot;Рай. Центр&quot; отримав диплом &quot;Вибір видавців&quot;.</p>
+          <p>Народилася у Херсоні 3 жовтня 1957 року. Здобула дві вищі освіти: Одеський інститут легкої промисловості (бакалавр за спеціальністю &quot;інженер-механік&quot;) та Академія державного управління при Президентові України (магістр за спеціальністю &quot;державне управління&quot;). Після отримання першої вищої освіти (технічної), працювала за інженерною спеціальністю, одружилася, народила дітей. Потім звільнилася та пішла працювати обліковицею листів у газету. Так у 1986 році розпочала журналістську кар&#x27;єру. Через півроку роботи в газеті стала заступницею головного редактора. З 1991 року — головна редакторка херсонської молодіжної газети. Після розпаду СРСР займала посаду голови комітету у справах преси й інформації Херсонської облдержадміністрації. Звільнившись, заснувала власні дві газети у Херсоні, редакцію яких розграбували. Після цього переїздить разом з родиною до Києва. З 2001 року — головна редакторка газети &quot;Селянська зоря&quot;. Саме період роботи у &quot;Селянській зорі&quot; письменниця визначає як незабутній життєвий досвід, саме у цьому виданні письменниця вигадала там рубрику &quot;Пам&#x27;ятаю все життя&quot;, у якій люди, надсилаючи до редакції листи, розповідали в них про єдиний незабутній факт свого життя. Деякий час працювала журналісткою і редакторкою жіночих журналів. Згодом закінчила курси сценарної майстерності голлівудського професора Річарда Креволіна. Відомо, що письменниця також навчалася у школі практичної журналістики та на курсах з нейролінгвістичного програмування З 2006 року займається виключно літературною та сценаристською діяльністю.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

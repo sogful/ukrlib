@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Багірова Віра Михайлівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Багірова Віра Михайлівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bahirova-vira-mykhaylivna.webp" alt="Багірова Віра Михайлівна" title="Багірова Віра Михайлівна" data-full="./bahirova-vira-mykhaylivna.webp" /><img class="side-img side-thumb" src="./bahirova-vira-mykhaylivna_1.webp" alt="Багірова Віра Михайлівна" title="Багірова Віра Михайлівна" data-full="./bahirova-vira-mykhaylivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася 15 липня 1948 р. в селищі Більшовці Галицького р-ну Івано-Франківської обл. Дівоча фамілія Николин.</p>
+          <p>Мати — Чеслава Легін, уродженка Кракова, мала вищу фінансову освіту. Батько — Михайло Николин — був механіком-самоучкою.</p>
+          <p>Майбутня письменниця закінчила Задністрянську СШ в 1963 р., Калушський хіміко-технологічний технікум в 1969 р. Спеціальність: хімік-технолог органічного синтезу. З 1969 по 1971 рр. навчалася в Бакинському Державному Університеті на хімічному факультеті, який не закінчила в зв&#x27;язку з народженням сина і переїздом в Україну. Працювала в Азербайджані та Україні хіміком-технологом, журналістом. В 1979 році навчалася в школі письменниці Марії Пригари в Ірпіні. З 1983 року і по сьогоднішній день почуває себе ученицею Алли Богуш –дійсного члена НАПН України, професора, завідувачки кафедри теорії і методики дошкільної освіти Державного закладу &quot;Південноукраїнський національний Педагогічний університет ім. К. Л. Ушинського&quot;, постійно спілкується з нею. Чимало книжок письменниці мають Передмову до них пані Алли Богуш. Авторка поетичних книжок для дітей: &quot;Їхав автобус&quot; (К., 1978), &quot;Водограї&quot; (К., 1980), &quot;Бубликовий кущ&quot; (К., 1989), &quot;Творіння Божої краси&quot; (Ів.-Ф., 1993), &quot;Церковна абетка&quot; (Ів.-Ф., 1993), &quot;Бог любить нас&quot; (Ів.-Ф., 1996), &quot;Гуцулик&quot; (К., 1997), &quot;Хай Бог вас береже!&quot; (Ів.-Ф., 1999); Казок &quot;В&#x27;язанчик&quot; (К., 1985) та &quot;В&#x27;язанчик та Чугайстрова сопілка&quot; (К., 1992).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

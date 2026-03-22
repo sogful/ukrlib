@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ріґґз Ренсом — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ріґґз Ренсом</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./rihhz-rensom_2.webp" alt="Ріггз Ренсом" title="Ріггз Ренсом" data-full="./rihhz-rensom_2.webp" /><img class="side-img side-thumb" src="./rihhz-rensom.webp" alt="Ріггз Ренсом" title="Ріггз Ренсом" data-full="./rihhz-rensom.webp" /><img class="side-img side-thumb" src="./rihhz-rensom_1.webp" alt="Ріггз Ренсом" title="Ріггз Ренсом" data-full="./rihhz-rensom_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ренс Риггз (англ. Ransom Riggs) — американський письменник і сценарист, відомий завдяки своїм книгам &quot;Будинок Дивних Дітей&quot; та &quot;Місто Порожніх. Втеча з Будинку дивних дітей&quot;, що потрапили в число бестселерів The New York Times.</p>
+          <p>Ренс Риггз народився 26 листопада 1979 року в штаті Меріленд, США, в родині фермера. У дитинстві переїхав до Флориди, навчався в школі для обдарованих дітей, де захопився кінематографом. Почав писати сценарії для фільмів, знімати короткометражки. Незабаром захопився незвичайним хобі — колекціонуванням старовинних фотографій. В процесі їх збирання Риггз придумав сюжет свого роману &quot;Будинок дивних дітей&quot;, який проілюстрований цими фотографіями, які зібрав він і його друзі. По цій книзі в 2016 році вийшов однойменний фільм режисера Тіма Бертона.</p>
+          <p>Перша книга серії &quot;Дім дивних дітей&quot; вийшла в 2012 році у видавництві &quot;Квірк Букс&quot; (англ. Quirk Books). В основі сюжету книги — колекція старих аматорських фотографій, яку Ренсом Ріґґз за порадою видавництва &quot;Квірк Букс&quot; використав для ілюстрацій у своїй книжці. Книга потрапила у список бестселерів &quot;Нью-Йорк Таймс&quot;. 14 січня 2014 року вийшла друга книга серії — &quot;Місто порожніх&quot;. 22 вересня 2015 року світ побачила завершальна частина трилогії — &quot;Бібліотека душ&quot;. 3 вересня 2016 року вийшла книга під назвою &quot;Казки про дивних&quot; — збірка казок, яка надає розлогу додаткову інформацію про загадковий світ дивних дітей.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

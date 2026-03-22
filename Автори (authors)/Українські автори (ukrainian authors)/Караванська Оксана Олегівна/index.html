@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Караванська Оксана Олегівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Караванська Оксана Олегівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./karavanska-oksana-olehivna_1.webp" alt="Караванська Оксана Олегівна" title="Караванська Оксана Олегівна" data-full="./karavanska-oksana-olehivna_1.webp" /><img class="side-img side-thumb" src="./karavanska-oksana-olehivna.webp" alt="Караванська Оксана Олегівна" title="Караванська Оксана Олегівна" data-full="./karavanska-oksana-olehivna.webp" /><img class="side-img side-thumb" src="./karavanska-oksana-olehivna_2.webp" alt="Караванська Оксана Олегівна" title="Караванська Оксана Олегівна" data-full="./karavanska-oksana-olehivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася в родині математиків. Випускниця Львівської академії мистецтв 1996 року.</p>
+          <p>У 1996 — фіналістка конкурсу Alta-Moda (голова журі — П&#x27;єр Карден).</p>
+          <p>1997 — відкрила авторський бутік &quot;Оксана Караванська&quot;. Державні органи не хотіли реєструвати фірму з такою назвою, але Караванська довела, що фірма, названа ім&#x27;ям дизайнера, — це світова практика і має право на життя і в Україні. 1999 — дебютувала в українському тижні prêt-a-porter з колекцією &quot;Vade mecum&quot;. 2001 — отримала звання &quot;Найкращий стиліст року&quot; в галузі кліпмейкерства 2002 — Гран Прі &quot;Кришталевий Силует&quot; за найкращу сукню року. 2003 — дебют на Russian Fashion Week. 2005 — презентація лінію дитячого одягу OK&#x27;IDS by oksanakaravanska. Створила колекцію Haute Couture для закриття півфіналу та фіналу &quot;Євробачення 2005&quot;. 2006 — презентація авторських парфюмів Їй належить ідея створення першого Театру мод у Львові, який успішно гастролював Україною та за її межами. Є членом Синдикату Моди України і створює від 8 до 14 колекцій на рік. Оксана Караванська є постійною учасницею українських тижнів моди, має бутики й ательє у Львові, Києві (до 2009 року), Одесі, шоу-рум бренду Караванської діє в Нью-Йорку. Під брендом &quot;Караванська&quot; випускається жіночий одяг та аксесуари до них. У колекціях Оксани Караванської присутні елементи еклектичного і етнічного стилю. Першою в Україні створила свою дитячу лінію, першою серед українських дизайнерів випустила свій парфум. 2015 — &quot;Стильна книжка для панянки&quot; (Львів : Видавництво Старого Лева) в оформленні Анастасії Стефурак. Одружена з підприємцем Богданом Левчуком. Виховують двох дітей — Святослава й Марічку.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дніпровський Іван Данилович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дніпровський Іван Данилович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dniprovskyy-ivan-danylovych.webp" alt="Дніпровський Іван Данилович" title="Дніпровський Іван Данилович" data-full="./dniprovskyy-ivan-danylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Дніпровський Іван Данилович</p>
+          <p>(справжнє прізвище – Шевченко)</p>
+          <p>(9.03.1895 – 01.12.1934) український поет, прозаїк, драматург Іван Дніпровський (Шевченко) народився 9 березня 1895 року в селі Каланчак Таврійської губернії (нині — смт в Херсонській області), в бідній селянській сім&#x27;ї. У рідному селі закінчив початкову школу, потім навчався в чоловічій гімназії в Олешках, де познайомився з М. Кулішем і надалі підтримував з ним дружні і творчі стосунки. Ще в гімназії був активним кореспондентом рукописних журналів. Свій перший вірш майбутній поет написав у тринадцятирічному віці. Учасник І світової та громадянської воєн, Іван Дніпровський у хвилини затишшя писав &quot;Окопні пісні&quot;, фронтові нариси. Друкуватися почав 1916 року у фронтовій газеті &quot;Армейский вестник&quot;. Після навчання (1919-1923) на історико-філологічному факультеті Кам&#x27;янець-Подільського державного українського університету, де був активним учасником асоціації молодих пролетарських письменників, переїхав до Харкова і працював у Держвидаві. Був членом Спілки пролетарських письменників &quot;Гарт&quot;, літературної організації ВАПЛІТЕ. Спочатку Іван Дніпровський писав російською мовою, а від 1921 – українською, дебютувавши в журналі &quot;Буяння&quot; добіркою віршів і поемою &quot;Жовтень&quot;. Автор іноді підписувався псевдонімами &quot;Т. Кобзаренко&quot;, &quot;Жан&quot;, &quot;Сам&quot;, &quot;Кожушко&quot;, &quot;І.Ш.&quot;, але основні його твори були відомі читачеві як твори Івана Дніпровського. Є автором поем &quot;Донбас&quot; (1922), &quot;Плуг&quot; (1924), п&#x27;єси &quot;Любов і дим&quot; (1925), &quot;Яблуневий полон&quot;, збірки оповідань і повістей &quot;Заради неї&quot; (1927), &quot;Долина угрів&quot; (1928), &quot;Анатема&quot;, &quot;Анабазис&quot;, &quot;Андрій Хомут&quot;, &quot;Березень&quot;, &quot;Яхта &quot;Софія&quot;&quot; (1930), &quot;Балет у Главковерха&quot;, &quot;Фаланга&quot;(1931), &quot;Ацельдама&quot;, &quot;Дніпро закутий&quot; (1932), збірки творів у 3-х томах (1931-1933) та ін. П&#x27;єси Івана Дніпровського — &quot;Любов і дим&quot;, &quot;Яблуневий полон&quot;, &quot;Шахта&quot; Марія &quot;— з великим успіхом ставилися на сценах українських театрів. В архіві письменника неопублікованими лишилися, зокрема, початок роману &quot;Електра Киммерійська&quot; (1931–32) та драма &quot;Останній главковерх&quot; (1933). Деякі свої твори Іван Дніпровський присвятив Херсону та Дудчанській комуні, Баштанській республіці, боротьбі херсонського революційного підпілля в роки громадянської війни. 1 грудня 1934 року Івана Дніпровського не стало. Він помер, перебуваючи в Ялті. Похований у Харкові. Ім&#x27;я відомого письменника присвоєно Каланчацькому районному Палацу культури, Каланчацькій загальноосвітній школі I-III ступенів № 2. Є і вулиця в центрі селища, яка носить ім&#x27;я Івана Дніпровського. На ній встановлено пам&#x27;ятник письменникові.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пірс Анна Філіппа — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Пірс Анна Філіппа</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pirs-anna-filippa.webp" alt="Пірс Анна Філіппа" title="Пірс Анна Філіппа" data-full="./pirs-anna-filippa.webp" /></div>
+        <div class="prose-text">
+          <p>Анна Філіпа Пірс ((англ. Ann Philippa Pearce), 22 січня 1920 році, Грейт-Шелфорд [en], Кембриджшир, Великобританія — 21 грудня 2006, Дарем, Великобританія)) — англійська дитяча поетеса, письменниця. У 1958 році стала володарем медалі Карнегі в галузі літератури за твір &quot;Том і опівнічний сад&quot;. У 1997 році за заслуги в дитячій літературі Пірс була нагороджена орденом Британської імперії четвертого ступеня (офіцер).</p>
+          <p>Анна Філіпа Пірс народилася 22 січня 1920 року в Грейт Шефолде в сім&#x27;ї мірошника. Була молодшою ​​дитиною з чотирьох дітей. Закінчила школу Пірсі для дівчаток, а після, отримавши стипендію, надійшла в Гертон-коледж при Кембриджському університеті. Під час навчання Пірс вивчала англійську мову та історію. З початком Другої світової війни вона працювала тимчасовим державним службовцям, а потім сценаристом і продюсером шкільного радіомовлення Бі-бі-сі. На цій посаді Пірс пропрацювала протягом тринадцяти років до 1958 року. Потім, на короткий період часу, вона була запрошена редактором у відділі освіти Clarendon Press (OUP) в Оксфорді. У 1960 році Пірс переїхала в Лондон і стала працювати дитячим редактором у видавництві &quot;Andre Deutsch Ltd&quot; аж до 1967 року. Паралельно з цим вона підробляла продюсером на радіо, де писала твори як для дорослих, так і для дітей. Незабаром Пірс вийшла заміж за Мартіна Крісті (англ. Martin Christie), виробника фруктів, і в 1963 році у пари народилася дочка. До 1973 року Пірс працювала фрілансером в Лондоні, де співпрацювала з такими видавництвами як &quot;The Guardian&quot; і &quot;The Times Literary Supplement&quot;. Читала лекції з історії і складала дитячі оповідання. У 1973 році вона разом з дочкою переїхали в Грейт Шефолде. У 1993 році Пірс стала членом Королівського літературного суспільства. У 1995 році отримала почесний ступінь &quot;Доктор гуманітарних наук&quot; від Університету Халла. У 1997 році вона була нагороджена орденом Британської імперії &quot;за послуги в дитячій літературі&quot;. Анна Філіпа Пірс померла в Даремі 21 грудня 2006 року.</p>
+          <p>Твори Minnow on the Say (1955); Tom&#x27;s Midnight Garden (1958); Children of the House (1968); The Battle of Bubble and Squeak (1978); The Little Gentleman (2004).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

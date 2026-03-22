@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дереш Любко — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дереш Любко</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./deresh-liubko.webp" alt="Дереш Любко" title="Дереш Любко" data-full="./deresh-liubko.webp" /><img class="side-img side-thumb" src="./deresh-liubko_1.webp" alt="Дереш Любко" title="Дереш Любко" data-full="./deresh-liubko_1.webp" /><img class="side-img side-thumb" src="./deresh-liubko_2.webp" alt="Дереш Любко" title="Дереш Любко" data-full="./deresh-liubko_2.webp" /><img class="side-img side-thumb" src="./deresh-liubko_3.webp" alt="Дереш Любко" title="Дереш Любко" data-full="./deresh-liubko_3.webp" /></div>
+        <div class="prose-text">
+          <p>Любомир Мирославович Дереш</p>
+          <p>Україна, 10.08.1984</p>
+          <p>Любко Дереш — яскравий представник сучасної української постмодерної літератури. Його творчий шлях почався у 15-річному віці. Зважаючи на молодість, своєрідні сюжети, увагу до містицизму та особливу манеру викладу, протягом тривалого часу Любко дереш і книги, що виходили з-під його пера, захоплювали переважно тінейджерів. Дорослішаючи, Любко Дереш у твори почав додавати більше філософських та злободенних елементів, завдяки чому привернув увагу старших читачів. Любомир Мирославович Дереш за паспортом або Любко Дереш за псевдонімом, біографія котрого почалася 10 серпня 1984 року в містечку Пустомити на Львівщині, колись був названий критиками письменником-вундеркіндом. Початкову освіту здобував у Пустомитській середній школі № 2, а ставши старшокласником, перейшов до фізико-математичного ліцею Львова. Любко Дереш писати почав, навчаючись саме у цьому закладі. Диплом економіста (спеціальність — облік і аудит) здобував у Львівському національному університеті імені Івана Франка. 1999 року був завершений дебютний роман &quot;Культ&quot;, але видали його трьома роками пізніше — після досягнення автором повноліття. Відразу потому, як у книгарнях почало згадуватись ім’я Любко Дереш, біографія та художній доробок цього неординарного юнака викликали резонанс у суспільстві. Хтось порівнював його з Пелевиним та Ніцше, а хтось уперто не вірив у таку високу ерудованість та обдарованість молодого хлопця. Прибічники другої точки зору навіть припускали, що це відомі мистці, наприклад, Андрухович з Винничуком, вигадали образ здібного малого для оприлюднення власних колективних робіт. Словом, Дереш наробив багато галасу. Отримавши чималу порцію схвальних відгуків про першу роботу, Любко Дереш книги &quot;Архе&quot; (2002), &quot;Поклоніння ящірці&quot; (2004), &quot;Намір&quot; (2006) та &quot;Трохи пітьми&quot; (2007) публікував вже без остраху. Варто відзначити, що Любко Дереш ці твори зробив досить різними, але було дещо, що їх об’єднувало. Йдеться, зокрема, про вік головних персонажів — усі вони дуже юні, мотив пошуку свого місця під сонцем, описи дії психотропних речовин, лексикон, повний сленгових, діалектних та ненормативних слів і таке інше. З 2007-го Любко Дереш (біографія та твори вже були добре знайомі шанувальникам не тільки в Україні, а й у Європі) несподівано зник з літературної арени. Тоді активно ширились чутки, начебто письменник — наркозалежний і йому недовго залишилося. Мовчання перервалося у 2011 р. з виходом книги Любка Дереша, не дуже схожого на змарнілого від смертоносного дурману, &quot;Голова Якова&quot;. Безсумнівно талановитий і дещо загадковий Любко Дереш книги пише і друкує дотепер. На &quot;Буклі&quot; можна придбати і давно популярні, і новіші роботи цього автора.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

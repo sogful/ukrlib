@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Томас Ендрю — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Томас Ендрю</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tomas-endriu.webp" alt="Томас Ендрю" title="Томас Ендрю" data-full="./tomas-endriu.webp" /></div>
+        <div class="prose-text">
+          <p>Ендрю П. Томас (б. Андрій Бонча-Томашевський) 1906-2001 народився в Санкт-Петербурзі в 1906 році. Сім&#x27;я переїхала в Гельсінкі в 1911 році, де батько сімейства був військово-морським офіцером.</p>
+          <p>Через рік батька переводять, судячи з усього, ревізором на інший кінець Російської імперії до Владивостока. Шестирічна дитина прекрасно запам&#x27;ятала на все життя 10-денну подорож по Транссібу. І все дитинство Томаса пройшло у Владивостоці.</p>
+          <p>У 1917-му сімейство мало намір повернутися в столицю Російської імперії, тому що батько вийшов у відставку і мав намір займатися архітектурою, але імперія несподівано закінчилася. Тому з 1922 року сімейство живе в Харбіні, пішовши по шляху всієї східної гілки російської еміграції. Маньчжурія і стала основним фактором, що сформували свідомість Томаса, судячи з його теплих згадок про неї в різних його книжках. У Харбіні він ходив в англійську методистської школу, що визначило його подальшу орієнтацію на англомовну ойкумени. У 1924 році сім&#x27;я переїхала в Шанхай, де Андрій-Альфред-Ендрю і закінчив школу. З 1927 по 1931 рік він дійсно жив у Штатах, але потім знову повернувся в Китай (бо в Штатах почалася Велика депресія). У вересні 1935 року, за його власним твердженням, познайомився з Реріхом, заїхали в Шанхай при своїй останній дивною експедиції. У 1948-му Китай почав стає червоним (революція Мао), і Томас поїхав з Шанхая — вже надовго — до Австралії, де і прожив майже 20 років. Там він став масоном, кочував по країні і їздив по світу, про що сам нам розповідає місцями. У 1966 році переїхав до Європи, потім в Штати, а по світу їздив так, що завидки беруть. Сім книг його опубліковані, кілька, за твердженням вдови, — немає. Томас написав і говорив вільно, якнайменше, французькою, англійською та російською мовами. Його твори були перекладені більше ніж 60-ма мовами. Томас опублікував щонайменше 8 офіційних книжок під час його життя, а також багато робіт для внутрішнього кола.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

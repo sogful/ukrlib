@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Аркас Микола Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Аркас Микола Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./arkas-mykola-mykolayovych.webp" alt="Аркас Микола Миколайович" title="Аркас Микола Миколайович" data-full="./arkas-mykola-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>Аркас Микола Миколайович народився в м. Миколаєві в сім&#x27;ї адмірала, військового губернатора міста.</p>
+          <p>Навчався у Петербурзькому аристократичному учбовому закладі закритого типу – училищі правознавства, закінчив Одеську приватну гімназію, Новоросійський університет.</p>
+          <p>Протягом 1877-1885 років М.М. Аркас зробив блискучу військову кар&#x27;єру, дослужився до ад&#x27;ютанта командира Чорноморського флоту. З 1886 по 1895 рік М.М. Аркас обіймав посаду мирового судді в Херсоні. Визначну роль у житті М. Аркаса відіграло його знайомство у студентські роки з видатним митцем українського театру М.Л. Кропивницьким. Брав участь у виставах &quot;Одеського нового театру&quot;. Починаючи з студентських років М.М. Аркас вивчав культуру українського народу і популяризував її серед широких верств населення. Записував народні пісні, захоплювався кобзарським мистецтвом. Кобзарів і бандуристів запрошував до Миколаєва з усієї України, поселяв їх у своєму домі. Записи їхніх творів лягли в основу опери &quot;Катерина&quot;. Усвідомлюючи свою високу відповідальність перед пам&#x27;яттю Тараса Шевченка, М. Аркас писав відомому українському театральному діячеві П. К. Саксаганському: &quot;...осміливсь і я свого додати, щоб пісня його ширилась між нашим людом, щоб бачили вони те, що тяжко й болісно накипало, накипало на його серці і вилилось у стиху могутнім&quot;. Музикознавець Л.С. Кауфман ставить М. Аркаса-композитора на визначне місце в історії українського музичного мистецтва: &quot;Катерина&quot; — це відгук справжнього патріота на потребу створення національної опери для народної сцени. В українському музичному репертуарі на той час були вже опери С. Гулака-Артемовського і М. Лисенка. До п&#x27;єси Т. Шевченка &quot;Назар Стодоля&quot; написав свої вечорниці П Ніщинський. Але це був, по суті, вставний номер до драматичної вистави. Першу оперу на шевченківський сюжет створив М.М. Аркас. Опера &quot;Катерина&quot; залишалася єдиною у творчому доробку М. Аркаса-композитора. З початку XX століття у М.М. Аркаса з&#x27;явилася нова сфера творчих пошуків: він почав вивчати історію України, знайомитися з документальними джерелами, а також з друкованим доробком професійних істориків. Результатом глибокого вивчення історії України є праця &quot;Історія України-Русі&quot;. У 1907 році М.М. Аркасом створено у м. Миколаєві самодіяльну просвітницьку організацію. Миколаївська &quot;Просвіта&quot; була третім (однаково любим, як і два інші – &quot;Катерина&quot; та &quot;Історія України-Русі&quot;) дітищем М. Аркаса, і коштувала йому не тільки значних матеріальних витрат, а й здоров&#x27;я. Адже царські власті на діяльність &quot;Просвіт&quot; дивилися з підозрою, а учасників їх так чи інакше переслідували. Не уникнув цього й М. Аркас, не зважаючи на свої високі чини і звання, здобуті на державній службі. Миколаївську &quot;Просвіту&quot; М. Аркас заснував на виконання відповідного заповіту Т.Г. Шевченка про найширшу освіту народних мас, прилучення їх до віковічних багатств української культури. Аркас Микола Миколайович помер у розквіті сил, сповненим нових творчих задумів, що залишились нездійсненими.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

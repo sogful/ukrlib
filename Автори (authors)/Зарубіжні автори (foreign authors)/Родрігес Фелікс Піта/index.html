@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Родрігес Фелікс Піта — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Родрігес Фелікс Піта</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./rodrihes-feliks-pita_1.webp" alt="Родрігес Фелікс Піта" title="Родрігес Фелікс Піта" data-full="./rodrihes-feliks-pita_1.webp" /><img class="side-img side-thumb" src="./rodrihes-feliks-pita.webp" alt="Родрігес Фелікс Піта" title="Родрігес Фелікс Піта" data-full="./rodrihes-feliks-pita.webp" /><img class="side-img side-thumb" src="./rodrihes-feliks-pita_2.webp" alt="Родрігес Фелікс Піта" title="Родрігес Фелікс Піта" data-full="./rodrihes-feliks-pita_2.webp" /></div>
+        <div class="prose-text">
+          <p>Фелікс Піта Родрігес (ісп. Felix Pita Rodriguez; 18 лютого 1909, Бехукаль, Маябеке — 19 жовтня 1990, Гавана, Куба) — кубинський письменник, поет, есеїст, журналіст та літературний критик. Лауреат Національної літературної премії Куби (1985).</p>
+          <p>Жив в Іспанії, Франції, Аргентині, Венесуелі та інших країнах. Літературну діяльність розпочав у 1920-ті роки, як поет-авангардист, пізніше перейшов на позиції соціальної поезії (поема &quot;Привіт товаришеві селянинові&quot;, 1927).</p>
+          <p>Був віце-президентом Національної спілки письменників Куби, президентом його літературної секції, членом журі основних національних та міжнародних конкурсів, таких як Премія Будинку Америк та премії, що спонсорується Національною спілкою кубинських письменників (UNEAC). Відомий також оповіданнями ліричного характеру. Автору належать збірки оповідань &quot;Сан Абуль де Монтекальядо&quot; (1945), &quot;Тобіас&quot; (1955), збірки поезій &quot;Вогненний кінь&quot; (1948), &quot;Хроніка. Гаслова поезія&quot; (1961) та ін. Автор книг &quot;В&#x27;єтнам. Нотатки із щоденника&quot; (1967), &quot;Діти В&#x27;єтнаму&quot; (1968).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

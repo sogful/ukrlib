@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Арєнєв Володимир Костянтинович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Арєнєв Володимир Костянтинович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./arieniev-volodymyr_1.webp" alt="Арєнєв Володимир" title="Арєнєв Володимир" data-full="./arieniev-volodymyr_1.webp" /><img class="side-img side-thumb" src="./arieniev-volodymyr.webp" alt="Арєнєв Володимир" title="Арєнєв Володимир" data-full="./arieniev-volodymyr.webp" /><img class="side-img side-thumb" src="./arieniev-volodymyr_2.webp" alt="Арєнєв Володимир" title="Арєнєв Володимир" data-full="./arieniev-volodymyr_2.webp" /><img class="side-img side-thumb" src="./arieniev-volodymyr_3.webp" alt="Арєнєв Володимир" title="Арєнєв Володимир" data-full="./arieniev-volodymyr_3.webp" /></div>
+        <div class="prose-text">
+          <p>Володимир Костянтинович Пузій народився в Києві 1 жовтня 1978. Зі шкільних років захоплювався біологією. Ходив у гурток юннатів при Київському зоопарку, серйозно займався терраріумістікою (утримував екзотичних амфібій та комах). Закінчив школу в 1995-му році, вступав на біологічний факультет – не вступив, пішов на рік працювати двірником в тому ж таки Київському зоопарку.</p>
+          <p>Восени 1996 року вступив до Інституту журналістики при КHУ ім. Т. Шевченка (спеціалізація: журналістська майстерність та редакційно-видавнича справа). Закінчив у 2002 році з червоним дипломом магістра. На даний момент — асистент кафедри історії журналістики в тому ж таки ІЖ-і.</p>
+          <p>Перший художній твір було надруковано в 1998 році. Коли справа дійшла до публікації першої книжки, видавець (&quot;Альфа-книга&quot;, Росія) запропонував вигадати собі псевдонім. Так з&#x27;явився Володимир Арєнєв. Відтоді практично всі художні твори автора виходять під псевдонімом, а справжнім прізвищем він підписує публіцистичні матеріали. Працює в широкому спектрі жанрів і тем. Серед його творів можна знайти і класичну фентезі, сюрреалістичну прозу, містику, наукову фантастику, дитячі казки, фантастичні гуморески тощо. На початок 2010 року має 16 сольних книг і більше сотні публікацій в міжавторських збірках і періодиці. Публікується російською, українською, литовською, польскою мовами. Нерідко сам перекладає свої книги з російської на українську. Під своїм справжнім прізвищем відомий як літературний критик і журналіст. У різні роки співпрацював із такими виданнями як: &quot;Дзеркало тижня&quot;, &quot;Сегодня&quot;, &quot;Реальность фантастики&quot;, &quot;Мир фантастики&quot;, &quot;Fan-тастика&quot; та ін. Активно пише рецензії та аналітичні статті, виступає із доповідями на конвентах і фестивалях фантастики. Літературно-критичні праці В.Пузія неодноразово були відзначені преміями, в тому числі — премією імені Олександра Бєляєва (2008). Лауреат міжнародної українсько-німецької премії імені Олеся Гончара (2001). Фіналіст незалежної премії &quot;Дебют&quot; (Росія). У 2004 році на &quot;Євроконі&quot; був визнаний кращим молодим автором України. Книги: • &quot;Отчаяние драконов&quot; (2000) • &quot;Охота на героя&quot; (2000) • &quot;Книгоед&quot; (у співавторстві з Юрієм Нікітінським) (2000 — рос., 2004 — укр.) • &quot;Монетка на удачу&quot; (2003) • &quot;Бісова душа, або Заклятий скарб&quot; (2003) • &quot;Правила гри&quot; (2000 — рос., 2004 — укр., у 2 тт.) • &quot;Місто тисячі Дверей&quot; (2004) • &quot;Паломничество жонглёра&quot; (2005) • &quot;Дикі володарі&quot; (2005) • &quot;Немой учитель&quot; (2006) • &quot;Магус&quot; (2006 — рос., 2007 — укр.)</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

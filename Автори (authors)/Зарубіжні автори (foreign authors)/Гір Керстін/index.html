@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гір Керстін — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гір Керстін</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hir-kerstin.webp" alt="Гір Керстін" title="Гір Керстін" data-full="./hir-kerstin.webp" /><img class="side-img side-thumb" src="./hir-kerstin_1.webp" alt="Гір Керстін" title="Гір Керстін" data-full="./hir-kerstin_1.webp" /></div>
+        <div class="prose-text">
+          <p>Керстін Гір — сучасна німецька письменниця, що спеціалізується на жіночих і підліткових романах. Керстін народилася 8 жовтня 1966 року в німецькому місті Бергіш-Гладбах. Спочатку вона сконцентрувалася на вивченні рідної мови і літератури, а також музики та англійської мови. Після цього вона вирушила вивчати курси по бізнесу і психології спілкування, а після завершення отримала спеціальність педагога. І тоді Керстін Гір вирішила знайти себе в сфері літератури. У своїй біографії згадує про дитяче захоплення творчістю.</p>
+          <p>В середині дев&#x27;яностих Гір почала писати любовні романи для жінок. Популярність прийшла до письменниці з книгою &quot;Чоловіки і інші катастрофи&quot;, яку пізніше екранізували. Після успішного старту Гір вирішила писати в суміжному напрямку — жанрі іронічної жіночої прози. Так, в 2005 році вона опублікувала книгу &quot;Непристойна пропозиція&quot;. Наступні книги теж користувалися великою популярністю. Але власне її пристрасть — фантастика. Ще маленькою дівчинкою вона любила вигадувати історії фентезі, записувала їх і доповнювала власними ілюстраціями. Її перші твори в цьому жанрі навіяні книгами, прочитаними в дитинстві.</p>
+          <p>У 2009 році письменниця втілила давню мрію в життя, опублікувавши першу книгу з трилогії &quot;Таймлесс&quot;, яка стала дуже популярною і навіть була екранізована. Сюжет написаний так, що до останніх сторінок не можна здогадатися, до чого все йде і як можуть закінчитися книги, а фінал стає сюрпризом. Книжку було перекладено на 50 мов, і вона стала світовим бестселером. Той самий успіх чекав і наступні дві частини. Рідкісному письменнику вдається повторити досягнуте з новими роботами. Але, судячи з відгуків про книги Керстін Гір, написаних протягом останніх трьох років, автору це вдалося. Трилогія &quot;Зільберт. Щоденники сновидінь&quot; б&#x27;є рекорди популярності. Причому в протистоянні трилогий &quot;Таймлесс&quot; — &quot;Зільберт&quot; багато читачів віддають перевагу останній.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

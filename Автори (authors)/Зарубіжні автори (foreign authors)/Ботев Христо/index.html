@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ботев Христо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ботев Христо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./botev-khrysto.webp" alt="Ботев Христо" title="Ботев Христо" data-full="./botev-khrysto.webp" /><img class="side-img side-thumb" src="./botev-khrysto_1.webp" alt="Ботев Христо" title="Ботев Христо" data-full="./botev-khrysto_1.webp" /><img class="side-img side-thumb" src="./botev-khrysto_2.webp" alt="Ботев Христо" title="Ботев Христо" data-full="./botev-khrysto_2.webp" /></div>
+        <div class="prose-text">
+          <p>Христо Ботев (6 січня 1849, Калофер — 2 червня 1876) — болгарський громадський діяч, поет і публіцист.</p>
+          <p>Народився в Калофері в сім&#x27;ї педагога Ботева Петкова. В 1863—66 перебував в Україні, вчився в одеській гімназії, потім працював учителем в селі Задунаївці (тепер Арцизький район Одеської області). Тут познайомився з російською літературою, з творами літературних критиків — М. Чернишевського, О. Герцена, М. Добролюбова, Д. Писарєва, що відіграло велику роль у формуванні його світогляду. Ймовірно, що Ботеву були знайомі твори Тараса Шевченка.</p>
+          <p>До проблеми &quot;Шевченко і Ботев&quot; не раз зверталися передові болгарські критики, особливо активно — в 1930-их роках. Наприклад Л. Стоянов у надрукованій статті &quot;Шевченко і Каравелов&quot; (газета &quot;Заря&quot;, 22 травня 1939) підкреслив, що така близькість Ботева і Шевченка зумовлена впливом на них революційної ідеї російського революційного руху. 1867 повернувся на батьківщину, але через переслідування емігрував до Румунії. Він брав активну участь у діяльності Болгарського революційного комітету, членом якого став вкінці 1874. З 1875 очолив Болгарський революційний рух. Вважається, що 21 травня (2 червня н. ст.) 1876 року Ботев був поранений турецьким снайпером в груди і практично відразу ж помер. Проте згідно спогадів учасників і висновку спеціальної комісії болгарських істориків, куля , котра потрапила в Ботева, не могла прилетіти з боку турок, оскільки він знаходився в такому місці, звідки позиції ворога не обстрілювалися, тому існує версія про те, що його застрелили свої ж товариші, розлючені невдачею. Літературна спадщина Ботева різноманітна й багата (поезії, оповідання, публіцистичні статті, фейлетони, послання, листи). Перший вірш — &quot;До моєї матері&quot; (1867). У поетичних творах (їх всього 20) Ботев оспівав любов до батьківщини, бойовий дух болгарського народу, показав зненависть до гнобителів (незакінчена поема &quot;Гайдуки&quot;, вірші &quot;Елегія&quot;, &quot;Боротьба&quot;, &quot;Хаджі Димитрій&quot;, &quot;Патріот&quot;, &quot;На смерть Василя Левського&quot; та ін.). &quot;Символ віри Болгарської комуни&quot; став катехізисом для болгарських революціонерів. Ботеву належить переклад &quot;Кремуція Корда&quot; М. Костомарова. Українською мовою твори Ботева перекладали П. Грабовський, В. Сосюра, П. Тичина. Л. Дмитерко присвятив Ботеву п&#x27;єсу. 13 листопада 2009 р. в місті Одеса, на честь 160-річчя Христо Ботева встановлено пам&#x27;ятник. Пам&#x27;ятник поету розташовано в Прохорівськом саду міста.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

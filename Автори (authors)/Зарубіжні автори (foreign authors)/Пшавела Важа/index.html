@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пшавела Важа — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Пшавела Важа</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pshavela-vazha.webp" alt="Пшавела Важа" title="Пшавела Важа" data-full="./pshavela-vazha.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 14 (26) липня 1861 року в селищі Чарган Душетського повіту, в родині священика. Навчався в Телавськом духовному училищі і в Горійській учительській семінарії, де зблизився з грузинськими народниками. Після закінчення семінарії в 1882 році став сільським учителем; захищав селян від утисків. У 1883 році вступив вільним слухачем на юридичний факультет Петербурзького університету, але через матеріальну незабезпеченість в 1884 році повернувся на батьківщину. Обробляв землю, пас череду, полював.</p>
+          <p>В літературу Важа Пшавела вступив в середині 1880-х років. У своїх творах зображував побут і психологію сучасних йому пшавов. Важа Пшавела — автор 36 поем, близько 400 віршів, п&#x27;єс, оповідань, а також етнографічних, публіцистичних і критичних статей.</p>
+          <p>Він малював майже етнографічно точні картини життя горян та разом з тим відтворив цілий світ міфологічних уявлень. У своїх віршах поет звертався до героїчного минулого свого народу, закликав до боротьби проти зовнішніх і внутрішніх ворогів (вірш &quot;Поранений барс&quot;, 1890 р .; &quot;Лист пшавов-солдата матері&quot;, 1915 р та ін.). У своїх кращих епічних творах Важа Пшавела ставив проблеми взаємини людини і суспільства, людини і природи, вирішував проблеми любові і боргу перед народом. У поемах &quot;Алуда Кетелаурі&quot; (1888 р російський переклад 1939 г.), &quot;Гість і господар&quot; (1893, російський переклад 1935 г.) зображений конфлікт між особистістю і &quot;тими&quot; (громадою); його герої виступають проти деяких віджилих законів громади. Поетові близькі сильні духом люди, їх почуття власної гідності, жага свободи. Ці ж теми порушені в п&#x27;єсі &quot;Відринутий&quot; (1894 г.). Важа Пшавела ідеалізував старі обряди пшавов, їх чистоту і незіпсованість &quot;фальшивої цивілізацією&quot;. Мудрець Міндія в поемі &quot;змійоїд&quot; (1901 р російський переклад 1934 г.) гине, так як не може примирити свої ідеали до потреб сім&#x27;ї та суспільства. Поема &quot;Бахтріоні&quot; (1892 р російський переклад 1943 г.) оповідає про участь племен грузинських горців в повстанні Кахеті (Східна Грузія) проти іранських поневолювачів в 1659 році. Як співець рідної природи Важа Пшавела не має собі рівних в грузинській поезії. Пейзаж його сповнений руху і внутрішніх конфліктів. Мова насичений усіма багатствами народної мови, і в той же час це бездоганно точний літературна мова. Завдяки чудовим перекладам на російську мову (М. Заболоцький, В. Державін, Б. Пастернак, С. Спаський та ін.) Твори Важі Пшавелі стали доступні представникам інших народів колишнього СРСР. Твори Важі Пшавелі також переведені на багато іноземних мов. Важа Пшавела помер в Тифлісі 27 червня (10 липня) 1915 року. Похований там же, в Пантеоні на горі Мтацмінда.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Законников Сергій Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Законников Сергій Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zakonnykov-serhiy-ivanovych_1.webp" alt="Законников Сергій Іванович" title="Законников Сергій Іванович" data-full="./zakonnykov-serhiy-ivanovych_1.webp" /><img class="side-img side-thumb" src="./zakonnykov-serhiy-ivanovych.webp" alt="Законников Сергій Іванович" title="Законников Сергій Іванович" data-full="./zakonnykov-serhiy-ivanovych.webp" /><img class="side-img side-thumb" src="./zakonnykov-serhiy-ivanovych_2.webp" alt="Законников Сергій Іванович" title="Законников Сергій Іванович" data-full="./zakonnykov-serhiy-ivanovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Законників Сергій Іванович (нар. 16.09.1946 р в д. Слобода Бешенковічского р-ну Вітебської обл.). Білоруський поет, перекладач, публіцист. Член Спілки письменників СРСР. Член Білоруського ПЕН-центру. Член СБП.</p>
+          <p>Перший вірш опублікував в 1963 році.</p>
+          <p>Після закінчення школи вступив на філологічний факультет БГУ ім. В.І.Леніна, після закінчення якого (1969) працював учителем білоруської мови і літератури. У 1970-1971 роках — літсотрудніком Ушачской районної газети &quot;Патриёт&quot;, з 1972 року — секретар Ушачского райкому комсомолу. У 1975-1978 роках — завідувач відділом сільської молоді редакції газети &quot;Чирвоная змена&quot;, а потім — кореспондент відділу літератури і мистецтва редакції газети &quot;Звязда&quot;. З 1978 року — інструктор, в 1979-1986 роках — завідувач відділом художньої літератури відділу культури ЦК КПБ. З 1986 по2002 рік — головний редактор журналу &quot;Полум&#x27;я&quot;. Очолював Білоруське відділення фонду слов&#x27;янської писемності. Член Спілки письменників СРСР (1977). Член Білоруського ПЕН-центру (1989). З 1990 року член Союзу білоруських письменників. Автор численних збірок поезії та публіцистики. На слова С. Законнікова написали пісні Е. Зарицький, Ю. Семеняко, Г. Смоляк. В даний час веде постійну рубрику в тижневику &quot;Вільні новини плюс&quot;. Перекладав на білоруський окремі твори російських, українських, грузинських та литовських поетів. Твори С. Законнікова переведені на угорський, в&#x27;єтнамський, іспанська, киргизький, литовська, німецька, російська, українська і чуваська мови. нагороди: Літературна премія імені А. Кулешова (1982, за книгу &quot;Пакуль Живе травня бяроза&quot;); Премія Бориса Кіта (2005); Орден &quot;Знак пошани&quot;; орден України &quot;За заслуги&quot; III ступеня (2006); Почесна грамота Верховної Ради УРСР. Основні твори: Бяседа: вершити. Мн., 1973; Устань та сонца: вершити и паема. Мн., 1976; Пакуль Живе травня бяроза: вершити и паема. Мн., 1981; Віра, Надзея, любоў: кніга лірикі. Мн., 1983; Присак годині: вершити, паеми. Мн., 1986; Вічна далеко: вершити. Мн., 1987; Сутнасць: кніга паезіі. Мн., 1987; Заклінанне: кніга паезіі. Мн., 1991; Лістам дарога запала ... Мн., 2000..</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

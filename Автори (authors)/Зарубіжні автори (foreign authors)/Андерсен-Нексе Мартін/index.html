@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Андерсен-Нексе Мартін — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Андерсен-Нексе Мартін</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./andersen-nekse-martin_2.webp" alt="Андерсен-Нексе Мартін" title="Андерсен-Нексе Мартін" data-full="./andersen-nekse-martin_2.webp" /><img class="side-img side-thumb" src="./andersen-nekse-martin.webp" alt="Андерсен-Нексе Мартін" title="Андерсен-Нексе Мартін" data-full="./andersen-nekse-martin.webp" /><img class="side-img side-thumb" src="./andersen-nekse-martin_1.webp" alt="Андерсен-Нексе Мартін" title="Андерсен-Нексе Мартін" data-full="./andersen-nekse-martin_1.webp" /></div>
+        <div class="prose-text">
+          <p>Нексе Мартін (Nexe, Martin; автонім: Андерсен, Мартін — 26.06.1869, Копенгаген — 01.06.1954, Дрезден) — данський письменник. Народився у сім&#x27;ї робітників, здобув фах шевця; закінчивши селянську вишу школу, став учителем. У своєму виступі на з&#x27;їзді письменників 1934 р. у Москві він стверджував, що література має зображати реальну дійсність, а не вигадані події та виняткових героїв. її головним персонажем повинен стати пролетар. Але ставлення Нексе до літератури радянської держави було позбавлене апологетичності. Він бачив уже тоді, що ця література відірвана від минулого, що психологічні характеристики персонажів бліді, що в ній майже немає гумору. Нексе вважав, що писати слід не лише для того, щоб ідеали закликали до боротьби, а й &quot;для годин тиші, коли людина зостається наодинці з собою&quot;. Нексе був переконаний, що &quot;митець має давати прихисток усьому... він мусить мати материнське серце, виступати на захист слабких і невдах&quot;. У статті 1939 р. він стверджував, що письменник покликаний бути &quot;внутрішнім оком людства&quot;, тобто бачити сам і допомагати іншим бачити сутність речей, красу світу, відповідати на складні питання часу. Аби бути &quot;внутрішнім оком людства&quot;, письменникові слід бути представником маси, тільки тоді його устами може говорити людство. Він вірив у величезну силу письменника і пам&#x27;ятав про його не меншу відповідальність перед людьми.</p>
+          <p>Початком творчого шляху Нексе слід вважати 1898 р., але справжнім його народженням як першого західноєвропейського пролетарського письменника став 1906 p., коли почала виходити тетралогія про робітничий рух &quot;Пелле-завойовник&quot; (&quot;Pelle Erobreren&quot;, 1906—1910). Тут автор показує, як формується свідомість простої людини, як вона приходить до думки про пролетарську солідарність і необхідність спільної боротьби з гнобителями.</p>
+          <p>Наступний роман — &quot;Дітте — дитя людське&quot; (&quot;Ditte Menneskebarn&quot;, 1917—1921) — це широке епічне полотно, де особиста доля реальної дівчинки, а згодом жінки Крістін Манн, котру називають Дітте, пов&#x27;язується з долями всіх людей: її прізвище &quot;Манн&quot; у перекладі означає &quot;людина&quot;. Дитя людське, вона проходить складний життєвий шлях, але знаходить свою дорогу в спільній боротьбі пролетаріату. Велику допомогу надає їй Мортен — письменник-демократ, комуніст, котрий стає героєм наступного роману — &quot;Мортен Червоний&quot; (&quot;Morten hin R0de&quot;, 1945—1954). Завершує серію роман &quot;Втрачене покоління&quot; (&quot;Den fortable Generation&quot;, 1948), що залишився у фрагментах — &quot;Жанетта&quot; (&quot;Jeanette&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

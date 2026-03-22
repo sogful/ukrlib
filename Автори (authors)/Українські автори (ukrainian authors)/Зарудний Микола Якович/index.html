@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Зарудний Микола Якович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Зарудний Микола Якович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zarudnyy-mykola-iakovych.webp" alt="Зарудний Микола Якович" title="Зарудний Микола Якович" data-full="./zarudnyy-mykola-iakovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 20 серпня 1921 року в родині вчителів в селі Оріховці, тепер Сквирського району Київської області. У 1939–1941 роках навчався в Українському комуністичному інституті журналістики у Харкові. У 1942 році закінчив факультет журналістики Казахського університету в Алма-Аті.</p>
+          <p>Брав участь у німецько-радянській війні. Член ВКП(б) з 1948 року.</p>
+          <p>Працював у редакціях обласних газет, у 1961–1963 роках був головним редактором Київської кіностудії художніх фільмів імені О. П. Довженка. У 1966–1969 роках — секретар правління Спілки письменників України, у 1981–1990 роках — правління Київської організації СПУ. Могила Миколи Зарудного Помер 25 серпня 1991 року в Києві. Почав друкуватися від 1944 року. Перші п&#x27;єси написані в дусі часу, зокрема під впливом творчості О. Корнійчука. Успіх і головні риси драматургії Зарудного — конфлікт між високим, одухотвореним і приземлено-меркантильним — означила комедія &quot;Веселка&quot; (1958; Київ, 1962; Київ) і розвинулися у п&#x27;єсах &quot;Мертвий бог&quot; (1960; Київ), &quot;Фортуна&quot; (1964; Київ), &quot;Рим, 17, до запитання&quot; (1969; Київ), &quot;Дороги, які ми вибираємо&quot; (1971; Київ), &quot;Пора жовтого листя&quot; (1974; Київ) &quot;Маестро, туш!&quot; (1978; Київ), &quot;Обочина&quot;, &quot;Регіон&quot; (обидві — 1981; Київ), &quot;Бронзова фаза&quot; (1985; Київ) та інших. Більшість п&#x27;єс — на теми сільського життя. Автор повісті &quot;Мої земляки&quot; (1950; Київ), збірка оповідань &quot;Світло&quot; (1961; Київ), романів &quot;На білому світі&quot; (1967; Київ), &quot;Уран&quot; (1970; Київ), &quot;Гілея&quot; (1973; Київ). За його сценаріями знято: художні фільми: &quot;Веселка&quot; (1959, режисер М. Літус), &quot;Стежки-доріжки&quot; (1963, режисери О. Борисов, А. Войтецький), &quot;Тут нам жити&quot; (1973, режисер А. Буковський; всі — Київська кіностудія художнії фільмів імені О. Довженка); фільми-спектаклі: &quot;Чужий дім&quot; (1968), &quot;Рим, 17...&quot; (1972), &quot;Пора жовтого листя&quot; (1974;), &quot;Вірність&quot; (1977), &quot;І відлетимо з вітрами&quot; (1978), &quot;Тил&quot; (1979). Всі студія &quot;Укртелефільм&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

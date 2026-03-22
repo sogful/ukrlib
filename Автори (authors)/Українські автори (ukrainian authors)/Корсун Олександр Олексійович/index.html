@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Корсун Олександр Олексійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Корсун Олександр Олексійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./korsun-oleksahdr-oleksiyovych.webp" alt="Корсун Олексагдр Олексійович" title="Корсун Олексагдр Олексійович" data-full="./korsun-oleksahdr-oleksiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Заслуга Олександра Олексійовича навіть не в літературних працях, яких в нього досить небагато. Він запам&#x27;ятався як впровадник нових правил українського правопису з використанням літер &quot;є&quot; (до того в усіх випадках писалося &quot;е&quot;), &quot;і&quot; замість &quot;и&quot; та &quot;и&quot; замість &quot;ы&quot;, як було раніше. Випускав власний альманах &quot;Сніп&quot; за цими правилами, які високо оцінили Т.Шевченко, М.Драгоманов, М.Костомаров та інші відомі літератори.</p>
+          <p>Народився Олександр Корсун 8 червня 1818 року в селі Богданівська Антипівка на Таганрожчині у дворянській сім&#x27;ї, хоча заявляв своє походження від запорізьких козаків. Навчався на юридичному факультеті Харківського університету. Під час навчання захопився українським фольклором, навіть 1839 року випустив збірку &quot;Українські повір&#x27;я&quot; , до якої увійшло 7 народних казок.</p>
+          <p>Щодо творчих доробків: оригінальні вірші, переклади з чеської та німецької він публікував у своєму альманасі та в деяких інших періодичних виданнях. Основний період його творчості охоплює 1839-1845 роки. З 1847 року Корсун перебував на службі при дербентському воєнному губернаторі. З 1861 року він проживає в рідній Антипівці, займаючись виключно збиранням етнографічних матеріалів. Хворий уже Корсун цілих чотири роки пише свої спогади про Миколу Костомарова, які нарешті з&#x27;являються в &quot;Русскомархиве&quot; в 1890-му році. Згадує автор між іншим і про те велике піднесення, що було на Україні тоді, як з&#x27;явився вперше Шевченків &quot;Кобзар&quot;. Для доби реакції, що була в Росії в 1890-му році, це була занадто смілива річ. Спогади про Костомарова стали прощальним заповітом Олександра Корсуна для українців. 25 жовтня 1891-го року він помирає у своїй Богданівській Антипівці, де його і поховано.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Іванцова Міла Петрівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Іванцова Міла Петрівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ivantsova-mila-petrivna.webp" alt="Іванцова Міла Петрівна" title="Іванцова Міла Петрівна" data-full="./ivantsova-mila-petrivna.webp" /><img class="side-img side-thumb" src="./ivantsova-mila-petrivna_1.webp" alt="Іванцова Міла Петрівна" title="Іванцова Міла Петрівна" data-full="./ivantsova-mila-petrivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Іванцова Людмила Петрівна (нар. 27 листопада 1960) — українська письменниця, перекладач, журналіст та педагог.</p>
+          <p>Міла Іванцова народилась і виросла в Києві, за освітою – викладач російської мови і літератури та французької мови. Викладала французьку в школі, Ліцеї туризму, Інституті туризму ФПУ, має досвід перекладацької та журналістської роботи.</p>
+          <p>У зрілому віці почала писати вірші, оповідання. Роман &quot;Родовий відмінок&quot; отримав номінацію &quot;Вибір видавців&quot; у літературному конкурсі &quot;Коронація слова – 2009&quot;. Роман &quot;Гра в паралельне читання&quot; увійшов у трійку творів-переможців цього ж конкурсу в 2012 році. Наразі автор має у творчому доробку сім романів, книгу-повість для підлітків про спортсменів &quot;Заради мрії&quot;, участь у трьох збірках-антологіях сучасних авторів, переклад роману парижанки Дельфін де Віган &quot;Підземні години&quot;. Її твори були відзначені у рейтингах &quot;Книга року Бі-бі-сі&quot; та &quot;Книга року журналу &quot;Кореспондент&quot;&quot;. У 2012 році нагороджена відзнакою &quot;Золотий письменник України&quot;. Міла Іванцова – активна громадська діячка, багатогранна творча особистість. Створила соціальний проект &quot;100 книжок для сільської бібліотеки&quot;, була активісткою безпрецедентної &quot;Бібліотеки Майдану&quot; під час Революції гідності, також створила цілу серію авторських розписних шоломів. Позитивістка. Оптимістка. Патріотка. Любить дерева, квіти, цікавих креативних людей.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

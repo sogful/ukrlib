@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гофштейн Давид Наумович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гофштейн Давид Наумович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hofshteyn-davyd-naumovych.webp" alt="Гофштейн Давид Наумович" title="Гофштейн Давид Наумович" data-full="./hofshteyn-davyd-naumovych.webp" /><img class="side-img side-thumb" src="./hofshteyn-davyd-naumovych_1.webp" alt="Гофштейн Давид Наумович" title="Гофштейн Давид Наумович" data-full="./hofshteyn-davyd-naumovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Давид ГОФШТЕЙН</p>
+          <p>Гофштейн Давид Наумович народився 25 липня 1889 року в Коростишеві на Житомирщині в сім&#x27;ї дрібного службовця. Навчався в хедері. Рано покинувши отчий дім, переїхав до Києва, де вступив до комерційного інституту. Одночасно слухав лекції на філологічному факультеті університету.</p>
+          <p>Перші вірші опублікував 1912 року в єврейській газеті &quot;Айє цайт&quot;, де працював коректором, Багато років учителював. Був редактором. У роки війни працював в об&#x27;єднаному інституті суспільних наук АН УРСР. Член СП СРСР з 1934 року Давид Гофштейн — один з основоположників єврейської радянської поезії. Його перу належать численні книжки віршів і поем: &quot;Дороги&quot;? &quot;Лірика&quot;, &quot;Вибрані вірші&quot;, &quot;Вірші та поеми&quot;, &quot;Київ&quot;, &quot;Україна&quot;, &quot;У наші грізні дні&quot;. Він був найкращим перекладачем української класичної та радянської поезії єврейською мовою. Переклав твори Т. Шевченка, І. Франка, Лесі Українки, М. Рильського, П. Тичини, В. Сосюри, Л. Первомайського, М. Бажана, а також класиків світової літератури. Він автор низки підручників і укладач збірників народних пісень. 16 вересня 1948 року Д. Гофштейна заарештували у так званій &quot;Справі Єврейського антифашистського комітету&quot;. Йому інкримінували націоналістичну діяльність, зрадництво, шпигунство. Близько чотирьох років тривало слідство із залученням найнятих літературних критиків-&quot;експертів&quot; (В. Щербина. Ю. Лукін, Г. Владикін, С. Євгенов), які кваліфікували вірші, нариси, оповідання та інші матеріали, котрі антифашистський Комітет відправляв за кордон через Радіоінформбюро в органи інформації, як зловорожі радянському ладові, шпигунські. 28 липня 1952 року військова колегія Верховного суду СРСР оголосила вирок Д. Гофштейнові і ще дванадцятьом єврейським письменникам: найвища міра покарання — розстріл. Вирок виконано 12 серпня 1952 року. Давид Гофштейн реабілітований посмертно. Григорій Полянкер ЛУ 29 (4438) 19.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

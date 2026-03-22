@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Топеліус Захаріас — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Топеліус Захаріас</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./topelius-zakharias_1.webp" alt="Топеліус Захаріас" title="Топеліус Захаріас" data-full="./topelius-zakharias_1.webp" /><img class="side-img side-thumb" src="./topelius-zakharias.webp" alt="Топеліус Захаріас" title="Топеліус Захаріас" data-full="./topelius-zakharias.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 14 січня 1818 року в родині лікаря й відомого збирача народної поезії. Вже в дитинстві проявилися його художні здібності: багата уява, спостережливість, інтерес до таємничого і містичного. У віці одинадцяти років він був відправлений на навчання в школу в Улеаборге.</p>
+          <p>У 1833 році переїхав до Гельсінгфорс, де познайомився з Юханом Людвігом Рунеберг, що стояли на чолі фінського національно-патріотичного руху в 1830-х років. Гурток Рунеберга зробив сильний вплив на молодого Топеліус, зумовивши подальший розвиток його літературної і суспільно-політичної діяльності. У 1840 Топеліус закінчив Гельсінгфорський університет, в 1841 став головним редактором &quot;Гельсінгфорський известий&quot; (швед.Helsingfors Tidningar) і займав цю посаду аж до 1860.</p>
+          <p>Його публіцистика відрізнялася ліберальністю поглядів. У 1845 році вийшов перший з чотирьох збірок віршів Топеліус, &quot;Квіти вересу&quot;. У 1847 році він став доктором історичних наук, ще через сім років — професором. Однак проросійська позиція Топеліуса в період Кримської війни відштовхнула від нього найбільш радикально налаштованих фінів. З 1873 по 1878 був ректором Гельсингфорського університету. У 1878 році залишив цю посаду, щоб цілком присвятити себе літературній праці. Був нагороджений Шведською академією золотою медаллю за літературні заслуги в 1886 році. Творчість Літературне творчість Топеліус дуже різноманітне. Його лірика глибоко патріотична, пронизана любов&#x27;ю до батьківщини і її природи (&quot;Танення льоду на річці Улео&quot;, &quot;Лісові пісні&quot;, &quot;Зимова вулиця&quot; тощо) У більш пізніх віршах Топеліус переважають релігійні мотиви. Крім того, Тобеліус знаменитий історичною прозою: романами, повістями та оповіданнями, в яких позначився вплив Вальтера Скотта, Віктора Гюго і датського романіста Б. С. Інгеманна. Опублікований в 1850 році роман Т. &quot;Герцогиня Фінляндська&quot; став першою спробою створення у фінській літературі великого національно-історичного роману. &quot;Розповіді фельдшера&quot;дають художній нарис про історію Фінляндії з часів Густава II Адольфа до Густава III. У 1879 році вийшов роман про часи шведської королеви Христини — &quot;Діти зірок&quot;. З драматичних творів Топеліус широку популярність мали трагедія &quot;Регіна фон Еммеріц&quot; (1853) і драма &quot;50 років потому&quot; (1851), в основу яких були покладені епізоди з &quot;Рассказов фельдшера&quot;. У Європі Топеліус відомий насамперед як автор казок &quot;Sagor&quot; (1847-1852). У більш ранніх з них відчувається деяке наслідування Андерсену, але потім він знаходить свій власний оригінальний стиль. Цікаві факти Топеліус підтримував ідею Трансконтинентальної магістралі через Берингову протоку (це відбито в його казці &quot;Як коваль Пааво підкував поїзд&quot;, в іншому перекладі &quot;Про те, як залізниця семимильні чоботи отримала&quot;) Саме Топеліус першим запропонував зробити білий і блакитний квітами прапора Фінляндії. Блакитний колір позначав озера (фін. j?rvet), а білий — снігу (фін. hanki).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

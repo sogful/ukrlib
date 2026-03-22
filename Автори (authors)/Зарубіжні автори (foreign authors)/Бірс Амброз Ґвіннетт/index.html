@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бірс Амброз Ґвіннетт — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бірс Амброз Ґвіннетт</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./birs-ambroz-gvinnett.webp" alt="Бірс Амброз Ґвіннетт" title="Бірс Амброз Ґвіннетт" data-full="./birs-ambroz-gvinnett.webp" /><img class="side-img side-thumb" src="./birs-ambroz-gvinnett_1.webp" alt="Бірс Амброз Ґвіннетт" title="Бірс Амброз Ґвіннетт" data-full="./birs-ambroz-gvinnett_1.webp" /></div>
+        <div class="prose-text">
+          <p>Амброз Ґвíннетт Бірс (англ. Ambrose Gwinnett Bierce; 24 червня 1842 — зниклий безвісти після 26 грудня 1913) — американський письменник і журналіст, провідний публіцист-сатирик свого часу, поет. Автор короткої прози, нарисів, есе, бувальщин і байок, поезій. Найбільше відомий завдяки своїм військовим (збірка &quot;Історії про військових і цивільних&quot; (англ. Tales of Soldiers and Civilians), 1891) і містичним / страшним оповіданням (збірка &quot;Чи таке можливо?&quot; (англ. Can Such Things Be?), 1893; &quot;Фантастичні казки&quot; (англ. Fantastic Fables), 1899), сатиричного &quot;Словника від Лукавого&quot; (англ. The Devil&#x27;s Dictionary, 1906).</p>
+          <p>Учасник Громадянської війни у США, відзначався своєрідною репортерською різкістю, непоступливістю і прямолінійністю, які виявлялися не лише в його статтях та есе, а й у художній прозі і поезії. Через це він заробив прізвисько &quot;Нещадний Бірс&quot; (англ. Bitter Bierce). У старшому віці підтримував і заохочував молодих літераторів, таких як поет Джордж Стерлінґ (1869—1926) і автор страшних оповідань Вільям Чемберз Морроу (1854—1923).</p>
+          <p>Наприкінці життя Амброз Бірс, розбитий особистими трагедіями (передчасна смерть двох синів, розлучення з дружиною, проблеми з роботодавцями), вирушив до Мексики, де саме точилася громадянська війна. Останній його лист додому був датований 26 грудня 1913 р., після чого письменник зник у невідомому напрямку. Місце і час смерті Амброза Бірса достеменно невідомі. Його літературна спадщина одержала високу оцінку у сучасників і наступників. Бірс вважається взірцевим майстром короткої прози, а його оповідання &quot;Випадок на мосту через совину річку&quot; (англ. An Occurrence at Owl Creek Bridge, 1890) вважається класикою американської літератури.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

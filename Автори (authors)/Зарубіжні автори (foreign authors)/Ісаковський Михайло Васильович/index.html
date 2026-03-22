@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ісаковський Михайло Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ісаковський Михайло Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./isakovskyy-mykhaylo-vasylovych.webp" alt="Ісаковський Михайло Васильович" title="Ісаковський Михайло Васильович" data-full="./isakovskyy-mykhaylo-vasylovych.webp" /><img class="side-img side-thumb" src="./isakovskyy-mykhaylo-vasylovych_1.webp" alt="Ісаковський Михайло Васильович" title="Ісаковський Михайло Васильович" data-full="./isakovskyy-mykhaylo-vasylovych_1.webp" /><img class="side-img side-thumb" src="./isakovskyy-mykhaylo-vasylovych_2.webp" alt="Ісаковський Михайло Васильович" title="Ісаковський Михайло Васильович" data-full="./isakovskyy-mykhaylo-vasylovych_2.webp" /><img class="side-img side-thumb" src="./isakovskyy-mykhaylo-vasylovych_3.webp" alt="Ісаковський Михайло Васильович" title="Ісаковський Михайло Васильович" data-full="./isakovskyy-mykhaylo-vasylovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Михайло Васильович Ісаковський (1900-1973) — російський радянський поет. Лауреат двох Сталінських премій першого ступеня (1943, 1949). Герой Соціалістичної Праці (1970). Член РКП(б) з 1918 року .</p>
+          <p>Народився 19 січня 1900 року в селі Глотівка Ельнинского повіту Смоленської губернії в бідній селянській родині. Місцевий священик навчив Ісаковського читати і писати. Пізніше Ісаковський провчився 2 роки в гімназії. Перший вірш &quot;Прохання солдата&quot; Ісаковський опублікував ще в 1914 році в московській газеті &quot;Новь&quot;. З тих пір він видав величезна кількість віршованих збірок. У 1921 р. в Смоленську вийшли три невеликі книжки віршів Ісаковського.</p>
+          <p>Початком своєї літературної діяльності поет вважав 1924 року, коли були надруковані вірші &quot;Підпасичі&quot;, &quot;Рідне&quot; та ін В 1927 р. в Москві вийшла книга &quot;Проводи в соломі&quot;, потім з&#x27;явилися збірники &quot;Провінція&quot; (1930), &quot;Майстри землі&quot; (1931), &quot;Чотири бажання&quot; (1936) та інші. Велике місце в творчості Ісаковського займають вірші про Велику Вітчизняну війну. Багато вірші Ісаковського, покладені на музику, стали популярними народними піснями, вони співаються у всьому світі: &quot;Катюша&quot;, &quot;І хто його знає&quot;, &quot;У прифронтовому лісі&quot;, &quot;Вогник&quot;, &quot;Ой, тумани мої...&quot;, &quot;Вороги спалили рідну хату&quot;, &quot;Знову завмерло все до світанку&quot;, &quot;Летять перелітні птахи&quot; та ін. Відомі переклади Ісаковського з білоруських і українських поетів, угорських народних балад і пісень. Талант Ісаковського високо цінував сам Горький. Крім поезії, Ісаковський писав і теоретичні роботи про літературу. Одна з найуспішніших її книг &quot;Про поетичну майстерність&quot; містить листи до молодих стихотворцам, в яких поет радить писати чистим, ясним, народною мовою. Займався Ісаковський і літературними перекладами з українського, білоруського та угорської мов. А на схилі років Михайло Васильович написав книгу &quot;На Ельнинской землі: Автобіографічні сторінки&quot;. Михайло Васильович Ісаковський помер 20 липня 1973 року в Москві, похований на Новодівичому кладовищі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

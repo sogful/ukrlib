@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бонковський Денис Федорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бонковський Денис Федорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Народився 16 квітня 1816 року в містечку Вороновиця Брацлавського повіту Подільської губернії (нині смт Вінницького району Вінницької області). За походженням поляк. Жив на Поділлі.</p>
+          <p>У 1834—1838 роках працював канцеляристом у Новоград-Волинському земському суді, далі недовго — в Радомисльському земському суді (Радомисльський повіт Київської губернії). Від 1838 року був секретарем у канцелярії київського цивільного губернатора.</p>
+          <p>Помер 30 серпня 1881 року в Богуславі (нині один із районних центрів Київської області). Дату та місце смерті встановив Микола Шудря. Музичної освіти не мав, створені ним мелодії на ноти записували знайомі. Бонковський — автор тексту і музики пісень: &quot;Гандзя&quot;, &quot;Гей я козак, зовусь Воля&quot;, &quot;Нудьга козача&quot;, &quot;Тропак&quot; (&quot;Ой пішла б я на музику&quot;), &quot;Там, де Горинь розіслався&quot; тощо. Створив мелодії: до вірша Тараса Шевченка &quot;Нащо мені чорні брови&quot; (стала народною піснею). до вірша І. Завадського &quot;Де шлях чорний&quot;. Переклав українською з польської мови поеми польських романтиків: &quot;Пісня про нашу землю&quot; Вінцента Поля (1860), &quot;Заверуха. Українська повість&quot; Томаша Авґуста Олізаровського, учасника повстання 1830—1831 років. Поетичні й музичні твори Бонковського друкувалися в 19—20 століттях. Автор статті &quot;Про музику народних пісень&quot; (1869), в якій охарактеризував особливості українського музичного фольклору. Твори Бонковського опубліковано в низці видань. Серед них: Пісні та романси українських поетів. — Київ: Радянський письменник, 1956. Українською музою натхненні (Польські поети, які писали українською мовою). — Київ: Радянський письменник, 1971. Пісні літературного походження. — К., 1978.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Транстрьомер Тумас — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Транстрьомер Тумас</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./transtromer-tumas_2.webp" alt="Транстрьомер Тумас" title="Транстрьомер Тумас" data-full="./transtromer-tumas_2.webp" /><img class="side-img side-thumb" src="./transtromer-tumas.webp" alt="Транстрьомер Тумас" title="Транстрьомер Тумас" data-full="./transtromer-tumas.webp" /><img class="side-img side-thumb" src="./transtromer-tumas.webp" alt="Транстрьомер Тумас" title="Транстрьомер Тумас" data-full="./transtromer-tumas.webp" /><img class="side-img side-thumb" src="./transtromer-tumas_1.webp" alt="Транстрьомер Тумас" title="Транстрьомер Тумас" data-full="./transtromer-tumas_1.webp" /></div>
+        <div class="prose-text">
+          <p>То́мас (Ту́мас) Є́ста Транстре́мер (швед. Tomas Gösta Tranströmer; 15 квітня 1931, Стокгольм — 26 березня 2015) — видатний шведський поет XX століття, лауреат Нобелівської премії з літератури 2011 року &quot;за стислі та пронизливі образи, які дали читачам свіжий погляд на реальність&quot;.</p>
+          <p>Транстремер, нарівні з Еммануїлем Сведенборгом, Августом Стріндбергом та Інгмаром Бергманом, світовою культурною громадськістю розглядається як один з тих, хто виходить за рамки вузько-національного і становить так зване обличчя національного шведського світосприйняття в загальному світовому та інтернаціональному контексті.</p>
+          <p>Біографія Томас Транстремер здобув середню освіту в Південній латинській школі в Стокгольмі і отримав диплом психолога в Стокгольмському університеті в 1956 році. Додатково вивчав історію, релігію і літературу. За основною професією — лікар-психолог, працював спочатку у в&#x27;язниці для неповнолітніх, згодом — з інвалідами, які втратили працездатність унаслідок трудового каліцтва, ув&#x27;язненими і наркоманами. Професійний піаніст. Творчість Найвпливовіший скандинавський поет останніх десятиліть. Почав писати в 13 років. Свій перший збірник віршів 17 dikter (Сімнадцять віршів) опублікував у 1954 році. У 1993 році видав свою коротку автобіографію Minnena ser mig (Спогади споглядають на мене). Інші поети, особливо &quot;політичних&quot; 1970-х, звинуватили Транстремера у відстороненні від власної традиції і політичних процесів. Проте поет працював у межах модерністських, експресіоністських і сюрреалістичних тенденцій в поезії ХХ століття. Його ясні, прості картинки з повсякденного життя і природи показують містичну проникливість універсальних аспектів людського розуму. На початку 1990-х років був вражений інсультом, від чого у нього відняло праву частину тіла, мову і здатність володіти пером. Але він навчився писати лівою рукою і навіть став виконувати музику для &quot;лівої руки&quot; на фортепіано, часто написану спеціально для нього сучасними західними композиторами. Томас Транстремер — автор 12 книг віршів і прози. Твори поета перекладено 60 мовами. Його остання робота, збірка віршів Den stora gåtan (Велика таїна), була опублікована у 2004 році. 6 жовтня 2011 року Нобелівський комітет оголосив про присудження Нобелівської премії з літератури Томасу Транстремеру. Окрім того, Транстремер був нагороджений Поетичною премією видавництва Бонніер, Міжнародною премією в галузі літератури (Нойштадт), Премією Петрарки (Німеччина), Золотим вінком Струзьких вечорів поезії, Шведською премією Міжнародного поетичного форуму та ін. Майже все життя провів у місті Вестерос. Останні роки жив разом із дружиною Монікою в Стокгольмі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

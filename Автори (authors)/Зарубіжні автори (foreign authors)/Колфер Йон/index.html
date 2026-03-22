@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Колфер Йон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Колфер Йон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kolfer-yon.webp" alt="Колфер Йон" title="Колфер Йон" data-full="./kolfer-yon.webp" /><img class="side-img side-thumb" src="./kolfer-yon_1.webp" alt="Колфер Йон" title="Колфер Йон" data-full="./kolfer-yon_1.webp" /><img class="side-img side-thumb" src="./kolfer-yon_2.webp" alt="Колфер Йон" title="Колфер Йон" data-full="./kolfer-yon_2.webp" /></div>
+        <div class="prose-text">
+          <p>Оуен (Йоун, Йон) Ко́лфер (англ. Eoin Colfer, ім&#x27;я читається як Owen) — ірландський письменник-фантаст. Насамперед відомий як автор дитячої книжкової серії &quot;Артеміс Фаул&quot;.</p>
+          <p>Народився 14 травня 1965 року у місті Вексфорд. Мав чотирьох братів, а сам був другою дитиною у сім&#x27;ї. Мати — актриса, а батько — учитель історії. Колфер вважав професію вчителя веселою, корисною та цікавою. Можливо, тому, що вчився у класі свого батька. Колфер-старший цікавим способом карав непослухів у своєму класі — стріляв по дітях з водяного пістолета, зарядженого водою з акваріума.</p>
+          <p>Закінчивши учительський коледж у Дубліні, Йон пішов по стопах свого батька та 1986 року почав вчителювати у молодших класах. Згодом деякий час провів у Саудівській Аравії, Італії, Тунісі. За словами самого Колфера, він з дитинства любив складати розповіді: &quot;Коли інші діти надворі грали в спортивні ігри та дерлися по деревах, я залишався вдома та писав п&#x27;єски та малював комікси.. Тож повернувшись на батьківщину, він вирішив залишити роботу та почав письменницьку діяльність. 1998 року світ побачила його дебютна книга — &quot;Бенні та Омар&quot;. У 2001—2012 роках видавав одну зі своїх найвідоміших книжкових серії про Артеміса Фаула. Разом із дружиною Джені та двома синами Фінном та Шоном живе у Вексфорді.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

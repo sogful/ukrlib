@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Красицький Дмитро Филимонович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Красицький Дмитро Филимонович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./krasytskyy-dmytro-fylymonovych.webp" alt="Красицький Дмитро Филимонович" title="Красицький Дмитро Филимонович" data-full="./krasytskyy-dmytro-fylymonovych.webp" /></div>
+        <div class="prose-text">
+          <p>Український письменник, літературознавець.</p>
+          <p>Правнук Катерини Шевченко, улюбленої сестри Тараса Григоровича Шевченка, яка була другом маленького Тараса, доглядала його й виховувала.</p>
+          <p>Генеалогічне дерево Дмитра Красицького свідчить, що його прабабкою була Катерина Григорівна Шевченко (1806–1850) – старша сестра геніального Кобзаря, яка в 1823 р. взяла шлюб з Антоном Григоровичем Красицьким (1794–1848). У них народилось 12 дітей, з яких до повноліття дожили лише четверо: Федір, Степан, Яким та Максим. Яким Антонович був дідом Дмитра Красицького по лінії батька Филимона Якимовича. Дмитро Филимонович Красицький народився 7 листопада 1901 року в с. Зелена Діброва Звенигородського району Черкаської області. У 1922 р. закінчив київський інститут народної освіти. Учасник війни. Був деканом історичного факультету Дніпропетровського державного університету, директором музею Д. Яворницького і Києво-Печерського історико-культурного заповідника (1946-1951). З 1951 по 1961 рр. – директор київського літературно-меморіального будинку Т. Шевченка і заступник київського музею Т. Шевченка. Свої вірші почав друкувати у 1918 році. Автор біографічних повістей, оповідань і нарисів про Т. Шевченка, серед яких &quot;Дитинство Тараса&quot;, &quot;Юність Тараса&quot;, (1959 р.), &quot;Тарас — художник&quot; (1971р.), &quot;Смерть i похорони Шевченка&quot; (1961 р.), &quot;Великий Кобзар у пам&#x27;ятi народній&quot; (1961 р.), &quot;Тарасова земля&quot; (1962р.), &quot;Дітям про Шевченка&quot; (1962 р.), &quot;Роздуми над словом Шевченка&quot; (1963 р.), &quot;Тарасові світанки&quot; (1967 р.), &quot;I оживе добра слава&quot; (1986 р.) та ін. Був в Острозі на відкритті пам&#x27;ятника Т. Шевченку у 1963 р., де виступив і подарував музеєві книгу &quot;Вінок Тарасові Шевченку&quot; з автографом &quot;Острозькому музею в день відвідин. Дмитро Красицький. 20.ХІ. 1963&quot;. Помер Шевченків правнук на 88-му році життя – 8 січня 1989 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

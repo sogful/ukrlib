@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бонд Майкл — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бонд Майкл</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bond-maykl_2.webp" alt="Бонд Майкл" title="Бонд Майкл" data-full="./bond-maykl_2.webp" /><img class="side-img side-thumb" src="./bond-maykl.webp" alt="Бонд Майкл" title="Бонд Майкл" data-full="./bond-maykl.webp" /></div>
+        <div class="prose-text">
+          <p>Сер Майкл Бонд (англ. Sir Michael Bond; 13 січня 1926 — 27 червня 2017) — англійський письменник і сценарист, автор широко відомої серії книг про ведмедика Паддінгтона, нагороджений Орденом Британської імперії (1997).</p>
+          <p>Народився у Ньюбері, Беркшир, невеликому містечку Південно-Східної Англії, 13 січня 1926 року (в цьому ж місті в 1920 році народився інший англійський письменник, Річард Адамс). Навчався в Редінгу, в католицькій школі Presentation College.</p>
+          <p>Під час Другої світової війни служив в Королівських військово-повітряних силах Великої Британії і в полку від Мидлсекса в Британській Армії. Майкл Бонд почав писати в 1945 році і продав свій перший твір журналу &quot;Думка Лондона&quot; (англ. London Opinion). У 1958 році, написавши до того часу велика кількість п&#x27;єс і оповідань і працюючи телеоператором на Бі-бі-сі, Майкл Бонд опублікував своє перше оповідання про Паддінгтона — &quot;Ведмежа Паддінгтон&quot;. До 1965 року письменник опублікував уже серію розповідей про невгомонного ведмедика і вирішив залишити роботу на Бі-бі-сі, щоб стати професійним письменником. У 1997 році письменник отримав Орден Британської імперії за внесок у дитячу літературу. 6 липня 2007 року Майкл Бонд став доктором літератури університету в Редінгу. Жив він у Лондоні, недалеко від станції Паддінгтон; одружений, у нього двоє дорослих дітей. Помер в своєму будинку 27 червня 2017 року у віці 91 року після нетривалої хвороби.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Будяк Юрій Якович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Будяк Юрій Якович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./budiak-iuriy-iakovych.webp" alt="Будяк Юрій Якович" title="Будяк Юрій Якович" data-full="./budiak-iuriy-iakovych.webp" /></div>
+        <div class="prose-text">
+          <p>БУДЯК (ПОКОС) Юрій Якович</p>
+          <p>(1879-1943) Народився в с. Красногірка Костянтиноградського повіту Полтавської губернії. Молодим офіцером російської армії добровольцем брав участь в англо-бурзькій війні 1899-1901 рр. на боці бурів. Врятував життя від розтерзання бурами полоненого молодого англійського військового журналіста Уінстона Черчілля. Пізніше сам потрапив у полон до англійців і разом з У. Черчіллем поїхав до Великобританії, де навчався (за рахунок батьків Черчілля) в одному з англійських університетів, зробив подорож до Сполучених Штатів Америки.</p>
+          <p>Повернувшись на батьківщину, Юрій Якович перейшов на цивільну службу і займався літературною діяльністю. Працюючи педагогом, написав історичні поеми: &quot;Невольниця-українка&quot; і &quot;Пан Базалей&quot;, &quot;Записки вчителя&quot;. Він автор ряду повістей, п&#x27;єс, оповідань, в яких відобразив життя України. Належав до літературної організації &quot;Плуг&quot;. Писав вірші й оповідання для дітей. Після 1917 року Ю. Я. Будяк оселився в Києві, тривалий час працював учителем української мови. Помер Юрій Якович 23 вересня 1943 року в Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

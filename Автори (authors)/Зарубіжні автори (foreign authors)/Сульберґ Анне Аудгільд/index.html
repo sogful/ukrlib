@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сульберґ Анне Аудгільд — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Сульберґ Анне Аудгільд</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./sulberg-anne-audhild.webp" alt="Сульберґ Анне Аудгільд" title="Сульберґ Анне Аудгільд" data-full="./sulberg-anne-audhild.webp" /><img class="side-img side-thumb" src="./sulberg-anne-audhild_1.webp" alt="Сульберґ Анне Аудгільд" title="Сульберґ Анне Аудгільд" data-full="./sulberg-anne-audhild_1.webp" /></div>
+        <div class="prose-text">
+          <p>А. Аудгільд Сульберґ (норв. A. Audhild Solberg; нар. 12 квітня 1975) — норвезька письменниця, авторка підліткової літератури, літературний критик, рецензентка, перекладачка. У 2014 році вийшла її дебютна книжка &quot;Хто проти суперкрутих&quot;, яку згодом видали в Німеччині, Франції, Швеції, Данії, Нідерландах, Чехії, Україні.</p>
+          <p>Народилася у 1975 році. Спеціалізується на скандинавській літературі. Протягом багатьох років працювала у видавничій сфері.</p>
+          <p>Дебютна книжка &quot;Хто проти суперкрутих&quot; вийшла у 2014 році у норвезькому видавництві &quot;Aschehoug&quot;. У 2015 році вийшло продовження історії про дівчинку-альбіноску Анне Беа — &quot;Суперкруті догралися&quot;. У 2016 році письменниця закінчила роботу над третьою частиною — &quot;Привиди проти суперкрутих&quot;. Живе та працює в Осло. У 2017 році на запрошення &quot;Видавництва Старого Лева&quot; і за підтримки літературної фундації NORLA та Посольства Норвегії відвідала Україну як спеціальний іноземний гість Книжкового Арсеналу, де поспілкувалася зі своїми українськими читачами. Книги: 2014 — Хто проти суперкрутих (Kampen mot superbitchene) 2015 — Суперкруті догралися (Superbitchene driter seg ut (Superbitchene 2) 2016 — Привиди проти суперкрутих (Det spøker for superbitchene) 2017 — Таємниця суперкрутих (Superbitchenes hemmelighet) Українські переклади: Хто проти суперкрутих / А. Аудгільд Сульберґ ; пер. з норв. Наталі Іваничук. — Львів : Видавництво Старого Лева, 2016. — 208 с. Суперкруті догралися / А. Аудгільд Сульберґ ; пер. з норв. Наталі Іваничук. — Львів : Видавництво Старого Лева, 2017. — 192 с. Привиди проти суперкрутих / А. Аудгільд Сульберґ ; пер. з норв. Наталі Іваничук. — Львів : Видавництво Старого Лева, 2017. — 200 с. Таємниця суперкрутих / А. Аудгільд Сульберґ ; пер. з норв. Наталі Іваничук. — Львів : Видавництво Старого Лева, 2018. — 184 с.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

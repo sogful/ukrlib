@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мопассан Гі де — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мопассан Гі де</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mopassan-hi-de.webp" alt="Мопассан Гі де" title="Мопассан Гі де" data-full="./mopassan-hi-de.webp" /><img class="side-img side-thumb" src="./mopassan-hi-de_1.webp" alt="Мопассан Гі де" title="Мопассан Гі де" data-full="./mopassan-hi-de_1.webp" /><img class="side-img side-thumb" src="./mopassan-hi-de_2.webp" alt="Мопассан Гі де" title="Мопассан Гі де" data-full="./mopassan-hi-de_2.webp" /><img class="side-img side-thumb" src="./mopassan-hi-de_3.webp" alt="Мопассан Гі де" title="Мопассан Гі де" data-full="./mopassan-hi-de_3.webp" /><img class="side-img side-thumb" src="./mopassan-hi-de_4.webp" alt="Мопассан Гі де" title="Мопассан Гі де" data-full="./mopassan-hi-de_4.webp" /><img class="side-img side-thumb" src="./mopassan-hi-de_5.webp" alt="Мопассан Гі де" title="Мопассан Гі де" data-full="./mopassan-hi-de_5.webp" /></div>
+        <div class="prose-text">
+          <p>Дата народження: 5 серпня 1850 року</p>
+          <p>Місце народження: Міроменіль, Франція</p>
+          <p>Дата смерті: 6 липня 1893 року Місце смерті: Париж, Франція Анрі Рене Альбер Гі де Мопассан – французький письменник. Гі де Мопассан народився 5 серпня 1850 року в Нормандії в сім&#x27;ї дворянина і буржуа. Батько незабаром розорився, а після народження другої дитини, розлучився з матір&#x27;ю Анрі. Правда, до цього встиг прищепити Анрі любов до музики, живопису та літератури. Мат після розлучення вирушила в місто Етрет, а Гі пішов за нею. У 13 років він почав навчатися в духовній семінарії, але з-за свого активного характеру, Мопассан не зміг там вчитися і постійно втікав, в ці ж роки проявляється його письменницький талант у вигляді вірша Давно відчужений від світу. У 16 років він починає вчитися в ліцеї, а після нього в 20 років вступає на навчання юриспруденції, але й через війни не встигає його закінчити і воює у франко-прусській війні. На війні був простим рядовим, а після неї почав надолужувати втрачені знання. Сім&#x27;я Мопассанов була розорена, тому, що прогодувати рідних, Гі страивается на роботу в морське міністерство, де пропрацював в якості чиновника 10 років. Література продовжувала його захоплювати, і він написав першу новелу Спадщину, за нею пішла друга В лоні сім&#x27;ї, а письменника почали пізнавати і любити за відкритий ним внутрішній світ життя чиновників. У 1880 році він написав новелу Пампушка, яка принесла йому славу і успіх. За неї він отримав відпустку на півроку і зайнявся літературною діяльністю. За наступні 11 років він написав близько 60 творів і безліч віршів, об&#x27;єднаних у збірники. Найвідомішими творами автора є Милий друг, Життя і На воді. У 1884 році його вперше накриває напад душевної хвороби, а також відкривається, що він хворий на сифіліс. У 1891 році він поривається вбити себе, за що його уклали в лікарню для душевнохворих. У 1893 році він помирає від паралічу головного мозку. Досягнення Гі де Мопассана: • Безліч творів і віршів, перші оповідання в жанрі еротики Дати з біографії Гі де Мопассана: 5 серпня 1850 – народився в Мироминеле 1863 рік – навчання в коледжі 1866 рік – навчання в ліцеї 1870 рік – почав навчатися юриспруденції 1880 рік – перший розповідь 1891 рік – напади душевного божевілля 6 липня 1893 року —помер Цікаві факти Гі де Мопассана: • Любив обідати на Ейфелевій вежі, так як вважав, що вона потворна, а обід в ній дозволяє бути єдиним місцем, звідки її не видно • В останні роки життя всі його твори на тему божевілля і смерті</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

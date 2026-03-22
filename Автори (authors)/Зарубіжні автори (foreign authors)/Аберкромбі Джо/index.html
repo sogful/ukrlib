@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Аберкромбі Джо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Аберкромбі Джо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./aberkrombi-dzho.webp" alt="Аберкромбі Джо" title="Аберкромбі Джо" data-full="./aberkrombi-dzho.webp" /><img class="side-img side-thumb" src="./aberkrombi-dzho_1.webp" alt="Аберкромбі Джо" title="Аберкромбі Джо" data-full="./aberkrombi-dzho_1.webp" /></div>
+        <div class="prose-text">
+          <p>Джо Аберкромбі народився 31 грудня 1974 року в Ланкастері, графство Ланкашир, Велика Британія. Отримав освіту в Ланкастерській королівській гімназії та вивчав психологію в Манчестерському університеті. Після закінчення університету працював на телебаченні, де до його обов&#x27;язків входило заварювання чаю. Звільнившись з попередньої роботи, розпочав кар&#x27;єру позаштатного кіномонтажника. Збільшення вільного часу призвело до того, що Амберкомбі вирішив знову повернутися до сюжету розповіді, яку він вигадав в студентські роки, мріючи &quot;самотужки переглянути та ввести зміни у жанр фентезі&quot;. 2002 року почав писати свій перший роман у стилі темного фентезі — &quot;На лезі клинка&quot;, який закінчив у 2004 році. Після двох років відмов, 2006 року роман зрештою опубліковано у видавництві &quot;Віктор Голланц Лтд&quot;. Опісля Аберкромбі написав ще дві заключні частини трилогії &quot;Перший закон&quot;: &quot;Перш ніж їх повісять&quot; (англ. Before They Are Hanged) та &quot;Останній доказ королів&quot; (англ. Last Argument of Kings). Окрім того, відвідувачі популярного тематично ресурсу SFF World двічі визнавали його романи &quot;книгами року&quot;.</p>
+          <p>2008 року Аберкромбі став фіналістом премії Джона В. Кембелла найкращому новому письменнику. Разом з такими письменниками як Майкл Муркок, Террі Пратчетт та Чайна М&#x27;євіль, Джо взяв участь у телевізійному проекті BBC під назвою &quot; Світ фентезі&quot;. Опісля письменник видав три самостійні романи: &quot;Найкраще подавати холодним&quot;, &quot;Герої&quot; та &quot;Червона країна&quot;, події яких відбуваються у тому ж фентезійному світі, що й книги трилогії &quot;Перший закон&quot;. Окрім того, 2011 року Аберкромбі підписав контракт з видавництвом &quot;Голланц&quot; на написання ще чотирьох книг з подіями у світі &quot;Першого закону&quot;, а у 2014—2015 роках імпринти видавництва &quot;ГарперКоллінс&quot;, які спеціалізуються на фентезі та дитячій літературі, опублікували підліткову книжкову серію &quot;Потрощене море&quot;, що складається з трьох книг: &quot;Пів короля&quot;, &quot;Пів світу&quot; та &quot;Пів війни&quot;.</p>
+          <p>Нині письменник працює над ще однією трилогією у світі трилогії &quot;Перший закон&quot;, події якої відбуватимуться через п&#x27;ятнадцять років після подій третього самостійного роману (&quot;Червона країна&quot;) та слугуватиме продовженням до оригінальної трилогії.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

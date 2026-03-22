@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Булатович Микола Євгенович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Булатович Микола Євгенович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bulatovych-mykola-ievhenovych.webp" alt="Булатович Микола Євгенович" title="Булатович Микола Євгенович" data-full="./bulatovych-mykola-ievhenovych.webp" /></div>
+        <div class="prose-text">
+          <p>Булатович Микола Євгенович народився 14 лютого 1909 р. в сім&#x27;ї православного священика одного з київських приходів. Маючи нахил до малярства, по закінченні школи поступив у Художній інститут. Проте закінчувати його не побажав, бо зайнявся літературною творчістю.</p>
+          <p>Десь із кінця двадцятих років його вірші регулярно з&#x27;являлися в &quot;Глобусі&quot;, &quot;Житті і революції&quot;, &quot;Молодому більшовику&quot;. Перша збірка поезій &quot;Книга тривог&quot; вийшла друком 1930 р., затим &quot;Скажу по правді&quot; (1932).</p>
+          <p>Булатович належав до наймолодшого покоління українських поетів і тяжів до літературної організації &quot;Нова генерація&quot;. Аби уникнути традиціоналізму, він прагнув перенести на український ґрунт творчу манеру Маяковського. Творчі пошуки Микола Булатович поєднував з журналістською діяльністю. Він працював у редакціях часописів &quot;Нова генерація&quot;, &quot;Заклик&quot;, &quot;Літературна газета&quot;, &quot;Радянське літературознавство&quot;. Йому ледь виповнилося 28 літ од роду, як трагічно обірвався його життєвий шлях. 14 червня 1937 р. &quot;обермейстер&quot; із IV відділу управління Держбезпеки по компоновці звинувачень художній інтелігенції України Гольдман на підставі якихось матеріалів (певно, доносів) знайшла, що комсомолець Булатович являє собою особливу небезпеку для сталінського режиму, і домоглася прокурорської санкції на його арешт, запроторення в спец-корпус енкаведистської тюрми. Вже на першому допиті слідчий Хаєт висунув проти Булатовича звинувачення в тому, що його батько до революції орендував у Монастирищенському повіті 100 десятин землі, а якийсь далекий родич Баковецький невідомо коли і ким був розстріляний за участь у збройному повстанні. Та, з погляду Хаєта, найнепрощеннішим гріхом Булатовича було те, що він приятелював із арештованими за контрреволюційну діяльність письменниками: Остапом Вишнею, Чечвянським, Вухналем, Бобинським, Ірчаном, Епіком, Семенком, Чигирином, Шкурупієм, Влизьком, Колесником, Саченком, Калянником, Щупаком, Коваленком, Яловим та іншими &quot;ворогами народу&quot;. Обвинувальний висновок: Булатович М. Є. є членом української націоналістично-фашистської терористичної організації, а отже, згідно із указом від 1 грудня 1934 р., підлягає суду Військової колегії. Засідання виїзної сесії Військової колегії під головуванням диввійськюриста Орлова відбулося 2 вересня 1937 р. Ухвала її типова для тих днів: вища міра покарання через розстріл і конфіскація приналежного майна. Як засвідчують документи, вирок виконаний 3 вересня 1937 р. 20 липня 1957 р. Військова комісія Верховного Суду СРСР за поданням Головної військової прокуратури ухвалила: вирок Військової колегії Верховного Суду СРСР від 2 вересня 1937 р. стосовно Миколи Булатовича скасувати і справу припинити за відсутністю складу злочину. Микола Булатович реабілітований посмертно.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

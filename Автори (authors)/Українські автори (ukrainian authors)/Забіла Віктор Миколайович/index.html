@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Забіла Віктор Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Забіла Віктор Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zabila-viktor-mykolayovych.webp" alt="Забіла Віктор Миколайович" title="Забіла Віктор Миколайович" data-full="./zabila-viktor-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>Віктор Забіла</p>
+          <p>(1808 — 1869)</p>
+          <p>Забіла Віктор Миколайович (крипт. — Ол-др.) — український поет. Народився 1808р. на хуторі Кукуріківщина, тепер с. Забілівщина Борзнянського р-ну Чернігівської області, в сім&#x27;ї дрібного поміщика, нащадка старовинного козацько-старшинського роду. Навчався в 1822 — 1825 рр. в Ніжинській гімназії вищих наук. В 1825 — 1834 рр. служив у війську. Вийшов у відставку в чині поручика, решту життя провів на своєму хуторі поблизу Борзни. В. Забіла дружив з Т. Шевченком, зустрічався з ним під час приїздів поета на Україну — в Качанівці, Мойсівці, Києві. Взимку 1847р. Т. Шевченко деякий час жив на х. Кукуріківщині, намалював портрет Забіли. У повісті &quot;Капитанша&quot; Т. Шевченко з симпатією зобразив його під іменем Віктора Олександровича. Його вірші, відібрані жандармами у Т. Шевченка при арешті 1847р., в протоколі допиту названо пасквільними. Брав участь у похороні Т. Шевченка і впорядкуванні його могили. Вірші почав писати в середині 30-х pp., але тільки деякі з них надруковані за життя поета. Три його вірші опублікував Є. Гребінка 1841р. в альманасі &quot;Ластівка&quot;. Видрукована на початку 40-х pp. збірка з невідомих причин не дійшла до читача (єдиний примірник, без титульної сторінки, виявив 1936р. літературознавець Є. Кирилюк). Прижиттєвими публікаціями Забіли є два вірші, надруковані 1857р. в &quot;Черниговских губернских ведомостях&quot;. Повну збірку творів — &quot;Співи крізь сльози&quot; видано 1906р. у Львові заходами І. Франка. Тим часом вірші поета були добре відомі в народі, поширювались у рукописних збірках, виконувались як народні пісні, наприклад, &quot;Гуде вітер вельми в полі&quot; та &quot;Не щебечи, соловейку&quot;, покладені на музику М. Глинкою. До своїх віршів &quot;Не плач, дівчино&quot;, &quot;Голуб&quot;, &quot;Човник&quot; та ін. Забіла сам створив мелодії. Джерелом глибокого ліризму його поезії є народна пісня з її образним і мовним багатством. У багатьох віршах (&quot;Зовсім світ перевернувся&quot;, &quot;Маруся&quot;, &quot;Сирота&quot; та ін.) поет порушував тему соціальної нерівності. Йому належать також гумористичні вірші, що є обробкою народних оповідань у бурлескному стилі (&quot;Остап і чорт&quot;, &quot;Весілля&quot;), твори на побутову та історичну тематику, послання знайомим. Помер поет в листопаді 1869р. в м. Борзна. І. Франко відзначав помітний внесок В. Забіли у розвиток української поезії і ставив його в ряд найталановитіших сучасників Т. Шевченка.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

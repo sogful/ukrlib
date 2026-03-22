@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бойн Джон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бойн Джон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./boyn-dzhon.webp" alt="Бойн Джон" title="Бойн Джон" data-full="./boyn-dzhon.webp" /><img class="side-img side-thumb" src="./boyn-dzhon_1.webp" alt="Бойн Джон" title="Бойн Джон" data-full="./boyn-dzhon_1.webp" /><img class="side-img side-thumb" src="./boyn-dzhon_2.webp" alt="Бойн Джон" title="Бойн Джон" data-full="./boyn-dzhon_2.webp" /><img class="side-img side-thumb" src="./boyn-dzhon_3.webp" alt="Бойн Джон" title="Бойн Джон" data-full="./boyn-dzhon_3.webp" /></div>
+        <div class="prose-text">
+          <p>Джон Бойн (англ. John Boyne; нар. 30 травня 1971) — ірландський письменник, лауреат численних літературних премій. Автор десяти романів для дорослих і п&#x27;яти романів для дітей, а також двох збірок оповідань. Його книги перекладені більше ніж 51-ю мовою. Один із найвідоміших романів Бойна — &quot;Хлопчик у смугастій піжамі&quot;, що був екранізований 2008 року.</p>
+          <p>Джон Бойн народився в Дубліні, Ірландія, 1971 року. Вивчав англійську літературу в Триніті Коледжі, (Дубліні) та письменницьку майстерність в Університеті Східної Англії (Норвіч), де став володарем премії Кертіса Брауна (премія, якою нагороджують за найкращий студентський твір у прозі). Вчився письменницької майстерності у Малкольма Бредбері. Певний час працював у книгарні &quot;Waterstone&#x27;s&quot; в Дубліні.</p>
+          <p>Його рання проза представлена переважно оповіданнями. Перше оповідання Бойна — &quot;Entertainments Jar&quot; (&quot;Фляга розваг&quot;) — було надруковане в Sunday Tribune і 1993 року потрапило до шорт-листа Hennessy Literary Award в Ірландії. Всього Бойн видав близько 70 оповідань. У 2015 році був головою журі канадської літературної премії Scotiabank Giller Prize. Є постійним книжковим оглядачем для The Irish Times. Живе в Дубліні. Один із найвідоміших творів автора — &quot;Хлопчик у смугастій піжамі&quot;, що зачіпає тему Голокосту. Бойн написав роман за 60 годин і закінчив його 30 квітня 2004 року, у день смерті Адольфа Гітлера, який не з&#x27;являється в книзі, але незримо присутній там. Роман отримав дві премії Irish Book Awards, премію Bisto Book of the Year і був призером декількох міжнародних нагород. Крім того, роман 80 тижнів очолював список бестселерів Ірландії та New York Times Bestseller List і лідирував у 2007-му і 2008-му роках за продажами в Іспанії. У світі продано понад 9 мільйонів примірників книги. Романи 2000: Викрадач вічності 2001: The Congress of Rough Riders 2004: Кріппен 2006: Next of Kin 2008: Mutiny on the Bounty 2009: The House of Special Purpose 2011: Абсолютист 2013: This House Is Haunted 2014: A History of Loneliness 2016: The Heart&#x27;s Invisible Furies Романи для юних читачів 2006: Хлопчик у смугастій піжамі 2010: Noah Barleywater Runs Away 2012: З Барнабі Бракетом трапилося жахливе 2013: Stay Where You Are And Then Leave 2015: The Boy at the Top of the Mountain Збірки оповідань 2015: Beneath The Earth 2017: Yummy</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

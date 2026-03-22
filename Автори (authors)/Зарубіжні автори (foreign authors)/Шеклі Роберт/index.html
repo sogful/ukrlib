@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шеклі Роберт — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Шеклі Роберт</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./shekli-robert_1.webp" alt="Шеклі Роберт" title="Шеклі Роберт" data-full="./shekli-robert_1.webp" /><img class="side-img side-thumb" src="./shekli-robert.webp" alt="Шеклі Роберт" title="Шеклі Роберт" data-full="./shekli-robert.webp" /><img class="side-img side-thumb" src="./shekli-robert_2.webp" alt="Шеклі Роберт" title="Шеклі Роберт" data-full="./shekli-robert_2.webp" /></div>
+        <div class="prose-text">
+          <p>Роберт Шеклі (англ. Robert Sheckley; 16 липня 1928, Поукіпсі Нью-Йорк — 9 грудня 2005) — американський письменник й класик світової фантастики, загальновизнаний майстер гумористичної і сатиричної фантастики.</p>
+          <p>Біографія</p>
+          <p>Роберт Шеклі народився 16 липня 1928 року в Нью-Йорку в районі Бруклін, а виріс у містечку Мейплвуд, штат Нью-Джерсі. Після закінчення середньої школи він їде в Каліфорнію: він пробує свої сили в якості розсильного, буфетника і навіть садівника. З 1946 по 1948 рік Шеклі служив в армії США в Кореї, де був редактор полкової газети. Демобілізувавшись, повернувся в Нью-Йорк, де поступив в Нью-Йоркський університет, у 1951 році одержав ступінь бакалавра мистецтв. У наступні роки він продавав свої оповідання всім науково-фантастичним журналам, таким чином опубліковано кілька сотень його творів, причому більшість —у журналі &quot;Galaxy&quot;. У 1957 році Шеклі одружився з Зіве Вітней, і вони продовжують жити в Нью-Йорку до кінця 1960-х років, опісля переїжджають з дочкою Еліссою на острів Ібіца, який Шеклі описував як &quot;недоторканий сучасною цивілізацією&quot;. У квітні 2005 року письменник відвідав Україну на запрошення організаторів конвенту &quot;Портал-2005&quot;. Проте в Києві знаменитому фантастові стало погано: його доправили в приватну лікарню. Письменник не зміг заплатити приватній клініці &quot;Борис&quot; за своє лікування та перебування, — його борг зріс до 50 тисяч гривень (за тодішнім курсом — 10 тисяч дол.). Утім було зібрано достатньо коштів, щоб погасити борги. Коли Робертові Шеклі покращало, його доправили на батьківщину. Уже після повернення в США стан письменника стабілізувався, проте останнім часом йому знову стало гірше і 9 грудня 2005 в приватній лікарні в Поукіпсі (штат Нью-Йорк) він помер. Роберт Шеклі — лауреат премій &quot;Мандрівник-97&quot; і &quot;Малий Золотий Остап-97&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

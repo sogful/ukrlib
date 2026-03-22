@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кротюк Оксана Петрівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кротюк Оксана Петрівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./korotiuk-oksana-petrivna.webp" alt="Коротюк Оксана Петрівна" title="Коротюк Оксана Петрівна" data-full="./korotiuk-oksana-petrivna.webp" /><img class="side-img side-thumb" src="./korotiuk-oksana-petrivna_1.webp" alt="Коротюк Оксана Петрівна" title="Коротюк Оксана Петрівна" data-full="./korotiuk-oksana-petrivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Дитяча письменниця. Народилася 18 грудня 1969 року в Луцьку. 1989-го закінчила Луцьке педагогічне училище ім. Ярослава Галана, у 1994 році – Київський державний педагогічний університет ім. Драгоманова. Живе і працює в Києві.</p>
+          <p>Працювала в Українському центрі народної культури &quot;Музей Івана Гончара&quot;, де виконувала обов&#x27;язки прес-секретаря, згодом очолила тамтешній відділ зв&#x27;язків із громадськістю. Від 2004 року – літературний редактор журналу &quot;Малятко&quot;. З 2010-го втілювала власний авторський проект на Українському радіо (програма &quot;Великий світ малого читача&quot;, канал &quot;Культура&quot;).</p>
+          <p>Лауреат літературної премії ім. Наталі Забіли (2006) та літературного конкурсу &quot;Рукомесло&quot; (2009). Експертка літературного конкурсу &quot;Коронація слова&quot; у номінації &quot;Проза для дітей&quot; (2010 р.) та в номінації &quot;Пісенна лірика для дітей&quot; (2011, 2013, 2014 р.р.) Член журі літературної премії &quot;Великий їжак&quot; (2011 р.) та літературної премії НСПУ ім. Платона Воронька (2018 р.). 2019—2021 р.р. — засновниця та координаторка Всеукраїнського літературно-мистецького проєкту &quot;Драгоман&quot;. 2019—2021 р.р. — упорядниця та літературна редакторка серії літературно-музичних видань &quot;Нескорений ПроRock. Тарас Шевченко&quot; (2020 р.), &quot;Нескорений ПроRock. Олена Теліга&quot; (2020 р.), &quot;Нескорений ПроRock. Василь Симоненко&quot; — мистецький проєкт &quot;Нескорений ПроRock&quot; ГС &quot;Музичний батальйон&quot;. Твори Оксани Кротюк вивчаються за освітньою програмою початкової школи. Низку їх вміщено у хрестоматіях для позакласного та дошкільного читання. Авторка книжок для дітей &quot;Неслухняне левеня&quot; (2008), &quot;Найкраща земля&quot; (2008), &quot;Веселі єноти&quot; (2009), &quot;Абетка&quot; (2011), &quot;В зоопарку&quot; (2012), &quot;Чорне море й синій кит&quot; (2012). Твори також друкуються в дитячих журналах &quot;Малятко&quot;, &quot;Зернятко&quot;, &quot;Пізнайко&quot;, &quot;Ангелятко&quot;, &quot;Крилаті&quot; й колективних збірках.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

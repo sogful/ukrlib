@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Демчук Остап Якович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Демчук Остап Якович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./demchuk-ostap-iakovych.webp" alt="Демчук Остап Якович" title="Демчук Остап Якович" data-full="./demchuk-ostap-iakovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 10.03.1900 р. у с. Княжин на Житомирщині. Закінчив 1924 р. Житомирський ІНО. Друкувався з 1922 р., був членом &quot;Плугу&quot; і ВАПЛІТЕ. Автор збірок оповідань і нарисів &quot;Комнезамчики&quot; (1925), &quot;Верболози&quot;, &quot;Очі&quot;, &quot;Пригоди на маневрах&quot;, &quot;Ювілей&quot; (усі – 1930), &quot;Чудо&quot; (1931), &quot;На соціялістичних рейках&quot; (1932), роману &quot;Чорнозем&quot; (1933), &quot;Повісті про мачуху&quot; (1941).</p>
+          <p>Писав також вірші, переважно агітки, які друкував з 1924 р. в &quot;Новій Громаді&quot; та &quot;Плужанині&quot;.</p>
+          <p>Помер від ран 19.12.1945 р. у Франкфурті-на-Одері.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

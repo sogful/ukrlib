@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Карпенко Микола Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Карпенко Микола Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./karpenko-mykola-ivanovych.webp" alt="Карпенко Микола Іванович" title="Карпенко Микола Іванович" data-full="./karpenko-mykola-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 14 серпня 1925 року в с. Воронькові Бориспільського району в селянській родині. У 1943 р. йде до лав Радянської армії та відразу потрапляє на Лютізький плацдарм, де був поранений. Служив в армії до 1950 р.</p>
+          <p>Перше місце роботи — Бориспільська районна газета &quot;Колективіст&quot;. Потім призначається редактором політвідділівської газети Бурштинської МТС на Івано-Франківщині. Навчався у Вищій партійній школі в Києві. Впродовж 25 років жив і працював в Івано-Франківську. Працював редактором у видавництвах &quot;Каменяр&quot;, &quot;Карпати&quot;. Поєднував журналістську роботу з діяльністю керівника обласного літературного об&#x27;єднання. З 1971 р. був відповідальним секретарем Івано-Франківської обласної організації Спілки письменників України. З 1975 р. жив і працював у Києві.</p>
+          <p>У 1950 р. а альманасі &quot;Літературна Одеса&quot; були надруковані перші вірші. Перша збірка поезій &quot;Стежками юності&quot; опублікована 1960 р. До 1990 р. вийшли друком близько 20 збірок віршів Івана Карпенка. Успішно виступав в ятнрі гумору та сатири (кн. &quot;Особиста каланча Гаврила Квача&quot;, 1963, 1972; &quot;Скорочений Ціцерон&quot;, 1982). Основні збірки: &quot;Невідправлені листи&quot; (1965), &quot;Озброєна муза&quot; (1970), &quot;Перевесло&quot; (1975), &quot;З висоти поля&quot; (1978), &quot;Дієслово&quot; (1980), &quot;Блискавиці&quot; (1984), &quot;Вибране&quot; (1985). Після 1990 р. виходять нові книжки &quot;Двоє з листопаду&quot;, &quot;Благовіст&quot;, поетичні переспіви &quot;Велесової книги&quot; та біблійних книг — Йова, Еклезіаста, Ісаї, псалмів та приповістей Соломонових та ін. Він також автор ряду віршованих книг з Історії України (&quot;На Перуновій обмілині&quot;, &quot;Шапка Мономаха&quot;, &quot;Заступила чорна хмара та білую хмару&quot;…), зокрема і з часів князювання Володимира Великого та Володимира Мономаха. 2003 написав поему-роздум &quot;Отаман Черпак&quot;, присвячену односельцю Іванові Черпакові — командиру Вороньківської сотні, що в лютому 1919 дала бій під більшовицькій орді та на два дні зупинила її просування на Київ. Помер 12 червня 2007 року</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

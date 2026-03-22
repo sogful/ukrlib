@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Барщевський Іван — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Барщевський Іван</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./barshchevskyy-ivan.webp" alt="Барщевський Іван" title="Барщевський Іван" data-full="./barshchevskyy-ivan.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 1794 р. у Білорусії на Полоччині в селі Россохи в родині греко-католицького священика, українця Борщевського, який був родом з Холмщини. Освіту отримав у Полоцькій єзуїтській академії. Багато подорожував по Білорусії та Україні, писав вірші, малював. З початку 1840-х років жив у Петербурзі, де служив у військовому відомстві. У справах служби побував у Франції, Англії та Фінляндії.</p>
+          <p>Останні роки Барщевський провів в Україні, на Житомирщині, де також публікувався у місцевій пресі. Серед знайомих Барщевського були Тарас Шевченко, Адам Міцкевич, Микола Гоголь та Григорій Данилевський.</p>
+          <p>Барщевський писав трьома мовами: польською та українською – прозу, а білоруською створив кілька віршів. У своїх творах щедро використовував білоруські та українські легенди. У 1844 р. у польськомовному петербурзькому журналі &quot;Niezabudka&quot; помістив повість &quot;Дерев&#x27;яний Дідок і жінка-комаха&quot;, того ж року вийшов і перший томик найвідомішої його повісті &quot;Шляхтич Завальня&quot; (&quot;Szlachcic Zawalnia&quot;), а всього було чотири невеличких томики. У книзі &quot;Proza і wіerszy&quot; (Kіjów, 1849) з&#x27;явилося оповідання &quot;Душа не в своєму тілі&quot;. Творчість Барщевського за життя залишалася поза увагою критиків, щойно по смерті 1851 р. про неї стали згадувати, залучаючи автора як до польської, так і до білоруської літератури. Юліан Тувім помістив окремі оповідання Барщевського до &quot;Антології польської фантастики&quot;. Джерело: Антологія української готичної прози Юрія Винничука</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

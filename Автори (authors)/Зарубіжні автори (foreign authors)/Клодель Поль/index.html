@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Клодель Поль — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Клодель Поль</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./klodel-pol.webp" alt="Клодель Поль" title="Клодель Поль" data-full="./klodel-pol.webp" /><img class="side-img side-thumb" src="./klodel-pol_1.webp" alt="Клодель Поль" title="Клодель Поль" data-full="./klodel-pol_1.webp" /><img class="side-img side-thumb" src="./klodel-pol_2.webp" alt="Клодель Поль" title="Клодель Поль" data-full="./klodel-pol_2.webp" /></div>
+        <div class="prose-text">
+          <p>(06.08.1868 — 23.02.1955)</p>
+          <p>Народився 6 серпня 1868 у Вільньові. Як дипломат представляв Францію у багатьох країнах, у тому числі в Китаї, Японії, США.</p>
+          <p>Деякі його твори, наприклад Пізнання Сходу (Connaissance de l&#x27;est, 1900-1907), передають враження від дипломатичних мандрів, більшість же інших — апологетика католицизму. Клодель розробив нову манеру письма,біблійну по духу і наступну, як стверджував він сам, природному ритму людського серця і дихання. Серед його шедеврів лірики П&#x27;ять великих од (Cinq grands odes, 1910) і Кантата для трьох голосів (La cantate trois voix, 1931). Широкі можливості самовираження дав Клоделю театр. Полуденна межа (Partage de midi, 1906) — драма любові, разрешающаяся гімном Господу; Звістка, послана Марії (L Annonce faite Marie, 1912) малює зіткнення пристрастей, через яке затверджується торжество Божественної Благодаті; Атласний черевичок (Le Soulier de satin, 1924) воскрешає епоху іспанських конкістадорів, покорявших світ в ім&#x27;я Христа. Помер Клодель в Парижі 23 лютого 1955.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

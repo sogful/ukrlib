@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Рибаков В&#x27;ячеслав Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Рибаков В&#x27;ячеслав Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./rybakov-viacheslav-mykhaylovych.webp" alt="Рибаков В&#x27;ячеслав Михайлович" title="Рибаков В&#x27;ячеслав Михайлович" data-full="./rybakov-viacheslav-mykhaylovych.webp" /><img class="side-img side-thumb" src="./rybakov-viacheslav-mykhaylovych_1.webp" alt="Рибаков В&#x27;ячеслав Михайлович" title="Рибаков В&#x27;ячеслав Михайлович" data-full="./rybakov-viacheslav-mykhaylovych_1.webp" /><img class="side-img side-thumb" src="./rybakov-viacheslav-mykhaylovych_2.webp" alt="Рибаков В&#x27;ячеслав Михайлович" title="Рибаков В&#x27;ячеслав Михайлович" data-full="./rybakov-viacheslav-mykhaylovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>В&#x27;ячеслав Михайлович Рибаков (19 січня 1954, Ленінград) — російський вчений-східознавець, історик, письменник і сценарист.</p>
+          <p>Народився 19 січня 1954 року в Ленінграді. У 1976 році закінчив Східний факультет ЛДУ, кандидат історичних наук (1982), доктор історичних наук (2009). Працює в Санкт-Петербурзькому філіалі Інституту сходознавства РАН.</p>
+          <p>В літературі дебютував у 1979 році фантастичним оповіданням &quot;Велика суша&quot; (&quot;Знання — сила&quot;, № 1). Перші авторські книги — вийшли майже одночасно в 1990 році збірка &quot;Своя зброя&quot; і роман &quot;Вогнище на вежі&quot;, за які в 1991 році удостоєний премії &quot;Старт&quot;, що присуджується авторові кращої дебютної книги фантастики. Опублікував чотиритомний коментований переклад з китайського кримінального кодексу часів династії Тан, уривки з якого цитуються в романах Хольма ван Зайчика. Член Союзу письменників СРСР з 1989 року і Союзу письменників Санкт-Петербурга з 1992 року. У 1986 році виходить знятий за сценарієм Рибакова (за сприяння Б. Стругацького) фільм &quot;Листи мертвої людини&quot; (реж. Костянтин Лопушанський). У 2006 році Рибаков також виступив, як сценарист ще одного фільму Лопушанського — &quot;Бридкі лебеді&quot; (за мотивами однойменної повісті братів Стругацьких). Лауреат Державної премії РРФСР 1987, як співавтор сценарію фільму &quot;Листи мертвої людини&quot;, премії &quot;Інтерпрескон&quot; (1991, 1994, 1998), &quot;Бронзовий равлик&quot; (1994, 1995, 1997, 2001), імені Бєляєва (1995), &quot;Старт &quot;(1991), Премії імені Аркадія і Бориса Стругацьких (&quot; АБС-премія &quot;) (2001), Велике кільце (1993). Премія імені Гоголя (2004). Премія &quot;Золотий кадуцей&quot; (2007).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

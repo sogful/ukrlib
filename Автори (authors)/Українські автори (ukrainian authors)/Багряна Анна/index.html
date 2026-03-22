@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Багряна Анна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Багряна Анна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bahriana-anna.webp" alt="Багряна Анна" title="Багряна Анна" data-full="./bahriana-anna.webp" /><img class="side-img side-thumb" src="./bahriana-anna_1.webp" alt="Багряна Анна" title="Багряна Анна" data-full="./bahriana-anna_1.webp" /><img class="side-img side-thumb" src="./bahriana-anna_2.webp" alt="Багряна Анна" title="Багряна Анна" data-full="./bahriana-anna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася 24 березня 1981 року в м.Фастові Київської області. Дитячі роки пройшли в селищі Борова Фастівського району. З 1989 року – киянка. В 2004 році закінчила із відзнакою магістратуру Інституту філології Київського національного університету імені Тараса Шевченка (спеціальність: українська мова та література). Працювала редактором телекомпанії &quot;ЮАна&quot;, автором та ведучою телепередачі &quot;Гармонія душі&quot;, старшим редактором Всесвітньої служби радіомовлення України, референтом з питань українознавства КУН, Секретарем Ради Національної Спілки письменників України по роботі з молодими авторами, головним редактором часопису &quot;Гранословіє&quot;.</p>
+          <p>2006-2008 рр. — Голова Всеукраїнської Ліги українських жінок.</p>
+          <p>З 2004 року — член Національної спілки письменників України. З 2010 – член Асоціації Українських Письменників. Авторка поетичних книжок &quot;Суцвіття слів&quot; (Київ, 2000) , &quot;Поміж бузкових снів&quot; (Київ, 2002), &quot;Між богами і нами&quot; (Київ, 2005), &quot;Мандрівка линвою&quot; (2008, Львів-Радом, &quot;Каменяр&quot;, двомовне видання у співавторстві з польським письменником Войчехом Песткою), &quot;Інші лінії&quot; (Київ, ВЦ &quot;Просвіта&quot;, 2009); роману &quot;Етимологія крові&quot; (Київ, &quot;ФАКТ&quot;, 2008), низки оповідань та драматичних творів, опублікованих в антологіях, альманахах та літературних часописах. Твори перекладалися польською, російською, англійською, французькою, болгарською, македонською, азербайджанською та литовською мовами. В Польщі та Азербайджані виходили окремі збірки поезій. Перекладає з польської, болгарської та македонської мов (поезію, прозу, драматургію). Автор лібретто до першого українського оригінального мюзиклу &quot;Глорія&quot; (прем’єрна постановка: 8 березня 2010, Донецький національний академічний український музично-драматичний театр). Лауреат літературних Інтернет-конкурсів &quot;Поетичні майстерні&quot; та &quot;Рукомесло&quot; у номінаціях &quot;поезія&quot; та &quot;драматургія&quot;. Лауреат Літературного конкурсу СФУЖО ім. Марусі Бек (Канада) за оповідання &quot;Зелений борщ&quot; (2009 р.) За роман &quot;Етимологія крові&quot; була нагороджена Міжнародною україно-німецькою премією ім. О. Гончара, здобула перемогу на конкурсі романів, кіносценаріїв та п’єс &quot;Коронація слова — 2008&quot; (ІІІ місце) та на конкурсі видавництва &quot;Смолоскип&quot; (ІІ місце). 2009 року на Міжнародному фестивалі поезії &quot;Слов’янські обійми&quot; (Варна, Болгарія) отримала нагороду &quot;Срібне перо&quot; за переклади віршів Елисавети Багряної на українську мову (книга &quot;Двете Багряни във Вечната и святата&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

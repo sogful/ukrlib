@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тінберген Ніколас — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Тінберген Ніколас</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tinberhen-nikolas.webp" alt="Тінберген Ніколас" title="Тінберген Ніколас" data-full="./tinberhen-nikolas.webp" /><img class="side-img side-thumb" src="./tinberhen-nikolas_1.webp" alt="Тінберген Ніколас" title="Тінберген Ніколас" data-full="./tinberhen-nikolas_1.webp" /></div>
+        <div class="prose-text">
+          <p>Вивчав роль стимулів у груповому поведінці тварин (бджіл, риб, чайок), виборчу реакцію на чинники середовища, взаємозв&#x27;язок набутих і вроджених поведінкових компонентів, еволюцію поведінки і пристосувальні функції.</p>
+          <p>ТІНБЕРГЕН, НІКОЛАС (Tinbergen, Nikolaas) (1907-1988), нідерландський зоопсихолог, удостоєний в 1973 Нобелівської премії з фізіології та медицини (спільно з австрійськими натуралістами К. Фрішем і К. Лоренцем) за дослідження індивідуального і групового поведінки тварин. Народився 15 квітня 1907 року в Гаазі. Закінчив Лейденський університет, в 1932 році захистив докторську дисертацію. Працював у науковій експедиції в Арктиці. Після повернення в Лейден читав лекції в університеті.В 1942 році разом з групою провідних професорів був укладений в концентраційний табір за виступи проти влади. Був звільнений з табору в 1945. В 1947 р. став професором експериментальної зоології та завідувачем кафедри зоології Лейденського університету. З 1949 працював в Оксфордському університеті (з 1966 – на посаді професора).</p>
+          <p>Основна область наукових досліджень Тінбергена – поведінку тварин у природних умовах. Разом з К. Лоренцем і К. Фрішем Тінберген створив вчення про інстинктивному поводженні тварин та його розвитку у онто — і філогенезі. Вивчав роль стимулів у груповому поведінці тварин (бджіл, риб, чайок), виборчу реакцію на чинники середовища, взаємозв&#x27;язок набутих і вроджених поведінкових компонентів, еволюцію поведінки і пристосувальні функції. Спостереження за тваринами Тінберген намагався використати для пояснення природи агресивності людини, вважаючи, що це якість виникло у людини в ті часи, коли він почав полювати і вживати в їжу м&#x27;ясо. Серед робіт Тінбергена – Вивчення інстинкту (The Study of Instinct, 1951); Соціальна поведінка тварин (Social Behavior in Animals, 1953; рос. переклад 1993); Світ сріблястою чайки (Herring Gull&#x27;s World, 1953, 2-е изд. 1961; рос. переклад 1974); Допитливі натуралісти (Curious Naturalists, 1958); Поведінка тварин (Animal Behavior, 1965; рос. переклад 1985). Помер Тінберген в Оксфорді 21 грудня 1988.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

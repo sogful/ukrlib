@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Яґелло Йоанна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Яґелло Йоанна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./iahello-yoanna_2.webp" alt="Ягелло Йоанна" title="Ягелло Йоанна" data-full="./iahello-yoanna_2.webp" /><img class="side-img side-thumb" src="./iahello-yoanna.webp" alt="Ягелло Йоанна" title="Ягелло Йоанна" data-full="./iahello-yoanna.webp" /><img class="side-img side-thumb" src="./iahello-yoanna_1.webp" alt="Ягелло Йоанна" title="Ягелло Йоанна" data-full="./iahello-yoanna_1.webp" /><img class="side-img side-thumb" src="./iahello-yoanna_3.webp" alt="Ягелло Йоанна" title="Ягелло Йоанна" data-full="./iahello-yoanna_3.webp" /></div>
+        <div class="prose-text">
+          <p>Йоанна Яґелло (пол. Joanna Jagiełło, у дівоцтві Рошковська, нар. 1974, Варшава) — польська письменниця та журналістка, авторка творів для дітей та молоді.</p>
+          <p>Народилася Йоaнна Яґелло 4 серпня 1974 року у Варшаві. Закінчила відділення англійської філології Варшавського університету. Викладала у ньому ж мовознавство, працювала вчителькою англійської мови у гімназіях та ліцеях. Співпрацювала з часописами &quot;Perspektywy&quot; та &quot;Cogito&quot;. Редакторка підручників з англійської мови у Pearson Central Europe.</p>
+          <p>Дебютувала у 1997 році збірокю віршів &quot;Moje pierwsze donikąd&quot;. Перше прозове видання — &quot;Кава з кардамоном&quot; (Wydawnictwo Literatura, 2011), за нього була номінована до нагороди &quot;Книжка року 2011&quot; польської секції IBBY. Також книжка отримала номінацію на нагороду Donga і потрапила у &quot;Список скарбів&quot; Музею дитячої книги. Перекладена українською мовою (перекладач — Божена Антоняк), вийшла у березні 2013 року у видавництві &quot;Урбіно&quot;. Наступна книжка — продовження &quot;Кави з кардамоном&quot;, &quot;Шоколад з чилі&quot; (Wydawnictwo Literatura, 2013). Має дві доньки, Юльку (нар. 1994) і Басю (нар. 2004). У 2013 році була спеціальним гостем Дитячого фестивалю у Львові. Публікації Moje pierwsze donikąd (вірші, 1997) Kawa z kardamonem (молодіжний роман, Wydawnictwo Literatura 2011) Urodzinek — (оповідання для дітей, збірка Opowiadania o zwierzętach, Wydawnictwo Literatura, Лодзь 2012) Gołąb — (оповідання для дорослих, антологія Nikt nigdy, Towarzystwo Aktywnej Komunikacji i Centrum Kultury ZAMEK, Вроцлав 2012) Czekolada z chili (молодіжний роман, Wydawnictwo Literatura, Лодзь 2013) Переклади українською Кава з кардамоном: роман / Йоанна Яґелло, пер. з пол. Божени Антоняк Шоколад із чилі: роман / Йоанна Яґелло, пер. з пол. Божени Антоняк. Нагороди &quot;Кава з кардамоном&quot; — номінація на нагороду &quot;Книжка року&quot; 2011 польської секції IBBY, номінація на нагороду Donga 2011</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

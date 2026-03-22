@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Канліфф Баррі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Канліфф Баррі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kanliff-barri.webp" alt="Канліфф Баррі" title="Канліфф Баррі" data-full="./kanliff-barri.webp" /></div>
+        <div class="prose-text">
+          <p>Сер Баррінгтон Віндзор &quot;Баррі&quot; Канліфф народився 10 грудня 1939 року.</p>
+          <p>Рішення Канліффа стати археологом було викликано відкриттям римських останків на фермі його дядька в Сомерсеті, коли йому було дев&#x27;ять років. Канліфф навчався в Північній гімназії Портсмута (тепер школа Мейфілд) і вивчав археологію та антропологію в коледжі Святого Джона в Кембриджі. Будучи студентом Кембриджського університету, він балотувався та виграв вибори проти свого однокурсника та колеги Джоніана Коліна Ренфрю, щоб стати президентом польового археологічного клубу Кембриджського університету (AFC). У 1963 році він став викладачем Брістольського університету. Зачарований римськими останками в сусідньому Баті, він розпочав програму розкопок і публікації.</p>
+          <p>У 1966 році він став надзвичайно молодим професором, коли зайняв кафедру нещодавно заснованого факультету археології в Саутгемптонському університеті. Там він брав участь у розкопках (1961–1968) римського палацу Фішборн у Західному Сассексі. Інше місце в південній Англії відвело його від римського періоду. Він розпочав довгу серію літніх розкопок (1969–1988) городища залізного віку в Дейнбері, Гемпшир, а згодом брав участь у Програмі околиць Дейнбері (1989–1995). Його інтерес до Британії та Європи залізного віку породив низку публікацій, і він став визнаним авторитетом у кельтах. У своїх пізніших роботах він висуває тезу про те, що кельтська культура виникла вздовж узбережжя Атлантичного океану в бронзовому столітті, перш ніж потрапити вглиб країни, що суперечить більш загальноприйнятій точці зору, що кельтське походження лежить у гальштатській культурі Альп. Один з його останніх проектів був у долині Наджерілья, Ла-Ріоха, Іспанія, яка розташована на &quot;перетині між кельтиберським серцем центральної Іберії та атлантичною зоною Біскайської затоки&quot;. У 1979 році Канліфф був обраний членом Британської академії. Живе з дружиною в Оксфорді.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

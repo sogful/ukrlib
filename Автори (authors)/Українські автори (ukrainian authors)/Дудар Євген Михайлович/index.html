@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дудар Євген Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дудар Євген Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dudar-ievhen-mykhaylovych_1.webp" alt="Дудар Євген Михайлович" title="Дудар Євген Михайлович" data-full="./dudar-ievhen-mykhaylovych_1.webp" /><img class="side-img side-thumb" src="./dudar-ievhen-mykhaylovych.webp" alt="Дудар Євген Михайлович" title="Дудар Євген Михайлович" data-full="./dudar-ievhen-mykhaylovych.webp" /><img class="side-img side-thumb" src="./dudar-ievhen-mykhaylovych_2.webp" alt="Дудар Євген Михайлович" title="Дудар Євген Михайлович" data-full="./dudar-ievhen-mykhaylovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Дудар Євген Михайлович (24 січня 1933 року) – український майстер сучасної сатири, публіцист, артист розмовного жанру.</p>
+          <p>Народився в с. Озерна на Тернопільщині. Здобувши середню освіту, спробував вступити до театрального училища, однак зазнав поразки. Тоді хлопець вирішив йти служити до армії, та вже невдовзі був направлений до Азербайджану. Вже після повернення на рідну землю, Є. Дудар успішно складає іспити та стає студентом Львівського університету за спеціальністю &quot;журналіст&quot;. Довгий час працює в редакції місцевих газет та видань, а після оселення в Києві отримує посаду редактора в сатиричному журналі &quot;Перець&quot;.</p>
+          <p>Ще в роки студентства Є. Дудар пише перші гуморески, а в 1967 р. видає дебютну книгу &quot;Прошу слова&quot;. Однак, автор майже був &quot;зв’язаний по руках і ногах&quot; суцільною жорсткою цензурою тих часів, обмежений темами для жартів. І лише у роки демократичних змін на теренах України зміг писати в повну силу, висміюючи можновладців та політиків. Друкує книги &quot;Українці мої, українці... Сумні роздуми веселого чоловіка&quot;, &quot;Плацдарм&quot;, &quot;І силою, і правдою...&quot; тощо. Блискуче самотужки виконує авторські твори зі сцени та на екранах телебачення. Євген Дудар (24. 01. 1933, с. Озерна, нині Зборівського району) — письменник-сатирик, виконавець II власних творів. Член НСПУ (1973). Заслужений діяч мистецтв України (1993). Лауреат літературної премії ім. Остапа Вишні (1985) та ім. М. Годованця (1997), міжнародної премія ім. П. Орлика (1995), премія ім. П. Сагайдачного (2000). Золота медаль Т. Шевченка (СВУ, Австралія, 1990). Співголова комітету гумору і сатири НСПУ. Закінчив факультет журналістики Львівського університету (1962). Працював у республіканських газетах, журналі &quot;Перець&quot;. Від 1980 виконує власні твори на сцені (понад 10 тис. виступів, творчих вечорів, радіо— і телезустрічей). Співзасновник, художній керівник і голова журі Всеукраїнського фестивалю &quot;Вишневі усмішки&quot;. Співзасновник Всесвітньої асоціації сатириків і гумористів у м. Габрово (Болгарія, 1985). Неодноразовий учасник Всесвітніх фестивалів сатири і гумор. Автор понад 20 книг, у т. ч. &quot;Спогади про себе: Фрагменти з мого бурхливого і неспокійного життя&quot; (2001). &quot;І силою, і правдою...&quot; (2003: обидві — Т.). Часто перебував на Тернопільщині, проводив творчі зустрічі з громадськістю краю.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

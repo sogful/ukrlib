@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Веледницький Абрам Маркович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Веледницький Абрам Маркович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./velednytskyy-abram-markovych.webp" alt="Веледницький Абрам Маркович" title="Веледницький Абрам Маркович" data-full="./velednytskyy-abram-markovych.webp" /></div>
+        <div class="prose-text">
+          <p>Абрам ВЕЛЕДНИЦЬКИЙ</p>
+          <p>Веледницький Абрам Маркевич народився 29 жовтня 1894 року в м.Радомишлі на Житомирщині в сім&#x27;ї службовця. Навчався на юридичному факультеті Київського університету У червні 1919 року вступив добровольцем до Червоної Армії. Після демобілізації повернувся до Києва, але юридична освіта його вже не цікавила, і він зайнявся філологічними студіями, почав писати і друкувати в єврейській періодиці вірші. Перша збірка його поезій &quot;Прояснення&quot; побачила світ 1922 року. Затим вийшли поетичні книжки &quot;Прихід&quot; (1928), &quot;З молодим класом&quot; (1932).</p>
+          <p>У 1935 році закінчив аспірантуру Інституту єврейської культури при Академії наук УРСР. Захистив кандидатську дисертацію у 1947 році. Веледницький був знаний не лише як здібний критик і літературознавець, а й як талановитий перекладач на єврейську мову творів Т.Шевченка, М.Коцюбинського, багатьох сучасних українських і російських поетів. Брав активну участь у громадському житті, керував літературними гуртками. У роки сталінського терору Веледницького спіткала трагічна доля багатьох його побратимів по перу. Його заарештували 23 березня 1951 року в Києві, інкримінували типові звинувачення: шпигунство, націоналістична пропаганда, антирадянська діяльність. Потяглися моторошні місяці знущань, тортур, наруги над людською гідністю. Заздалегідь змонтований вирок &quot;особливої наради&quot; гласив: 10 років таборів суворого режиму з конфіскацією майна. П&#x27;ять літ прокидів за колючим дротом Веледницький. Наприкінці 1955 року після перегляду справи був звільнений і реабілітований. З надірваним здоров&#x27;ям повернувся до Києва, але жити йому лишилося недовго. Помер 19 жовтня 1959 року. Григорій Полянкер ЛУ 24 (4433) 13.06.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

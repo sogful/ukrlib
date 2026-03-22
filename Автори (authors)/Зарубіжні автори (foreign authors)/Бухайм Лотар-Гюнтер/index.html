@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бухайм Лотар-Гюнтер — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бухайм Лотар-Гюнтер</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bukhaym-lotar-hiunter.webp" alt="Бухайм Лотар-Гюнтер" title="Бухайм Лотар-Гюнтер" data-full="./bukhaym-lotar-hiunter.webp" /><img class="side-img side-thumb" src="./bukhaym-lotar-hiunter_1.webp" alt="Бухайм Лотар-Гюнтер" title="Бухайм Лотар-Гюнтер" data-full="./bukhaym-lotar-hiunter_1.webp" /></div>
+        <div class="prose-text">
+          <p>Бухайм народився 6 лютого 1918 року в Веймарі (Тюрингія, Німеччина), був сином художниці Шарлотти Бухайм. Вона була не одруженою та жила з батьками. До 1924 року вони жили в Веймарі, після в Рохліці до 1932-го, потім в Хемніці . Уже тоді Бухайм-молодший підробляв в газетах і брав участь у художній виставці 1933 року, коли йому було всього 15.</p>
+          <p>Люблячи подорожувати, разом з братом він дістався до Чорного моря, по Дунаю на каное. Після того як отримав атестат зрілості в 1937-му, деякий час жив в Італії, де написав свою першу книгу Tage und Nächte steigen aus dem Strom. Eine Donaufahrt. (&quot;Дні і ночі встають з річки. Подорож по Дунаю&quot;), яка була видана в 1941 році. Бухайм вивчав мистецтво в Дрездені і Мюнхені в 1939-му.</p>
+          <p>Мобілізований в армію в 1940 році. Був офіцером союзу пропаганди німецького військово-морського флоту, працював військовим кореспондентом, описуючи свої походи на різних кораблях, малював і багато фотографував. Як молодший лейтенант брав участь восени 1941 року в поході U-96, написав про це коротку повість &quot;Die Eichenlaubfahrt&quot;, за що командир човна отримав Лицарський хрест Залізного хреста з Дубовим Листям, закінчив війну обер-лейтенантом. Після війни працював художником, володів галереєю, писав книги про художників, наприклад Пікассо, збирав роботи французьких та німецьких експресіоністів, знімався у кіно. Найбільшу популярність здобув після виходу роману &quot;Das Boot&quot; (1973), який став світовим бестселером і основою фільму &quot;Підводний човен&quot;. Помер від серцевої недостатності 22 листопада 2007 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

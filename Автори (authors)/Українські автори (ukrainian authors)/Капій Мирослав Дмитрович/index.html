@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Капій Мирослав Дмитрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Капій Мирослав Дмитрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kapiy-myroslav-dmytrovych.webp" alt="Капій Мирослав Дмитрович" title="Капій Мирослав Дмитрович" data-full="./kapiy-myroslav-dmytrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Мирослав Капій – український письменник, педагог, перекладач, фольклорист, історик, фантаст. Народився він 5 травня 1888 року на Тернопільщині в селі Коцюбинці в родині вчителів. Після Тернопільської гімназії навчався у Львівському університеті. Від початку навчання дуже зацікавився науковою та літературною творчістю, сам писав і публікував вірші.</p>
+          <p>Після закінчення університету продовжив династію батьків – вчителював у гімназії, педагогічній семінарії, школах. Був учасником національно-визвольних подій 1918-20рр., а під час польсько-українського конфлікту 1944 року вони з дружиною-полькою та донькою якимось дивом вціліли, засуджені до смерті польським підпіллям.</p>
+          <p>З найбільш помітних творів Капія слід відзначити науково-фантастичну повість &quot;Країна блакитних орхідей&quot; (1932), яка вже стала бібліографічною рідкістю. В ній дивним чином письменник передрікав багато з того, що відбувається зараз в Україні та у світі. Європу початку ХХІст. він бачив з багатьма маленькими незалежними мононаціональними країнами, Україну – науково та технічно високорозвиненою космічною державою з гетьманом на чолі (президент) та парламентом, який фактично править країною, її національну валюту – гривню, герб у вигляді тризуба, великий автозавод у Кременчуці (який збудовано у 1950-ті роки). Ця повість цікава ще й тим, що стала першим в українській літературі фантастичним твором на космічну тему. М.Капій став перекладачем на українську найвидатніших творців зарубіжної літератури: Шиллера, Гейне, Ібсена, Кіплинга. Зібрані ним величезний фольклорний матеріал, народні пісні, казки, легенди вражають своїми обсягами. З 1945 року письменник мешкав у Косові Івано-Франківської області, у власному будинку. Там і помер 24.03.1949р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

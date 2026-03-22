@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Галушка Денис Онисимович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Галушка Денис Онисимович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./halushka-denys-onysymovych.webp" alt="Галушка Денис Онисимович" title="Галушка Денис Онисимович" data-full="./halushka-denys-onysymovych.webp" /></div>
+        <div class="prose-text">
+          <p>Денис ГАЛУШКА</p>
+          <p>Галушка Денис Онисимович народився 30 травня 1902 року в с. Чумаки на Катеринославщині в хліборобській сім&#x27;ї. Після закінчення початкової школи працював у батьківському господарстві, з 1924 по 1930 рік служив у Першій кавалерійській дивізії. Затим був направлений на навчання в Інститут червоної професури, після успішного завершення якого працював завідувачем кафедри літератури Харківського педінституту, викладав курс зарубіжної літератури у Харківському університеті, очолював правління тамтешньої письменницької організації. Був членом ВКП(б).</p>
+          <p>Літературною творчістю почав займатися у другій половині 20-х років, його перу належать збірки оповідань &quot;Перший раз на чаті&quot; (1929), &quot;Дні боротьби&quot; (1930), &quot;Рейд ударників&quot; (1931), &quot;Рядовий революції&quot; (1932), &quot;Перші кроки&quot; (1934), монографія &quot;Література на службі оборони радянської країни&quot; (1932) та ін. 17 вересня 1937 року на підставі ордера № 33/3, виписаного Харківським обласним управлінням НКВС, був заарештований як &quot;член контрреволюційної антирадянської і терористичної організації&quot;. Слідство не мало аніякісіньких доказів вини Галушки, але, керуючись настановами &quot;залізного наркома&quot; Єжова, з допомогою тортур менше ніж через два місяці добилися &quot;зізнання&quot; заарештованого, що він нібито &quot;входив у терористичну групу для здійснення терористичної акції над членами українського уряду Косіором і Петровським, вербував з аспірантів Інституту червоної професури нових членів організації&quot;. Саме ці вибиті на допитах &quot;зізнання&quot; стали основою обвинувального висновку, скомпонованого помічником оперуповноваженого IV відділу УДБ Друшляком для передачі судово-слідчої справи на розгляд Російської колегії Верховного Суду СРСР. Виїзна сесія без участі звинувачення і захисту, без виклику свідків відбулася 30 грудня 1937 року. В останньому своєму слові Денис Онисимович просив об&#x27;єктивно розібратися в висунутих проти нього звинуваченнях, проте голос його, як і інших приречених, не був почутий. Як і планувалося заздалегідь, винесли стандартний для тих часів вирок — розстріл із конфіскацією майна. 31 грудня 1937 року Д. Галушку розстріляли в харківській тюрмі. Його ім&#x27;я надовго було викреслене з літератури. У серпні 1957 року на клопотання Спілки письменників України судово-слідча справа Галушки Д. О. була переглянута Верховним Судом СРСР і припинена за відсутністю складу злочину. Вирок Військової колегії від ЗО грудня 1937 року скасовано. Денис Галушка реабілітований посмертно. В.Юткін ЛУ №26 (4435)27.06.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

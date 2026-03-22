@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Болат Юсуф — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Болат Юсуф</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bolat-iusuf.webp" alt="Болат Юсуф" title="Болат Юсуф" data-full="./bolat-iusuf.webp" /><img class="side-img side-thumb" src="./bolat-iusuf_1.webp" alt="Болат Юсуф" title="Болат Юсуф" data-full="./bolat-iusuf_1.webp" /></div>
+        <div class="prose-text">
+          <p>Юсуф Болат — письменник, драматург. Народився 16 березня 1909 р. в Алушті в сім’ї незаможних селян. Після 1924 року вступив до Ялтинського педагогічного технікуму, а 1930 року педагогічного інституту.</p>
+          <p>Перше оповідання Юсуфа Болата &quot;Чанълар къакъылгъанда&quot; Коли дунали дзвони&quot;) опубліковане 1929 року. Автор багатьох п’єс, що користувалися великим успіхом: &quot;Яшамакъ истейим&quot; (&quot;Хочу жити&quot;), &quot;Сонъки гедже&quot; (&quot;Остання ніч&quot;), &quot;Той девам эте&quot; (&quot;Весілля триває&quot;), &quot;Алім&quot;, &quot;Арзы къыз&quot; (&quot;Дівчина Арзи&quot;).</p>
+          <p>1936 року Юсуф Болат став відповідальним секретарем Cпілки письменників Кримської АРСР, з 1939 року редактором журналу &quot;Совет эдебияты&quot; (&quot;Радянська література&quot;), 1942 року — редактором газети &quot;Къызыл Къырым&quot; (&quot;Червоний Крим&quot;). Працював також відповідальним редактором Всесоюзного радіо – у відділі мовлення для населення окупованих нацистами територій. 3 1944 року Юсуф Болат перебував у депортації у Самаркандській області. Спершу вчителював, а з 1960 року мешкав у Ташкенті — поєднував журналістику й літературну творчість, працюючи редактором газети &quot;Ленин байрагъы&quot; (&quot;Ленінський стяг&quot;). Окрім серйозних жанрів — повісті, романи, п&#x27;єси — писав гумористичні оповідання, займався літературознавчими дослідженнями. Юсуф Болат входив до ініціативної групи кримськотатарської інтелігенції (Веліулла Муртазаєв, Рефат Мустафаєв, Мустафа Селімов, Шаміль Алядін), що сформувалася наприкінці 1950-х років та обговорювала незаконне виселення кримськотатарського народу, й доводила справедливість вимог повернення на Батьківщину. Але сам письменник повернутися не встиг — помер у Ташкенті 1986 року. Юсуф Болат був дядьком Шаміля Алядіна.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

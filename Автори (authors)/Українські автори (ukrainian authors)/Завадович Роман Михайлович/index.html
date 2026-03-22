@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Завадович Роман Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Завадович Роман Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zavadovych-roman-mykhaylovych.webp" alt="Завадович Роман Михайлович" title="Завадович Роман Михайлович" data-full="./zavadovych-roman-mykhaylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 18 грудня 1903 р. в с. Славна, нині – Зборівського району. Закінчив початкову школу в Присівцях. Вчився у гімназіях Золочева і Тернополя. В 1920 році вступив до Українського таємного університету у Львові. Пізніше студіював славістику у Львівському державному університеті (закінчив у 1938, магістр філософії).</p>
+          <p>Під час навчання належав до &quot;Гуртка студентів-українців&quot; та до літературного об&#x27;єднання &quot;Листопад&quot;. Водночас займався культурно-освітньою працею у селах Золочівщини; засновував читальні &quot;Просвіти&quot;, гуртки &quot;Рідної школи&quot; і &quot;Сільського господаря&quot;, організовував кооперативи, самоосвітні секції молоді, хори, театральні гуртки, ставив п&#x27;єси.</p>
+          <p>У 1939 —1941 рр. викладав українську мову та літературу в середній школі у Золочеві. Під час німецької окупації жив у Ремезівцях, співпрацював із журналом &quot;Малі Друзі&quot; (Краків-Львів). В 1944 р. виїхав до Німеччини, жив у різних таборах для переселенців (найдовше – у Бад Верісгофені). Із серпня 1945 до травня 1948 р. викладав українську мову та літературу в таборовій гімназії у Міндельгеймі. Співзасновник Об&#x27;єднання Працівників дитячої літератури (1947). 1949 р. емігрував до США. Входив до редакційної колегії журналу для дітей &quot;Веселка&quot;. Дебютував у літературі віршем &quot;Святий Миколай&quot; у львівському двотижневику &quot;Світ дитини&quot; (15 грудня 1920). Твори публікував під псевдонімами Роман зі Славної, Фортіссімо, Роляник, Володимир Переяславець. Статті друкував у журналах &quot;Дажбог&quot;, &quot;Дзвони&quot;, &quot;Літературно-науковий вісник&quot;, &quot;Молода Україна&quot; (Львів), &quot;Сонечко&quot;, &quot;Юні друзі&quot; (Лондон), &quot;Євшан-зілля&quot; (Торонто), &quot;Мій приятель&quot; (Вінніпег), та інші. Написав дитячі п&#x27;єси: Він же зробив віршовані інсценізації казок: У 1940-43 рр. видав &quot;Пригоди Гномика&quot;, &quot;Чародійні музики&quot;, прозову казку &quot;Зимові царівни&quot;. З 1940-х років Завадович перебував на еміграції. З 1954 р. Завадович був у складі редакції журналу &quot;Веселка&quot; (США). Тоді з&#x27;явився: Професор мови та літератури Українського Католицького Університету в Римі, вів курси з мовознавства у філії цього університету в Чикаго. Викладав українську мову в Школі українознавства (1951-1956) та на Педагогічних курсах імені П. Могили. Співзасновник Братства св. Андрея Первозваного в Чикаго. 30 січня 1960 р. Українсько-Американська Молодеча Рада в м. Чикаго відзначила Р. Завадовича Почесною грамотою &quot;за творчу працю для української молоді&quot;. 1970 р. з нагоди 50-ліття літературної діяльності Р. Завадовича молодь з Пласту вручила &quot;таблицю вдячності&quot; з дедикацією на металевій дошці. За літературну працю на користь української визвольної ідеї письменник відзначений медаллю-хрестом від Українського Вільного Козацтва. 22 січня 1978 р. вшанований від Чикагського відділу Українського Конгресового Комітету почесною грамотою &quot;Українця року&quot; – за великі заслуги на ниві української культури. Помер 31 травня 1985 р. в Чикаго.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

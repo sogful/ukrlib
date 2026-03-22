@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Токарчук Ольга — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Токарчук Ольга</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tokarchuk-olha.webp" alt="Токарчук Ольга" title="Токарчук Ольга" data-full="./tokarchuk-olha.webp" /><img class="side-img side-thumb" src="./tokarchuk-olha.webp" alt="Токарчук Ольга" title="Токарчук Ольга" data-full="./tokarchuk-olha.webp" /><img class="side-img side-thumb" src="./tokarchuk-olha_1.webp" alt="Токарчук Ольга" title="Токарчук Ольга" data-full="./tokarchuk-olha_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ольга Навоя Токарчук – відома польська письменниця, психологиня, лауреатка міжнародних літературних премій.</p>
+          <p>Її біографія пов&#x27;язана з Україною: бабуся була українкою. Ольга Токарчук народилася 29 січня 1962 року в місті Сулехув, Польща. Згодом її сім&#x27;я переїхала до міста Кетш, де майбутня письменниця здобувала освіту в ліцеї ім. Норвіда. Потім вступає на факультет психології Варшавського університету та займається волонтерством. Після закінчення навчання працює психотерапевтом. Коли її перші книжки набувають популярності, вирішує повністю присвятити себе творчості. Наразі проживає у Вроцлаві.</p>
+          <p>Перші оповідання Ольги Токарчук побачили світ у журналі &quot;Навпростець&quot;. У 1993 році виходить перший роман — &quot;Мандрівка людей книги&quot;, який отримує відзнаку &quot;Польського товариства книговидавців&quot;. Другий твір, &quot;Е. Е.&quot;, з&#x27;являється в 1995 р. Популярність до Ольги Токарчук приходить після публікації книжки &quot;Правик та інші часи&quot;, яку відразу номінували на здобуття найбільшої польської літературної премії &quot;Ніке&quot;. У 2007 році письменниця видає роман &quot;Бігуни&quot;, який відразу приносить їй шалений успіх, премію &quot;Ніке&quot; та Міжнародну Букерівську премію. У 2014 році виходить друком роман &quot;Книги Якова&quot;, який викликає шалений резонанс і значну критику в бік письменниці, адже у творі авторка зображує справжню неідеалізовану Польщу з її імперськими амбіціями часів Речі Посполитої. У доробку авторки також мають місце збірки оповідань. У 2018 році письменницю нагороджують Нобелівською премією з літератури. Книги Ольги Токарчук змальовують людину та її душу, яка непідвладна еволюції, яка залишається такою ж самою, поки весь світ навколо змінюється; її твори торкаються найглибших струн людської душі. Авторка пише проникливо і просто, зрозуміло і водночас глибоко.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

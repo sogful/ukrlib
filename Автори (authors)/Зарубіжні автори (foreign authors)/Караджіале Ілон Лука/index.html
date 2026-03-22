@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Караджіале Ілон Лука — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Караджіале Ілон Лука</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./karadzhiale-ilon-luka.webp" alt="Караджіале Ілон Лука" title="Караджіале Ілон Лука" data-full="./karadzhiale-ilon-luka.webp" /><img class="side-img side-thumb" src="./karadzhiale-ilon-luka_1.webp" alt="Караджіале Ілон Лука" title="Караджіале Ілон Лука" data-full="./karadzhiale-ilon-luka_1.webp" /><img class="side-img side-thumb" src="./karadzhiale-ilon-luka_2.webp" alt="Караджіале Ілон Лука" title="Караджіале Ілон Лука" data-full="./karadzhiale-ilon-luka_2.webp" /></div>
+        <div class="prose-text">
+          <p>(30.01.1852 — 09.07.1912)</p>
+          <p>Румунський письменник, драматург.</p>
+          <p>Караджале народився в родині дрібного чиновника. До того як стати професійним письменником, він був суфлером, коректором, актором, переписувачем і одночасно навчався на юридичному факультеті Бухарестського університету. Згодом був учителем в ліцеї, шкільним інспектором і директором театру. творчість У 1873 році Караджале дебютував як журналіст, публікував нариси і фейлетони. Разом з Антоном Бакалбаша створив і випускав журнал &quot;Moftul romîn&quot; ( &quot;Румунський дурниця&quot;). Караджале належать одні з кращих з написаних румунською мовою драматичних творів. Його комедії &quot;Погана ніч&quot;, &quot;Втрачене лист&quot;, &quot;Пан Леоніда перед обличчям реакції&quot; і &quot;В дні карнавалу&quot; написані з великим талантом і тонкою спостережливістю; виведені в них типи, незважаючи на відому шаржування, відображають моральні принципи того часу і національні сторони характеру і побуту. Відома також трёхактная драма Караджале &quot;Напасть&quot; і кілька новел: &quot;Великодній факел&quot;, &quot;Гріх&quot; та інші.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

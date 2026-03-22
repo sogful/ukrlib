@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бабій Степан Олександрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бабій Степан Олександрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./babiy-stepan-oleksandrovych.webp" alt="Бабій Степан Олександрович" title="Бабій Степан Олександрович" data-full="./babiy-stepan-oleksandrovych.webp" /><img class="side-img side-thumb" src="./babiy-stepan-oleksandrovych_1.webp" alt="Бабій Степан Олександрович" title="Бабій Степан Олександрович" data-full="./babiy-stepan-oleksandrovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Бабій Степан Олександрович народився 28 березня 1940 року в селі Голибісах Шумського району Тернопільської області. Закінчив медичне училище, курс філологічного факультету Львівського університету, Тернопільський медичний інститут.</p>
+          <p>Працював лікарем в селі Хотин Радивилівського і в селі Олександрія Рівненського районів на Рівненщині. 3 1986 до 1990 року був на творчій роботі. 3 1990 до 1998 року на державній службі – заввідділом культури в м. Рівному і заступником голови райдержадміністрації Здолбунівського району. З 2000 р. по 2005 р. очолював Рівненську обласну організацію Національної спілки письменників України.</p>
+          <p>Степан Бабій є автором низки поетичних збірок, прози і публіцистики. Співавтор і ведучий трьох телефільмів про Т. Г. Шевченка, телефільмів &quot;Одержима&quot; (про Лесю Українку) і &quot;Гурби&quot;. Автор чотирьох десятків книг (збірок поезій, повістей), багатьох публіцистичних статей. Поетичні збірки: &quot;Журавлиний невід&quot;, &quot;Відкриваю себе&quot;, &quot;Пізні яблука&quot;, &quot;Потривожені птахи&quot;, &quot;Із вирію літ&quot;, &quot;Ріка у відблиску очей&quot;, &quot;Україна під сатаною&quot;, &quot;Це інший світ&quot;, &quot;У холодному блиску комет&quot;, &quot;Такий день&quot;, &quot;Вертаючий з небес&quot;, &quot;Нічні спалахи&quot;, &quot;Приречені сніги&quot;. Проза: &quot;Криниця на пагорбах&quot;, &quot;Плата за любов. Прокляття волхвів&quot;. Публіцистика: &quot;Волинські дзвони&quot;, &quot;Луни повстанського краю&quot;, &quot;На хвилі, на часі&quot; та інших. Лауреат обласних літературних премій імені В. Поліщука (1985), імені Світочів (2016) просвітянської премії імені Григорія Чубая (2000).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

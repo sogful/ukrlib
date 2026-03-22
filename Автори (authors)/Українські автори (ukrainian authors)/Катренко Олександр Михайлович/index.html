@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Катренко Олександр Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Катренко Олександр Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>КАТРЕНКО ОЛЕКСАНДР (сир. — Катрухін Олександр, ін. псевд. — Кирпатий Олександр, Хомівченко Олександр; 14.10.1859 —р. см. невід.) — письменник.</p>
+          <p>Належав до генерації українських літераторів, яка дебютувала в 90-х роках XIX ст. з новими темами й новою чи оновленою формою і названа І. Франком &quot;молодою Україною&quot;.</p>
+          <p>Збереглися нечисленні відомості про життєвий шлях Олександра Катренка: жив і працював на Харківщині, належав до апологетів О. Кониського, надсилав йому свої твори для Друку, насамперед у журналі &quot;Зоря&quot; (Львів). Згодом став автором і палким прихильником &quot;Літературно-наукового вістника&quot;, друкувався також у журналі &quot;Дзвінок&quot;, &quot;Руслан&quot;; в &quot;Киевской старине&quot; публікував статті на історичні та етнографічні теми: &quot;Из времен нашествия шведов на Россию&quot; (1884), &quot;Из народных рассказов о слободско-украинских помещиках&quot; (1885) та ін. Твори виходили окремими книжечками — метеликами й невеличкими збірками: &quot;Чумацьке лихо&quot; (X., 1890), &quot;Дохтор&quot; (X., 1890), &quot;На панському обіді&quot; (X., 1890), &quot;Омелько Цуценя&quot; (Л., 1899), &quot;Пан Природа й інші нариси&quot; (JI., 1901), &quot;Лихо розуму не тлумить, а бурхає&quot; (X., 1902). Героїв своїх побутових і побутово-психологічних образків та оповідань він знаходив у колах пореформеного селянства й дрібно-маєткового панства — &quot;До лиха та ще лихо&quot; (1889), &quot;Як чоловік собі науку здобував&quot; (1892), &quot;Закон смерті&quot; (1899), &quot;Завірюха&quot; (1900), &quot;Пан Природа&quot; (1901), &quot;Із записок народолюбця&quot; (1902) та ін. Листувався з І. Франком, який редагував, видавав і популяризував його твори, називав їх автора &quot;учеником Достоєвського&quot; за те, що той любив &quot;малювати хворих, змучених, вибитих із колії людей, важкі ситуації, тривожні настрої&quot;. Тривалий час листувався з Б. Грінченком, книжки якого з дарчими написами й тепер зберігаються в книжковій колекції Грінченка (НБУ HAH України). Дата смерті Олександра Катренка невідома, принаймні ще 1918 р. він звертався з листом до І. Стешенка. Вивчення біографії цього письменника, дослідження його творчої спадщини — одна з перспектив сучасного українознавства.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

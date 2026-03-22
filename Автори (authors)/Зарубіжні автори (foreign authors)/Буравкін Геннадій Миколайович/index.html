@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Буравкін Геннадій Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Буравкін Геннадій Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./buravkin-hennadiy-mykolayovych.webp" alt="Буравкін Геннадій Миколайович" title="Буравкін Геннадій Миколайович" data-full="./buravkin-hennadiy-mykolayovych.webp" /><img class="side-img side-thumb" src="./buravkin-hennadiy-mykolayovych_1.webp" alt="Буравкін Геннадій Миколайович" title="Буравкін Геннадій Миколайович" data-full="./buravkin-hennadiy-mykolayovych_1.webp" /><img class="side-img side-thumb" src="./buravkin-hennadiy-mykolayovych_2.webp" alt="Буравкін Геннадій Миколайович" title="Буравкін Геннадій Миколайович" data-full="./buravkin-hennadiy-mykolayovych_2.webp" /><img class="side-img side-thumb" src="./buravkin-hennadiy-mykolayovych_3.webp" alt="На фото сестра, батько, мати та Геннадій" title="На фото сестра, батько, мати та Геннадій" data-full="./buravkin-hennadiy-mykolayovych_3.webp" /><img class="side-img side-thumb" src="./buravkin-hennadiy-mykolayovych_4.webp" alt="в студентські роки" title="в студентські роки" data-full="./buravkin-hennadiy-mykolayovych_4.webp" /></div>
+        <div class="prose-text">
+          <p>Буравкін ГЕННАДІЙ МИКОЛАЙОВИЧ</p>
+          <p>Народився 28 серпня 1936 року в селі Шулятіно Россонського району Вітебської області Білоруської РСР в сім&#x27;ї службовця.</p>
+          <p>Білоруський письменник, сценарист, суспільно-політичний діяч. У 1959 році закінчив відділення журналістики філологічного факультету Білоруського державного університету. Працював в редакції журналу &quot;Комуніст Білорусії&quot;, редактором на Білоруському радіо, завідувачем відділом літератури, заступником головного редактора газети &quot;Літаратура І Мастацтва&quot;. У 1968-1972 роках — кореспондент газети &quot;Правда&quot; в Українській РСР, в 1972-1978 — головний редактор літературного журналу &quot;Маладосць&quot;. У 1976 році в складі делегації Білоруської РСР брав участь в роботі 31-ї сесії Генеральної Асамблеї Організації Об&#x27;єднаних Націй. З 1978 року — голова Державного комітету Білоруської РСР по телебаченню і радіомовленню. З 1990 року — постійний представник Білоруської РСР (з 1991 року — Республіки Білорусь) в ООН. Обирався депутатом Верховної Ради Української РСР (1980-1990). Був членом Білоруського ПЕН-центру (1989) та Спілки білоруських письменників. У 1994-1995 роках — заступник міністра культури і друку Республіки Білорусь. У 1995-2001 роках працював в журналі &quot;вожик&quot;. У 1997-1999 роках — голова Товариства білоруської мови імені Франциска Скорини. Член Спілки письменників СРСР (1961). Пішов з життя 30 травня 2014 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

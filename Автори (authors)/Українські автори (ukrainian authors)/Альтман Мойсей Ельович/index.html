@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Альтман Мойсей Ельович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Альтман Мойсей Ельович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./altman-moysey-elovych.webp" alt="Альтман Мойсей Ельович" title="Альтман Мойсей Ельович" data-full="./altman-moysey-elovych.webp" /></div>
+        <div class="prose-text">
+          <p>Альтман Мойсей Ельович народився 8 травня 1890р. у містечку Липкани на Буковині в сім&#x27;ї бідного ремісника. Закінчив початкову єврейську школу (хедер) та три класи ремісничого училища. Зважаючи на літературні здібності сина, батько відправив його навчатися до Кам&#x27;янець-Подільської гімназії, яку той закінчив у 1908р.</p>
+          <p>Альтману не минуло й чотирнадцяти, коли в одеській єврейській газеті &quot;Унзер лебен&quot; (&quot;Наше життя&quot;) було надруковано його перші вірші. 3 того часу він регулярно публікував свої поетичні спроби в різних виданнях Росії та Румунії.</p>
+          <p>У 1919р. видав першу прозову книжку. Затим побачили світ збірки оповідань &quot;Міраж&quot; (1926), &quot;Віденська карета&quot; (1935), &quot;Коріння&quot; (1948), романи &quot;Мідраш Пінхас&quot; (1936), &quot;Метелики&quot; (1938), п&#x27;єси &quot;На покутному ланцюгу&quot; (1946), &quot;Дочка Ефти&quot; (1947), &quot;Десята заповідь&quot; (1948). До приєднання Буковини до СРСР Альтман багато мандрував по світу. Жив у Румунії, Франції, Бразилії, Аргентині. Там друкував свої твори, виступав на літературних вечорах і зажив великої популярності. Все своє життя Альтман тісно пов&#x27;язав із театрами &quot;Сіді Таль&quot;, Київським та Московським єврейськими театрами. Тривалий час був завлітом Українського єврейського державного театру. Письменника під час сталінського терору спіткала доля більшості єврейських літераторів. Наприкінці 1949р. він був заарештований органами МДБ і звинувачений в активній націоналістичній діяльності, антирадянській пропаганді, шпигунстві. Після тривалого слідства Особливою нарадою МДБ СРСР був засуджений на десять років ув&#x27;язнення в таборах. Після шести років гибіння за колючим дротом Альтмана, який уже став інвалідом, звільнено за відсутністю складу злочину й повністю реабілітовано. Після повернення до Чернівців М.Альтман написав кілька книг, які вийшли друком у видавництві &quot;Советский писатель&quot;. Помер 21 жовтня 1981р. ЛУ 19(4428) 9.05.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

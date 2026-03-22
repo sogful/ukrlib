@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Буцень Олег Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Буцень Олег Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./butsen-oleh-vasylovych.webp" alt="Буцень Олег Васильович" title="Буцень Олег Васильович" data-full="./butsen-oleh-vasylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 4 березня 1923 року в Києві в сім&#x27;ї службовця. У 1941 році після закінчення десятирічки поступив у Тбіліське авіаційне училище. Учасник німецько-радянської війни. Воював на різних фронтах до її кінця, нагороджений медалями.</p>
+          <p>Після демобілізації вступив на філологічний факультет Київського державного університету імені Тараса Шевченка, а після його закінчення в 1951 році працював учителем української мови та літератури в Бережанському педагогічному училищі на Тернопільщині, потім — в дитячій редакції Українського радіо, у видавництві &quot;Веселка&quot;.</p>
+          <p>Мешкав у Києві. Помер після важкої хвороби 11 жовтня 1966 року. Творчість: Перші вірші з&#x27;явилися у фронтовій пресі, у студентські роки друкувався у газеті. Олег Буцень — перший редактор-упорядник календаря &quot;Дванадцять місяців&quot;, що почав виходити у Дитвидаві з 1958 року. Писав оповідання про дітей і для дітей. Оповідання звучали по радіо. Друкувалися в журналах &quot;Малятко&quot;, &quot;Барвінок&quot;, у московських альманахах &quot;Звездочка&quot;, &quot;Круглый год&quot;. Переважна більшість книжок Олега Буценя випущена видавництвом &quot;Веселка&quot;. Це зокрема збірки оповідань для малят: &quot;Що розповів калачик&quot; (1959); &quot;З ранку до вечора&quot; (1961); &quot;Так чи не так&quot; (1962, 1979, 1983); &quot;Город узимку&quot; (1963, 1969, 1988); &quot;Не варто ображатись&quot; (1964); &quot;Солодкий дощ&quot; (1965); &quot;Наше відкриття&quot; (1967, 1972, 1977); &quot;Перші канікули&quot; (1973); &quot;Підйомний кран&quot; (1988). Окремі твори друкувалися в щорічниках &quot;Календарик-дошколярик&quot;, у збірниках &quot;Перший раз — у перший клас&quot; (1986), &quot;Веселі пригоди&quot; (1985, 1986), &quot;Слово до слова — весела розмова&quot; (1994, 2002).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

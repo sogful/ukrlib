@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Німеллер Мартін — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Німеллер Мартін</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nimeller-martin.webp" alt="Німеллер Мартін" title="Німеллер Мартін" data-full="./nimeller-martin.webp" /><img class="side-img side-thumb" src="./nimeller-martin_1.webp" alt="Німеллер Мартін" title="Німеллер Мартін" data-full="./nimeller-martin_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився в сім&#x27;ї пастора. 1900 року сім&#x27;я переїхала в Ельберфельд (зараз входить до складу міста Вупперталь). Навчався в евангелістичній гімназії, яку закінчив з відзнакою 1910 року. Вступив до Імператорських військово-морських сил; до і під час Першої світової війни служив на флоті, пішов добровольцем служити на підводних човнах. Старший лейтенант (Oberleutnant zur See), нагороджений Залізним хрестом 2-го та 1-го класу. 1917 року підводний човен, де служив Німеллер, перевозив з Дакару інтернованих німецьких громадян, серед яких був майбутній нобелівський лауреат Альберт Швейцер, з яким Мартін Німеллер згодом потоваришував і після 1945 року вони спільно закликали до ядерного роззброєння.</p>
+          <p>1919 року одружився з Ельзою Бремер (нім. Else Bremer). Вона народилася 20 липня 1890 року в Ельберфельді, а загинула 7 серпня 1961 року внаслідок ДТП у Данії.</p>
+          <p>Після Першої світової Мартін Німеллер вирішив стати священиком. 1934 року видав книгу спогадів &quot;Від підводного човна до амвона&quot; (нім. Vom U-Boot zur Kanzel), яка розійшлася накладом понад 90 тисяч примірників. Заарештований 1 липня 1937, переведений до Моабітської в&#x27;язниці в Берліні. Судовий процес закінчився 2 березня 1938 року виправдувальним вироком, однак це не задовольнило Адольфа Гітлера, який наказав запроторити Німеллера до концентраційного табору Заксенгаузен. Упродовж 1938–1945 роках перебував у таборах Заксенгаузен і Дахау. У квітні 1945 року групу ув&#x27;язнених, серед яких перебував і Німеллер, транспортували з Баварії (де знаходився Дахау) до Тіроля для фізичного знищення. Їх звільнили американські війська. Мартін Німеллер повернувся до церковної діяльності. Він виступав за перебудову Церкви, був обраний заступником голови Євангелічної церкви Німеччини. Ініціатор і підписант &quot;Штуттґартської декларації вини&quot; 19 жовтня 1945 року, в якій ЄЦН визнає свою провину за недостатній спротив нацизму в період Третього Райху. Учасник засідання Всесвітньої ради церков у Женеві 1946 року, а 1948 року взяв участь у Генеральній асамблеї Всесвітньої ради церков в Амстердамі. 1946 року розпочав активну міжнародну діяльність, провів тур із лекціями по США. Розпочав діалог між сторонами Холодної війни. У повоєнні роки перебував з візитами в Данії, Норвегії, Швеції, Англії, Ірландії, Австралії, Новій Зеландії. 1951 року виступав з лекціями в НДР і Югославії, а наступного року на запрошення патріарха Московського і всієї Русі Алексія I відвідав Радянський Союз. У 1950-х також бував в Індії, Чехословаччині, Польщі, зустрічався з німецькими та закордонними політиками (Конрад Аденауер, Джавахарлал Неру), виступав за відмову від ядерної зброї. 1965 року в Північному В&#x27;єтнамі проводив зустріч із Хо Ші Міном.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

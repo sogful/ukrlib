@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Перро Шарль — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Перро Шарль</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./perro-sharl_1.webp" alt="Перро Шарль" title="Перро Шарль" data-full="./perro-sharl_1.webp" /><img class="side-img side-thumb" src="./perro-sharl.webp" alt="Перро Шарль" title="Перро Шарль" data-full="./perro-sharl.webp" /><img class="side-img side-thumb" src="./perro-sharl_2.webp" alt="Перро Шарль" title="Перро Шарль" data-full="./perro-sharl_2.webp" /><img class="side-img side-thumb" src="./perro-sharl_3.webp" alt="Перро Шарль" title="Перро Шарль" data-full="./perro-sharl_3.webp" /></div>
+        <div class="prose-text">
+          <p>Шарль Перро (12.1.1628, Париж,— 16.5.1703, там же), французький поет і критик. Член Французької академії з 1671.</p>
+          <p>Народився в буржуазно-чиновницької родини. Вивчав юриспруденцію, служив при дворі. Перші літературні досліди — любовні вірші. Перший твір Перро — пародійна поема &quot;Стіни Трої, або Походження бурлеску&quot; (1653).</p>
+          <p>Писав алегоричні поеми, оди, послання в стилі галантної придворної поезії. Учасник літературного &quot;спору древніх і нових&quot;, він відстоював зверхність сучасних йому письменників над древніми (поема &quot;Століття Людовика Великого&quot;, 1687, діалоги &quot;Паралелі між древніми і новими в питаннях мистецтва і наук&quot;). Славу Перро приніс збірка &quot;Казки моєї матінки Гуски, або Історії і казки минулих часів з повчаннями&quot; (1697). Казки Перро — це казки чарівні (містять магічні або надприродні елементи). Вони сходять до народної традиції і часто передавалися з уст в уста. У багатьох країнах існують різні версії однієї і тієї ж казки, що залежить від натхнення, культурного і соціального контексту оповідача. Величезна заслуга Перро в тому, що він вибрав з безлічі народних казок кілька історій і зафіксував їх сюжет, який ще не став остаточним. Він надав їм тон, клімат, стиль, характерний для 17 століття, і тим не менш дуже особистий. Античної традиції Перро протиставив народну казку (&quot;Червона Шапочка&quot;, &quot;Хлопчик з пальчик&quot; та ін) і ввів її в систему літературних жанрів. Перший російський переклад казок Перро відноситься до 1768 (&quot;Казки про волшебницах з моралями&quot;). Казка &quot;Кіт у чоботях&quot; переведена Ст. А. Жуковським (1845). На сюжети казок Перро створені опери &quot;Попелюшка&quot; Дж. Россіні, &quot;Замок герцога Синя Борода&quot; Б. Бартока, балети &quot;Спляча красуня&quot; П. В. Чайковського, &quot;Попелюшка&quot; С. с. Прокоф&#x27;єва та ін</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Колас Якуб — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Колас Якуб</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Якуб Колас (ім&#x27;я за паспортом — Кость Міцкевич; 3 листопада 1882 — 13 серпня 1956) — білоруський поет, мовознавець, філолог. Небіж білоруського політика та історика Язепа Льосіка.</p>
+          <p>Народний поет Білорусі (1926), академік АН Білорусі (з 1928), член Союзу письменників СРСР (1934), заслужений діяч науки (1944), депутат Верховної Ради БРСР (1938—1956) і депутат Верховної Ради СРСР 2—4-го скликань(1946—1956), голова Білоруського республіканського комітету захисту миру.</p>
+          <p>Народився 3 листопада 1882 року у селі Акінчиці у родині лісника. Закінчив учительську семінарію у місті Несвіжі. У юному віці почав писати вірші, свій перший вірш опублікував під псевдонімом Якуб Колас у першій білоруській газеті &quot;Наша доля&quot;, що видавалася у Вільнюсі. На той час поету сповнилось двадцять чотири роки. Першу книжку поезій Коласа &quot;Песні жальбы&quot; було видано 1910 року. Творчість Коласа тісно пере­плітається з українською літературою, зокрема з поезією Т. Шевченка, якому він присвятив вірш &quot;Баяну-Каб­за­ру&quot;. У його повісті &quot;На прасторах жыц­ця&quot; молоді герої читають Шевченкові вірші і завдяки цьому краще ро­зуміють себе та людей, які їх оточують. До 125-річчя від дня народження поета написав ґрунтовне дослідження &quot;Шаўчэнка і беларуская паэзія&quot;, опубліклване 1939 у газеті &quot;Літаратура і мастацтва&quot; (від 3 березня), журналі &quot;Полымя рэва­лю­цыі&quot; (№ 3) та збірки &quot;У вянок Т. Р. Шаўчэнка&quot;. За редакцією Коласа і Янки Купали ви­дано &quot;Кобзар&quot; білоруською мовою мовою (Мінск, 1939), до якого у переклалі Коласа уві­йшли поеми &quot;Ма­рʼяна-черниця&quot;, &quot;Невольник&quot;, &quot;Сова&quot;, &quot;Гамалія&quot;, балада &quot;Утоплена&quot;, вірші &quot;Дівичії ночі&quot;, &quot;Гоголю&quot;, &quot;Не женися на багатій…&quot;, &quot;Роз­рита могила&quot;. Опублікував статтю про І. Франка &quot;Спів­ець дружби і бра­терства народів&quot; (ж. &quot;Жовтень&quot;, 1956, № 8). Колас під­тримував друж­ні взаємини з П. Тичиною, який 1959 присвятив йому статтю &quot;Чистий і чесний&quot; (вміщено у збірку &quot;П. Ти­чина про мистецтво і літературу&quot;, К., 1981) та М. Рильським (написав 1952 вірш &quot;Якубу Коласу&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

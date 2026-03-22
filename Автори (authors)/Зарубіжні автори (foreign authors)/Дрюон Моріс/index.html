@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дрюон Моріс — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дрюон Моріс</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./driuon-moris.webp" alt="Дрюон Моріс" title="Дрюон Моріс" data-full="./driuon-moris.webp" /><img class="side-img side-thumb" src="./driuon-moris_1.webp" alt="Дрюон Моріс" title="Дрюон Моріс" data-full="./driuon-moris_1.webp" /><img class="side-img side-thumb" src="./driuon-moris_2.webp" alt="Дрюон Моріс" title="Дрюон Моріс" data-full="./driuon-moris_2.webp" /></div>
+        <div class="prose-text">
+          <p>Моріс Дрюон народився 23 квітня 1918 року в Парижі, Франція. Французький письменник, член Французької академії з 1967 року.</p>
+          <p>Син актора Лазаря Кесселя (20 травня 1899—1920), вихідця з Оренбурга, який разом з сім&#x27;єю в 1908 році залишив Росію і переїхав до Ніцци, де грав під акторським псевдонімом Сібе́р, але наклав на себе руки у віці 21 року.</p>
+          <p>Моріс прийняв прізвище свого вітчима Р. Дрюона. Вперше почав публікуватися у вісімнадцятирічному віці. З 1937 по 1939 рік — студент факультету політичних наук Паризького університету. Після закінчення в 1940 році військової школи в місті Сомюр отримав військове звання офіцера кавалерії. Моріс Дрюон брав участь у боях захисту Франції від фашистів. Після поразки Франції демобілізувався і залишився в неокупованій зоні. Брав участь у Французькому Опорі. У 1942 році інкогніто через Іспанію і Португалію перебрався до Лондона, де приєднався до створеного Шарлем де Голлем руху &quot;Вільна Франція&quot;. Став одним з його близьких соратників. Займався у штабі питаннями інформації. Одночасно був фронтовим кореспондентом французьких і союзницьких військ. Вчився на літературному факультеті в Парижі. Дрюон вирішив повністю присвятити себе літературі в 1946 році. У 1948 році опублікований перший великий твір письменника — &quot;Сильні світу цього&quot;, за який у тому ж році він був удостоєний престижної Гонкурівської премії. У 1966, 1998 і 2000 роках за успіхи в літературній творчості удостоєний премій Принца Монако, Сен-Симона і д&#x27;Обіне, відповідно. Від 1967 року Моріс Дрюон — член Французької академії. У 1973-74 роках письменник обіймав посаду міністра культури Франції в уряді Жоржа Помпіду, а у період 1978 по 1981 роки працював депутатом у міських зборах Парижа. Був депутатом Національних зборів країни і Європарламенту. Протягом 14 років Дрюон займав посаду постійного секретаря Французької академії. З 2007 року він був найстаршим із обранців Французької Академії, що відає питаннями розвитку літератури і різних видів мистецтва, виданням академічного словника. Моріс Дрюон став одним з 75 володарів Великого хреста ордена Почесного легіону — вищої державної нагороди Франції. Удостоєний високих державних нагород Аргентини, Бельгії, Бразилії, Великої Британії, Греції, Італії, Лівану, Марокко, Мальти, Мексики, Монако, Португалії, СРСР (орден Дружби народів), Росії, Сенегалу, Тунісу. Помер 14 квітня 2009 року. Похований у своєму маєтку — абатстві Фез, що в місті Лез-Артіг-де-Люссак.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

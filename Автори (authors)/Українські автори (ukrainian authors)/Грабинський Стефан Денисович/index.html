@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Грабинський Стефан Денисович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Грабинський Стефан Денисович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrabinskyy-stefan-denysovych.webp" alt="Грабінський Стефан Денисович" title="Грабінський Стефан Денисович" data-full="./hrabinskyy-stefan-denysovych.webp" /></div>
+        <div class="prose-text">
+          <p>1887 р., м. Кам&#x27;янка Струмилова, Львівщина – 12.11.1936 р., Львів.</p>
+          <p>Народився у родині українців греко-католицького віросповідання. Батько, Денис Грабинський, повітовий суддя, належав до кола староруських патріотів, а брат був уніятським священиком.</p>
+          <p>Сухоти, ця фатальна хвороба європейських письменників початку сторіччя, не обминула і Стефана. Життя його проминуло в постійному страху й очікуванні рішенця. Мешкав з родиною спочатку під Самбором, а згодом перебрався до Львова. Видав кілька збірок моторошних оповідань – &quot;Демон руху&quot; (1919), &quot;Шалений подорожній&quot; (1920), &quot;Несамовита оповідь&quot; (1922), &quot;Книга вогню&quot; (1922) та ґотичних повістей – &quot;Салямандра&quot;, &quot;Тінь Бафомета&quot;, &quot;Монастир і море&quot;, &quot;Острів Ітонго&quot;. Його творчість дуже влучно схарактеризував польський дослідник Артур Гутнікевич: &quot;Грабинський, будучи представником глибокої провінції, створив особливий вид фантастики – &quot;галичанський&quot;, а тому залишався чужим для літераторів з-поза Галичини&quot;. Успіх він мав лише тут, у Львові, а в Польщі його ігнорували. Мовчання високої критики Стефан переживав дуже боляче. У квітні 1931 р. Грабинський отримав літературну премію Львова, яка врятувала йому ще кілька літ життя. Влітку 1935 р. спробував ще раз загамувати хворобу і подався з матір&#x27;ю до Кут на Косівщину. Але побут у горах не дав бажаного результату – повернувшись до Львова, Грабинський дістав крововилив. Звідтоді майже не вставав з ліжка. Незважаючи на те, що творив Грабинський польською мовою, усі редактори й видавці страшенно на цю мову нарікали за її засміченість &quot;русинізмами&quot;, себто українськими словами. Та не тільки слова, а й сама стилістика, побудова речень видавали в Грабинському українця. Джерело: Антологія української готичної прози Юрія Винничука</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

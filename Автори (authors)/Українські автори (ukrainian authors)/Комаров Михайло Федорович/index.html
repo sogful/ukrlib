@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Комаров Михайло Федорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Комаров Михайло Федорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./komarov-mykhaylo-fedorovych.webp" alt="Комаров Михайло Федорович" title="Комаров Михайло Федорович" data-full="./komarov-mykhaylo-fedorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Український бібліограф, фольклорист, лексикограф і критик</p>
+          <p>Народився 23 січня 1844 р. в с. Дмитрівка Дніпропетровської області. У1867 р. закінчив Харківський університет. Захопився збиранням фольклору — записував пісні, прислів’я та приказки, пізніше ці матеріали опублікував.</p>
+          <p>Добре обізнаний із життям простого народу, багато зусиль доклав до популяризації друкованого слова й незабаром визначився як видатний бібліограф — &quot;речник рідного письменства&quot;. Він сприяв публікації маловідомих творів П. Гулака-Артемовського, В. Забіли, В. Мови— Лиманського, українських віршів О. Кольцова, а також повного видання творів С. Руданського і п’ятитомного зібрання п’єс І. Карпенка-Карого. Видав &quot;Бібліографічний покажчик нової української літератури (1798—1883 рр.)&quot; (1883), бібліографічні покажчики до творчості І. Котляревського, Т. Шевченка, М. Лисенка, &quot;Бібліографію з питань українського фольклору&quot;. Збірка бібліографічних матеріалів &quot;Українська драматургія&quot; (1906) охоплює здобутки української драматургії за 1815— 1912 рр. На жаль, найбільшу працю вченого — бібліографічний покажчик українського книгодрукування від часів &quot;Енеїди&quot; І. Котляревського — втрачено в роки сталінських репресій. Як лексикограф М. Комаров залишив чотиритомний &quot;Словар російсько-український&quot; (1893—1898), що поряд із відомим словником Б. Грінченка істотно поповнив лексичну скарбницю української мови. М. Комаров — автор монографії &quot;Дещо з історії українського письменства XIX віку&quot;; під псевдонімом М. Комар видав &quot;Оповідання про Антона Головатого та про початок Чорноморського козацького війська&quot;, &quot;Оповідання про Богдана Хмельницького&quot;. Помер 19 серпня 1913 р. в Одесі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

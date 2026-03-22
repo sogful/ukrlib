@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Котко Кость — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Котко Кость</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kotko-kost.webp" alt="Котко Кость" title="Котко Кость" data-full="./kotko-kost.webp" /></div>
+        <div class="prose-text">
+          <p>Справжнє прізвище Микола Любченко. Народився 29.02.1896 р. у Києві в родині поліцейського службовця. Після закінчення київської гімназії у 1914 р. вступив на філологічний факультет Київського університету. Провчився рік і кілька місяців. Наприкінці 1915-го почав працювати діловодом у військово-дорожньому загоні шляхів сполучення. У 1917 р. переїхав до Бердичева, де почав друкуватися у місцевій газеті.</p>
+          <p>У 1918-му вступив до підпільної партії боротьбистів. За революційну діяльність був тричі заарештований. У березні 1920 р. Любченка прийняли до Комуністичної партії большевиків. Працював референтом у Народному комісаріаті закордонних справ, першим секретарем повпредства у Варшаві, радником повпредства у Празі, редактором газети &quot;Киевский пролетарий&quot;, членом редколегії газети &quot;Комуніст&quot;.</p>
+          <p>Публікував статті, фейлетони, памфлети, гуморески у багатьох часописах. Видав 20 книжечок гумору й сатири: &quot;Петлюрія&quot; (1921), &quot;Чудоправ-майстри&quot; (1922), &quot;Без штепселя&quot;, &quot;Дивовижна пригода з гречкою&quot;, &quot;Обличчям до спини&quot;, &quot;Як воно там за кордоном&quot; (1927), &quot;Істукрев&quot;, &quot;Сонце поза мінаретами&quot;, &quot;Сто годин на добу&quot; (1928), &quot;Теж люди&quot; (1929), &quot;Останній полон&quot;, &quot;Щоденник кількох міст&quot; (1930), &quot;Трагедія і фарс&quot; (1933). 4.12.1934 р. чекісти влаштували у його київському помешканні обшук і арештували. 14.01.1935 р. М. Любченка виключили з членів ВКП(б) &quot;як активного учасника контрреволюційної організації&quot;. Спочатку на допитах Любченко усе заперечував, та врешті змушений був визнати свою &quot;приналежність до боротьбистського крила блоку контрреволюційних націоналістичних сил&quot;. 28.03.1935 р. його засудили на 10 років з конфіскацією майна і відправили на Соловки. Коли він перебував у Білбалтлагері, 25.11.1937 р. його засудили до розстрілу. Вирок виконали у Ленінграді 8.12.1937 р. Замолоду писав лірику, яка була опублікована в &quot;Альманаху трьох&quot; (1920), пізніше публікував віршовану сатиру у &quot;Червоному Перці&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

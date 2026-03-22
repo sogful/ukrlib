@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кругляк Юрій Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кругляк Юрій Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kruhliak-iuriy-mykhaylovych.webp" alt="Кругляк Юрій Михайлович" title="Кругляк Юрій Михайлович" data-full="./kruhliak-iuriy-mykhaylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Кругляк Юрій Михайлович (27. 10. 1925, хутір Варуни, тепер Козельщинського району Полтавської області – 29. 09. 1998, Київ) – поет. Член НСПУ (1950).</p>
+          <p>Літературна премія ім. С. Олійника (1988).</p>
+          <p>Учасник 2-ї світової війни, має бойові нагороди. 1943–45 рр. працював на Пантелей­монівському вогнетрикому заводі. Навчався на українському відділенні філологічного факультету Чернівецьуого університету (1946–47), закінчив Львівський університет (1951). Пра­цював у редакції газети &quot;Ленінська молодь&quot; і &quot;Вільна Україна&quot; (обидві – Львів), очолював відділ фейлетонів редакції журналу &quot;Перець&quot; (Ки­їв, 1953–73). Дебютував 1948 у журналі &quot;Радянський Львів&quot;. Писав переважно сатиричні і гумористичні вір­ші. У збірці &quot;На крилах легенд&quot; (К., 1960) подав у власній обробці народні перекази про походження назв українських міст. Автор текстів пісень до х/ф &quot;З днем народження&quot; (1961, реж. М. Маєвська, О. Маслюков, Київська кіностудія художніх фільмів ім. О. Довженка). Упорядник збірки народних усмішок та анекдотів &quot;Тисяча усмішок&quot;, &quot;Сам себе перехитрив&quot; (обидві – 1970), &quot;Веселий оповідач&quot; (1977), спо­гадів про М. Шпака &quot;Ти будеш жить між нас&quot; (1979), віршів про Лесю Українку &quot;Співачка досвіт­ніх вогнів&quot; (1986; обидві – спіль­но з К. Шпак). Окремі твори Кругляка перекладено російською, білоруською, естонською, польською, болгарською мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

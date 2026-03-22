@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гріммельзгаузен Ганс Якоб Крістофель фон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гріммельзгаузен Ганс Якоб Крістофель фон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrimmelzhauzen-hans-iakob-kristofel-fon.webp" alt="Гріммельзгаузен Ганс Якоб Крістофель фон" title="Гріммельзгаузен Ганс Якоб Крістофель фон" data-full="./hrimmelzhauzen-hans-iakob-kristofel-fon.webp" /></div>
+        <div class="prose-text">
+          <p>Ганс Якоб Крістофель фон Гріммельзгаузен народився в червні 1622 року в Гельнгаузене, Дармштадт, Гессен, Німеччина,</p>
+          <p>помер 17 серпня 1676 року в Ренхені.</p>
+          <p>Творець барокового низинного роману. Творча і трагічна особистість. Народився під час війни, юність його припала саме на пік війни. У віці трьох років став круглим сиротою, його виховання взяв на себе полк. Брав участь у походах у ролі пажа, потім вже як воїн. По закінченню війни мандрував різними країнами, воював. Працював також чиновником. Відсутність нормальної освіти компенсував самоосвітою. Написав видатний твір класицизму &quot;Сімпліцій Сімпліцисімус&quot;. Писав загалом шванки (сатирико-дидактичний жанр). Йому притаманні: антивоєнна тема та сатира. Вважав, що треба зображувати образи точки зору, а не персонажі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

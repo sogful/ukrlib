@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кінні Джеф — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кінні Джеф</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kinni-dzhef_1.webp" alt="Кінні Джеф" title="Кінні Джеф" data-full="./kinni-dzhef_1.webp" /><img class="side-img side-thumb" src="./kinni-dzhef.webp" alt="Кінні Джеф" title="Кінні Джеф" data-full="./kinni-dzhef.webp" /></div>
+        <div class="prose-text">
+          <p>Джеф Кінні — американський дитячий письменник, який насамперед відомий як автор книжкової серії &quot;Щоденник слабака&quot;.</p>
+          <p>Народився 19 лютого 1971 року в Плейнвілі, Массачусетс, США, але своє дитинство провів у Форті Вашингтон, Меріленд. Третій з чотирьох дітей Браяна Кінні (військовий аналітик) та Патриції Кінні (викладачка в коледжі). У юному віці любив читати книги Джуді Блум, Беверлі Клірі, Пірса Ентоні та Дж. Р. Р. Толкіна. Хист же до малювання у нього проявився ще до початку навчання в школі.</p>
+          <p>У 1990-х навчався в Мерілендському університеті у Коледж-Парку, де спеціалізувався на інформатиці. Під час навчання створив комікс &quot;Ігдуф&quot;, який з&#x27;явився на сторінках студентської газети &quot;The Diamondback&quot;. 1995 року переїхав до Нової Англії. 14 грудня 2003 року одружився з Джулі Кінні. Разом з дружиною і двома синами (Вілл та Грант) живе в Плейнвілі, Массачусетс, США. У квітні 2007 року світ побачила книга &quot;Щоденник слабака&quot;, яка започаткувала однойменну книжкову серію про життя та пригоди підлітка Ґреґа Гефлі. 2016 року серія отримала премію &quot;Вибір дітей&quot; у номінації &quot;Улюблена книга&quot;. Станом на 2017 рік вийшло дванадцять книг серії. Загалом вийшло чотири екранізації книг письменника: &quot;Щоденник слабака&quot; (2010), &quot;Щоденник слабака: Правила Родрика&quot; (2011), &quot;Щоденник слабака: Собачі дні&quot; (2012) та &quot;Щоденник слабака: Довга подорож&quot; (2017). Окрім своєї письменницької кар&#x27;єри, Джеф Кінні також займається створенням онлайн-ігор. 2007 року, зокрема, світ побачила дитяча рольова відеогра &quot;Poptropica&quot; та однойменний вебсайт.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

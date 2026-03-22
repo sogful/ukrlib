@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Рушді Салман — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Рушді Салман</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./rushdi-salman.webp" alt="Рушді Салман" title="Рушді Салман" data-full="./rushdi-salman.webp" /><img class="side-img side-thumb" src="./rushdi-salman_1.webp" alt="Рушді Салман" title="Рушді Салман" data-full="./rushdi-salman_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 19 червня 1947 року в Бомбеї, штат Махараштра, Індія). Його батько, Аніс Рушді, був успішним підприємцем, випускником Кембриджа. Батьки Салмана були мусульманами, але не афішували своєї релігії. Салман Рушді — старший з чотирьох дітей і єдиний син в сім&#x27;ї.</p>
+          <p>Салман Рушді здобув хорошу освіту: спочатку його віддали в комерційну школу в Бомбеї, потім відправили до Великої Британії в престижний інтернат Регбі (Rugby School). 1964 року, під час індо-пакистанського конфлікту, сім&#x27;я Рушді, як і багато інших індійських мусульман, перебралася до Пакистану і поселилася в Карачі. За наполяганням батька Салман Рушді поступив в Кінгз-коледж Кембриджського університету (King&#x27;s College, Cambridge), де вивчав історію та англійську літературу. Тут він брав участь в Кембридзькій театральній трупі.</p>
+          <p>Отримавши диплом, Рушді знов вирушив до Пакистану і влаштувався на телебачення, потім повернувся до Великої Британії, де став працювати копірайтером у великому лондонському рекламному агентстві Ogilvy &amp; Mather. 1964 року Рушді отримав британське підданство і відтоді постійно живе у Великій Британії. Перший роман Рушді — &quot;Ґрімус&quot; (&quot;Grimus&quot;), опублікований у 1975 році, не був відзначений критиками та не мав комерційного успіху. Але через шість років — в 1981 році — з&#x27;явилася його друга книга — &quot;Опівнічні діти&quot; (&quot;Діти півночі&quot;; &quot;Midnight&#x27;s Children&quot;), що принесла письменникові популярність. За цю велику сімейну хроніку XX століття (в основі сюжету лежить історія індійської сім&#x27;ї) Рушді був удостоєний численних нагород, зокрема Букерівської премії (Booker Prize for Fiction, 1981), премії Джеймса Тейта Блека (James Tait Black Memorial Prize for fiction, 1981), літературної премії Асоціації викладачів англійської мови (English-Speaking Union Award, 1981). 1993 року за &quot;Дітей&quot; Рушді здобув премію &quot;Букер Букерів&quot; — нагороду за найкращий роман, що коли-небудь удостоювався Букера. У 1983 році вийшов третій роман Рушді — &quot;Сором&quot; (&quot;Shame&quot;), в якому багато критиків побачили алегоричне зображення політичного життя в Пакистані.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Григурко Іван Сергійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Григурко Іван Сергійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hryhurko-ivan-serhiyovych.webp" alt="Григурко Іван Сергійович" title="Григурко Іван Сергійович" data-full="./hryhurko-ivan-serhiyovych.webp" /><img class="side-img side-thumb" src="./hryhurko-ivan-serhiyovych_1.webp" alt="Григурко Іван Сергійович" title="Григурко Іван Сергійович" data-full="./hryhurko-ivan-serhiyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Відомий український письменник Іван Сергійович Григурко народився 25 лютого 1942 року в селі Волярка Красноокнянського району на Одещині.</p>
+          <p>Його батько загинув на фронтах Великої Вітчизняної війни, мати померла, коли хлопчику було всього три роки. Виховувався і навчався у дитячому будинку, а влітку, на канікулах, жив на селі у своїх дідуся та бабусі. На все життя збереглася в нього любов і повага до старих людей, які уособлювали для письменника досвід поколінь, безкорисливість і розуміння свого призначення у житті. Згодом Іван Григурко напише: &quot;Я особисто схиляюся перед старими людьми. У наших дідусях та бабусях – жива віковічна мудрість&quot;.</p>
+          <p>В 1958 р. закінчив Одеський фінансово-кредитний технікум. Служба в армії теж дала добрий гарт життя. На цей час припадають перші друковані спроби рядового, а потім і сержанта Григурка. Після закінчення служби І. Григурко вступив до Одеського університету на філологічний факультет. На студентській лаві відбувається формування Івана Сергійовича як майбутнього письменника. Одержавши диплом філолога, Григурко за направленням якийсь час працює у редакціях херсонських газет &quot;Ленінський прапор&quot; та &quot;Наддніпрянська правда&quot;, а згодом переїздить до Миколаєва. З-під пера письменника виходять повісті &quot;Гавертій &quot;, &quot;Путина&quot;, романи &quot;Канал&quot; (1974), &quot;Далекі села&quot; (1978). Газетярська праця давала змогу спілкуватися з людьми різних професій, збагачувати життєвий досвід. З&#x27;являються повісті про сучасників. Як письменник став відомим після публікації роману &quot;Канал&quot; (1974), що був перекладений російською, німецькою, болгарською та іншими мовами. У 1982 р. вийшов друком роман &quot;Ватерлінія&quot;, присвячений суд­нобудівникам м. Бережанська, за яким легко впізнати Миколаїв. За романом І. Григурка &quot;Канал&quot; створений художній фільм, в котрому головну роль виконав Іван Миколайчук. Лебединою піснею став для Григурка роман &quot;Червона риба&quot; (1982). Будучи смертельно хворим, в лікарні, письменник дописував останні рядки, але надрукованим твір так і не побачив. Помер 21 серпня 1982 р. в Миколаєві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

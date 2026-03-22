@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Апухтін Олексій Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Апухтін Олексій Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./apukhtin-oleksiy-mykolayovych.webp" alt="Апухтін Олексій Миколайович" title="Апухтін Олексій Миколайович" data-full="./apukhtin-oleksiy-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>Апухтін Олексій Миколайович (1840/1841? — 1893), російський поет.</p>
+          <p>Народився 15 (27) листопада 1840 або +1841 в Болхові Орловської губернії. Походив з небагатої дворянської родини, що мала французьке коріння.</p>
+          <p>Дитячі роки провів у батьківському родовому маєтку Павлодар Козельського повіту Калузької губернії. За характером дуже недовірливий, легко вразливий. Рано виявив неабиякі літературні здібності. Перший вірш, що одержав схвалення І. С. Тургенєва і А. А. Фета, опублікував в 14 років. Навчався в петербурзькому Імператорському училищі правознавства. Відмінно процвітав у навчанні, був одним з редакторів журналу &quot;Училищний вісник&quot;. Після закінчення Училища в 1859 деякий час служив в міністерстві юстиції. В 1863-1865 значився чиновником особливих доручень при губернаторі; потім — чиновником міністерства внутрішніх справ. За завданням керівництва кілька разів виїжджав за кордон, проте ніякого службового завзяття не виявив. Переконаний холостяк, екстравагантний і жінкоподібний естет, Апухтін вважав за краще вести спосіб життя сибарита. У середовищі золотої молоді мав репутацію жартівника, дотепного і блискучого імпровізатора. Був завсідником Англійського клубу. Широку популярність здобули також романси П.І. Чайковського та інших російських композиторів, покладені на слова Апухтина (&quot;Забути так скоро&quot; (1870), &quot;Він так мене любив&quot; (1875), &quot;Ні відклику, ні слова, ні привіту&quot; (1875), &quot;День чи панує&quot; ( 1880), &quot;Ночі божевільні&quot; (1886), &quot;Коли так радісно в обіймах твоїх ...&quot;, &quot;Чарівні слова любові і оп&#x27;яніння ...&quot;, &quot;Пара гнідих&quot; і ін.). З 1870-их Апухтін страждав хворобливим ожирінням, яке прийняло колосальні масштаби і &quot;довело його до справжньої убогості&quot;. В кінці життя він цілі дні проводив на дивані, пересуваючись з великими труднощами. Помер в Петербурзі 17 (29) серпня 1893 від водянки.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Буджолд Лоїс Макмастер — Біографія стисло</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Буджолд Лоїс Макмастер</h1>
+      <h2>Біографія стисло</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./budzhold-lois-makmaster_1.webp" alt="Буджолд Лоїс Макмастер" title="Буджолд Лоїс Макмастер" data-full="./budzhold-lois-makmaster_1.webp" /><img class="side-img side-thumb" src="./budzhold-lois-makmaster.webp" alt="Буджолд Лоїс Макмастер" title="Буджолд Лоїс Макмастер" data-full="./budzhold-lois-makmaster.webp" /><img class="side-img side-thumb" src="./budzhold-lois-makmaster_2.webp" alt="Буджолд Лоїс Макмастер" title="Буджолд Лоїс Макмастер" data-full="./budzhold-lois-makmaster_2.webp" /><img class="side-img side-thumb" src="./budzhold-lois-makmaster_3.webp" alt="Буджолд Лоїс Макмастер" title="Буджолд Лоїс Макмастер" data-full="./budzhold-lois-makmaster_3.webp" /></div>
+        <div class="prose-text">
+          <p>Лоїс Макмастер Буджолд (англ. Lois McMaster Bujold) — американська письменниця-фантаст. Широкої популярності набула завдяки циклу фантастичних творів про Майлза Форкосиганом, сина високопоставленого аристократа з мілітаризованої планети Барраяр (Сага про Форкосиганом). В останні роки також активно розвиває фентезійний цикл про королівстві Шаліон.</p>
+          <p>Нагороджена літературними преміями &quot;Х&#x27;юго&quot; тричі (за твори &quot;У вільному падінні&quot;, &quot;Гори скорботи&quot;, &quot;Паладин душ&quot;) і &quot;Х&#x27;юго&quot; п&#x27;ять разів (за &quot;Гори скорботи&quot;, &quot;Гра Форов&quot;, &quot;Барраяр&quot;, &quot;Танець відображень &quot;,&quot; Паладин душ &quot;).</p>
+          <p>Народилася в Коламбусі, штат Огайо, в 1949. Закінчила Upper Arlington High School в 1967 і вчилася в Університеті Штату Огайо з 1968 по 1972. Мати двох дітей: Анни, яка народилася в 1979, і Пола, який народився в 1981.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

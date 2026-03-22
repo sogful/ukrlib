@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Варґас Льйоса Маріо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Варґас Льйоса Маріо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vargas-lyosa-mario.webp" alt="Варґас Льйоса Маріо" title="Варґас Льйоса Маріо" data-full="./vargas-lyosa-mario.webp" /><img class="side-img side-thumb" src="./vargas-lyosa-mario_1.webp" alt="Варґас Льйоса Маріо" title="Варґас Льйоса Маріо" data-full="./vargas-lyosa-mario_1.webp" /></div>
+        <div class="prose-text">
+          <p>Хорхе Маріо Педро Вfргас Льйоса перуанський прозаїк, драматург, есеїст, філософ, публіцист, політичний і громадський діяч, лауреат Нобелівської премії 2010 за &quot;картографію владних структур і гостре зображення людського опору, бунту й поразки&quot;.</p>
+          <p>Народився Варгас Льйоса 28 березня 1936 року в перуанському місті Арекіпа у сім&#x27;ї дипломата Ернесто Варгаса Мальдонадо (Ernesto Vargas Maldonado) та Дори Льйоса Урета (Dora Llosa Ureta). Слід зазначити, що у Латинській Америці люди часто мають подвійне прізвище: перше — від батька, друге — від матері, як це сталося у випадку Варгаса Льйоси та його батьків.</p>
+          <p>Невдовзі після народження хлопчика батьки розлучилися, і мати з сином переїхала у Болівію, де вони прожили наступні 9 років. Після чого повернулися на батьківщину, спочатку у провінційне містечко П&#x27;юру, через рік до Ліми. Тут батьки помирилися і знову почали жити разом. Закінчив католицьку школу, а у 1950 році — військове училище &quot;Леонсіо Прадо&quot;. Вчився на філологічному факультеті університету Сан-Маркос. У 1958 — отримав стипендію Мадридського університету і виїхав до Європи та США. Тривалий час жив у Британії. З 1990-х рр. — переважно в Іспанії. Вже перший його роман &quot;Місто і пси&quot; (La ciudad у los perros, 1963) зробив письменника відомим, став культовою книгою для молоді. 1990 — балотувався на посаду президента Перу від партії &quot;Демократичний фронт&quot;, але програв у другому турі Альберто Фухіморі, який згодом став диктатором і режим якого Варгас Льйоса жорстко і переважно справедливо критикував. 1993 — отримав громадянство Іспанії, не відмовляючись від перуанського — хоча був на межі втрати останнього через негативне ставлення до нього тогочасної влади Перу. Член Іспанської королівської академії (ісп. Real Academia Española). У листопаді 2014 року, за сприяння посольства Іспанії, Маріо Варгас Льйоса відвідав Україну, побувавши у Києві й Дніпрі. 11 листопада він поспілкувався зі студентами Київського Національного університету ім. Тараса Шевченка. Слава прийшла до Маріо Варгаса Льйоси у 1960-х, коли він написав &quot;Місто і пси&quot;, &quot;Зелений дім&quot;, &quot;Розмову в Соборі&quot;. Перший роман Варгаса Льйоси &quot;Місто і пси&quot; (&quot;La ciudad y los perros&quot;, 1963) спричинив у Лімі скандал і був підданий осуду з боку офіційної влади, після чого книгу було заборонено і спалено. Роман показав, які безчинства дідівщини існують у перуанській армії. &quot;Місто і пси&quot; став культовою книгою для молодіжної читацької аудиторії СРСР. У СРСР і США роман було екранізовано. Радянська кінострічка &quot;Ягуар&quot; була відзнята чилійським режисером Себастьяном Аларконом у 1986 році. Твори Варгаса Льйоси відображають його бачення Перу і його життєвий досвід як перуанця. З часом він поступово розширив свій діапазон і взявся за висвітлення проблем, що постають в інших частинах світу.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

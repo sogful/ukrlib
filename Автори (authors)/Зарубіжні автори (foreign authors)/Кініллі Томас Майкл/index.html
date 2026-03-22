@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кініллі Томас Майкл — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кініллі Томас Майкл</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kinilli-tomas-maykl.webp" alt="Кініллі Томас Майкл" title="Кініллі Томас Майкл" data-full="./kinilli-tomas-maykl.webp" /><img class="side-img side-thumb" src="./kinilli-tomas-maykl_1.webp" alt="Кініллі Томас Майкл" title="Кініллі Томас Майкл" data-full="./kinilli-tomas-maykl_1.webp" /></div>
+        <div class="prose-text">
+          <p>Томас Майкл Кініллі, AO (англ. Thomas Michael Keneally; нар. 7 жовтня 1935, Сідней) — австралійський письменник, драматург та автор документальної прози. Насамперед відомий завдяки роману &quot;Список Шиндлера&quot;, написаному під враженням від життя Леопольда Пфефферберга, який пережив Голокост. 1982 року твір отримав Букерівську премію. За мотивами роману створено фільм &quot;Список Шиндлера&quot;, який отримав Премію &quot;Оскар&quot; за найкращий фільм.</p>
+          <p>Народився 7 жовтня 1935 року в Сіднеї, Австралія, в сім&#x27;ї ірландських католиків. Свої перші дитячі роки провів у різних містах на півночі Нового Південного Уельсу, але 1942 року разом із сім&#x27;єю знову повернувся до Сіднея. Через астму багато часу проводив за читанням книжок.</p>
+          <p>Після служби в армії вступив до коледжу Святого Патріка в Стратфілді. Згодом навчався в семінарії Святого Патріка в Менлі, Новий Південний Уельс, але покинув навчання до свого посвячення у сан священика. У 1960—1967 роках працював вчителем середньої школи в Сіднеї. У 1968—1970 роках працював викладачем драми в Університеті Нової Англії, Новий Південний Уельс. Входив до складу низки літературних та політичних австралійських інституцій. У 1991—1995 роках працював як запрошений професор в Каліфорнійському університеті в Ірвіні та Нью-Йорському університеті. 1964 року опублікував свій дебютний роман під назвою &quot;Семінарія у Віттоні&quot;, а після публікації роману &quot;Приведіть жайворонків та героїв&quot; (3-тій за ліком) покинув роботу, щоб повністю присвятити себе письменницькій кар&#x27;єрі. Три його романи — &quot;Пісня Джіммі Блексміта&quot;, &quot;Лісові плітки&quot; та &quot;Конфедерати&quot; — потрапили до короткого списку Букерівської премії. Став відомим завдяки роману &quot;Список Шиндлера&quot; (1982), що розповідає про Оскара Шиндлера, члена нацистської партії, який врятував життя 1300 євреїв, визволивши їх з концентраційних таборів Польщі та Німеччини. Роман приніс авторові Букерівську премію. 1993 року режисер Стівен Спілберг презентував однойменну екранізацію з Ліамом Нісоном, Рейфом Файнзом та Беном Кінгслі в головних ролях. 1983 року письменника нагороджено орденом Австралії за заслуги перед літературою. 1965 року одружився з Джудіт Мартін, з якою має дві дочки. Разом із сім&#x27;єю мешкає в Сіднеї.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

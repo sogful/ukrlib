@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Григорук Анатолій Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Григорук Анатолій Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hryhoruk-anatoliy-ivanovych.webp" alt="Григорук Анатолій Іванович" title="Григорук Анатолій Іванович" data-full="./hryhoruk-anatoliy-ivanovych.webp" /><img class="side-img side-thumb" src="./hryhoruk-anatoliy-ivanovych_1.webp" alt="Григорук Анатолій Іванович" title="Григорук Анатолій Іванович" data-full="./hryhoruk-anatoliy-ivanovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Поет, прозаїк, перекладач Анатолій Григорук народився 20 березня 1932 року в селі Махаринці на Вінниччині в родині службовця.</p>
+          <p>У 1956 році він закінчив філологічний факультет Київського державного університету ім. Тараса Шевченка. Майбутній письменник два роки вчителював на Хмельниччині, працював завідувачем редакції у видавництві &quot;Веселка&quot;, викладачем на факультеті журналістики Київського державного університету ім. Т. Г. Шевченка, головним редактором журналу &quot;Малятко&quot;.</p>
+          <p>Першу книжку А. Григорука &quot;Семафори відкрито&quot; надруковано у видавництві &quot;Веселка&quot; 1964 року. За нею побачили світ &quot;Гусак Червонолап&quot;, &quot;Сніговик-дражнилко&quot;, &quot;Жилетка &quot;Пінгвін&quot;, &quot;Солом&#x27;яне море&quot;, &quot;Чим хата багата&quot;, &quot;Що край, то звичай&quot;, &quot;Побрехенька про лиху напасть&quot;, &quot;Волелюбний вітер&quot;, &quot;Праправнук барона Мюнхгаузена&quot;, &quot;В Поторочі чорні очі…&quot;, &quot;Триста бочок із медами&quot; т а багато інших. Вірші, казки, оповідання та повісті на морально-етичні теми, пізнавальні мініатюри про розмаїтий довколишній світ, пісні, загадки, лічилки, скоромовки – власне, майже всі популярні жанри дитячої літератури не лишаються поза увагою письменника. Анатолій Іванович Григорук – заслужений журналіст України, відмінник народної освіти, лауреат премії ім. Наталі Забіли.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

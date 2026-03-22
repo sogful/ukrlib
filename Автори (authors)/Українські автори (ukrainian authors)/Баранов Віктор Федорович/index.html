@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Баранов Віктор Федорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Баранов Віктор Федорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./baranov-viktor-fedorovych.webp" alt="Баранов Віктор Федорович" title="Баранов Віктор Федорович" data-full="./baranov-viktor-fedorovych.webp" /><img class="side-img side-thumb" src="./baranov-viktor-fedorovych_1.webp" alt="Баранов Віктор Федорович" title="Баранов Віктор Федорович" data-full="./baranov-viktor-fedorovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Баранов Віктор Федорович — український письменник (поет, прозаїк, перекладач).</p>
+          <p>Голова Національної спілки письменників України (із жовтня 2011 по липень 2014), головний редактор літературного журналу &quot;Київ&quot;, віце-президент Товариства &quot;Україна-Румунія&quot;, член Комітету з присудження щорічної премії Президента України &quot;Українська книжка року&quot;.</p>
+          <p>Віктор Баранов народився 14 жовтня 1950 р. у с. Кривуші Кременчуцького району на Полтавщині. Закінчив Кривушівську 8-річну школу (1966), Кременчуцьку середню школу №10(1968). 1974 року закінчив філологічний факультет Київського університету ім. Т. Шевченка. Працював на видавничій роботі. З 1983 року він працював секретарем Національної спілки письменників України, а 19 листопада 2011 р. його було обрано головою спілки. Він змінив на цій посаді Володимира Яворівського, що очолював Національну спілку письменників України протягом десяти років. Віктор Баранов також був головним редактором літературного журналу &quot;Київ&quot;, віце-президентом Товариства &quot;Україна-Румунія&quot;. Письменник Віктор Баранов брав участь у зустрічах із читачами (1985, Тернопіль, Бережани; 1987, Тернопіль, Бережани, Підволочиськ), святах літератури &quot;Золота осінь&quot; (1985, Тернопіль, Теребовля, Чортківський район), &quot;Тернопільська весна&quot; (1989, Тернопіль, Бучач, Збараж), &quot;Медобори&quot; (1996, Збараж, Ланівці), &quot;Хліб України&quot; (1997, Тернопіль), відзначенні 70-річчя від дня народження Р. Андріяшика (2003, Тернопіль, Борщів). Помер уранці 30 липня 2014 року у віці 63 років у Києві після тривалої тяжкої хвороби. Похований на Байковому кладовищі (ділянка № 33).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Больманн Забіне — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Больманн Забіне</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bolmann-zabine.webp" alt="Больманн Забіне" title="Больманн Забіне" data-full="./bolmann-zabine.webp" /></div>
+        <div class="prose-text">
+          <p>Забіне Больманн (народилася 5 березня 1969) — німецька актриса, мабуть, найвідоміша як німецька озвучка Лізи та Меггі Сімпсон у &quot;Сімпсонах&quot;. Найбільш активно займається дубляжем дитячого телебачення. У 1980-х і 1990-х роках майже не було дубльованої дитячої передачі, в якій її не можна було б почути хоча б як &quot;голосу&quot;. Завдяки дуже високому і м&#x27;якому голосу її часто використовують для озвучування маленьких дітей і підлітків. Больманн також працює як письменниця і написала шість книг.</p>
+          <p>Написала серію книг про маленьку Соню:</p>
+          <p>1. Історія маленької Соні, яка не могла заснути. (Die Geschichte vom kleinen Siebenschläfer, der nicht einschlafen konnte). 2. Історія маленької Соні, яка не хотіла прокидатися. (Die Geschichte vom kleinen Siebenschläfer, der nicht aufwachen wollte). 3. Історія маленької Соні, яка не хотіла відмовлятися від своєї ковдри. (Die Geschichte vom kleinen Siebenschläfer, der seine Schnuffeldecke nicht hergeben wollte). 4. Історія про маленьку Соню, яка цілий день буркотіла. (Die Geschichte vom kleinen Siebenschläfer, der den ganzen Tag lang grummelig war). 5. Історія маленької Соні, яка зовсім не боялася темряви. (Die Geschichte vom kleinen Siebenschläfer, der überhaupt keine Angst im Dunkeln hatte). 6. Історія про маленьку Соню, яка хотіла побажати місяцю добраніч. (Die Geschichte vom kleinen Siebenschläfer, der dem Mond Gute Nacht sagen wollte).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дебру Тьєррі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дебру Тьєррі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./debru-tierri.webp" alt="Дебру Тьєррі" title="Дебру Тьєррі" data-full="./debru-tierri.webp" /></div>
+        <div class="prose-text">
+          <p>Тьєррі Дебру — бельгійський франкомовний драматург, режисер та актор. Один з найпопулярніших сучасних драматургів Бельгії.</p>
+          <p>Народився 16 січня 1963 року у Ватермаль-Буафорі, одній з комун Брюссельського столичного регіону. Багато років сусідував із маляром Полем Дельво, а в шестирічному віці виявив перші акторські здібності, зігравши Балу у шкільній виставі &quot;Книга джунглів&quot; за Редьярдом Кіплінгом.</p>
+          <p>Згодом навчався у брюссельському Національному вищому інституті видовищних мистецтв (фр. Institut national supérieur des arts du spectacle; INSAS). Під час робітні з письменства познайомився з драматургом Мішелем Вінавером (Michel Vinaver) і написав першу п&#x27;єсу D&#x27;une (не публікувалася). Упродовж років поєднує режисуру, драматургію, акторство та написання сценаріїв для французького телебачення. 1992 року здобуває нагороду Франкомовної спільноти Бельгії за найкращу виставу, створену за його власною п&#x27;єсою &quot;Вокзал Терміні, Рим&quot; (в оригіналі назва італ. Termini Roma). Виконав роль слуги лорда Стаунтона у фільмі &quot;Шахова партія&quot; (La Partie d&#x27;échecs, 1994) Іва Аншара (Yves Hanchar) з Катрін Деньов і П&#x27;єром Рішаром. 1999 року, за п&#x27;єсу &quot;Лялечка з Титаніка&quot; (фр. La Poupée Titanic) зібрав ціле гроно нагород: від Артистичної спілки (фр. L&#x27;Union des Artistes), Товариства драматургів і театральних композиторів Лянсмана (фр. Société des auteurs et compositeurs dramatiques — SACD-Lansman) та Королівської академії французької мови і літератури Бельгії. Того ж року написав сценічну адаптацію роману Михайла Булгакова &quot;Майстер і Маргарита&quot;, прем&#x27;єра якої відбулася у 2000 році на сцені брюссельського Театру [на площі] Мучеників (Théâtre des Martyres). Одержавши 2003 року стипендію для письменників, пише п&#x27;єсу &quot;Книжконюх&quot; (фр. Le Livropathe), того ж року режисує спектакль за цим твором і завдяки йому стає володарем бельгійської Театральної Премії (Prix du Théâtre). У 2005 році його нагороджено літературною премією Парламенту французької спільноти Бельгії (Parlement de la Communauté française de Belgique) за драму &quot;Місячний король&quot; (фр. Le Roi Lune), присвячену подіям з життя Людвіга II Баварського. Є автором понад двадцяти п&#x27;єс, сценічних адаптацій і сценаріїв, які виходили друком переважно у бельгійському Видавництві Лянсмана (фр. Éditions Lansman). Переклав французькою і втілив на сцені п&#x27;єсу &quot;Бідерман і палії&quot; Макса Фріша. 2010 року стає керівником Королівського паркового театру (або Театру Дю Парк; Théâtre royal du Parc) у Брюсселі. У 2013 році його було відзначено нагородою &quot;За найкращий сценарій&quot; на Міжнародному кінофестивалі у Люшоні за серіал &quot;Мовчання церков&quot; (фр. Le Silence des églises) для каналу France 2. Фільм заснований на реальних подіях і порушує тему сексуального насильства над дітьми у католицькій церкві. Першою публікацією українською мовою стала його п&#x27;єса &quot;Книжконюх&quot; у перекладі Івана Рябчія, її було вміщено у спеціальному номері сучасної бельгійської драматургії журналу &quot;Всесвіт&quot; наприкінці 2017 року. П&#x27;єсу також представляла режисерка Ганна Турло під час серії перформативних читань &quot;Книжка на сцені&quot; у 2020 році.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

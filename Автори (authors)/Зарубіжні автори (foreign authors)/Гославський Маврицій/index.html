@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гославський Маврицій — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гославський Маврицій</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hoslavskyy-mavrytsiy.webp" alt="Гославський Маврицій" title="Гославський Маврицій" data-full="./hoslavskyy-mavrytsiy.webp" /></div>
+        <div class="prose-text">
+          <p>Маурицій Гославський народився у 1802 році в містечку Фрампіль (тепер Косогірка). А дитинство пройшло у Нігині, що на Кам&#x27;янеччині, — біля мальовничих товтрів – подільських медоборів. Печер, у скелястих берегах Смотрича.</p>
+          <p>Щодо освіти, то спочатку вчився у Вінниці та Кам&#x27;янці-Подільському, опісля закінчив Кременецький ліцей. У середині двадцятих років XIX століття вчителював. На цей період припадає початок його поетичної творчості. Що ж лягло в її основу? Передусім, історичні події, героїзм українського народу. Мальовнича природа рідного краю. Здебільшого, вірші народжувались під впливом народних переказів і легенд.</p>
+          <p>Відтак Маурицій Гославський став одним з перших майстрів художнього слова і дослідників українського фольклору. Так, у поемі &quot;Поділля&quot; зі знанням справи оспівав весільний обряд. Але напад турків припиняє весілля. Молодий козак Артем береться за зброю, а його наречена Зося з іншими односельчанами ховається в печері над Смотричем. І коли, здавалося, небезпека минула, вона з дівчатами вийшла зі сховища. їх чекала трагічна доля. Згодом автор писав: &quot;Змістом цієї частини поеми є винищення кількох тисяч людей у Залуцьких печерах у Кам&#x27;янець-Подільському повіті... Ті печери, вимиті в скелях водою, тягнуться під землею понад двадцять верств і закінчуються у селі Уманцях. У 1826 році в Одесі з&#x27;явився його вірш &quot;На смерть Пестеля, Муравйова та інших мучеників російської свободи&quot;. Наш земляк у цьому творі з гнівом затаврував душителів російської свободи. Прославив борців проти царського самодержавства. Темі волелюбства він присвятив також у 1827 році вірш &quot;Дума про Нечая&quot;. З любов&#x27;ю описав про те, як козацький полк під проводом народного героя Данила Нечая у червні 1649-го завдав поразки польським шляхетським загонам, а в липні у районі Проскурова-Чорного Острова військам подільського каштеляна Лянцкорського. Дух волелюбства керував Маурицієм Гославським і тоді, коли він сам служив у російській армії. На той час у ніч на 29 листопада 1830 року спалахнуло польське національне повстання проти царського самодержавства. Не вагаючись поет став у стрій повстанців. Його учасники були розсіяні каральними військами і відступили до Галиччини. Там австрійський уряд їх роззброїв. Мауриція Гославського заарештували і кинули до тюрми. Але його розум і талант не згасли навіть у неволі. Адже продовжував творити. Зокрема, з під його пера вийшов вірш &quot;Пророк України&quot;, який пройнятий демократичними та волелюбними почуттями. Славний уродженець подільської Косогірки був у розквіті творчих сил, коли тюремні застінки зупинили серце поета. Це трапилось 17 листопада 1834 року у Станіславі (тепер Івано-Франківськ).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

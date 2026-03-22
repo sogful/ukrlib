@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Білиловський Кесар Олександрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Білиловський Кесар Олександрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bilylovskyy-kesar-oleksandrovych.webp" alt="Білиловський Кесар Олександрович" title="Білиловський Кесар Олександрович" data-full="./bilylovskyy-kesar-oleksandrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 4 березня 1859 року в селі Стополівці (нині с. Вознесенське Золотоніський район Черкаська область) Золотоніського повіту Полтавської губернії у родині фельдшера єврейської лікарні. Гімназійну освіту отримував у Полтаві та Дерпті.</p>
+          <p>1875 року вступив на медичний факультет Дерптського університету, однак через кілька місяців переїхав до Лейпцига, де продовжив освіту у Лейпцизькому університеті, згодом навчався на медичному факультеті Віденського університету. Завершив медичну освіту в Єнському університеті.</p>
+          <p>Отримавши ступінь доктора медицини та хірургії та повернувшись до України, Кесар Білиловський не зміг дістати посади в Полтаві і 1885 р. вирушив працювати городовим лікарем до м. Петропавловська (Казахстан). З жовтня 1892-го по січень 1899 року працював у медичному відділенні петербурзького губернського правління й медичному департаменті. Потім працював у Петрозаводську Олонецької губернії. У 1910 році Білиловського направили на боротьбу з епідемією холери в Криму, під час Першої світової війни він був начальником військового госпіталю у Феодосії. У Криму Кесар Білиловський залишався до 1925 року, коли його відрядили в м. Решт (Персія) лікарем амбулаторії при радянському консульстві. Повернувшись з Персії 1932 року, жив кілька місяців у Москві, а потім переїхав до Сімферополя. Друкувався в галицьких журналах &quot;Світ&quot;, &quot;Зоря&quot;, в антологіях &quot;Вік&quot;, &quot;Українська Муза&quot;. Перебував у дружніх взаєминах з В. Самійленком, І. Франком, М. Мікешиним та ін. Перекладав на українську мову твори Ґете, Шиллера. Переклав німецькою мовою вірш Тараса Шевченка &quot;Нащо мені чорні брови&quot; (1876). Деякі поезії Білиловського набули популярності (&quot;В чарах кохання&quot;, &quot;Вечірня пісня&quot; та ін.). У журналі &quot;Зоря&quot; опублікував статті про вшанування пам&#x27;яті Шевченка — &quot;Поминки Шевченка в Петербурзі&quot; (1893, № 8), &quot;Шевченкові роковини в Петербурзі&quot; (1894, № 7).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Борзяк Дмитро Семенович — Біографія (з антології Юрія Винничука)</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Борзяк Дмитро Семенович</h1>
+      <h2>Біографія (з антології Юрія Винничука)</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./borziak-dmytro-semenovych.webp" alt="Борзяк Дмитро Семенович" title="Борзяк Дмитро Семенович" data-full="./borziak-dmytro-semenovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 25 жовтня 1897 р. в селі Пищики Іркліївського (нині Золотоніського) району. Батько майбутнього прозаїка мав 200 десятин землі й брав великі підряди на будівництво залізниць.</p>
+          <p>Дмитро закінчив Золотоніську класичну гімназію (1915), в якій свого часу навчалися також М. Драй-Хмара, Наталя Лівицька-Холодна. Відтак Д. Борзяк вступив на медичний факультет Київського університету, де власне й усвідомив себе українцем, брав активну участь в &quot;Українській студентській громаді&quot;.</p>
+          <p>Чим займався він у роки громадянської війни – невідомо. У 1921 р. Д. Борзяк повернувся до Золотоноші, де зайнявся сільським господарством, давав приватні уроки з математики. З 1923 р. він знову у Києві і повністю віддається літературній роботі. Незабаром вийшло кілька збірок його прози. У 1928 р. він уклав договір із Державним видавництвом на видання книги &quot;Руйнування Батурина&quot;, але почати писати не встиг. Його у 1929 р. заарештували у зв&#x27;язку з процесом СВУ. Через кілька місяців Д. Борзяк вийшов на волю. Однак про продовження літературної роботи не могло бути й мови. Життєві обставини письменника неухильно погіршувалися. Після арешту Зерова Борзяк усвідомив невідворотність власної трагедії. Так воно й сталося: 21 квітня 1938 р. письменника, який на той час займався фізичною працею, заарештували. 31 грудня 1938 р. Д. Борзяка засудили до розстрілу. Однак 5 травня 1939 р. Верховний Суд СРСР визначив інше покарання: 10 років ув&#x27;язнення й 5 років заслання. Д. Борзяк помер того ж року від невиліковної хвороби.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

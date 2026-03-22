@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Короненко Світлана Анатоліївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Короненко Світлана Анатоліївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./koronenko-svitlana-anatoliivna.webp" alt="Короненко Світлана Анатоліївна" title="Короненко Світлана Анатоліївна" data-full="./koronenko-svitlana-anatoliivna.webp" /><img class="side-img side-thumb" src="./koronenko-svitlana-anatoliivna_1.webp" alt="Короненко Світлана Анатоліївна" title="Короненко Світлана Анатоліївна" data-full="./koronenko-svitlana-anatoliivna_1.webp" /><img class="side-img side-thumb" src="./koronenko-svitlana-anatoliivna_2.webp" alt="Короненко Світлана Анатоліївна" title="Короненко Світлана Анатоліївна" data-full="./koronenko-svitlana-anatoliivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Короненко Світлана Анатоліївна— український прозаїк, поет і журналіст. Родом з міста Фастова, де народилася16 липня 1960 року. Закінчила факультет журналістики Київського університету в 1985 році. Працювала у київських журналах &quot;Ранок&quot;, &quot;Українська культура&quot;. З 2002 року працює заступником директора ТО &quot;Культура&quot; Національної радіокомпанії України.Лауреат премій імені Є. Плужника, імені І. Франка, імені М. Коцюбинського, імені Д. Нитченка та ін. Відзначена премією &quot;Літературна Україна&quot; за найкращу поетичну публікацію 2019 року.</p>
+          <p>Світлана Короненко дебютувала збіркою віршів у масовотиражній газеті &quot;Літературна Україна&quot; в 1979 році. Велика добірка віршів зі вступним словом Івана Драча стала сенсаційною, потужно ввійшовши в українську поезію. Перша книга &quot;Сузір&#x27;я веснянок&quot; з&#x27;явилася у 1982 році. Дана подія остаточно закріпила за нею репутацію однієї з надій української літератури та яскравих постатей талановитого покоління. Дебютна книжка з&#x27;явилася, коли Світлана Короненко була студенткою столичного університету і на адресу юної поетеси не жаліли похвальних слів, а її стиль порівнювали з Артюром Рембо. Короненко відразу прийняли до Національної спілки письменників України, де вона була наймолодшою, їй тоді минуло 22 роки.</p>
+          <p>Якщо першому періоду творчості характерний бунтарський характер, тяжіння до білого вірша і верлібру, з уникненням класичних форм поезії,то після тривалої паузи, можна спостерігати новий стиль Короненко — вигадливий римований твір. Після тривалого мовчання Світлана Короненко писала твір за твором, що врешті й склало її прекрасну подарункову книжку &quot;Вірші з осені&quot;(2017). Далі була збірка &quot;Дебора&quot;, в основі якої історія про юнацьку любов Миколи Платоновича Бажана, яка стверджує, що справжні почуття не підвладні часу. Крайня на цей момент книжка авторки &quot;Містерії&quot; є своєрідним автопортретом, де помітно мистецькі й духовні обрії мисткині. Світ поезії і образів Світлани Короненко підштовхує до рефлексій та роздумів, у своїх віршах вона показує відвагу і зухвалість у висвітленні тих чи тих тем. А ще вона вміє бути відвертою з собою, змінюватись, сміливо експериментувати і ділитись простором небанальної думки. Одна з найважливіших рис митця — розуміти світ і відкривати нові межі. Книги Мирослава Лаюка — підтвердження цьому.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

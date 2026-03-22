@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шарр&#x27;єр Анрі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Шарр&#x27;єр Анрі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./sharrier-anri.webp" alt="Шарр&#x27;єр Анрі" title="Шарр&#x27;єр Анрі" data-full="./sharrier-anri.webp" /></div>
+        <div class="prose-text">
+          <p>Анрі Шарр&#x27;єр — французький письменник, відомий завдяки автобіографічному роману &quot;Метелик&quot;, в якому описав свій арешт і неодноразові втечі з колонії у Французькій Ґвіані, а також його сиквелу &quot;Ва-банк&quot;.</p>
+          <p>Майбутній письменник народився 16 листопада 1906 р. у французькій комуні. Він рано залишився без матері, і тільки-но йому виповнилося 17 років, вступив на військову службу до ВМС Франції. Після її закінчення Шарр&#x27;єр повернувся до Парижа, одружився. Дружина Анрі Шарр&#x27;єра народила йому дочку, проте незабаром подружжя розлучилося. Анрі втягнувся в злочинну діяльність і вже 1931 р. був заарештований. Його звинуватили у вбивстві, засудили до довічного ув&#x27;язнення та 10 років каторжних робіт у Гвіані, у смертельно небезпечних для європейця кліматичних умовах. У результаті він провів там 11 років, упродовж яких зробив 9 спроб втечі. Вдев&#x27;яте йому вдалося втекти з колонії й дістатися Венесуели. Тут його знову заарештували та засудили до ув&#x27;язнення на рік.</p>
+          <p>Вийшовши на волю, Ані Шарр&#x27;єр залишився жити у Венесуелі, одружився з місцевою мешканкою і став вітчимом для її дочки. Успіх супроводжував йому — Анрі вдалося стати господарем трьох готелів, двох ресторанів, прибуткового бізнесу з лову лангустів та креветок. Він став відомим далеко за межами свого міста та країни, був частим гостем на телебаченні. Помер Анрі Шарр&#x27;єр у липні 1973 р. від раку горла. Смерть наздогнала письменника в столиці Іспанії — Мадриді. 1973 року його перший роман екранізував режисер Франклін Шеффнер. Головні ролі в фільмі &quot;Метелик&quot; виконали Стів Макквін та Дастін Гоффман. В 2017 році на екрани вийшов однойменний римейк данського режисера Міхаеля Ноера (в головних ролях Чарлі Ганнем та Рамі Малек). Популярність письменнику принесли такі романи: книга &quot;Метелик&quot;, надрукована 1969 р. — це автобіографія Анрі Шарр&#x27;єра. Принаймні це стверджував сам автор. У ній він розповідає про своє життя, арешт, жорстоких наглядачів у колонії та звільненнях. Письменник заперечує провину у вбивстві, але визнається в скоєнні інших невеликих злочинів; мемуари &quot;Ва-банк&quot;, видані 1972 р. Шарр&#x27;єр розповідає у яких, як жив після визволення. Він брав участь у політичних змовах, розвивав бізнес, намагався пограбувати банк, і лише неймовірне везіння врятувало його від повторного ув&#x27;язнення.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

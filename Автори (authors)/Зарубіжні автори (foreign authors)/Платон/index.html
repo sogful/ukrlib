@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Платон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Платон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./platon.webp" alt="Платон" title="Платон" data-full="./platon.webp" /><img class="side-img side-thumb" src="./platon_1.webp" alt="Платон" title="Платон" data-full="./platon_1.webp" /><img class="side-img side-thumb" src="./platon_2.webp" alt="Платон" title="Платон" data-full="./platon_2.webp" /></div>
+        <div class="prose-text">
+          <p>Платон — давньогрецький мислитель, засновник філософської школи відомої як Академія Платона. Один з основоположників європейської філософії нарівні з Піфагором, Парменідом і Сократом.</p>
+          <p>Платон народився в Афінах в 428-427 рр. до н. е. Його справжнє ім&#x27;я — Аристокл. Саме слово Платон означає &quot;широкоплечий&quot;​, цей псевдонім йому в юнацтві дав учитель боротьби Аристон з Аргоса за його міцну будову тіла. Він був сином Аристона, нащадка царя Кодра, і Периктіони, предком якої був великий законодавець Солон. Грамоті він навчався в Діонісія, про якого згадує в своєму творі &quot;Суперники&quot;​. Відомо також, що він навчався боротьбі, живопису, а крім того складав дифірамби, пісні й трагедії. Пізніше схильність до поезії виявилась в художньо обробленій формі його діалогів. Оскільки він був обдарований розумово й фізично, то отримав чудову освіту, наслідком якої було його близьке знайомство з філософськими теоріями того часу. Аристотель повідомляє, що Платон спочатку був учнем Кратила, послідовника Геракліта.</p>
+          <p>В 20 років Платон зустрів Сократа й залишався з ним до самої смерті свого вчителя — всього 8 років. Згідно з аттичною легендою, у ніч перед зустріччю з Платоном Сократ бачив уві сні лебедя в себе на грудях, який високо злетів із дзвінким співом, і після знайомства з Платоном Сократ неначе вигукнув: &quot;Ось мій лебідь!&quot;​. Цікаво, що в міфології античності лебідь — птах Аполлона, а сучасники порівнювали Платона з Аполлоном як богом гармонії. Як згадує сам Платон у Сьомому листі, ще молодим він готувався до активної участі в політичному житті свого міста. Несправедливий осуд Сократа викликав у Платона розчарування в політиці Афін і став поворотним моментом в його житті. В 28 років, після смерті Сократа, Платон разом з іншими учнями великого філософа залишив Афіни й переїхав в Мегари, де жив один з відомих учнів Сократа — Евклід. У 40 років він відвідав Італію, де познайомився з піфагорейцем Архітом. Раніше він побував в Єгипті й у Кірені, але ці мандрівки він замовчує в своїй автобіографії. Він знайомиться з Діонісієм Старшим, тираном Сиракуз, і мріє втілити в життя свій ідеал правителя-філософа. Однак з ним дуже швидко виникли неприязні стосунки, хоча зав&#x27;язалась дружба з Діоном, племінником тирана. В Діоні Платон сподівався знайти гідного учня і в майбутньому — філософа на троні. Платон образив правителя своїми міркуваннями про тиранічну владу, сказав, що не все те добре, що корисно лише тирану, якщо той не відрізняється доброчесністю. За це Платона було продано в рабство на Егіну, з якого його викупив і звільнив Аннікерид, філософ мегарської школи. Пізніше Платон хотів повернути ці гроші Аннікериду, а коли той відмовився їх взяти, купив на них сад у передмісті Афін, названий на честь місцевого героя Академа Академією. В цьому саду Платон у 387 р. до н. е. заснував свою школу, відому платонівську Академію, яка існувала в Афінах аж до 529 року, доки не була закрита імператором Юстиніаном. Ще двічі він їздив у Сиракузи на вимогу Діона, сподіваючись здійснити свою мрію про ідеальну державу на землях, які йому обіцяв виділити Діонісій Молодший. І хоча ці спроби ледве не коштували Платону життя, наполегливість його є прикладом високого служіння ідеалу. У 360 році Платон повернувся до Афін і не розлучався з Академією до своєї смерті в 347 р. до н. е.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

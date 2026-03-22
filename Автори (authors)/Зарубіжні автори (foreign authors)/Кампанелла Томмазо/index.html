@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кампанелла Томмазо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кампанелла Томмазо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kampanella-tommazo.webp" alt="Кампанелла Томмазо" title="Кампанелла Томмазо" data-full="./kampanella-tommazo.webp" /><img class="side-img side-thumb" src="./kampanella-tommazo_1.webp" alt="Кампанелла Томмазо" title="Кампанелла Томмазо" data-full="./kampanella-tommazo_1.webp" /><img class="side-img side-thumb" src="./kampanella-tommazo_2.webp" alt="Кампанелла Томмазо" title="Кампанелла Томмазо" data-full="./kampanella-tommazo_2.webp" /><img class="side-img side-thumb" src="./kampanella-tommazo_3.webp" alt="Кампанелла Томмазо" title="Кампанелла Томмазо" data-full="./kampanella-tommazo_3.webp" /></div>
+        <div class="prose-text">
+          <p>(05.09.1568 — 21.05.1639)</p>
+          <p>У своїй філософії Кампанелла намагався дати наукове доказ християнства виходячи з чуттєвого сприйняття і пізнання розумом самого себе. Всесвіт є суміш буття з небуттям; зміна породжується протилежними принципами любові і розбрату. Всі речі мають душею і почуттями — кожна на своєму рівні; все прагне до самозбереження; однак розумні істоти можуть досягти цього, лише з&#x27;єднавшись з Богом.</p>
+          <p>Народився в Стіло (в Калабрії, Італія) 5 вересня 1568. У 15 років став ченцем-домініканцем, в школах ордену вивчав праці Аристотеля, Фоми Аквінського, астрологію і каббалу. Прочитавши роботу Телезио Про природу речей згідно з її власним тенденціям (De rerum natura iuxta propria початок, 1565), виступив проти аристотелівської філософії та захист Телезио з книгою Філософія, доведена за допомогою почуттів (Philosophia sensibus demonstrata, 1591). Був заарештований за звинуваченням у єресі, але незабаром випущений; потім знову заарештований у 1593, але виправданий у 1596. У цей час написав праці: Про християнської монархії (De monarchia Christianorum, 1593); Політичний діалог проти лютеран, кальвіністів і інших єретиків (Dialogo politico contra Luterani, Calvinisti e altri eretici, 1595). Заарештований знов у 1599 за звинуваченням у змові проти іспанського режиму в Неаполі, був засуджений у 1602 до довічного ув&#x27;язнення (провів у в&#x27;язницях майже 27 років), під час якого і написав головні філософські праці, зокрема Захист Галілея (Apologia pro Galileo, 1622), Про відчуття речей і магії (De sensu rerum et magia, 1620), Переможений атеїзм (Atheismus triumphatus, 1631) і безліч інших, а також поеми, мадригали, сонети і другиепоэтические твори, представлені в Обраному (Scelta, 1622). Кампанелла був звільнений у 1626, а в 1629 виправданий. Намагався донести свої ідеї до папського двору. В 1634, злякавшись нового засудження у зв&#x27;язку з нововиявленими змовою в Неаполі, втік у Париж під заступництво Людовика XIII і кардинала Рішельє. Помер Кампанелла в Парижі 21 травня 1639. У своїй філософії Кампанелла намагався дати наукове доказ християнства виходячи з чуттєвого сприйняття і пізнання розумом самого себе. Всесвіт є суміш буття з небуттям; зміна породжується протилежними принципами любові і розбрату.Всі речі мають душею і почуттями — кожна на своєму рівні; все прагне до самозбереження; однак розумні істоти можуть досягти цього, лише з&#x27;єднавшись з Богом. Політична філософія Кампанелли в його Місті Сонця (La citta del Sole, 1602) містить проповідь комуністичного, контрольованого за допомогою принципів євгеніки, суспільства, яким правлять король-жрець і три державних міністра. Ця утопічна картина відображає мрію Кампанелли про звернення всього людства в католицизм і встановлення світового держави авторитарного типу під егідою папської влади (‘монархія Месії&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

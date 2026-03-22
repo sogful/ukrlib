@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мінготе Антоніо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мінготе Антоніо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./minhote-antonio.webp" alt="Мінготе Антоніо" title="Мінготе Антоніо" data-full="./minhote-antonio.webp" /></div>
+        <div class="prose-text">
+          <p>Анхель Антоніо Мінготе Баррачіна (Ángel Antonio Mingote Barrachina) народився в місті Сітжес 17 січня 1919 року.</p>
+          <p>Відомий карикатурист, письменник, журналіст.</p>
+          <p>Навчався в Інстітуті братів Християнських шкіл. У сімнадцять років, коли почалася громадянська війна в Іспанії , він записався в Requeté і воював на боці повстанців . Він був одним із перших національних солдатів, які увійшли до Барселони. Після війни він вступив до Академії трансформації піхоти в Гвадалахарі , де почав малювати в неофіційному журналі, який поширювався в Академії і називався La Cabra . Він вивчав філософію та літературу в Університеті Сарагоси , але не закінчив ступінь. Він заснував свою резиденцію в Мадриді , де подружився з Рафаелем Азконою та Карлосом Кларімоном. Він розпочав свою кар&#x27;єру як графічний гуморист у журналі La Codorniz у 1946 році під керівництвом його директора Альваро де Лайглесіа. У 1948 році він опублікував свій перший роман &quot; Las palmeras de cardboard&quot; , а 19 червня 1953 року почав співпрацю з газетою ABC , яка тривала до його смерті. Через два роки, в 1955 році, йому доручили керувати гумористичним журналом &quot;Дон Хосе&quot;, що належить танжерській газеті &quot;España&quot;, в якому сьогодні почали друкуватися видатні письменники та карикатуристи, і він керував ним у перших ста випусках. Протягом своєї кар&#x27;єри він також співпрацював в інших виданнях, таких як Moncayo, Reconquista або Іспанський оборонний журнал. У 1974 році він писав для театру El Oso y el Madrileño , музичного журналу Маріо Клавеля. Наступного, 1975 року, він написав сценарій успішного телесеріалу Este Señor de Negro , режисера Антоніо Мерсеро у виконанні Хосе Луїса Лопеса Васкеса. Він писав сценарії для кінематографа у співпраці з Хосе Луїсом Дібілдосом. 3 квітня 2012 року він помер у Мадриді у віці 93 років від раку печінки. Його кремували 4 квітня на мадридському цвинтарі Ла-Альмудена на приватній церемонії. За життя був нагороджений численними преміями та відзнаками.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сервантес Мігель де — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Сервантес Мігель де</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./servantes-mihel-de.webp" alt="Сервантес Мігель де" title="Сервантес Мігель де" data-full="./servantes-mihel-de.webp" /><img class="side-img side-thumb" src="./servantes-mihel-de_1.webp" alt="Сервантес Мігель де" title="Сервантес Мігель де" data-full="./servantes-mihel-de_1.webp" /><img class="side-img side-thumb" src="./servantes-mihel-de_2.webp" alt="Сервантес Мігель де" title="Сервантес Мігель де" data-full="./servantes-mihel-de_2.webp" /><img class="side-img side-thumb" src="./servantes-mihel-de_3.webp" alt="Сервантес Мігель де" title="Сервантес Мігель де" data-full="./servantes-mihel-de_3.webp" /></div>
+        <div class="prose-text">
+          <p>День народження: 29.09.1547 року</p>
+          <p>Місце народження: Алкала-де-Енарес пров. Мадрид, Іспанія</p>
+          <p>Дата смерті: 23.04.1616 року Мігель де Сервантес вважається творцем нового гумористичного роману, що погубив лицарську романтику. Іспанський письменник. Датою народження вважається 29 вересня (день святого Мігеля). Народився в сім&#x27;ї хірурга, бідного ідальго. Мігель де Сервантес був хрещений 9 жовтня 1547 в Алькала-де-Енарес. У 1570 брав участь у війні проти турків. У морській битві при Лепанто (7 жовтня 1571) Сервантес позбувся лівої руки. При поверненні на батьківщину, був захоплений піратами і проданий в рабство алжирському паші. В неволі Сервантес пробув 5 років. Чотири рази намагався втекти, але всі спроби були невдалими. У 1580 Сервантес був викуплений місіонерами і повернувся в Мадрид, де зайнявся літературною творчістю. Література давала мізерний дохід, що змусило Сервантеса переїхати в Севілью і стати агентом із закупівлі провіанту для флоту. Пізніше Сервантес надходить на службу в якості збирача недоїмок. За 6 років, відданих цивільній службі, (1587-1603) Сервантес тричі опинявся у в&#x27;язниці. У 1602 році, під час чергового ув&#x27;язнення в севильскую в&#x27;язницю, Мігель де Сервантес почав роботу над романом &quot;Хитромудрий ідальго Дон Кіхот Ламанчський&quot;. Успіх роману, що вийшов в світ в 1605, привів до того, що якийсь А. Фернандес де Авельянед опублікував &quot;завершення&quot; історії про Дон Кіхота. Це змусило Сервантеса написати другу частину роману &quot;Дон Кіхот Ламанчський&quot;, опубликовынную в 1615 році. Перед смертю Сервантес постригся в ченці, вступивши в Орден терціаріїв. Помер Мігель де Сервантес 23 квітня 1616 в Мадриді. Похований за рахунок братства Ордена терціаріїв. Місце поховання не відоме. Мігель де Сервантес вважається творцем нового гумористичного роману, що погубив лицарську романтику. Серед творів Сервантеса — сонети, елегії, близько 30 п&#x27;єс, роман: &quot;Галатея&quot; (1585; пасторальний роман), &quot;Нумансія&quot; (1588; патріотична трагедія), &quot;Хитромудрий ідальго Дон Кіхот Ламанчський&quot; (1602-1605 — частина 1, 1615 — частина 2; роман, який включає близько 670 діючих осіб), &quot;Повчальні новели&quot; (1613), &quot;Нові вісім комедій і інтермедій&quot; (1615), &quot;Мандрівки Персилеса і Сихизмунды&quot; (опублікований в 1617; любовно-пригодницький роман); п&#x27;єси &quot;Алжирські звичаї&quot;, &quot;Велика султанша&quot;, &quot;Вдовый шахрай&quot;, &quot;Пильний страж&quot;, &quot;Суддя по шлюборозлучних справах&quot;; новели &quot;Великодушний шанувальник&quot;, &quot;Англійська іспанка&quot;, &quot;Бесіда двох собак&quot;, &quot;Ринконетс і Кортадильо&quot;, &quot;Високошляхетна судомойка&quot;, &quot;Циганочка&quot;, &quot;Ревнивий эстремадурец&quot;, &quot;Ліценціат Видриера&quot;</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

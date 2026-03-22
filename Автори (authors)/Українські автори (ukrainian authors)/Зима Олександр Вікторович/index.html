@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Зима Олександр Вікторович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Зима Олександр Вікторович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zyma-oleksandr-viktorovych.webp" alt="Зима Олександр Вікторович" title="Зима Олександр Вікторович" data-full="./zyma-oleksandr-viktorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Олександр Вікторович Зима народився 8 березня 1937 року в селі Рибальче, що на Херсонщині. Навчався в середній школі міста Гола Пристань. Службу в Радянській Армії проходив на Далекому Сході. Після демобілізації працював робітником у цілинному радгоспі села Мар&#x27;ївка Північноказахстанської області. Перші замальовки, вірші, кореспонденції з&#x27;являються ще в шкільні роки.</p>
+          <p>Бажання навчитися писати привело Олександра Зиму до Львівського державного університету імені Івана Франка на факультет журналістики. Після закінчення університету в 1964 році його запросили в газету &quot;Молодь України&quot;. З журналістським посвідченням об&#x27;їхав Львівську, Рівненську, Волинську області, знаходячи потрібний матеріал для газети: від проблемної статті і фейлетону до актуальної інформації в номер. Молодий журналіст очолив у Львові відділ обласної газети &quot;Ленінська молодь&quot;, працював редактором Львівського радіо та телебачення.</p>
+          <p>Свою діяльність поета почав 1965 року. Його перша повість &quot;Березовий грім&quot; була надрукувана в &quot;Ленінській молоді&quot;. В журналах &quot;Дніпро&quot;, &quot;Знання та праця&quot;, &quot;Україна&quot;, &quot;Жовтень&quot; з&#x27;являються його оповідання. Згодом Олександр Зима, маючи достатньо написаного для виходу книги, їде до Києва. Перша його книга &quot;Хліб для подорожнього&quot; вийшла у 1971 році на видавництві &quot;Молодь&quot;. У ній автор розповідає про своїх сучасників — жителів степового краю. 1973 року світ побачила його друга книга — &quot;День молодого сонця&quot;, яка вийшла на львівському видавництві &quot;Каменяр&quot;. Наступного року письменник стає членом Спілки письменників України та їде у майже рідні йому південні краї — до Миколаєва. В корабельному місті у нього з&#x27;являється багато друзів серед корабелів і рибалок, сільських працівників і місцевої інтелігенції, письменник полюбляє виступати перед місцевими школярами. На півдні він знайомиться з колгоспним керівником Миколою Миколайовичем Рябошапкою, з яким у нього зав&#x27;язується міцна дружба, результатом якої стала художньо-документальна повість &quot;Степовики&quot;, яка вийшла 1979 року. У ній автор порушує важливі питання господарювання на землі. Повернувшись до Києва, Олександр Зима завідував редакцією поезії та першої книги у видавництві &quot;Молодь&quot;. Там же, у 1982 році, написав і видав роман &quot;Мідний серпень&quot;, про життя будівельників Південноукраїнської АЕС. 1983 року написав повість &quot;Жолуді на піску&quot;, яку присвятив проблемі збереження причорноморської природи. У 1983 році поет написав повість &quot;Терези&quot;, а 1987 — свій останній науково-фантастичний роман &quot;День на роздуми&quot;, який присвятив ученим, які відкривають нові види енергії. Автор встиг його закінчити за життя, але вийшов він вже після його смерті. Наприкінці свого життя письменник почав писати казки: у 1985 році видав збірку &quot;Малий поводир&quot;, 1988 — &quot;Зачарований хлопчик&quot;. 1986 року став членом Спілки письменників СРСР. Окремі його твори було перекладено російською, грузинською, узбецькою та казахською мовами. Помер Олександр Зима від тяжкої хвороби 3 травня 1986 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

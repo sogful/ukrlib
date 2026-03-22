@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Горак Роман Дмитрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Горак Роман Дмитрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./horak-roman-dmytrovych.webp" alt="Горак Роман Дмитрович" title="Горак Роман Дмитрович" data-full="./horak-roman-dmytrovych.webp" /><img class="side-img side-thumb" src="./horak-roman-dmytrovych_1.webp" alt="Горак Роман Дмитрович" title="Горак Роман Дмитрович" data-full="./horak-roman-dmytrovych_1.webp" /><img class="side-img side-thumb" src="./horak-roman-dmytrovych_2.webp" alt="Горак Роман Дмитрович" title="Горак Роман Дмитрович" data-full="./horak-roman-dmytrovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 17 січня 1942 р. у селі Городок Львівської області.</p>
+          <p>Директор Львівського літературно-меморіального музею Івана Франка.</p>
+          <p>Активний і непересічний діяч у справі вивчення, збереження і використання з науковою і освітньою метою спадщини І.Франка. Його перу належить понад 300 досліджень і статей про І.Франка та багатьох письменників. Окремими виданнями вийшли його твори: &quot;Тричі мені являлася любов&quot;, &quot;Задля празника. У сутінках&quot;, &quot;Легенди Нагуєвич&quot;, &quot;Марія, мати Франкова&quot;, &quot;Адреси пам’яті Івана Франка у Львові&quot;, &quot;Адреси юності Франка в Дрогобичі&quot;, &quot;Де верхи взносить наш Бескид гордий…&quot;, &quot;Твого і’мя не вимовлю ніколи&quot;, &quot;Призабуті з Вовкова&quot;, &quot;Дім на Софіївці&quot; та ін. Автор сценаріїв телевізійних фільмів про Івана Франка: &quot;Рідне село Франка&quot;, &quot;Адреси генія у Львові&quot;, &quot;Дрогобич – місто юності Івана Франка&quot;, &quot;Іван Франко і Львівський університет&quot;, &quot;Іван Франко&quot;. Член Національної Спілки письменників України з 1988 року, заслужений працівник культури України, лауреат Львівської обласної премії в номінації &quot;Літературознавство, сучасна літературна критика та переклади&quot; імені Михайла Возняка, лауреат премії ім. І. Франка.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

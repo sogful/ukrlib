@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Білокопитов Микола Григорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Білокопитов Микола Григорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bilokopytov-mykola-hryhorovych.webp" alt="Білокопитов Микола Григорович" title="Білокопитов Микола Григорович" data-full="./bilokopytov-mykola-hryhorovych.webp" /><img class="side-img side-thumb" src="./bilokopytov-mykola-hryhorovych_1.webp" alt="Білокопитов Микола Григорович" title="Білокопитов Микола Григорович" data-full="./bilokopytov-mykola-hryhorovych_1.webp" /><img class="side-img side-thumb" src="./bilokopytov-mykola-hryhorovych_2.webp" alt="Білокопитов Микола Григорович" title="Білокопитов Микола Григорович" data-full="./bilokopytov-mykola-hryhorovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Білокопитов Микола Григорович (11 лютого 1954 року, Мелітополь) — поет-сатирик, критик, журналіст. Лауреат премій імені Степана Руданського та Остапа Вишні.</p>
+          <p>11 лютого 1954 року, в місті Мелітополі Запорізької області народився Микола Білокопитов. Та малий Миколка мав і свою малу Батьківщину — селище Кушугум Запорізького району, де пройшло його дитинство й де він закінчив середню школу. Потім була служба в армії — саме на флоті. Повернувшись &quot;на гражданку&quot; юнак подався працювати слюсарем, потім був залізничником та поліграфістом.</p>
+          <p>Саме останній фах (поліграфіста) й змінив кардинально долю запоріжського юнака. Спершу боло направлення на навчання до Львівського Українського поліграфічного інституту ім. Івана Федорова, якого він успішно закінчив за спеціальністю &quot;Журналістика, літературний редактор&quot;. Потім, набравшись наук, щоби здійснити свою зі своїх мрій, Микола Білокопитов подався в журналістику — якій віддав багато років свого життя. Він працював у газетах &quot;Комсомолець Запоріжжя&quot;, &quot;Запорізька правда&quot;, &quot;Запорозька Січ&quot;, &quot;Світло Оріяни&quot;. Та була ще одна мрія Миколи — писати, адже ще перші проби пера він зробив ще у шкільні роки. Навчаючись у 8 класі, опублікував свої вірші в районній газеті &quot;Червоний промінь&quot;, вже згодом, його твори з&#x27;являються в обласних газетах &quot;Комсомолець Запоріжжя&quot; і &quot;Запорізька правда&quot;. Потім було захоплення сатирою, а відтак, гуморески, байки, мініатюри друкуються в журналах &quot;Старт&quot;, &quot;Ранок&quot;, &quot;Україна&quot; і, звичайно ж, в &quot;Перці&quot;. Публікуються його твори також в &quot;Літературній Україні&quot;, колективних збірниках і навіть закордоном — в гумористичному журналі &quot;Всесміх&quot; (що виходить в Канаді). Автор книжок сатири і гумору: Член Національної Спілки письменників України з 1996 року. За свої творчі успіхи він був визнаний Лауреатом премій імені Степана Руданського та Остапа Вишні.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

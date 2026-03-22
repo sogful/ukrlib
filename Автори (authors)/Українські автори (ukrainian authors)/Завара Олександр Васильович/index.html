@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Завара Олександр Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Завара Олександр Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zavara-oleksandr-vasylovych.webp" alt="Завара Олександр Васильович" title="Завара Олександр Васильович" data-full="./zavara-oleksandr-vasylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Олександр Завара (творчий псевдонім Бабінського Олександра) — український письменник, психолог, викладач, публіцист і приватний консультант. Лауреат літературного конкурсу видавництва &quot;Смолоскип&quot; (2016).</p>
+          <p>Олександр Бабінський народився 20 листопада 1983 року у Великій Новосілці Донецької області, і наразі живе в Києві. У 2006 році закінчив філологічний факультет Мелітопольського державного педагогічного університету імені Богдана Хмельницького. У 2021 вступив до Інституту екології, економіки і права. Крім магістратури з 2021 навчається у Українській Асоціації Транзактного Аналізу</p>
+          <p>Під час навчання і після закінчення університету працював у медіасфері, зокрема журналістиці, публіцистиці і на радіо, де був ведучим прямих ефірів у філіях радіостанцій: &quot;Радіо 5&quot;, &quot;Ера ФМ&quot;, &quot;Ностальжі&quot;. Крім роботи у медіахолдингах з 2006-го по 2009 був сценаристом і ведучим авторської програми &quot;Проєкт &quot;Заварка&quot;&quot;, яка знайомила слухачів з альтернативною літературою, музикою і культурою. У 2008-му програма трансформувалась у літературний проєкт. З 2009 року Олександр Завара-Бабінський — письменник, копірайтер і фрілансер. Починає цікавитися психологією, коучингом, рекламою і роботою з аудиторією. З 2020 року і дотепер — письменник, психолог (приватна психотерапевтична практика, коучинг); приватний консультант (сторітелінг, графологія, скріботерапія, психолінгвістика); викладач приватної школи; автор і розробник особистих методик розвитку позитивних станів людини через її мову і письмо. З 1999 по 2005 рік Олександр Завара-Бабінський писав вірші. У період 2002—2004 років був фронтменом і автором пісень у жанрах хіп-хоп і рок-н-рол гурту &quot;2XL&quot;. 2006 року почав писати есеї та коротку прозу, а з 2008-го — твори у жанрах &quot;альтернативна проза&quot;, &quot;містика&quot;, &quot;психологічна проза&quot; та &quot;горор&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

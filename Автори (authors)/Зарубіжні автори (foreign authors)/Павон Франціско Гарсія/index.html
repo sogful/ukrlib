@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Павон Франціско Гарсія — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Павон Франціско Гарсія</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pavon-frantsisko-harsiia.webp" alt="Павон Франціско Гарсія" title="Павон Франціско Гарсія" data-full="./pavon-frantsisko-harsiia.webp" /><img class="side-img side-thumb" src="./pavon-frantsisko-harsiia_1.webp" alt="Павон Франціско Гарсія" title="Павон Франціско Гарсія" data-full="./pavon-frantsisko-harsiia_1.webp" /><img class="side-img side-thumb" src="./pavon-frantsisko-harsiia_2.webp" alt="Павон Франціско Гарсія" title="Павон Франціско Гарсія" data-full="./pavon-frantsisko-harsiia_2.webp" /></div>
+        <div class="prose-text">
+          <p>Франсиско Гарсія Павон</p>
+          <p>4 вересня 1919 року, Томельосо, Іспанія, — 1989, Мадрид</p>
+          <p>Іспанський письменник і літературний критик. Захистив докторську роботу по темі &quot;Леопольдо Алас Кларін як письменник-оповідач&quot;. Проходячи початкову військову підготовку в Ов&#x27;єдо, написав свій перший роман &quot;Поблизу Ов&#x27;єдо&quot; (ісп. Cerca de Oviedo), який став фіналістом Премії Надаля в 1945 році. Викладав в Школі драматичного мистецтва Мадрида. Писав романи, есе, займався театральною і літературною критикою, але відомий в першу чергу своїми розповідями, в яких він був майстром поряд з іншим видатним іспанським оповідачем його часу — Ігнасіо Альдекоа (ісп. Ignacio Aldecoa). У травні 1965 року в іспанському журналі Ateneo з&#x27;явилася невелика детективна повість Франсіско Гарсія Павон (Francisco Garcнa Pavуn) &quot;Автомобілі без людей&quot; (Los carros vacios). Ця публікація породила два яскравих явища в іспанській літературі: Франсиско Гарсіа Павон — письменника-детективіста і створеного його фантазією Мануеля Гонсалеса на прізвисько Пліній. Перший — відомий іспанський прозаїк, доктор філології і філософії, викладач Вищої школи драматичного мистецтва, генеральний директор видавництва &quot;Таурус&quot;, володар кількох престижних премій в галузі літератури. Другий — комісар бригади карного розшуку, начальник Муніципальної гвардії Томельосо. (Томельосо — невеликий іспанський містечко, де народився Гарсіа Павон і де здійснює свої трудові подвиги його герой Пліній.), Того ж 1965 року &quot;Автомобілі без людей&quot; вийшли книжковим виданням, а коли через три роки з&#x27;явилися відразу дві книги про Гонсалеса, &quot;Історії Плінія &quot;і&quot; Царювання Вітіс &quot;, критика захоплено оголосила Франсіско Гарсія Павон творцем справжнього іспанського детектива з яскравим національним колоритом. Франсиско Гарсія Павон помер на сімдесят четвертому році життя, в 1989 році. У Росії перше знайомство з Плинием відбулося в березні 1976 року на сторінках журналу &quot;Иностранная литература&quot;, де був опублікований роман Гарсіа Павон &quot;Руді сестри&quot; (1970). За цей роман у себе на батьківщині автор отримав престижну премію &quot;Надаль&quot; (Nadal). Ще один детектив про Пліній, роман &quot;Знову неділя&quot; (1978), опублікований в щорічному збірнику &quot;Зарубіжний детектив&quot; (1984).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

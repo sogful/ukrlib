@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гаков Володимир — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гаков Володимир</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hakov-volodymyr.webp" alt="Гаков Володимир" title="Гаков Володимир" data-full="./hakov-volodymyr.webp" /></div>
+        <div class="prose-text">
+          <p>Михайло Андрійович Ковальчук (псевдонім — Вл. Гаков) — російський публіцист, перекладач та критик фантастики</p>
+          <p>Народився в Казані. Закінчив Московський державний університет за спеціальністю &quot;Теоретична фізика&quot;. Керував Клубом любителей фантастики МДУ. Працював у різних Науково-дослідницьких інститутах, а також займався редакцією журналу &quot;Наука і релігія&quot;. Був членом Ради по пригодницькій літературі Спілки письменників СРСР. З 1984 по 1990 роки — член Спілки журналістів СРСР. З 1989 року — професійний літератор. У 1990 році викладав курс фантастичних факультетів у Центральному мікіганському університеті в Маунт-Плезанні (США), а потім — у двох московських університетах.</p>
+          <p>Спочатку під псевдонімом Володимир Гаков друкувалося три автора: Володимир Гопман, Андрій Гаврилов і Михайло Ковальчук, проте потім залишився тільки один — Михайло Ковальчук — який і скоротив псевдонім до Вл. Гаков. Ковальчук також друкувався під псевдонімами Михайло Андрєєв і Михайло Ковальов. Як критик фантастики дебютував в 1976 році, опублікувавши рецензію &quot;Два &quot;штриха&quot; до знайомого портрета&quot; на збірку Рея Бредбері &quot;Р — значить ракета&quot;. Є автором статей про радянську фантастику для &quot;Енциклопедії фантастики&quot; під редакцією Пітера Ніколса (1993), антології &quot;Фантастика Століття&quot; (1995), &quot;XX століття. Хроніка людства &quot;(2002) та інших, а також передмов до збірок фантастики і численних статей з фантастики. Книги Вл. Гакова перекладалися багатьма мовами світу і видавалися в США, Німеччині, Швеції. На сьогоднішній день він є великим фахівцем з російської і зарубіжної фантастики. Він опублікував сотні статей і рецензій, присвячених як історії і окремим аспектам фантастичної літератури, так і творчості окремих авторів. Під його редакцією вийшла перша і єдина в Росії &quot;Енциклопедія фантастики. Хто є хто &quot;(1995), в якій він був і редактором-укладачем і автором більшості статей. Його перу також належать кілька перекладів зарубіжної фантастичної критики, а також розповіді Рея Бредбері &quot;Ізгої&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

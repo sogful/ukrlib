@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мур Томас — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мур Томас</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./mur-tomas.webp" alt="Мур Томас" title="Мур Томас" data-full="./mur-tomas.webp" /><img class="side-img side-thumb" src="./mur-tomas_1.webp" alt="Мур Томас" title="Мур Томас" data-full="./mur-tomas_1.webp" /><img class="side-img side-thumb" src="./mur-tomas_2.webp" alt="Мур Томас" title="Мур Томас" data-full="./mur-tomas_2.webp" /><img class="side-img side-thumb" src="./mur-tomas_3.webp" alt="Мур Томас" title="Мур Томас" data-full="./mur-tomas_3.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 28 травня 1779 році в Дубліні, закінчив Дублінський університет, Трініті-коледж, 1798). Повстання &quot;Об&#x27;єднаних ірландців&quot; у тому ж році і кару в 1803 його приятеля студентських років Р. Еммета зробили Мура пристрасним патріотом Ірландії.</p>
+          <p>Закінчив Дублінський університет, Трініті-коледж, 1798). Повстання &quot;Об&#x27;єднаних ірландців&quot; у тому ж році і кару в 1803 його приятеля студентських років Р. Еммета зробили Мура пристрасним патріотом Ірландії.</p>
+          <p>В 1799 році він переїхав у Лондон, де його переклади з Анакреонта (1800) мали гучний успіх. Свій перший збірник віршів (1801) випустив під псевдонімом Thomas Little (Томас Маленький). Ірландські мелодії (Irish Melodies) Мура виходили окремими випусками з 1808 по 1834; для першої серії музику до текстів писав Д. Стівенсон, для другої — Р. Бішоп. Деякі з включених в Мелодії пісень досі популярні. За збори &quot;східних&quot; казок у віршах Лалла Рук (Lalla Rookh, 1817) видавець, не читаючи рукописи, запропонував Муру 3000 фунтів. У великому прозовому доробку Мура виділяються прекрасні біографії Шерідана (1825), Е. Фіцджеральда (1831) і — безперечний шедевр в цьому жанрі — Листи і щоденники лорда Байрона (The Letters and Journals of Lord Byron, 1830). Мур настільки близько здружився з Байроном, що той передав йому рукопис своїх Записок. Після смерті Байрона Мур її спалив, породивши не затихаючі досі гарячі суперечки. У 1803 Мур відплив на Бермуди в якості реєстратора призовогосуда. Залишивши на островах свого представника, він повернувся в Англію. Пізніше представник присвоїв 6000 фунтів, і Муру, який за нього відповідав, довелося в 1819-1822 щоб уникнути арешту жити в Європі. У 1811 році він одружився на ірландській актрисі Елізабет Дайк. Їх щасливий союз був затьмарений тим, що вони пережили всіх своїх дітей. Помер Мур Слопертон-котеджі поблизу Бонвуда (графство Вілтшир) 25 лютого 1852.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

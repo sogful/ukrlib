@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Жарко Яків Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Жарко Яків Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zharko-iakiv-vasylovych.webp" alt="Жарко Яків Васильович" title="Жарко Яків Васильович" data-full="./zharko-iakiv-vasylovych.webp" /><img class="side-img side-thumb" src="./zharko-iakiv-vasylovych_1.webp" alt="Жарко Яків Васильович" title="Жарко Яків Васильович" data-full="./zharko-iakiv-vasylovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Жарко Яків Васильович (13.11.1861 – 25.05.1933), український письменник, актор, громадсько-політичний діяч.</p>
+          <p>Народився у м. Полтава в родині колезького асесора, в якій панував культ книг, музики і театрального мистецтва. Ще в гімназії став на революційний шлях, що й стало причиною виключення. Неодноразово затримувався та арештовувався. Закінчив земську фельдшерську школу. Перша збірка віршів просякнута любов’ю до України (&quot;Перші ліричні твори&quot;, 1884). У 1886 – 1896 рр. – актор театральних груп М. Старицького, М. Кропивницького і П. Саксаганського. Друга збірка віршів (&quot;Молодим. Пісні і думи&quot;, 1891) недопущена до друку цензурою. Публікувався в &quot;Літературно-науковому віснику&quot;, редагованому І. Франком. В 1896 р. в Санкт-Петербурзі вийшла збірка його байок. Влітку 1903 р. переїжджає на Кубань, оселяється у Катеринодарі. Катеринодарський період – найплідніший у творчому відношенні: збірник &quot;Пісні&quot; (1905), &quot;Байки&quot; (1912), &quot;Катеринодарцям&quot; (1912), історичний нарис &quot;На Кубані&quot; (1912), &quot;Балади і легенди&quot; (1913), а також підбірки до антології &quot;Українська муза&quot; (1908) і до &quot;Збірника українських байок&quot; (1915). Ж. – один з організаторів і керівників катеринодарської &quot;Просвіти&quot; та катеринодарського відділення РУП.</p>
+          <p>У 1920-х рр. – на різних посадах у Кубанському художньому музеї. В 1929 р. у зв’язку з публікацією віршів &quot;З єгипетського циклу&quot; був заарештований за підозрою в шпигунстві на користь Великобританії. Арешти, обшуки і допити тривали до самої смерті. Зацькований переслідуваннями, помер. Похований на Всіхсвятському кладовищі м. Краснодар. Архів Жарко зберігається в Інституті літератури ім. Тараса Шевченка в Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

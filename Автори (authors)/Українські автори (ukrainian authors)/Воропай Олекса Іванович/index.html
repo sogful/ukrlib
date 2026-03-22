@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Воропай Олекса Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Воропай Олекса Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./voropay-oleksa-ivanovych.webp" alt="Воропай Олекса Іванович" title="Воропай Олекса Іванович" data-full="./voropay-oleksa-ivanovych.webp" /><img class="side-img side-thumb" src="./voropay-oleksa-ivanovych_1.webp" alt="Воропай Олекса Іванович" title="Воропай Олекса Іванович" data-full="./voropay-oleksa-ivanovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 10 жовтня 1913 року в Одесі в родині звільненого в запас армії старшого унтер-офіцера Івана Захаровича Воропаєва та його дружини Олени Остапівни. Батько був з селян Петропавловської волості Самарської губернії та повіту (історичний Жовтий клин).</p>
+          <p>1917 року батько емігрував, родина за радянських часів перебувала у списку &quot;неблагонадійних&quot;. Мати з чотирма дітьми переїжджає до свого села Надлук.</p>
+          <p>1933 року закінчує сільськогосподарський технікум, працював агрономом на Вінниччині. Студіював агрономію в Уманському сільськогосподарському інституті, проте його виключили з цього закладу на першому курсі. 1937 року починає збирати етнографічні та фольклорні матеріали. Закінчив Московську аграрну академію (1938). 1940—1941 рр. навчався на філологічному факультеті Одеського університету. З 1944 року в еміграції разом з дружиною Бондаренко. Перебували у таборах для переміщених осіб Авґсбурґа та Гальденбурга. 1944 року опубліковано його перші статті — в українських журналах &quot;Дозвілля&quot; та &quot;Український вісник&quot;. 1946 року подружжя поступає до Українського вільного університету. 1948 роком родина виїздить до Великої Британії, Олексій працював робітником на текстильній фабриці міста Олдем. З 1949 року проживають в Лондоні. Працював у бібліотеці Британського музею у Лондоні. 1957 року здобув звання доктора Слов&#x27;янської Етнології. Входив до складу редакційної колегії журналу &quot;Українська Думка&quot;. З 1960 року почав друкуватися в журналі &quot;Визвольний шлях&quot;. 1961 року захистив дисертацію на звання доктора природничих наук. Згодом працював старшим науковим співробітником слов&#x27;янського відділу Науково-технічної бібліотеки Великої Британії на Півночі Англії. Наукову роботу продовжував і після виходу на пенсію. Помер 1989 року в Лондоні.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

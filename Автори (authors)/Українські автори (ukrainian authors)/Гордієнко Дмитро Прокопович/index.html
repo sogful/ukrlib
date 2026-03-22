@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гордієнко Дмитро Прокопович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гордієнко Дмитро Прокопович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hordiienko-dmytro-prokopovych.webp" alt="Гордієнко Дмитро Прокопович" title="Гордієнко Дмитро Прокопович" data-full="./hordiienko-dmytro-prokopovych.webp" /></div>
+        <div class="prose-text">
+          <p>Дмитро ГОРДІЄНКО</p>
+          <p>Гордієнко Дмитро Прокопович народився 8 грудня 1901 року в с.Плужники Яготинського повіту Київської губернії в селянській сім&#x27;ї.</p>
+          <p>Під час революційних подій боровся в партизанському загоні проти німецьких військ і гетьманщини, був бійцем знаменитої Богунської бригади. У 1921 році працював секретарем Яготинського райкому комсомолу. Закінчив прискорені курси журналістики при ЦК КП(б)У, після чого працював у редакціях газет &quot;Вісті&quot;, &quot;Пролетар&quot; та журналів &quot;Декада&quot; і &quot;Всесвіт&quot;, де з травня 1933 року обіймав посаду заступника редактора. Почав писати вірші з 1922 року. Брав участь в утворенні Прилуцької філії &quot;Плугу&quot;, очолював Полтавську губернську філію цієї організації селянських письменників, потім перебував у літературних організаціях &quot;Молот&quot;, &quot;Молодняк&quot;, &quot;Пролітфронт&quot;, &quot;ВУСПП&quot;, член Спілки письменників СРСР з 1934 року. Автор поетичних збірок &quot;У путь&quot; (1927), &quot;Арки&quot; (1929), повісті &quot;Зелений флігель&quot; (1928), романів &quot;Тинда&quot; (1930), &quot;Завойовники надр&quot; (1932), збірок оповідань &quot;Поламані люди&quot; (1929), &quot;Злочин механіка&quot; (1930), &quot;Мар&#x27;яна-Ївга&quot;, &quot;Чужі профілі&quot; (1933), низки книжок нарисів. Заарештований у Харкові 5 грудня 1934 року. В обвинувальному висновку, підготовленому оперуповноваженим НКВС УРСР Бліоком, Д.Гордієнкові інкримінувалася стаття 54-8 КК УРСР — участь у контрреволюційній терористичній організації і пропонувалося таке: &quot;Зважаючи на те, що слідчих матеріалів для віддачі обвинуваченого під суд недостатньо і враховуючи його соціальну небезпеку, вважав би: слідча справу по обвинуваченню Гордієнка Д.П. направити на розгляд особливої наради при НКВС УРСР з клопотанням про ув&#x27;язнення його у виправно-трудовий табір строком на 5 років&quot;. Під час допитів і суду Д. Гордієнко категорично відкидав обвинувачення як безпідставне. І все ж особливою нарадою при НКВС СРСР 10 квітня 1935 року його було засуджено на 5 років виправних трудових таборів. Відбував покарання Д.Гордієнко в таборах НКВС на Колимі. З 1939 року працював як вільнонайманий у системі Дальбуду НКВС СРСР. 14 травня 1949 року повторно був заарештований у Бійську і 28 липня 1949 року Алтайським крайовим судом засуджений на 25 років виправно-трудових таборів. Будучи ув&#x27;язненим у виправно-трудовій колонії №3 міста Барнаула, 5 лютого 1954 року звернувся з заявою до Генерального прокурора СРСР, в якій, зокрема, писав: &quot;Ворог Берія та компанія і після своєї заслуженої смерті тримають досі таких людей, як я, в своїх хижих лапах...&quot; Ухвалою військового трибуналу Київського військового округу 2 грудня 1955 року постанову особливої наради НКВС СРСР від 10 квітня 1935 року у справі Гордієнка Д.П. скасовано, а справу припинено за недоведеністю складу злочину 4 січня 1955 року Д.Гордієнка звільнили з-під варти достроково — у зв&#x27;язку з хворобою. Помер 1 січня 1974 року. Іван Ільєнко ЛУ 28 (4437) 11.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

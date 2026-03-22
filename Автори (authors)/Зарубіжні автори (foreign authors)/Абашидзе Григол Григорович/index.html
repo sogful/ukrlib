@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Абашидзе Григол Григорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Абашидзе Григол Григорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./abashydze-hryhol-hryhorovych_1.webp" alt="Абашидзе Григол Григорович" title="Абашидзе Григол Григорович" data-full="./abashydze-hryhol-hryhorovych_1.webp" /><img class="side-img side-thumb" src="./abashydze-hryhol-hryhorovych.webp" alt="Абашидзе Григол Григорович" title="Абашидзе Григол Григорович" data-full="./abashydze-hryhol-hryhorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Григол Абашидзе</p>
+          <p>(1914 — 1994)</p>
+          <p>Радянський грузинський поет і письменник. Співавтор тексту Гімну Грузинської РСР (1944). Герой Соціалістичної Праці (1974). Лауреат Сталінської премії другого ступеня (1951). Член ВКП(б) з 1944 року. Перший секретар Правління СП Грузії з 1967 року. Академік Академії наук Грузинської РСР (1979). Депутат Ради Національностей Верховної Ради СРСР 8-11 скликань від Зестафонського виборчого округу № 175 Грузинської РСР. Григол Абашидзе народився 19 липня (1 серпня) 1914 року в р. Чиатуры. У 1931 році закінчив середню школу у Тбілісі. У 1936 році закінчив філологічний факультет Тбіліського державного університету імені В. В. Сталіна. Друкуватися почав у 1934 році.Герой поезії Абашидзе — грузинський людина—трудівник (&quot;Вічно в обладунках&quot; (1938), &quot;Основоположник&quot; (1939)). Майстерність Абашидзе зміцніло в роки Великої Вітчизняної війни (&quot;Вороги&quot; (1941), &quot;Поєдинок танків&quot; (1941), &quot;Прапори&quot;, (1943), поема &quot;Непереможний Кавказ&quot; (1943)).У циклах віршів &quot;На південному кордоні&quot; (1949) та &quot;Ленін у Самгорі&quot; (1950) Абашидзе розкривав силу патріотизму. У поемі &quot;Георгій шостий&quot; (1942) показана боротьба грузинського народу за національну незалежність.Автор драматичних поем &quot;Легенда про перших тбілісців&quot; (1959) і &quot;Подорож у три часу&quot; (1961), історичних романів з життя Грузії XIII ст. (1-я книга, 1957 — &quot;Лашарела&quot;, 2-я — &quot;Довга ніч&quot;, 3-я — &quot;україна і цотне, або падіння і піднесення грузин&quot;). Писав і для дітей. Його твори перекладені на французьку, англійську, російську, українську і інші мови. Абашидзе перевів на грузинську мову поезію Ш. Петефі, Міцкевича А., П. Неруди, М. Емінеску, В. Вазова, Х. Ботева. автор (спільно з А. В. Абашели) тексту Державного гімну Грузинської РСР.Працював у 1941-1942 роках відповідальним секретарем журналу &quot;Мнатоби&quot;, в 1944-1950 — відповідальним редактором гумористичного журналу &quot;Нианги&quot;, а також журналу &quot;Дроша&quot;.Р. Р. Абашидзе помер 29 липня 1994 року в Тбілісі. Похований у Дидубийском пантеоні письменників і громадських діячів.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

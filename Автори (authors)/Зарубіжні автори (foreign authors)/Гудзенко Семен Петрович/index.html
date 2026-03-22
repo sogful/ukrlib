@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гудзенко Семен Петрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гудзенко Семен Петрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hudzenko-semen-petrovych_1.webp" alt="Гудзенко Семен Петрович" title="Гудзенко Семен Петрович" data-full="./hudzenko-semen-petrovych_1.webp" /><img class="side-img side-thumb" src="./hudzenko-semen-petrovych.webp" alt="Гудзенко Семен Петрович" title="Гудзенко Семен Петрович" data-full="./hudzenko-semen-petrovych.webp" /><img class="side-img side-thumb" src="./hudzenko-semen-petrovych_2.webp" alt="Гудзенко Семен Петрович" title="Гудзенко Семен Петрович" data-full="./hudzenko-semen-petrovych_2.webp" /><img class="side-img side-thumb" src="./hudzenko-semen-petrovych_3.webp" alt="Гудзенко Семен Петрович" title="Гудзенко Семен Петрович" data-full="./hudzenko-semen-petrovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Гудзенко Семен Петрович (5.03.1922-12.02.1953), поет. Народився в сім&#x27;ї інженера-будівельника, в 1939-41 вчився в Московському історико-філософському і літературному інституті, в липні 1941 пішов добровольцем на фронт, брав участь в боях під Москвою, взимку 1942 складі лижного загону воював в Смоленській обл., Де був поранений ; пізніше працював літсотрудніком військової газети. Перші вірші Гудзенко опублікував в армійській пресі в 1941. У наступні роки вийшли його книги &quot;Однополчани&quot; (1944), &quot;Вірші і балади&quot; (1945), &quot;Після маршу&quot; (1947), &quot;Закарпатські вірші&quot; (1948), &quot;Битва &quot;(1948),&quot; Далекий гарнізон. Поема &quot;(1953),&quot; Нові краю &quot;(1953).</p>
+          <p>Найбільш значними в творчості удзенко є його фронтові вірші і балади. У вірші &quot;Перед атакою&quot; поет виразно і правдиво розповів про психологічний стан солдата перед боєм: &quot;Коли на смерть йдуть, — співають, / А перед цим можна плакати. / Адже найстрашніший годину в бою — / год очікування атаки ... Мені здається, що я магніт, / Що я притягую міни. / Розрив — і лейтенант хрипить. / І смерть знову проходить повз. / Але ми вже не в силах чекати. / І нас веде через траншеї / закляклі ворожнеча, / Багнетом дирявящая шиї. / Бій був короткий. А потім / Глушили горілку крижану / І виколупував ножем / З-під нігтів я кров чужу &quot;.</p>
+          <p>Серед балад Гудзенко виділяється своєю психологічною проникливістю і достовірністю &quot;Балада про дружбу&quot; (1942-43) і &quot;На снігу білизни госпітальної ...&quot; (1945). Фронтова дружба перевіряється трагедійним, але добровільним вибором: кому з друзів йти на бойове завдання, з якого важко повернутися живим: &quot;Не дарма ми дружбу берегли, / Як піхотинці бережуть / Метр закривавленою землі, / Коли його в боях беруть&quot;. У баладі &quot;На снігу білизни госпітальної ...&quot; Гудзенко розповів про самовідданість військового лікаря, який, рятуючи інших, гине сам: &quot;... Одну людину не врятував військовий лікар — / Він лежить на снігу білизни госпітальної&quot;. Ліричну проникливість баладі надає звернення поета до дівчини з проханням не плакати про своє ненаглядного і милому, хоча поет і відчуває, що про такий самовідданий людині, як загиблий військовий лікар, не плакати не можна. У вірші &quot;Ми не від старості помремо, — / Від старих ран помремо ми&quot; Гудзенко не тільки передбачив свою ранню смерть, але і сказав, від чого будуть вмирати інші фронтовики.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

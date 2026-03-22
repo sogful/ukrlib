@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Каплан Юрій Григорович — Короткий опис творчості</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Каплан Юрій Григорович</h1>
+      <h2>Короткий опис творчості</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kaplan-iuriy-hryhorovych.webp" alt="Каплан Юрій Григорович" title="Каплан Юрій Григорович" data-full="./kaplan-iuriy-hryhorovych.webp" /></div>
+        <div class="prose-text">
+          <p>КАПЛАН Юрій Григорович народився 28 травня 1937 р. в м.Коростень Житомирської області. Закінчив Київський політехнічний інститут. Пише російською мовою. Заслужений працівник культури України. Нині — заступник Голови Київської організації НСПУ.</p>
+          <p>Після першої збірки &quot;Обжигающий ветер&quot; (1969) не друкувався майже двадцять років. Потім окремими виданнями виходили &quot;Общая тетрадь&quot;, &quot;Беглый звук&quot;, &quot;Неровный стык тысячелетий&quot;, &quot;Апрельский снегопад&quot; (Київ-Регенсбург) &quot;Поля тяготения&quot;, &quot;Вирус любви&quot;, книжки для дітей &quot;Анкины игрушки&quot;, &quot;Как Анка в детский сад ходила&quot;, &quot;Котенок Шульц&quot;, &quot;Тельняшечка&quot;.</p>
+          <p>Упорядник, редактор та видавець поетичних антологій до трагічних дат в історії України — &quot;Відлуння бабиного Яру&quot; (1991, 2000), &quot;На хресті голодомору&quot; (1933), &quot;Перепустка до зони&quot; (1996). Редактор альманаху поезій &quot;Юрьев день&quot;. Лауреат міжнародних премій &quot;Дружба&quot; ім.Вінниченка, премії &quot;Гілка Золотого Каштану&quot;. Нагороджений медаллю ім.К.Симонова (Москва, РФ) та дипломом Міжнародної письменницької організації (Регенсбург, ФРН),</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

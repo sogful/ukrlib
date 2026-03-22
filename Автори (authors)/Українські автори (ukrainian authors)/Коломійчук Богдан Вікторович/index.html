@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коломійчук Богдан Вікторович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коломійчук Богдан Вікторович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kolomiychuk-bohdan-viktorovych.webp" alt="Коломійчук Богдан Вікторович" title="Коломійчук Богдан Вікторович" data-full="./kolomiychuk-bohdan-viktorovych.webp" /><img class="side-img side-thumb" src="./kolomiychuk-bohdan-viktorovych_1.webp" alt="Коломійчук Богдан Вікторович" title="Коломійчук Богдан Вікторович" data-full="./kolomiychuk-bohdan-viktorovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Богдан Вікторович Коломійчук — український письменник, автор історико-авантюрних, історичних та детективних романів.</p>
+          <p>Народився 1984 року. 2006 року закінчив фізичний факультет Львівського національного університету імені Івана Франка.</p>
+          <p>2013 року видав дебютний історико-авантюрний роман &quot;Людвисар. Ігри вельмож&quot;, що отримав Гран-прі конкурсу &quot;Коронація слова 2013&quot;. 2014 року світ побачила збірка детективних оповідань &quot;Таємниця Єви&quot;. 2015 року у видавництві &quot;Фоліо&quot; вийшли одразу дві книжки — &quot;В&#x27;язниця душ&quot; та &quot;Небо над Віднем&quot; (серія &quot;Ретророман&quot;), 2016-го — &quot;Візит доктора Фройда&quot;. У 2017 році у видавництві &quot;Фоліо&quot; було видано продовження роману &quot;Людвисар. Ігри вельмож&quot; — &quot;Король болю&quot;. 2018 року у &quot;Видавництві Старого Лева&quot; вийшла книжка &quot;Моцарт із Лемберга&quot;, присвячена синові Вольфганга Амадея Моцарта, Францу Ксаверу. 2019 року у &quot;Видавництві Старого Лева&quot; вийшов детективний роман &quot;Готель &quot;Велика Пруссія&quot;&quot;. 24 лютого 2022 року, почувши новину про вторгнення росіян, Богдан вирішив приєднатися до ЗСУ добровольцем, щоб захистити свій дім та рідних. Богдану було присвоєне звання молодшого сержанта. Літературну діяльність письменник поставив на паузу. Після місяців на фронті, він нарешті зміг побачити рідних у жовтні і на кілька днів &quot;побути письменником&quot;, а потім знову повернувся на передову в якості бойового медика.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

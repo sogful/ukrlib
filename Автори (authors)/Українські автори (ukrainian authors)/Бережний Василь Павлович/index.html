@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бережний Василь Павлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бережний Василь Павлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./berezhnyy-vasyl-pavlovych.webp" alt="Бережний Василь Павлович" title="Бережний Василь Павлович" data-full="./berezhnyy-vasyl-pavlovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився в селі Бахмач (Чернігівська область) у селянській родині. Після закінчення загальноосвітньої школи поступив в Український технікум журналістики[1] в Харкові. Друкуватися почав з 1936 року.</p>
+          <p>Закінчивши у 1937 році технікум, Бережний працював в редакціях газет &quot;Прапор комуни&quot; у Бахмачі, &quot;Молодий комунар&quot; у Чернігові. Як згадував уже в зрілому віці, ще під час навчання в Харкові йому трапилося побувати в обсерваторії, уперше подивитися на небо в телескоп. Гострі піки місячних гір, освітлені сонячним світлом, їхні різкі тіні, тріщини, Пряма Стіна, схожа на циклопічну інженерну будівлю, — все це залишило приголомшливе, незабутнє враження. Ця подія надихнула його написати своє перше науково-фантастичне оповідання &quot;Планета житиме&quot;, яке було надруковане в 1938 році.</p>
+          <p>Німецько-радянську війну Бережному, що проходив кадрову службу в танкових військах, довелося зустріти на землях Західної Білорусі, вже в червні взявши участь у кровопролитних боях під Гродно і Барановичами. Потім — відступ, з важкими оборонними боями до самої Вязьми, важке поранення, вороже оточення. З жовтня 1943-го він знову в діючій армії, на Першому Білоруському фронті. Його участь у війні відзначено бойовими нагородами. Після війни Бережний повертається до журналістської роботи — працює в редакціях газет &quot;Молодь України&quot;, журналів &quot;Дніпро&quot;, &quot;Вітчизна&quot;, &quot;Україна&quot;. У 1952 році закінчує Київський університет ім. Т. Г. Шевченка. Усе активніше включається в літературну роботу — виступає з критичними рецензіями і статтями, нарисами, оповіданнями, незабаром береться і за повісті. У 1948 році з&#x27;являється його перша збірка документальних нарисів &quot;За кермом&quot;. Потім виходять збірки &quot;Сторінки життя&quot; у 1952 році, &quot;Кораблі сходять зі стапелів&quot; у 1959. Його перу належать також повість про тодішнє сільське життя &quot;Зелене море&quot; (1955), пізня повість &quot;Колюче терня&quot; (1966). Жив у Києві. Крім того, Василь Бережний перекладав з російської мови романи А. Коптєлова, п&#x27;єси М. Погодіна, А. Софронова. Він також є автором літературного портрета &quot;Олесь Гончар&quot; (1978). Найбільш повно розкритися Василю Бережному вдалося в жанрі наукової фантастики. Уже його перша науково-фантастична повість &quot;У зоряні світи&quot; була надрукована видавництвом &quot;Молодь&quot; у 1956 році тиражем у 65 тисяч екземплярів. А в 1958 це ж видавництво перевидає її тиражем у 100 тисяч. Фантаст Бережний досягає чималої популярності, всі його наступні книги наукової фантастики незмінно друкувалися і перевидавалися масовими тиражами. З під його пера вийшло півтора десятка науково-фантастичних повістей, а також більше півсотні оповідань, які були об&#x27;єднані в десяток збірок. Твори Бережного були перекладені на багато іноземних мов: англійська, угорська, іспанська, латиська, молдавська, польська, російська, словацька, французька. В. Бережний був учасником Першого Всесвітнього симпозіуму письменників-фантастів, що проходив у Токіо (Японія) у 1970 році в рамках Міжнародної виставки ЕКСПО-70, а також Третього Європейського конгресу фантастів у Польщі у 1976 р. Помер письменник 19 березня 1988 року в Києві. Дружина — Бережна Любов Флоріанівна, лікар. Син — Бережний Андрій Васильович, дочка — Бережна Оксана Василівна. Внук — Бережний Василь Андрійович, внучки — Бережна Ольга Андріївна, Бережна Юлія Андріївна.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

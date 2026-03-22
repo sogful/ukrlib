@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вайнерман Ханан Абрамович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вайнерман Ханан Абрамович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vaynerman-khanan-abramovych.webp" alt="Вайнерман Ханан Абрамович" title="Вайнерман Ханан Абрамович" data-full="./vaynerman-khanan-abramovych.webp" /></div>
+        <div class="prose-text">
+          <p>Вайнерман Ханан Абрамович народився 2 грудня 1902 р. у м. Лугин на Житомирщині в сім&#x27;ї шевця. Після закінчення містечкової школи пішов у підручні маляра і через кілька років сам став маляром-декоратором у районному театрі. З Лугина Вайнерман переїхав до Одеси в 1930 р. і поступив на робітфак, після закінчення якого був зарахований студентом Одеського педінституту. В цю пору почав співробітничати в місцевих газетах, в кінці тридцятих років він був спецкором центральних єврейських газет.</p>
+          <p>Ще навчаючись у педінституті, Вайнерман почав писати єврейською мовою вірші, нариси, оповідання. У 1930 р. вийшла друком його перша збірка поезій &quot;Відродження&quot;. Затим були опубліковані книжки казок для дітей &quot;Фішка&quot;, збірки віршів &quot;За хліб&quot;, &quot;До праці&quot; (1932), &quot;Бригада малят&quot; (1933), &quot;Золоті вітри&quot; (1936), &quot;В життя закоханий&quot; (1940).</p>
+          <p>Вайнерман — член Спілки письменників СРСР із дня її створення (1934). Під час Великої Вітчизняної війни працював на радіо, оскільки був знятий з військового обліку. Після перемоги працював у редакціях деяких єврейських газет у Москві та Біробіджані. 28 березня 1950 р. X. Вайнерман був заарештований в Одесі. Його звинуватили в модних для того часу &quot;гріхах&quot; єврейської інтелігенції: &quot;націоналістична діяльність, антирадянська агітація, шпигунство на користь однієї з капіталістичних держав&quot; і т. п. Слідство тривало майже сім місяців. Розправу над невинним письменником завершила Особлива нарада при МДБ СРСР, яка винесла вирок: 15 років ув&#x27;язнення в виправно-трудових таборах особливого режиму. Покарання Вайнерман відбував у спецтаборі № 2 неподалік Норильська. Лише через два роки після смерті Сталіна (квітень 1955 р.) його судово-слідча справа була переглянута. За недоведеністю злочину Вайнермана разом із письменниками Лур&#x27;є, Друкером, Губерманом було реабілітовано й звільнено з-під варти. Опинившись на волі, Вайнерман створив кілька книжок, які були перекладені українською і російською мовами. Це збірки поезій &quot;Від щирого серця&quot; (1958), &quot;Весенний говор&quot; (1962), &quot;Люблю і вірю&quot; (1962), &quot;Свет и тень&quot; (1966), &quot;Щедра осінь&quot; (1970). Помер 26 лютого 1979 р.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вайтхед Колсон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вайтхед Колсон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./uaytkhed-kolson.webp" alt="Уайтхед Колсон" title="Уайтхед Колсон" data-full="./uaytkhed-kolson.webp" /><img class="side-img side-thumb" src="./uaytkhed-kolson_1.webp" alt="Уайтхед Колсон" title="Уайтхед Колсон" data-full="./uaytkhed-kolson_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 6 листопада 1969 року в Нью-Йорку, дитинство провів на Манхеттені. Навчався у школі Трініті (Манхеттен). 1991 року закінчив Гарвардський університет. Працюючи колумністом, який спеціалізується на поп-культурі у щотижневій газеті The Village Voice, почав писати першу прозу.</p>
+          <p>У 1999 році було видано його дебютний роман &quot;Інтуїціоніст&quot;, який розповідав про інспектора Лілу Мей Вотсон, яка намагається з&#x27;ясувати причину падіння ліфта.</p>
+          <p>У 2001 році вийшов роман &quot;Дні Джона Генрі&quot;, одна з інтерпретацій історії про путівника Джона Генрі, який переміг у змаганні з паровим молотом, але зрештою помер від виснаження. Події роману відбуваються сто років тому, коли журналіст Дж. Саттер навідується на фестиваль пам&#x27;яті легендарного путівника. Наступний роман &quot;Апекс приховує рану&quot; побачив світ у 2006 році та розповідав про консультанта, який має зважити всі за та проти запропонованих йому варіантів для зміни назви міста. У 2009 році вийшов роман &quot;Cаг Харбор&quot; про те, як, у 1980-х, двоє чорношкірих братів проводять свої літні канікули в Саг-Харборі, місті, де в основному проживає біле населення. У 2011 році письменник видав постапокаліптичний роман &quot;Зона один&quot; про вірус, який інфікує людей і перетворює їх на зомбі. У 2016 році виходить роман &quot;Підземна залізниця&quot;, який розповідав про двох рабів, яким вдається втекти з плантацій у Джорджії завдяки таємничій системі під назвою &quot;Підпільна залізниця&quot;. Книга принесла автору низку нагород: Національну книжкову премію (2016), Медаль Ендрю Карнегі (2017), Премію Артура Кларка (2017). За книгою також було знято серіал, режисером виступив Баррі Дженкіс.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

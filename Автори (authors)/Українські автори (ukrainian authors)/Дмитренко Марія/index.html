@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дмитренко Марія — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дмитренко Марія</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dmytrenko-mariia.webp" alt="Дмитренко Марія" title="Дмитренко Марія" data-full="./dmytrenko-mariia.webp" /></div>
+        <div class="prose-text">
+          <p>Марія Дмитренко (псевдонім Богдани-Марії Юліанівни Світлик) (*24 квітня 1918, м. Перемишль — † 29 грудня 1948, с. Либохора, Сколівський район, Львівська область) — українська письменниця; вояк УПА, керівник Львівського міського жіночого проводу ОУН.</p>
+          <p>Народилася 24 квітня 1918 року в Перемишлі, у двадцятих роках з батьками переїхала до Львова, вчилася в гімназії сестер-василіанок, жіночій гімназії, після якої 1936 вступила на факультет класичної філології Львівського університету.</p>
+          <p>За активну підпільну діяльність в ОУН навесні 1939 року була арештована польською поліцією, засуджена й ув&#x27;язнена в тюрмі &quot;Бригідки&quot;. Там ділили з нею долю по тій же справі Люба Шевчик і Надія Курнатович. Звільнена з тюрми у вересні 1939 року, вона продовжує підпільну роботу, але вже в інших умовах. У рядах ОУН та УПА активно діє як член підпільних редакцій &quot;Смолоскип&quot;, &quot;Ідея і чин&quot;, різних видань осередку пропаганди ОУН і бюро інформації УГВР. У підпіллі вона користувалася псевдонімом &quot;Ясна Світлана&quot;, а в літературних творах &quot;Марійка Дмитренко&quot;. Її чоловік, Зенон Литвинко, родом зі Стрия, закінчив гімназію в Рогатині, брав участь у підпільній роботі, вчився в лісничій академії, вступив у ряди дивізії &quot;Галичина&quot; і, правдоподібно, без вісти загинув у боях під Бродами. У грудні 1941 року народила сина Андрія, та боячись переслідування родини, Богдана їде в Жидачів і там передає сина на виховання своїй мамі, яка усиновила його і дала інше прізвище. Життя Богдана закінчила трагічно — 29 грудня 1948 року вона загинула у бою з енкаведистами в карпатському селі Либохорі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

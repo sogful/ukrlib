@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ґеммель Штефан — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ґеммель Штефан</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./gemmel-shtefan.webp" alt="Ґеммель Штефан" title="Ґеммель Штефан" data-full="./gemmel-shtefan.webp" /><img class="side-img side-thumb" src="./gemmel-shtefan_1.webp" alt="Ґеммель Штефан" title="Ґеммель Штефан" data-full="./gemmel-shtefan_1.webp" /></div>
+        <div class="prose-text">
+          <p>Штефан Ґеммель (народився 30 січня 1970, Морбах) — німецький автор дитячих та юнацьких книг.</p>
+          <p>Відомими книгами Ґеммеля є багатотомна серія &quot;У знаку чарівної кулі&quot; та трилогія &quot;Шаттенграйфер&quot;.</p>
+          <p>Ґеммель дає читання, вечори читання та майстер-класи, які проводить у школах і бібліотеках. Він значною мірою залучає свою аудиторію відповідно до історії, яку читає, наприклад, у формі рольових ігор, спонтанного театру чи мовних експериментів. 12 червня 2012 року разом із &quot;Leserat Service&quot; він встановив світовий рекорд, коли двома читаннями перед більш ніж 5000 дітьми в Кобленці охопив найбільшу аудиторію на сьогодні для читання одного автора та був включений до Книгу рекордів Гіннеса вдалося. У вересні 2015 року йому знову вдалося встановити світовий рекорд, знову ж таки у співпраці з &quot;Bookworm Service&quot;: найшвидший читацький тур у світі: 82 читання за 13 днів, 10 годин і 7 хвилин по всій Німеччині. За всім цим спостерігав Інститут рекордів Німеччини. Там також були встановлені офіційні міжнародно порівнювані правила. У травні 2018 року він побив власний рекорд 2012 року, знову ж таки з &quot;Bookworm Service&quot;, коли він читав для та з 5542 дітьми на Commerzbank Arena у Франкфурті. У 2021 році він встановив третій світовий рекорд читання (знову завдяки службі книжкових хробаків), коли організував &quot;найбільше читання під час автопробігу дітей&quot; із 382 учасниками з двох шкіл у його рідному місті Морбах за найсуворіших умов Корони. У 2014 році як референт з питань культури він брав участь у поїздці делегації прем&#x27;єр-міністра Малу Дрейєра до Китаю, де читав китайським школярам і студентам. У 2016 році був членом журі фінального туру &quot;Всеукраїнського конкурсу читців&quot;. На додаток до своєї роботи як автора, Ґеммель проводить літературні проекти та письменницькі майстерні. Він є членом ПЕН-центру Німеччини та Асоціації німецьких письменників (регіональна група Рейнланд-Пфальц). Його книги перекладені 21 мовою. Ґеммель є батьком двох дочок і живе один у Лаудерті (Хунсрюк).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

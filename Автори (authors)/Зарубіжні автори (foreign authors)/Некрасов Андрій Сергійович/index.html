@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Некрасов Андрій Сергійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Некрасов Андрій Сергійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nekrasov-andriy-serhiyovych.webp" alt="Некрасов Андрій Сергійович" title="Некрасов Андрій Сергійович" data-full="./nekrasov-andriy-serhiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>(10.06.1907 — 15.02.1987)</p>
+          <p>Радянський письменник, який написав капітана Врунгеля</p>
+          <p>Народився в 1907 році в Москві. У 1926 році переїхав у Київ і вступив матросом на риболовецьке судно. Потім ходив на різних судах в районах Крайньої Півночі і Далекого Сходу. У 1933 закінчив Владивостоцький морський технікум. У этомже році призначений заступником начальника морського управління тресту &quot;Дальморзверпром&quot;. Друкувався з 1928 року. Найбільшу популярність його творів отримав гумористичний роман &quot;Пригоди капітана Врунгеля&quot;. З квітня 1942 пересічний на Західному фронті, з осені 1942 співробітник фронтової газети. Член СП СРСР з 1943. З листопада 1943 в резерві ГлавПУРа в Москві. 14 квітня 1944 року в званні лейтенанта був засуджений Військовим трибуналом Ростовського-на-Дону гарнізону на 3 роки ВТТ.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

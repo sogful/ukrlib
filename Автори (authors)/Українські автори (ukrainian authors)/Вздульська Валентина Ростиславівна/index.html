@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вздульська Валентина Ростиславівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вздульська Валентина Ростиславівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vzdulska-valentyna-rostyslavivna.webp" alt="Вздульська Валентина Ростиславівна" title="Вздульська Валентина Ростиславівна" data-full="./vzdulska-valentyna-rostyslavivna.webp" /><img class="side-img side-thumb" src="./vzdulska-valentyna-rostyslavivna_1.webp" alt="Вздульська Валентина Ростиславівна" title="Вздульська Валентина Ростиславівна" data-full="./vzdulska-valentyna-rostyslavivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народилася 29 серпня 1983 року в місті Фастів на Київщині. Вищу освіту здобула в Національному університеті &quot;Києво-могилянська Академія&quot; (магістр філології, викладач вищої школи, 2000—2006 рр.).</p>
+          <p>Як дитяча письменниця, дебютувала оповіданням &quot;Горобине Різдво&quot; у збірнику &quot;Казки Різдвяного ангела&quot; (Свічадо, 2008). 2008 року стала лауреатом конкурсу &quot;Золотий лелека&quot;. Казки й оповідання виходили друком у збірниках &quot;Казки Божого саду&quot; (Свічадо, 2009), &quot;Зимова книжка&quot;, &quot;Весняна книжка&quot;, &quot;Літня книжка&quot;, &quot;Осіння книжка&quot; (видавництво &quot;Братське&quot;, 2009—2011), &quot;Різдвяна чудасія&quot; (&quot;Братське&quot;, 2010), &quot;Зимові історії для дітей&quot; (&quot;Свічадо, 2011), &quot;Дарунок Святого Миколая&quot; (&quot;Братське, 2012), &quot;На Великдень&quot; (&quot;Братське, 2013) та ін.</p>
+          <p>В листопаді 2011 року разом із дитячою письменницею та дослідницею дитячої літератури Оксаною Лущевською заснувала блог про дитячу літературу &quot;Казкарка&quot;, в якому публікувалися огляди найцікавішої дитячої літератури світу. У липні 2016 року &quot;Казкарка&quot; зливається з культурно-видавничим проектом &quot;Читомо&quot; для об&#x27;єднання зусиль із популяризації якісної дитячої літератури та промоції дитячого і підліткового читання. 2014 року разом із Оксаною Лущевською та групою редакторів і літературних оглядачів заснувала професійний рейтинг дитячих та підліткових книжок &quot;Рейтинг критика: найкращі дитячі та підліткові книжки року&quot;. Серед співзасновників — Ірина Батуревич, Оксана Хмельовська (&quot;Читомо&quot;), Тетяна Стус (Щербаченко), Ольга Купріян (&quot;БараБука&quot;), Ірина Комаренець та Міра Київська (&quot;Букмоль&quot;), Галина Ткачук (журнал &quot;Однокласник&quot;), Марія Семенченко (газета &quot;День&quot;) та Володимир Чернишенко (критик, перекладач). 2016 року тексти В.Вздульської, як і твори кількох десятків інших сучасних письменників, включено до оновленої шкільної програми з літературного читання для молодших класів. 14 грудня 2018 року книжка &quot;Вільям Шекспір&quot; здобула перемогу в номінації &quot;Пізнавальна книжка року&quot; в &quot;Топ БараБуки&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

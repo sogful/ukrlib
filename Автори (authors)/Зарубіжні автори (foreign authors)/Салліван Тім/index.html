@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Салліван Тім — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Салліван Тім</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./sallivan-tim.webp" alt="Салліван Тім" title="Салліван Тім" data-full="./sallivan-tim.webp" /></div>
+        <div class="prose-text">
+          <p>Тім Салліван (нар. 21 лютого 1958) — британський кіно— і телевізійний режисер і сценарист, відомий роботою з телеканалом &quot;Гранада&quot; та художнім фільмом &quot;Джек і Сара&quot; (1995).</p>
+          <p>Тім Салліван народився в Німеччині, де його батько дислокувався з Королівськими ВПС. Він відвідував Кліфтонський коледж в Брістолі, Англія, перш ніж здобути виставкову стипендію для читання англійської мови та права в Кембриджському університеті. Перебуваючи в Кембриджі, Салліван був членом аматорського драматичного клубу Кембриджського університету та співпрацював з письменником Річардом Махером у виставі Клев, яка проводилася в театрі ім. Корони, Хілл-Плейс у 1978 році. Він також постачав доповнення до &quot;Вогненних колісниць&quot; (1981). Після від&#x27;їзду з Кембриджа Салліван влаштувався на літню роботу в якості шофера Ентоні Ендрюса на постановці Brideshead Revisited. Продюсер Дерек Ґрейнджер дізнався, що Салліван пише сценарій з Дереком Джарманом (Боб Упадаун), і заохотив його влаштуватися на роботу дослідником телеканалу Гранада.</p>
+          <p>Працюючи дослідником першої серії Альфреско, Салліван та Річард Махер співпрацювали, щоб написати свій перший телевізійний серіал, ситком під назвою &quot;Поїзд, який зараз йде&quot;, встановлений у вагоні їдальні поїзда InterCity, що курсує між Лондоном та Манчестером. Гранада замовила для розробки сім 30-хвилинних сценаріїв. Салліван пробув у Гранаді ще кілька років, режисуруючи епізоди серіалів, такі як &quot;Свято Бусмана&quot;, &quot;Зупиніть цей сміх ззаду&quot;, &quot;Коронаційна вулиця&quot; та &quot;Книга справ Шерлока Холмса&quot;, а також адаптувавши &quot;Жменю пилу&quot; для телебачення (1988) та режисуру Тетчер: Фінальні дні (1991). У 1995 році Салліван написав і зняв свій перший повнометражний фільм &quot;Джек і Сара&quot; у головних ролях Річард Е. Гранта та Саманта Матіс. Цей фільм був надихнутий колегою чоловіком з Гранади, коли його домовленість про догляд за дітьми порушили і він повинен був привести свою дитину на роботу. У 2000-х Салліван працював позаштатно над багатьма телевізійними та кінопроектами, зокрема, режисуру остаточного епізоду &quot;Холодні ноги для Гранади&quot; та одноразову комедійну драму &quot;Catwalk Dogs&quot; для &quot;Shed Productions&quot;. У 2005 році, працюючи над фільмом &quot;Змив&quot;, DreamWorks найняв Саллівана, щоб написати початковий проект сценарію для Шрека 4. Салліван написав фільм &quot;Листи до Джульєтти&quot;, в якому знялася Аманда Сейфрід, який був випущен в США в 2010 році, зайнявши в усьому світі 80 мільйонів доларів. Він розробляє фільм за мотивами Лондонського марафону та іншого &quot;Весільне плаття&quot;. Він співпрацював з багатьма помітними режисерами та продюсерами США, включаючи Рона Говарда, Скотта Рудіна та Джефрі Каценберга.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

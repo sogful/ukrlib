@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тарковський Арсеній Олександрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Тарковський Арсеній Олександрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tarkovskyy-arseniy-oleksandrovych.webp" alt="Тарковський Арсеній Олександрович" title="Тарковський Арсеній Олександрович" data-full="./tarkovskyy-arseniy-oleksandrovych.webp" /><img class="side-img side-thumb" src="./tarkovskyy-arseniy-oleksandrovych_1.webp" alt="Тарковський Арсеній Олександрович" title="Тарковський Арсеній Олександрович" data-full="./tarkovskyy-arseniy-oleksandrovych_1.webp" /><img class="side-img side-thumb" src="./tarkovskyy-arseniy-oleksandrovych_2.webp" alt="Тарковський Арсеній Олександрович" title="Тарковський Арсеній Олександрович" data-full="./tarkovskyy-arseniy-oleksandrovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>24.06.1907 року — 27.05.1989 року</p>
+          <p>Тарковський Арсеній Олександрович народився в Єлисаветграді у родині народовольца. Дитячі та юнацькі роки припали на важку пору російської історії, що майбутній поет відчув повною мірою.</p>
+          <p>У 1920-ті роки Тарковський живе в Москві, з 1924 року працює в редакції газети &quot;Гудок&quot;, протягом двох років веде відділ віршованого фейлетону. У 1925 році вступає на навчання на Вищі державні літературні курси, які закінчує у 1929 році. Пише вірші, публікує їх у студентському збірнику(1926). З 1932 року активно займався перекладами, приділяючи особливу увагу класичній поезії Сходу. Йому належать переклади віршів з туркменського, вірменської, грузинської, арабської мови. Під час Вітчизняної війни працював в армійській газеті &quot;Бойова тривога&quot;. Свої вірші Тарковський довго непубликует, вони з&#x27;являються в пресі, коли поетові вже 50 років. Потім протягом двадцяти років у різних журналах і альманахах були надруковані вірші, що склали шість поетичних збірок: &quot;Перед снігом&quot; (1962); &quot;Землі земне&quot; (1966); &quot;Вісник&quot; (1969); &quot;Поезії&quot; (1974); &quot;Зимовий день&quot; (1980); &quot;Вибране&quot; (1982). У 1983 році виходять &quot;Вірші різних років&quot;, які об&#x27;єднали кращі з надрукованих. Остання книга поета — &quot;Від юності до старості&quot;. А. Тарковський завжди тримався далеко від літературної суєти, багато років жив в Передєлкіно. Йому належать теоретичні і критичні статті та рецензії. Помер у Москві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Живка Зоряна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Живка Зоряна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zhyvka-zoriana.webp" alt="Живка Зоряна" title="Живка Зоряна" data-full="./zhyvka-zoriana.webp" /></div>
+        <div class="prose-text">
+          <p>Письменниця, літературний критик, редакторка й упорядниця низки християнських збірок для дітей. Художні твори пише під псевдонімом Зоряна Живка. Народилася 1983 року в Києві. За спеціальністю – філолог, закінчила Національний університет &quot;Києво-Могилянська академія&quot;.</p>
+          <p>Писати вірші почала у 12 років, публікуватися – у 15. Вірші для дітей, казки й оповідання Зої Жук друкували в часописах &quot;Стежинка&quot;, &quot;Однокласник&quot;, &quot;Малятко&quot;, &quot;Зернятко&quot;, &quot;Крилаті&quot;, &quot;Наша віра&quot; тощо, а також у низці тематичних збірників. Авторка творів для &quot;Християнської читанки&quot; та книжки &quot;Зернятко надії (дітям про Голодомор 1932–33 років). 2002 року стала переможницею конкурсу &quot;Зимові візерунки дитячої творчості&quot; на найкращий літературний твір малої форми про Різдво.</p>
+          <p>Нині мешкає і працює у Вінниці.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

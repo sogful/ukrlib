@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коваленко Неля Сергіївна — Короткий життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коваленко Неля Сергіївна</h1>
+      <h2>Короткий життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kovalenko-nelia-serhiivna.webp" alt="Коваленко Неля Сергіївна" title="Коваленко Неля Сергіївна" data-full="./kovalenko-nelia-serhiivna.webp" /></div>
+        <div class="prose-text">
+          <p>КОВАЛЕНКО Неля СергіївнаНародилася 1935 року в сім&#x27;ї красноградських вчителів. Після закінчення Красноградської СШ № ЗО (тепер це СШ № 3) працювала піонервожатою Хрестнщенської школи. В 1954 році вступила до Харківського педінституту на філологічний факультет.</p>
+          <p>Після закінчення педінституту все життя працює в Тишенківській школі вчителькою української мови та літератури. Любов до рідної слова, поезії успадкувала від матері, а в шкільні роки мала добрї наставників — Лідію Антонівну Кучеренко та Анастасію Силіві Ярмульську.</p>
+          <p>Писати вірші стала, вже працюючи вчителькою. Багато її поезій присвячено людям праці села Тишенківки. Частина з вірі стала піснями, які охоче співають діти й дорослі, сільський ансамбль &quot;Червона калина&quot;. В доробку поетеси Нелі Сергіївні десятки віршів та пісень. Вона проводить велику громадсько-корисну роботу в школі, в селі і районі. Є в Нелі Сергіївни вірші, присвячені воїнам, які не повернулися з війни: Батьку, рідний, де ти? Озовися! Ми тебе чекаєм стільки літ. Як без тебе гірко дні тяглися, Скільки ми перетерпіли бід. Наша мама, як в мороз калина, Коси її стали, наче сніг, Досі, батьку, жде теберодина Із далеких грозових доріг. Є в Нелі Сергіївни й гуморески: Хвалилися в Тишенківці, Що у цьому році Посіяли вареники Дітям на толоці. Будуть учні йти у школу Й швидко без мороки Поснідають в ранню пору І гайда на вроки! Ось і сходи вже з &#x27;явились — Вареники з сиром. Недаремно старалися Для дітей всім миром. Бігли юні тишенчата Після гри з толоки. Як уздріли теє диво, Аж взялися в боки. Пхе,— скривилися скептично,— Людей насмішили, Краще були б замість нас Уроки повчили.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Левчев Любомир — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Левчев Любомир</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./levchev-liubomyr.webp" alt="Левчев Любомир" title="Левчев Любомир" data-full="./levchev-liubomyr.webp" /><img class="side-img side-thumb" src="./levchev-liubomyr_1.webp" alt="Левчев Любомир" title="Левчев Любомир" data-full="./levchev-liubomyr_1.webp" /><img class="side-img side-thumb" src="./levchev-liubomyr_2.webp" alt="Левчев Любомир" title="Левчев Любомир" data-full="./levchev-liubomyr_2.webp" /><img class="side-img side-thumb" src="./levchev-liubomyr_3.webp" alt="Левчев Любомир" title="Левчев Любомир" data-full="./levchev-liubomyr_3.webp" /><img class="side-img side-thumb" src="./levchev-liubomyr_4.webp" alt="Левчев Любомир" title="Левчев Любомир" data-full="./levchev-liubomyr_4.webp" /></div>
+        <div class="prose-text">
+          <p>Любомир Спиридонов Левчій (болг. Любомир Спиридонов Левчій, 27 квітня 1935 Троян, Болгарія) — болгарський поет, прозаїк. Дійсний член Європейської академії мистецтва, науки і культури (Париж, Франція). Удостоєний багатьох міжнародних нагород, у тому числі золотої медалі Французької академії за поезію і почесного звання Лицаря поезії (1985).</p>
+          <p>Любомир Левчій народився в 1935 році в місті Троян. Вірші почав писати рано. Його перша книга &quot;Зірки належать мені&quot; ( &quot;Зірка са мої&quot;) вийшла в 1957 році. Закінчив філософсько-історичний факультет Софійського університету. У 1961-1971 роках працював редактором, головним редактором газети &quot;Література фронт&quot;. Був першим заступником міністра культури Народної Республіки Болгарія. Потім — головою Союзу болгарських письменників. З 1991 року — власник і головний редактор видавничого дому та міжнародного журналу &quot;Орфей&quot;.</p>
+          <p>Любомир Левчій нагороджений багатьма літературними преміями на батьківщині і за кордоном. серед них: медаль Асоціації венесуельських письменників (1985), премія &quot;Мате Залки&quot; і &quot;Бориса Польового&quot; (1986), велика нагорода інституту імені Пушкіна і Сорбони (1989), Золотий Вінець (2010). У 2006 році Любомир Левчій був нагороджений орденом &quot;Стара Планіна&quot; першого ступеня за &quot;виключно великі заслуги перед Болгарією, за розвиток і популяризацію болгарського мистецтва і культури&quot;. У своїх книгах &quot;Зірки мої&quot; (1957), &quot;Стрільбище&quot; (1971), &quot;Щоденник для спалення&quot; (1973), &quot;Самосуд&quot; (1975), &quot;Лук&quot; (1983) та ін. Левчій піднімав цивільні, політичні та моральні проблеми. У 2012 році російською мовою вийшла його автобіографічна книга &quot;Ти наступний&quot;, в якій поет розповів історію своєї молодості, приходу в літературу, а потім і у владу.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

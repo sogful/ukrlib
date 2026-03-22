@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Камінчук Анатолій Семенович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Камінчук Анатолій Семенович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kaminchuk-anatoliy-semenovych.webp" alt="Камінчук Анатолій Семенович" title="Камінчук Анатолій Семенович" data-full="./kaminchuk-anatoliy-semenovych.webp" /></div>
+        <div class="prose-text">
+          <p>Анатолій Камінчук народився 1939 року в Києві в сім&#x27;ї службовця.</p>
+          <p>Коли почалася війна, його батько — Семен Камінчук — пішов на фронт — в 1943 році загинув у боях під Житомиром.</p>
+          <p>Мати, Марина Федорівна, разом із сином переїхала у село Луб&#x27;янку (Бородянський район Київської області) до свого батька Федора Івановича Петренка, де потім Анатолій закінчив середню школу. Після служби в армії, закінчив філологічний факультет Київського державного університету ім. Т. Г. Шевченка, працював учителем на Житомирщині. Писати вірші Анатолій почав ще в школі. Перший вірш надрукував у районній газеті, коли навчався у дев&#x27;ятому класі. Він називався &quot;Десятикласнику&quot;, 1956 рік. В 1958 році газета &quot;Київська правда&quot; подала велику добірку віршів поета-початківця з передмовою Платона Воронька. У 1969 році вийшла перша збірка віршів Анатолія Камінчука &quot;Свічадо&quot;, тоді ж він переїхав до Києва. Працював у журналі &quot;Малятко&quot;, у видавництві &quot;Дніпро&quot;, завідувачем відділу, заступником головного редактора журналу &quot;Київ&quot;. Друкувався у журналах &quot;Україна&quot;, &quot;Дніпро&quot;, &quot;Вітчизна&quot; тощо. Анатолій Камінчук видав більше десяти збірок віршів для дітей. Вийшли друком його книжки віршів та прози, книжка оповідань, новел, етюдів та образків &quot;Білий сніг кульбаб&quot;. Пише також статті, публіцистику, друкується в періодиці. Окремі вірші поета перекладено російською, молдавською, азербайджанською та польською мовами. Член Національної Спілки письменників України. Помер 1 грудня 2021 року.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

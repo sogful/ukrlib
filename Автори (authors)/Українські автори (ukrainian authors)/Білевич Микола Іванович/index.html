@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Білевич Микола Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Білевич Микола Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bilevych-mykola-ivanovych.webp" alt="Білевич Микола Іванович" title="Білевич Микола Іванович" data-full="./bilevych-mykola-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 21.ХІ.1812 р. в Курську в сім&#x27;ї українського педагога, який виїхав із Закарпаття. Закінчив Ніжинську гімназію вищих наук князя Безбородька. Здобув освіту вчителя історії та статистики. Був улюбленим учителем Ф.Достоєвського, який мав на нього значний літературний вплив. В гімназії заприятелював з Миколою Гоголем, Євгеном Гребінкою та емігрантом з Закарпаття Нестором Кукольником.</p>
+          <p>Першою його книгою була збірка сатиричних оповідань &quot;Картинная галерея светской жизни, или Нравы 19 столетия&quot; (ч. 1–2, М., 1833), яка не була помічена критикою. Згодом видав анонімно збірку фантастичних оповідань у двох томах &quot;Святочные вечера, или Рассказы моей тетушки&quot; (1836). Тут діють чорти, відьми, мерці та інші представники нечистої сили. Книгу похвалив В.Бєлінській. Прихильність критики спонукала Білевича перевидати книгу, значно її доповнивши. Тепер вона називалася &quot;Святочные вечера. Написаны Николаем Кунацким. Изданы дядею его Григорием Рацким&quot; (СПб., 1839).</p>
+          <p>М.Білевич також автор двох повістей – &quot;Мечта и существенность&quot; (&quot;Москвитянин&quot;, 1849, №23) та &quot;Петр Иванович Короткоушкин&quot; (Библиотека для чтения, 1853, т. 120). Опублікував кілька праць з історії російської літератури (&quot;Н.И.Новиков&quot;, &quot;Русские писательницы XVIII–ХІХ века&quot;, &quot;Русские писатели XIX века&quot;). Пізніше в &quot;Невском альманахе&quot; у 1846 році з&#x27;явилася фантастична новела &quot;Журавель&quot; під псевдонімом Ю. Юрченко Джерело: Антологія української готичної прози Юрія Винничука</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Герасименко Кость Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Герасименко Кость Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./herasymenko-kost-mykhaylovych.webp" alt="Герасименко Кость Михайлович" title="Герасименко Кость Михайлович" data-full="./herasymenko-kost-mykhaylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 11 травня 1907 року в родині вчителя в с. Прихідьки, нині Пирятинського району Полтавської області . 1927 року закінчив педагогічні курси в Пирятині. Два роки вчителював у Донбасі. Служив у Червоній армії, потім знову деякий час учителював на Донбасі. Брав активну участь в роботі письменницької організації Союз пролетарських письменників Донбасу &quot;Забой&quot;</p>
+          <p>1935 року переїхав до Києва, працював на Київській кінофабриці.</p>
+          <p>1939 року брав участь у поході Червоної армії в Західну Україну. Під час німецько-радянської війни був військовим кореспондентом. Працював у газеті &quot;Знамя Родины&quot;. Загинув 27 вересня 1942 року на Північному Кавказі. Донька Марина Герасименко (народилася 19 квітня 1941 року) стала актрисою. Дружина — мистецтвознавець Ірина Вериківська. Друкувався від 1925 року. Твори Герасименка відзначаються високою емоційністю, задушевністю. філософською зосередженістю поетичної думки. Крім віршів і п&#x27;єс, писав також нариси, оповідання, літературно-критичні статті. Переклав деякі поетичні твори: з польської мови — Адама Міцкевича, з російської мови — Володимира Маяковського, Павла Безпощадного. Окремі твори Герасименка перекладено російською, білоруською, молдавською, болгарською, англійською мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

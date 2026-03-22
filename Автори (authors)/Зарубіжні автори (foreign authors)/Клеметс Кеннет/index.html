@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Клеметс Кеннет — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Клеметс Кеннет</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./klemets-kennet.webp" alt="Клеметс Кеннет" title="Клеметс Кеннет" data-full="./klemets-kennet.webp" /><img class="side-img side-thumb" src="./klemets-kennet_1.webp" alt="Клеметс Кеннет" title="Клеметс Кеннет" data-full="./klemets-kennet_1.webp" /><img class="side-img side-thumb" src="./klemets-kennet_2.webp" alt="Клеметс Кеннет" title="Клеметс Кеннет" data-full="./klemets-kennet_2.webp" /></div>
+        <div class="prose-text">
+          <p>Кеннет Інгмар Клеметс, народився 7 листопада 1964 року в Готрорі, Уппланд, є шведським письменником (поезія) і перекладачем.</p>
+          <p>Клемец народився в Уппланді. Він навчався в Упсалі та Стокгольмі, де отримав ступінь бакалавра філософії з французької, шведської мов та літературознавства. У середині 1990-х років він переїхав до Гетеборга і пройшов курс письма в Північному народному коледжі в Кунгельві. Він працює, серед іншого, в Авторському центрі Väst.</p>
+          <p>Твори Клемета характеризуються зображенням темної сторони життя з депресією та самотністю як темами, часто з сильною інтенсивністю. Дебютував у 1997 році поетичною збіркою &quot;Рік із тринадцятьма місяцями&quot;. За нею послідувала інтроспективна книга &quot;Лихоманка суботнього вечора&quot; 2002 року, яка стала незначним проривом. Третя поетична збірка Кеннета Клемета Accelerator виражає більш дикий, більш розчарований стан. За цю книгу він отримав культурну нагороду Sällskapet Gnistan у 2006 році з обґрунтуванням: &quot;Поет із потужною лірикою, яка вигинається та розгойдується&quot;. Lux Interior з 2007 року — це довга збірка віршів, що складається з коротких фраз і речень. Наступна книга, Kling Kling 2009 року, має більш особистий відтінок. За Kling Kling Клемец був нагороджений Ліричною премією Жерара Боньє в 2010 році. Збірку віршів &quot;Вся ця відритість, яка приходить&quot; 2011 року, можна охарактеризувати як внутрішній монолог і за своєю структурою недалеко від драми. У збірці &quot;Дотик&quot; 2013 року натомість є короткі, зосереджені вірші, написані в Парижі, Гельсінкі та Гетеборзі. У 2015 році було випущено &quot;Поки я пишу&quot;, збірку віршів, які раніше публікувалися лише в газетах і журналах. У своєму природному місці з 2018 року має певну схожість із &quot;вся ця відкритість, що приходить&quot; 2011 року і складається з монологів, що характеризуються побутовим абсурдизмом, соціальною критикою та чорним гумором. У 2017 році Джила Моссаед призначила Клеметса своїм наступником на Poetens plats у Нолгазі. 4-9 червня 2018 року Клемець був поетом місяця в P1(загальнонаціональний шведський радіоканал, створений Sveriges Radio.).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

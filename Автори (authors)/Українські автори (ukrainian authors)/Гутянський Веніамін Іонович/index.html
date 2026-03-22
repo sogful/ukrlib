@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гутянський Веніамін Іонович — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гутянський Веніамін Іонович</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hutianskyy-veniamin-ionovych.webp" alt="Гутянський Веніамін Іонович" title="Гутянський Веніамін Іонович" data-full="./hutianskyy-veniamin-ionovych.webp" /></div>
+        <div class="prose-text">
+          <p>Веніамін ГУТЯНСЬКИЙ</p>
+          <p>Гутянський Веніамін Іонович народився 1903 року в м. Глибичок на Вінниччині в бідній сім&#x27;ї столяра. Початкову освіту здобув у Бершадській середній школі. Ще в дитячі роки почав трудову діяльність — спочатку учнем слюсаря та підсобним робітником, а пізніше — приватним учителем.</p>
+          <p>На початку 1923 року переїхав до Києва й вступив до педагогічного технікуму. Після завершення навчання викладав мову й літературу в трудових школах Києва. Починаючи з 1930 року, пише єврейською мовою вірші для дітей, пробує себе в жанрі байки. Популярність Гутянському принесли збірки поезій &quot;Для малят&quot; (1936), &quot;Різне&quot; (1937), &quot;Байки&quot; (1940), &quot;Сіль у вічі&quot; (1944). 1940 року його прийняли до Спілки письменників. Під час Великої Вітчизняної війни Гутянський разом із родиною евакуювався до Уфи, працював коректором у видавництві. У воєнні роки він створив ряд гострих сатиричних віршів, спрямованих проти фашизму, перекладав рідною мовою байки Крилова. Після Перемоги поет тяжко хворим повернувся до Києва. 5 липня 1949 року Гутянський був заарештований. Як і інших єврейських літераторів, його звинуватили в &quot;націоналістичній пропаганді&quot;, &quot;в зв&#x27;язках з американським журналістом, розвідником Магідовим&quot;. Підставою для цього став той факт, що в дружини Гутянського — літературознавця Берти Корсунської — десь в Америці жив далекий родич журналіст Магідов, котрий свого часу був акредитований у Москві. У голодні роки війни Магідов іноді подавав матеріальну допомогу сім&#x27;ї Гутянського. (Корсунську, до речі, теж арештували). Родичі зрідка зустрічалися в Києві. обмінювалися листами... Цього було достатньо, щоб звинуватити літераторів у найтяжчих гріхах. Через кілька днів після арешту В. Гутянського з&#x27;явилася постанова особливої наради — 10 років таборів суворого режиму. У матеріалах судово-слідчої справи зберігається документ, в якому зазначено: під час обшуку квартири опис майна не проводився через його відсутність. Наприкінці 1955 року В. Гутянський був достроково звільнений із ув&#x27;язнення за станом здоров&#x27;я. Смертельно хворий на сухоти поет ледь дістався до Кустаная, де в засланні жили його обездолені діти. 18 серпня 1956 року письменник помер. Свого часу Оксана Іваненко, Володимир Сосюра та Марія Пригара звернулися в судові органи з проханням реабілітувати чесне ім&#x27;я поета. Цієї події Веніамін Гутянський, на жаль, так і не дочекався. Реабілітували його посмертно. Григорій Полянкер ЛУ 29 (4438) 19.07.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

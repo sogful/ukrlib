@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гунель Лоран — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гунель Лоран</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hunel-loran.webp" alt="Гунель Лоран" title="Гунель Лоран" data-full="./hunel-loran.webp" /><img class="side-img side-thumb" src="./hunel-loran_1.webp" alt="Гунель Лоран" title="Гунель Лоран" data-full="./hunel-loran_1.webp" /></div>
+        <div class="prose-text">
+          <p>Лоран Гунель (Laurent Gounelle) — французький письменник та фахівець із розвитку особистості.</p>
+          <p>Лоран народився 10 серпня 1966 року. У 1988 році, за бажанням батьків, здобув вищу економічну освіту в Парижі, закінчивши аспірантуру в Сорбонні, і почав працювати бухгалтером у великій компанії. Проте робота не приносила Лорану задоволення, і він зайнявся вивченням психології, філософії та соціології у Каліфорнійському університеті.</p>
+          <p>З метою вивчити східні навчання та психологію шаманізму, він здійснив поїздки до США, Фінляндії та Балі. Після цього Лоран став консультантом з питань людських взаємин, особистісного та професійного зростання, а також викладав в університеті Клермон-Ферран. Свою першу книгу &quot;Людина, яка хотіла бути щасливою&quot; Лоран Гунель написав у 2006 році, після того, як втратив батька. Роман був опублікований у 2008 році та став міжнародним бестселером. Друга книга &quot;Господь Бог завжди мандрує інкогніто&quot;, видана у 2010 році, також стала бестселером. Перу Лорана Гунеля належать книги &quot;Філософ, якому не вистачало мудрості&quot; (2012) та Le jour où j&#x27;ai appris à vivre (2014).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Злидень Федір Євтихейович — Короткий життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Злидень Федір Євтихейович</h1>
+      <h2>Короткий життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zlyden-fedir-ievtykheyovych.webp" alt="Злидень Федір справа" title="Злидень Федір справа" data-full="./zlyden-fedir-ievtykheyovych.webp" /></div>
+        <div class="prose-text">
+          <p>ЗЛИДЕНЬ Федір Євтихейович</p>
+          <p>(1899-1941)</p>
+          <p>Український письменникНародився в с. Зачепилівка Костянтиноградського повіту Полтавської губернії (тепер Зачепилівський район Харківської області) в селянській сім&#x27;ї. Закінчив Зачепилівське двокласне училище. Деякий час працював канцеляристом Костянтиноградського повітового земства. У 1918 році вступив до Костянтиноградської учительської семнарії. Після її закінчення працював вчителем початкових класів Забаринської школи. У 1922 році почав друкуватися, а у 1923 році став студентом Полтавського інституту народної освіти. Федір Євтихейович був членом літературної організації &quot;Плуг&quot;. З 1930 до 1938 року працював літпрацівником газети &quot;Більшовик Полтавщини&quot;, займається літературною творчістю. Багато його творів не опубліковано. Вони пропали після того, як 17 березня 1938 року його репресували. Помер у 1941 році в концтаборі. Посмертно реабілітований у 1956 році. Окремими виданнями вийшли його твори: 1. &quot;Яри загомоніли&quot;. 2. &quot;Бригадир Ткач&quot;. 3. &quot;Надія Яремченко&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

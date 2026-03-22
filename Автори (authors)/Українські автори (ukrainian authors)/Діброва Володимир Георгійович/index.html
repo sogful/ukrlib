@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Діброва Володимир Георгійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Діброва Володимир Георгійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dibrova-volodymyr-heorhiyovych.webp" alt="Діброва Володимир Георгійович" title="Діброва Володимир Георгійович" data-full="./dibrova-volodymyr-heorhiyovych.webp" /><img class="side-img side-thumb" src="./dibrova-volodymyr-heorhiyovych_1.webp" alt="Діброва Володимир Георгійович" title="Діброва Володимир Георгійович" data-full="./dibrova-volodymyr-heorhiyovych_1.webp" /><img class="side-img side-thumb" src="./dibrova-volodymyr-heorhiyovych_2.webp" alt="Діброва Володимир Георгійович" title="Діброва Володимир Георгійович" data-full="./dibrova-volodymyr-heorhiyovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Володимир Георгійович Діброва (укр. Володимир Георгійович Діброва, 11 серпня 1951 Сталіно) — письменник, перекладач, есеїст.</p>
+          <p>Народився 11 серпня 1951 в місті Сталіно. Батько — Георгій Савич Діброва, мати Нонна Дмитрівна.</p>
+          <p>Навчався в Київському університеті імені Тараса Шевченка, на факультеті романо-германської філології, відділ перекладачів (1968-1973). У 1985-1988 — аспірант Інституту літератури ім. Т. Шевченка АНУ. Тема кандидатської дисертації: &quot;Творчість Фленн О&#x27;Брайен і традиції народної культури&quot; (захищена в 1988). Яскравий представник &quot;андеграундної альтернативи&quot; 1970 — 1980-х років, що створювалася паралельно радянському офіціозу — в самвидаві. Дебютувавши в кінці &quot;перебудови&quot; двома книгами у відкритій пресі ( &quot;Тексти з назвами і без назв&quot;, 1990; &quot;Пісні Бітлз&quot;, 1991), він одразу став одним з найпопулярніших українських прозаїків, переведеним в Німеччині, Польщі, Угорщині, Шотландії , США, Канаді. 1996 року в престижному американському видавництві &quot;North Western University Press&quot; (де друкувалися твори Кундери, Мілоша, Бродського та інших видатних східноєвропейські письменників) з&#x27;явився однотомник його обраної прози &quot;Peltse and Pentameron&quot;. На Україні тим часом його твори друкувалися в періодиці — найширший резонанс отримали романи &quot;Пентамерон&quot; ( &quot;Сучасність&quot;, 1-2, 1994), &quot;Бурдик&quot; ( &quot;Березіль&quot;, 1-2, 1997), повість &quot;День народження&quot; ( &quot;Кур&#x27;єр Кривбасу&quot;, 10, 1997), п&#x27;єси &quot;Короткий курс&quot; і &quot;Двадцять такий-то з&#x27;їзд нашої партії (стенографічний звіт-опера)&quot;. За переклад роману Семюела Беккета &quot;Уот&quot; (Журнал &quot;Всесвіт&quot;, 9-12, 1990) Володимир Діброва нагороджений премією ім. Миколи Лукаша. C 1994 року письменника живе і працює в США, викладає в Українському науковому інституті Гарвардського університету.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Танк Максим — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Танк Максим</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tank-maksym.webp" alt="Танк Максим" title="Танк Максим" data-full="./tank-maksym.webp" /><img class="side-img side-thumb" src="./tank-maksym_1.webp" alt="Танк Максим" title="Танк Максим" data-full="./tank-maksym_1.webp" /><img class="side-img side-thumb" src="./tank-maksym_2.webp" alt="Танк Максим" title="Танк Максим" data-full="./tank-maksym_2.webp" /><img class="side-img side-thumb" src="./tank-maksym_3.webp" alt="Танк Максим" title="Танк Максим" data-full="./tank-maksym_3.webp" /></div>
+        <div class="prose-text">
+          <p>Максим Танк (Євген Іванович Скурко) (1912 — 1995) — білоруський поет і письменник.</p>
+          <p>Народився Євген 17 вересня 1912 року в селі Пільковщіна Білорусії. Потім брав участь у революції в Західній Білорусії. У біографії Максима Танка завжди активно виражалася громадянська позиція. За це він був заарештований в 1933, а також в 1934 роках. Перший опублікований збірник віршів в біографії М. Танка вийшов в 1936 році — &quot;На етапах&quot;.</p>
+          <p>За ним пішов збірник &quot;Журавлинний колір&quot; в 1937, потім &quot;Під щоглою&quot; в 1938. У всіх цих книгах поет підтримував боротьбу народу за визволення рідної землі. Танк був кореспондентом в газеті &quot;Вілейська правда&quot;, а в роки Великої Вітчизняної війни працював у пресі. Навіть у воєнні часи в біографії Танка письменницька діяльність не була залишена. У 1942 році він написав поему &quot;Янук Сяліба&quot;, а в 1945 створив дві збірки віршів. Коли закінчилася війна, Танк став працювати в журналі &quot;вожик&quot; редактором, а пізніше — головним редактором (з 1948 по 1966) в журналі &quot;Полум&#x27;я&quot;. За повну біографію Танка було створено безліч книг, поем, збірників. Серед відомих творів Танка — &quot;Слід блискавки&quot; (1957), &quot;Ковток води&quot; (1964), &quot;Хай буде світло&quot; (1972), &quot;Ave Марія&quot; (1980). Письменник має безліч звань і нагород. У 1948 році отримав Сталінську премію, в 1978 — Ленінську, а в 1968 — звання Народного поета Білорусі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

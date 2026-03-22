@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гриценко Микола Семенович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гриценко Микола Семенович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrytsenko-mykola-semenovych.webp" alt="Гриценко Микола Семенович" title="Гриценко Микола Семенович" data-full="./hrytsenko-mykola-semenovych.webp" /><img class="side-img side-thumb" src="./hrytsenko-mykola-semenovych_1.webp" alt="Гриценко Микола Семенович" title="Гриценко Микола Семенович" data-full="./hrytsenko-mykola-semenovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Микола Семенович Гриценко народився 9 травня 1962 року в с. Тимченки, Сумської області. Український поет, прозаїк, журналіст, громадський діяч. Президент благодійної організації &quot;Фонд сприяння ініціативам газети &quot;День&quot;. Член Національної спілки журналістів України, перший заступник голови Національної спілки письменників України (з березня 2024 року). Заслужений діяч мистецтв України, лауреат літературних премій і конкурсів.</p>
+          <p>Після закінчення Козелянської середньої школи вступив на факультет журналістики Київського державного університету ім. Т. Шевченка, де отримав фах телевізійного журналіста.</p>
+          <p>Служив у лавах Радянської Армії. У 1986 році у складі військових підрозділів брав участь у ліквідації наслідків аварії на Чорнобильській АЕС. Після демобілізації почав працювати у Сумському облтелерадіокомітеті. При створенні головної редакції телебачення в 1987 році, став першим головним редактором телебачення Сумського облтелерадіокомітету. На сумському телебаченні був автором і ведучим багатьох циклів популярних телепрограм з 1987 по 1995 рік. В 1995 році був призначений представником Національної ради України з питань телебачення і радіомовлення в Сумській області. Брав безпосередню участь в розробці та реалізації концепції розвитку телерадіомовного простору Сумської області. З 2000 року працює в центральному апараті Національної ради України з питань телебачення і радіомовлення, є керівником прес-служби Національної ради, головним редактором журналу &quot;Вісник Національної ради України з питань телебачення і радіомовлення&quot;. З 2012 року — президент благодійної організації &quot;Фонд сприяння ініціативам газети &quot;День&quot;. Микола Гриценко є автором низки книг прози, поезії і публіцистики: &quot;Довго кувати зозулі&quot; (1993), &quot;Білий налив&quot; (1994), &quot;Самар&quot; (1998), &quot;Книжка&quot; (2000), &quot;Голоси на вітрі&quot; (2004), &quot;Живи добром&quot; (2009), &quot;Повернення дощу&quot; (2010), &quot;САМАР-І-Я&quot; (2012) &quot;На зелених іконах дерев&quot; (2014), збірка любовної поезії &quot;Лови/Love&quot; (2018). Він є автором тексту гімну міста Сум (композитор і виконавець Валерій Козупиця), низки популярних пісень, що стали лауреатами пісенних Всеукраїнських фестивалів &quot;Пісня року&quot;: &quot;Сумська мелодія&quot;, &quot;Дві долі&quot;, &quot;Юності пора&quot; та інших.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

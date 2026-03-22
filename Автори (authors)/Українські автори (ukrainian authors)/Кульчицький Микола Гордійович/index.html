@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кульчицький Микола Гордійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кульчицький Микола Гордійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kulchytskyy-mykola-hordiyovych.webp" alt="Кульчицький Микола Гордійович" title="Кульчицький Микола Гордійович" data-full="./kulchytskyy-mykola-hordiyovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 15 січня 1942 року в Росії в сім&#x27;ї учителів. З 1945 року мешкає у місті Конотопі Сумської області (Україна). Закінчивши у 1959 році середню школу, працював токарем на заводі &quot;Червоний Металіст&quot;.</p>
+          <p>У 1961 році поступив, а в 1969 році закінчив Одеський технологічний інститут ім. М.В. Ломоносова, звідки у 1962 році призивався до Радянської Армії, де прослужив до 1965 року. Спеціальність – інженер-механік харчових виробництв. Після інституту працював інженером-конструктором, начальником конструкторського відділу на заводі &quot;Червоний Металіст&quot; а з 1973 року по 1994 рік начальником конструкторського відділу, заступником головного інженера, головним інженером конотопського заводу &quot;Мотордеталь&quot; і генеральним директором Українсько-Болгарського підприємства &quot;Слов&#x27;янець&quot;. У грудні 1994 року очолив ВАТ &quot;Конотопський завод &quot;Мотордеталь&quot; і працював генеральним директором цього заводу до січня 2005 року. Закінчив аспірантуру при Харківському Політехнічному інституті, кандидат технічних наук за спеціальністю &quot;Ливарне виробництво&quot;. Автор двох винаходів, заслужений працівник промисловості України.</p>
+          <p>Літературною творчістю займається з 2006 року; видав дві книжки: &quot;Обыкновенная женщина&quot; і &quot;Холодна зима – спекотне літо&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

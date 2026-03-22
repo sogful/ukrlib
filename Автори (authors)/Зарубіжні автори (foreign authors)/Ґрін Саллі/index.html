@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ґрін Саллі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ґрін Саллі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./grin-salli.webp" alt="Ґрін Саллі" title="Ґрін Саллі" data-full="./grin-salli.webp" /></div>
+        <div class="prose-text">
+          <p>Саллі Ґрін народилася 11 вересня 1961 року в Англії. Вивчала гірничу справу в Лондонському університеті. Згодом здобула бухгалтерську освіту. Відтоді працювала бухгалтером у фінансових відділах різних фірм. У 41 народила сина, стала домогосподаркою та зайнялася письменницькою діяльністю. Тоді ж написала свій дебютний роман &quot;Напівлихий&quot;, задум якого виник ще у 2010 році.</p>
+          <p>&quot;Напівлихий&quot; — це перша книжка з трилогії &quot;Half Life&quot;, що одразу стала сенсацією в усьому світі. Особливий ажіотаж роман викликав під час Болонського книжкового ярмарку в 2013 році. Тоді ж права на його видання були продані в 36 країн ще до його публікації. Видавництво &quot;Viking&quot; випустило книгу &quot;Напівлихий&quot; (Half Bad) 4 березня 2014 року, водночас із видавництвом &quot;Puffin U.K.&quot; та австралійським відділом &quot;Penguin&quot;. Перший наклад становив 200 000 примірників. Мері Браун, власниця &quot;Букс, Байтс і Бейонд&quot; у Ґлен-Рок (Нью-Джерсі), та Кетлін Келдвел, власниця &quot;Великого гарного місця для книг&quot; в Окленді (Каліфорнія), порівняли захват від &quot;Напівлихого&quot; із &quot;Гаррі Поттером&quot;, а також &quot;Сутінковою сагою&quot; та &quot;Голодними іграми&quot;.</p>
+          <p>У 2015 році вийшла друга частина трилогії — &quot;Напівдикий&quot;, а в 2016 році світ побачив завершальну книгу серії — &quot;Напівзагублений&quot;. Події трилогії розгортаються в альтернативній сучасній Англії. У світі поруч зі звичайними людьми живуть справжні відьми та чаклуни. Білі — гарні, чорні — погані. Натан — незвичайний підліток, він не вписується в жодну систему — ні в систему простих людей, ні в систему магів, до яких належить увесь його рід. Він — наполовину чорний чаклун, наполовину білий. Відтоді як його мати, Біла відьма, наклала на себе руки, а батько, могутній Чорний чаклун, був визнаний вбивцею відьом, Рада Білих Відьом чекає, який шлях обере Натан, коли йому виповниться 17 років. У цьому віці він отримує три дари, що підтверджує його право стати чарівником. У 2017 році стало відомо, що письменниця працює над ще однією фентезійною трилогією, перша книга якої має назву &quot;Крадії диму&quot; (The Smoke Thieves) та вийшла у травні 2018 року. Нова серія книг розповідає про те як, &quot;між чотирма народами назріває конфлікт, а доля світу перебуває у руках чотирьох підлітків — принца, зрадника, мисливця та злодія&quot;. Друга книга — &quot;Світ демонів&quot; (англ. The Demon World).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

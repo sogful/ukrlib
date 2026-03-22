@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ільф і Петров — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ільф і Петров</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ilf-i-petrov.webp" alt="Ільф і Петров" title="Ільф і Петров" data-full="./ilf-i-petrov.webp" /><img class="side-img side-thumb" src="./ilf-i-petrov_1.webp" alt="Ільф і Петров" title="Ільф і Петров" data-full="./ilf-i-petrov_1.webp" /><img class="side-img side-thumb" src="./ilf-i-petrov_2.webp" alt="Ільф і Петров" title="Ільф і Петров" data-full="./ilf-i-petrov_2.webp" /><img class="side-img side-thumb" src="./ilf-i-petrov_3.webp" alt="Ільф і Петров" title="Ільф і Петров" data-full="./ilf-i-petrov_3.webp" /></div>
+        <div class="prose-text">
+          <p>Місце народження – Одеса.</p>
+          <p>Ілля Арнольдович Ільф (Ієхієл-Лейб Файнзильберг) (1897 — 1937) – російський радянський письменник. Народився в сім&#x27;ї банківського службовця. В 1913 році закінчив технічну школу, після чого працював в креслярському бюро, на телефонній станції, на військовому заводі. Після революції був бухгалтером, журналістом, а потім редактором в гумористичних журналах. Був членом Одеської спілки поетів. В 1923 році приїхав в Москву, став співробітником газети &quot;Гудок&quot;. Писав матеріали гумористичного і сатиричного характеру, здебільшого фейлетони. Помер від туберкульозу в Москві 13 квітня 1937 року.</p>
+          <p>Євген Петрович Петров (справжнє прізвище Катаєв) (1903 — 1942) народився в сім&#x27;ї вчителя. В 1920 році закінчив гімназію, працював кореспондентом Українського телеграфного агентства. Після цього протягом трьох років служив інспектором карного розшуку. В 1923 році приїхав в Москву, де став співробітником журналу &quot;Красный перец&quot;, а в 1926 році прийшов працювати в журнал &quot;Гудок&quot;. Після смерті Ільфа пробував опублікувати записні книжки Ільфа, задумував великий твір &quot;Мій друг Ільф&quot;. В 1939-42 працював над романом &quot;Путешествие в страну коммунизма&quot;, в котрому описував СРСР в 1963 році. Під час другої світової став фронтовим кореспондентом. Загинув 2 червня 1942 року – літак, яким він повертався з Севастополя, було збито німецьким винищувачем. В 1927 році творча співпраця Ільфа і Петрова почалася романом &quot;Двенадцать стульев&quot; (вони працювали разом в газеті &quot;Гудок&quot;). Пізніше у співавторстві було написано: роман &quot;Золотой телёнок&quot; (1931); новела &quot;Необыкновенные истории из жизни города Колоколамска&quot; (1928); новела &quot;1001 день, или Новая Шахерезада&quot; (1929); повість &quot;Одноэтажная Америка&quot; (1937). В 1932 — 1937 роках Ільф і Петров писали фейлетони для газети &quot;Правда&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

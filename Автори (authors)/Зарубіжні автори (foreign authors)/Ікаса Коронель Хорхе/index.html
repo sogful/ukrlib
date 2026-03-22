@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ікаса Коронель Хорхе — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ікаса Коронель Хорхе</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ikasa-koronel-khorkhe.webp" alt="Ікаса Коронель Хорхе" title="Ікаса Коронель Хорхе" data-full="./ikasa-koronel-khorkhe.webp" /></div>
+        <div class="prose-text">
+          <p>Хорхе Ікаса Коронель (ісп. Jorge Icaza Coronel; 10 червня 1906, Кіто, Еквадор — 26 травня 1978, Кіто, Еквадор) — еквадорський письменник, драматург, громадський діяч, дипломат. Один із найяскравіших представників індіхенізму ( течія у суспільній думці, образотворчому мистецтві та літературі країн Латинської Америки, в яких індіанці становлять значну частину населення. Індихенізм спрямовано реабілітацію корінного населення) в літературі країн Латинської Америки, що передував магічному реалізму.</p>
+          <p>Коли йому було три роки, помер батько, Хосе Антоніо Ікаса Манзо.</p>
+          <p>Після цього у дитинстві довго жив на гасієнді свого дядька Енріке Коронела в Андах, де познайомився із життям корінних народів Еквадору. Близькість з тубільцями робила його дуже чутливим до цієї реальності підпорядкування та бідності. Вивчав медицину в Центральному університеті Еквадору у Кіто. Закінчив Національну консерваторію. У молодому віці вів богемний спосіб життя. Після закінчення навчання виступав як актор на сцені, написав ряд п&#x27;єс. Пізніше працював чиновником у міністерстві фінансів. Був членом Соціал-демократичної партії Еквадору, виступав за права індіанців. Дебютував як драматург комедіями вдач. У 1928 році написав свою першу п&#x27;єсу &quot;El Intruso&quot;. Як режисер і драматург Ікаса мав постійні проблеми із цензурою та представниками католицької церкви у своїй країні. Після публікації роману &quot;Уасипунго&quot; в 1934 році Хорхе Іказа Коронель досяг міжнародної слави. &quot;Уасипунго&quot; порівнювали з &quot;Гронами гніву&quot; Джона Стейнбека і відносили до жанру пролетарського роману. Після 1936 повністю присвятив себе прозі, автор низки романів і повістей, пронизаних підкреслено жорстоким реалізмом. Для творів Ікаса Коронель характерні напружена динамічність, запровадження розмовної мови індіанців, і навіть окремі риси натуралізму. Хорхе Ікаса Коронель — один із засновників Спілки письменників та художників Еквадору. Директор Національної еквадорської бібліотеки (1960). З 1953 працював аташе з культури в посольстві Еквадору в Аргентині. Читав лекції з проблем корінних народів Еквадору у багатьох навчальних закладах США. Основна тема творчості — трагічна доля індіанців і гострі соціальні конфлікти: романи &quot;Уасипунго&quot; (&quot;Huasipungo&quot;, 1934), &quot;На вулицях&quot; (&quot;En las calles&quot;, 1935) , &quot;Чоло&quot; (1937), &quot;Півжиття в блиску&quot; (1942), &quot;Ромеро і Флорес&quot; (&quot;El chulla Romero y Flores&quot;, 1958 рік, в перекладі &quot;Людина з Кіто&quot;, 1966 рік), збірники оповідань &quot;Бруд сьєрри&quot; (1933), &quot;Шість разів умертвлений&quot; (1952) та ін. Автор пронизаної глибоким психологізмом автобіографічної трилогії &quot;У пастці&quot; (&quot;Atrapados&quot;, 1972). Помер від раку.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

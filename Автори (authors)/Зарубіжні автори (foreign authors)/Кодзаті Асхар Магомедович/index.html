@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кодзаті Асхар Магомедович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кодзаті Асхар Магомедович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kodzati-askhar-mahomedovych.webp" alt="Кодзаті Асхар Магомедович" title="Кодзаті Асхар Магомедович" data-full="./kodzati-askhar-mahomedovych.webp" /><img class="side-img side-thumb" src="./kodzati-askhar-mahomedovych_1.webp" alt="Кодзаті Асхар Магомедович" title="Кодзаті Асхар Магомедович" data-full="./kodzati-askhar-mahomedovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ахсар Магометович Кодзаті народився 30 червня 1937 в сіл. Брут Північної Осетії.</p>
+          <p>Закінчив семирічку в рідному селищі, середня освіта завершив у м Терек Кабардино-Балкарської АРСР, куди переїхала сім&#x27;я в 1952 р</p>
+          <p>У 1955-56 рр. Ахсар працював упорядником поїздів на станції Назрань Північно-Кавказької залізниці. У 1956 р він став студентом історико-філологічного факультету Північно-Осетинського державного педагогічного інституту. У 1961-62 рр. він працює вчителем в сіл. Мацута, потім співробітником Алагирського районної газети &quot;Шлях до комунізму&quot;. З 1963 по 1967 р А. Кодзаті — кореспондент і редактор республіканського радіо. У 1969 році закінчив Вищі літературні курси при СП СРСР. З тих пір він — співробітник журналу &quot;Мах дуг&quot;. З 1977 по 1982 р — ответсекретарь правління СП, з лютого 1986 року — головний редактор журналу &quot;Мах дуг&quot;. А. Кодзаті — член Спілки письменників СРСР з 1966 р З 1954 року вірші Кодзаті публікувалися в журналах Північної і Південної Осетії, а в перекладі на російську мову — на сторінках &quot;Літературної газети&quot;, газети &quot;Літературна Росія&quot;, в журналах &quot;Москва&quot;, &quot;Нева&quot;, &quot;Наш современнік&quot;, &quot;Дон&quot;, &quot;жовтень&quot;. У журналі &quot;Дружба народів&quot; в 1970 р друкувалася його повість &quot;Котиться гарба назустріч дню&quot;. Перекладався на український, грузинський, литовська, латиська, татарський, чеченський, інгушський, кабардинский, балкарський, англійська, іспанська, німецька, болгарська, польська, словацька та ін.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

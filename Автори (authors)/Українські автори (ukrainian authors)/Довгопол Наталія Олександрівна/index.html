@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Довгопол Наталія Олександрівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Довгопол Наталія Олександрівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./dovhopol-nataliia-oleksandrivna.webp" alt="Довгопол Наталія Олександрівна" title="Довгопол Наталія Олександрівна" data-full="./dovhopol-nataliia-oleksandrivna.webp" /><img class="side-img side-thumb" src="./dovhopol-nataliia-oleksandrivna_1.webp" alt="Довгопол Наталія Олександрівна" title="Довгопол Наталія Олександрівна" data-full="./dovhopol-nataliia-oleksandrivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Наталія Довгопол — сучасна українська письменниця, працює в жанрі фантастики та історичної прози. Пише книжки для дорослих, young adult та молодших підлітків.</p>
+          <p>Авторка народилася 28 лютого 1987 року у Броварах на Київщині. П&#x27;ять років провчилася за фахом &quot;Туризм&quot; в Національному авіаційному університеті, а згодом закінчила аспірантуру Національної академії керівних кадрів культури та мистецтва, де вивчала &quot;Теорію та історію мистецтв&quot;.</p>
+          <p>Наталія Довгопол почала писати в дошкільному віці, перші публікації творів з&#x27;явилися в середній школі. У 2003 році її повість було відзначено спецвідзнакою Міжнародного конкурсу-фестивалю дитячої та юнацької журналістики &quot;Прес-Весна на Дніпрових схилах&quot;. Кілька повістей було видано в електронному форматі, опубліковано у журналах &quot;Планета легенд&quot; та &quot;Дніпро&quot;. Із 2018 року мешкає з чоловіком-греком у Афінах, де окрім написання книг займається громадською роботою. Зокрема, є активною членкинею Товариства підтримки та розвитку культурної спадщини &quot;Трембіта&quot;, працює в Інфоцентрі Об&#x27;єднаної української діаспори в Греції. Свій перший виданий друком роман &quot;Шпигунки з притулку &quot;Артеміда&quot;&quot; письменниця написала за один місяць та подала на конкурс &quot;Коронація слова — 2019&quot;. Твір отримав ІІ премію у категорії &quot;Романи&quot;, у 2019 вийшов у видавництві &quot;Vivat&quot; та здобув низку літературних відзнак. Романи: 2019 — Шпигунки з притулку &quot;Артеміда&quot; 2019 — Прокляте небо 2021 — Мандрівний цирк сріблястої пані 2021 — Шпигунки з притулку &quot;Артеміда&quot;. Колапс старого світу 2022 — Знайти країну амазонок Повісті: 2018 — Три хрестики Аліє 2018 — Дарована весна, або Відьма за чужим призначенням 2018 — Карпатська казка, або За десять днів до Купала 2021 — Куба-якої-не-було 2021 — Привиди готелю &quot;Едельвейс&quot;</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Масаока Сікі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Масаока Сікі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./masaoka-siki.webp" alt="Масаока Сікі" title="Масаока Сікі" data-full="./masaoka-siki.webp" /></div>
+        <div class="prose-text">
+          <p>Масаока Сікі — великий поет японського &quot;срібного&quot; століття, &quot;останній патріарх хайку&quot;. Він прожив недовге, але яскраве життя. У буремні роки реформ він зумів врятувати від загибелі традиційні жанри японської поезії — танка і хайку.</p>
+          <p>Масаока Сікі (справжнє ім&#x27;я — Масаока Цуненорі) народився 17 вересня 1867 року в місті Мацуяма провінції Іє, в сім&#x27;ї небагатого відставного самурая. У восьмирічному віці, навчаючись в парафіяльній школі при місцевому храмі, Масаока прийняв рішення стати вченим-філологом.</p>
+          <p>Уже в дванадцять років він пише свої перші вірші і прозу. У 1883 році Масаока закінчив середню школу і відправився в Токіо, де взяв собі літературний псевдонім Сіки. У 1890 році Сики поступив в Токійський імператорський університет на факультет літератури. А з 1892 року Сики повністю присвятив себе сочинению хайку. Через рік була опублікована серія його статей &quot;Бесіди про Басі&quot;, де він критикує обожнений образ Мацуо Басьо і закликає до оновлення традиційних форм японської поезії — танка і хайку. Саме Сики ввів термін &quot;хайку&quot;, там самим відокремивши мистецтво одиночних тривіршів від мистецтва Ренго. У цю пору він також почав писати статті про традиційної поезії. Сики зміг сформувати коло однодумців, а також власну школу хайку. Згодом поетичне суспільство прийняло назву &quot;Хототогісу&quot; і зайняло панівне становище у світі хайку, яке зберегло і сьогодні. Помер Масаока Сікі 19 вересня 1902 року в Токіо.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

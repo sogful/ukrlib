@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Уорнер Марина — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Уорнер Марина</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./uorner-maryna.webp" alt="Уорнер Марина" title="Уорнер Марина" data-full="./uorner-maryna.webp" /></div>
+        <div class="prose-text">
+          <p>Марина Уорнер — письменниця і культуролог, автор таких книг, як Alone of All Her Sex: The Myth and the Cult of the Virgin Mary (1976), Joan of Arc: The Image of Female Heroism (1982) і Monuments &amp; Maidens: The Allegory of the Female Form (1988). У 1994 році вона виступала на BBC в програмі щорічних лекцій Reith Lectures на тему Six Myths of Our Time. Її дослідження традицій казки опубліковані в книгах From the Beast to the Blonde (1994) і No Go the Bogeyman: On Scaring, Lulling and Making Mock (1998). Дослідження &quot;Тисячі і однієї ночі&quot; в книзі Stranger Magic: Charmed States and The Arabian Nights (2011) був удостоєний премії Sheykh Zayed Prize (2012), премії National Book Critics Circle Award і премії імені Трумена Капоте.</p>
+          <p>Марина Уорнер працювала куратором виставок, серед яких The Inner Eye (1996), Metamorphing (2002-2003) і Only Make-Believe: Ways of Playing (2005). Її третій роман TheLostFather увійшов до короткого списку Букерівської премії в 1988 році. У числі її книг — The Leto Bundle і Indigo за мотивами шекспірівської &quot;Бурі&quot;. Цього року опубліковано третя збірка оповідань Марини Уорнер Fly Away Home.</p>
+          <p>В даний час вона працює над проектом усного оповідання в спільнотах біженців і пише книгу спогадів про своє дитинство в Єгипті, а також балетне лібрето за мотивами арабської жіночої поезії спільно з хореографом Кімом Брандструпом і музикантом Джоан Макгрегор. Марина Уорнер — член Британської академії, Дама-Командор ордена Британської імперії, викладає в Біркбек-коледжі і Школі східних і африканських досліджень Лондонського університету. У 2015 році їй присуджена премія Holberg Prize in the Arts and Humanities.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

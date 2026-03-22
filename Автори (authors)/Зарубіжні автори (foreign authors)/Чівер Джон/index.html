@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Чівер Джон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Чівер Джон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./chiver-dzhon_1.webp" alt="Чівер Джон" title="Чівер Джон" data-full="./chiver-dzhon_1.webp" /><img class="side-img side-thumb" src="./chiver-dzhon.webp" alt="Чівер Джон" title="Чівер Джон" data-full="./chiver-dzhon.webp" /><img class="side-img side-thumb" src="./chiver-dzhon_2.webp" alt="Чівер Джон" title="Чівер Джон" data-full="./chiver-dzhon_2.webp" /><img class="side-img side-thumb" src="./chiver-dzhon_3.webp" alt="Чівер Джон" title="Чівер Джон" data-full="./chiver-dzhon_3.webp" /></div>
+        <div class="prose-text">
+          <p>Чівер, ДЖОН (Cheever, John) (1912-1982), американський письменник. У його ранніх романах представлений міфічний пасторальний світ Нової Англії, з якого він вийшов, і повільне його руйнування під дією нових цінностей. Пізніші твори присвячені життю Передмістя ( &quot;Сабурбіі&quot;) і її негараздів.</p>
+          <p>Народився 27 травня в Квінсі (шт. Массачусетс), закінчив Академію Тейер в Саут-Брейнтрі. У 1935 надрукував своє перше оповідання Мебльовані кімнати в Брукліні (The Brooklyn Rooming House) в журналі &quot;Нью-Йоркер&quot;, з яким співпрацював все життя, опублікувавши в ньому понад 120 творів. Збірники його оповідань включають: Як живуть деякі люди (The Way Some People Live, 1943), Велетенське радіо (The Enormous Radio, 1953), Зломщик з Шейді-Хілл (The Housbreaker of Shady Hill, 1958), Люди, місця і речі, які не з&#x27;являться в моєму наступному романі (Somе Pеople, Places, and Things That Will Not Appear in My Next Novel, 1961), Бригадир і солом&#x27;яний вдова (The Brigadier and the Golf Widow, 1964), Світ яблук (The World of Apples, 1973) і Розповіді Джона Чівер (The Stories of John Cheever, 1978; Пулітцерівська премія, 1979). У 1958 Чивер став лауреатом Національної книжкової премії за свій перший роман Сімейна хроніка Уопшотов (The Wapshot Chronicle, 1957). У 1964 вийшло його продовження — Скандал в сімействі Уопшотов (The Wapshot Scandal). Чивер є також автором романів Буллет-Парк (Bullet Park, 1969), Фоконер (Falconer, 1977) і Яке райське картина (Oh What a Paradise It Seems, 1982). Помер Чивер в Оссінінг (шт. Нью-Йорк) 18 червня 1982.</p>
+          <p>Твори Чівера свідчать про неабияку спостережливості і силі творчої уяви. Головна тема його книг — самотність людини, чиї спонукання нерідко вступають в конфлікт з суспільним розпорядком. Хоча ці мотиви найбільш яскраво представлені в оповіданнях Чівер про передмістях Нової Англії, де втрата гармонії минулих років видається прелюдією до відчуження сучасного суспільного життя, тема обмеження свободи вже присутній в здавалося б не порушене розпадом світі романів про Уопшотах. Подібно Дж. Апдайку, який оспівує йде в минуле спільність людей, які сповідують протестантські цінності, Чівер кладе в основу свого художнього світу мотиви втечі і повернення на круги своя.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

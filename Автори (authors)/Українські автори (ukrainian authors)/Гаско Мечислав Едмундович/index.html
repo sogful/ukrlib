@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гаско Мечислав Едмундович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гаско Мечислав Едмундович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hasko-mechyslav-edmundovych.webp" alt="Гаско Мечислав Едмундович" title="Гаско Мечислав Едмундович" data-full="./hasko-mechyslav-edmundovych.webp" /></div>
+        <div class="prose-text">
+          <p>Мечислав ГАСКО</p>
+          <p>Гаско Мечислав Едмундович народився 27 січня 1907 року в Луцьку в сім&#x27;ї службовця. На початку 20-х років, коли Волинь опинилася під владою шляхетської Польщі, брав участь у революційному підпіллі. 1924 року був заарештований, підданий тортурам луцькій тюрмі. Після піврічного ув&#x27;язнення під тиском громадської думки пілсудчики змушені були випустити його на волю. Аби уникнути переслідувань, Гаско таємно емігрував на Радянську Україну, де закінчив Харківський інститут народного господарства, розпочав літературну діяльність. Впродовж 1930-1934 років був аспірантом Інституту червоної професури.</p>
+          <p>Разом з іншими політемігрантами з Галичини, Буковини та Закарпаття належав до літературної організації &quot;Західна Україна&quot;. В однойменному органі цієї організації надрукував чимало віршів, уривків із поем (&quot;Авіа-марш&quot;, &quot;Західній Україні&quot;, &quot;На кордоні&quot;, &quot;На прорив&quot;, &quot;Пісня про шістьох розстріляних у Польщі&quot;), статей і рецензій. Водночас вийшли і збірки його віршів &quot;Обабіч кордону&quot; (1930), &quot;Шлю вам свій привіт&quot;, &quot;Над аеродромом&quot; (1931), що засвідчили політичну заангажованість колишнього політв&#x27;язня, який, опинившись поза межами шляхетської Польщі, прагнув своїм поетичним словом наснажити поневолених земляків на революційну боротьбу, вселити в їхні душі святу віру в недалеке визволення з-під чужоземного ярма і возз&#x27;єднання з єдинокровними братами. Незважаючи на патріотизм М. Гаска, чесність його громадянської позиції, над ним нависають хмари недовіри й підозри. Влітку 1933 року письменника заарештували, пред&#x27;явивши стандартне звинувачення у приналежності до контрреволюційної письменницької організації &quot;Західна Україна&quot;. Почалися виснажливі, багатодобові допити, очні свідчення, з яких Гаско зрозумів: це — не польська дефензива і йому, безвинному, з підвалів ДПУ живим не вийти. І тому змушений був визнати вигадані слідством &quot;зізнання&quot;. Як подяку за це особлива нарада винесла йому вирок: &quot;три роки концтаборів&quot;. Відбував незаслужену покару на Печорі, де зустрівся з Остапом Вишнею, Володимиром Гжицьким. 6 вересня 1956 року Київський військовий трибунал скасував постанову особливої наради від 31 травня 1934 року щодо М. Гаска, а справу припинив за відсутністю складу злочину. Після реабілітації М.Гаско переїхав до Києва й повернувся до перерваної літературної праці. Видав кілька збірок поезій, літературно-критичних нарисів та монографій, зокрема &quot;Ланки життя&quot; (1967). &quot;Про що розповідають малюнки Тараса Шевченка&quot; (1970), &quot;У колі Шевченкових та Гоголевнх друзів&quot; (1980), &quot;Пошуки і знахідки&quot; (1990) та ін. Його творчий доробок був би набагато щедріший, якби не численні недуги, нажиті ним у сталінських таборах. Федір Погребенник ЛУ №26 (4435)27.06.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

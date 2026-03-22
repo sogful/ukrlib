@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вагилевич Іван Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вагилевич Іван Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vahylevych-ivan-mykolayovych.webp" alt="Вагилевич Іван Миколайович" title="Вагилевич Іван Миколайович" data-full="./vahylevych-ivan-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>Іван Миколайович Вагилевич народився 2 вересня 1811 р. у селі Горішньому Ясені, нинішнього Калуського району, Івано-Франківської області, в родині священика. Після закінчення нормальної школи у м. Бучачі вчився у Станіславській гімназії. З 1830 по 1838 р. І. Вагилевич — в університеті у Львові. Там познайомився він з М. Шашкевичем і ввійшов до гуртка його однодумців. Захоплювався етнографією, історією та археологією, листувався з багатьма ученими-славістами і фольклористами: П. Шафариком, М. Погодіним, О. Бодянським, П. Лукашевичем, І. Срезневським та ін. У &quot;Русалці Дністровій&quot; опублікував свої перші наукові розвідки та художні твори, через що, як і інші члени &quot;Руської трійці&quot;, опинився під наглядом поліції і після закінчення навчання в 1838 р. довгий час був безробітним.</p>
+          <p>Під час навчання у Львові Вагилевич посилено займався самоосвітою. З 1838 р. його наукові розвідки час від часу друкувались у чеській і польській періодиці. В 1845 р. Вагилевич видав свою граматику української мови (польською мовою). Не маючи змоги присвятити себе науці в умовах ці-/132/сарської Австрії, І. Вагилевич звертався в 1847 р. і до російського уряду з проханням дати йому посаду на кафедрі слов&#x27;янських мов у Києві або Харкові, але його прохання не задовольнили.</p>
+          <p>З 1846 по 1848 р. І. Вагилевич був священиком у с. Нестаничах, Золочівського округу. У 1848 р. покинув парафію і став редактором газети &quot;Дневник руський&quot;, яка на 9-му номері припинила своє існування. Консисторія відмовилась дати йому знову парафію, реакційне духовенство загрожувало суворим покаранням за непослушність, і Вагилевич залишився без роботи та засобів для утримання сім&#x27;ї. У 1851 р. І. Вагилевичу пощастило влаштуватись на роботу в бібліотеці Оссолінських у Львові, а через 9 місяців за нестійкість релігійних переконань його було звільнено. Позбавлений постійної роботи, І. Вагилевич близько десяти років підтримував нужденне життя своєї сім&#x27;ї випадковими заробітками. Внаслідок переслідувань з боку австрійської влади, польської шляхти і уніатського духовенства, Вагилевич відійшов від української літератури. З 1838 р. і до кінця життя виступав в основному як учений, друкуючи свої цікаві фольклорно-етнографічні та історичні розвідки у чеських і польських виданнях (&quot;Часопис чеського музею&quot;, &quot;Варшавська бібліотека&quot;, &quot;Бібліотека Оссолінських&quot;, &quot;Родинне коло&quot; та ін.). Наукова спадщина Вагилевича й досі не зібрана і не вивчена. Помер І. Вагилевич 10 червня 1866 року. Свої твори підписував: Вагилевич Далибор, Волк Заклика.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Рід Джон — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Рід Джон</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./rid-dzhon.webp" alt="Рід Джон" title="Рід Джон" data-full="./rid-dzhon.webp" /><img class="side-img side-thumb" src="./rid-dzhon_1.webp" alt="Рід Джон" title="Рід Джон" data-full="./rid-dzhon_1.webp" /></div>
+        <div class="prose-text">
+          <p>Рід Джон (22 жовтня 1887, Портленд, шт. Орегон — 1920, Москва) — американський письменник, журналіст.</p>
+          <p>Народився 22 жовтня 1887 року в Портленді, штат Орегон, США. Автор твору &quot;Десять днів, що потрясли світ&quot;, численних публікацій в журналах і газетах. Він побував у Новоселиці у травні 1915 року. Тоді це прикордонне містечко опинилося у центрі воєнних дій між російськими і австро-угорськими військами. Редакція американського журналу &quot;Метрополітен&quot;, де Джон Рід працював кореспондентом, направила його у Східну Європу, щоб розповісти про воєнні дії, які там відбувалися. Супроводити Ріда доручили художникові Бардмену Робінсону, який ілюстрував би матеріали журналіста. Шлях лежав через Румунію, яка тоді була союзницею Росії. Однак з&#x27;ясувалося, що одержати дозвіл на в&#x27;їзд в Росію — справа складна. І журналісти відважилися проникнути до неї з &quot;чорного ходу&quot;. У глуху ніч мовчазний човняр переправив їх через прифронтову річку Прут. Так американські кореспонденти опинилися в Новоселиці. Своїми враженнями про перебування у Новоселиці Джон Рід поділився у кореспонденції &quot;Війна у Східній Європі&quot;.</p>
+          <p>Джон Рід, 1916р. &quot;Я ніколи не забуду Рівне – єврейське місто у смузі осідлості. Воно було російським зі своєю безладною обширністю, широкими вулицями, наполовину вимощеними бруківкою, з вибоїнами на тротуарах, кривими дерев&#x27;яними будиночками, оздобленими різьбленою яскраво-зеленою обшивкою, і натовпами дрібного чиновництва в мундирах. Тут багато було візницьких прольоток на маленьких колесах, із важкою російською упряжжю, правили ними патлаті дегенерати у зношених вельветових свитках і потворної форми куполоподібних капелюхах. Але все інше було єврейське... Центральна шосейна вулиця була захаращена смердючими покидьками серед в&#x27;язких калюж, які розбризкувалися при кожному проїзді візків. Навкруги дзижчали хмари вгодованих мух. По обидва боки тіснилося багато маленьких магазинів, а їх вивіски, які впадали в очі, розмальовані зображенням речей, що продаються, утворили вниз і вверх на вулиці якийсь божевільний ряд... Дуже багато магазинів, дуже багато візників, перукарень, кравців&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

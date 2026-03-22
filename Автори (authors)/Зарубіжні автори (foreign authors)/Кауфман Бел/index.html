@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кауфман Бел — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кауфман Бел</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kaufman-bel.webp" alt="Кауфман Бел" title="Кауфман Бел" data-full="./kaufman-bel.webp" /><img class="side-img side-thumb" src="./kaufman-bel_1.webp" alt="Кауфман Бел" title="Кауфман Бел" data-full="./kaufman-bel_1.webp" /></div>
+        <div class="prose-text">
+          <p>Бел Кауфман (при народженні Бе́лла Миха́йлівна Ко́йфман; народилася 10 травня 1911 року в Берліні — померла 25 липня 2014 у Нью-Йорку) — американська письменниця та педагог єврейського походження. Онука (по материній лінії) класика єврейської літератури Шолом-Алейхема.</p>
+          <p>Бел Кауфман — донька письменниці Лялі Кауфман, онука письменника Шолом-Алейхема. Її дитинство минуло в Одесі. З 1926 — в еміграції у США. 1921 року одеський журнал &quot;Дзвіночки&quot; надрукував її перший літературний твір — поему &quot;Весна&quot;. У США почала публікації з журналу для чоловіків &quot;Есквайр&quot; (для цього довелося скоротити ім&#x27;я: від Bella до Bell.</p>
+          <p>Міжнародна популярність прийшла до письменниці з публікацією в 1964 році роману &quot;Вгору сходами, що ведуть униз&quot; — &quot;Up the down staircase&quot; (тираж — 7 млн примірників). Потім був роман &quot;Кохання, і так далі&quot; — &quot;Love, etc&quot;. Бел Кауфман активно пропагує творчість свого дідуся Шолома-Алейхема (щорічні &quot;Шолом-Алейхемовські читання&quot;). Її чоловік Сідней Глак — президент &quot;Фонду Шолом-Алейхема&quot;, під егідою якого відбуваються фестивалі в пам&#x27;ять видатного єврейського письменника (2005 року — в Києві, наступні роки — в Парижі, Празі…). У будинку Бел Кауфман на книжковій поличці стоять поруч два томика — книги Шолома-Алейхема і Тараса Шевченка.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Геррік Роберт — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Геррік Роберт</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./herrik-robert.webp" alt="Геррік Роберт" title="Геррік Роберт" data-full="./herrik-robert.webp" /></div>
+        <div class="prose-text">
+          <p>Роберт Геррік — Robert Herrick — (1591-1674) вважається найбільшим ліриком XVII століття з т.зв. &quot;Поетів-кавалерів&quot;, прихильників короля Карла I, (на відміну від &quot;поетів-пуритан&quot;). Він народився в Лондоні, хоча його дитинство, в основному, пройшло в Хемптоні. У 1607 році був відданий на навчання до свого дядька, ювеліра короля, потім отримав вчений ступінь в Кембриджі. До 1627 року його іноді приймав замовлення на виготовлення ювелірних виробів. У 1627 році Геррік як священика брав участь у невдалій експедиції герцога Бекінгема до острова Ре у Франції, в період облоги Ларошели кардиналом Рішельє. А через два роки він отримав місце старшого настоятеля в сільській церкві графства Девоншир.</p>
+          <p>В 1647 Геррік зазнав репресій, як рояліст, але після Реставрації в 1662 році був відновлений в правах і повернувся в свій маєток. Велика частина його віршів міститься в збірнику &quot;Hesperides&quot; (1648). Геррік ніколи не був одружений і багато жінок, згадані в його віршах, ймовірно уявні красуні. Будучи учнем Бена Джонсона, він зберіг у своїй ліриці класичне вплив, але в той же час в ній помітна деяка простота і чуттєвість, а також турбота про форму слів і ритміці вірша. Його кращі вірші: &quot;The Night Piece, to Julia&quot;; the song commencing &quot;Gather ye rosebuds while ye may&quot;; &quot;Corinna&#x27;s Going a-Maying&quot;; &quot;To Anthea&quot;; &quot;Cherry-ripe&quot;; and &quot;Upon Julia&#x27;s Clothes.&quot;</p>
+          <p>Геррік також вважався чудовим майстром епіграм і епітафій. Як поет він став забуватися після своєї смерті, але в XIX столітті була майже заново відкритий і визнаний.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

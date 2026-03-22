@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Казка Аркадій Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Казка Аркадій Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kazka-arkadiy-vasylovych.webp" alt="Казка Аркадій Васильович" title="Казка Аркадій Васильович" data-full="./kazka-arkadiy-vasylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Аркадій КАЗКА</p>
+          <p>Казка Аркадій Васильович народився 23 вересня 1890 року в місті Седнів на Чернігівщині в родині шевця. Батько поета за походженням козак, любив спів та музику, керував церковним хором. Цю пристрасть до пісні перейняв і син.</p>
+          <p>Закінчив Чернігівське реальне училище. Під час навчання заприязнився з Павлом Тичиною, з яким мешкав в інтернаті при монастирі, разом співали в хорі, відвідували славнозвісні &quot;суботи&quot; Михайла Коцюбинського. Навчався Аркадій Казка в Київському комерційному інституті, але не закінчив його через нестатки. Повернувся до Чернігова, працював креслярем у земській управі. Згодом учителював у селах Київщини та Дніпропетровщини, в Одесі, викладав співи та українську мову. Ще до Жовтневої революції Казка перекладав із західноєвропейських та російської літератур. У радянський час власні вірші і поеми друкував у журналах &quot;Літературно — науковий вісник&quot;, &quot;Нова громада&quot;, &quot;Плуг&quot;. На початку 20-х років підготував рукописну збірку поезій &quot;Lamentabile&quot; (&quot;Сумливе&quot;), яку подарував Григорієві Верьовці. З листа до Тичини від 11 лютого 1925 року видно, що Казка готував до видання збірку &quot;Розірване намисто&quot;, а в листі до свого учня Василя Мисика писав про підготовку збірки &quot;Васильки&quot;. Та цим творчим планам не судилося здійснитися: вночі 10 вересня 1929 року Казку було заарештовано у справі так званої СВУ й відправлено до Одеської в&#x27;язниці. Не відаючи за собою вини, у відчаї Аркадій Казка 23 листопада того ж року наклав на себе руки. Матеріалів слідства в архівах не виявлено. Видати збірку свого друга мріяв Павло Тичина ще на початку 60-х років, хоча ім&#x27;я Казки, як і всіх репресованих у справі СВУ, було під забороною. Лише 1965 року у збірнику &quot;День поезії&quot; Василь Мисик опублікував добірку віршів незабутнього свого вчителя. 1989 року у видавництві &quot;Радянський письменник&quot; побачила світ книжка Аркадія Казки &quot;Васильки&quot; (упорядкування і вступна стаття С. Тельнюка). Там подано оригінальні вірші, поеми, листи до Павла Тичини та Лідії Папарук, переклади з І. Буніна, В. Маяковського, В. Мюллера, Г. Стефані. Архів Казки втрачено під час Великої Вітчизняної війни. Тичина, який називав Казку &quot;дивовижно совісним і щирим поетом&quot;, засвідчив, що дружба з цією людиною дала йому безмірно багато. У зв&#x27;язку з трагічною смертю А. Казки у в&#x27;язничній камері він писав до Дружини Лідії Петрівни: &quot;Так не повелося йому в житті (...) і таланту не розвинув. І світу білого не випив&quot;. Ця сумна сентенція звучить болісно й символічно, адже &quot;світу білого не випив&quot; кожен, кого вшановуємо в цьому мартиролозі. Іван Ільєнко ЛУ 34 (4443) 22.08.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

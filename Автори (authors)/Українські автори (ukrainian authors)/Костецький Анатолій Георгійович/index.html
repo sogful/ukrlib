@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Костецький Анатолій Георгійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Костецький Анатолій Георгійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kostetskyy-anatoliy-heorhiyovych.webp" alt="Костецький Анатолій Георгійович" title="Костецький Анатолій Георгійович" data-full="./kostetskyy-anatoliy-heorhiyovych.webp" /><img class="side-img side-thumb" src="./kostetskyy-anatoliy-heorhiyovych_1.webp" alt="Костецький Анатолій Георгійович" title="Костецький Анатолій Георгійович" data-full="./kostetskyy-anatoliy-heorhiyovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Анатолій Костецький письменник — працьовитий, талановитий, цікавий, несподіваний, зі своїм власним баченням світу, високою поетичною культурою.</p>
+          <p>Своїми книжками А.Костецький вибудував для дітей ціле місто, яке заселив меткими, балакучими, непосидющими, закоханами та ніжними хлопчаками й дівчатками. Діти в його творах не ахають, не охають, а живуть, сумніваються, переймаються. Вони люблять усе навколо — квіти та солодощі, небо та дядька двірника. Люблять крутнути хвіст Мурка та смикнути за кіску Наталку. І ще одна дуже важлива властивість поезії Анатолія Георгійовича — сюжетність віршів. Кожен з них — це невелике оповідання, новела, подекуди дитяча притча. А там, де є сюжет, — є герої, їхні вболівання, радощі і прикрощі. Є велика робота душі маленької людини.</p>
+          <p>А.Костецький — один із чільних співців шкільної вольності. Рідкісно поєднуються в нього вагома сатира з цілющою батьківською усмішкою. Як у вірші &quot;Бюро знахідок&quot;. В цьому нечуваному досі &quot;бюро&quot; до пори, до часу зберігаються рідкісні речі: давно загублена совість, людська чемність та дружба. Все з цих коштовних речей можна взяти назад. Окрім втраченого, марно загубленого часу. Рідна природа справляє свято у багатьох віршах поета. Правда, природа у поезіях А.Костецького поняття дещо ширше. Це радість життя, однаково притаманна рослині, тварині, людині. У багатьох віршах поета постійно &quot;дзижчать&quot; трудівники літа бджоли та джмелі: &quot;Джміль про сонечко гуде&quot; (перша книжка автора), &quot;Розквітнув сад&quot;, &quot;Мрія&quot;. Єдність дитинства з природою утверджує і вірш &quot;Лісова таємниця&quot;. Юний герой несе з лісу &quot;не гілки, а шелест листя, не квітки, а їх красу&quot;. Пише Костецький і прозові твори &quot;Постукай у моє вікно&quot;, &quot;Все — як насправді&quot;, &quot;Мінімакс — кишеньковий дракон, або День без батьків&quot; та ін. Багато у письменника казок, які дуже цікаві та популярні: &quot;Бабусині казки&quot;, &quot;Страшна таємниця&quot; та ін. Народився майбутній письменник 6 грудня 1948 року у Києві в сім&#x27;ї вчителів. У п&#x27;ять років міг сам читати та писати, навчився грати в шахи та плавати. Відтоді не розлучається зі спортом, книгою та пером. Після школи навчався в технікумі радіоелектроніки, згодом закінчив факультет кібернетики Київського університету ім.Т.Г.Шевченка. Твори письменника перекладаються багатьма мовами. Поет і сам чимало часу віддає перекладам з англійської, німецької, деяких слов&#x27;янських мов. Він є також автором статей з питань теорії, історії та критики дитячої літератури. Живе Анатолій Костецький в Києві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

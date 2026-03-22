@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кулаковський Віталій Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кулаковський Віталій Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Віталій Кулаковський (29.01.1924–21.12.1990) розпочинає свою професійну діяльність учителем, але згодом реалізує себе як науковий діяч, у доробку якого десятки статей та кілька навчально— методичних посібників з історії. В епіцентрі його дослідницьких інтересів – українська минувшина ХVІІІ ст., переважно події гайдамацького руху і – вужче – Коліївщина (&quot;Народ про гайдамацький рух&quot; (1967), &quot;Визначна подія в історії українського народу&quot; (1968), &quot;Полум’я гніву народного&quot; (1968)). Загалом тематика праць ученого доволі різноманітна й охоплює широкі часові межі: від античної доби до сучасності.</p>
+          <p>Чи не найвагоміша заслуга В. Кулаковського-науковця в історико-краєзнавчій царині. Із 1969 по 1984 рр. він очолював редакцію &quot;Історії міст і сіл УРСР&quot; Української Радянської Енциклопедії, готуючи водночас для згаданого видання нариси про населені пункти Київщини, зокрема Макарівського району. Із цим реґіоном у дослідника пов’язано чимало особистих спогадів: із дитинства, юності, періоду вчителювання, тому Макарівщина – земля дідів і прадідів – постійно була об’єктом його уваги. Тут відчутна патріотично-просвітницька стратегія В. Кулаковського, оскільки, як педагог за фахом, він чітко усвідомлює: становлення особистості українця неможливе без апелювання до історії рідного краю та славетних предків.</p>
+          <p>Подібний підтекст характерний і для інших робіт діяча. Добре обізнаний з архівними матеріалами, він намагається осмислити драматичні долі видатних українців і заповнити в такий спосіб деякі прогалини в історико-біографічній галузі. Йдеться про студії, присвячені провідникові національно— визвольних повстань Северинові Наливайку (&quot;До 375-річчя селянсько-козацького повстання під керівництвом Северина Наливайка&quot;* (1969)) та письменнику, паломникові й мандрівнику Василеві Григоровичу-Барському (&quot;Василь Григорович-Барський і його записки: до 270-річчя від дня народження&quot; (1971)). Доволі цікавими є літературно-критичні напрацювання, у яких переважно репрезентовано твори Володимира Малика (&quot;Вірність історичній правді&quot; (1969), &quot;Чорний вершник&quot; (1977), &quot;Одісея Арсена Звенигори&quot; (1987)). Так, після виходу другої частини тетралогії &quot;Таємний посол&quot; В. Кулаковський одним із перших відгукнувся на цю подію, вказуючи на високу майстерність автора у трансформації історичної правди в художню. Крім того, романний образ запорізького кошового Івана Сірка, очевидно, настільки захоплює критика, що згодом у його доробку з’являється власна версія художнього портрета козацького ватажка. Як письменник В. Кулаковський заявляє про себе в 60-х роках ХХ століття, у часи чергового національного піднесення в Україні. Його творчий доробок складають історичні повісті (&quot;Хай славиться Русь&quot; (1965), &quot;Золота галера&quot; (1989), і написані у співавторстві з П. Сиченком &quot;Ой гук, мати, гук&quot; (1972), &quot;Ріки виходять з берегів&quot; (1985)) та романи (&quot;Северин Наливайко&quot; (1978), &quot;Максим Кривоніс&quot; (1983), &quot;Мартин Пушкар&quot; (1987), &quot;Дике поле&quot; (1988), &quot;Іван Сірко&quot; (1990), &quot;Володимир Мономах&quot; (1992), &quot;Тарас Трясило&quot; (1995)), які охоплюють широкий діапазон подій: від періоду княжої Русі до Коліївщини. Наразі дослідники виявляють зацікавлення до літературної спадщини прозаїка, адже вона дає широке поле для роздумів над процесами минулого України та їх роллю в сучасному житті.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

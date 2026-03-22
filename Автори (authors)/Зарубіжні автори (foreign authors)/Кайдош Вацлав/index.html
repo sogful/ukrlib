@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кайдош Вацлав — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кайдош Вацлав</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kaydosh-vatslav.webp" alt="Кайдош Вацлав" title="Кайдош Вацлав" data-full="./kaydosh-vatslav.webp" /></div>
+        <div class="prose-text">
+          <p>Він народився 1922 року у Френштаті біля Радгочштема, але хлопчиком разом із батьками переїхав до Праги, оскільки його батько, професійний військовий, став високопоставленим офіцером Генерального штабу.</p>
+          <p>У 1941 році закінчив реальну гімназію в Празі, а потім працював у Батовому заводі в Зліні.</p>
+          <p>Після закінчення Другої світової війни в 1945–1949 рр. вивчав медицину в Карловому університеті, потім закінчив офіцерські курси у військовому госпіталі, але в армії не працював. Працював хірургом у Локті та Карлових Варах та лікарем загальної практики в Яхимові. Тут він захворів на туберкульоз і був змушений на деякий час залишити медичну практику. Потім він працював терапевтом у ЧКД у Празі, а з початку 1960-х років до виходу на пенсію у 1984 році працював хірургом у лікарні Жижкова. Він також займався акупунктурою і був одним із провідних чеських фахівців у цій галузі. Завдяки своїм великим знанням мови він незабаром зайнявся перекладом. Спочатку він перекладав науково-популярні тексти, але невдовзі зайнявся й художньою, особливо науковою. Звідти був лише крок до власної роботи. У 1970 році, коли він опублікував збірку науково-фантастичних оповідань &quot;Вторгнення із Всесвіту&quot;, його почали вважати разом із Йозефом Несвадбою, Людовіком Соучеком і Ярославом Зикою одним із піонерів чеської наукової фантастики та представником свого роду &quot;чеської школи&quot;, заснованої на гуманістичній спадщині Карела Чапека. Він помер у 1990 році у віці 67 років від серцевого нападу. У 1992 році він посмертно отримав нагороду Карела Чапека – Ньюта за заслуги. Наукова та науково-популярна література: &quot;Чудесна матерія&quot; (1965), популярна книга, що описує історію еволюції Всесвіту та наукові гіпотези в галузях фізики та астрономії. &quot;Лікарі та маги&quot; (1967), популярно написана історія медицини та методів лікування в різних народів від доісторичних часів приблизно до 18 століття. Метал і вогонь: Акупунктура (1974), книга про стародавні методи лікування, особливо китайську акупунктуру, друге видання доповнене в 1987 році і третє під назвою Акупунктура, точковий масаж і китайська гімнастика, або Метал і вогонь 1997. Основи традиційної акупунктури (1985), Підручник з акупунктури. Художня література: До збірки науково-фантастичних оповідань &quot;Вторгнення з космосу&quot; (1970) входять оповідання &quot;Селера Герона&quot;, &quot;Пухлина&quot;, &quot;Рід&quot;, &quot;Кошеня&quot;, &quot;Дракон&quot;, &quot;Безформна матерія&quot;, &quot;Гра тіней&quot;, &quot;Ляльковий бал&quot;, &quot;Нерозв&#x27;язне питання&quot; та Павуки. Друге видання в 2003 році було розширено, включивши історію Курупіри. &quot;Пояс&quot; (1983), оповідання, опубліковане в антології &quot;Залізо приходить із зірок&quot;. &quot;Сонячна машина&quot; (1983), оповідання, опубліковане в антології &quot;Залізо приходить із зірок&quot;. &quot;Сад богів&quot; (1990), пригодницький роман про колонізацію Західної Африки в 6 столітті. до н.е.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

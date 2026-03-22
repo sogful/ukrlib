@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Голт Коре — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Голт Коре</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./holt-kore.webp" alt="Голт Коре" title="Голт Коре" data-full="./holt-kore.webp" /><img class="side-img side-thumb" src="./holt-kore_1.webp" alt="Голт Коре" title="Голт Коре" data-full="./holt-kore_1.webp" /></div>
+        <div class="prose-text">
+          <p>Коре Голт (Kåre Holt) – норвезький письменник. Народився 27.10.1916 року. у багатодітній сім&#x27;ї залізничного робітника, що виріс у сільській місцевості на півдні країни. Свою діяльність почав із публіцистики, але в середині 50-х переключився на створення історичних романів. Справжню славу Холту принесла трилогія &quot;Конунг&quot; (вид. 1965 – 1969 рр.), дія якої відбувається в середні віки та розповідає про могутнього короля-самозванця Сверрі (1177 – 1202).</p>
+          <p>Вийшов у 1974 р. роман &quot;Змагання&quot; — про суперництво полярника Амундсена і зі Скоттом — став сенсацією і був перекладений багатьма мовами.</p>
+          <p>Ще одним бестселером Голта заслужено є історичний роман &quot;Тризна по жінці&quot; (1972) про життя скандинавів за доби вікінгів. Працюючи над цим твором письменник спирався на результати реставрації норвезькими вченими вмісту знаменитого Всеберзького кургану, який було розкопано 1904 року (і частково розкрадено раніше). Предмети стародавнього похоронного побуту, які грають важливу роль романі — корабель, візок, сани, — були зібрані археологами по шматках. З того часу їх зображення незмінно прикрашають історичні праці стародавньої Норвегії. Автор без прикрас описує давньонорвезьке суспільство, його побут, закони, забобони, міжособистісні стосунки. Помер 15.03.1997 у Холместранні.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

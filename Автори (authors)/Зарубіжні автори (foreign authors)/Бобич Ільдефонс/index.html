@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бобич Ільдефонс — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бобич Ільдефонс</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bobych-ildefons.webp" alt="Бобич Ільдефонс" title="Бобич Ільдефонс" data-full="./bobych-ildefons.webp" /></div>
+        <div class="prose-text">
+          <p>Ільдефонсо Бобич — ксьондз, один із зачинателів білоруської християнського руху та засновників БХД, редактор &quot;Білорус&quot;, доктор філософії, який публікувався під псевдонім &quot;Петро Простий&quot;.</p>
+          <p>Народився Ільдефонсо Бобич 10 січня 1890 року в Селянська сім&#x27;ї в селі Дедінка Друйского волості Віленської губернії (сьогодні Міорський район Вітебська області). У 1909 році закінчив гімназію в Ковно і поступив в Віленський духовна католицька семінарію, де приєднався до білоруського співтовариство.</p>
+          <p>З 1912 року навчався в Римі, отримав Ступінь доктора філософії. На аудієнції з Папою Пієм Х отримав його благословення для читачів першого білоруського християнського журналу &quot;Беларус&quot;. Був висвячений на священика 15 липня 1915 року. Брав участь в знаменитих з&#x27;їзду білоруських католицьких священиків в Мінську 24-25 травня 1917 року, де була заснована Білоруське Християнська-демократичної Об&#x27;єднання. Пастирську діяльність почав на батьківщині, в Друей і на Дісненщіне в 1917-1920 роках. У 1921-1923 роках був учителем Закону Божого в Віленської білоруської гімназії. Від тисяча дев&#x27;ятсот двадцять три до 1930 року — настоятель в Германович. Після був переведений настоятелем і Декан в Ивье. Друкувався в хадецкой пресі під псевдо &quot;Петро Простий&quot;. Після того, як польська церковна Ієрархія заборонила ксьондз належати до БХД і виписувати &quot;Джерело&quot;, відійшов від суспільно-політичної діяльності. У 1942-му був заарештований німецькою владою і до 1944 року містився в місцевій в&#x27;язниці. Підірвав там здоров&#x27;я і, звільнений, 28 квітня 1944 помер. Поховані Ільдефонсо Бобич близько Петропавлівського костелу в Ивье. Павло Северинець, за матеріалами вікіпедії, інтернету і книги Ю. Гарбінского</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Воробйов Микола Панасович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Воробйов Микола Панасович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vorobyov-mykola-panasovych.webp" alt="Воробйов Микола Панасович" title="Воробйов Микола Панасович" data-full="./vorobyov-mykola-panasovych.webp" /><img class="side-img side-thumb" src="./vorobyov-mykola-panasovych_1.webp" alt="Воробйов Микола Панасович" title="Воробйов Микола Панасович" data-full="./vorobyov-mykola-panasovych_1.webp" /><img class="side-img side-thumb" src="./vorobyov-mykola-panasovych_2.webp" alt="Воробйов Микола Панасович" title="Воробйов Микола Панасович" data-full="./vorobyov-mykola-panasovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 12 жовтня 1941 р. у с. Мельниківка Черкаської області.</p>
+          <p>У 1968 р. закінчив Київський університет ім. Т.Шевченка, філософський факультет.</p>
+          <p>Член Спілки письменників України (1987). Лауреат премій ім. П.Тичини (1992), &quot;Благовіст&quot; (1993), Шевченківської премії (2005) Живе і працює у Києві. Один з фундаторів літугрупування &quot;Київська школа поезії&quot;. Вважається одним з лідерів андеґраунду &quot;сімдесятників&quot;. Друкуватись почав після двох десятиліть замовчування у середині 80-х років. За збірку поезій &quot;Верховний голос&quot; (1992) нагороджений премією ім. Тичини, за збірку &quot;Іскри в слідах&quot; (1994) премією &quot;Благовіст&quot;, за збірку поезій &quot;Слуга півонії&quot; (2004) Шевченківською премією. Воробйов тяжіє до медитативно-образних методів нарації у віршуванні, близьких до японської школи &quot;хайку&quot; та китайської поетики епохи Тан. Поетика Воробйова насичена кольоровими екстраполяціями, символічними парадоксами, характерними для ранніх (art nouveau) періодів модерністського дискурсу. Метод та образні ряди Воробйова стали своєрідним фундаментом для деяких феноменів сучасного НМ-дискурсу в українській літературі, зокрема для поезії В. Герасим’юка, Я. Довгана, &quot;Нової деґенерації&quot;. Одночасно концептуальна складова поетики Воробйова зупинена на межі неігрової потреби модернізму. Автор збірок: &quot;Пригадай на дорогу мені&quot; (1985), &quot;Місяць шипшини&quot; (1986), &quot;Ожина обрію&quot; (1988), &quot;Прогулянка одинцем&quot; (1990), &quot;Верховний голос&quot; (1991), &quot;Іскри в слідах&quot; (1993), &quot;Човен&quot; (1999), &quot;Срібна рука&quot; (2000) і дитячих книжок, &quot;Слуга півонії&quot; (2004). Твори перекладені на англійську, португальску, німецьку, сербсько-хорватську, румунську, польську, російську, грузинську мови. Поет. Живе і працює у Києві. Один з фундаторів літугрупування &quot;Київська школа поезії&quot;. Вважається одним з лідерів андеґраунду &quot;сімдесятників&quot;. Друкуватись почав після двох десятиліть замовчування у середині 80-х років. За збірку поезій &quot;Верховний голос&quot; (1992) нагороджений премією ім. Тичини, за збірку &quot;Іскри в слідах&quot; (1994) премією &quot;Благовіст&quot;. Воробйов тяжіє до медитативно-образних методів нарації у віршуванні, близьких до японської школи &quot;гайку&quot; та китайської поетики епохи Тан. Поетика Воробйова насичена кольоровими екстраполяціями, символічними парадоксами, характерними для ранніх (art nouveau) періодів модерністського дискурсу. Метод та образні ряди Воробйова стали своєрідним фундаментом для деяких феноменів сучасного НМ-дискурсу в українській літературі, зокрема для поезії В. Герасим’юка, Я. Довгана, &quot;Нової деґенерації&quot;. Одночасно концептуальна складова поетики Воробйова зупинена на межі неігрової потреби модернізму.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

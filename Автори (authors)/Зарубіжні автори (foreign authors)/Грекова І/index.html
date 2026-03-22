@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Грекова І. — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Грекова І.</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrekova-i.webp" alt="Грекова І." title="Грекова І." data-full="./hrekova-i.webp" /><img class="side-img side-thumb" src="./hrekova-i_1.webp" alt="Грекова І." title="Грекова І." data-full="./hrekova-i_1.webp" /></div>
+        <div class="prose-text">
+          <p>Справжнє ім&#x27;я — Вентцель Олена Сергіївна.</p>
+          <p>8 (21) березня 1907 році, Ревель (нині Таллінн) — 15 квітня 2002, Москва.</p>
+          <p>Російський прозаїк, вчений-математик. Доктор технічних наук (1954), автор численних наукових праць з проблем прикладної математики, вузівського підручника з теорії ймовірностей, книги з теорії ігор і т.п. Народилася в родині вчителів. У 1929 році закінчила фізико-математичний факультет ЛДУ; з 1935 жила в Москві. Викладала в Військово-повітряної академії імені М.Є. Жуковського (1935-1968) і Московському інституті інженерів транспорту (1968-1986). Як літератор (обрала собі &quot;математичний&quot; псевдонім — від назви висхідній до латині французької букви &quot;ігрек&quot;) почала публікуватися в 1957. Увагу читачів і критиків привернули розповіді Грекової За прохідний (1962; на його основі спільно з Олександром Галичем написала комедію Будні та свята, 1967) і Дамський майстер (1963). У цьому напрямі розвивалася і подальше (нерідко викликало бурхливі дискусії і навіть звинувачення в &quot;наклепі&quot;) творчість Грекової, присвячене як добре відомої письменниці середовищі науково-технічної, в т.ч. військової інтелігенції (повісті На випробуваннях, 1967, Кафедра, 1978; романи Пороги, 1984, Живі перекази, опубл. в 1995), так і життєвим історіям людей різних професій, своєрідно продовжуючи тему &quot;маленької&quot; людини в російській літературі і в той же час немов підтверджуючи думку М.М. Бахтіна про те, що кожна людина &quot;більше&quot; своєї долі і навіть непомітне, на перший погляд, існування таїть в собі глибини страждань і пристрастей, сум&#x27;яття почуттів і творчі злети (повісті Маленький Гарусов, 1970, Господиня готелю, 1976, Вдови пароплав, 1981 , однойменна п&#x27;єса в співавторстві з П.С. Лунгіним, 1983, Фазан, 1985, Перелом, 1987; розповіді Господарі життя, 1960, опубліковані в 1988 році, Скрипка Ротшильда, 1981, Без посмішок, 1986). Характерно прагнення письменниці зв&#x27;язати навіть камерне розповідь про вигаданих персонажів з важливими, часом трагічними подіями в житті країни (масової висилкою ленінградців з міста після вбивства С.М. Кірова, кампанією боротьби з вченими-кібернетики, справою &quot;лікарів-убивць&quot;), вивести приватні долі на рівень типових ситуацій, безжально витягають хвороби суспільства (бюрократизація, невігластво, нехлюйство, заздрість, душевна черствість, паразитизм) — завжди, проте, залишаючи &quot;світло&quot; сподівань на його зцілення, найчастіше в обр зах незграбних, але чарівних і духовно прекрасних жінок і &quot;некарьерних&quot;, але серйозних і розумних чоловіків, підкреслюють розбіжність в лицемірному суспільстві видимості і суті і протистоять навмисної &quot;дегероїзації&quot; конформістської офіціозу. Ірині Грекової належить ряд віршованих та прозових книг для дітей (в т.ч. повість &quot;Аня і Маня&quot;, 1979). За літературними творами були поставлені спектаклі і фільми: &quot;Будні і свята&quot; у МХАТі (за п&#x27;єсою, написаною у співавторстві з Олександром Галичем) &quot;Вдови пароплав&quot; в театрі Моссовета (в співавторстві з Павлом Лунгіним) Фільм &quot;Кафедра&quot; (у співавторстві з Павлом Лунгіним). Фільм &quot;Благословіть жінку&quot;, 2003, режисер Станіслав Говорухін</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

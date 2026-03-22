@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Зайцев Павло Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Зайцев Павло Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zaytsev-pavlo-ivanovych.webp" alt="Зайцев Павло Іванович" title="Зайцев Павло Іванович" data-full="./zaytsev-pavlo-ivanovych.webp" /><img class="side-img side-thumb" src="./zaytsev-pavlo-ivanovych_1.webp" alt="Зайцев Павло Іванович" title="Зайцев Павло Іванович" data-full="./zaytsev-pavlo-ivanovych_1.webp" /><img class="side-img side-thumb" src="./zaytsev-pavlo-ivanovych_2.webp" alt="Зайцев Павло Іванович" title="Зайцев Павло Іванович" data-full="./zaytsev-pavlo-ivanovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Український учений і громадсько-культурний діяч</p>
+          <p>Народився 23 вересня 1886 р. в Сумському повіті Харківської губернії. Після закінчення у 1904 р. Сумської гімназії навчався у Петербурзькому університеті. Брав активну участь в українському громадському і культурному житті в тодішній столиці імперії, вступив до Революційної української партії. Ще студентом розпочав дослідження життя і творчості Т. Шевченка, назавжди ставши одним із його найпалкіших і найвідданіших шанувальників.</p>
+          <p>Після закінчення університету викладав у середніх школах Петербурга російську, латинську, грецьку, польську, українську мови, вів при українській громаді семінар із шевченкознавства. У 1912—1914 рр. опублікував багато не відомих тоді творів і листів Т. Шевченка, документів і матеріалів до його біографії. Після Лютневої революції 1917 р. був обраний членом Виконавчого комітету Української національної ради в Петербурзі, від якої його делегували у Київ до складу Центральної ради, де він обійняв посаду начальника канцелярії Генерального секретаріату освіти. Того самого року вступив до Української партії соціалістів-федералістів, став членом її Центрального комітету. За Гетьманщини П. Зайцев був директором департаменту загальних справ міністерства освіти, редактором видавництва &quot;Друкар&quot; і журналу &quot;Наше минуле&quot;, де опублікував чимало своїх статей і матеріалів з історії української літератури. У 1919—1920 рр. брав участь у визвольних змаганнях українського народу, був начальником культурно-просвітнього відділу УНР. З 1921 р. жив у еміграції у Варшаві, де викладав в університеті українську мову, плідно працював як літературознавець, співробітник Українського наукового інституту. У 1934—1939 рр. П. Зайцев підготував повне видання творів Т. Шевченка у 16 томах (вийшло 13 томів) зі своїми докладними коментарями, численними біографічними та бібліографічними примітками. Як перший том до цього видання планувалася написана ним монографія &quot;Життя Тараса Шевченка&quot;, яку було надруковано у 1939 р. Більшовики, які саме тоді зайняли Львів, відразу конфіскували весь тираж. Лише кілька примірників потрапили на Захід, завдяки чому 1955 р. книга побачила світ. 1994 р. її було перевидано. Вона є справжньою перлиною вільного, неупередженого (без урізувань та ідеологічних спекуляцій) шевченкознавства. У 1938 р. П. Зайцева було обрано головою комісії шевченкознавства Наукового товариства ім. Т. Шевченка. З 1941 р. вчений жив у Німеччині, де працював директором Інституту шевченкознавства при Українській вільній академії наук, деканом Українського вільного університету, продовжував писати й видавати у часописах &quot;Український вісник&quot;, &quot;Українець&quot; та інших шевченкознавчі дослідження. Помер 2 вересня 1965 р., залишивши незавершеними низку статей: &quot;Етика і естетика Шевченка&quot;, &quot;Коментарі до споминів про Шевченка його сучасників&quot;, &quot;Творчість Шевченка&quot; та ін.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

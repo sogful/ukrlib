@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Горовий Анатолій Васильович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Горовий Анатолій Васильович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./horovyy-anatoliy-vasylovych.webp" alt="Горовий Анатолій Васильович" title="Горовий Анатолій Васильович" data-full="./horovyy-anatoliy-vasylovych.webp" /><img class="side-img side-thumb" src="./horovyy-anatoliy-vasylovych_1.webp" alt="Горовий Анатолій Васильович" title="Горовий Анатолій Васильович" data-full="./horovyy-anatoliy-vasylovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Анатолій Васильович Горовий — український історик, прозаїк і поет, художник, педагог. Народився 1 травня 1951 в селі Йосипівка на той час Узинського, а нині Білоцерківського району Київської області. Закінчив Городищенську середню школу № І ім. Т. Г. Шевченка, в 1969–1974 рр. навчався на історичному факультеті Київського державного університету імені Т. Г. Шевченка, отримав диплом історика, викладача історії та суспільствознавства.</p>
+          <p>Працював вчителем у школах, профтехучилищах, вихователем, референтом з методичної роботи Всеросійського товариства &quot;Знання&quot;, в міському клубі туристів — інструктором зі спелеотуризму.</p>
+          <p>В 1990-ті роки був одним із тих, хто започаткував Києво-Печерський гуманітарний колегіум, і став його першим ректором. Створив творче об&#x27;єднання &quot;Отава&quot; на початку XXI ст., працював старшим науковим співробітником Києво-Печерського історико-культурного заповідника. З 2019 року Анатолій Васильович працює у відділі бібліотечних комунікацій Публічної бібліотеки імені Лесі Українки для дорослих м. Києва. Він є автором двох прозових книг: &quot;Доки шабля в руці&quot; — химерна повість для дітей та дорослих, &quot;Аліпій — перший руський іконописець&quot; — повість про події XII ст. У 2009 р. вийшла збірка поезій &quot;Там, за обрієм, коротка мить&quot;. У 2014 році вийшла друком книжка Анатолія Горового &quot;Забутий митрополит Сильвестр Косов&quot;, в 2017 та 2019 рр. побачили світ збірки поезій &quot;А воля – такий гіркий трунок&quot; та &quot;В розбрід через брід&quot;. В 2008 році відбулися перші персональні виставки живописних робіт Анатолія Горового. Пише в стилі експресіонізму. А. Горовий — один із творців принципів сучасної музейної педагогіки. Автор ідеї сприйняття молодим поколінням музейних парадигм через власні творчі зусилля. У 2009 році за сценарієм А. Горового &quot;Стріла заздрощів&quot; був знятий експериментальний художньо-документальний фільм про лікаря-ченця Агапіта. В цьому фільмі А. Горовий зіграв головну роль. Починаючи з 2009 року за сценарієм Анатолія Горового та режисера Богдана Браги на телеканалі &quot;ГЛАС&quot; вийшли документальні фільми: &quot;Агапіт. Стріла заздрощів – поєдинок&quot;; &quot;Князь – інок. Микола Святоша&quot;; &quot;Канівський хорал Любов Міненко&quot;; &quot;Що може художник Валерій Франчук?&quot;; &quot;Сергей Урусевский&quot;; &quot;Художник і час. Іван-Валентин Задорожний&quot;; &quot;Вартові міражів&quot;. Джерело: https://lukl.kyiv.ua/pro-biblioteky/horovyi-anatolii-197/</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Міксат Кальман — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Міксат Кальман</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./miksat-kalman.webp" alt="Міксат Кальман" title="Міксат Кальман" data-full="./miksat-kalman.webp" /></div>
+        <div class="prose-text">
+          <p>Кальман Міксат народився 16 січня 1847 року в містечку Склабоня комітату Ноград, Австрійська імперія (нині округ Вельки Кртіш, Банськобистрицький край, Словаччина) в родині дрібнопомісного дворянина. Початкову освіту здобув у гімназії міста Рімасомбат. У 1864 році переїхав разом з родиною в містечко Шельмецбаня, в 1866 році вступив на юридичний факультет Будапештського університету. На початку 1871 Кальман Міксат повертається на батьківщину і приступає до юридичної практики на державній службі в містечку Балашшадьярмат. У цей же самий час він робить перші спроби у літературній сфері. Перші його оповідання, опубліковані в будапештській пресі, успіху не мали, хоча одна з його робіт отримала приз газети &quot;Голос правди&quot;. В січні 1873 Кальман Міксат залишив державну службу, і вступив на роботу в губернський журнал, потім якийсь час жив в Будапешті, будучи редактором журналу народницького спрямування. У зв&#x27;язку з фінансовими труднощами в 1878 році Кальман Міксат переїжджає в Сегед, де тісно співпрацює з місцевою газетою &quot;Сегед Напло&quot;. В цей час відбувалося становлення Кальмана Миксата як письменника, почав вироблятися легко впізнаваний стиль письменника. В основному з-під його пера виходили численні нариси й оповідання, сюжетною основою яких служать гумористичні ситуації, анекдоти, епізоди з життя дрібних дворян, чиновників, адвокатів. Здібності письменника не залишилися непоміченими, пішли публікації, пропозиції про роботу, в тому числі й зі столиці.</p>
+          <p>Широке визнання і популярність до Кальмана Міксата прийшли в 1881 році, після опублікування двох збірок новел &quot;Брати-словаки&quot; та &quot;Добрі Палоці&quot;. Новели, в основному, описували побут словацьких селян. Кальман Міксат оселився в Будапешті. Того ж року отримав премію Шандора Петефі.</p>
+          <p>Починаючи з цього моменту Кальман Міксат став визнаним угорським письменником. 8 лютого 1882 він отримав премію Товариства Кішфалуді 3 травня 1889 року став членом Угорської академії наук. Його романи переводилися видавалися великими тиражами і перекладалися багатьма мовами світу. Теодор Рузвельт був настільки захоплений романом &quot;Парасолька святого Петра&quot;, що в ході своєї поїздки по Європі 1910 року, провідав Кальмана Міксата і засвідчив своє шанування. Хоча Кальман Міксат не писав п&#x27;єс, він охоче допомагав драматургам інсценувати власні твори. Так, ще за життя письменника на сцені Німеччини йшла оперета &quot;Селіщенскіе красуні&quot;, потім за творами Миксата були поставлені п&#x27;єси &quot;Маєток на продаж&quot;, &quot;Облога Бестерце&quot;, &quot;Історія Ности-молодшого і Марії Той&quot;, &quot;Шіпшіріца&quot;. Роман &quot;Парасолька святого Петра&quot; був екранізований, а за романом &quot;Чорний місто&quot; знятий багатосерійний телевізійний фільм. Вів активну творчу діяльність до кінця життя. Крім того, Кальман Міксат вів і політичну діяльність: з 1879 року був депутатом округу Ільефальва в Трансільванії, з 1892 до смерті був депутатом округу Фагараш. У 1887 році, будучи членом Ліберальної партії Угорщини, був обраний до Національних Зборів Угорщини. З 13 червня 1873 р. перебував у шлюбі з Ілоною Маукс. Від шлюбу мав трьох синів, Ласло, Яноша і Альберта. Помер 28 травня 1910 року в Будапешті, через кілька днів після святкування 40-річного ювілею літературної діяльності.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

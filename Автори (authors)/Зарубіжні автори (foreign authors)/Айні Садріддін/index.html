@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Айні Садріддін — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Айні Садріддін</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ayni-sadriddin.webp" alt="Айні Садріддін" title="Айні Садріддін" data-full="./ayni-sadriddin.webp" /><img class="side-img side-thumb" src="./ayni-sadriddin_1.webp" alt="Айні Садріддін" title="Айні Садріддін" data-full="./ayni-sadriddin_1.webp" /><img class="side-img side-thumb" src="./ayni-sadriddin_2.webp" alt="Айні Садріддін" title="Айні Садріддін" data-full="./ayni-sadriddin_2.webp" /></div>
+        <div class="prose-text">
+          <p>Садриддин Айни (Садриддин Айнӣ, справжнє ім&#x27;я Садриддин Саїд-Муродзода; 15 (27) квітня 1878 — 15 липень 1954 Душанбе) — таджицький радянський письменник, громадський діяч і вчений. Лауреат Сталінської премії другого ступеня (1950).</p>
+          <p>Садриддин Айни народився в селі Сактарі (нині Гіждуванський район, Бухарская область Узбекистану). Мати його походила з села махалай Боло Шафірканского туману (нині Бухарської області Республіки Узбекистан). Айни навчався в бухарских медресе, був близько знайомий з видними бухарським інтелектуалами: Садрі Зіё, дамулла Ікрамча і ін. Садриддин Айни був учасником руху просвітителів — джадидов.</p>
+          <p>Брав участь у встановленні Радянської влади в Бухарі. За радянських часів займався в основному літературною діяльністю. Склав вперше антологію таджицького національного творчості &quot;Зразки таджицької літератури&quot;. З 1951 року академік і перший президент АН Таджицької РСР. Депутат ВР СРСР 3-4 скликань (з 1950 року). Айни був в числі організаторів Самаркандського державного університету в 1927 році, який тоді називався академією. Садриддин Айни крім рідного таджицького прекрасно знав узбецькою мовою і деякі свої твори писав на обох мовах. Він вніс значний вклад в літературу обох народів. Його основні праці: &quot;Одіна&quot; (опублікований в 1924, &quot;Дохунда&quot; (опублікований в 1930), &quot;Раби&quot; (1934), &quot;Спогади&quot; ( &quot;Бухара&quot;) (1949-1954). Автор праць з історії та літератури народів Середньої Азії. Попутно Айни працює над складанням антології &quot;Зразки таджицької літератури&quot;, вона включає в себе кращі зразки поезії, починаючи від Рудаки і до початку XX століття, Джадіди-пантюркісти заперечували історію таджицького народу і відмовляли таджиків в праві вважатися нацією. Ось Садриддин Айни цієї антологією і довів існування таджицької нації, її історії та її права мати свою республіку. Сам письменник каже, що &quot;твір на основі історичних факсів зірвало завісу з підступів і домагань пантюркістов і наклало на них печатку мовчання ...&quot; Однак пантюркісти, що засіли в редакції газет і журналів, у видавництві, в друкованих органах, підняли галас навколо одного з віршів Рудакі, нібито вихваляти еміра, і зажадали вилучити з обігу антологію. Москва, російські літературознавці, російські письменники підтримали Садриддин Айни. Адже право на самовизначення нації вже перемогло, і в 1929 році утворилася Таджицька РСР зі своєю національною інтелігенцією і своїми національними письменниками: Садриддин Айни, Абдулькасімом Лахути, Абдулло Вохідом Мунзімом, Пайравом Сулаймоні, Мухамеджоном Рахімі, Мухиддінов Амін-заде і іншими. Учасник розтину гробниці Тамерлана 1941 році. С. Айні помер 15 липня 1954 року в Душанбе. Нагороди і премії — Сталінська премія другого ступеня (1950) — за книгу &quot;Спогади&quot; (&quot;Бухара&quot;); — три ордени Леніна; — орден Трудового Червоного Прапора; — заслужений діяч науки Таджицької РСР; — почесний академік Академії наук Узбецької РСР; — Герой Таджикистану.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

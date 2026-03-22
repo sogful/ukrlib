@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кон Ганс — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кон Ганс</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kon-hans.webp" alt="Кон Ганс" title="Кон Ганс" data-full="./kon-hans.webp" /><img class="side-img side-thumb" src="./kon-hans_1.webp" alt="Кон Ганс" title="Кон Ганс" data-full="./kon-hans_1.webp" /><img class="side-img side-thumb" src="./kon-hans_2.webp" alt="Кон Ганс" title="Кон Ганс" data-full="./kon-hans_2.webp" /></div>
+        <div class="prose-text">
+          <p>Ханс Кон (Hans Kohn; 15 вересня 1891 — 16 березень 1971) був єврейським філософом і істориком.</p>
+          <p>Народився в Празі в габсбурзької імперії. Був захоплений в полон під час Першої світової війни і жив в Росії протягом п&#x27;яти років. У наступні роки він жив в Парижі і Лондоні, працював в сіоністських організаціях і писав книги.</p>
+          <p>Він переїхав до Палестини в 1925 році, але відвідував США часто, в кінці кінців іммігрував в 1934 році викладати сучасну історію в Коледжі Сміта в Нортхемптон, штат Массачусетс. З 1948 по 1961 рік він викладав в Міському коледжі Нью-Йорка. Він також викладав в Новій школі соціальних досліджень, Гарвардській літній школі. Він написав безліч книг і публікацій, в основному на теми націоналізму, панславізму, німецької думки і іудаїзму, і був одним з перших засновників Інституту зовнішньополітичних досліджень в Філадельфії, штат Пенсільванія, де він помер. Кон Ганс (Kohn H.) — голова організованого в США Міжнародного товариства з вивчення історії ідей, професор Нью-йоркського коледжу. За плечима Кона — сорокарічний досвід наукової роботи, два десятка монографій. Один тільки перелік назв його останніх праць: &quot;Картина світу в історичній перспективі&quot;, &quot;Революції і диктатури&quot;, &quot;Пророки і народи&quot; &quot;,&quot;Двадцяте століття. Виклик Заходу і його відповідь&quot;,&quot;Націоналізм, його роль і історія&quot;, свідчить про те, що Ганс Кон вважається істориком-теоретиком, істориком-соціологом. Його головним дослідженням в цій області книга, що вийшла в Америці сім&#x27;ю виданнями і перекладена на багато мов &quot;Ідея націоналізму&quot;. в останні роки професор зайнявся застосуванням своєї методології до історії окремих країн. Так з&#x27;явилися дві книги Кона: &quot;Дух сучасної Росії&quot; і &quot;Основи історії сучасної Росії&quot;. Перша являє собою об&#x27;ємну хрестоматію, в якій зібрані тривкі з творів П.Я. Чаадаєва, М.П. Погодина, А.Міцкевича, К. Гавлічек, Ф.И. Тютчева, А.С.Хомякова, В.Г. Белинского, Н. Г. Чернишевського, А. І .Герцена, Н.Я. Данилевского, В.С. Соловьева, В.І. Леніна, Н.А. Бердяєва і Г.Федотова. Тексти супроводжуються коментарями Кона, передмова і перша глава викладають його загальний погляд на хід російської історії. У другий книзі Кон більш докладно аналізує основні етапи і рушійні сили російської історії і також намагається підтвердити свої висновки різними історичними свідченнями</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

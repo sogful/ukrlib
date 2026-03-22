@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лао Ше — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Лао Ше</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./lao-she.webp" alt="Лао Ше" title="Лао Ше" data-full="./lao-she.webp" /><img class="side-img side-thumb" src="./lao-she_1.webp" alt="Лао Ше" title="Лао Ше" data-full="./lao-she_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ла́о Ше (кит. 老舍, Lǎo Shě; 3 лютого 1899, Пекін — 24 серпня 1966), справжнє ім&#x27;я Шу Шеюй, друге ім&#x27;я Шу Цінчунь (кит.: 舒慶春, Shū Qìngchūn) — китайський письменник.</p>
+          <p>Майбутній письменник народився у Пекіні, в маньчжурської сім&#x27;ї. Його батько, солдат, був убитий під час Іхетуаньського (Боксерського) повстання 1899—1901 рр. Мати працювала прачкою, щоб забезпечувати сім&#x27;ю та оплатити навчання сина.</p>
+          <p>У 1918 р. Лао Ше закінчив учительську семінарію. У 1924—1929 рр. він викладав китайську мову в Лондонському університеті. У Великій Британії Лао Ше написав свої перші соціальні романи &quot;Філософія шановного Чжана&quot; (1926 р.), &quot;Чжао Цзиюе&quot; (1927 р.), &quot;Двоє Ма&quot; (1928 р.), в яких відображений розвиток буржуазних відношень у феодальному Китаї. Після повернення до батьківщини в 1930 р., Лао Ше працював викладачем китайської мови в університетах та продовжив свою літературну діяльність. В 1933 р. він створив сатирико-фантастичний роман &quot;Нотатки про котяче місто&quot;. В романах &quot;Розлучення&quot; (1933 р.), &quot;Верблюд Сян-цзи&quot; (1935 р., у перекладі відомий як &quot;Рикша&quot;) та інших творах Лао Ше описав долю &quot;маленької людини&quot;. Під час японської окупації (1937—1945 рр.) Лао Ше був головою &quot;Всекитайської асоціації робітників літератури та мистецтва по відсічу ворогу&quot;. В романі &quot;Спалення&quot; (1940 р.), у п&#x27;єсах &quot;Клоччя туману&quot; (1940 р.), &quot;Інтереси держави понад усе&quot; (1943 р.) та ін. він осуджав зрадників батьківщини, виспівав мужність народу та дружбу проміж людьми різних національностей. У 1946—1949 рр. Лао Ше мешкав у США, де працював над трилогією &quot;Чотири покоління під єдиним дахом&quot; (про японську окупацію Китаю). Після проголошення Китайської Народної Республіки він повернувся на батьківщину. В КНР Лао Ше займав деякі адміністративні посади (став віце-президентом Союзу письменників Китаю, депутатом Всекитайського збору народних представників та ін.). Був оголошений &quot;народним художником&quot; та &quot;великим майстром слова&quot;. Написав декілька ідеологічних драматичних творів та історичну драму &quot;Кулак в ім&#x27;я справедливості&quot; (1961 р., про Іхетуаньське повстання). Під час &quot;Великої культурної революції&quot; Лао Ше, як і багато інших письменників, був підданий критиці та переслідуванню. Внаслідок цього, 24 жовтня 1966 р. він був убитий чи здійснив самогубство.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

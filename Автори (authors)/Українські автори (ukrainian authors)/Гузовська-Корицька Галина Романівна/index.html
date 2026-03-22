@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гузовська-Корицька Галина Романівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гузовська-Корицька Галина Романівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./huzovska-korytska-halyna-romanivna.webp" alt="Гузовська-Корицька Галина Романівна" title="Гузовська-Корицька Галина Романівна" data-full="./huzovska-korytska-halyna-romanivna.webp" /></div>
+        <div class="prose-text">
+          <p>Галина Романівна Гузовська-Корицька (народилася 6 червня 1963 року в селі Скоморохи Бучацького району Тернопільської області) — педагог, науковець, автор науково-методичних електронних ресурсів. Кандидат філологічних наук, доцент. Автор понад 100 наукових, навчально-методичних публікацій і електронних ресурсів. У 1987 році закінчує Чернівецький державний університет за спеціальністю &quot;Філолог. Викладач української мови та літератури&quot;. Трудовий шлях розпочинає в Запоріжжі, куди направлена за розподілом після закінчення вузу: 1987-1992 – учитель української мови та літератури ЗОШ І-ІІІ ст. № 69; 1992-1997 – заступник директора Запорізького колегіуму &quot;Елінт&quot;, – учитель української мови та літератури, народознавства; 1997-2001 – методист Науково-методичного центру управління освіти Запорізького міськвиконкому.</p>
+          <p>Працює в комунальному закладі &quot;ЗОІППО&quot; Запорізької обласної ради з 2001 року: 2001-2003 – методист; 2003-2006 – старший викладач; з 2006 року – доцент кафедри філософії та суспільно-гуманітарних дисциплін. Після закінчення аспірантури (2005) захистила кандидатську дисертацію (2006). У 2008 році присвоєно вчене звання доцента. Фахівець в галузі педагогіки, методики викладання української мови та літератури, розвитку професійної майстерності вчителів-словесників. Має досвід викладача в системі післядипломної педагогічної освіти.2003-2014 – завідувачка науково-дослідної лабораторії мовно-літературної освіти, продовжує експериментальні розвідки з проблем: &quot;Наступність і перспективність між початковою й середньою ланками освіти в навчанні дітей української мови&quot;.</p>
+          <p>Є активним організатором і учасником обласних, Всеукраїнських науково-практичних семінарів, Всеукраїнських та Міжнародних конференцій, І Міжнародного форуму, ІІ Українського Педагогічного Конгресу. Є автором чи упорядником навчально-методичних посібників, за якими працюють учителі України&quot;Збірник диктантів для 5-11 класів: на народознавчій основі&quot; (рекомендовано Міністерством освіти і науки України),&quot;Збірник переказів з української мови. 5-9 класи&quot; (рекомендовано Міністерством освіти і науки України),&quot;Мовленнєва діяльність. 5-8 класи&quot;,&quot;Мовленнєва діяльність. 9-11 класи&quot;,&quot;Українська література. 5 (6, 7) клас: Тематичне оцінювання знань&quot;,&quot;Витоки (виховні години, свята)&quot;,&quot;Література рідного краю&quot;,&quot;Відкриті уроки з української мови&quot; (рекомендовані науково-методичною радою КЗ &quot;ЗОІППО&quot; ЗОР),Активно поєднує традиційні та інноваційні форми навчання.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

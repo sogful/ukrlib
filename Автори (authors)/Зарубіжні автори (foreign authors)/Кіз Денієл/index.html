@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кіз Денієл — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кіз Денієл</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kiz-deniiel.webp" alt="Кіз Денієл" title="Кіз Денієл" data-full="./kiz-deniiel.webp" /><img class="side-img side-thumb" src="./kiz-deniiel_1.webp" alt="Кіз Денієл" title="Кіз Денієл" data-full="./kiz-deniiel_1.webp" /><img class="side-img side-thumb" src="./kiz-deniiel_2.webp" alt="Кіз Денієл" title="Кіз Денієл" data-full="./kiz-deniiel_2.webp" /></div>
+        <div class="prose-text">
+          <p>Деніел Кіз народився в Нью-Йорку 9 серпня 1927 року. У 17 років вступив до морської служби США та вийшов у море, як стюард корабля.</p>
+          <p>Повернувшись з плавання, Кіз відновив своє навчання в Бруклінському коледжі та закінчив його отримавши ступінь бакалавра в області психології.</p>
+          <p>Працював помічником редактора журналу &quot;Наукова фантастика&quot;, займався фотографією та викладав англійську мову у школі. Захистив дисертацію з філології, після чого викладав англійську мову і літературу, вів курси письменницької майстерності в різних університетах. На даний час — професор літератури в Університеті штату Огайо. Одружений, має двох дочок. Популярність Деніелу Кізу принесло оповідання &quot;Квіти для Елджернона&quot; та однойменний роман на його основі. Роман перекладено багатьма мовами і вивчається в школах і коледжах по всьому світу. У 1968 році режисер Ральф Нельсон зняв за романом &quot;Квіти для Елджернона&quot; фільм &quot;Чарлі&quot;. За роль Чарлі Гордона актор Кліфф Робертсон отримав премію &quot;Оскар&quot;. Роман був також адаптований як спектакль та поставлений у Франції, Польщі та в Японії. У 1960 році оповідання &quot;Квіти для Елджернона&quot; отримує премію &quot;Х&#x27;юго&quot;, а в 1966-му премію &quot;Небюла&quot; отримав вже роман, написаний на його основі. Романи Квіти для Елджернона (Flowers for Algernon, 1966) Дотик (The Touch, 1968)про трагедію людини, яка отримала велику дозу радіаційного опромінення П&#x27;ята Саллі (The Fifth Sally, 1980) Таємнича історія Біллі Міллігана (The Minds of Billy Milligan, 1981) Історія основана на реальних подіях, розкриває перед нами людину роздвоєнням особистості — Біллі Міллігана. 24 окремі особистості, різні по інтелекту,дорослі та діти, чоловіки та жінки, обличчя з кримінальними схильностями та художні натури — ведуть боротьбу за володінням його тіла, не дозволяючи йому контролювати свої дії. Війни Міллігана (The Milligan Wars, 1986) книга видана лише в Японії, її видання на інших мовах планується лише після виходу фільму про Біллі Міллигана До самої смерті (Until Death, 1998) Документальна проза Про Клавдію (Unveiling Claudia, 1986) Елджернон, Чарлі та я: подорож письменника (Algernon, Charlie and I: A Writer&#x27;s Journey, 2000)</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

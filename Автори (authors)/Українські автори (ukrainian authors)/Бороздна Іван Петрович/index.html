@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бороздна Іван Петрович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бороздна Іван Петрович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./borozdna-ivan-petrovych.webp" alt="Бороздна Іван Петрович" title="Бороздна Іван Петрович" data-full="./borozdna-ivan-petrovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився Іван Петрович Бороздна 27 листопада 1804-го року у родовому маєтку Ведмедеві Стародубського повіту. Кумиром на все життя для Івана Бороздни став Микола Гоголь, а найулюбленішими творами — &quot;Вечори на хуторі поблизу Диканьки&quot; та &quot;Миргород&quot;. Навіть зі всіх своїх портретів Іванові Бороздні більше сподобалися ті, де він був зображений у профіль — бо так йому власне обличчя нагадувало чимось гоголівське.</p>
+          <p>1834-го року Іван Бороздна здійснює подорож по Україні, з півночі на південь, аж до Криму. Результатом цієї мандрівки стали &quot;Поетичні нариси України&quot; (12 листів від Бороздни до нащадка останнього стародубського полковника, графа Завадовського), які письменник видав окремою книжкою 1837-го року. Більшу частину свого життя провів Іван Бороздна у рідному Ведмедеві, де й написав свої головні твори, просякнуті місцевим українським колоритом та основою яких стали народні стародубські легенди і повір&#x27;я.</p>
+          <p>Спочатку Іван Бороздна пише поему &quot;Відьмак&quot;, де відтворює народне оповідання про чаклуна, який помстився за давню образу. 1840-го року в альманасі &quot;Ранкова зоря&quot; він публікує обробку української історичної легенди під назвою &quot;Золота гора, або я тебе врятую&quot;. У ті роки, коли навіть прогресивна російська преса різко критикувала український національний рух, Іван Бороздна рішуче стояв на українських позиціях, підтримуючи своєю працею усі ті видання українською мовою, яким пощастило прорватися до читача скрізь перепони імперської цензури. Так 1843-го року Іван Бороздна бере участь в українському виданні &quot;Молодик&quot;, де друкує свою поезію &quot;Вона приваблива, українка молода&quot;. Помер 7 грудня 1858, Ведмедеве, Стародубський повіт, Чернігівська губернія.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

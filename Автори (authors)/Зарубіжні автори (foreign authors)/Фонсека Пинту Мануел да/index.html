@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фонсека Пинту Мануел да — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Фонсека Пинту Мануел да</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./fonseka-pyntu-manuel-da.webp" alt="Фонсека Пинту Мануел да" title="Фонсека Пинту Мануел да" data-full="./fonseka-pyntu-manuel-da.webp" /></div>
+        <div class="prose-text">
+          <p>Мануел Пінту да Фонсека (порт. Manuel Pinto da Fonseca, 24 травня 1681, Ламегу — 23 грудень 1773, Валлетта) — 68-й великий магістр Мальтійського ордена (1741-1773).</p>
+          <p>Мануел Пінту да Фонсека народився в Португалії, в дворянській сім&#x27;ї. Його батьком був алькальд Мігел Алвару Пінту да Фонсека. Аж до свого обрання в гросмейстери Мальтійського ордена 18 січня 1741 року Мануел був одним з братів-лицарів кастильского &quot;мови&quot; (відділення) цього ордена.</p>
+          <p>У 1749 році, 29 червня, за допомогою охоронця та Фонсекі Кассара був розкритий підготовлений турецьким візиром Мустафою-пашею змова рабів-мусульман на Мальті. Повстання рабів було придушене в самому зародку, а 29 червня з тих пір зазначалося щорічно як національне свято. При Мануеле Пінту да Фонсека було закінчено будівництво корпусу для кастильского &quot;мови&quot; ордена Auberge de Castille et Leone, розпочате ще в 1574 році і є донині однією з архітектурних пам&#x27;яток Валлетти. Як великий магістр і глава держави-ордена, Мануел П. да Фонсека приділяв велике значення розвитку культури і мистецтв на Мальті. У роки його правління на Мальтійських островах був відкритий державний університет загальних знань, нині це Університет Мальти. У зовнішній політиці да Фонсека підтримував дружні стосунки з правлячими в Європі монархіями, в той же час він збільшив і модернізував орденську армію. У 1768 року да Фонсека виганяє з Мальти єзуїтів і закриває на острові єзуїтський Collegium Melitense, замінивши його університетом. Мануел Пінту да Фонсека був близьким другом відомого містифікатора, авантюриста і алхіміка Алессандро Каліостро.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

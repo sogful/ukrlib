@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мілн Алан Олександр — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Мілн Алан Олександр</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./miln-alan-oleksandr.webp" alt="Мілн Алан Олександр" title="Мілн Алан Олександр" data-full="./miln-alan-oleksandr.webp" /><img class="side-img side-thumb" src="./miln-alan-oleksandr_1.webp" alt="Мілн Алан Олександр" title="Мілн Алан Олександр" data-full="./miln-alan-oleksandr_1.webp" /><img class="side-img side-thumb" src="./miln-alan-oleksandr_2.webp" alt="Мілн Алан Олександр" title="Мілн Алан Олександр" data-full="./miln-alan-oleksandr_2.webp" /><img class="side-img side-thumb" src="./miln-alan-oleksandr_3.webp" alt="Алан Мілн з сином Крістофером Робіном" title="Алан Мілн з сином Крістофером Робіном" data-full="./miln-alan-oleksandr_3.webp" /><img class="side-img side-thumb" src="./miln-alan-oleksandr_4.webp" alt="Алан Мілн з сином Крістофером Робіном та ведмедиком Пухом" title="Алан Мілн з сином Крістофером Робіном та ведмедиком Пухом" data-full="./miln-alan-oleksandr_4.webp" /></div>
+        <div class="prose-text">
+          <p>Алан Александр Мілн (1882-1956), англійський письменник, відомий своїми творами для дітей. В його віршованих книжках &quot;Коли ми були дуже юні&quot; (1924) і &quot;Тепер нам уже шість&quot; (1927) вперше з&#x27;явився образ Крістофера Робіна, хлопчика, прототипом якого став син Мілна. Його прозаїчні книжки &quot;Вінні Пух&quot; (1926) і &quot;Дім на Пуховому узліссі&quot; (1928) розповідають про пригоди плюшевого ведмедика Вінні Пуха, іграшки Крістофера Робіна.</p>
+          <p>Народився Мілн 18 січня 1882 р. у Лондоні. Освіту здобув у Вестмінстер-скул та Трініті-коледжі Кембріджського університету. В 1906-1914 рр. був помічником видавця журналу &quot;Панч&quot;. Під час служби в армії, коли йшла Перша світова війна, почав писати п&#x27;єси. Після поранення у Франції 1919 р. демобілізувався і цілком присвятив себе літературі.</p>
+          <p>Неймовірна популярність дитячих книжок Мілна затьмарила його успіхи в інших жанрах. Проте чарівними є його гуморески для журналу &quot;Панч&quot;. Він написав одну з кращих детективних мелодрам &quot;Повне алібі&quot;, опубліковану в збірці &quot;Чотири п&#x27;єси&quot; (1932), і оповідання, яке стало класикою, &quot;Таємниця Червоного Будинку&quot; (1921). Інші його твори для театру, в тому числі &quot;Містер Пім проходить мимо&quot; (1919), &quot;Правда про Блейдів&quot; (1921) та &quot;Дорога на Дувр&quot; (1922), мали успіх у публіки та схвальні відгуки професійних критиків. Книжка, що спричинила відгуки суперечливі, &quot;Світ з честю&quot; (1934), містила палкий протест проти війни. Серед інших творів Мілна можна визначити &quot;Автобіографію&quot; (1939) та роман &quot;Хлоя Марр&quot; (1946). Помер Мілн в своєму домі в графстві Суссекс 31 січня 1956.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

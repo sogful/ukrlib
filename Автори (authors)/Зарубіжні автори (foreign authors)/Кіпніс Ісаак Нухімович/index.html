@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кіпніс Ісаак Нухімович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кіпніс Ісаак Нухімович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kipnis-isaak-nukhimovych.webp" alt="Кіпніс Ісаак Нухімович" title="Кіпніс Ісаак Нухімович" data-full="./kipnis-isaak-nukhimovych.webp" /><img class="side-img side-thumb" src="./kipnis-isaak-nukhimovych_1.webp" alt="Кіпніс Ісаак Нухімович" title="Кіпніс Ісаак Нухімович" data-full="./kipnis-isaak-nukhimovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Ісаак (Іцик) Кіпніс народився 12 грудня 1896 р. у містечку Словечно (Волинська губернія, тепер – Овруцький район Житомирської області) в сім&#x27;ї ремісника-кушніра. Отримав традиційну єврейську освіту в хедері, допомагав батькові в гарбарні (майстерні, де вичиняли шкіру). У 12 років почав писати вірші їдишем.</p>
+          <p>У 1920 р. був направлений профспілкою на навчання в Київ. З 1922 р. Ісаак Кіпніс друкувався в багатьох єврейських літературних журналах: &quot;Штром&quot;, &quot;Фрайнд&quot;, &quot;Халястре&quot;, &quot;Ді ройте велт&quot; та ін., а в 1923 р. вийшов його перший поетичний збірник – &quot;Оксн&quot; (&quot;Воли&quot;). Після цього Ісаак Кіпніс перейшов на прозу. Уже тоді він складав дитячі казки, кілька видань яких вийшли з ілюстраціями художників київської Культур-Ліги. У наступні роки Ісаак Кіпніс плідно працював як дитячий письменник і перекладач. Під час Другої світової війни перебував в евакуації в Саратові.</p>
+          <p>Був членом Спілки письменників УРСР, але його виключили за &quot;єврейський націоналізм&quot;. У 1948 р. Ісаака Кіпніса &quot;за активну антирадянську націоналістичну роботу&quot; засудили до 10 років виправно-трудових таборів. Покарання відбував у Спаську (під Карагандою). Був звільнений з ув&#x27;язнення в 1955 р. (із забороною жити в Києві). Оселився в Боярці, до Києва перебрався лише на початку 1960-х рр. і прожив там до кінця життя. Помер 14 квітня 1974 р. Найвідоміші оригінальні твори Ісаака Кіпніса: збірка поезій &quot;Воли&quot; (1923); повісті &quot;Місяці й дні&quot; (1926), &quot;Моє містечко Словечно&quot; (1962), &quot;З щоденника&quot; (1965); роман &quot;Дім&quot; (1939), прозові &quot;Казки для Лемеле&quot; (1940); &quot;Мініатюри&quot; (1975). Ісаак Кіпніс також переклав їдишем твори багатьох класиків англійської, американської, французької, іспанської та російської літератур.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

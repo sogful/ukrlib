@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Горіха Зерня Тамара Анатоліївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Горіха Зерня Тамара Анатоліївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./horikha-zernia-tamara-anatoliivna.webp" alt="Горіха Зерня Тамара Анатоліївна" title="Горіха Зерня Тамара Анатоліївна" data-full="./horikha-zernia-tamara-anatoliivna.webp" /><img class="side-img side-thumb" src="./horikha-zernia-tamara-anatoliivna_1.webp" alt="Горіха Зерня Тамара Анатоліївна" title="Горіха Зерня Тамара Анатоліївна" data-full="./horikha-zernia-tamara-anatoliivna_1.webp" /><img class="side-img side-thumb" src="./horikha-zernia-tamara-anatoliivna_2.webp" alt="Горіха Зерня Тамара Анатоліївна" title="Горіха Зерня Тамара Анатоліївна" data-full="./horikha-zernia-tamara-anatoliivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Справжнє ім&#x27;я — Тамара Анатоліївна Дуда. Українська письменниця, перекладачка та волонтерка. Лауреатка Національної премії України імені Тараса Шевченка 2022 року. Авторка роману &quot;Доця&quot; (2019), відзначеного як книга року BBC. Тамара Дуда відома своєю волонтерською діяльністю.</p>
+          <p>Народилася 5 січня 1976 року в Києві. 1992 року закінчила Український гуманітарний ліцей. 1993 року вступила до Інституту журналістики Київського університету, захистила диплом 1998 року. З 2003 до 2005 навчалася в Київському міжнародному університеті. Понад 20 років перекладає економічні тексти з англійської.</p>
+          <p>З 2014 року Тамара Дуда була волонтеркою у зоні АТО. За волонтерську діяльність була відзначена грамотою мера Києва. Одружена, має трьох дітей. &quot;Доця&quot; — перший роман письменниці. Він був опублікований у видавництві &quot;Білка&quot; українською та англійською мовами. Події в книзі відбуваються 2014 року під час російсько-української війни на сході України. Планується екранізація роману. У 2021 році у видавництві &quot;Білка&quot; вийшов другий роман Тамари Горіха Зерня &quot;Принцип втручання&quot;, а жанром — детектив. Головна героїня Станіслава втратила на російсько-українській війні чоловіка, і єдиною розрадою для неї стала робота. На прохання знайомої вирушає у місто свого дитинства на Черкащину, де і розгортаються основні сюжетні події. У 2021 році Тамара Горіха Зерня з романом &quot;Доця&quot; номінована на здобуття Національної премії України імені Тараса Шевченка 2022 року у номінації &quot;Література&quot;. Твір був допущений до участі у другому турі конкурсу і переміг.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

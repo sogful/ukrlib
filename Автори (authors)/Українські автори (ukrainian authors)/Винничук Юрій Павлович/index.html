@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Винничук Юрій Павлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Винничук Юрій Павлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vynnychuk-iuriy-pavlovych.webp" alt="Винничук Юрій Павлович" title="Винничук Юрій Павлович" data-full="./vynnychuk-iuriy-pavlovych.webp" /><img class="side-img side-thumb" src="./vynnychuk-iuriy-pavlovych_1.webp" alt="Винничук Юрій Павлович" title="Винничук Юрій Павлович" data-full="./vynnychuk-iuriy-pavlovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Юрій Винничук — одна з наймасштабніших постатей сучасного українського літературного процесу: блискучий дорослий і дитячий письменник, поет, перекладач, упорядник, актор, редактор, колумніст, містифікатор, засновник театру-кабаре, знавець жіночих і дитячих душ.</p>
+          <p>Народився 18 березня 1952 році у Станіславові. У 1973 закінчив заклад, який нині називається Прикарпатським університетом імені В. Стефаника, але незабаром перейменується на Університет імені того студента, який убив яйцем Януковича. З 1974 перебрався до Львова і став вивчати життя у ролі вантажника, фарцовщика, сутенера, художника-оформлювача і т.д.</p>
+          <p>1987 р. організував естрадну групу &quot;Не журись!&quot;, з якою гастролював і для якої писав пісні та сценарії. 1990 р. покинув театр і разом зі Стефком Оробцем створили &quot;Кабарет Юрця і Стефця&quot;. З 1991-го до 1994-го завідував відділом у газеті &quot;Post-Поступ&quot;, а з 1996-го почав видавати газету &quot;Гульвіса&quot;, котра проіснувала до літа 1998 р. З грудня 1997 р. працює у відновленій газеті &quot;Поступ&quot;. З 1998 щотижня пише сторінку Юзя Обсерватора, завдяки якій мусив пережити дванадцять судових процесів. Автор зб. поезій &quot;Відображення&quot; (1990), зб. прози &quot;Спалах&quot; (1990), &quot;Вікна застиглого часу&quot; (2001), &quot;Місце для Дракона&quot; (2002, 2004), повістей &quot;Ласкаво просимо в Щуроград&quot; (1992), &quot;Діви ночі&quot; (1992, 1995, 2003), &quot;Житіє гаремноє&quot; (1996, 1999, 2002), роману &quot;Мальва Ланда&quot; (2003, 2004) та &quot;Весняні ігри в осінніх садах&quot; (2006), краєзнавчих книг &quot;Легенди Львова&quot; (шість видань 1999-2004), &quot;Кнайпи Львова&quot; (чотири видання 2000-2004), &quot;Таємниці львівської кави&quot; (2001, 2003, 2004), міфологічної енциклопедії &quot;Книга бестій&quot; (2003). Упорядник антологій: укр. фантастики ХІХ ст. &quot;Огненний змій&quot; (1989), укр. літ. казки &quot;Срібна книга казок&quot; (1993), творів укр. письменників про чортів &quot;Чорт зна що&quot; (2004), серії книг &quot;Юрій Винничук презентує&quot;, &quot;Казкова скарбниця&quot;, &quot;Fest-проза&quot;. Твори перекладені в Англії, США, Канаді, Аргентині, Франції, Німеччині, Хорватії, Чехії, Сербії, Польщі, Японії, Білорусі, Росії. За казками знято два мультфільми. Автор дитячої книжки &quot;Історія поросятка&quot; (2005).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

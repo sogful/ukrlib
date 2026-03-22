@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Грабовська Ірина Сергіївна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Грабовська Ірина Сергіївна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hrabovska-iryna-serhiivna.webp" alt="Грабовська Ірина Сергіївна" title="Грабовська Ірина Сергіївна" data-full="./hrabovska-iryna-serhiivna.webp" /><img class="side-img side-thumb" src="./hrabovska-iryna-serhiivna_1.webp" alt="Грабовська Ірина Сергіївна" title="Грабовська Ірина Сергіївна" data-full="./hrabovska-iryna-serhiivna_1.webp" /><img class="side-img side-thumb" src="./hrabovska-iryna-serhiivna_2.webp" alt="Грабовська Ірина Сергіївна" title="Грабовська Ірина Сергіївна" data-full="./hrabovska-iryna-serhiivna_2.webp" /></div>
+        <div class="prose-text">
+          <p>Ірина Грабовська народилась 28 травня 1987 року у Сніжному Донецької області. У 2009 закінчила філологічний факультет Донецького національного університету імені Василя Стуса за спеціальністю &quot;Прикладна лінгвістика&quot;. Працювала редакторкою сайту бізнес-журналу &quot;Компаньйон&quot;, з 2015 року — працює в IT тестувальницею програмного забезпечення. Мешкає в Києві.</p>
+          <p>У 2017 році приєдналася до проєкту підготовки книги про оборону Луганського аеропорту під псевдонімом Анастасія Воронова. Спільно з командою співавторів — Сергієм Глотовим, Анастасією Глотовою, Дмитром Путятою і Юрієм Руденком — взяла участь в написанні документальної хроніки &quot;У вогняному кільці. Оборона Луганського аеропорту&quot;. У 2018 році книга вийшла друком у видавництві Фоліо і за перші пів року, за словами гендиректора видавництва Олександра Красовицького, було продано понад 15 000 екземплярів.</p>
+          <p>2019 року, вже під справжнім іменем, у видавництві КМ-Букс вийшов перший фантастичний роман авторки — &quot;Остання обитель бунтарства&quot;. Це перша частина стимпанк-дилогії &quot;Леобург&quot;. Книга увійшла до довгого списку премії &quot;Книга року BBC — 2020&quot; у номінації &quot;Дитяча Книга року BBC&quot;. У 2020 році вийшло продовження дилогії — &quot;Остання війна імперій&quot;. Жанр другого роману авторка визначає як стимпанк з елементами альтернативної історії. Обидві книги були перевидані у 2021 році одним томом під назвою &quot;Леобург&quot;. Також у 2021 авторка написала підліткову повість &quot;Місто біля моря&quot;, яка в 2022 році здобула І премію конкурсу &quot;Молода КороНація&quot; у категорії &quot;Дорослі для дітей 12-15 років&quot;, але не була опублікована. У 2022 році у видавництві &quot;Віват&quot; вийшла перша частина трилогії &quot;Замок із кришталю&quot; у жанрі фентезі меча і чарів — &quot;Зірки й кістки&quot;. У 2023 році було опублікована друга книга циклу — &quot;Земля Крилатих&quot;. Сюжет трилогії ґрунтується на реальних подіях європейського середньовіччя, зокрема, війни спадкування Бретані та Столітньої війни на теренах Англії та Франції в XIV столітті. Оповідання Ірини Грабовської виходили у кількох збірках фантастичних оповідань. В 2021 році у видавництві &quot;Навчальна книга — Богдан&quot; вийшло оповідання &quot;2003. Справа про острів Тузлу&quot; у збірці &quot;Агенція &quot;Незалежність&quot;&quot;. В 2022 році оповідання &quot;Найближчі до пекла&quot; увійшло до збірки видавництва &quot;Жорж&quot; &quot;Хроніки незвіданих земель&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

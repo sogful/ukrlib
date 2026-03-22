@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вільгельм Кейт — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вільгельм Кейт</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vilhelm-keyt.webp" alt="Вільгельм Кейт" title="Вільгельм Кейт" data-full="./vilhelm-keyt.webp" /><img class="side-img side-thumb" src="./vilhelm-keyt_1.webp" alt="Вільгельм Кейт" title="Вільгельм Кейт" data-full="./vilhelm-keyt_1.webp" /></div>
+        <div class="prose-text">
+          <p>Кейт Вильгельм (англ. Kate Gertrude Wilhelm) — американская писательница, работающая в жанрах научной фантастики, мистики, фэнтези и детектива. Творчество Вильгельм отмечено тремя премиями &quot;Небьюла&quot;, премией &quot;Хьюго&quot; и журнальной премией &quot;Локус&quot;. В России возможны вариации перевода фамилии, как Вильхельм, Уилхельм и др.</p>
+          <p>Кэтти Гертруда Мередет (англ. Katie Gertrude Meredith) родилась 9 июня 1928 года в Толедо, штат Огайо. Фамилия Вильгельм — результат первого замужества.</p>
+          <p>Литературным дебютом Кейт Вильгельм стал научно-фантастический рассказ &quot;Звездолёт длиною с милю&quot; (англ. The Mile-Long Spaceship), опубликованный в журнале Astounding Science Fiction в 1957 году, и давший название первому сборнику её рассказов, вышедшему в 1963 году. Первым крупным произведением Кейт Вильгельм стал детективный роман &quot;Горше смерти&quot;, опубликованный в 1962 году. В 1963 году Кейт Вильгельм вышла замуж вторично за известного фантаста Деймона Найта и прожила с ним до его смерти в 2002 году. Вместе с Найтом она основала знаменитые литературные мастерские Милфордскую конференцию писателей-фантастов, а затем семинар &quot;Кларион&quot;, и продолжает их вести после смерти мужа. Кейт Вильгельм является лауреатом многих литературных премий, включая Аполло (фр. Prix Apollo), премию имени Курда Лассвица, Хьюго, Небьюла, Локус и премию имени Кристен Ломан (англ. Kristen Lohman). В 2003 году Кейт Вильгельм была включена в Пантеон научной фантастики (англ. Science Fiction Hall of Fame). В 2009 году она вошла в число первых трёх лауреатов новой премии &quot;Солнцестояние&quot; (англ. Solstice Award), учреждённой Ассоциацией писателей научной фантастики Америки (англ. Science Fiction Writers of America), за вклад в развитие жанра. Сегодня на счету Вильгельм более тридцати романов и сборников. Ее произведения переведены более чем на пятнадцать языков, в том числе и русский (например повести &quot;Клон&quot; и &quot;Крошка, ты была бесподобна!&quot;). Вильгельм проживает в Юджине, в штате Орегон, в свободное от писательства и преподавания время занимается садом.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

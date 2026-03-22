@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гінтон Сьюзан — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гінтон Сьюзан</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./hinton-siuzan.webp" alt="Гінтон Сьюзан" title="Гінтон Сьюзан" data-full="./hinton-siuzan.webp" /></div>
+        <div class="prose-text">
+          <p>Сьюзен Елоїза Гінтон народилася 22 липня 1948 року в місті Талса в штаті Оклахома. Свій перший та найпопулярніший роман &quot;Аутсайдери&quot; вона написала у віці 16 років, ще навчаючись у старшій школі. Роман був адресований підлітковій аудиторії та описував протистояння двох молодіжних вуличних банд в Оклахомі. Почасти роман був заснований на враженнях Гінтон від реального протистояння банд у своїй школі. Роман &quot;Аутсайдери&quot; був вперше опублікований 1967 року, і з того часу розійшовся тиражем понад 14 мільйонів екземплярів. У 2000-ті роки, через сорок років після написання, роман продовжував продаватися тиражем понад сто тисяч екземплярів на рік.</p>
+          <p>Перші книги Гінтон були видані під ініціалами С. Е. Гінтон, оскільки видавці побоювалися, що ім&#x27;я жінки на обкладинці відлякає читачів-чоловіків (те саме пізніше сталося і з Джоанною Роулінг, чиї перші книги виходили з ініціалами Дж. К. Роулінг замість повного імені). На відміну від Роулінг, Гінтон надалі завжди публікувалася під ініціалами, і лише значно пізніше почала користуватися у своєму житті повним ім&#x27;ям.</p>
+          <p>У своїх нечисленних інтерв&#x27;ю Гінтон повідомила, що є інтровертом та уникає публічності. Вона, як і раніше, проживає в Оклахомі в місті Талса разом зі своїм чоловіком. Перу Сьюзен Гінтон належать п&#x27;ять романів для підлітків: &quot;Аутсайдери&quot; (&quot;The Outsiders&quot;; 1967) &quot;Це було тоді, це буде зараз&quot; (&quot;That Was Then, This Is Now&quot;; 1971) &quot;Бійцівська рибка&quot; (&quot;Rumble Fish&quot;; 1975) &quot;Текс&quot; (&quot;Tex&quot;; 1979) &quot;Приборкання зіркового бігуна&quot; (&quot;Taming the Star Runner&quot;; 1988), перші чотири з яких екранізовані. Вона також написала два твори для дорослих: роман &quot;Хокс-Харбор&quot; (&quot;Hawkes Harbor&quot;; 2004) та збірку оповідань &quot;Деякі з оповідань Тіма&quot; (&quot;Some of Tim&#x27;s Stories&quot;; 2007). Два твори для дітей: &quot; Великий Девід, Маленький Девід&quot; (&quot;Big David, Little David&quot;; 1995) &quot;Сестра-цуценя&quot; (&quot;The Puppy Sister&quot;; 1995). У 1999 році, разом з двома іншими авторами, Майєю Енджелоу та Ритою Дав , дала велике інтерв&#x27;ю про себе для документального фільму &quot;Великі письменниці&quot; (&quot;Great Women Writers&quot;), що вийшов на DVD.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шамбаз Бернар — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Шамбаз Бернар</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./shambaz-bernar.webp" alt="Шамбаз Бернар" title="Шамбаз Бернар" data-full="./shambaz-bernar.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 18 травня 1949 року в місті Булонь-Біянкур біля Парижа. Бернар Шамбаз — романіст і поет. А ще — великий аматор спорту. Вивчав філософію, а згодом історію. Викладав історію у ліцеї Людовика Великого у Парижі.</p>
+          <p>У 1983 році опублікував збірку поем. А 1993 року отримав Гонкурівську премію за дебютний роман &quot;Дерево життя&quot;. У липні 2003 року Шамбаз брав участь у велогонці Тур де Франс з нагоди сотої річниці цих змагань. У 2006 році був учасником велопробігу Джиро д&#x27;Італія, а в 2008 — Вуельта в Іспанії. Улітку 2011 року проїхав США зі сходу на захід.</p>
+          <p>Видавництво &quot;Рю дю монд&quot; опублікувало 8 книжок автора, серед яких: &quot;Велике свято регбі&quot; (2010), &quot;Метелик у басейні&quot; (2011), &quot;Олімпійські ігри, греки і я&quot; (2004), &quot;Тур де Франс на моєму класному жовтому велосипеді&quot; (2003), &quot;Футбольний матч тривалістю в літо&quot; (2002), усі — з ілюстраціями Заю. Джерело: https://starylev.com.ua/old-lion/author/bernar-sambaz</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ноубл Джеймс — Стисла інформація</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ноубл Джеймс</h1>
+      <h2>Стисла інформація</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./noubl-dzheyms.webp" alt="Ноубл Джеймс" title="Ноубл Джеймс" data-full="./noubl-dzheyms.webp" /></div>
+        <div class="prose-text">
+          <p>Джеймс Ноубл</p>
+          <p>(1944 — 2001)</p>
+          <p>Викладав вивчав історію в Іллінойському університеті США. Автор десятків детективних оповідань та оповідань-жахів для Журналу Таїн Альфреда Хічкока (Alfred Hitchcock&#x27;s Mystery Magazine) 1983-1997 роках. Серед його робіт: Справа про детектива-аматора та курча (The Case of the Amateur Detective and the Chicken) (1983), The Odds Against Mack Meadows (1983), A Bad Day for All Concerned (1983), The Case of the Untidy Golf Cult (1983), One Man&#x27;s Money, Another Man&#x27;s Trash (1983), Playing Ball with Ozzie (1984), Revenge of the Skinflint (1984), The Esterlund Program (1984), The Case of the Unloved Evidence (1984), The Case of the Cop and the Drop (1984), A Short Pocket Mystery (1985), Involuntary Suicide (1985), The Good Listener (1985), The Mountain Mishap Mystery (1985), Murder in the Fast Lane (1985), The Investment in Murder Mystery (1986), Walling Up the Calls (1986), The Invisible Clue (1986), Epitaph for a Trash Bin (1987), The Case of the Dumb Detective and the Humphrey Bogart Fanatic (1995), The Case of the Daydreamer and the Intentional Incident (1995), The Case of the Big Bang Theory and the Grand Finale (1995), Crispy Critter (1996), Package Deal (1997), The Case of the Silent Kidnapper and the Seventy Pecent Solution (1997), The Kompetition Killer (1998). Оповідання &quot;Справа про детектива-аматора та курча&quot; було перекладене українською мовою Вадимом Хазіним та опубліковане в журналі &quot;Всесвіт&quot;. Ще кілька оповідань (перекладені російською мовою в журналі &quot;Искатель&quot; (&quot;Пошукач&quot;).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

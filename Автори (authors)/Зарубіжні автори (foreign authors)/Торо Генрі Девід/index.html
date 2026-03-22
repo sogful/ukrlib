@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Торо Генрі Девід — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Торо Генрі Девід</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./toro-henri-devid.webp" alt="Торо Генрі Девід" title="Торо Генрі Девід" data-full="./toro-henri-devid.webp" /></div>
+        <div class="prose-text">
+          <p>Генрі Девід Торо — американський письменник, мислитель, натураліст, суспільний діяч, попередник зеленого анархізму.</p>
+          <p>Генрі Торо народився 12 липня 1817 в місті Конкорд у штаті Массачусетс і в 1837 році закінчив Гарвардський університет. Під впливом Ральфа Волдо Емерсона він став послідовником трансценденталізму.</p>
+          <p>У 1845–1847 роках Торо жив у лісі, на березі Волденського ставу (недалеко від Конкорду) у хатині, яку сам собі побудував. Він самостійно забезпечував себе всім потрібним для життя. Цей експеримент з виживання він описав у книзі &quot;Волден, або Життя в лісах&quot; (1854). Громадський діяч, Торо протестував проти того в політиці США, що вважав неправильним. У 1846 році, протестуючи проти війни США та Мексики, він демонстративно відмовився платити податки, за що ненадовго потрапив до в&#x27;язниці. Торо активно боровся за права афроамериканців. Як засіб боротьби він пропонував індивідуальну ненасильницьку непокору. Його памфлет &quot;Про громадянську непокору&quot; (1849) мав вплив на Лева Толстого, Магатму Ґанді та Мартіна Лютера Кінга. Був натуралістом, боровся за охорону природи. Окрім того, він став одним із перших у США, хто підтримав еволюційну теорію Чарлза Дарвіна. Генрі Девід Торо помер 6 травня 1862 від туберкульозу в рідному місті Конкорд. Вплив Генрі Торо на розвиток ідеї охорони природи, особливо в США і Канаді, величезний. Власне кажучи, він першим у західній культурній традиції став говорити про дику природу, як про моральну і вільну сутність, яку саме за це і потрібно цінувати. Найважливішими його працями для природоохоронців є &quot;Щоденник&quot;, есе &quot;Прогулянки&quot;, &quot;Волден, або Життя в лісах&quot; й &quot;Чорниця&quot;. Слід зазначити, що за життя Торо не зрозуміли сучасники. Перше видання &quot;Волдена&quot; не розкуповували. 1906 року, коли було видано його повне зібрання творів, про Торо ніхто нічого не чув. Генрі Торо став популярний у США лише через понад століття після своєї смерті. Зараз він, нарівні з Джоном М&#x27;юром і Олдо Леопольдом, найцитованіший автор в екофілософських працях Заходу. Торо був трансценденталістом і тому вірив в існування &quot;наддуші&quot; або божественної моральної сили, яка керує всім творінням. Він також вивчав буддійську релігію і був першим перекладачем буддійської &quot;Лотус Сутри&quot; англійською мовою. Все це значно вплинуло на розвиток його природоохоронних поглядів. В одній зі своїх праць він пише: &quot;Ліс наповнений таким же живим духом, як і людина&quot;. Концепція Торо про дику природу була революційна тим, що виявилася позбавленою будь-якої дискримінації дикої природи. На його думку, дика природа — ні що інше, як цивілізація, але інша, ніж наша. Ці думки чудові тим, що їх не існувало в колишніх західних культурних поглядах. Хоча Торо і не використовував термін &quot;екоетика&quot;, він, по суті, був її ідеологічним засновником. Усе починалося з його тези, що &quot;краще дарувати життя, ніж смерть&quot;. Краще кредо природоохоронному руху годі знайти.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

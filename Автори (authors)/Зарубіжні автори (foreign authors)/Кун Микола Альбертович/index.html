@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кун Микола Альбертович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кун Микола Альбертович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kun-mykola-albertovych.webp" alt="Кун Микола Альбертович" title="Кун Микола Альбертович" data-full="./kun-mykola-albertovych.webp" /></div>
+        <div class="prose-text">
+          <p>(21.05.1877 — 28.10.1940)</p>
+          <p>Російський історик, письменник, педагог; автор популярної книги &quot;Легенди та міфи Древньої Греції&quot; (1922).</p>
+          <p>Закінчив Московський університет (1903) і почав працювати в Твері в жіночій учительській семінарії ім. П. П. Максимовича. У 1905 працював в університеті Ед. Мейєра в Берліні. В кінці 1906 повернувся до Твері; був обраний головою ради Тверського приватного реального училища. З відкриттям у Твері Народного університету в січні 1907 читав в цьому навчальному закладі лекції з історії культури. У 1908 був обраний професором загальної історії московських Вищих жіночих педагогічних курсів, заснованих при Товаристві виховательок і вчительок їм. Д. І. Тихомирова;читав лекції до закриття курсів в 1918 році. Одночасно викладав історію в навчальних закладах Москви, читав лекції в Московському суспільстві народних університетів. У 1911-1912 керував екскурсіями російських вчителів у Римі, читав лекції в римських музеї історії античного мистецтва, римського Форуму, Палатіна. З 1915 професор Московського міського університету ім. А. Л. Шанявського по кафедрі історії релігій. З 1920 професор факультету суспільних наук Московського державного університету. Одночасно викладав історію культурыв 1-му Московському педагогічному інституті (1918-1925). З 1935 до смерті складався професором ІФЛІ (Московський державний інститут історії, філософії і літератури). З 1933 був редактором відділу давньої історії Великої радянської енциклопедії та Малої радянської енциклопедії, написав кілька сотень статей і заміток. Видав переклад &quot;Листів темних людей&quot; (1907), написав книги &quot;Казки африканських народів&quot; (1910), &quot;Магомет і магометанство&quot; (1915), &quot;Італія в 1914 р.&quot; (1915), два томи &quot;Казки циган&quot; (1921 і 1922), &quot;Попередники християнства (східні культури вРимской імперії)&quot; (1922), &quot;Первісна релігія&quot; (1922), &quot;Казки народів островів Великого океану&quot; (1922). Однак ниабольшей популярністю до цих пір користується книга, написана в 1914 &quot;для учениць і учнів старших класів середніх навчальних закладів, а також для всіх тих, хто цікавиться міфологією греків і римлян&quot;. Під своїм початковим назвою &quot;Що розповідали древні греки та римляни про своїх богів і героїв&quot; книга була видана в 1922 р. і 1937. З 1940 вона неодноразово перевидавалася масовими тиражами під назвою &quot;Легенди і міфи Стародавньої Греції&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

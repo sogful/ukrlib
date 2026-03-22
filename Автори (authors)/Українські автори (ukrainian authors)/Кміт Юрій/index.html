@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кміт Юрій — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кміт Юрій</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        
+        <div class="prose-text">
+          <p>Юрій Кміт (псевдоніми і криптоніми: Задуманий, Ю., К., Ю. К.; 24 квітня 1872, Кобло, нині Старосамбірський район Львівської області — 25 червня 1946[1], Татаринів, нині Городоцький район Львівської області) — український письменник і публіцист, етнограф Бойківщини і літературознавець, громадський діяч і священик УГКЦ.</p>
+          <p>Автор оповідань із життя селян, п&#x27;єс, статей про І. Котляревського, Т. Шевченка, І. Карпенка-Карого та про західно-європейських письменників.</p>
+          <p>Юрій Кміт народився 24 квітня 1872 року в селі Кобло на Старосамбірщині. Навчався у Самбірській гімназії, Львівській духовній семінарії. Отець Юрій Кміт душпастирував у Сокальському, Яворівському, Камянко-Бузькому, Старосамбірському, Турківському і Городоцькому районах. Майже 30 років був парохом у с. Чайковичі на Самбірщині. Постійно займався релігійно-моральним вихованням шкільної молоді, вів уроки катихизації. Брав активну участь у національно-визвольних змаганнях як шкільний інспектор Рудківського повітового комісаріату ЗУНР, капелан Українських січових стрільців. Юрій Кміт завжди був там, де треба було виявити живу думку, почати новий напрям у праці, збудити в людях віру у власні сили. Помер о. Юрій Кміт 25 червня 1946 року і похований біля церкви в с. Татаринів Городоцького району. На початку ХХ ст. він став членом наукового Товариства ім. Т. Шевченка, публікувався у його виданнях, співпрацював з І. Франком, М. Грушевським, В. Гнатюком. Тоді ж опубліковані збірки його новел &quot;Житє&quot;, &quot;Взатінку, й на сонці&quot;, &quot;З гір&quot;, &quot;Тремтіння душі&quot;, &quot;Пятдесятлітне подруже&quot;, п&#x27;єса &quot;Подруже&quot;, повість &quot;Сотрудник&quot;, низка літературознавчих статей, наукових розвідок з етнографії Бойківщини, історії Галичини. Великим успіхом у сучасників користувалися усні й опубліковані проповіді о. Юрія Кміта, що торкаються найглибших проблем людського існування, у них є безліч думок і практичних порад щодо виховання дітей, самовдосконалення християнина й громадянина. У 1991 році в с. Кобло відкрито історико-краєзнавчий музей, в основу якого покладено матеріали про життя і діяльність Юрія Кміта, графічні роботи етнографа-художника Володимира Шагали, а в 1993 році тут споруджено пам&#x27;ятник о. Юрію Кміту.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

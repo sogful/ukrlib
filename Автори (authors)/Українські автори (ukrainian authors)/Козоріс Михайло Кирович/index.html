@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Козоріс Михайло Кирович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Козоріс Михайло Кирович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kozoris-mykhaylo-kyrovych.webp" alt="Козоріс Михайло Кирович" title="Козоріс Михайло Кирович" data-full="./kozoris-mykhaylo-kyrovych.webp" /><img class="side-img side-thumb" src="./kozoris-mykhaylo-kyrovych_1.webp" alt="Козоріс Михайло Кирович" title="Козоріс Михайло Кирович" data-full="./kozoris-mykhaylo-kyrovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 2.03.1882 р. у Калуші на Станіславівщині. У 1912 р. закінчив юридичний факультет Львівського університету. Брав участь у Першій світовій війні. У 1919 р. переїхав в Україну, працюючи в Наркоматі юстиції УРСР.</p>
+          <p>Належав до літературної організації &quot;Західна Україна&quot;. Друкуватися почав з 1907-го як поет, публікуючись у 1907–1908 рр. у &quot;Дзвінку&quot; та &quot;Калуському Листку&quot;, а також в газеті &quot;Поділля&quot; у 1918-му. Окремо вийшли збірки оповідань &quot;Тарас-дитина&quot; (1914), &quot;Дві сили&quot; (1927), &quot;Віче&quot;, &quot;То був злодій&quot; (1928), &quot;За порадою&quot; (1929), &quot;По кам&#x27;яній стежці&quot;, повісті &quot;Село встає&quot; (1929), &quot;Чорногора говорить&quot; (1931), &quot;Голуба кров&quot; (1932), писав також п&#x27;єси для дітей, спогади про І. Франка, М. Черемшину, В. Стефаника.</p>
+          <p>14.02.1933 р. М. Козоріс був заарештований і 1.10.1933 р. засуджений на 5 років. Покарання відбував на Соловках. 9.10.1937 р. засуджений до найвищої кари і розстріляний 3.11.1937 р. в Сандармоху.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

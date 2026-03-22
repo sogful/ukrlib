@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Носов Микола Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Носов Микола Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./nosov-mykola-mykolayovych.webp" alt="Носов Микола Миколайович" title="Носов Микола Миколайович" data-full="./nosov-mykola-mykolayovych.webp" /><img class="side-img side-thumb" src="./nosov-mykola-mykolayovych_1.webp" alt="Носов Микола Миколайович" title="Носов Микола Миколайович" data-full="./nosov-mykola-mykolayovych_1.webp" /><img class="side-img side-thumb" src="./nosov-mykola-mykolayovych_2.webp" alt="Носов Микола Миколайович" title="Носов Микола Миколайович" data-full="./nosov-mykola-mykolayovych_2.webp" /><img class="side-img side-thumb" src="./nosov-mykola-mykolayovych_3.webp" alt="Носов Микола Миколайович" title="Носов Микола Миколайович" data-full="./nosov-mykola-mykolayovych_3.webp" /></div>
+        <div class="prose-text">
+          <p>Микола Носов (1908— 1976) — радянський письменник, автор знаменитої трилогії &quot;Незнайко&quot;.</p>
+          <p>Носов Микола Миколайович народився 10 листопада 1908 в Києві в сім&#x27;ї актора.</p>
+          <p>Дитинство провів в Ірпені. З 1915 по 1923 роки навчався в київській приватній гімназії Стельмашенка. З 1923 року родина знову мешкала у Ірпені, де Микола відвідував вечірню робітничу школу. У 1927—1929 вчився в Київському художньому інституті, звідки перевівся в Московський інститут кінематографії (закінчив у 1932). У 1932—1951 — режисер-постановник мультфільмів, науково-популярних та навчальних фільмів Почав публікувати оповідання у 1938 (&quot;Витівники&quot;, &quot;Живий капелюх&quot;, &quot;Огірки&quot;, &quot;Чудові брюки&quot;, &quot;Мишкова каша&quot;, &quot;Городники&quot;, &quot;Фантазери&quot; і ін., надруковані головним чином у &quot;малюковому&quot; журналі &quot;Мурзілка&quot; і що склали основу першої збірки Носова &quot;Тук-тук-тук&quot;, 1945). Особливо широку популярність завоювали його повісті для підлітків &quot;Весела сімейка&quot; (1949), &quot;Щоденник Миколки Синіцина&quot; (1950), &quot;Вітя Малєєв в школі і удома&quot; (1951; Сталінська премія, 1952). Довготривалу популярність і любов читачів здобули його казкові твори про Незнайка. Перше з них — казка &quot;Гвинтик, Шпунтік і пилосос&quot;. Надалі герой з&#x27;явився в знаменитій трилогії — &quot;Пригоди Незнайки і його друзів&quot;, &quot;Незнайко в Сонячному місті&quot; (1958) і &quot;Незнайко на Місяці&quot; (1964—1965). За казкові твори автор отримав Державну премію Крупської. Проте творчість письменника полягала не тільки в написанні казок. За свою біографію Н.Носов також створив твори : &quot;Повість про мого друга Ігоря&quot;, &quot;Таємниця на дні колодязя&quot;, &quot;Повість про дитинство&quot; та інші. Микола Носов помер у Москві 26 липня 1976. Микола Носов: особисте життя Микола Носов був одружений двічі. Його перша дружина Олена померла, коли їх синові Петру було 15 років. Від другої дружини Тетяни дітей не було. Микола Носов присвятив їй &quot;Пригоди Незнайка та його друзів&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Журба Галина — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Журба Галина</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zhurba-halyna.webp" alt="Журба Галина" title="Журба Галина" data-full="./zhurba-halyna.webp" /></div>
+        <div class="prose-text">
+          <p>Галина ЖУРБА</p>
+          <p>(29 грудня 1888 — 9 квітня 1979)</p>
+          <p>Галина ЖУРБА (Галина Маврикіївна Домбровська, по чоловікові Нивінська) народилася 29 грудня 1888р. в поміщицькому домі на Уманщині. Вихована в польській культурі, вже з юнацьких років нав&#x27;язала зв&#x27;язок з народом і повернулася до українства, що його віднайшла по лінії маминого роду Копистинських. Писати почала ще в батьківському домі. Двадцятирічною студенткою почала і друкуватись за посередництвом літературознавця Андрія Ніковського, який підготовив і зредагував першу книжку оповідань Галини Журби &quot;З життя&quot;, що вийшла друком в 1908р. в Одесі. До цієї книжки увійшли три оповідання: &quot;Солов&#x27;ї&quot;, &quot;Черешні&quot; та &quot;Ясний день&quot;. Рецензії на це видання написали Іван Липа й Євген Чикаленко. Журба переїхала у Київ і тут почала друкуватися в передовому на той час літературному журналі &quot;Українська хата&quot;; число &quot;Української хати&quot;, в якому було надруковане оповідання Галини Журби &quot;Коняка&quot;, підпало під цензуру. В 1919 р. вийшла друком друга збірка оповідань &quot;Похід життя&quot;. Після визвольної війни Галина Журба разом з евакуацією уряду УНР переїхала у Польщу й опинилась у польському таборі полонених українських вояків у Тарнові, де написала сценічний етюд &quot;Маланка&quot;, що вийшов книжковим виданням в 1921 р. Поселилась на Волині, де присвятила час поширенню освіти між селянством, а далі переїхала до Львова, де продовжувала свою літературну діяльність. У Львові у видавництві &quot;Батьківщина&quot; були надруковані дві повісти, що їх темою була визвольна війна, а саме &quot;Зорі світ заповідають&quot; (1933) і &quot;Революція йде&quot; (1937); за першу повість письменниця була нагороджена премією Товариства Письменників і Журналістів. Під час другої світової війни вийшов друком в Українському Видавництві сензаційний роман &quot;Доктор Качіоні&quot; (1943). Війна змусила письменницю емігрувати, й вона через Німеччину переїхала в Америку, де поселилась у Філядельфії. Тут, живучи дуже вбого, написала дві книжки, що стали головним здобутком її літературної праці; це автобіографічна розповідь &quot;Далекий світ&quot;, що вийшла першим виданням в Буенос-Айресі в 1955 р., а другим в 1978 р. в Нью-Йорку, і роман на тлі історії &quot;Тодір Сокір&quot; (1967) як перша частина задуманої трилогії. Обі книжки — це картина життя отого &quot;далекого світу&quot;, з якого вийшла письменниця, коли упадав старий порядок з чужим панством і селянським бунтом, і в революції творився новий світ, в якому й Україна вимагала свого місця на землі. Ці два романи виносять Галину Журбу на перше місце між еміграційними письменниками та увійдуть у класику української літератури. Галина Журба посвятила багато уваги організації ОУП &quot;Слово&quot;, а ще активніше допомагала уможливити видання нашого письменницького збірника &quot;Слово&quot;, для чого перевела і грошову збірку. Померла 9 квітня 1979 р. у Філядельфії. Остап ТАРНАВСЬКИЙ Українське слово. — Т. 1. — К., 1994.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

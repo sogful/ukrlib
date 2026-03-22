@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бачинський Андрій Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бачинський Андрій Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./bachynskyy-andriy-mykhaylovych_1.webp" alt="Бачинський Андрій Михайлович" title="Бачинський Андрій Михайлович" data-full="./bachynskyy-andriy-mykhaylovych_1.webp" /><img class="side-img side-thumb" src="./bachynskyy-andriy-mykhaylovych.webp" alt="Бачинський Андрій Михайлович" title="Бачинський Андрій Михайлович" data-full="./bachynskyy-andriy-mykhaylovych.webp" /><img class="side-img side-thumb" src="./bachynskyy-andriy-mykhaylovych_2.webp" alt="Бачинський Андрій Михайлович" title="Бачинський Андрій Михайлович" data-full="./bachynskyy-andriy-mykhaylovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>Андрій Бачинський — український дитячий письменник. Автор романів і повістей для підлітків, які популяризують науку та шкільні дисципліни.</p>
+          <p>Народився 19 січня 1968 року на Івано-Франківщині (у місті Калуш). Змалечку захоплювався читанням і конструюванням. Обидва хобі й визначили подальшу долю Бачинського: моделювання — професійне навчання, а читання дало поштовх до майбутнього написання книжок.</p>
+          <p>Спершу в біографії Андрія Бачинського не було й натяку на письменництво. Автор учився у Національному університеті &quot;Львівська політехніка&quot; на радіотехнічному факультеті. І тільки у 2011 році почав пробувати себе в ролі дитячого письменника. Серед книг Андрія Бачинського переважають пригодницькі повісті для дітей і підлітків. Найпопулярніші його книжки — дилогія &quot;Детективи в Артеку&quot;, &quot;З Ейнштейном у рюкзаку&quot;, &quot;Трикутник Зевса&quot; та інші. Його твори неодноразово номінували на премії як кращі дитячі чи підліткові книжки, а &quot;140 децибелів тиші&quot; у 2015 стала &quot;Книгою року BBC&quot;. Твори Андрія Бачинського мають яскраве пригодницьке спрямування. Головні герої його книжок завжди потрапляють у вир різноманітних мандрів, цікавих авантюр, карколомних випробувань і таємничих загадок. Не оминає автор і висвітлення соціально важливих тем: питання прийняття себе та оточення, іншості, справедливості, рівності тощо. Окрема родзинка деяких його творів — популяризація науки та шкільних дисциплін. У цих творах, наприклад, знання законів фізики чи математичних формул допомагають головним героям вибиратися з будь-якої халепи. А самі читачі розуміють, що будь-яка наука – важлива, потрібна і зовсім, як може здатися, на перший погляд, не нудна. Джерело: Книгарня Є</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

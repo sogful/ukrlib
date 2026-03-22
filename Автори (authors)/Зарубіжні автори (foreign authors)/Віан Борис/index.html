@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Віан Борис — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Віан Борис</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vian-borys_2.webp" alt="Віан Борис" title="Віан Борис" data-full="./vian-borys_2.webp" /><img class="side-img side-thumb" src="./vian-borys.webp" alt="Віан Борис" title="Віан Борис" data-full="./vian-borys.webp" /><img class="side-img side-thumb" src="./vian-borys_1.webp" alt="Віан Борис" title="Віан Борис" data-full="./vian-borys_1.webp" /></div>
+        <div class="prose-text">
+          <p>Борис Віан народився 10 березня 1920 року в містечку Віль-д&#x27;авре недалеко від Парижа. Вчився в паризькій Центральній школі — одному з найбільших французьких технічних університетів. Після здобуття інженерного диплома працював у Французькій асоціації стандартизації, паралельно займаючись музикою і літературним письменництвом. Написав 10 романів, у тому числі знамениту &quot;Піну днів&quot; (1946). Перекладав на французьку твори Реймонда Чандлера.</p>
+          <p>Під псевдонімом Вернон Саліван Віан випустив такі твори, стилізовані під нуар: романи &quot;Я прийду плюнути на ваші могили&quot;, &quot;Всі мертві однакового кольору&quot;, &quot;Жінкам не зрозуміти&quot;, &quot;А потім всіх виродків прибрати&quot; і розповідь &quot;Собаки, бажання, смерть&quot;.</p>
+          <p>Цей псевдонім був складений з прізвищ друзів письменника з джаз-оркестру (де сам Віан був тромбоністом): Салівана і Вернона. За легендою Вернон Саліван був афроамериканцем, якого не дозволяли друкувати в США за дуже вільні погляди, проте його перекладав Віан і він добре видавався у Франції. Перший роман &quot;Я прийду плюнути на ваші могили&quot; викликав справжній фурор, він відразу став бестселером. Дотепер сумарний наклад цього роману перевищує наклад інших творів Віана. Роман був написаний на прохання видавця, друга Віана, чия справа зазнавала збитків. Проте незабаром роман визнали дуже сміливим, вульгарним і навіть порнографічним. Наклади спалювали, товариства боротьби за моральність організовували рух проти романа. Втомившись боротися з &quot;поборниками моральності&quot;, Віан припинив писати під цим псевдонімом. 23 червня 1959 року Віан прийшов на прем&#x27;єру фільму, знятого за його романом &quot;Я прийду плюнути на ваші могили&quot;. Перегляд почався близько десятої ранку в залі &quot;Петі Марбеф&quot;. Через десять хвилин Віан спустив голову на спинку крісла і знепритомнів. Не приходячи до пам&#x27;яті, він помер дорогою до лікарні. Ховали Віана 27 червня на кладовищі Віль-д&#x27;Авре.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

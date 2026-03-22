@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Желєзніков Володимир Карпович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Желєзніков Володимир Карпович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zhelieznikov-volodymyr-karpovych.webp" alt="Желєзніков Володимир Карпович" title="Желєзніков Володимир Карпович" data-full="./zhelieznikov-volodymyr-karpovych.webp" /></div>
+        <div class="prose-text">
+          <p>Володимир Карпович Железников — відомий дитячий письменник, кінодраматург, Заслужений діяч мистецтв Росії. Найбільш відомі роботи — &quot;Опудало&quot;, &quot;Життя і пригоди дивака&quot;. Народився 26 жовтня 1925 року в Вітебську. Дитинство майбутнього письменника минуло в частих переїздах і подорожах, так як батько був кадровим військовим. Він жив в містах Росії, Білорусії і Прибалтики. Писати Володимир почав досить рано. Уже в дев&#x27;ять років він вів щоденники, а в 15 років — написав невелику повість. У роки війни він навчався в спецшколі військового призначення, а потім в артилерійському училищі.</p>
+          <p>Переїхавши до Москви, Володимир вступив на юридичний інститут і паралельно займався письменством. У 1957 році він закінчив Літературний інститут ім. Горького. Перша книга Железникова, &quot;Різнокольорова історія&quot;, вийшла в світ, коли йому було 35 років. Багато його твори перекладені на різні мови і присвячені міжособистісних відносин. Дебютом в кінодраматургії став сценарій фільму &quot;Срібні ставки&quot;, оповідав про життя і творчість дитячого письменника Аркадія Гайдара. Особливу увагу в своїх роботах Железников приділяв і проблем дорослішання, дитинства, отроцтва, що відбилося в його кіносценарії &quot;Дивак з п&#x27;ятого&quot; Б &quot;&quot; і &quot;Опудало&quot;.</p>
+          <p>У 1988 році Железников став художнім керівником дитячо-юнацької кіностудії &quot;Глобус&quot;, таким чином, об&#x27;єднавши любов до дітей, літературі і кіно. Володимир Карпович був двічі удостоєний Державної премії СРСР і з 1995 року є заслуженим діячем мистецтв РФ. В якості співавтора кіносценаріїв він брав участь у створенні таких фільмів, як &quot;Мандрівник з багажем&quot;, &quot;Божевільна Лорі&quot;, &quot;Старомодна комедія&quot;, &quot;Ігри метеликів&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

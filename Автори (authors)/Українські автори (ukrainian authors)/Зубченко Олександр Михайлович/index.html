@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Зубченко Олександр Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Зубченко Олександр Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zubchenko-oleksandr-mykhaylovych.webp" alt="Зубченко Олександр Михайлович" title="Зубченко Олександр Михайлович" data-full="./zubchenko-oleksandr-mykhaylovych.webp" /><img class="side-img side-thumb" src="./zubchenko-oleksandr-mykhaylovych_1.webp" alt="Зубченко Олександр Михайлович" title="Зубченко Олександр Михайлович" data-full="./zubchenko-oleksandr-mykhaylovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 4 вересня 1955 року у Боярці (Київська область). Закінчив Київський національний економічний університет та Національну академію державного управління при Президентові України, магістр державного управління. Працює в Національній академії в протокольному відділі з 1995 року.</p>
+          <p>Навчався у літературній студії відомого дитячого поета Василя Зайця. Вірші Зубченка публікувалися в газетах і журналах, а його віршовані гуморески – в гумористичному журналі &quot;Перець&quot;.</p>
+          <p>Згодом почав писати пісенну поезію та співпрацювати з відомим фольклорним колективом &quot;Козацькі забави&quot;, з яким були записані жартівливі пісні &quot;Козацький блюз&quot;, &quot;Жук із Колорадо&quot;, &quot;Шабелька&quot;, &quot;Пісня про Байду&quot; та декілька інших. У 2007 році Олександр Зубченко написав лібрето народного мюзиклу &quot;Колода&quot; на музику В.Домшинського. Має у творчому доробку більше сорока пісенних поезій на музику В.Хурсенка та Е.Малахової, які виконуються не тільки в Україні, але й в Росії та Канаді. Одружений з 1985 року, має двох дочок.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

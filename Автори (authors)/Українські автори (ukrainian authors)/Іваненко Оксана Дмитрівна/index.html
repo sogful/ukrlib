@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Іваненко Оксана Дмитрівна — Життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Іваненко Оксана Дмитрівна</h1>
+      <h2>Життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ivanenko-oksana-dmytrivna.webp" alt="Іваненко Оксана Дмитрівна" title="Іваненко Оксана Дмитрівна" data-full="./ivanenko-oksana-dmytrivna.webp" /><img class="side-img side-thumb" src="./ivanenko-oksana-dmytrivna_1.webp" alt="Іваненко Оксана Дмитрівна" title="Іваненко Оксана Дмитрівна" data-full="./ivanenko-oksana-dmytrivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Іваненко Оксана Дмитрівна — українська письменниця, перекладачка.</p>
+          <p>Народилася 31 березня (за н. ст. — 13 квітня) 1906 року в Полтаві.</p>
+          <p>Закінчила 1926 року Харківський інститут народної освіти і 1931 року аспірантуру при Українському НДІ педагогіки, керувала секцією дитячої літератури у Київському філіалі цього інституту. Була вихователькою в дитячій колонії ім. О. М. Горького під керівництвом А. С. Макаренка. У 1932 — 1939 рр. працювала у видавництві &quot;Молодий більшовик&quot;, в 1947 — 1951 рр. — в журналі &quot;Барвінок&quot;. Друкується з 1925р. О. Іваненко належать численні книжки оповідань, казок, повістей для дітей та юнацтва: &quot;Майка та жабка&quot; (1930), &quot;Дитячий садок&quot; (1931), &quot;Черевички&quot; (1933), &quot;Лісові казки&quot; (1934), &quot;Великі очі&quot; (1936), &quot;Джмелик&quot; (1937), &quot;Три бажання&quot; (1940), &quot;Куди літав журавлик&quot; (1947), &quot;Казки&quot; (1958) та ін. Твори письменниці виховують у підростаючого покоління любов до Батьківщини, її сучасного й минулого, до людей праці, допомагають пізнавати життя, розуміти красу природи. Автор повістей &quot;Друкар книжок небачених&quot; (1947, про І. Федорова), &quot;Рідні діти&quot; (1951), &quot;Богдан Хмельницький&quot; (1954), &quot;Великий шум&quot; (1967), романів &quot;Тарасові шляхи&quot; (1961, перші дві частини вийшли 1939; про Т. Г. Шевченка), &quot;Марія&quot; (1973, про Марка Вовчка). Книга спогадів &quot;Завжди в житті&quot; (1985) відзначена Державною премією УРСР ім Т. Г. Шевченка (1986). О. Іваненко є також лауреатом премії ім. Лесі Українки (1974). Переклала роман &quot;Тургенєв&quot; А. Моруа (1977), книгу оповідей &quot;Малахітова шкатулка&quot; П. Бажова (1979), окремі твори Л. Толстого, В. Короленка, казки Г. К. Андерсена, братів Грімм. Окремі твори О. Іваненко перекладено багатьма мовами народів СРСР, болгарською, чеською та німецькою мовами.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

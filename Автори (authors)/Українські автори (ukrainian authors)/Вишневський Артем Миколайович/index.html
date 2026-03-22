@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вишневський Артем Миколайович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Вишневський Артем Миколайович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./vyshnevskyy-artem-mykolayovych.webp" alt="Вишневський Артем Миколайович" title="Вишневський Артем Миколайович" data-full="./vyshnevskyy-artem-mykolayovych.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 3 лютого 1980 року у Рівному. Закінчив загальноосвітню та музичну школи. Зростав та розвивався в умовах соцреалізму та двокімнатної квартири. Навчався на історико-соціологічному факультеті Рівненського державного гуманітарного університету, пізніше — у КНУТКіТ ім. Карпенка-Карого.</p>
+          <p>1999—2001рр. працював помічником режисера театру-студії &quot;Від ліхтаря&quot; при Рівненському міському Палаці дітей та молоді. Пізніше почав грати та написав свою першу драму — &quot;Різниця&quot;.</p>
+          <p>За першою освітою— вчитель всесвітньої історії та основ правознавства, тому викладав у Рівненській ЗОШ № 13. Не без дружньої допомоги створив Молодіжний експериментальний театр Рівного &quot;МЕТР&quot;, де режисерував С.Мрожика, В.Бойчука, В.Мастросімоне, К.Хензеля, Ф.Кафку та себе самого. У цій якості та як актор був оцінений на певній кількості аматорських фестивалів. Художній керівник Народного молодіжного театру &quot;Від Ліхтаря&quot; Рівненського міського Палацу дітей та молоді з 2016 р. Член НСПУ (з 2006) та Конфедерації Драматургів України (з 2003). Автор збірки &quot;Клаптикова порода. П&#x27;єси&quot; ‒ книга п&#x27;яти п&#x27;єс, яку він видав у 2006 році. На сьогодні, Артем Вишневський відійшов від написання драм і присвячує своє життя більше режисерській діяльності, створюючи вистави в аматорських театральних колективах Рівного, працює із дітьми. Вперше познайомився із театром та захопився ним ‒ у 19 років, коли потрапив у театр-студію &quot;Від ліхтаря&quot;. У студії кожен учасник повинен був підготувати зачин (ескіз п&#x27;єси) на 2-3 сторінки, який показував перед заняттям. Так із зачину, у 2001 році, виник і перший твір А. Вишневського ‒ драма абсурду &quot;Різниця&quot;, у якій він висвітлив систему влади, що не сприймає інакодумців. Відтоді автор почав писати п&#x27;єси. Загалом, у творчому доробку автора, враховуючи &quot;Різницю&quot; ‒ 8 п&#x27;єс: &quot;Клаптикова порода&quot; (2003 р.), що також була створена із зачину; політична вистава &quot;Суд&quot; (2003 р.), у співавторстві із Тарасом Обоїстою; &quot;Ляпас на згадку&quot; (2004 р.), де драматург критично зображує суспільство, у якому шанують гроші, зв&#x27;язки і посади, а не честь і справедливість; &quot;Про потяг, валізи, мотлох і дещо більше&quot; (2005 р.) ‒ химерна історія про двох героїв без Імен; лялькова містерія, казка ‒ &quot;Козак Мамай і ключі від Раю&quot; (2007 рік). За словами Артема Вишневського, коли він писав ці п&#x27;єси, то не дуже розумів світу людей, тому тут переважають казкові сюжети, у деякій мірі навіть ірреальність. А от уже драма &quot;Хлопці Кет&quot; (2015 р.), що розповідає про підлітків, які стоять на порозі дорослого життя, та п&#x27;єса 18+ &quot;Про чотирьох відсутніх&quot; (2018 р.), що показує життя чотирьох людей, які намагаються знайти бажане ‒ висвітлюють реальне життя, зі своїми труднощами, проблемами, радощами. Також важливим здобутком автора є збірка &quot;Клаптикова порода&quot; ‒ книга п&#x27;яти п&#x27;єс, яку він видав у 2006 році. Вищезгадані твори ставили у аматорських театрах Рівного, студентських гуртках та у театрі &quot;Калейдоскоп&quot;, у Тернополі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

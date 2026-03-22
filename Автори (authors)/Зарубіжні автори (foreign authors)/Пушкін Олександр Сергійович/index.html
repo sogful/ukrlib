@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пушкін Олександр Сергійович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Пушкін Олександр Сергійович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./pushkin-oleksandr-serhiyovych.webp" alt="Пушкін Олександр Сергійович" title="Пушкін Олександр Сергійович" data-full="./pushkin-oleksandr-serhiyovych.webp" /><img class="side-img side-thumb" src="./pushkin-oleksandr-serhiyovych_1.webp" alt="Пушкін Олександр Сергійович" title="Пушкін Олександр Сергійович" data-full="./pushkin-oleksandr-serhiyovych_1.webp" /><img class="side-img side-thumb" src="./pushkin-oleksandr-serhiyovych_2.webp" alt="Пушкін Олександр Сергійович" title="Пушкін Олександр Сергійович" data-full="./pushkin-oleksandr-serhiyovych_2.webp" /><img class="side-img side-thumb" src="./pushkin-oleksandr-serhiyovych_3.webp" alt="Пушкін Олександр Сергійович" title="Пушкін Олександр Сергійович" data-full="./pushkin-oleksandr-serhiyovych_3.webp" /><img class="side-img side-thumb" src="./pushkin-oleksandr-serhiyovych_4.webp" alt="Пушкін Олександр Сергійович" title="Пушкін Олександр Сергійович" data-full="./pushkin-oleksandr-serhiyovych_4.webp" /></div>
+        <div class="prose-text">
+          <p>Пушкін Олександр</p>
+          <p>(1799-1837)</p>
+          <p>Відомий російський поет, лірик, казкар, який першим наважився ввести народну російську мову на сторінки &quot;високої літератури&quot;. У центрі уваги поета — історія власного народу, призначення і місія покоління, до якого належав сам поет. З дитинства Олександр Пушкін багато читав, спілкувався з відомими літераторами, у його батька була велика бібліотека, і майбутній поет багато часу проводив серед своїх добрих друзів — книг. Поетичний дар у нього прокинувся у Ліцеї, де він навчався у 1811—1817 роках, а перші відомі нам вірші датовані 1813 роком. Талант поета був одразу визнаний такими майстрами слова, як Державін, Батюшков, Жуковський. Війна Росії з Наполеоном вносить у його поезію тему свободи. Пушкін не став членом політичної організації, як багато його однодумців, але вірші його (&quot;Вольність&quot;, &quot;До Чаадаєва&quot;) відкрито демонструють гарячу підтримку тим, хто хоче змінити на краще життя в Росії. За сміливі думки і за волелюбні вірші його вислали в Україну. Він бував у Дніпропетровську (тоді Катеринослав), в Одесі, в Криму, у Києві. Прогулянки Києвом та перекази, почуті про київського князя Олега, надихнули його на створення &quot;Пісні про віщого Олега&quot;. Російський фольклор, з яким він з дитинства знайомився через перекази своєї няньки Орини Родіонівни, знайшов своє відтворення у казках Пушкіна про золоту рибку, про мертву царівну та сім богатирів, про золотого півника, про робітника Балду, у поемі &quot;Руслан і Людмила&quot;. Пушкін — неперевершений лірик. Багато поезій Пушкіна покладено на музику. Роман у віршах &quot;Євгеній Онєгін&quot; приніс Пушкіну славу. Поет виявив болючі проблеми суспільного життя, намагався відтворити життя Росії та її кращих представників, які зневірилися у значенні власного життя. У доробку Пушкіна є прозові твори: &quot;Повісті Бєлкіна&quot;, &quot;Дубровський&quot;, &quot;Маленькі трагедії&quot;, &quot;Капітанська дочка&quot;, історична трагедія &quot;Борис Годунов&quot;, історична поема &quot;Полтава&quot; та ін.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

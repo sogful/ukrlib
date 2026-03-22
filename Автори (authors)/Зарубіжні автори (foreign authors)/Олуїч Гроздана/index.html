@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Олуїч Гроздана — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Олуїч Гроздана</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./oluich-hrozdana.webp" alt="Олуїч Гроздана" title="Олуїч Гроздана" data-full="./oluich-hrozdana.webp" /><img class="side-img side-thumb" src="./oluich-hrozdana_1.webp" alt="Олуїч Гроздана" title="Олуїч Гроздана" data-full="./oluich-hrozdana_1.webp" /><img class="side-img side-thumb" src="./oluich-hrozdana_2.webp" alt="Олуїч Гроздана" title="Олуїч Гроздана" data-full="./oluich-hrozdana_2.webp" /><img class="side-img side-thumb" src="./oluich-hrozdana_3.webp" alt="Олуїч Гроздана" title="Олуїч Гроздана" data-full="./oluich-hrozdana_3.webp" /></div>
+        <div class="prose-text">
+          <p>Гроздана Олуіч народилася 30 серпня 1934 року в сербському селі Ердевіке, закінчила школу в Бечее. Отримала ступінь магістра з англійської мови та літератури на філософському факультеті Белградського університету. Популярність до Грозданов Олуіч прийшла рано. Перший роман &quot;Прогулянка на небо&quot; ( &quot;Izlet u nebo&quot;) побачив світ у 1958 році, коли письменниці було 24 роки. Книга стала бестселером, була перекладена кількома європейськими мовами і отримала нагороду Народного освіти за кращий роман Республіки Югославії. Роман був адаптований для сцени, а в 1962 за мотивами книги югославський режисер Йован Жівановіч зняв мелодраму &quot;Чудна дівчинка&quot; ( &quot;Čudna devojka&quot;).</p>
+          <p>Що вийшли в 60-і роки романи &quot;Голосую за любов&quot; ( &quot;Glasam za ljubav&quot;), &quot;Не буди заснулу собаку&quot; ( &quot;Ne budi zaspale pse&quot;) і &quot;Дике насіння&quot; ( &quot;Divlje seme&quot;) затвердили Грозданов Олуіч як одного з провідних авторів югославської літератури.</p>
+          <p>Новела &quot;Гра&quot; ( &quot;Igra&quot;) зі збірки &quot;Африканська фіалка&quot; ( &quot;Afrička ljubičica&quot;), що вийшов в 1985 р, отримала головний приз міжнародного конкурсу в Арнсберзі (Німеччина). Майже всі розповіді зі збірки були переведені на іноземні мови і включені в антології короткої прози по всьому світу (в Німеччині, США, Україні, Росії, Ізраїлі, Індії, Великобританії, Франції і т. Д.). У 2009 році письменниця з романом &quot;Голосу на вітрі&quot; ( &quot;Glasovi u vetru&quot;) стає лауреатом Премії тижневика НИН, головною літературної нагороди Сербії. Гроздана Олуіч — автор декількох популярних книг для дітей і юнацтва. Збірник належать її перу казок &quot;Чарівна мітла&quot; був виданий в СРСР в 1985 році стотисячним тиражем.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

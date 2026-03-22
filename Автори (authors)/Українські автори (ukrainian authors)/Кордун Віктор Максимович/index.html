@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кордун Віктор Максимович — Короткий життєпис</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Кордун Віктор Максимович</h1>
+      <h2>Короткий життєпис</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kordun-viktor-maksymovych.webp" alt="Кордун Віктор Максимович" title="Кордун Віктор Максимович" data-full="./kordun-viktor-maksymovych.webp" /></div>
+        <div class="prose-text">
+          <p>КОРДУН Віктор Максимович народився 20 серпня 1946 р. в с. Васиковичі Коростенського р-ну Житомирської обл.</p>
+          <p>Дебютував 1967 р. на сторінках &quot;Літературної України&quot;, після чого відразу ж був заборонений до друку. Вчився в Київсьому університеті, з якого був виключений, потрапивши до списку політично неблагонадійних. Згодом закінчив Київський інститут театрального мистецтва. Ім&#x27;я поета знову з&#x27;явилося у пресі аж на початку 80-х рр. Автор збірок: &quot;Земля натхненна&quot; (1984), &quot;Пісеньки з маминого напрестка&quot; (1985), &quot;Славія&quot; (1987), &quot;Кущ вогню&quot; (1990), &quot;Сонцестояння&quot; (1992). Видавалися книги в перекладі німецькою мовою — &quot;Kryptogramme&quot; (1996) та &quot;Weisse Psalmen&quot; (1999), а окремі збірки — багатьма мовами світу.</p>
+          <p>Лауреат премій ім. П.Тичини та ім. В.Сосюри, а також премії Міжнародної фундації Антоновичів (США). Нині заступник голови НСПУ, голова комісі по роботі з творчою молоддю; редагує і видає журнал &quot;Світо-вид&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

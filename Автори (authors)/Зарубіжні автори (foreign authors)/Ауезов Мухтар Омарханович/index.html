@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ауезов Мухтар Омарханович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Ауезов Мухтар Омарханович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./auezov-mukhtar-omarkhanovych.webp" alt="Ауезов Мухтар Омарханович" title="Ауезов Мухтар Омарханович" data-full="./auezov-mukhtar-omarkhanovych.webp" /><img class="side-img side-thumb" src="./auezov-mukhtar-omarkhanovych_1.webp" alt="Ауезов Мухтар Омарханович" title="Ауезов Мухтар Омарханович" data-full="./auezov-mukhtar-omarkhanovych_1.webp" /></div>
+        <div class="prose-text">
+          <p>28 вересня 1897 Чінгізская волость, Семейскіх повіт, Семипалатинська область, Російська Імперія — 27 червень 1961 Москва, РРФСР, СРСР.</p>
+          <p>Видатний казахський письменник, драматург і вчений. Академік АН Казахської РСР (1946), голова Спілки письменників Казахстану.</p>
+          <p>Сім&#x27;я Ауезова перебувала у родинних стосунках з родиною Абая Кунанбаева, дід Мухтара Ауезов був другом і шанувальником творчості Абая. Освіта Мухтар Ауезов отримав в російській школі, учительській семінарії, на філологічному факультеті Ленінградського (Санкт-Петербурзького) університету, в аспірантурі Середньоазіатського університету. На початку революції Мухтар Ауезов займав пост відповідального секретаря ЦВК Киргизької республіки, під час колчаковщіни брав активну участь в боротьбі з Кличком в Семипалатинской області. Видатним твором радянської літератури є роман-епопея Ауезова &quot;Шлях Абая&quot; про життя великого поета-просвітителя Абая Кунанбаева. У романі показана складна картина життя казахського суспільства другої половини XIX століття. У літературі Казахстану Мухтар Ауезов як драматург займає почесне місце. Першим і найбільш раннім твором Ауезова була п&#x27;єса &quot;Енлік-Кебек&quot;, заснована на народному переказі про трагічну долю двох молодих людей Сюжет аналогічний історії про ворожнечу сімей Монтеккі і Капулетті в п&#x27;єсі Шекспіра &quot;Ромео і Джульєтта&quot;. П&#x27;єса &quot;Енлік-Кебек&quot; вперше була поставлена ​​в юрті дружини Абая Айгер і з тих пір не сходить з казахської сцени. Його драма &quot;Кара-Коз&quot;, з дивовижною чуйністю та історичної правдивістю відновила національні і побутові особливості народних співаків Казахстану, отримала першу премію на конкурсі драматургів в 1926 році в Кзил-Орді. Особливе місце займає також його драма &quot;Байбач-струму&quot; (Дружини-суперниці). Мухтар Ауезов написав розповіді: &quot;Доля беззахисних&quot; (1921), &quot;Хто винен?&quot; (1923), &quot;Одруження&quot; (1923), &quot;Освічена громадянин&quot; (1923), &quot;Красуня в траурі&quot; (1925), повість &quot;Постріл на перевалі &quot;(1927) та інші. Йому належить понад 20 п&#x27;єс, в тому числі: &quot;Айман-Шолпан&quot; (1934), &quot;Абай&quot; (постановка 1940 спільно з Л.С. Соболєвим), &quot;Каракоз&quot; (1926), &quot;Кара кипчак Кобланди&quot; (1943— 1944), &quot;Зірниця&quot; (1934), &quot;На кордоні&quot; (1937), &quot;О першій годині випробувань&quot; (1942) та інші. З групою радянських письменників в 1960 році відвідав США. Після повернення працює над циклами нарисів &quot;Американські враження&quot; і над новим романом &quot;Плем&#x27;я молоде&quot;. Влітку 1961 року аж до Москви на лікування, але вмирає під час операції.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

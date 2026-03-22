@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Івер Наталі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Івер Наталі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./iver-natali_1.webp" alt="Івер Наталі" title="Івер Наталі" data-full="./iver-natali_1.webp" /><img class="side-img side-thumb" src="./iver-natali.webp" alt="Івер Наталі" title="Івер Наталі" data-full="./iver-natali.webp" /></div>
+        <div class="prose-text">
+          <p>Наталі Іве́р (справжнє ім&#x27;я Кирилова Наталія Вікторівна) народилася 17 січня 1988 року в місті Первомайськ Миколаївської області, де минули її дитинство та юність. З раннього віку читала багато казок, особливо полюбляла світові казки й міфи давнього Риму й Греції. Любов до письма з&#x27;явилася ще у молодшій школі. Завдяки підтримці батьків не соромилася своєї творчості й охоче брала участь в шкільних літературних конкурсах.</p>
+          <p></p>
+          <p>У 2005 році на конкурсі казок імені Андре Годійо в Києві її роботу відзначили серед 2000 заявок. Авторка отримала шосте, спеціальне місце, попри передбачені 5. Того ж року майбутня письменниця переїхала до міста Ізмаїл Одеської області, закінчила інститут водного транспорту за спеціальністю &quot;Філологія&quot; та одружилася. З 2011 працює копірайтеркою та перекладачкою на фрілансі. Поліглотка з великим досвідом (у 2016-2022 активно вела блог про мови, проводила прямі ефіри з носіями, перемогла у поліглотському челленджі зі ста учасниками, який тривав пів року, та організовувала власні клуби) Володіє шістьма іноземними мовами. У серпні 2025 дебютувала з романом &quot;Лісітея. Витончені ігри&quot; , першою частиною циклу &quot;Ігри верховних правителів&quot; від видавництва &quot;Відкриття&quot;. Реліз другого тому — &quot;Лісітея. Звабливі ігри&quot; — запланований на січень 2026 року. У грудні 2025 у видавництві &quot;Мірабіліс&quot; вийде друком збірка різдвяних роментезі повістей, до якої увійдуть два твори: &quot;Сонце в інеї&quot; (спін-оф циклу &quot;Ігри верховних правителів&quot;) та &quot;Сніжні крила&quot; — повість Рін Воарг (авторки затишного роментезі &quot;Корделія&quot;). Хоч ці історії різні за настроєм, їх об&#x27;єднує спільна атмосфера: магія Різдва, затишок, фольклорні мотиви та любов, що дарує надію. Наталі Івер — авторка першого українського роментезі про фейрі, яке здобуло чисельні схвальні відгуки й стало хітом буктоку у 2025. Своїм успіхом письменниця завдячує чоловікові, який у всьому її підтримує, а також ARC— та бета-рідерам і читачам, чиї щирі емоції у відгуках надихають творити далі. Книга перекладена англійською мовою та скоро з&#x27;явиться на Amazon. Також триває переклад на італійську та іспанську мови.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

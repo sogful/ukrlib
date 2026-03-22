@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Камба Хуліо — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Камба Хуліо</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kamba-khulio.webp" alt="Камба Хуліо" title="Камба Хуліо" data-full="./kamba-khulio.webp" /></div>
+        <div class="prose-text">
+          <p>Камба Хуліо народився 16 грудня 1884, Villanueva de Arosa, провінція Понтеведра в сім&#x27;ї середнього класу: його батько був практикуючим і шкільним вчителем, а старшим братом був Франциско Камба.</p>
+          <p>У тринадцятирічному віці він втікає з дому і вирушає на борт судна, що йде до Аргентини. У Буенос-Айресі потрапляє в анархічні кола і робить свої перші літературні проби, написавши прокламації і брошури. У результаті в 1902 році його вигнали з Аргентини разом з іншими іноземними анархістами.</p>
+          <p>Повернувшись до Іспанії, починає працювати в &quot;Газеті Понтеведра&quot;, але швидко осідає в Мадриді, де пише для анархістських видань, таких як &quot;El Porvenir del Obrero&quot;. Через кілька місяців створює власну газету на вулиці Ла Мадера: &quot;El Rebelde&quot;. Антоніо Аполо супроводжував і допомагав йому у цьому. З 1905 року Хуліо Камба працює журналістом в республіканській газеті &quot;Ель-Паїс&quot;. Його праці мають різноманітну тему, і в них він показує свою незалежність. У цій газеті він залишився до 1907 року, коли почав своє завдання як парламентський журналіст у &quot;Новій Іспанії&quot;. У своїх текстах він проявляв скептицизм і блиск, які будуть супроводжувати його протягом його кар&#x27;єри. У ті часи відбувся судовий розгляд нападу на Альфонсо XIII у день його весілля. Хуліо Камба був покликаний свідчити через його відносини з Матео Морралом. У деяких його статтях він пише про відносини, які він мав з анархістом. Його життя як кореспондента починається з 1908 року, коли Хуан Арагон включив його в штаб &quot;La Correspondencia de España&quot;. Після чого його направляють до Туреччини. Там він висвітлює вибори та зміну режиму. Після повернення з Константинополя Хуліо Камба змінив формулювання. &quot;El Mundo&quot; — це газета, за допомогою якої він контактує з кореспондентами в Парижі та Лондоні. У 1912 році Хуліо почав вести рубрику Diario de un Español в &quot;La Tribuna&quot;. Згодом він повернеться до англійської столиці і надішле свої перші хроніки з Німеччини в цю газету. У 1913 почав співпрацювати з монархічною газетою ABC. Співпраця тривала аж до його смерті, за винятком деяких перерв. Одна з них (найдовша) — це те, що змусило його стати журналістом El Sol. Він працює в цій щоденній газеті 10 років (1917—1927). Повернувшись до газети Лука де Тена, він повертається до Нью-Йорка вдруге. З цього міста він пише статтю &quot;На захист неписьменності&quot; — виступає проти узагальнення інструкцій для всіх іспанців. Його хроніки будуть зібрані в книзі (як і багато інших): Автоматичне місто. Під час Громадянської війни його записи (в яких він висловлював симпатії до французької сторони) публікуються в ABC (Севілья). Інша співпраця тривала два роки з газетою &quot;Arriba&quot; (1951-1953). У цій газеті починається переробка старих статей, які або пов&#x27;язані з сьогоденням або засновані на пам&#x27;яті автора. Ретушування і перевтілення його записів будуть звичайними з цього моменту у його працях під редакцією ABC і La Vanguardia. У 1949 році він оселився в готелі Palace в Мадриді, де прожив до самої смерті. 28 лютого 1962 року Хуліо Камба помер у результаті емболії в клініці Ковеса.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

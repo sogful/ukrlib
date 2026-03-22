@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гарріс Джоель Чандлер — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гарріс Джоель Чандлер</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./harris-dzhoel-chandler.webp" alt="Гарріс Джоель Чандлер" title="Гарріс Джоель Чандлер" data-full="./harris-dzhoel-chandler.webp" /><img class="side-img side-thumb" src="./harris-dzhoel-chandler_1.webp" alt="Гарріс Джоель Чандлер" title="Гарріс Джоель Чандлер" data-full="./harris-dzhoel-chandler_1.webp" /><img class="side-img side-thumb" src="./harris-dzhoel-chandler_2.webp" alt="Гарріс Джоель Чандлер" title="Гарріс Джоель Чандлер" data-full="./harris-dzhoel-chandler_2.webp" /><img class="side-img side-thumb" src="./harris-dzhoel-chandler_3.webp" alt="Гарріс Джоель Чандлер" title="Гарріс Джоель Чандлер" data-full="./harris-dzhoel-chandler_3.webp" /></div>
+        <div class="prose-text">
+          <p>Джоель Чандлер Харріс — відомий американський письменник, творець улюблених дітьми і дорослими &quot;Казок дядечка Римуса&quot;.</p>
+          <p>біографія</p>
+          <p>9 грудня 1845 року Джоель Чандлер народився в родині сільськогосподарського працівника, вихідця з Ірландії. Дохід сім&#x27;ї був вельми скромним. Вже у віці 13 років необхідність заробляти на життя, змусила його залишити будинок і влаштуватися на роботу до Джозефу Тернеру, плантатору, власнику друкарні і видавця газети. Дозвіл користуватися багатою бібліотекою Тернера стало неоціненним внеском у розвиток і освіту майбутнього автора. На плантації йому випала нагода ближче ознайомитися з негритянським фольклором. Саме обробка цих спостережень і принесла йому світову славу. популярність У 1879 році видання &quot;AtlantaConstitution&quot; вперше опублікувало деякі твори, що увійшли пізніше в цикл казок про невтомного братика кролика, а вже в 1880 році був виданий перший збірник казок Джоеля Харріса. За ним в короткі терміни вийшли ще три книги. Джоель Харріс все так же працював журналістом. Поява &quot;Казок дядечка Римуса&quot; викликало хвилю обурення з боку авторів і читачів, що мають різні переконання. Так, багато хто стверджував, що єдина заслуга Харріса в тому, що він переписав негритянські розповіді. Інші ж дорікали письменника в спробах виправдати рабовласництво. Чорношкірі автори в свою чергу були обурені посяганням на їх культуру. Проте, сучасні історики, як Джуліус Лестер, відзначають великий внесок Харріса в створення літературної традиції записи південного фольклору. Його твори дозволяють і сьогодні почути негритянську мова в тому вигляді, в якому чув її сам автор. смерть 3 липня 1908 року Джоель Харріс помер у місті Атланта. &quot;Казки дядечка Римуса&quot; російською мовою вийшли в 1936 році і були безліч разів перевидані.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

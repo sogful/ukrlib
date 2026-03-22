@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гелліко Пол — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Гелліко Пол</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./helliko-pol_1.webp" alt="Гелліко Пол" title="Гелліко Пол" data-full="./helliko-pol_1.webp" /><img class="side-img side-thumb" src="./helliko-pol.webp" alt="Гелліко Пол" title="Гелліко Пол" data-full="./helliko-pol.webp" /></div>
+        <div class="prose-text">
+          <p>Народився в Нью-Йорку в 1897 році в сім&#x27;ї італійця і емігрантки з Австрії. У 1921 році закінчив Колумбійський університет. Деякий час працював кінооглядач в газеті New York Daily News, але на цьому терені показав себе не дуже вдало і був переведений в спортивний відділ. Для того, щоб написати статтю про знаменитого боксера Джека Демпсі, Гелліко напросився на поєдинок з ним — журналістові хотілося знати, як це — бути збитим з ніг чемпіоном у важкій вазі. Він протримався дві хвилини, написав блискучу статтю і прославився на всю Америку. У 1923-му він став редактором відділу спорту і одним з кращих спортивних журналістів США. Однак Гелліко з дитинства мріяв стати письменником — і тому, крім статей про спорт, пропонував журналів Vanity Fair та Saturday Evening Post розповіді. У 1936 році він переїхав до Європи і присвятив себе писанню. На початку 40-х років він раптово став знаменитий, випустивши зворушливу і захоплюючу книгу &quot;Сніжний гусак&quot;. З тих пір всі його книги — бестселери. Найвідоміші з них — &quot;Дженні&quot; (1950), &quot;Ослина диво&quot; (1952), &quot;Любов до семи лялькам&quot; (1954), &quot;Томасіна&quot; (1957), &quot;Квіти для місіс Харріс&quot; і &quot;Місіс Харріс їде в Нью —Йорк &quot;(1960). Він написав книгу про Святого Патріка — покровителя Ірландії. Сам Пол Гелліко був добрим покровителем тварин: в будинку у нього жили великий дог і двадцять три кішки.</p>
+          <p>Пол Гелліко багато подорожував, жив в Англії, Мексиці, Ліхтенштейні, ходив на яхті, фехтував, захоплювався рибалкою. Був одружений чотири рази, незважаючи на свою приналежність до католицької церкви. В останні роки він вважав за краще жити в Антібі на півдні Франції, де й помер у віці 79 років. Помер 17 липня 1976 року.</p>
+          <p>Екранізації та адаптації: За книгою &quot;Любов до семи лялькам&quot; поставлений фільм &quot;Лілі&quot; . Повість &quot;Томасіна&quot; екранізував Уолт Дісней. У цьому ігровому фільмі &quot;Три життя Томасіни&quot; грала справжня кішка. У 1991 році режисер Леонід Нечаєв зняв на судії ім. М. Горького фільм &quot;Божевільна Лорі&quot;, за мотивами повісті &quot;Томасіна&quot;. екранізувати також &quot;дорослі&quot; книжки Гелліко — &quot;Пригода&quot; Посейдона &quot;(двічі — в 1972 році (&quot; Пригода &quot;Посейдона&quot;, режисер Рональд Ним) і в 2006-му (&quot;Посейдон&quot;, режисер Вольфганг Петерсен) і його продовження — &quot;Після пригод&quot; Посейдона &quot;(фільм з тією ж назвою поставлений в 1979-му режисером Ірвіном Алленом). Телеканал Hallmark також здійснив свою екранізацію&quot; Пригоди &quot;Посейдона&quot;, кілька відозменів сюжет; режисером цієї постановки став Джон Патч. За мотивами &quot;Сніжного гусака&quot; англійська прогресив-рок-група Camel записала один зі своїх самих вдалих альбомів — &quot;The Snow Goose&quot; (1974). Група навіть зверталася до Гелліко з проханням написати тексти пісень для альбому, але письменник, для якого назва Camel асоціювалося насамперед з торговою маркою сигарет, відмовився, більше того, він навіть подав на групу до суду з вимогою заборонити використання назви книги в якості назви альбому . Цього йому, однак, досягти не вдалося. Результатом судового розгляду стала напис на обкладинці диска: &quot;music inspired by&quot; (музика, натхненна книгою).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

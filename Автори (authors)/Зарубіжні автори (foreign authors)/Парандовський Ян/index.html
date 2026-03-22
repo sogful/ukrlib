@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Парандовський Ян — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Парандовський Ян</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./parandovskyy-ian.webp" alt="Парандовский Ян" title="Парандовский Ян" data-full="./parandovskyy-ian.webp" /><img class="side-img side-thumb" src="./parandovskyy-ian_1.webp" alt="Парандовский Ян" title="Парандовский Ян" data-full="./parandovskyy-ian_1.webp" /><img class="side-img side-thumb" src="./parandovskyy-ian_2.webp" alt="Парандовский Ян" title="Парандовский Ян" data-full="./parandovskyy-ian_2.webp" /><img class="side-img side-thumb" src="./parandovskyy-ian_3.webp" alt="Парандовский Ян" title="Парандовский Ян" data-full="./parandovskyy-ian_3.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 11 травня 1895 року у місті Львів. Відучився в місцевій гімназії після чого вступив до Львівського університету. Будучи студентом, брав участь у багатьох розкопках на території Європи. У 1923 успішно закінчив університет. В цьому ж році йому було присвоєно звання магістра класичної філології та археології. У 1930-1931 рр. був одним з двох редакторів науково-літературного журналу &quot;Паментнік варшавський&quot;. В цьому ж році Парандовский обирається головою Пен-клубу польських письменників. У 1945-46 він викладає в Люблінському університеті. З 1948 року — член Варшавського наукового товариства.</p>
+          <p>творчість</p>
+          <p>У 1913 році вийшла його перша серйозна стаття про Ж. Ж. Руссо. Надалі Парандовский захопився античністю. Більшість його статей, оповідань, есе присвячена саме цій темі. Популярність у широкого читача він придбав завдяки своїй книзі &quot;Міфологія&quot;. У 1933 році вийшла книга &quot;Олімпійський диск&quot;. Серед довоєнної прози письменника виділяється автобіографічний роман &quot;Небо у вогні&quot;. Після війни він видав ще ряд творів, в тому числі книгу про Петрарке (1956) і книгу оповідань про дитинство &quot;Сонячний годинник&quot; (1953). Також Парандовский перевів книги Юлія Цезаря &quot;Про громадянську війну&quot; (1951), Лонга &quot;Дафніс і Хлоя&quot; (1948), &quot;Одіссею&quot; Гомера (1953). Однак основним його працею вважається книга &quot;Алхімія слова&quot;. Помер в 1978 році. Записи некролога: &quot;Парандовский присвятив все своє творчість поширенню великих традицій європейського гуманізму&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

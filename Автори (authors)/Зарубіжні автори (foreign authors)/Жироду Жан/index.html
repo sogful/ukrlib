@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Жироду Жан — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Жироду Жан</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zhyrodu-zhan.webp" alt="Жироду Жан" title="Жироду Жан" data-full="./zhyrodu-zhan.webp" /><img class="side-img side-thumb" src="./zhyrodu-zhan_1.webp" alt="Жироду Жан" title="Жироду Жан" data-full="./zhyrodu-zhan_1.webp" /></div>
+        <div class="prose-text">
+          <p>Жан Жироду(Giraudoux, Jean) (1882-1944), французький драматург і романіст, який прославився своїми гостросатеричними фантазіями. Іполит-Жан Жироду народився 29 жовтня 1882 в м. Беллак (департамент Верхня В&#x27;єнна), дитинство і юність провів у провінції Лімузен. У ранніх книгах (збірка оповідань Провінціалки — Provinciales, 1909, і роман Жюльєтта в країні чоловіків — Juliette au pays des hommes, 1924) примхливо видбилися поетичні спогади про життя рідного містечка і школи в Шатору, яку Жироду залишив, щоб продовжити освіту в Лаканале під Парижем. Пізніше, у Вищій нормальній школі, він зосередився на вивченні німецької літератури, стипендіатом провчився рік у Мюнхені (1905) і рік в Гарвардському університеті (1907). Однак прагнення до навчання зменшувалося в міру того, як зростав інтерес до письменницького ремесла. Вирішивши стати професійним літератором, Жироду для заробітку вступив на службу в Міністерство закордонних справ.</p>
+          <p>Жироду завжди зачаровував своїх читачів витонченим стилем і багатою уявою, але далеко не всі, особливо критики його перших творів, змогли вгадати за зовнішньою легкістю його стилю написання грунтовність і глибокий розум. Наприклад, багато хто визнав його військові щоденники &quot;Коло читання для тіні&quot; (Lectures pour une ombre, 1917) непробачно легковажними, але їхнє ставлення могло б змінитися, знай вони, що автор був двічі поранений в бою (Жироду перебував у діючій армії з 1914 по 1918 ).</p>
+          <p>У 1928 Л.Жуве (1887-1951) поставив першу п&#x27;єсу Жироду &quot;Зігфрід&quot; (Siegfried, 1928). Творчому об&#x27;єднанню Жироду і Жуве був уготований тріумф, їх дебютна постановка стала віхою в історії французького театру. У попередні кілька років було прийнято вважати Жироду страдаючим філософом. Більш тверезий погляд на його творчість дозволяє побачити в ньому не стільки філософа, скільки художника, головна заслуга якого — бездоганний і блискучий стиль. Коли в 1939 почалася Друга світова війна, Жироду перебував на вершині успіху, досягнувши визнання в літературній і дипломатичній діяльності. Добре розходилися відразу дві його книги — роман &quot;Вибір обранців&quot; (Choix des élus, 1939) і збірник есе &quot;Повнота влади&quot; (Pleins Pouvoirs, 1939), де широко і сміливо викладалася програма майбутньої Франції; п&#x27;єса &quot;Ундіна&quot; (Ondine, 1939) з великим успіхом йшла в театрі Жуве &quot;Атеней&quot;. Однак в останні роки життя благодушню філософію письменника спіткали тяжкі випробування: до гіркоти від краху країни додалася болісна тривога за сина, який втік з дому з наміром приєднатися до де Голлю. Довгий час Жироду мав ілюзії щодо уряду Віші, але потім подав у відставку, цілком присвятивши себе літературній творчості. Помер Жироду в Парижі 31 січня 1944.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

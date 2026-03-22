@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фукусіма Масамі — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Фукусіма Масамі</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./fukusima-masami.webp" alt="Фукусіма Масамі" title="Фукусіма Масамі" data-full="./fukusima-masami.webp" /></div>
+        <div class="prose-text">
+          <p>Масамі Фукусіма (福島 正実, Fukushima Masami, 18 лютого 1929, Сахалін — 9 квітня 1976) — японський редактор, письменник, критик і перекладач наукової фантастики. Як перший головний редактор журналу SF Magazine, він допомагав популяризувати наукову фантастику в Японії та став відомим як &quot;Демон фантастики&quot;. Його справжнє ім&#x27;я — Масамі Като (加藤 正実, Katō Masami). Він також використовував псевдонім: Kyō Katō (加藤 喬, Katō Kyō).</p>
+          <p>Народився в Тойохара, Карафуто (нині Південно-Сахалінськ, Сахалін), Фукусіма був сином державного чиновника. Його родина переїхала до Маньчжурії після переведення його батька в 1934 році. У 1937 році вони переїхали на материкову частину Японії. Фукусіма виріс в Йокогамі.</p>
+          <p>У 1945 році він вступив до університету Ніхон, а в 1950 році перевівся до університету Мейдзі, де вивчав французьку літературу. У 1954 році він кинув навчання та почав вивчати переклад під керівництвом Шунджі Шімідзу (清水俊二, Shimizu Shunji) і писати дитячу літературу під керівництвом Тацузо Насу (那須辰造, Nasu Tatsuzō). У 1956 році Фукусіма був запрошений приєднатися до Hayakawa Publishing. Наступного року він ініціював серію Hayakawa SF, а в 1959 році заснував S-F Magazine і працював головним редактором, поки не залишив компанію в 1969 році. Hayakawa World SF Complete Collection також була запланована Фукусімою. Він прагнув зробити науково-фантастичну фантастику більш високою, і спочатку відкидав космічну оперу. Щоб не вважатися &quot;дитячою літературою&quot;, Фукусіма використовував виключно картини Сейкана Накадзіми для обкладинок журналу SF Magazine і серіалу SF Hayakawa. Разом із Шінічі Секідзавою він написав сценарій фільму 1974 року &quot;Годзілла проти Мехагодзілли&quot;. Крім роботи над розширенням жанру японської наукової фантастики, він перекладав японською мовою багатьох авторів англійської наукової фантастики, зокрема, Артура К. Кларка та Роберта А. Гайнлайна, і редагував антології наукової фантастики. Фукусіма помер у 1976 році у віці 47 років.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

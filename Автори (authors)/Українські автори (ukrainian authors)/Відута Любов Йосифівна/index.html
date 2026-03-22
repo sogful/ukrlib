@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Відута Любов Йосифівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Відута Любов Йосифівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./viduta-liubov-yosyfivna.webp" alt="Відута Любов Йосифівна" title="Відута Любов Йосифівна" data-full="./viduta-liubov-yosyfivna.webp" /><img class="side-img side-thumb" src="./viduta-liubov-yosyfivna_1.webp" alt="Відута Любов Йосифівна" title="Відута Любов Йосифівна" data-full="./viduta-liubov-yosyfivna_1.webp" /></div>
+        <div class="prose-text">
+          <p>Відута Любов Йосифівна — відома українська письменниця. Народилася 9 березня 1970 р. у Львові. Змалку з мамою спілкувалася віршами. Це була своєрідна гра, цікава забава для Люби &quot;…ми задавали одна одній римовані питання, шукали римовані відповіді і я сприймала це як дитячу гру&quot;. &quot;Перший віршик з&#x27;явився у віці 3,5-4,5 років. Найбільш &quot;довершений&quot;, бо мав певний зміст, початок і кінець. Потім було багато інших, але цей запам&#x27;ятався. Ось, лише кілька рядків: &quot;… віночок зайчик сплів, зайчисі на галявинці на голову надів…&quot;. Так малювала дитяча уява…&quot;&quot;.</p>
+          <p>Освіту здобувала у Львівському технікумі промислової автоматики та в Національному університеті &quot;Львівська політехніка&quot;.</p>
+          <p>Але Любі найбільше хотілося писати: &quot;Рідні бачили, наскільки багато часу цьому присвячувалося, почали підштовхувати видавати написане. Перший псевдонім був &quot;ВОДА&quot;. У ньому перша і остання літери власного прізвища, дата народження (березень) — знак риб, символічно все закладено. Така спроба підпису творів радше була випробуванням, перевіркою письменницького хисту, талану. Тому дуже ретельно підбирала і спостерігала як це буде. Певний час підписувалась цим псевдо&quot;. Сьогодні у доробку письменниці 19 книг. Серед перших — &quot;Працьовита бджілка&quot; (2008). Друга — &quot;Ким я буду? Ким я стану?&quot; (2009). У 2010 році побачила світ збірка дитячих віршів, загадок, скоромовок &quot;Усміхнулось cонечко&quot; (2012 року потрапила в довгий список Літературної премії &quot;Великий Їжак&quot;). Серед знакових — книжка-білінгв &quot;У царстві Лева&quot; (2015), двомовне видання (ілюстрації Христини Лукащук). Ця книга стала однією з перших &quot;ластівок&quot; щойно створеного чернівецького видавництва &quot;Чорні вівці&quot;. У 2018 році побачила світ &quot;Абетка&quot; від видавництва &quot;Пегас&quot;. Книга &quot;Ловці думок&quot; (2018) отримали відзнаку Міжнародного літературного конкурсу &quot;Коронація слова&quot;. Серед останніх найновіших книг — &quot;Насипала зима сніжинок на долоньки&quot; (лютий, 2020), яка вийшла шрифтом Брайля поряд зі звичайним текстом. Джерело: https://lodb.org.ua/pl/use-pro-lviv/lvivski-pysmennyky-dityam/lyubov-viduta</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

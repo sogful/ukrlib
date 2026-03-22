@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Комар Борис Панасович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Комар Борис Панасович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./komar-borys-panasovych_1.webp" alt="Комар Борис Панасович" title="Комар Борис Панасович" data-full="./komar-borys-panasovych_1.webp" /><img class="side-img side-thumb" src="./komar-borys-panasovych.webp" alt="Комар Борис Панасович" title="Комар Борис Панасович" data-full="./komar-borys-panasovych.webp" /></div>
+        <div class="prose-text">
+          <p>Борис Комар – український дитячий письменник і перекладач. Народився в с. Хвощевка Хорольського району Полтавської області. Хлопчик рано осиротів, втративши матір, і до 1941 року навчався в місцевій семирічній школі. У ній за завданням літературного гуртка збирав народні пісні, загадки, прислів&#x27;я та приказки.</p>
+          <p>Учасник Великої вітчизняної війни, нагороджений медалями та Почесною Грамотою, а також Грамотою Президії Верховної Ради України. Після закінчення Хорольської середньої школи в 1946 році поступив в Харківський державний університет ім. М. Горького, а через рік переїхала до Києва і продовжив навчання на філологічному факультеті Київського державного університету ім. Т. Г. Шевченка. Працював у редакціях журналів &quot;Ранок&quot;, &quot;Дніпро&quot;, &quot;Зміна&quot;, у видавництвах &quot;Молодь&quot;, &quot;Дніпро&quot;, &quot;Радянський письменник&quot;. Лауреат Республіканської літературної премії ім. Лесі Українки за повісті &quot;Бджолиний мед&quot; і &quot;Мандрівний вулкан&quot;. Був відповідальним секретарем Спілки письменників України по роботі з молодими авторами.</p>
+          <p>Дружив з багатьма відомими українськими письменниками, особливо з Павлом Загребельним, який, до речі, познайомив Бориса з його майбутньою дружиною. Сам перекладає з російської та білоруської мов, і його твори були перекладені на російську, білоруську, казахську і латиську мови. Перше оповідання &quot;Найкращий подарунок&quot; опублікував в альманасі для дітей &quot;Ранок&quot; у 1951 році, а через 5 років вийшла і його перша книга &quot;Незвичайна полювання&quot;. Борис Комар — автор повістей та оповідань для дітей: &quot;Босонога ватага&quot; (Босоногая ватага, 1958), &quot;Векша&quot; (1960), &quot;Ключі&quot; (1962), &quot;В листопадову ніч&quot; (1963), &quot;Як Горобець переміг Наталочку&quot; (1964), &quot;Весела дорога&quot; (1966), &quot;Поворотний круг&quot; (1969), &quot;Уперте теля&quot; (1970), &quot;Диваки&quot; (1974), &quot;Бджолиний мед&quot; (1976), &quot;Білка&quot;, а також фантастичної повісті &quot;Мандрівний вулкан&quot; (1980).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

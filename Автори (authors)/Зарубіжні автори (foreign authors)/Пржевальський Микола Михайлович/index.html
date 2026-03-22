@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пржевальський Микола Михайлович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Пржевальський Микола Михайлович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./przhevalskyy-mykola-mykhaylovych.webp" alt="Пржевальський Микола Михайлович" title="Пржевальський Микола Михайлович" data-full="./przhevalskyy-mykola-mykhaylovych.webp" /></div>
+        <div class="prose-text">
+          <p>Микола Михайлович Пржевальський народився (31 березня) 12 квітня 1839 року в селі Кімбірово Смоленської губернії. Його батьки були полупанками дворянами, батько — нащадок запорізького козака. Батько його помер, коли хлопчикові було 7 років, і вихованням дитини займався дядько — пристрасний мисливець і мандрівник.</p>
+          <p>У 1855 році Микола закінчив Смоленську гімназію і вступив на військову службу в піхоту, отримав чин унтер-офіцера, а через рік став вчитися в Академії Генштабу Російської армії та був блискучим студентом. Після закінчення навчання Пржевальський був викладачем історії та географії в юнкерського училища міста Варшави.</p>
+          <p>В кінці 1866 року він був включений до складу експедиції Генштабу до Східного Сибіру. З тих пір і почалася його життя як мандрівника, географа і дослідника. У 1867-1869 роках він займався вивченням Уссурійського краю, саме там була зібрана його знаменита орнітологічна колекція. У 1870-1873 роках він займався дослідженням Монголії, Китаю і Тибету. Тоді ж Пржевальського наздогнала світова слава, він був нагороджений Великою Костянтинівською медаллю, яка була вищою нагородою Географічного товариства. У 1876-1879 і 1879-1880 роках він очолював другу і третю Центральноазіатські експедиції. У свою четверту, останню експедицію 1883-1885 років Пржевальський поїхав вже будучи тяжко хворим, проте і в ній він зробив багато цікавих і значущих відкриттів. На восени 1888 року була призначена чергова поїздка в Центральну Азію, але (20 жовтня) 1 листопада 1888 Микола Пржевальський помер в Караколі (Киргизія ). Під час експедицій Пржевальським були зібрані багатющі орнітологічні, зоологічні, ботанічні та мінералогічні колекції, відкрито кілька видів тварин. Він був нагороджений кількома почесними нагородами та преміями. Його ім&#x27;ям названі місто, гірський хребет, льодовик у горах Алтаю, кілька видів тварин і рослин.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

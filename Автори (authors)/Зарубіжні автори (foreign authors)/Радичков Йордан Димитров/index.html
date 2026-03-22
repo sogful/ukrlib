@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Радичков Йордан Димитров — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Радичков Йордан Димитров</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./radychkov-yordan-dymytrov.webp" alt="Радичков Йордан Димитров" title="Радичков Йордан Димитров" data-full="./radychkov-yordan-dymytrov.webp" /><img class="side-img side-thumb" src="./radychkov-yordan-dymytrov_1.webp" alt="Радичков Йордан Димитров" title="Радичков Йордан Димитров" data-full="./radychkov-yordan-dymytrov_1.webp" /><img class="side-img side-thumb" src="./radychkov-yordan-dymytrov_2.webp" alt="Радичков Йордан Димитров" title="Радичков Йордан Димитров" data-full="./radychkov-yordan-dymytrov_2.webp" /></div>
+        <div class="prose-text">
+          <p>Народився 29 жовтня 1929 р в с.Каліманіца, область Монтана, Болгарія — помер 21 cічня 2004 р.</p>
+          <p>Йордан Радічков — видатний болгарський письменник, драматург і сценарист. Двічі він номінувався на Нобелівську премію, його твори видані на 37 мовах світу в більш ніж п&#x27;ятдесяти країнах. Він спілкувався з коронованими особами і Папою Римським Іоанном Павлом II. Його п&#x27;єси ставилися на кращих сценах, в тому числі у МХАТі (&quot;Спроба польоту&quot;). При цьому він говорив тільки на рідній мові і завжди пам&#x27;ятав про своє село Каліманіца.</p>
+          <p>Серед його творів є одне, яке називається &quot;Порохової буквар&quot;. Таким букварем є вся творчість Йордана Радічкова. Його намагалися аналізувати, розбивати і кришити на дрібні частинки літературознавці і театрознавці Болгарії та Росії, Італії та Швеції, Франції та Німеччини, але воно не піддавалося аналізу. Він не мав предтечею, але мав сподвижників: серед них — Георгій Гачев, з яким Радічков в кінці 60-х подорожував по Сибіру, Ніка Глен і Світу Міхелевіч, які переводили його притчі на російську мову, Методи Андонов, який відкрив його для театру. На стінах його будинку в Софії — картини Злата Бояджиєва, дечко Узунова, Светліна Русева, стародавні ікони, а в глибині — велике вічнозелене дерево, як ніби виросло в лісі, а не в вітальні. Причетність до природи відділяла Радічкова від міських жителів, заважала їм бачити те, що було територією його уяви, філософських роздумів і захоплень. Хто тільки не бував в цьому будинку: письменник Еміліян Станев і кінорежисер Рангель Вилчанов, славісти Джузеппе Дель Агата і Данило Манера, театральні режисери Юлія Огнянова, Кіркор Азарян та Іван Добчев. Роберт Стуруа збирався поставити на сцені радічковскій &quot;Январь&quot;. У Лос-Анджелесі джаз-піаніст і композитор Мілчо Льовієв відгукнувся з великою скорботою про смерть письменника, згадавши, як на початку 60-х їхні шляхи перетнулися під час зйомок художнього фільму за сценарієм Радічкова &quot;Жаркий полудень&quot;. А письменник Антон Дончев, відзначаючи важку втрату, написав, що Радічков мав властивість проникати в ті спектри світла, які недоступні звичайному оку. Тексти Радічкова далеко не однозначні, і тому можна знаходити щоразу щось нове, перечитуючи &quot;пращі&quot;, &quot;перекинутися небо&quot;, &quot;Люте настрій&quot;, &quot;Спогади про коней&quot; ... Впродовж останнього десятиріччя було для Радічкова десятиліттям мовчання. Навіть тоді, коли він бував у суспільстві людей і його про щось питали, письменник відповідав якийсь притчею або афоризмом. Одного разу він сказав: &quot;Людина — це довге речення, написане з великою любов&#x27;ю і натхненням, але з багатьма помилками в правописі&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

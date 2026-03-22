@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Калянник Іван Іванович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Калянник Іван Іванович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kaliannyk-ivan-ivanovych.webp" alt="Калянник Іван Іванович" title="Калянник Іван Іванович" data-full="./kaliannyk-ivan-ivanovych.webp" /></div>
+        <div class="prose-text">
+          <p>Іван КАЛЯННИК</p>
+          <p>Калянник (Калянников) Іван Іванович народився 12 березня 1911 року в с. Дятьково (тепер райцентр Брянської обл.) в сім&#x27;ї службовця. Коли хлопцеві минуло 11 років, родина переїхала до Харкова. Тут він здобув середню освіту. Після закінчення профшколи став працювати розмітником на Харківському паровозобудівному заводі, був активним членом заводської літературної студії, друкував статті та вірші в багатотиражній газеті &quot;Харківський паровозник&quot;, у рукописному журналі &quot;Новий цех&quot;.</p>
+          <p>Спершу писав російською мовою, друкуючись у газеті &quot;Брянский рабочий&quot;, журналах &quot;Огонек&quot; і &quot;Красная новь&quot;. 1930 року стрівся з Павлом Тичиною, який порадив для українських робітників писати їхньою рідною мовою. Поет-початківець змінив прізвище, а невдовзі в харківській періодиці почали з&#x27;являтися його твори українською мовою, які одразу ж привернули увагу читачів і літературної критики. &quot;Перші статті про Івана Калянника, — згадував пізніше Микола Нагнибіда, — були сповнені надією і пророцтвом — в українську поезію йшов обдарований і самобутній поет&quot;. 1931 року І. Калянник вступив до Харківського технікуму сходознавства та східних мов. На практику їздив до Таджикистану, звідки привозив нові цикли віршів, які опісля ставали книгами. Видав збірки поезій; &quot;Бригадир&quot;, &quot;Риси обличчя&quot;, &quot;Струм&quot; (1931), &quot;Висока путь&quot; (1932), &quot;Поезії&quot; (1932), &quot;Майдан&quot;, &quot;Східні новели&quot;, &quot;Товариш Карий&quot; (1934), &quot;Гордість&quot; (1936) та ін. Калянник належав до літературного угруповання &quot;Пролеткульт&quot;, був членом СП СРСР. Співробітник Харківського обласного управління НКВС Замков розглянув матеріали, які ніби свідчили про те, що Іван Калянник &quot;був учасником контрреволюційної фашистської терористичної організації, яка мала мету боротися з Радянською владою&quot;, і ухвалив тримати його &quot;під вартою в спецкорпусі № 1&quot;, щоб він &quot;не зміг ховатися від суду і слідства&quot;, його заарештували 4 листопада 1936 року в Харкові. На допитах, які вів слідчий Лисицький, Калянник не визнавав за собою ніякої вини. Термін утримування його за ґратами продовжували п&#x27;ять разів. 13 квітня 1937 року його перевели в спецкорпус Київської тюрми, де скоро змусили визнати свою належність до контрреволюційної організації. На закритому судовому засіданні 14 липня 1937 року Військова колегія Верховного Суду СРСР засудила письменника до найвищої міри покарання — розстрілу. Вирок виконано 15 липня 1937 року. При додатковому розслідуванні справи Калянника позитивні характеристики йому дали Сергій Борзенко, Терень Масенко, Микола Нагнибіда. &quot;Іван Калянник, — підкреслив С. Борзенко, — був прекрасним поетом, а найголовніше — справжньою радянською людиною&quot;. Військова колегія Верховного Суду СРСР 21 січня 1958 року скасувала вирок щодо поета і справу припинила через відсутність складу злочину. Іван Калянник реабілітований посмертно. Олександр Мукомела ЛУ 34 (4443) 22.08.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Функе Корнелія — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Функе Корнелія</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./funke-korneliia_1.webp" alt="Функе Корнелія" title="Функе Корнелія" data-full="./funke-korneliia_1.webp" /><img class="side-img side-thumb" src="./funke-korneliia.webp" alt="Функе Корнелія" title="Функе Корнелія" data-full="./funke-korneliia.webp" /></div>
+        <div class="prose-text">
+          <p>Корнелія Функе народилася 10 грудня 1958 року в німецькому місті Дорстен. У шкільному віці мріяла стати пілотом, але до завершення навчання в гімназії Св. Урсули прийняла рішення бути вчителем. Закінчивши навчання в Гамбурзькому університеті, майбутня письменниця три роки обіймала посаду соціального працівника, допомагаючи дітям-інвалідам впоратися зі своїми страхами.</p>
+          <p>Саме в цей період вона усвідомила, наскільки цінними є фантастичні історії: з їх допомогою вихованці відволікалися від гіркої реальності і переносилися в чарівний світ фантазій. В цей же час Корнелія вивчала курс книжкової ілюстрації в інституті дизайну. Незабаром дівчина почала працювати за професією — ілюстратором в популярному німецькому видавництві.</p>
+          <p>Бажання стати письменницею народилося внаслідок розчарування в сучасній фантастиці. Функе стала співавтором сценаріїв дитячого серіалу &quot;Сім каменів&quot; (на екранах з 1988 року). Протягом 1980-х і 1990-х років письменниця утвердилася в Німеччині як автор творів, які лягли в основу двох дитячих фантастичних серіалів &quot;Мисливці за привидами&quot; (Gespensterjäger) і &quot;Дикі курочки&quot; (Die wilden Hühner). Після їх виходу Корнелію назвали &quot;Дж. К. Роулінг з Німеччини&quot;. Хоча Функе була дуже популярна в своїй країні, вперше її книгу переклали англійською лише в 2002 році. Це був роман &quot;Herr der Diebe&quot;, відомий як &quot;Король Злодіїв&quot;. Протягом п&#x27;яти місяців він очолював списки дитячих бестселерів в США. Книга отримала дві престижні премії, а британський журнал &quot;Guardian&quot; розмістив її на першу сходинку свого хіт-параду. У 2003 році вийшов друком найпопулярніший твір Функе — підліткове фентезі &quot;Чорнильне серце&quot;, а в наступні п&#x27;ять років — його продовження під назвами &quot;Чорнильна кров&quot; і &quot;Чорнильна смерть&quot;. Зараз екранізовані п&#x27;ять її романів: &quot;Король злодіїв&quot;, &quot;Чорнильне серце&quot;, &quot;Дикі курочки&quot;, &quot;Дикі курочки і любов&quot;, &quot;Дикі курочки і життя&quot;. У своєму блозі Функе пише про те, що відправною точкою для хорошої книги є ідея. Письменниця наголошує, що &quot;ідеї всюди і ніде. Вони приходять із зовнішнього світу і з внутрішнього. У мене їх так багато, що не вистачить і життя, щоб записати всі&quot;. З приводу персонажів вона уточнює: &quot;В основному, вони входять в кабінет настільки живими, що я задаюся питанням, звідки вони. Безумовно, деякі з них — результат тривалих роздумів, але інші живі відразу&quot;.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

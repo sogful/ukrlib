@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бегбедер Фредерік — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Бегбедер Фредерік</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./behbeder-frederik_1.webp" alt="Бегбедер Фредерік" title="Бегбедер Фредерік" data-full="./behbeder-frederik_1.webp" /><img class="side-img side-thumb" src="./behbeder-frederik.webp" alt="Бегбедер Фредерік" title="Бегбедер Фредерік" data-full="./behbeder-frederik.webp" /><img class="side-img side-thumb" src="./behbeder-frederik_2.webp" alt="Бегбедер Фредерік" title="Бегбедер Фредерік" data-full="./behbeder-frederik_2.webp" /><img class="side-img side-thumb" src="./behbeder-frederik_3.webp" alt="Бегбедер Фредерік" title="Бегбедер Фредерік" data-full="./behbeder-frederik_3.webp" /><img class="side-img side-thumb" src="./behbeder-frederik_4.webp" alt="Бегбедер Фредерік" title="Бегбедер Фредерік" data-full="./behbeder-frederik_4.webp" /></div>
+        <div class="prose-text">
+          <p>Біографія</p>
+          <p>Сучасний французький прозаїк, публіцист, літературний критик і редактор.</p>
+          <p>Родина Фредерік Бегбедер народився 21 вересня 1965 року в місті Нейї-сюр-Сен під Парижем. Мати Бегбедера Крістін де Шатенье — перекладач дамських романів на французьку мову (зокрема, творів Барбари Картланд), а батько, Жан-Мішель Бегбедер, — професійний рекрутер. Брат Шарль Бегбедер — засновник брокерської контори Selftrade і першої у Франції приватної електромережі Poweo. Особистість Настільки нестандартна сім&#x27;я не могла не позначитися на способі життя самого Фредеріка. Він любить провокації, самокритику. Бегбедер отримав диплом Паризького інституту політичних досліджень, а потім диплом DESS в області реклами і маркетингу в CELSA (Вища школа інформації і комунікації). В результаті, він став копірайтером у великому рекламному агентстві Young and Rubicam. Одночасно співпрацював у якості літературного критика в журналах Elle, Paris Match, Voici ou encore VSD. Також він перебував у команді літературних критиків у радіопередачі Жерома Гарсена &quot;Маска і перо&quot; на станції France Inter. Він був звільнений з Young and Rubicam через деякий час після виходу в світ роману &quot;99 франків&quot; (згодом перейменованого в &quot;14,99 євро&quot;), що представляє собою сатиру і викриття рекламного бізнесу. Між тим, він став вести свою власну телепередачу про літературу &quot;Книги і я&quot; на каналі Paris Première. За цим послідувала спроба вести передачу l Hypershow на Canal+, правда, керівники каналу незабаром закрили передачу. Був безкоштовним консультантом Робера Ю на президентських виборах 2002 р., хоча в ФКП не складається . Творчість і життя в літературі У січні 2003 видавнича група Flammarion запропонувала Бегбедеру місце редактора. Першою книгою, обраної Бегбедером, виявився роман Лоли Лафон &quot;Непереборне збудження&quot;. Це був час його участі в антиглобалистском русі і анархістської групи Black Blocs. Бегбедер воліє карколомні сюжети, з героями, схожими на нього самого. Крім того, він виступив засновником літературної премії, якою удостоїлися, зокрема, книги Мішеля Уельбека і Віржіні Депант, і навіть відзначився в кінематографі — знявся в порнографічному фільмі &quot;Дочка човняра&quot; (з участю зірки жанру Естель Дезанж). Заслужену славу одного з найцікавіших сучасних французьких письменників Фредеріку Бегбедеру принесли романи &quot;Спогади необразумившегося молодої людини&quot; (1990), &quot;Канікули в комі&quot; (1995), &quot;Любов живе три роки&quot; (1997), &quot;Оповіданнячка під екстазі&quot; (1999), &quot;99 франків&quot;, що став лідером книжкових продажів 2000 року у Франції.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

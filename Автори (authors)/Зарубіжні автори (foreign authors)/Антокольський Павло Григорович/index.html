@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Антокольський Павло Григорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Антокольський Павло Григорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./antokolskyy-pavlo-hryhorovych.webp" alt="Антокольський Павло Григорович" title="Антокольський Павло Григорович" data-full="./antokolskyy-pavlo-hryhorovych.webp" /><img class="side-img side-thumb" src="./antokolskyy-pavlo-hryhorovych_1.webp" alt="Антокольський Павло Григорович" title="Антокольський Павло Григорович" data-full="./antokolskyy-pavlo-hryhorovych_1.webp" /><img class="side-img side-thumb" src="./antokolskyy-pavlo-hryhorovych_2.webp" alt="Антокольський Павло Григорович" title="Антокольський Павло Григорович" data-full="./antokolskyy-pavlo-hryhorovych_2.webp" /></div>
+        <div class="prose-text">
+          <p>З початком революції служив у жилотделе Моссовета заради збереження Студії, яка незабаром перетворилася на Театр Народу біля Кам&#x27;яного мосту. У 1918 мандрував з бригадою акторів по фронтових дорогах Західного фронту, потім служив у різних московських театрах.</p>
+          <p>Антокольський Павло Григорович (1896 — 1978), поет, перекладач. Народився 19 червня (1 липня н. с.) в Петербурзі в родині адвоката. Головним захопленням дитинства було малювання аквареллю і кольоровими олівцями. В 1904 році сім&#x27;я переїхала до Москви, де незабаром майбутній поет вступив в приватну гімназію. У старших класах почалося його захоплення поезією, театром, декламацією. Він вів до того ж рукописний журнал. Закінчивши гімназію в 1914 році, через рік він поступив на юридичний факультет Московського університету, але йому не судилося було стати юристом. Його долю вирішили заняття у Студентської драматичної студії, якою керував Е. Вахтангов. Він став актором, потім — до середини 1930-х — режисером у Театрі ім. Е. Вахтангова.</p>
+          <p>З початком революції служив у жилотделе Моссовета заради збереження Студії, яка незабаром перетворилася на Театр Народу біля Кам&#x27;яного мосту. У 1918 мандрував з бригадою акторів по фронтових дорогах Західного фронту, потім служив у різних московських театрах. У 1920 став відвідувати &quot;Кафе поетів&quot; на Тверській, де зустрівся з В. Брюсовим, якому сподобалися вірші Антокольського, і він надрукував їх в альманасі &quot;Художнє слово&quot; (1921). Перша книжка &quot;Поезії&quot; була видана в 1922. Протягом 1920 — 30 опублікував кілька поетичних збірок: &quot;3апад&quot;(1926), &quot;Дійові особи&quot; (1932), &quot;Великі відстані&quot; (1936), &quot;Пушкінський рік&quot; (1938) та ін У роки Вітчизняної війни Антокольський був кореспондентом фронтових газет, керував трупою фронтового театру. У 1943 р. була створена поема &quot;Син&quot;, присвячена пам&#x27;яті сина, загиблого на фронті.Творчість П. Антокольського найбільш повно представлено в книгах: &quot;Майстерня&quot; (1958), &quot;Висока напруга&quot; (1962), &quot;Четвертий вимір&quot; (1964), &quot;Час&quot; (1973), &quot;Кінець століття&quot; (1977) та ін. Антокольський належить кілька книг, статей і спогадів: &quot;Поети і час&quot; (1957), &quot;Шляхи поетів&quot; (1965), &quot;Казки часу&quot; (1971). Антокольський відомий і як блискучий перекладач французької поезії, а також поетів Грузії, Азербайджану, Вірменії та ін. Прожив довге життя, П. Антокольський помер в 1978 в Москві.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

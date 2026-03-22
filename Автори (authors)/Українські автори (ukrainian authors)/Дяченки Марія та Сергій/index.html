@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дяченки Марія та Сергій — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Дяченки Марія та Сергій</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./diachenky-mariia-ta-serhiy.webp" alt="Дяченки Марія та Сергій" title="Дяченки Марія та Сергій" data-full="./diachenky-mariia-ta-serhiy.webp" /><img class="side-img side-thumb" src="./diachenky-mariia-ta-serhiy_1.webp" alt="Дяченки Марія та Сергій" title="Дяченки Марія та Сергій" data-full="./diachenky-mariia-ta-serhiy_1.webp" /></div>
+        <div class="prose-text">
+          <p>Марина та Сергій Дяченки — подружжя та співавтори Сергій Сергійович Дяченко та Марина Юріївна Дяченко — українські російськомовні письменники-фантасти, сценаристи та редактори. За визначенням самих авторів, вони &quot;є носіями російської мови, що проживають в Україні&quot;. У 2009 році залишили Україну та переїхали в Москву. У 2013 році переїхали з Росії у США та відтоді проживають у штаті Каліфорнія.</p>
+          <p>Автори понад 25 романів та понад вісімдесяти повістей та оповідань. Пишуть твори російською мовою. Лавреати багатьох літературних премій у галузі фантастики. Члени Спілок письменників України та Російської Федерації. На Всесвітніх і Всеєвропейських зборах фантастів &quot;Єврокон—2005&quot; у Глазго Марину і Сергія Дяченків визнано найкращими письменниками-фантастами Європи.</p>
+          <p>Сергій Дяченко народився 14 квітня 1945 року у Києві. Син видатного українського мікробіолога, професора Сергія Степановича Дяченка. У 1966 році закінчив Київський медичний інститут, працював лікарем-психіатром. Кандидат біологічних наук. 1989 року закінчив сценарний факультет ВДІКу. Член Союзу кінематографістів СРСР з 1987 року, Союзу письменників СРСР з 1983 року. Лавреат Національної премії України ім. Т. Г. Шевченка 1987 року разом з А. Д. Борсюком (режисером), О. І. Фроловим (оператором) за повнометражний науково-популярний фільм &quot;Зірка Вавилова&quot; Київської кіностудії науково-популярних фільмів. Автор кіносценаріїв до фільмів: &quot;Микола Вавилов&quot;, &quot;Голод-33&quot;, &quot;Гетьманські клейноди&quot;, &quot;Генетика і ми&quot;, &quot;Природи міцні затвори&quot;, &quot;Совість у білому халаті&quot;, &quot;Академік Бєляєв&quot;, &quot;Зірка Вавилова&quot; та ін. До 2009 року жив і працював у Києві, потім переїхав до Москви. У 2013 році разом з дружиною Мариною переїхали з Росії у США та відтоді проживали у штаті Каліфорнія. На загальноєвропейській конференції фантастів &quot;Єврокон-2005&quot; в Глазго разом з Мариною Дяченко визнаний найкращим письменником-фантастом Європи. У співавторстві з нею написав 25 романів, десятки повістей та оповідань, кілька дитячих книжок. Помер 5 травня 2022 року. Про це повідомила його дружина. Марина Дяченко (до шлюбу — Ширшова) народилася 23 січня 1968 року у Києві. 1989 року закінчила Київський театральний інститут, обрала професію акторки театру та кіно. У фільмі &quot;Вперед, за скарбами гетьмана&quot; зіграла роль Марійки. Після того викладала мистецтво сценічної мови у Київському театральному інституті. Згодом одружилася з письменником Сергієм Дяченком. Письменницьке подружжя дебютувало романом-фентезі &quot;Брамник&quot; (1994), за який отримали премію Єврокону-96. На загальноєвропейській конференції фантастів &quot;Єврокон-2005&quot; у Глазго разом із чоловіком визнана найкращим письменником-фантастом Європи. До 2009 року жила і працювала у Києві, потім переїхала з чоловіком до Москви. У 2013 році вони переїхали з Росії до США, проживали разом в штаті Каліфорнія до смерті чоловіка. Тепер тут мешкає сама. У співавторстві до смерті чоловіка написали 25 романів, десятки повістей та оповідань, кілька дитячих книжок.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

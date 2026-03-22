@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тісдейл Сара — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Тісдейл Сара</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./tisdeyl-sara.webp" alt="Тісдейл Сара" title="Тісдейл Сара" data-full="./tisdeyl-sara.webp" /><img class="side-img side-thumb" src="./tisdeyl-sara_1.webp" alt="Тісдейл Сара" title="Тісдейл Сара" data-full="./tisdeyl-sara_1.webp" /><img class="side-img side-thumb" src="./tisdeyl-sara_2.webp" alt="Тісдейл Сара" title="Тісдейл Сара" data-full="./tisdeyl-sara_2.webp" /></div>
+        <div class="prose-text">
+          <p>Сара Тісдейл народилася 8 серпня 1884 року в Сент-Луїсі, штат Міссурі.</p>
+          <p>Через поганий стан здоров&#x27;я навчалася вдома до 9 років, в 10-річному віці почала навчання в Інституті Мері у 1898 році, через рік перейшла до Хосмер Холл, яку закінчила у 1903 році.</p>
+          <p>Сім&#x27;я Тісдейл проживала на 3668 Лінделл Б&#x27;лвд, а потім на 38 Кінгсбері Плейс. Обидва будинки розробила матір Сари. Будинок на Кінгсбері Плейс має приватні покої для Сари на другому поверсі. Гості заходили через окремий вхід і допускалися за запрошенням. Завдяки такому ізольованому плануванню Сара могла працювати, спати, і часто обідати на самоті. З 1911 по 1914 рік до Тісдейл залицялися кілька людей, в тому числі поет Вачель Ліндсей, був закоханий у неї, але не міг забезпечити її фінансами або стабільністю. 19 грудня 1914 року Тісдейл одружилася з Ернстом Філсінгером, тривалим прихильником її поезії. У 1916 році переїхала з чоловіком до Нью-Йорку у Верхньому Вест-Сайді на Східному Центральному Парку. Постійні ділові поїздки Філсінгера викликали в Тісдейл велику самотність.У 1929 році їй довелося їздитии між штатами протягом трьох місяців, щоб отримати розлучення. Після розлучення переїхала на два квартали від будинку, відродила дружбу з досі неодруженим Вачелем Ліндсей. У 1933 році Сара Тісдейл вмерла через передозування снодійним. Її поховали на Кладовищі Білліфонтайн в Сент-Луїсі.</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

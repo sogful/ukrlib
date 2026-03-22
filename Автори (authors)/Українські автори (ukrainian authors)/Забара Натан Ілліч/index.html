@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Забара Натан Ілліч — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Забара Натан Ілліч</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./zabara-natan-illich.webp" alt="Забара Натан Ілліч" title="Забара Натан Ілліч" data-full="./zabara-natan-illich.webp" /></div>
+        <div class="prose-text">
+          <p>Натан ЗАБАРА</p>
+          <p>Забара Натан Ілліч народився 27 грудня 1908 року у волинському селі Рогачів у сім&#x27;ї гончаря. В 1925 році закінчив трудову школу в Новограді-Волинському і переїхав до Києва, де вступив на курси Центрального інституту праці. Водночас трудився на київських будовах, а в 1931 році був призваний до Червоної Армії. Після демобілізації навчався в аспірантурі Інституту єврейської культури АН УРСР 3 1941 по 1947 рік перебував у діючій армії, а пізніше — у Центральній групі військ. Нагороджений бойовими орденами та медалями.</p>
+          <p>Як єврейський прозаїк Забара заявив про себе на початку тридцятих років. Його оповідання та новели з&#x27;являлися в періодичних виданнях Києва. Москви, Мінська, Біробіджана, в журналах &quot;Советіш літератур&quot;, &quot;Штерн&quot; та інших. Окремими книжками вийшли &quot;Радіороман&quot; (1932), &quot;Ніловка&quot; (1934), &quot;З країни в країну&quot; (1938), &quot;Батько&quot; (1940). В перекладі російською мовою побачили світ книга &quot;Сегодня рождается мир&quot; та окремі повісті. Забара був Членом ВУСППу, а потім належав до Спілки письменників України. Учасник Великої Вітчизняної війни. За ратні подвиги нагороджений орденом Червоної Зірки та багатьма медалями. На початку 1951 року письменник був заарештований. Йому, як і багатьом у ті часи українським та єврейським письменникам, інкримінували &quot;націоналістичну пропаганду&quot;. А в зв&#x27;язку з тим, що Забара деякий чає служив у радянських військах на території Німеччини, слідчий &quot;накинув&quot; йому &quot;підривну діяльність&quot;, зв&#x27;язок з іноземними розвідками. Абсурдність цих звинувачень була очевидною, і все ж особлива нарада при МДБ УРСР визнала письменника винним і засудила на десять років ув&#x27;язнення у магаданських таборах. 6 липня 1956 року комісія по перегляду справ безпідставно репресованих радянських громадян скасувала вирок стосовно письменника. Забару звільнили з-під варти а зв&#x27;язку з &quot;відсутністю в його діях складу злочину&quot;. Він повернувся в Київ і до самої смерті тяжко хворів. Помер 19 лютого 1975 року. Григорій Полянкер ЛУ 32(4441) 8.08.1991</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

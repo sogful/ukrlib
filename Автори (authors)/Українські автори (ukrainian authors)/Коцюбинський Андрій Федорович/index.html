@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коцюбинський Андрій Федорович — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Коцюбинський Андрій Федорович</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./kotsiubynskiy-andriy-fedorovych.webp" alt="Коцюбинській Андрій Федорович" title="Коцюбинській Андрій Федорович" data-full="./kotsiubynskiy-andriy-fedorovych.webp" /></div>
+        <div class="prose-text">
+          <p>Коцюбинський Андрій Федорович народився 8 грудня 1938 р. в с. Загородище Чорнобаївського району Черкаської області. Довгий час мешкав у м. Павлограді. Помер у 2011р.</p>
+          <p>А. Коцюбинський закінчив мовно-літературний факультет Київського державного педагогічного інституту (нині – Національний педагогічний університет ім. М. Драгоманова). Працював понад тридцять років у редакції павлоградської міської районної газети &quot;Світло Жовтня&quot; (пізніше – регіональна &quot;Рідний край&quot;) та близько десяти років відповідальним секретарем-коректором в редакції газети &quot;Лава&quot; – органі Незалежної профспілки гірників України.</p>
+          <p>Постійний автор газет &quot;Сільські вісті&quot; (гумор) та &quot;Голос України&quot;, журналу &quot;Перець&quot;, інших видань. Лауреат премій ім. Івана Сокульського (2008), ім. Остапа Вишні (2010), переможець конкурсу ім. Миколи Лукаша &quot;Шпигачки&quot; (2010). Член Національної Спілки журналістів України і Національної Спілки письменників України. Писав українською мовою для дітей і дорослих здебільшого гумористичні твори. Автор книг для дітей: &quot;Суниці з Вовчої галявини&quot; (Київ, 1987), &quot;Засекречений тайм&quot; (Київ, 1992), &quot;Хто сміється...&quot; (Дніпропетровськ, 2002).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+

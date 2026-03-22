@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Іваничук Наталія Романівна — Біографія</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Іваничук Наталія Романівна</h1>
+      <h2>Біографія</h2>
+    </div>
+    <div class="prose" id="content">
+      <div class="side-layout">
+        <div class="side-column"><img class="side-img side-thumb" src="./ivanychuk-nataliia-romanivna.webp" alt="Іваничук Наталія Романівна" title="Іваничук Наталія Романівна" data-full="./ivanychuk-nataliia-romanivna.webp" /></div>
+        <div class="prose-text">
+          <p>Наталія Іваничук народилася 29 листопада 1959 р. у Щирці Пустомитівського району Львівської області, в сім&#x27;ї письменника Романа Івановича Іваничука (1929—2016) і вчительки історії Софії Теодорівни Іваничук (1931—2005; до шлюбу Гендега). З 1961 року Наталія Іваничук мешкає у Львові.</p>
+          <p>Здобула середню освіту у Львівській школі № 28 із поглибленим вивченням німецької мови (1967—1977). 1977 року вступила на філологічний факультет (спеціальність &quot;германська філологія&quot;) Львівського державного (нині — національного) університету імені Івана Франка й закінчила його з відзнакою у 1982-му, захистивши дипломну роботу &quot;Невласне-пряма мова у романі Томаса Манна &quot;Будденброки&quot;&quot;. Стажувалася в Норвегії на стипендію Норвезької спілки перекладачів (Norwegian Translators Fund) (2001), була учасницею літніх шкіл в Університеті Осло (1998), Українського вільного університету в Мюнхені (1992, 1993, 1994). Наталія Іваничук брала участь в перекладацьких семінарах у Фінляндії, Швеції та Норвегії, була учасницею Міжнародного конгресу перекладачів у Тампере (2006). Тричі стажувалася в Норвегії (окрім Спілки) на запрошення фундації NORLA, була резиденткою на перекладацьких резиденціях — Осло, Норвегія (2018) і Карпатська резиденція, Україна (2019).</p>
+          <p>Здобувши вищу освіту, працювала викладачкою німецької мови на кафедрі іноземних мов Львівського медичного університету ім. Данила Галицького (1982—1992) та викладачкою німецької мови та літератури у Львівському педагогічному коледжі (1989—1992), науковою співробітницею Науково-дослідного центру періодики Львівської наукової бібліотеки ім. Василя Стефаника (нині — Львівська національна наукова бібліотека України імені Василя Стефаника) (1992—1996), перекладачкою у львівських видавництвах &quot;Літопис&quot; та &quot;Місіонер&quot; (1996—1997), викладачкою німецької та норвезької мов Львівського національного університету ім. Івана Франка (1997—2002) та аташе з питань преси і культури Посольства України в Фінляндії (2002—2004). Нині продовжує роботу у Львівському національному університеті ім. Івана Франка, викладаючи на факультеті міжнародних відносин норвезьку мову. У 1997 р. заснувала і очолила Центр країн Північної Європи (Nordic Center) у цьому ж університеті (1997—2002) та Центр Програми &quot;Балтійський університет&quot; в Україні (BUP Programme Center Ukraine) (1997—2002).</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageoverlay" class="imageoverlay" aria-hidden="true">
+      <img id="imageoverlaypic" class="imageoverlaypic" src="" alt="" />
+    </div>
+    <script>
+      (function() {
+        const overlay = document.getElementById('imageoverlay');
+        const overlaypic = document.getElementById('imageoverlaypic');
+        if (!overlay || !overlaypic) return;
+
+        function closeimage() {
+          overlay.classList.add('fade');
+          overlay.addEventListener('transitionend', whentransitionends);
+          overlay.setAttribute('aria-hidden', 'true');
+          overlaypic.src = '';
+        }
+        function whentransitionends(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.classList.remove('fade');
+            overlay.removeEventListener('transitionend', whentransitionends);
+          }
+        }
+        function expandimage(fullsrc) {
+          if (!fullsrc) return;
+          overlaypic.src = fullsrc;
+          overlay.classList.add('open');
+          overlay.classList.remove('fade');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        overlay.addEventListener('click', function() {
+          closeimage();
+        });
+        overlaypic.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (overlaypic && overlaypic.src) {
+            window.open(overlaypic.src, '_blank', 'noopener');
+          }
+        });
+        document.querySelectorAll('.side-thumb').forEach(function(img) {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const full = img.getAttribute('data-full');
+            expandimage(full);
+          });
+        });
+      })();
+    </script>
+    <style>
+      #imageoverlay {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #imageoverlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #imageoverlay.fade {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </div>
+</body>
+</html>
+
