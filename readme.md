@@ -5,7 +5,7 @@
 a local version of text and audio from ukrlib.com.ua<sup><sub><sup>(ua-lib.ru)</sup></sub></sup> in case of emergencies when the internet is terrible / completely unavailable. basically, a local copy of most of the ukrainian literature (and translations of foreign ones)
 
 ### downloading
-<sup>the full download is **5.75gb**, so make sure if you have that space on your device</sup>
+<sup>the full download is **6.75gb**, so make sure if you have that space on your device</sup>
 1. press <img src=".(інші файли)．/vectors/code.svg" alt="Code" height="30" style="vertical-align:middle"/>, then <img src=".(інші файли)．/vectors/downloadzip.svg" alt="Download ZIP" height="30" style="vertical-align:middle"/> to download the entire repository as an archive.
 2. when the download process is done, right click the .zip in file explorer and select <img src=".(інші файли)．/vectors/en/extractto.svg" alt="Download ZIP" height="30" style="vertical-align:middle"/> or similar.
    
@@ -23,7 +23,7 @@ with the web interface this should be slightly faster than googling the title of
 локальна версія текстового та аудіо контенту ukrlib.com.ua<sup><sub><sup>(ua-lib.ru)</sup></sub></sup> на випадок надзвичайних ситуацій, коли інтернет дуже поганий або повністю недоступний. якщо коротко, локальна копія більшості української літератури (та перекладів зарубіжних творів)
 
 ### завантаження
-<sup>повним розміром є **5.75гб**, тому переконайтеся, що у вас достатньо місця на пристрої</sup>
+<sup>повним розміром є **6.75гб**, тому переконайтеся, що у вас достатньо місця на пристрої</sup>
 1. натисніть <img src=".(інші файли)．/vectors/code.svg" alt="Code" height="30" style="vertical-align:middle"/>, потім <img src=".(інші файли)．/vectors/downloadzip.svg" alt="Download ZIP" height="30" style="vertical-align:middle"/>, щоб завантажити весь репозиторій як архів.
 2. після завершення завантаження клацніть правою кнопкою по .zip у провіднику файлів і оберіть <img src=".(інші файли)．/vectors/uk/extractto.svg" alt="Download ZIP" height="30" style="vertical-align:middle"/> або подібне.
 
