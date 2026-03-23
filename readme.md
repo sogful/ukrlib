@@ -1,9 +1,11 @@
 <p align="center">
   <img src="(інші файли)/vectors/logo.svg" alt="UkrLib" width="300px"><br>
-  <span style="position:relative;top:-10px;display:inline-block;transform:rotate(2deg);padding-bottom:0;margin-bottom:-10px;font-size:2em;"><b>archive</b></span>
+  <span style="position:relative;top:-10px;display:inline-block;transform:rotate(2deg);padding-bottom:0;margin-bottom:-10px;font-size:3em;"><b>archive</b></span>
 </p>
 
 <table><tr><td lang="en" valign="top" style="border:none;">
+
+<br>
 <span style="color:#aaa"><sup><sup>20056 ukrainian works • 6263 foreign works • 1394 modern works • 509 audiobooks • 149 folk works</sup></sup></span> <br>
 <span style="color:#aaa"><sup><sup><sup>1001 ukranian author biographies • 793 foreign author biographies</sup></sup></sup></span>
 
@@ -21,6 +23,8 @@ with the web interface this should be slightly faster than googling the title of
 <!--span style="color:#aaa"><sup><sup><sup>this is not 100% raw data, some was recovered from other websites and some was automatically reformatted. some folk literature might be poorly converted due to only having rtf versions</sup></sup></sup></span-->
 
 </td><td lang="uk" valign="top" style="border:none; padding-left:24px">
+
+<br>
 <span style="color:#aaa"><sup><sup>20056 українських творів • 6263 зарубіжних творів • 1394 сучасних творів • 509 аудіокниг • 149 народних творів</sup></sup></span> <br>
 <span style="color:#aaa"><sup><sup><sup>1001 біографія українських авторів • 793 біографії зарубіжних авторів</sup></sup></sup></span>
 
