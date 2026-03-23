@@ -201,6 +201,28 @@
 
     /*//////////////////////////////////////////////////////////////////////*/
 
+    const ignorethisFILTH = new Set([
+      "автори (authors)",
+      "зарубіжні автори (foreign authors)",
+      "українські автори (ukrainian authors)",
+      "література (literature)",
+      "зарубіжна література (foreign literature)",
+      "народна література (folk literature)",
+      "сучасна література ／ модернізм (modern literature)",
+      "українська література (ukrainian literature)",
+      "аудіокниги (audiobooks)",
+      "короткі аудіо файли",
+    ].map(function (s) { return s.toLowerCase(); }));
+
+    function filterforsearch(dirpart) {
+      if (!dirpart) return "";
+      const parts = dirpart.split("/").filter(Boolean);
+      const kept = parts.filter(function (seg) {
+        return !ignorethisFILTH.has(seg.toLowerCase());
+      });
+      return kept.join("/");
+    }
+
     function normalizetext(path) {
       const clean = path.replace(/\\/g, "/");
       const low = clean.toLowerCase();
@@ -211,7 +233,8 @@
       const lastslash = noext.lastIndexOf("/");
       const dirpart = lastslash >= 0 ? noext.slice(0, lastslash) : "";
       const base = lastslash >= 0 ? noext.slice(lastslash + 1) : noext;
-      const dirnorm = dirpart ? normalizesearchkey(dirpart, false) : "";
+      const dirpartfilter = filterforsearch(dirpart);
+      const dirnorm = dirpartfilter ? normalizesearchkey(dirpartfilter, false) : "";
       const basenorm = normalizesearchkey(base, true);
       return [dirnorm, basenorm].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
     }
